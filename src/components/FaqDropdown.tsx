@@ -24,7 +24,7 @@ const faqs = [
   {
     question: "Will this get better or continue to be improved?",
     answer:
-      "Maybe! It's just one person creating it; me, so it depends on my time. But if you think you know a way to improve it or want to help, it is an open-source project; the GitHub repo is here: <a href=\"#\" class='underline text-cyan hover:text-magenta transition-colors'>GitHub</a>.",
+      "Maybe! It's just one person creating it; me, so it depends on my time. But if you think you know a way to improve it or want to help, it is an open-source project; the GitHub repo is here: <a href=\"https://github.com/JonathanRReed/ai-news.git\" class='underline text-cyan hover:text-magenta transition-colors'>GitHub</a>.",
   },
 ];
 

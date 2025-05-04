@@ -1,0 +1,16 @@
+{
+  "name": "Ai-news",
+  "short_name": "Ai-news",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b0c10",
+  "theme_color": "#0b0c10",
+  "description": "Latest news from leading AI organizations.",
+  "icons": [
+    {
+      "src": "/logos/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
