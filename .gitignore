@@ -1,0 +1,101 @@
+# Node modules
+node_modules/
+
+# Build output
+dist/
+.astro/
+.preview/
+
+# Astro cache
+.cache/
+
+# Local env files
+.env
+.env.*
+.env.local
+.env.example
+
+# OS generated files
+.DS_Store
+Thumbs.db
+Icon?
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# IDEs and editors
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+.history/
+.vscode-test/
+
+# Misc
+*.tgz
+*.bak
+*.tmp
+*~
+*.swp
+
+# Dependency directories
+jspm_packages/
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# TypeScript
+*.tsbuildinfo
+
+# Test output
+*.test-results
+
+# SvelteKit build output (if ever used)
+.svelte-kit/
+
+# Next.js build output (if ever used)
+.next/
+
+# Supabase local emulator
+.supabase/
+
+# Astro SSR output (if SSR is enabled)
+.server/
+
+# Ignore font source files if not checked in
+public/font/*.ttf
+public/font/*.otf
+
+# Ignore backup files
+*.bak
+*.tmp
+
+# Ignore lockfiles (optional, if you use only one package manager)
+# package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Ignore generated Prisma files (if used)
+prisma/migrations/
+prisma/dev.db
+
+# Ignore design docs and markdown drafts (optional, uncomment if desired)
+design doc.md
+# drafts/
+
+# Ignore macOS resource forks
+._*
+
+# Ignore all user-uploaded images (uncomment if used)
+# public/uploads/
+

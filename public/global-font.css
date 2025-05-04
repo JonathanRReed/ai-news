@@ -1,0 +1,220 @@
+@font-face {
+  font-family: 'NebulaSans-Book';
+  src: url('/font/NebulaSans-Book.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'NebulaSans-BoldItalic';
+  src: url('/font/NebulaSans-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+body, html {
+  font-family: 'NebulaSans-Book', Inter, sans-serif;
+}
+
+.animated-gradient-logo {
+  background: linear-gradient(270deg, #34ffe5, #7e5cff, #ff2edb, #34ffe5);
+  background-size: 200% 200%;
+  animation: gradientMove 8s ease-in-out infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: 'NebulaSans-BoldItalic', 'NebulaSans-Book', 'sans-serif';
+  font-weight: bold;
+  font-style: italic;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.menu-gradient-link {
+  background: linear-gradient(270deg, #5fffd7 10%, #b6aaff 40%, #ffb6f9 60%, #5fffd7 90%);
+  background-size: 200% 200%;
+  animation: gradientMenuMove 14s ease-in-out infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-family: 'NebulaSans-BoldItalic', 'NebulaSans-Book', 'sans-serif';
+  font-weight: bold;
+  font-style: italic;
+  opacity: 0.55;
+  transition: opacity 0.25s, transform 0.2s;
+  will-change: opacity, transform;
+}
+
+.menu-gradient-link:hover, .menu-gradient-link:focus {
+  opacity: 1;
+  filter: brightness(1.15) saturate(1.25);
+  transform: scale(1.11);
+}
+
+@media (max-width: 767px) {
+  .menu-gradient-link {
+    font-size: 2.1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .menu-gradient-link {
+    font-size: 2.5rem;
+  }
+}
+
+.menu-modal {
+  transition: max-width 0.3s, padding 0.3s;
+  max-width: 96vw;
+  min-height: 260px;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+}
+
+@media (min-width: 768px) {
+  .menu-modal {
+    max-width: 520px;
+    min-height: 320px;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+}
+
+@keyframes gradientMenuMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.glassmorphic-header {
+  background: radial-gradient(ellipse at 60% 0%, rgba(60,0,80,0.18) 0%, rgba(10,0,20,0.22) 100%),
+              linear-gradient(120deg, rgba(77,255,240,0.08) 0%, rgba(255,46,219,0.07) 100%);
+  box-shadow: 0 2px 24px 0 rgba(128,0,255,0.09);
+  border-bottom: 1.5px solid rgba(255,255,255,0.10);
+  backdrop-filter: blur(18px) saturate(1.3);
+  -webkit-backdrop-filter: blur(18px) saturate(1.3);
+  border-radius: 0 0 2rem 2rem;
+  position: relative;
+  /* overflow: hidden; */
+}
+.glassmorphic-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  /* background-image: url('/noise.png'); */
+  opacity: 0.16;
+}
+
+@media (max-width: 640px) {
+  .glassmorphic-header {
+    border-radius: 0 0 1.2rem 1.2rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+
+.glassmorphic-modal {
+  background: radial-gradient(ellipse at 60% 0%, rgba(60,0,80,0.18) 0%, rgba(10,0,20,0.22) 100%),
+              linear-gradient(120deg, rgba(77,255,240,0.13) 0%, rgba(255,46,219,0.10) 100%);
+  box-shadow: 0 2px 24px 0 rgba(128,0,255,0.10);
+  border: 1.5px solid rgba(77,255,240,0.19);
+  backdrop-filter: blur(18px) saturate(1.2);
+  -webkit-backdrop-filter: blur(18px) saturate(1.2);
+  border-radius: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+.glassmorphic-modal::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  /* background-image: url('/noise.png'); */
+  opacity: 0.12;
+  z-index: 0;
+}
+
+.glassmorphic-company-card {
+  background: radial-gradient(ellipse at 60% 0%, rgba(60,0,80,0.15) 0%, rgba(10,0,20,0.19) 100%),
+              linear-gradient(120deg, rgba(77,255,240,0.09) 0%, rgba(255,46,219,0.08) 100%);
+  box-shadow: 0 2px 18px 0 rgba(128,0,255,0.09);
+  border: 2px solid rgba(77,255,240,0.16);
+  backdrop-filter: blur(14px) saturate(1.1);
+  -webkit-backdrop-filter: blur(14px) saturate(1.1);
+  border-radius: 1.2rem;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.2s, border 0.2s;
+}
+.glassmorphic-company-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  /* background-image: url('/noise.png'); */
+  opacity: 0.10;
+  z-index: 0;
+}
+
+.glassmorphic-article-card {
+  background: rgba(20,20,30,0.18);
+  background: radial-gradient(ellipse at 60% 0%, rgba(60,0,80,0.07) 0%, rgba(10,0,20,0.08) 100%),
+              linear-gradient(120deg, rgba(77,255,240,0.04) 0%, rgba(255,46,219,0.03) 100%),
+              rgba(20,20,30,0.18);
+  box-shadow: 0 2px 24px 0 rgba(128,0,255,0.09);
+  border: 1.5px solid rgba(255,255,255,0.10);
+  backdrop-filter: blur(18px) saturate(1.3);
+  -webkit-backdrop-filter: blur(18px) saturate(1.3);
+  border-radius: 2rem;
+  position: relative;
+  overflow: visible;
+}
+.glassmorphic-article-card::before {
+  content: "";
+  position: absolute;
+  inset: -24px;
+  z-index: 0;
+  pointer-events: none;
+  border-radius: 2.5rem;
+  background: radial-gradient(circle at 60% 40%, rgba(0,255,255,0.45) 0%, rgba(255,0,255,0.32) 60%, rgba(255,255,255,0.12) 100%);
+  filter: blur(36px);
+  opacity: 0.13;
+  transition: opacity 1.4s cubic-bezier(.4,0,.2,1), background-position 2.5s cubic-bezier(.4,0,.2,1);
+  background-size: 200% 200%;
+  background-position: 30% 70%;
+}
+.glassmorphic-article-card:hover::before {
+  opacity: 0.18;
+  background-position: 70% 30%;
+}
+.glassmorphic-article-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s, background-position 1.2s cubic-bezier(.4,0,.2,1);
+  background: linear-gradient(120deg, rgba(77,255,240,0.33) 0%, rgba(255,46,219,0.23) 40%, rgba(255,255,255,0.17) 100%);
+  background-size: 200% 200%;
+  background-position: 0% 50%;
+  border-radius: inherit;
+  mix-blend-mode: lighten;
+}
+.glassmorphic-article-card:hover::after {
+  opacity: 1;
+  background-position: 100% 50%;
+}

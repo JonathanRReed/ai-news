@@ -1,0 +1,18 @@
+---
+const { activeCategory = 'All', onCategoryChange } = Astro.props;
+const categories = ['All', 'Research', 'Models', 'Products'];
+---
+<div class="flex gap-4 mb-6">
+  {categories.map(cat => (
+    <button
+      class={`px-6 py-2 rounded-full font-semibold border transition-all duration-150 text-base focus:outline-none 
+        ${activeCategory === cat
+          ? 'bg-cyan text-black shadow-[0_0_16px_4px_rgba(77,255,240,0.6)] border-cyan/60'
+          : 'bg-oled text-cyan border-cyan/40 hover:bg-magenta hover:text-white hover:border-magenta/60'}`}
+      onClick={() => onCategoryChange && onCategoryChange(cat)}
+      aria-pressed={activeCategory === cat}
+    >
+      {cat}
+    </button>
+  ))}
+</div>

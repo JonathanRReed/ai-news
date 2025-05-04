@@ -1,0 +1,67 @@
+---
+const { article, isFirst = false } = Astro.props;
+const companyIcons = {
+  'Meta AI': '/logos/meta.svg',
+  'OpenAI': '/logos/openai.svg',
+  'Anthropic': '/logos/anthropic.svg',
+  'Google DeepMind': '/logos/deepmind.svg',
+  'Mistral AI': '/logos/mistral.svg',
+  'Hugging Face': '/logos/huggingface.svg',
+  'xAI': '/logos/xai.svg',
+  'DeepSeek': '/logos/deepseek.svg',
+};
+---
+<article class="glassmorphic-article-card article-card-hoverable animated-gradient p-6 mb-8 transition-shadow transition-colors duration-700 bg-transparent" >
+  <div style="position:relative; z-index:3;">
+    <div class="flex items-center gap-2 mb-2">
+      {(() => {
+        // Explicit logo mapping for every provider
+        const logoMap = {
+          'OpenAI': '/logos/OpenAI_logo.svg',
+          'Meta AI': '/logos/Meta_logo.svg',
+          'Anthropic': '/logos/Anthropic_logo.svg',
+          'Google DeepMind': '/logos/DeepMind_logo.svg',
+          'Mistral AI': '/logos/Mistral_logo.svg',
+          'Hugging Face': '/logos/Hugging_Face_logo.svg',
+          'xAI': '/logos/Xai_logo.svg',
+        };
+        const logoPath = logoMap[article.company];
+        return logoPath ? (
+          <span class="w-7 h-7 rounded-full bg-gradient-to-br from-slate-400/90 via-slate-600/80 via-60% via-fuchsia-300/20 to-indigo-700/60 ring-2 ring-cyan-200 shadow-[0_0_12px_2px_rgba(77,255,240,0.08)] mr-2 flex items-center justify-center">
+            <img src={logoPath} alt={article.company + ' logo'} class="w-5 h-5 rounded-full" loading="lazy" onError={(e) => { e.target.style.display = 'none'; }} />
+          </span>
+        ) : null;
+      })()}
+      <span class="text-cyan font-semibold text-base">{article.company}</span>
+      <span class="text-white/60 text-sm ml-2">{new Date(article.published_at).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })}</span>
+    </div>
+    <h2 class="text-lg font-bold text-white m-0">
+      <a href={article.url} target="_blank" rel="noopener noreferrer" class="hover:text-cyan underline">
+        {article.title}
+      </a>
+    </h2>
+    {article.source_type && (
+      <span class="ml-auto px-3 py-1 rounded-full bg-magenta/20 text-magenta text-xs font-semibold">
+        {article.source_type}
+      </span>
+    )}
+    <p class="text-sm text-white/80 mb-2">{article.summary}</p>
+    <div class="flex items-center justify-between text-xs text-white/60 mt-4">
+      <button class="absolute top-4 right-4 text-white/40 hover:text-magenta transition-colors" aria-label="Dismiss">
+        <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+  </div>
+</article>
+<style>
+.animated-gradient {
+  background: linear-gradient(120deg, #090a1acc 0%, rgba(255,0,200,0.03) 50%, rgba(77,255,240,0.03) 100%);
+  background-size: 200% 200%;
+  animation: gradientMove 12s ease-in-out infinite;
+}
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+</style>

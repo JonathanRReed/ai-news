@@ -1,0 +1,29 @@
+{
+  "name": "ai-news-hub",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx,.astro"
+  },
+  "dependencies": {
+    "@astrojs/react": "^3.0.0",
+    "@supabase/supabase-js": "^2.39.7",
+    "@tanstack/react-query": "^5.28.5",
+    "astro": "^5.7.10",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-transition-group": "^4.4.5"
+  },
+  "devDependencies": {
+    "@astrojs/tailwind": "^5.0.0",
+    "autoprefixer": "^10.4.0",
+    "eslint": "^8.56.0",
+    "postcss": "^8.4.0",
+    "tailwindcss": "^3.4.3",
+    "typescript": "^5.4.0"
+  }
+}
