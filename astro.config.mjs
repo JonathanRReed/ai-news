@@ -5,5 +5,5 @@ import react from "@astrojs/react";
 export default defineConfig({
   integrations: [tailwind(), react()],
   output: "static",
-  site: "https://your-site-url.com"
+  site: "https://ai-news.helloworldfirm.com"
 });
