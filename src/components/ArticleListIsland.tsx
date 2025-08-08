@@ -1,8 +1,18 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useArticlesContext } from "../hooks/useArticlesContext.js";
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { fetchArticlesPage } from "../hooks/fetchArticlesPage.js";
 
-function ArticleCard({ article }: { article: any }) {
+function getDomain(url: string): string {
+  try {
+    const u = new URL(url);
+    return u.hostname.replace(/^www\./, "");
+  } catch {
+    return "";
+  }
+}
+
+function ArticleCard({ article, density = 'comfortable' }: { article: any, density?: 'comfortable'|'compact' }) {
   // Explicit logo mapping for every provider
   const logoMap: Record<string, string> = {
     'OpenAI': '/logos/OpenAI_logo.svg',
@@ -14,8 +24,12 @@ function ArticleCard({ article }: { article: any }) {
     'xAI': '/logos/Xai_logo.svg',
   };
   const logoPath = logoMap[article.company];
+  const pad = density === 'compact' ? 'p-4' : 'p-6';
+  const gap = density === 'compact' ? 'gap-1' : 'gap-2';
+  const title = density === 'compact' ? 'text-base' : 'text-lg';
+  const meta = density === 'compact' ? 'text-xs' : 'text-sm';
   return (
-    <div className="glassmorphic-article-card animated-gradient article-card-hoverable p-6 mb-8 transition-all">
+    <div className={`glassmorphic-article-card animated-gradient article-card-hoverable ${pad} mb-6 transition-all`}>
       <div className="flex items-center gap-2 mb-2">
         {logoPath && (
           <span className="w-7 h-7 rounded-full bg-gradient-to-br from-slate-400/90 via-fuchsia-300/20 to-indigo-700/60 ring-2 ring-cyan-200 shadow-[0_0_12px_2px_rgba(77,255,240,0.08)] mr-2 flex items-center justify-center">
@@ -25,21 +39,24 @@ function ArticleCard({ article }: { article: any }) {
         <span className="font-bold text-cyan text-sm">{article.company}</span>
         <span className="text-xs text-white/60 ml-2">{new Date(article.published_at).toLocaleDateString()}</span>
       </div>
-      <h2 className="text-lg font-bold text-white mb-1">
+      <h2 className={`${title} font-bold text-white mb-1`}>
         <a href={article.url} target="_blank" rel="noopener noreferrer" className="hover:text-cyan underline">
           {article.title}
         </a>
       </h2>
-      <p className="text-sm text-white/80 mb-2">{article.summary || article.content}</p>
-      <div className="flex items-center gap-2 text-xs text-white/50">
-        <span>Source: {article.source_type}</span>
+      <div className={`flex items-center ${gap} ${meta} text-white/60 mb-2`}>
+        {getDomain(article.url) && (
+          <span className="px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-white/70">{getDomain(article.url)}</span>
+        )}
+        {article.source_type ? <span>• {article.source_type}</span> : null}
       </div>
+      <p className={`${meta} text-white/80`}>{article.summary || article.content}</p>
     </div>
   );
 }
 
-export default function ArticleListIsland() {
-  const { data, isFetching, error, fetchNextPage, hasNextPage } = useArticlesContext();
+export default function ArticleListIsland({ density = 'comfortable' }: { density?: 'comfortable'|'compact' }) {
+  const { data, isFetching, error, fetchNextPage, hasNextPage, refetch, filters } = useArticlesContext();
   // Merge, deduplicate by ID, and sort articles newest-to-oldest
   const articles = Array.isArray(data?.pages)
     ? (() => {
@@ -66,9 +83,11 @@ export default function ArticleListIsland() {
   const [visibleCount, setVisibleCount] = useState(20);
   const [pendingIncrease, setPendingIncrease] = useState(false);
   const [justLoadedIds, setJustLoadedIds] = useState<string[]>([]);
+  const [newCount, setNewCount] = useState<number>(0);
   const buttonRef = useRef<HTMLButtonElement | null>(null);
   const prevArticlesLength = useRef(0);
   const prevArticleIds = useRef<Set<string>>(new Set());
+  const pollTimer = useRef<number | null>(null);
 
   useEffect(() => {
     setVisibleCount(20);
@@ -92,6 +111,7 @@ export default function ArticleListIsland() {
 
   // Only show the top N (visibleCount) articles, always from the newest
   const visibleArticles = articles.slice(0, visibleCount);
+  const latestVisibleTs = visibleArticles.length > 0 ? new Date(visibleArticles[0].published_at).getTime() : 0;
 
   if (error) {
     return <div className="text-magenta-200 text-center mt-8">Error loading articles.</div>;
@@ -99,6 +119,19 @@ export default function ArticleListIsland() {
   if (!isFetching && visibleArticles.length === 0) {
     return <div className="text-white/70 text-center mt-8">No articles found.</div>;
   }
+
+  // Skeletons for initial load
+  const skeletons = (
+    <>
+      {[...Array(6)].map((_, i) => (
+        <div key={i} className="glassmorphic-article-card mb-6 p-6 animate-pulse bg-white/5 rounded-xl">
+          <div className="h-4 w-40 bg-white/10 rounded mb-3"></div>
+          <div className="h-6 w-3/4 bg-white/10 rounded mb-2"></div>
+          <div className="h-4 w-2/3 bg-white/10 rounded"></div>
+        </div>
+      ))}
+    </>
+  );
 
   const handleLoadMore = async () => {
     if (visibleCount + 20 > articles.length && hasNextPage) {
@@ -109,8 +142,34 @@ export default function ArticleListIsland() {
     }
   };
 
+  // Poll for newer items periodically and update newCount
+  useEffect(() => {
+    const checkForNew = async () => {
+      try {
+        const firstPage = await fetchArticlesPage(filters, 0);
+        const page = Array.isArray(firstPage.data) ? firstPage.data : [];
+        if (!page.length || !latestVisibleTs) { setNewCount(0); return; }
+        const count = page.filter((a: any) => new Date(a.published_at).getTime() > latestVisibleTs).length;
+        setNewCount(count);
+      } catch (e) {
+        // silent fail
+      }
+    };
+    // initial check and interval
+    checkForNew();
+    if (pollTimer.current) window.clearInterval(pollTimer.current);
+    // poll every 60s
+    pollTimer.current = window.setInterval(checkForNew, 60_000) as unknown as number;
+    return () => {
+      if (pollTimer.current) window.clearInterval(pollTimer.current);
+    };
+  }, [filters, latestVisibleTs]);
+
+  // Removed external refreshSignal behavior per request
+
   return (
     <>
+      {/* Refresh button removed per request */}
       <TransitionGroup component={null}>
         {visibleArticles.map((article: any) => (
           <CSSTransition
@@ -120,11 +179,17 @@ export default function ArticleListIsland() {
             appear={false}
           >
             <div className={justLoadedIds.includes(article.id) ? 'article-fade-in-enter-active' : ''}>
-              <ArticleCard article={article} />
+              <ArticleCard article={article} density={density} />
             </div>
           </CSSTransition>
         ))}
       </TransitionGroup>
+      {isFetching && visibleArticles.length === 0 ? skeletons : null}
+      {newCount > 0 && (
+        <div className="fixed top-20 left-1/2 -translate-x-1/2 z-40 glassmorphic-article-card px-4 py-2 rounded-full border border-cyan/30 bg-white/10 backdrop-blur-md shadow-md">
+          <span className="text-sm text-white/90">{newCount} new {newCount === 1 ? 'story' : 'stories'} available</span>
+        </div>
+      )}
       <div className="flex justify-center mt-8">
         <button
           ref={buttonRef}
@@ -143,6 +208,15 @@ export default function ArticleListIsland() {
           Load 20 More
         </button>
       </div>
+      {visibleCount > 20 && (
+        <button
+          className="fixed bottom-6 right-6 z-40 rounded-full bg-white/15 text-white border border-white/20 px-4 py-2 shadow-lg backdrop-blur-md hover:bg-white/25 transition"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          aria-label="Back to top"
+        >
+          ↑ Top
+        </button>
+      )}
     </>
   );
 }

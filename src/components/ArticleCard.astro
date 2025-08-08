@@ -1,17 +1,7 @@
 ---
 const { article, isFirst = false } = Astro.props;
-const companyIcons = {
-  'Meta AI': '/logos/meta.svg',
-  'OpenAI': '/logos/openai.svg',
-  'Anthropic': '/logos/anthropic.svg',
-  'Google DeepMind': '/logos/deepmind.svg',
-  'Mistral AI': '/logos/mistral.svg',
-  'Hugging Face': '/logos/huggingface.svg',
-  'xAI': '/logos/xai.svg',
-  'DeepSeek': '/logos/deepseek.svg',
-};
 ---
-<article class="glassmorphic-article-card article-card-hoverable animated-gradient p-6 mb-8 transition-shadow transition-colors duration-700 bg-transparent" >
+<article class="glassmorphic-article-card article-card-hoverable animated-gradient p-6 mb-8 transition-colors duration-700 bg-transparent" >
   <div style="position:relative; z-index:3;">
     <div class="flex items-center gap-2 mb-2">
       {(() => {
@@ -27,8 +17,8 @@ const companyIcons = {
         };
         const logoPath = logoMap[article.company];
         return logoPath ? (
-          <span class="w-7 h-7 rounded-full bg-gradient-to-br from-slate-400/90 via-slate-600/80 via-60% via-fuchsia-300/20 to-indigo-700/60 ring-2 ring-cyan-200 shadow-[0_0_12px_2px_rgba(77,255,240,0.08)] mr-2 flex items-center justify-center">
-            <img src={logoPath} alt={article.company + ' logo'} class="w-5 h-5 rounded-full" loading="lazy" onError={(e) => { e.target.style.display = 'none'; }} />
+          <span class="w-7 h-7 rounded-full bg-gradient-to-br from-slate-400/90 via-fuchsia-300/20 to-indigo-700/60 ring-2 ring-cyan-200 shadow-[0_0_12px_2px_rgba(77,255,240,0.08)] mr-2 flex items-center justify-center">
+            <img src={logoPath} alt={article.company + ' logo'} class="w-5 h-5 rounded-full" loading="lazy" onerror="this.style.display='none'" />
           </span>
         ) : null;
       })()}

@@ -11,10 +11,10 @@ interface Article {
   url: string;
 }
 
-export const useArticles = (filters: { category?: string; company?: string }) => {
+export const useArticles = (filters: { category?: string; company?: string; q?: string }) => {
   const queryKey = useMemo<[string, string]>(
     () => ['articles', JSON.stringify(filters)],
-    [filters.company, filters.category]
+    [filters.company, filters.category, filters.q]
   );
   return useInfiniteQuery<{ data: Article[]; next?: number }, Error, InfiniteData<{ data: Article[]; next?: number }>, [string, string], number>({
     queryKey,
@@ -30,6 +30,11 @@ export const useArticles = (filters: { category?: string; company?: string }) =>
         q = q.eq('source_type', filters.category);
       if (filters.company && filters.company !== 'All')
         q = q.eq('company', filters.company);
+      if (filters.q && filters.q.trim() !== '') {
+        const pattern = `%${filters.q.trim()}%`;
+        // Search in title or summary (case-insensitive)
+        q = q.or(`title.ilike.${pattern},summary.ilike.${pattern}`);
+      }
 
       const { data, error } = await q;
       if (error) throw error;

@@ -1,19 +1,56 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect, useCallback } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ArticlesProvider } from "../hooks/useArticlesContext.js";
 import ArticleListIsland from "./ArticleListIsland.js";
 import FiltersIsland from "./FiltersIsland.js";
+import { fetchArticlesPage } from "../hooks/fetchArticlesPage.js";
 
 const queryClient = new QueryClient();
 
 export default function ArticlesIslandWrapper() {
-  const [filters, setFilters] = useState({ company: "All", category: "All" });
-  const stableFilters = useMemo(() => filters, [filters.company, filters.category]);
+  const [filters, setFilters] = useState({ company: "All", category: "All", q: "" });
+  const [density, setDensity] = useState<"comfortable" | "compact">("comfortable");
+
+  // Load saved density preference
+  useEffect(() => {
+    const saved = typeof window !== 'undefined' ? window.localStorage.getItem('ai-news-density') : null;
+    if (saved === 'compact' || saved === 'comfortable') setDensity(saved);
+  }, []);
+
+  // Persist density preference
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.localStorage.setItem('ai-news-density', density);
+    }
+  }, [density]);
+
+  const stableFilters = useMemo(() => filters, [filters.company, filters.category, filters.q]);
+
+  const handlePrefetch = useCallback(async (next: { company?: string; category?: string; q?: string }) => {
+    const merged = { ...stableFilters, ...next };
+    const key: [string, string] = ['articles', JSON.stringify(merged)];
+    await queryClient.prefetchInfiniteQuery({
+      queryKey: key,
+      initialPageParam: 0,
+      queryFn: ({ pageParam = 0 }) => fetchArticlesPage(merged, pageParam),
+      getNextPageParam: (lastPage) => lastPage.next,
+    });
+  }, [stableFilters]);
+
+  // Removed global refresh callback per request
   return (
     <QueryClientProvider client={queryClient}>
       <ArticlesProvider filters={stableFilters}>
-        <FiltersIsland filters={filters} setFilters={setFilters} />
-        <ArticleListIsland />
+        <div className="flex flex-col gap-3 mb-4">
+          <FiltersIsland
+            filters={filters}
+            setFilters={setFilters}
+            onPrefetch={handlePrefetch}
+            density={density}
+            setDensity={setDensity}
+          />
+        </div>
+        <ArticleListIsland density={density} />
       </ArticlesProvider>
     </QueryClientProvider>
   );
