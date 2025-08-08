@@ -9,7 +9,6 @@ const categories = ['All', 'Research', 'Models', 'Products'];
         ${activeCategory === cat
           ? 'bg-cyan text-black shadow-[0_0_16px_4px_rgba(77,255,240,0.6)] border-cyan/60'
           : 'bg-oled text-cyan border-cyan/40 hover:bg-magenta hover:text-white hover:border-magenta/60'}`}
-      onClick={() => onCategoryChange && onCategoryChange(cat)}
       aria-pressed={activeCategory === cat}
     >
       {cat}

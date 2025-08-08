@@ -1,5 +1,6 @@
-import React, { useMemo } from 'react';
-import { useInfiniteQuery, InfiniteData } from '@tanstack/react-query';
+import { useMemo } from 'react';
+import { useInfiniteQuery } from '@tanstack/react-query';
+import type { InfiniteData } from '@tanstack/react-query';
 import { supabase } from '../lib/supabaseClient.js';
 
 export const PAGE_SIZE = 20;

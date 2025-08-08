@@ -1,8 +1,11 @@
 {
+  "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
     "module": "nodenext",
     "moduleResolution": "nodenext",
     "jsx": "react-jsx",
+    "types": ["astro/client", "astro/astro-jsx"],
+    "plugins": [{ "name": "@astrojs/ts-plugin" }],
     "baseUrl": ".",
     "paths": {
       "@components/*": ["src/components/*"],
@@ -10,6 +13,6 @@
       "@hooks/*": ["src/hooks/*"]
     }
   },
-  "include": ["src"],
+  "include": ["src", "src/env.d.ts"],
   "exclude": ["node_modules"]
 }
