@@ -28,6 +28,13 @@
   }
 }
 
+/* Utility: content-visibility for large lists */
+.cv-auto {
+  content-visibility: auto;
+  /* Reserve space to prevent layout jumps before paint */
+  contain-intrinsic-size: 1200px;
+}
+
 .article-fade-in-enter {
   opacity: 0;
   transform: translateY(28px) scale(0.98);
