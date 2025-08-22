@@ -52,3 +52,24 @@
   box-shadow: 0 2px 10px 0 rgba(77,255,240,0.10), 0 1px 6px 0 rgba(255,0,200,0.09);
   z-index: 2;
 }
+
+/* Respect reduced motion preferences to lower main-thread work */
+@media (prefers-reduced-motion: reduce) {
+  .animated-gradient {
+    animation: none !important;
+    background-position: 50% 50% !important;
+  }
+  .article-fade-in,
+  .article-fade-in-enter-active,
+  .article-fade-in-exit,
+  .article-fade-in-exit-active {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+  .article-card-hoverable,
+  .glassmorphic-article-card {
+    transition: none !important;
+  }
+}

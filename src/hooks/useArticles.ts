@@ -18,7 +18,7 @@ export const useArticles = (filters: { category?: string; company?: string; q?: 
     queryFn: async ({ pageParam = 0 }) => {
       let q = supabase
         .from('ai_company_news')
-        .select('*')
+        .select('id, company, published_at, url, title, summary, source_type, content')
         .order('published_at', { ascending: false })
         .range(pageParam, pageParam + PAGE_SIZE - 1);
 
@@ -35,15 +35,15 @@ export const useArticles = (filters: { category?: string; company?: string; q?: 
       const { data, error } = await q;
       if (error) throw error;
       const articles = Array.isArray(data) ? data : [];
-      console.log('[useArticles.queryFn] returned articles:', articles);
       const next = articles.length === PAGE_SIZE ? pageParam + PAGE_SIZE : undefined;
-      console.log('[useArticles.queryFn]', { pageParam, returned: articles.length, next });
       return { data: articles as Article[], next } satisfies PageData;
     },
     getNextPageParam: (last) => {
-      console.log('[useArticles.getNextPageParam]', { last });
       return last.next;
     },
-    staleTime: 60_000
+    staleTime: 60_000,
+    gcTime: 5 * 60_000,
+    refetchOnWindowFocus: false,
+    retry: 1
   });
 };

@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef, useMemo } from "react";
 import { useArticlesContext } from "../hooks/useArticlesContext.js";
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { fetchArticlesPage } from "../hooks/fetchArticlesPage.js";
 import type { Article, PageData } from "../types/article.js";
 
@@ -90,15 +89,7 @@ export default function ArticleListIsland({ density = 'comfortable' }: { density
   const prevArticlesLength = useRef(0);
   const prevArticleIds = useRef<Set<string>>(new Set());
   const pollTimer = useRef<number | null>(null);
-  const nodeRefs = useRef(new Map<string, React.RefObject<HTMLDivElement>>());
-  const getNodeRef = (id: string) => {
-    let ref = nodeRefs.current.get(id);
-    if (!ref) {
-      ref = React.createRef<HTMLDivElement>();
-      nodeRefs.current.set(id, ref);
-    }
-    return ref;
-  };
+  // No node refs needed after removing react-transition-group
 
   useEffect(() => {
     setVisibleCount(20);
@@ -157,7 +148,7 @@ export default function ArticleListIsland({ density = 'comfortable' }: { density
   // Skeletons for initial load
   const skeletons = (
     <>
-      {[...Array(6)].map((_, i) => (
+      {[...Array(4)].map((_, i) => (
         <div key={i} className="glassmorphic-article-card mb-6 p-6 animate-pulse bg-white/5 rounded-xl">
           <div className="h-4 w-40 bg-white/10 rounded mb-3"></div>
           <div className="h-6 w-3/4 bg-white/10 rounded mb-2"></div>
@@ -174,24 +165,11 @@ export default function ArticleListIsland({ density = 'comfortable' }: { density
   return (
     <>
       {/* Refresh button removed per request */}
-      <TransitionGroup component={null}>
-        {visibleArticles.map((article: Article) => {
-          const nodeRef = getNodeRef(article.id);
-          return (
-            <CSSTransition
-              key={article.id}
-              nodeRef={nodeRef}
-              timeout={900}
-              classNames="article-fade-in"
-              appear={false}
-            >
-              <div ref={nodeRef} className={justLoadedIds.includes(article.id) ? 'article-fade-in-enter-active' : ''}>
-                <ArticleCard article={article} density={density} />
-              </div>
-            </CSSTransition>
-          );
-        })}
-      </TransitionGroup>
+      {visibleArticles.map((article: Article) => (
+        <div key={article.id} className={justLoadedIds.includes(article.id) ? 'article-fade-in-enter-active' : ''}>
+          <ArticleCard article={article} density={density} />
+        </div>
+      ))}
       {isFetching && visibleArticles.length === 0 ? skeletons : null}
       {newCount > 0 && (
         <div className="fixed top-20 left-1/2 -translate-x-1/2 z-40 glassmorphic-article-card px-4 py-2 rounded-full border border-cyan/30 bg-white/10 backdrop-blur-md shadow-md">

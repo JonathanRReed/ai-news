@@ -10,8 +10,12 @@ import HamburgerMenu from "../components/HamburgerMenu";
     <title>AI News</title>
     <link rel="icon" type="image/svg+xml" href="/logos/favicon.svg" />
     <link rel="manifest" href="/site.webmanifest" />
-    <link rel="stylesheet" href="/global-font.css" />
-    <link rel="stylesheet" href="/global-animated-gradient.css" />
+    <link rel="preload" href="/font/NebulaSans-Book.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/font/NebulaSans-BoldItalic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/global-font.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/global-font.css"></noscript>
+    <link rel="preload" href="/global-animated-gradient.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/global-animated-gradient.css"></noscript>
     <meta name="description" content="Ai-news curates & aggregates the latest news from top AI organizations including Meta AI, OpenAI, Anthropic, Google DeepMind, Mistral AI, Hugging Face, and XAI. Filter by company and stay up-to-date on artificial intelligence developments." />
     <meta property="og:title" content="Ai-news: Latest AI News Aggregator" />
     <meta property="og:description" content="Curated news from the world’s leading AI labs and companies. Fast, beautiful, always up-to-date." />
@@ -29,7 +33,7 @@ import HamburgerMenu from "../components/HamburgerMenu";
       <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight select-none text-center sm:text-left">
         <span class="animated-gradient-logo">Ai-news</span>
       </h1>
-      <HamburgerMenu client:load />
+      <HamburgerMenu client:idle />
     </header>
     <main class="container max-w-lg sm:max-w-2xl md:max-w-3xl mx-auto px-2 sm:px-6 md:px-8 py-2">
       <section id="home" class="min-h-[20vh] mb-4">
@@ -37,7 +41,7 @@ import HamburgerMenu from "../components/HamburgerMenu";
         <p class="text-base sm:text-lg text-white/80">A collection of the latest & most important news from top AI firms, companies, & research labs.</p>
       </section>
       <section id="articles" class="mt-4 space-y-8">
-        <ArticlesIslandWrapper client:load />
+        <ArticlesIslandWrapper client:visible />
       </section>
     </main>
     <Footer />

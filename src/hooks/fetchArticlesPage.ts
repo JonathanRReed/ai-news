@@ -12,7 +12,7 @@ export interface ArticleFilters {
 export async function fetchArticlesPage(filters: ArticleFilters, pageParam = 0): Promise<PageData> {
   let q = supabase
     .from('ai_company_news')
-    .select('*')
+    .select('id, company, published_at, url, title, summary, source_type, content')
     .order('published_at', { ascending: false })
     .range(pageParam, pageParam + PAGE_SIZE - 1);
 

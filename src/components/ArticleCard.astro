@@ -20,7 +20,7 @@ const logoPath = (logoMap as Record<string, string>)[company];
     <div class="flex items-center gap-2 mb-2">
       {logoPath ? (
         <span class="w-7 h-7 rounded-full bg-gradient-to-br from-slate-400/90 via-fuchsia-300/20 to-indigo-700/60 ring-2 ring-cyan-200 shadow-[0_0_12px_2px_rgba(77,255,240,0.08)] mr-2 flex items-center justify-center">
-          <img src={logoPath} alt={article.company + ' logo'} class="w-5 h-5 rounded-full" loading="lazy" onerror="this.style.display='none'" />
+          <img src={logoPath} alt={article.company + ' logo'} class="w-5 h-5 rounded-full" width="20" height="20" decoding="async" loading="lazy" onerror="this.style.display='none'" />
         </span>
       ) : null}
       <span class="text-cyan font-semibold text-base">{article.company}</span>
