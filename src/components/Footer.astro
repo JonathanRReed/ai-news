@@ -1,24 +1,24 @@
-<footer class="flex w-full items-center justify-center px-4 md:px-6 py-8 bg-oled/80 text-white border-t border-cyan/10">
+<footer class="flex w-full items-center justify-center px-4 md:px-6 py-8 bg-bg-0/80 text-text-1 border-t border-brand/10">
   <div class="footer-row flex flex-row flex-wrap items-center justify-between gap-6 w-full max-w-6xl">
     <div class="flex flex-col items-start gap-1 flex-1 min-w-[220px]">
-      <span class="text-2xl font-semibold text-purple-200 flex items-center gap-3">
+      <span class="text-2xl font-semibold text-text-2 flex items-center gap-3">
         <img src="/logo.avif" alt="Company Logo Small" width="40" height="40" class="rounded-md inline-block align-middle" loading="lazy" />
         A product of
       </span>
-      <span class="text-2xl font-bold text-purple-300 mt-1 lg:mt-0">Hello.World Consulting</span>
-      <span class="footer-card-product-author text-lg italic text-purple-200 mt-2 lg:mt-4">Made by Jonathan Reed</span>
+      <span class="text-2xl font-bold text-brand mt-1 lg:mt-0">Hello.World Consulting</span>
+      <span class="footer-card-product-author text-lg italic text-text-2 mt-2 lg:mt-4">Made by Jonathan Reed</span>
     </div>
     <div class="flex flex-col items-start gap-3 mt-2 flex-1 min-w-[240px]">
-      <a href="https://helloworldfirm.com/" class="footer-card-link-text flex items-center gap-2 text-purple-200 hover:text-cyan-400 hover:drop-shadow-[0_0_8px_rgba(0,255,255,0.45)] hover:underline hover:scale-105 transition-all duration-200 text-lg font-medium" target="_blank" rel="noopener noreferrer">
+      <a href="https://helloworldfirm.com/" class="footer-card-link-text flex items-center gap-2 text-text-2 hover:text-brand hover:drop-shadow-lg hover:underline hover:scale-105 transition-all duration-200 text-lg font-medium" target="_blank" rel="noopener noreferrer">
         <img src="/logo.avif" alt="Company Logo Small" width="28" height="28" class="rounded-md" loading="lazy" />
         helloworldfirm.com
       </a>
-      <a href="https://JonathanRReed.com/" class="footer-card-link-text flex items-center gap-2 text-purple-200 hover:text-magenta-400 hover:drop-shadow-[0_0_8px_rgba(255,0,200,0.35)] hover:underline hover:scale-105 transition-all duration-200 text-lg font-medium" target="_blank" rel="noopener noreferrer">
+      <a href="https://JonathanRReed.com/" class="footer-card-link-text flex items-center gap-2 text-text-2 hover:text-brand-hover hover:drop-shadow-lg hover:underline hover:scale-105 transition-all duration-200 text-lg font-medium" target="_blank" rel="noopener noreferrer">
         <img src="/jonathan.avif" alt="Jonathan Reed" width="28" height="28" class="rounded-full" loading="lazy" />
         JonathanRReed.com
       </a>
     </div>
-    <span class="footer-card-copyright-center text-sm text-purple-200 mt-4 md:mt-0 md:text-right flex-1 min-w-[180px]">{new Date().getFullYear()} &copy; All Rights Reserved</span>
+    <span class="footer-card-copyright-center text-sm text-text-2 mt-4 md:mt-0 md:text-right flex-1 min-w-[180px]">{new Date().getFullYear()} &copy; All Rights Reserved</span>
   </div>
   <div class="footer-share flex flex-wrap items-center justify-center gap-3 mt-6">
     <button class="footer-share-btn footer-share-link group" title="Share on X (Twitter)" aria-label="Share on X (Twitter)" onclick="window.open('https://twitter.com/intent/tweet?url='+encodeURIComponent(window.location.href)+'&text='+encodeURIComponent(document.title),'_blank','noopener,noreferrer');">
@@ -46,7 +46,7 @@
         <img src="/logos/BlueSky_logo.svg" alt="Bluesky" width="24" height="24" loading="lazy" />
       </span>
     </button>
-    <button class="footer-share-btn footer-share-link group" title="Copy link" aria-label="Copy link" onclick="navigator.clipboard.writeText(window.location.href);this.innerHTML='<span style=\'color:#4DFFF0;\'>Copied!</span>';setTimeout(()=>{this.innerHTML='<span class=\'footer-share-icon\'><img src=\'/logos/Share_Icon.svg\' alt=\'Share Icon\' width=\'24\' height=\'24\' loading=\'lazy\' /></span>'},1200);">
+    <button class="footer-share-btn footer-share-link group" title="Copy link" aria-label="Copy link" onclick="navigator.clipboard.writeText(window.location.href);this.innerHTML='<span style=\'color: oklch(0.80 0.12 205);\'>Copied!</span>';setTimeout(()=>{this.innerHTML='<span class=\'footer-share-icon\'><img src=\'/logos/Share_Icon.svg\' alt=\'Share Icon\' width=\'24\' height=\'24\' loading=\'lazy\' /></span>'},1200);">
       <span class="footer-share-icon">
         <img src="/logos/Share_Icon.svg" alt="Copy Link" width="24" height="24" loading="lazy" />
       </span>
@@ -55,11 +55,11 @@
 </footer>
 <style>
 .footer-card.centered-footer {
-  box-shadow: 0 2px 24px 0 rgba(128,0,255,0.10);
+  box-shadow: 0 2px 24px 0 oklch(0.80 0.12 220 / 0.10);
   border-radius: 32px;
   margin: 56px auto 36px auto;
   max-width: 420px;
-  background: radial-gradient(ellipse at center, rgba(60,0,80,0.70) 0%, rgba(10,0,20,0.82) 100%);
+  background: radial-gradient(ellipse at center, oklch(0.20 0.04 260 / 0.70) 0%, oklch(0.20 0.04 260 / 0.82) 100%);
   transition: max-width 0.3s, padding 0.3s;
 }
 .footer-card-content-center {
@@ -86,8 +86,7 @@
   }
 }
 .footer-card-link-text:hover {
-  /* fallback for magenta link */
-  color: var(--tw-prose-links, #e100ff);
+  color: var(--tw-prose-links, oklch(0.80 0.12 205));
 }
 .footer-share-link {
   transition: color 0.2s, box-shadow 0.3s, transform 0.3s, text-shadow 0.3s;
@@ -95,7 +94,7 @@
 .footer-share-link:hover,
 .footer-share-link:focus {
   animation: footer-link-glow 1.2s cubic-bezier(0.4,0.2,0.2,1) both;
-  color: var(--tw-prose-links, #e100ff);
+  color: var(--tw-prose-links, oklch(0.80 0.12 205));
 }
 @keyframes footer-link-glow {
   0% {
@@ -142,34 +141,34 @@
   gap: 1.1rem;
 }
 .footer-share-btn {
-  background: radial-gradient(ellipse at 60% 20%, rgba(77,255,240,0.22) 0%, rgba(255,46,219,0.10) 100%), linear-gradient(120deg, rgba(77,255,240,0.13) 0%, rgba(255,46,219,0.10) 100%);
-  border: 1.5px solid rgba(77,255,240,0.12);
+  background: radial-gradient(ellipse at 60% 20%, oklch(0.80 0.12 205 / 0.22) 0%, oklch(0.84 0.13 230 / 0.10) 100%), linear-gradient(120deg, oklch(0.80 0.12 205 / 0.13) 0%, oklch(0.84 0.13 230 / 0.10) 100%);
+  border: 1.5px solid oklch(0.80 0.12 205 / 0.12);
   border-radius: 1.1rem;
   padding: 0.5rem 0.7rem;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: background 0.22s cubic-bezier(0.4,0.2,0.2,1), border 0.18s, box-shadow 0.25s, transform 0.16s cubic-bezier(0.4,0.2,0.2,1);
-  box-shadow: 0 2px 12px 0 rgba(128,0,255,0.09);
+  box-shadow: 0 2px 12px 0 oklch(0.80 0.12 220 / 0.09);
   cursor: pointer;
   outline: none;
   position: relative;
   will-change: transform, box-shadow;
 }
 .footer-share-btn:hover, .footer-share-btn:focus {
-  background: radial-gradient(ellipse at 60% 20%, rgba(77,255,240,0.33) 0%, rgba(255,46,219,0.16) 100%), linear-gradient(120deg, rgba(77,255,240,0.18) 0%, rgba(255,46,219,0.15) 100%);
-  border-color: #4DFFF0;
-  box-shadow: 0 4px 24px 0 rgba(77,255,240,0.23), 0 0px 0px 2px #4DFFF0;
+  background: radial-gradient(ellipse at 60% 20%, oklch(0.80 0.12 205 / 0.33) 0%, oklch(0.84 0.13 230 / 0.16) 100%), linear-gradient(120deg, oklch(0.80 0.12 205 / 0.18) 0%, oklch(0.84 0.13 230 / 0.15) 100%);
+  border-color: oklch(0.80 0.12 205);
+  box-shadow: 0 4px 24px 0 oklch(0.80 0.12 205 / 0.23), 0 0px 0px 2px oklch(0.80 0.12 205);
   transform: scale(1.07);
   z-index: 2;
 }
 .footer-share-btn:active {
   transform: scale(0.94);
-  box-shadow: 0 1px 8px 0 rgba(77,255,240,0.10);
+  box-shadow: 0 1px 8px 0 oklch(0.80 0.12 205 / 0.10);
 }
 .footer-share-btn:focus-visible {
-  box-shadow: 0 0 0 3px #4DFFF0cc, 0 4px 24px 0 rgba(77,255,240,0.23);
-  border-color: #4DFFF0;
+  box-shadow: 0 0 0 3px oklch(0.88 0.15 205 / 0.80), 0 4px 24px 0 oklch(0.80 0.12 205 / 0.23);
+  border-color: oklch(0.80 0.12 205);
 }
 .footer-share-btn::-moz-focus-inner {
   border: 0;

@@ -19,7 +19,13 @@ body, html {
 }
 
 .animated-gradient-logo {
-  background: linear-gradient(270deg, #34ffe5, #7e5cff, #ff2edb, #34ffe5);
+  background: linear-gradient(
+    270deg,
+    oklch(0.84 0.13 230), /* Blue */
+    oklch(0.85 0.14 180), /* Teal */
+    oklch(0.20 0.04 260), /* Navy */
+    oklch(0.84 0.13 230)
+  );
   background-size: 200% 200%;
   animation: gradientMove 8s ease-in-out infinite;
   -webkit-background-clip: text;
@@ -37,7 +43,13 @@ body, html {
 }
 
 .menu-gradient-link {
-  background: linear-gradient(270deg, #5fffd7 10%, #b6aaff 40%, #ffb6f9 60%, #5fffd7 90%);
+  background: linear-gradient(
+    270deg,
+    oklch(0.84 0.13 230) 10%, /* Blue */
+    oklch(0.85 0.14 180) 45%, /* Teal */
+    oklch(0.20 0.04 260) 70%, /* Navy */
+    oklch(0.84 0.13 230) 95%
+  );
   background-size: 200% 200%;
   animation: gradientMenuMove 14s ease-in-out infinite;
   -webkit-background-clip: text;
@@ -99,9 +111,9 @@ body, html {
 }
 
 .glassmorphic-header {
-  background: radial-gradient(ellipse at 60% 0%, rgba(60,0,80,0.18) 0%, rgba(10,0,20,0.22) 100%),
-              linear-gradient(120deg, rgba(77,255,240,0.08) 0%, rgba(255,46,219,0.07) 100%);
-  box-shadow: 0 2px 24px 0 rgba(128,0,255,0.09);
+  background: radial-gradient(ellipse at 60% 0%, oklch(0.20 0.04 260 / 0.18) 0%, oklch(0.20 0.04 260 / 0.22) 100%),
+              linear-gradient(120deg, oklch(0.80 0.12 205 / 0.08) 0%, oklch(0.84 0.13 230 / 0.07) 100%);
+  box-shadow: 0 2px 24px 0 oklch(0.80 0.12 220 / 0.09);
   border-bottom: 1.5px solid rgba(255,255,255,0.10);
   backdrop-filter: blur(18px) saturate(1.3);
   -webkit-backdrop-filter: blur(18px) saturate(1.3);
@@ -127,10 +139,10 @@ body, html {
 }
 
 .glassmorphic-modal {
-  background: radial-gradient(ellipse at 60% 0%, rgba(60,0,80,0.18) 0%, rgba(10,0,20,0.22) 100%),
-              linear-gradient(120deg, rgba(77,255,240,0.13) 0%, rgba(255,46,219,0.10) 100%);
-  box-shadow: 0 2px 24px 0 rgba(128,0,255,0.10);
-  border: 1.5px solid rgba(77,255,240,0.19);
+  background: radial-gradient(ellipse at 60% 0%, oklch(0.20 0.04 260 / 0.18) 0%, oklch(0.20 0.04 260 / 0.22) 100%),
+              linear-gradient(120deg, oklch(0.80 0.12 205 / 0.13) 0%, oklch(0.84 0.13 230 / 0.10) 100%);
+  box-shadow: 0 2px 24px 0 oklch(0.80 0.12 220 / 0.10);
+  border: 1.5px solid oklch(0.80 0.12 205 / 0.19);
   backdrop-filter: blur(18px) saturate(1.2);
   -webkit-backdrop-filter: blur(18px) saturate(1.2);
   border-radius: 2rem;
@@ -148,10 +160,10 @@ body, html {
 }
 
 .glassmorphic-company-card {
-  background: radial-gradient(ellipse at 60% 0%, rgba(60,0,80,0.15) 0%, rgba(10,0,20,0.19) 100%),
-              linear-gradient(120deg, rgba(77,255,240,0.09) 0%, rgba(255,46,219,0.08) 100%);
-  box-shadow: 0 2px 18px 0 rgba(128,0,255,0.09);
-  border: 2px solid rgba(77,255,240,0.16);
+  background: radial-gradient(ellipse at 60% 0%, oklch(0.20 0.04 260 / 0.15) 0%, oklch(0.20 0.04 260 / 0.19) 100%),
+              linear-gradient(120deg, oklch(0.80 0.12 205 / 0.09) 0%, oklch(0.85 0.14 180 / 0.08) 100%);
+  box-shadow: 0 2px 18px 0 oklch(0.80 0.12 220 / 0.09);
+  border: 2px solid oklch(0.80 0.12 205 / 0.16);
   backdrop-filter: blur(14px) saturate(1.1);
   -webkit-backdrop-filter: blur(14px) saturate(1.1);
   border-radius: 1.2rem;
@@ -171,10 +183,10 @@ body, html {
 
 .glassmorphic-article-card {
   background: rgba(20,20,30,0.18);
-  background: radial-gradient(ellipse at 60% 0%, rgba(60,0,80,0.07) 0%, rgba(10,0,20,0.08) 100%),
-              linear-gradient(120deg, rgba(77,255,240,0.04) 0%, rgba(255,46,219,0.03) 100%),
+  background: radial-gradient(ellipse at 60% 0%, oklch(0.20 0.04 260 / 0.07) 0%, oklch(0.20 0.04 260 / 0.08) 100%),
+              linear-gradient(120deg, oklch(0.80 0.12 205 / 0.04) 0%, oklch(0.84 0.13 230 / 0.03) 100%),
               rgba(20,20,30,0.18);
-  box-shadow: 0 2px 24px 0 rgba(128,0,255,0.09);
+  box-shadow: 0 2px 24px 0 oklch(0.80 0.12 220 / 0.09);
   border: 1.5px solid rgba(255,255,255,0.10);
   backdrop-filter: blur(18px) saturate(1.3);
   -webkit-backdrop-filter: blur(18px) saturate(1.3);
@@ -189,7 +201,7 @@ body, html {
   z-index: 0;
   pointer-events: none;
   border-radius: 2.5rem;
-  background: radial-gradient(circle at 60% 40%, rgba(0,255,255,0.45) 0%, rgba(255,0,255,0.32) 60%, rgba(255,255,255,0.12) 100%);
+  background: radial-gradient(circle at 60% 40%, oklch(0.80 0.12 205 / 0.45) 0%, oklch(0.84 0.13 230 / 0.32) 60%, rgba(255,255,255,0.12) 100%);
   filter: blur(36px);
   opacity: 0.13;
   transition: opacity 1.4s cubic-bezier(.4,0,.2,1), background-position 2.5s cubic-bezier(.4,0,.2,1);
@@ -208,7 +220,7 @@ body, html {
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.5s, background-position 1.2s cubic-bezier(.4,0,.2,1);
-  background: linear-gradient(120deg, rgba(77,255,240,0.33) 0%, rgba(255,46,219,0.23) 40%, rgba(255,255,255,0.17) 100%);
+  background: linear-gradient(120deg, oklch(0.80 0.12 205 / 0.33) 0%, oklch(0.84 0.13 230 / 0.23) 40%, oklch(0.86 0.11 95 / 0.17) 100%);
   background-size: 200% 200%;
   background-position: 0% 50%;
   border-radius: inherit;
