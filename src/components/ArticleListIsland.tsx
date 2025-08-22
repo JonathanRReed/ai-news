@@ -1,7 +1,8 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useMemo } from "react";
 import { useArticlesContext } from "../hooks/useArticlesContext.js";
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { fetchArticlesPage } from "../hooks/fetchArticlesPage.js";
+import type { Article, PageData } from "../types/article.js";
 
 function getDomain(url: string): string {
   try {
@@ -12,7 +13,9 @@ function getDomain(url: string): string {
   }
 }
 
-function ArticleCard({ article, density = 'comfortable' }: { article: any, density?: 'comfortable'|'compact' }) {
+// Article type imported from ../types/article
+
+function ArticleCard({ article, density = 'comfortable' }: { article: Article, density?: 'comfortable'|'compact' }) {
   // Explicit logo mapping for every provider
   const logoMap: Record<string, string> = {
     'OpenAI': '/logos/OpenAI_logo.svg',
@@ -56,29 +59,28 @@ function ArticleCard({ article, density = 'comfortable' }: { article: any, densi
 }
 
 export default function ArticleListIsland({ density = 'comfortable' }: { density?: 'comfortable'|'compact' }) {
-  const { data, isFetching, error, fetchNextPage, hasNextPage, refetch, filters } = useArticlesContext();
+  const { data, isFetching, error, fetchNextPage, hasNextPage, filters } = useArticlesContext();
   // Merge, deduplicate by ID, and sort articles newest-to-oldest
-  const articles = Array.isArray(data?.pages)
-    ? (() => {
-        const merged = data.pages.reduce((acc: any[], page: any) => {
-          if (Array.isArray(page?.data)) {
-            return [...acc, ...page.data];
-          }
-          return acc;
-        }, []);
-        // Deduplicate by article id
-        const seen = new Set();
-        const deduped = [];
-        for (const art of merged) {
-          if (!seen.has(art.id)) {
-            deduped.push(art);
-            seen.add(art.id);
-          }
-        }
-        // Sort newest-to-oldest
-        return deduped.sort((a, b) => new Date(b.published_at).getTime() - new Date(a.published_at).getTime());
-      })()
-    : [];
+  const articles = useMemo<Article[]>(() => {
+    if (!Array.isArray(data?.pages)) return [];
+    const merged = data.pages.reduce((acc: Article[], page: PageData) => {
+      if (Array.isArray(page?.data)) {
+        return acc.concat(page.data);
+      }
+      return acc;
+    }, [] as Article[]);
+    // Deduplicate by article id
+    const seen = new Set<string>();
+    const deduped: Article[] = [];
+    for (const art of merged) {
+      if (!seen.has(art.id)) {
+        deduped.push(art);
+        seen.add(art.id);
+      }
+    }
+    // Sort newest-to-oldest
+    return deduped.sort((a, b) => new Date(b.published_at).getTime() - new Date(a.published_at).getTime());
+  }, [data?.pages]);
 
   const [visibleCount, setVisibleCount] = useState(20);
   const [pendingIncrease, setPendingIncrease] = useState(false);
@@ -88,30 +90,62 @@ export default function ArticleListIsland({ density = 'comfortable' }: { density
   const prevArticlesLength = useRef(0);
   const prevArticleIds = useRef<Set<string>>(new Set());
   const pollTimer = useRef<number | null>(null);
+  const nodeRefs = useRef(new Map<string, React.RefObject<HTMLDivElement>>());
+  const getNodeRef = (id: string) => {
+    let ref = nodeRefs.current.get(id);
+    if (!ref) {
+      ref = React.createRef<HTMLDivElement>();
+      nodeRefs.current.set(id, ref);
+    }
+    return ref;
+  };
 
   useEffect(() => {
     setVisibleCount(20);
-    prevArticleIds.current = new Set(articles.slice(0, 20).map((a: any) => a.id));
-  }, [data?.pages]);
+    prevArticleIds.current = new Set(articles.slice(0, 20).map((a: Article) => a.id));
+  }, [data?.pages, articles]);
 
   useEffect(() => {
     if (pendingIncrease && articles.length > prevArticlesLength.current) {
       // Find truly new articles (not already visible)
       const currentVisibleIds = prevArticleIds.current;
-      const newArticles = articles.filter((a: any) => !currentVisibleIds.has(a.id));
-      setJustLoadedIds(newArticles.map((a: any) => a.id));
+      const newArticles = articles.filter((a: Article) => !currentVisibleIds.has(a.id));
+      setJustLoadedIds(newArticles.map((a: Article) => a.id));
       setTimeout(() => setJustLoadedIds([]), 900);
       setVisibleCount(c => c + newArticles.length);
       // Update visible IDs
-      prevArticleIds.current = new Set(articles.slice(0, visibleCount + newArticles.length).map((a: any) => a.id));
+      prevArticleIds.current = new Set(articles.slice(0, visibleCount + newArticles.length).map((a: Article) => a.id));
       setPendingIncrease(false);
     }
     prevArticlesLength.current = articles.length;
-  }, [articles.length, pendingIncrease]);
+  }, [articles, pendingIncrease, visibleCount]);
 
   // Only show the top N (visibleCount) articles, always from the newest
   const visibleArticles = articles.slice(0, visibleCount);
   const latestVisibleTs = visibleArticles.length > 0 ? new Date(visibleArticles[0].published_at).getTime() : 0;
+
+  // Poll for newer items periodically and update newCount (must be before any early returns)
+  useEffect(() => {
+    const checkForNew = async () => {
+      try {
+        const firstPage = await fetchArticlesPage(filters, 0);
+        const page = Array.isArray(firstPage.data) ? firstPage.data : [];
+        if (!page.length || !latestVisibleTs) { setNewCount(0); return; }
+        const count = page.filter((a: Article) => new Date(a.published_at).getTime() > latestVisibleTs).length;
+        setNewCount(count);
+      } catch {
+        // silent fail
+      }
+    };
+    // initial check and interval
+    checkForNew();
+    if (pollTimer.current) window.clearInterval(pollTimer.current);
+    // poll every 60s
+    pollTimer.current = window.setInterval(checkForNew, 60_000) as unknown as number;
+    return () => {
+      if (pollTimer.current) window.clearInterval(pollTimer.current);
+    };
+  }, [filters, latestVisibleTs]);
 
   if (error) {
     return <div className="text-magenta-200 text-center mt-8">Error loading articles.</div>;
@@ -133,37 +167,7 @@ export default function ArticleListIsland({ density = 'comfortable' }: { density
     </>
   );
 
-  const handleLoadMore = async () => {
-    if (visibleCount + 20 > articles.length && hasNextPage) {
-      setPendingIncrease(true);
-      await fetchNextPage();
-    } else {
-      setVisibleCount(c => c + 20);
-    }
-  };
-
-  // Poll for newer items periodically and update newCount
-  useEffect(() => {
-    const checkForNew = async () => {
-      try {
-        const firstPage = await fetchArticlesPage(filters, 0);
-        const page = Array.isArray(firstPage.data) ? firstPage.data : [];
-        if (!page.length || !latestVisibleTs) { setNewCount(0); return; }
-        const count = page.filter((a: any) => new Date(a.published_at).getTime() > latestVisibleTs).length;
-        setNewCount(count);
-      } catch (e) {
-        // silent fail
-      }
-    };
-    // initial check and interval
-    checkForNew();
-    if (pollTimer.current) window.clearInterval(pollTimer.current);
-    // poll every 60s
-    pollTimer.current = window.setInterval(checkForNew, 60_000) as unknown as number;
-    return () => {
-      if (pollTimer.current) window.clearInterval(pollTimer.current);
-    };
-  }, [filters, latestVisibleTs]);
+  
 
   // Removed external refreshSignal behavior per request
 
@@ -171,18 +175,22 @@ export default function ArticleListIsland({ density = 'comfortable' }: { density
     <>
       {/* Refresh button removed per request */}
       <TransitionGroup component={null}>
-        {visibleArticles.map((article: any) => (
-          <CSSTransition
-            key={article.id}
-            timeout={900}
-            classNames="article-fade-in"
-            appear={false}
-          >
-            <div className={justLoadedIds.includes(article.id) ? 'article-fade-in-enter-active' : ''}>
-              <ArticleCard article={article} density={density} />
-            </div>
-          </CSSTransition>
-        ))}
+        {visibleArticles.map((article: Article) => {
+          const nodeRef = getNodeRef(article.id);
+          return (
+            <CSSTransition
+              key={article.id}
+              nodeRef={nodeRef}
+              timeout={900}
+              classNames="article-fade-in"
+              appear={false}
+            >
+              <div ref={nodeRef} className={justLoadedIds.includes(article.id) ? 'article-fade-in-enter-active' : ''}>
+                <ArticleCard article={article} density={density} />
+              </div>
+            </CSSTransition>
+          );
+        })}
       </TransitionGroup>
       {isFetching && visibleArticles.length === 0 ? skeletons : null}
       {newCount > 0 && (

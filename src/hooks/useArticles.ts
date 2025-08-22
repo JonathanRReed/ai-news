@@ -2,22 +2,17 @@ import { useMemo } from 'react';
 import { useInfiniteQuery } from '@tanstack/react-query';
 import type { InfiniteData } from '@tanstack/react-query';
 import { supabase } from '../lib/supabaseClient.js';
+import type { Article, PageData } from '../types/article.js';
 
 export const PAGE_SIZE = 20;
 
-interface Article {
-  id: string;
-  company: string;
-  title: string;
-  url: string;
-}
-
 export const useArticles = (filters: { category?: string; company?: string; q?: string }) => {
+  const { company, category, q } = filters;
   const queryKey = useMemo<[string, string]>(
-    () => ['articles', JSON.stringify(filters)],
-    [filters.company, filters.category, filters.q]
+    () => ['articles', JSON.stringify({ company, category, q })],
+    [company, category, q]
   );
-  return useInfiniteQuery<{ data: Article[]; next?: number }, Error, InfiniteData<{ data: Article[]; next?: number }>, [string, string], number>({
+  return useInfiniteQuery<PageData, Error, InfiniteData<PageData>, [string, string], number>({
     queryKey,
     initialPageParam: 0,
     queryFn: async ({ pageParam = 0 }) => {
@@ -43,7 +38,7 @@ export const useArticles = (filters: { category?: string; company?: string; q?: 
       console.log('[useArticles.queryFn] returned articles:', articles);
       const next = articles.length === PAGE_SIZE ? pageParam + PAGE_SIZE : undefined;
       console.log('[useArticles.queryFn]', { pageParam, returned: articles.length, next });
-      return { data: articles as Article[], next };
+      return { data: articles as Article[], next } satisfies PageData;
     },
     getNextPageParam: (last) => {
       console.log('[useArticles.getNextPageParam]', { last });

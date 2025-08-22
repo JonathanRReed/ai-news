@@ -3,7 +3,7 @@ import CompanySelect from "./CompanySelect.js";
 
 type Filters = { company: string; category: string; q?: string };
 
-export default function FiltersIsland({ filters, setFilters, onPrefetch, density, setDensity }: {
+export default function FiltersIsland({ filters, setFilters, onPrefetch: _onPrefetch, density, setDensity }: {
   filters: Filters;
   setFilters: React.Dispatch<React.SetStateAction<Filters>>;
   onPrefetch?: (next: Partial<Filters>) => Promise<void> | void;

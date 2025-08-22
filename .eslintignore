@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+
+# Astro build artifacts
+.astro/
+dist/
+
+# Common build dirs
+build/
+out/
+
+# Cache & coverage
+.cache/
+coverage/
+
+# Hosting/platform artifacts
+.vercel/
+.netlify/
+
+# Generated assets
+public/build/

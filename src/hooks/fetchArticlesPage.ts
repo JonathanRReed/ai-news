@@ -1,4 +1,5 @@
 import { supabase } from '../lib/supabaseClient.js';
+import type { Article, PageData } from '../types/article.js';
 
 export const PAGE_SIZE = 20;
 
@@ -8,7 +9,7 @@ export interface ArticleFilters {
   q?: string;
 }
 
-export async function fetchArticlesPage(filters: ArticleFilters, pageParam = 0) {
+export async function fetchArticlesPage(filters: ArticleFilters, pageParam = 0): Promise<PageData> {
   let q = supabase
     .from('ai_company_news')
     .select('*')
@@ -28,5 +29,5 @@ export async function fetchArticlesPage(filters: ArticleFilters, pageParam = 0) 
   if (error) throw error;
   const articles = Array.isArray(data) ? data : [];
   const next = articles.length === PAGE_SIZE ? pageParam + PAGE_SIZE : undefined;
-  return { data: articles, next };
+  return { data: articles as Article[], next };
 }

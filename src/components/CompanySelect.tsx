@@ -20,7 +20,7 @@ export default function CompanySelect({ activeCompany, onCompanyChange }: Compan
   return (
     <div className="glassmorphic-company-card px-2 py-3 mb-8 flex justify-center items-center">
       <div className="flex gap-1.5 sm:gap-3 md:gap-5 overflow-x-auto pb-2 hide-scrollbar min-w-0 flex-nowrap selector-container">
-        {companies.map((company, idx) => (
+        {companies.map((company) => (
           <button
             type="button"
             key={company.name}

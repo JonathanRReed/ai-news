@@ -1,36 +1,30 @@
 import { createContext, useContext } from "react";
 import type { ReactNode } from "react";
+import type { UseInfiniteQueryResult, InfiniteData } from "@tanstack/react-query";
 import { useArticles, PAGE_SIZE } from "./useArticles.js";
+import type { PageData } from "../types/article.js";
 
-const ArticlesContext = createContext<any>(null);
+type Filters = { category?: string; company?: string; q?: string };
 
-export function ArticlesProvider({ filters, children }: { filters: { category?: string; company?: string; q?: string }, children: ReactNode }) {
-  const {
-    data,
-    fetchNextPage,
-    hasNextPage,
-    isFetching,
-    refetch,
-    ...rest
-  } = useArticles(filters);
+export type ArticlesContextValue = (
+  UseInfiniteQueryResult<InfiniteData<PageData>, Error> & {
+    filters: Filters;
+    PAGE_SIZE: number;
+  }
+);
 
+const ArticlesContext = createContext<ArticlesContextValue | null>(null);
+
+export function ArticlesProvider({ filters, children }: { filters: Filters; children: ReactNode }) {
+  const query = useArticles(filters);
   return (
-    <ArticlesContext.Provider value={{
-      data,
-      fetchNextPage,
-      hasNextPage,
-      isFetching,
-      refetch,
-      filters,
-      PAGE_SIZE,
-      ...rest
-    }}>
+    <ArticlesContext.Provider value={{ ...query, filters, PAGE_SIZE }}>
       {children}
     </ArticlesContext.Provider>
   );
 }
 
-export function useArticlesContext() {
+export function useArticlesContext(): ArticlesContextValue {
   const ctx = useContext(ArticlesContext);
   if (!ctx) throw new Error("useArticlesContext must be used within an ArticlesProvider");
   return ctx;

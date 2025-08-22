@@ -8,7 +8,8 @@ import { fetchArticlesPage } from "../hooks/fetchArticlesPage.js";
 const queryClient = new QueryClient();
 
 export default function ArticlesIslandWrapper() {
-  const [filters, setFilters] = useState({ company: "All", category: "All", q: "" });
+  type Filters = { company: string; category: string; q?: string };
+  const [filters, setFilters] = useState<Filters>({ company: "All", category: "All", q: "" });
   const [density, setDensity] = useState<"comfortable" | "compact">("comfortable");
 
   // Load saved density preference
@@ -24,16 +25,17 @@ export default function ArticlesIslandWrapper() {
     }
   }, [density]);
 
-  const stableFilters = useMemo(() => filters, [filters.company, filters.category, filters.q]);
+  const { company, category, q } = filters;
+  const stableFilters = useMemo(() => ({ company, category, q }), [company, category, q]);
 
-  const handlePrefetch = useCallback(async (next: { company?: string; category?: string; q?: string }) => {
+  const handlePrefetch = useCallback(async (next: Partial<Filters>) => {
     const merged = { ...stableFilters, ...next };
     const key: [string, string] = ['articles', JSON.stringify(merged)];
     await queryClient.prefetchInfiniteQuery({
       queryKey: key,
       initialPageParam: 0,
       queryFn: ({ pageParam = 0 }) => fetchArticlesPage(merged, pageParam),
-      getNextPageParam: (lastPage) => lastPage.next,
+      getNextPageParam: (lastPage: Awaited<ReturnType<typeof fetchArticlesPage>>) => lastPage.next,
     });
   }, [stableFilters]);
 
