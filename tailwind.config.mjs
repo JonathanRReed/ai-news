@@ -2,40 +2,40 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Neutrals
-        'bg-0': 'oklch(0.14 0.02 255)', // OLED base
-        'bg-1': 'oklch(0.18 0.03 255)', // cards
-        'bg-2': 'oklch(0.22 0.03 255)', // raised
-        'bg-3': 'oklch(0.26 0.03 255)', // hover
-        'text-1': 'oklch(0.95 0.02 260)', // main text
-        'text-2': 'oklch(0.80 0.02 260)', // muted
-        muted: 'oklch(0.68 0.02 260)', // subtle
-        'card-bg': 'rgba(255,255,255,0.06)', // glass token
+        // Neutrals (Rosé Pine)
+        'bg-0': '#191724', // base
+        'bg-1': '#1f1d2e', // surface
+        'bg-2': '#26233a', // overlay
+        'bg-3': '#2a273f', // hover / subtle spotlight
+        'text-1': '#e0def4', // main text
+        'text-2': '#908caa', // muted
+        muted: '#6e6a86', // subtle supporting copy
+        'card-bg': 'rgba(64,61,82,0.55)',
 
         // Brand / Link States
-        brand: 'oklch(0.80 0.12 205)', // cyan-blue
-        'brand-hover': 'oklch(0.86 0.15 205)',
-        'brand-visited': 'oklch(0.70 0.10 220)',
-        focus: 'oklch(0.88 0.15 205)',
+        brand: '#9ccfd8', // foam
+        'brand-hover': '#c4a7e7', // iris
+        'brand-visited': '#31748f', // pine
+        focus: '#f6c177', // gold
 
         // Accents (Ink / Tint Pairs)
-        'cyan-ink': 'oklch(0.90 0.18 200)',
-        'cyan-tint': 'oklch(0.30 0.05 200)',
-        'blue-ink': 'oklch(0.84 0.13 230)',
-        'blue-tint': 'oklch(0.28 0.05 230)',
-        'teal-ink': 'oklch(0.85 0.14 180)',
-        'teal-tint': 'oklch(0.28 0.05 180)',
-        'green-ink': 'oklch(0.86 0.16 130)',
-        'green-tint': 'oklch(0.30 0.05 130)',
-        'gold-ink': 'oklch(0.86 0.11 95)',
-        'gold-tint': 'oklch(0.30 0.04 95)',
+        'cyan-ink': '#9ccfd8',
+        'cyan-tint': '#31748f',
+        'blue-ink': '#c4a7e7',
+        'blue-tint': '#403d52',
+        'teal-ink': '#31748f',
+        'teal-tint': '#2a273f',
+        'green-ink': '#ebbcba',
+        'green-tint': '#433852',
+        'gold-ink': '#f6c177',
+        'gold-tint': '#3d3453',
 
         // Atmosphere
-        'navy-tint': 'oklch(0.20 0.04 260)',
-        'halo-cool': 'oklch(0.80 0.12 220)',
+        'navy-tint': '#403d52',
+        'halo-cool': '#c4a7e7',
 
         // Back-compat mapping: keep existing 'cyan' utilities pointing to brand
-        cyan: 'oklch(0.80 0.12 205)'
+        cyan: '#9ccfd8'
       },
       backdropBlur: {
         glass: '16px',
