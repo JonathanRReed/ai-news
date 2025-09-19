@@ -27,7 +27,12 @@ export default function FiltersIsland({ filters, setFilters, onPrefetch: _onPref
             onChange={(e) => setFilters(f => ({ ...f, q: e.target.value }))}
             aria-label="Search articles"
           />
-          <span className="absolute left-3 top-1/2 -translate-y-1/2 text-white/60">🔎</span>
+          <span className="absolute left-3 top-1/2 -translate-y-1/2 text-white/60" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="11" cy="11" r="7" stroke="currentColor" strokeWidth="2" />
+              <line x1="16.65" y1="16.65" x2="21" y2="21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            </svg>
+          </span>
           {filters.q ? (
             <button
               className="absolute right-2 top-1/2 -translate-y-1/2 text-white/60 hover:text-white text-xs"

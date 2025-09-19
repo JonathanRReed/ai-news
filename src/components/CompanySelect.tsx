@@ -30,23 +30,23 @@ export default function CompanySelect({ activeCompany, onCompanyChange }: Compan
               flex-shrink-0
               bg-black/50 backdrop-blur-sm
               ${activeCompany === company.name
-                ? 'border-cyan bg-white/10 shadow-[0_0_12px_2px_rgba(77,255,240,0.25)]'
-                : 'border-cyan/30 hover:border-magenta/60 hover:bg-magenta/10'}`}
+                ? 'border-cyan bg-white/10 shadow-[0_0_12px_2px_rgba(196,167,231,0.32)]'
+                : 'border-cyan/30 hover:border-brand-hover/60 hover:bg-brand-hover/15'}`}
             aria-pressed={activeCompany === company.name}
             aria-label={company.name}
             onClick={() => onCompanyChange && onCompanyChange(company.name)}
             tabIndex={0}
           >
             {company.logo ? (
-              <span className="w-10 h-10 md:w-10 md:h-10 flex items-center justify-center rounded-full bg-gradient-to-br from-slate-400/90 via-fuchsia-300/20 to-indigo-700/60 ring-2 ring-cyan-200 shadow-[0_0_12px_2px_rgba(77,255,240,0.08)] mb-1">
+              <span className="w-10 h-10 md:w-10 md:h-10 flex items-center justify-center rounded-full bg-gradient-to-br from-slate-400/90 via-fuchsia-300/20 to-indigo-700/60 ring-2 ring-cyan-200 shadow-[0_0_12px_2px_rgba(196,167,231,0.14)] mb-1">
                 <img src={company.logo} alt={company.name + ' logo'} className="w-8 h-8 md:w-8 md:h-8 sm:w-7 sm:h-7 rounded-full" loading="lazy" />
               </span>
             ) : company.name === 'All' ? (
-              <span className="w-10 h-10 md:w-10 md:h-10 flex items-center justify-center rounded-full bg-gradient-to-br from-slate-400/90 via-fuchsia-300/20 to-indigo-700/60 ring-2 ring-cyan-200 shadow-[0_0_12px_2px_rgba(77,255,240,0.08)] mb-1">
+              <span className="w-10 h-10 md:w-10 md:h-10 flex items-center justify-center rounded-full bg-gradient-to-br from-slate-400/90 via-fuchsia-300/20 to-indigo-700/60 ring-2 ring-cyan-200 shadow-[0_0_12px_2px_rgba(196,167,231,0.14)] mb-1">
                 <img src="/logos/Globe Icon.svg" alt="All providers globe icon" className="w-8 h-8 md:w-8 md:h-8 sm:w-7 sm:h-7 rounded-full" loading="lazy" />
               </span>
             ) : (
-              <span className="w-10 h-10 md:w-10 md:h-10 flex items-center justify-center rounded-full bg-gradient-to-br from-slate-400/90 via-fuchsia-300/20 to-indigo-700/60 ring-2 ring-cyan-200 shadow-[0_0_12px_2px_rgba(77,255,240,0.08)] mb-1">
+              <span className="w-10 h-10 md:w-10 md:h-10 flex items-center justify-center rounded-full bg-gradient-to-br from-slate-400/90 via-fuchsia-300/20 to-indigo-700/60 ring-2 ring-cyan-200 shadow-[0_0_12px_2px_rgba(196,167,231,0.14)] mb-1">
                 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" className="md:w-8 md:h-8 text-cyan" fill="none" viewBox="0 0 24 24">
                   <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" />
                   <path stroke="currentColor" strokeWidth="2" d="M2 12h20M12 2c2.5 2.5 2.5 17.5 0 20M12 2c-2.5 2.5-2.5 17.5 0 20" />

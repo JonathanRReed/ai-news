@@ -37,7 +37,7 @@ function ArticleCard({ article, density = 'comfortable' }: { article: Article, d
     <div className={`glassmorphic-article-card animated-gradient article-card-hoverable ${pad} mb-6 transition-all`}>
       <div className="flex items-center gap-2 mb-2">
         {logoPath && (
-          <span className="w-7 h-7 rounded-full bg-gradient-to-br from-slate-400/90 via-fuchsia-300/20 to-indigo-700/60 ring-2 ring-cyan-200 shadow-[0_0_12px_2px_rgba(77,255,240,0.08)] mr-2 flex items-center justify-center">
+          <span className="w-7 h-7 rounded-full bg-gradient-to-br from-slate-400/90 via-fuchsia-300/20 to-indigo-700/60 ring-2 ring-cyan-200 shadow-[0_0_12px_2px_rgba(196,167,231,0.14)] mr-2 flex items-center justify-center">
             <img src={logoPath} alt={article.company + ' logo'} className="w-5 h-5 rounded-full" loading="lazy" />
           </span>
         )}
@@ -142,7 +142,7 @@ export default function ArticleListIsland({ density = 'comfortable' }: { density
   }, [filters, latestVisibleTs]);
 
   if (error) {
-    return <div className="text-magenta-200 text-center mt-8">Error loading articles.</div>;
+    return <div className="text-brand-hover text-center mt-8">Error loading articles.</div>;
   }
   if (!isFetching && visibleArticles.length === 0) {
     return <div className="text-white/70 text-center mt-8">No articles found.</div>;
@@ -184,7 +184,7 @@ export default function ArticleListIsland({ density = 'comfortable' }: { density
       <div className="flex justify-center mt-8">
         <button
           ref={buttonRef}
-          className={`glassmorphic-article-card px-8 py-2 rounded-full font-semibold text-cyan border-2 border-cyan/40 shadow-lg backdrop-blur-md bg-white/10 hover:shadow-[0_0_16px_3px_rgba(77,255,240,0.22),0_0_20px_6px_rgba(255,0,200,0.13)] hover:bg-white/20 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cyan/60 disabled:opacity-40 ${pendingIncrease ? 'animate-pulse' : ''}`}
+          className={`glassmorphic-article-card px-8 py-2 rounded-full font-semibold text-cyan border-2 border-cyan/40 shadow-lg backdrop-blur-md bg-white/10 hover:shadow-[0_0_16px_3px_rgba(196,167,231,0.28),0_0_20px_6px_rgba(246,193,119,0.2)] hover:bg-white/20 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cyan/60 disabled:opacity-40 ${pendingIncrease ? 'animate-pulse' : ''}`}
           onClick={async () => {
             if (visibleCount + 20 > articles.length && hasNextPage) {
               setPendingIncrease(true);

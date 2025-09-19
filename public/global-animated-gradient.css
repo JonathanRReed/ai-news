@@ -1,9 +1,9 @@
 .animated-gradient {
   background: linear-gradient(
     120deg,
-    oklch(0.20 0.04 260) 0%, /* Navy tint */
-    oklch(0.85 0.14 180 / 0.06) 50%, /* Teal tint */
-    oklch(0.84 0.13 230 / 0.06) 100% /* Blue tint */
+    rgba(64, 61, 82, 0.85) 0%, /* highlight-med */
+    rgba(82, 79, 103, 0.65) 50%, /* highlight-high */
+    rgba(49, 116, 143, 0.45) 100% /* pine */
   );
   background-size: 200% 200%;
   animation: gradientMove 32s ease-in-out infinite;
@@ -30,9 +30,12 @@
 
 /* Utility: content-visibility for large lists */
 .cv-auto {
-  content-visibility: auto;
+  /* Note: content-visibility: auto implies paint containment and clips child box-shadows.
+     Remove paint containment to avoid hover glow clipping. */
+  /* content-visibility: auto; */
   /* Reserve space to prevent layout jumps before paint */
   contain-intrinsic-size: 1200px;
+  overflow: visible;
 }
 
 .article-fade-in-enter {
@@ -61,8 +64,8 @@
 }
 .article-card-hoverable:hover, .article-card-hoverable:focus-visible {
   transform: scale(1.018);
-  box-shadow: 0 2px 10px 0 oklch(0.80 0.12 205 / 0.12), /* Cyan */
-              0 1px 6px 0 oklch(0.84 0.13 230 / 0.10); /* Blue */
+  box-shadow: 0 2px 10px 0 rgba(156, 207, 216, 0.16), /* foam */
+              0 1px 6px 0 rgba(196, 167, 231, 0.12); /* iris */
   z-index: 2;
 }
 

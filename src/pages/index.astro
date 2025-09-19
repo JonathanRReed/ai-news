@@ -8,7 +8,7 @@ import HamburgerMenu from "../components/HamburgerMenu";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AI News</title>
-    <link rel="icon" type="image/avif" href="https://img.helloworldfirm.com/logos/full-logo.avif" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="preload" href="https://fonts.helloworldfirm.com/NebulaSans-Book.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="https://fonts.helloworldfirm.com/NebulaSans-BoldItalic.woff2" as="font" type="font/woff2" crossorigin>
@@ -22,18 +22,20 @@ import HamburgerMenu from "../components/HamburgerMenu";
     <meta property="og:image" content="https://img.helloworldfirm.com/logos/512x512-logo.avif" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://ai-news.helloworldfirm.com/" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Ai-news: Latest AI News Aggregator" />
-    <meta name="twitter:description" content="Curated news from the world’s leading AI labs and companies. Fast, beautiful, always up-to-date." />
-    <meta name="twitter:image" content="https://img.helloworldfirm.com/logos/512x512-logo.avif" />
     <link rel="canonical" href="https://ai-news.helloworldfirm.com/" />
   </head>
   <body class="bg-bg-0 text-text-1 font-sans">
-    <header class="glassmorphic-header flex flex-col sm:flex-row items-center justify-between px-4 sm:px-8 py-6 mb-8 gap-4 sm:gap-0 relative">
+    <header class="glassmorphic-header flex flex-col sm:flex-row items-center justify-between px-4 sm:px-8 py-6 mb-8 gap-4 sm:gap-6 relative">
       <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight select-none text-center sm:text-left">
         <span class="animated-gradient-logo">Ai-news</span>
       </h1>
-      <HamburgerMenu client:idle />
+      <nav class="hidden sm:flex items-center gap-6 text-base font-semibold">
+        <a href="/" class="text-brand hover:text-brand-hover transition-colors" aria-current="page">Home</a>
+        <a href="/about" class="text-text-2 hover:text-brand-hover transition-colors">About</a>
+      </nav>
+      <div class="w-full sm:hidden flex justify-center">
+        <HamburgerMenu client:media="(max-width: 639px)" />
+      </div>
     </header>
     <main class="container max-w-lg sm:max-w-2xl md:max-w-3xl mx-auto px-2 sm:px-6 md:px-8 py-2">
       <section id="home" class="min-h-[20vh] mb-4">
