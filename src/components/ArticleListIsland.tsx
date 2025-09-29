@@ -3,16 +3,23 @@ import { useArticlesContext } from "../hooks/useArticlesContext.js";
 import { fetchArticlesPage } from "../hooks/fetchArticlesPage.js";
 import type { Article, PageData } from "../types/article.js";
 
-function resolveLogo(company: string): string | undefined {
-  const name = (company || "").toLowerCase();
-  if (name.includes("openai")) return "/logos/OpenAI_logo.svg";
-  if (name.includes("meta")) return "/logos/Meta_logo.svg";
-  if (name.includes("deepmind")) return "/logos/DeepMind_logo.svg";
-  if (name.includes("anthropic")) return "/logos/Anthropic_logo.svg";
-  if (name.includes("mistral")) return "/logos/Mistral_logo.svg";
-  if (name.includes("hugging")) return "/logos/Hugging_Face_logo.svg";
-  if (name.includes("x.ai") || name.includes("xai")) return "/logos/Xai_logo.svg";
-  return "/logos/Globe Icon.svg";
+const COMPANY_LOGOS = new Map([
+  ['openai', '/logos/OpenAI_logo.svg'],
+  ['meta', '/logos/Meta_logo.svg'],
+  ['deepmind', '/logos/DeepMind_logo.svg'],
+  ['anthropic', '/logos/Anthropic_logo.svg'],
+  ['mistral', '/logos/Mistral_logo.svg'],
+  ['hugging', '/logos/Hugging_Face_logo.svg'],
+  ['x.ai', '/logos/Xai_logo.svg'],
+  ['xai', '/logos/Xai_logo.svg'],
+]);
+
+function resolveLogo(company: string): string {
+  const name = (company || '').toLowerCase();
+  for (const [key, logo] of COMPANY_LOGOS) {
+    if (name.includes(key)) return logo;
+  }
+  return '/logos/Globe Icon.svg';
 }
 
 function getDomain(url: string): string {

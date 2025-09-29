@@ -5,7 +5,16 @@ import ArticleListIsland from "./ArticleListIsland.js";
 import FiltersIsland from "./FiltersIsland.js";
 import { fetchArticlesPage } from "../hooks/fetchArticlesPage.js";
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 60_000,
+      gcTime: 5 * 60_000,
+      refetchOnWindowFocus: false,
+      retry: 1,
+    },
+  },
+});
 
 export default function ArticlesIslandWrapper() {
   type Filters = { company: string; category: string; q?: string };
