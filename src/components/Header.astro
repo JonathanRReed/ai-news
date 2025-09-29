@@ -1,0 +1,32 @@
+---
+import HamburgerMenu from './HamburgerMenu';
+
+interface Props {
+  currentPage: 'home' | 'about';
+}
+const { currentPage } = Astro.props;
+---
+<header class="glassmorphic-header flex flex-col sm:flex-row items-center justify-between px-4 sm:px-8 py-6 mb-8 gap-4 sm:gap-6 relative">
+  <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight select-none text-center sm:text-left">
+    <span class="animated-gradient-logo">Ai-news</span>
+  </h1>
+  <nav class="hidden sm:flex items-center gap-6 text-base font-semibold">
+    <a 
+      href="/" 
+      class={currentPage === 'home' ? 'text-brand hover:text-brand-hover transition-colors' : 'text-text-2 hover:text-brand-hover transition-colors'} 
+      aria-current={currentPage === 'home' ? 'page' : undefined}
+    >
+      Home
+    </a>
+    <a 
+      href="/about" 
+      class={currentPage === 'about' ? 'text-brand hover:text-brand-hover transition-colors' : 'text-text-2 hover:text-brand-hover transition-colors'} 
+      aria-current={currentPage === 'about' ? 'page' : undefined}
+    >
+      About
+    </a>
+  </nav>
+  <div class="w-full sm:hidden flex justify-center">
+    <HamburgerMenu client:media="(max-width: 639px)" />
+  </div>
+</header>
