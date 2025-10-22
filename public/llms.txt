@@ -1,0 +1,60 @@
+# AI News Hub
+
+> AI News Hub is a curated news aggregator that collects and displays the latest updates from leading AI organizations including Meta AI, OpenAI, Anthropic, Google DeepMind, Mistral AI, Hugging Face, and XAI. Built with Astro, React, and Supabase, the platform provides a streamlined interface for staying informed on AI research and developments.
+
+## Tech Stack
+
+- **Framework**: Astro 5.14.5 with server-side rendering
+- **Runtime**: Bun 1.x (JavaScript runtime and package manager)
+- **UI Library**: React 19.2.0 with React Compiler optimization
+- **Styling**: TailwindCSS 3.4.18 with custom animated gradients
+- **Database**: Supabase (PostgreSQL) for news article storage and retrieval
+- **State Management**: TanStack React Query 5.90.5 for data fetching and caching
+- **Type Safety**: TypeScript 5.9.3
+
+## Project Structure
+
+- [Source Code](https://github.com/JonathanRReed/ai-news): Main repository (if public)
+- **Pages**: `/src/pages/index.astro` (home), `/src/pages/about.astro`
+- **Components**: `/src/components/` includes ArticlesIslandWrapper, Header, Footer, NeuralGrid, FaqDropdown
+- **Hooks**: Custom React hooks in `/src/hooks/`
+- **Types**: TypeScript definitions in `/src/types/`
+
+## Key Features
+
+- **Real-time News Aggregation**: Curates updates from 7+ major AI organizations
+- **Company Filtering**: Filter articles by specific AI companies
+- **Responsive Design**: Mobile-first approach with TailwindCSS
+- **Animated Neural Grid**: Custom background animation for visual appeal
+- **SEO Optimized**: Comprehensive meta tags, structured data, and OpenGraph support
+- **Performance**: Island architecture with client-side hydration for interactive components
+
+## Configuration Files
+
+- [Package Configuration](/package.json): Dependencies and scripts
+- [Astro Config](/astro.config.mjs): Astro framework configuration with React integration
+- [Tailwind Config](/tailwind.config.mjs): Custom design system configuration
+- [TypeScript Config](/tsconfig.json): TypeScript compiler options
+- [ESLint Config](/eslint.config.js): Linting rules for code quality
+
+## Development
+
+- **Install**: `bun install`
+- **Dev Server**: `bun run dev`
+- **Build**: `bun run build`
+- **Preview**: `bun run preview`
+- **Lint**: `bun run lint` or `bun run lint:fix`
+
+## Deployment
+
+- **Production URL**: https://ai-news.helloworldfirm.com
+- **Publisher**: Hello.World Consulting (https://helloworldfirm.com)
+- **Hosting**: Static site deployment (Astro generates static HTML)
+
+## Optional
+
+- [Astro Documentation](https://docs.astro.build): Official Astro framework documentation
+- [React Documentation](https://react.dev): React library documentation
+- [TailwindCSS Documentation](https://tailwindcss.com/docs): Styling framework documentation
+- [Supabase Documentation](https://supabase.com/docs): Backend and database documentation
+- [Bun Documentation](https://bun.sh/docs): JavaScript runtime documentation
