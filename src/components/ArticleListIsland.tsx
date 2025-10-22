@@ -44,15 +44,15 @@ function ArticleCard({ article, density = 'comfortable' }: { article: Article, d
     <div className={`glassmorphic-article-card animated-gradient article-card-hoverable ${pad} mb-6 transition-all`}>
       <div className="flex items-center gap-2 mb-2">
         {logoPath && (
-          <span className="w-7 h-7 rounded-full bg-gradient-to-br from-slate-400/90 via-fuchsia-300/20 to-indigo-700/60 ring-2 ring-cyan-200 shadow-[0_0_12px_2px_rgba(196,167,231,0.14)] mr-2 flex items-center justify-center">
+          <span className="w-7 h-7 rounded-full bg-gradient-to-br from-text-2/80 via-blue-ink/25 to-teal-ink/70 ring-2 ring-brand/40 shadow-[0_0_12px_2px_rgba(196,167,231,0.14)] mr-2 flex items-center justify-center">
             <img src={logoPath} alt={article.company + ' logo'} className="w-5 h-5 rounded-full" loading="lazy" width="20" height="20" />
           </span>
         )}
-        <span className="font-bold text-cyan text-sm">{article.company}</span>
+        <span className="font-bold text-brand text-sm">{article.company}</span>
         <span className="text-xs text-white/60 ml-2">{new Date(article.published_at).toLocaleDateString()}</span>
       </div>
       <h2 className={`${title} font-bold text-white mb-1`}>
-        <a href={article.url} target="_blank" rel="noopener noreferrer" className="hover:text-cyan underline">
+        <a href={article.url} target="_blank" rel="noopener noreferrer" className="hover:text-brand-hover underline">
           {article.title}
         </a>
       </h2>
@@ -101,10 +101,14 @@ export default function ArticleListIsland({ density = 'comfortable' }: { density
   const pollTimer = useRef<number | null>(null);
   // No node refs needed after removing react-transition-group
 
+  // Reset view state when data pages change (filters applied or data refreshed)
+  // This is a legitimate reset pattern - when query results change, reset pagination
+  /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(() => {
     setVisibleCount(20);
     prevArticleIds.current = new Set(articles.slice(0, 20).map((a: Article) => a.id));
   }, [data?.pages, articles]);
+  /* eslint-enable react-hooks/set-state-in-effect */
 
   useEffect(() => {
     if (pendingIncrease && articles.length > prevArticlesLength.current) {

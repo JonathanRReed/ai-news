@@ -19,13 +19,13 @@ const queryClient = new QueryClient({
 export default function ArticlesIslandWrapper() {
   type Filters = { company: string; category: string; q?: string };
   const [filters, setFilters] = useState<Filters>({ company: "All", category: "All", q: "" });
-  const [density, setDensity] = useState<"comfortable" | "compact">("comfortable");
-
-  // Load saved density preference
-  useEffect(() => {
-    const saved = typeof window !== 'undefined' ? window.localStorage.getItem('ai-news-density') : null;
-    if (saved === 'compact' || saved === 'comfortable') setDensity(saved);
-  }, []);
+  
+  // Load saved density preference on initialization
+  const [density, setDensity] = useState<"comfortable" | "compact">(() => {
+    if (typeof window === 'undefined') return "comfortable";
+    const saved = window.localStorage.getItem('ai-news-density');
+    return (saved === 'compact' || saved === 'comfortable') ? saved : "comfortable";
+  });
 
   // Persist density preference
   useEffect(() => {

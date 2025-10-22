@@ -132,6 +132,7 @@ body, html {
   -webkit-backdrop-filter: blur(12px) saturate(1.3) brightness(1.05);
   border-radius: 0 0 2rem 2rem;
   position: relative;
+  z-index: 10;
   /* Layer promotion for scroll performance */
   transform: translateZ(0);
 }
