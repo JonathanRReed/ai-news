@@ -45,7 +45,7 @@ function ArticleCard({ article, density = 'comfortable' }: { article: Article, d
       <div className="flex items-center gap-2 mb-2">
         {logoPath && (
           <span className="w-7 h-7 rounded-full bg-gradient-to-br from-slate-400/90 via-fuchsia-300/20 to-indigo-700/60 ring-2 ring-cyan-200 shadow-[0_0_12px_2px_rgba(196,167,231,0.14)] mr-2 flex items-center justify-center">
-            <img src={logoPath} alt={article.company + ' logo'} className="w-5 h-5 rounded-full" loading="lazy" />
+            <img src={logoPath} alt={article.company + ' logo'} className="w-5 h-5 rounded-full" loading="lazy" width="20" height="20" />
           </span>
         )}
         <span className="font-bold text-cyan text-sm">{article.company}</span>
@@ -126,8 +126,12 @@ export default function ArticleListIsland({ density = 'comfortable' }: { density
   const latestVisibleTs = visibleArticles.length > 0 ? new Date(visibleArticles[0].published_at).getTime() : 0;
 
   // Poll for newer items periodically and update newCount (must be before any early returns)
+  // Optimized with Page Visibility API to pause when tab is hidden
   useEffect(() => {
     const checkForNew = async () => {
+      // Skip polling if page is hidden to save resources
+      if (typeof document !== 'undefined' && document.hidden) return;
+      
       try {
         const firstPage = await fetchArticlesPage(filters, 0);
         const page = Array.isArray(firstPage.data) ? firstPage.data : [];
@@ -138,13 +142,30 @@ export default function ArticleListIsland({ density = 'comfortable' }: { density
         // silent fail
       }
     };
+    
+    // Handle visibility change to pause/resume polling
+    const handleVisibilityChange = () => {
+      if (!document.hidden) {
+        checkForNew(); // Check immediately when tab becomes visible
+      }
+    };
+    
     // initial check and interval
     checkForNew();
     if (pollTimer.current) window.clearInterval(pollTimer.current);
     // poll every 60s
     pollTimer.current = window.setInterval(checkForNew, 60_000) as unknown as number;
+    
+    // Listen for visibility changes
+    if (typeof document !== 'undefined') {
+      document.addEventListener('visibilitychange', handleVisibilityChange);
+    }
+    
     return () => {
       if (pollTimer.current) window.clearInterval(pollTimer.current);
+      if (typeof document !== 'undefined') {
+        document.removeEventListener('visibilitychange', handleVisibilityChange);
+      }
     };
   }, [filters, latestVisibleTs]);
 

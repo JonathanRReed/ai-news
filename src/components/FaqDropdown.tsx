@@ -39,11 +39,16 @@ export default function FaqDropdown() {
           <div
             key={faq.question}
             className={
-              `rounded-2xl bg-white/10 border border-cyan/20 shadow-lg backdrop-blur-[14px] saturate-[1.18] transition-all relative overflow-hidden group ` +
-              `hover:scale-[1.03] hover:z-10 hover:shadow-[0_8px_40px_0_rgba(196,167,231,0.26),0_2px_24px_0_rgba(235,111,146,0.18)] hover:bg-white/25 hover:border-cyan/40 ` +
+              `rounded-2xl border backdrop-blur-md transition-all relative overflow-hidden group ` +
+              `hover:scale-[1.02] hover:z-10 hover:border-white/20 ` +
               `transform-gpu duration-200 ease-[cubic-bezier(.4,0,.2,1)]`
             }
-            style={{ boxShadow: '0 4px 32px 0 rgba(196,167,231,0.2), 0 1.5px 12px 0 rgba(156,207,216,0.18)' }}
+            style={{ 
+              background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%)',
+              boxShadow: '0 6px 24px 0 rgba(0, 0, 0, 0.2), inset 0 1px 0 0 rgba(255, 255, 255, 0.1)',
+              border: '1px solid rgba(255, 255, 255, 0.12)',
+              backdropFilter: 'blur(12px) saturate(1.3) brightness(1.05)',
+            }}
           >
             <button
               className="w-full flex justify-between items-center px-6 py-4 text-left focus:outline-none font-semibold text-lg text-white hover:text-cyan transition-colors"
@@ -72,16 +77,20 @@ export default function FaqDropdown() {
                 dangerouslySetInnerHTML={{ __html: faq.answer }}
               />
             </div>
-            {/* Frosted glass effect overlay */}
+            {/* Subtle glass highlight */}
             <div
               aria-hidden="true"
-              className="absolute inset-0 z-0 pointer-events-none group-hover:opacity-95 group-hover:blur-[3.5px] transition-all duration-300"
+              className="absolute top-0 left-0 right-0 h-px z-0 pointer-events-none"
               style={{
-                background:
-                  'radial-gradient(ellipse at 60% 0%, rgba(64,61,82,0.28) 0%, rgba(31,29,46,0.3) 100%), linear-gradient(120deg, rgba(156,207,216,0.16) 0%, rgba(235,111,146,0.12) 100%)',
-                opacity: 0.85,
-                filter: 'blur(2.5px) saturate(1.18)',
-                borderRadius: 'inherit',
+                background: 'linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%)',
+              }}
+            />
+            {/* Hover shine effect */}
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 z-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              style={{
+                background: 'linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.04) 50%, transparent 100%)',
               }}
             />
           </div>
