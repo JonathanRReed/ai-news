@@ -24,7 +24,7 @@ const faqs = [
   {
     question: "Will this get better or continue to be improved?",
     answer:
-      "Maybe! It's just one person creating it; me, so it depends on my time. But if you think you know a way to improve it or want to help, it is an open-source project; the GitHub repo is here: <a href=\"https://github.com/JonathanRReed/ai-news.git\" class='underline text-cyan hover:text-brand-hover transition-colors'>GitHub</a>.",
+      "Maybe! It's just one person creating it; me, so it depends on my time. But if you think you know a way to improve it or want to help, it is an open-source project; the GitHub repo is here: <a href=\"https://github.com/JonathanRReed/ai-news.git\" class='underline text-brand hover:text-brand-hover transition-colors'>GitHub</a>.",
   },
 ];
 
@@ -33,7 +33,7 @@ export default function FaqDropdown() {
 
   return (
     <section className="my-12 max-w-2xl mx-auto">
-      <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-center text-cyan drop-shadow-lg">FAQ</h2>
+      <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-center text-brand drop-shadow-lg">FAQ</h2>
       <div className="space-y-4">
         {faqs.map((faq, idx) => (
           <div
@@ -51,7 +51,7 @@ export default function FaqDropdown() {
             }}
           >
             <button
-              className="w-full flex justify-between items-center px-6 py-4 text-left focus:outline-none font-semibold text-lg text-white hover:text-cyan transition-colors"
+              className="w-full flex justify-between items-center px-6 py-4 text-left focus:outline-none font-semibold text-lg text-white hover:text-brand-hover transition-colors"
               aria-expanded={openIndex === idx}
               aria-controls={`faq-panel-${idx}`}
               onClick={() => setOpenIndex(openIndex === idx ? null : idx)}

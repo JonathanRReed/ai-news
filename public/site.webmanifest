@@ -8,15 +8,15 @@
   "description": "Latest news from leading AI organizations.",
   "icons": [
     {
-      "src": "/favicon.svg",
+      "src": "/favicon.webp",
       "sizes": "any",
-      "type": "image/svg+xml",
+      "type": "image/webp",
       "purpose": "any"
     },
     {
-      "src": "/favicon.svg",
+      "src": "/favicon.webp",
       "sizes": "any",
-      "type": "image/svg+xml",
+      "type": "image/webp",
       "purpose": "maskable"
     }
   ]

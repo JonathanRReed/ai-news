@@ -26,9 +26,9 @@ export default function HamburgerMenu() {
           }}
         >
           <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="5" y="8" width="18" height="2.5" rx="1.25" fill="#fff" className="transition-all duration-500 group-hover:fill-brand" />
-            <rect x="5" y="13" width="18" height="2.5" rx="1.25" fill="#fff" className="transition-all duration-500 group-hover:fill-brand" />
-            <rect x="5" y="18" width="18" height="2.5" rx="1.25" fill="#fff" className="transition-all duration-500 group-hover:fill-brand" />
+            <rect x="5" y="8" width="18" height="2.5" rx="1.25" fill="currentColor" className="text-text-1 transition-all duration-500 group-hover:text-brand" />
+            <rect x="5" y="13" width="18" height="2.5" rx="1.25" fill="currentColor" className="text-text-1 transition-all duration-500 group-hover:text-brand" />
+            <rect x="5" y="18" width="18" height="2.5" rx="1.25" fill="currentColor" className="text-text-1 transition-all duration-500 group-hover:text-brand" />
           </svg>
           <span className="absolute inset-0 rounded-full pointer-events-none border border-brand/20 group-hover:border-brand/90 transition-all duration-500" />
         </span>
@@ -47,9 +47,9 @@ export default function HamburgerMenu() {
               aria-label="Close menu"
               onClick={() => setOpen(false)}
             >
-              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <line x1="6" y1="6" x2="16" y2="16" stroke="#fff" strokeWidth="2.2" strokeLinecap="round" className="transition-all duration-500 hover:stroke-brand" />
-                <line x1="16" y1="6" x2="6" y2="16" stroke="#fff" strokeWidth="2.2" strokeLinecap="round" className="transition-all duration-500 hover:stroke-brand" />
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-text-1">
+                <line x1="6" y1="6" x2="16" y2="16" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" className="transition-all duration-500 group-hover:stroke-brand" />
+                <line x1="16" y1="6" x2="6" y2="16" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" className="transition-all duration-500 group-hover:stroke-brand" />
               </svg>
               <span className="absolute inset-0 rounded-full pointer-events-none border border-brand/20 hover:border-brand/90 transition-all duration-500" />
             </button>

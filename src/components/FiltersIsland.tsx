@@ -22,7 +22,7 @@ export default function FiltersIsland({ filters, setFilters, onPrefetch: _onPref
             type="search"
             inputMode="search"
             placeholder="Search titles or summary…"
-            className="w-full rounded-full bg-white/10 border border-white/15 text-white placeholder-white/50 px-9 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-cyan/60"
+            className="w-full rounded-full bg-white/10 border border-white/15 text-white placeholder-white/50 px-9 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand/60"
             value={filters.q || ""}
             onChange={(e) => setFilters(f => ({ ...f, q: e.target.value }))}
             aria-label="Search articles"

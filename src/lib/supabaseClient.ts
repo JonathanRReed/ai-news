@@ -9,7 +9,6 @@ if (!url || !anonKey) {
     `Expected PUBLIC_SUPABASE_URL and PUBLIC_SUPABASE_ANON_KEY to be set in your .env file.\n` +
     `See .env.example for the required shape.`;
   if (import.meta.env?.DEV) {
-    // eslint-disable-next-line no-console
     console.error(msg);
   }
   throw new Error('Supabase configuration error: PUBLIC_SUPABASE_URL and/or PUBLIC_SUPABASE_ANON_KEY are missing.');
