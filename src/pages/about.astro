@@ -2,22 +2,87 @@
 import Header from '../components/Header.astro';
 import Footer from "../components/Footer.astro";
 import FaqDropdown from '../components/FaqDropdown';
+
+const siteUrl = "https://ai-news.helloworldfirm.com";
+const canonicalUrl = `${siteUrl}/about`;
+const title = "About AI News Hub | Methodology & Mission";
+const description = "Learn how AI News Hub curates hourly updates from leading AI labs, companies, and research organizations to keep you informed on every major development.";
+const keywords = "About AI News Hub, AI news aggregator, AI curation methodology, Hello.World Consulting";
+const socialImage = "https://img.helloworldfirm.com/logos/512x512-logo.avif";
+const socialImageAlt = "AI News Hub galaxy-inspired logo";
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  name: title,
+  url: canonicalUrl,
+  description,
+  publisher: {
+    "@type": "Organization",
+    name: "Hello.World Consulting",
+    url: "https://helloworldfirm.com",
+    logo: {
+      "@type": "ImageObject",
+      url: socialImage
+    }
+  },
+  mainEntityOfPage: canonicalUrl,
+  breadcrumb: {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: siteUrl
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "About",
+        item: canonicalUrl
+      }
+    ]
+  }
+};
 ---
 <html lang="en">
   <head>
-    <title>About | AI News</title>
+    <title>{title}</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="author" content="Hello.World Consulting" />
+    <meta name="application-name" content="AI News Hub" />
+    <meta name="apple-mobile-web-app-title" content="AI News Hub" />
+    <meta name="theme-color" content="#0b0c10" />
+    <meta name="color-scheme" content="dark light" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:image:alt" content={socialImageAlt} />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:site_name" content="AI News Hub" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage} />
+    <meta name="twitter:image:alt" content={socialImageAlt} />
+    <link rel="canonical" href={canonicalUrl} />
     <link rel="icon" type="image/webp" href="/favicon.webp" />
+    <link rel="apple-touch-icon" href="/favicon.webp" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.helloworldfirm.com" crossorigin />
     <link rel="stylesheet" href="/global-font.css" />
     <link rel="stylesheet" href="/global-animated-gradient.css" />
-    <meta name="description" content="About AI News: Learn how we curate and aggregate the latest news from top AI organizations in one place. Stay informed on artificial intelligence developments." />
-    <meta property="og:title" content="About | AI News" />
-    <meta property="og:description" content="How AI News brings you up-to-date news from the world’s leading AI labs and companies." />
-    <meta property="og:image" content="https://img.helloworldfirm.com/logos/512x512-logo.avif" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://ai-news.helloworldfirm.com/about" />
-    <link rel="canonical" href="https://ai-news.helloworldfirm.com/about" />
+    <link rel="preload" href="https://fonts.helloworldfirm.com/NebulaSans-Book.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="https://fonts.helloworldfirm.com/NebulaSans-BoldItalic.woff2" as="font" type="font/woff2" crossorigin />
+    <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
   </head>
   <body class="bg-bg-0 text-text-1 font-sans min-h-screen flex flex-col">
     <Header currentPage="about" />

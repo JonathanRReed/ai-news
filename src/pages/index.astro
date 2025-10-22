@@ -2,25 +2,68 @@
 import ArticlesIslandWrapper from "../components/ArticlesIslandWrapper";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+
+const siteUrl = "https://ai-news.helloworldfirm.com";
+const canonicalUrl = `${siteUrl}/`;
+const title = "AI News Hub | Curated Headlines from Leading AI Organizations";
+const description = "AI News Hub curates the latest updates from Meta AI, OpenAI, Anthropic, Google DeepMind, Mistral AI, Hugging Face, XAI, and more so you never miss a breakthrough.";
+const socialImage = "https://img.helloworldfirm.com/logos/512x512-logo.avif";
+const socialImageAlt = "AI News Hub galaxy-inspired logo";
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "AI News Hub",
+  url: siteUrl,
+  description,
+  publisher: {
+    "@type": "Organization",
+    name: "Hello.World Consulting",
+    url: "https://helloworldfirm.com",
+    logo: {
+      "@type": "ImageObject",
+      url: socialImage
+    }
+  }
+};
 ---
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI News</title>
-    <link rel="icon" type="image/webp" href="/favicon.webp" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <link rel="stylesheet" href="/global-font.css">
-    <link rel="stylesheet" href="/global-animated-gradient.css">
-    <link rel="preload" href="https://fonts.helloworldfirm.com/NebulaSans-Book.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="https://fonts.helloworldfirm.com/NebulaSans-BoldItalic.woff2" as="font" type="font/woff2" crossorigin>
-    <meta name="description" content="Ai-news curates & aggregates the latest news from top AI organizations including Meta AI, OpenAI, Anthropic, Google DeepMind, Mistral AI, Hugging Face, and XAI. Filter by company and stay up-to-date on artificial intelligence developments." />
-    <meta property="og:title" content="Ai-news: Latest AI News Aggregator" />
-    <meta property="og:description" content="Curated news from the world’s leading AI labs and companies. Fast, beautiful, always up-to-date." />
-    <meta property="og:image" content="https://img.helloworldfirm.com/logos/512x512-logo.avif" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content="AI news, artificial intelligence news, AI research updates, OpenAI news, Anthropic updates, Google DeepMind announcements, Mistral AI, Hugging Face, Meta AI, AI headlines" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="author" content="Hello.World Consulting" />
+    <meta name="application-name" content="AI News Hub" />
+    <meta name="apple-mobile-web-app-title" content="AI News Hub" />
+    <meta name="theme-color" content="#0b0c10" />
+    <meta name="color-scheme" content="dark light" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:image:alt" content={socialImageAlt} />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://ai-news.helloworldfirm.com/" />
-    <link rel="canonical" href="https://ai-news.helloworldfirm.com/" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:site_name" content="AI News Hub" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage} />
+    <meta name="twitter:image:alt" content={socialImageAlt} />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="icon" type="image/webp" href="/favicon.webp" />
+    <link rel="apple-touch-icon" href="/favicon.webp" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.helloworldfirm.com" crossorigin />
+    <link rel="stylesheet" href="/global-font.css" />
+    <link rel="stylesheet" href="/global-animated-gradient.css" />
+    <link rel="preload" href="https://fonts.helloworldfirm.com/NebulaSans-Book.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="https://fonts.helloworldfirm.com/NebulaSans-BoldItalic.woff2" as="font" type="font/woff2" crossorigin />
+    <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
   </head>
   <body class="bg-bg-0 text-text-1 font-sans">
     <Header currentPage="home" />
