@@ -17,5 +17,6 @@ export const useArticles = (filters: { category?: string; company?: string; q?: 
     initialPageParam: 0,
     queryFn: ({ pageParam = 0 }) => fetchArticlesPage(filters, pageParam),
     getNextPageParam: (last) => last.next,
+    maxPages: 10, // Limit to 200 articles (10 pages × 20) to prevent memory bloat
   });
 };

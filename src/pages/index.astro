@@ -23,6 +23,27 @@ const structuredData = {
       "@type": "ImageObject",
       url: socialImage
     }
+  },
+  potentialAction: {
+    "@type": "SearchAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: `${siteUrl}/?q={search_term_string}`
+    },
+    "query-input": "required name=search_term_string"
+  }
+};
+
+const collectionStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "AI News Articles",
+  description: "Latest news and updates from leading AI organizations",
+  url: siteUrl,
+  isPartOf: {
+    "@type": "WebSite",
+    name: "AI News Hub",
+    url: siteUrl
   }
 };
 ---
@@ -64,15 +85,16 @@ const structuredData = {
     <link rel="preload" href="https://fonts.helloworldfirm.com/NebulaSans-Book.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="https://fonts.helloworldfirm.com/NebulaSans-BoldItalic.woff2" as="font" type="font/woff2" crossorigin />
     <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
+    <script type="application/ld+json">{JSON.stringify(collectionStructuredData)}</script>
   </head>
   <body class="bg-bg-0 text-text-1 font-sans">
     <Header currentPage="home" />
     <main class="container max-w-lg sm:max-w-2xl md:max-w-3xl mx-auto px-2 sm:px-6 md:px-8 py-2">
-      <section id="home" class="min-h-[20vh] mb-4">
+      <section id="home" class="mb-6">
         <h2 class="text-xl sm:text-2xl font-semibold mb-1">Welcome to <span class="animated-gradient-logo">Ai-news</span></h2>
         <p class="text-base sm:text-lg text-white/80">A collection of the latest & most important news from top AI firms, companies, & research labs.</p>
       </section>
-      <section id="articles" class="mt-4 space-y-8">
+      <section id="articles" class="space-y-8">
         <ArticlesIslandWrapper client:visible />
       </section>
     </main>

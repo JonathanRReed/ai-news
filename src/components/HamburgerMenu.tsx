@@ -17,7 +17,13 @@ export default function HamburgerMenu() {
         className="relative z-50 group focus:outline-none font-nebula"
       >
         <span
-          className="flex items-center justify-center w-12 h-12 rounded-full bg-bg-2/80 border border-white/15 shadow-[0_0_10px_2px_rgba(156,207,216,0.18),0_0_22px_6px_rgba(235,111,146,0.15)] backdrop-blur-md transition-all duration-500 group-hover:shadow-[0_0_30px_10px_rgba(196,167,231,0.4),0_0_48px_16px_rgba(246,193,119,0.24)] group-hover:border-brand/70 group-active:scale-95"
+          className="flex items-center justify-center w-12 h-12 rounded-full border backdrop-blur-md transition-all duration-300 group-hover:border-white/25 group-active:scale-95"
+          style={{
+            background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%)',
+            boxShadow: '0 4px 16px 0 rgba(0, 0, 0, 0.2), inset 0 1px 0 0 rgba(255, 255, 255, 0.1)',
+            border: '1px solid rgba(255, 255, 255, 0.15)',
+            backdropFilter: 'blur(12px) saturate(1.3) brightness(1.05)',
+          }}
         >
           <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="5" y="8" width="18" height="2.5" rx="1.25" fill="#fff" className="transition-all duration-500 group-hover:fill-brand" />
@@ -31,7 +37,13 @@ export default function HamburgerMenu() {
         <div className="fixed inset-0 z-[9999] flex items-center justify-center min-h-screen bg-bg-0/90 backdrop-blur-md">
           <div className="glassmorphic-modal relative flex flex-col items-center px-8 py-12 min-w-[80vw] max-w-xs sm:max-w-md shadow-2xl z-[10001]">
             <button
-              className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-full bg-bg-2/80 border border-white/15 shadow-[0_0_10px_2px_rgba(156,207,216,0.18),0_0_22px_6px_rgba(235,111,146,0.15)] backdrop-blur-md transition-all duration-500 hover:shadow-[0_0_30px_10px_rgba(196,167,231,0.4),0_0_48px_16px_rgba(246,193,119,0.24)] hover:border-brand/70 active:scale-95 focus:outline-none font-nebula z-[10002]"
+              className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-full border backdrop-blur-md transition-all duration-300 hover:border-white/25 active:scale-95 focus:outline-none font-nebula z-[10002]"
+              style={{
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%)',
+                boxShadow: '0 4px 16px 0 rgba(0, 0, 0, 0.2), inset 0 1px 0 0 rgba(255, 255, 255, 0.1)',
+                border: '1px solid rgba(255, 255, 255, 0.15)',
+                backdropFilter: 'blur(12px) saturate(1.3) brightness(1.05)',
+              }}
               aria-label="Close menu"
               onClick={() => setOpen(false)}
             >
