@@ -1,5 +1,14 @@
 import React, { useEffect, useRef } from 'react';
 
+// Rose Pine color palette for pixels
+const COLORS = [
+  { r: 156, g: 207, b: 216 }, // foam/cyan - #9ccfd8
+  { r: 196, g: 167, b: 231 }, // iris/purple - #c4a7e7
+  { r: 235, g: 188, b: 186 }, // rose - #ebbcba
+  { r: 246, g: 193, b: 119 }, // gold - #f6c177
+  { r: 224, g: 222, b: 244 }, // text - #e0def4
+];
+
 interface Pixel {
   x: number;
   y: number;
@@ -8,12 +17,25 @@ interface Pixel {
   delay: number;
   duration: number;
   elapsed: number;
+  colorIndex: number;
+  phase: number; // for subtle color shimmer
+}
+
+interface PulseWave {
+  x: number;
+  y: number;
+  radius: number;
+  maxRadius: number;
+  opacity: number;
+  colorIndex: number;
 }
 
 const NeuralGrid: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const pixelsRef = useRef<Pixel[]>([]);
+  const pulsesRef = useRef<PulseWave[]>([]);
   const animationFrameRef = useRef<number>();
+  const lastTimeRef = useRef<number>(0);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -59,21 +81,100 @@ const NeuralGrid: React.FC = () => {
               delay: Math.random() * 2500,
               duration: 600 + Math.random() * 1800,
               elapsed: 0,
+              colorIndex: Math.random() < 0.7 ? 4 : Math.floor(Math.random() * 4), // mostly white, some colored
+              phase: Math.random() * Math.PI * 2,
             });
           }
         }
       }
 
       pixelsRef.current = pixels;
+      pulsesRef.current = [];
     };
 
-    const animate = (_timestamp: number) => {
+    // Spawn a new pulse wave occasionally
+    const maybeSpawnPulse = () => {
+      if (Math.random() < 0.003 && pulsesRef.current.length < 3) {
+        const brightPixels = pixelsRef.current.filter(p => p.opacity > 0.5);
+        if (brightPixels.length > 0) {
+          const source = brightPixels[Math.floor(Math.random() * brightPixels.length)];
+          pulsesRef.current.push({
+            x: source.x,
+            y: source.y,
+            radius: 0,
+            maxRadius: 150 + Math.random() * 200,
+            opacity: 0.4,
+            colorIndex: Math.floor(Math.random() * 4),
+          });
+        }
+      }
+    };
+
+
+    const animate = (timestamp: number) => {
       if (!ctx || !canvas) return;
+
+      const deltaTime = timestamp - lastTimeRef.current;
+      lastTimeRef.current = timestamp;
+      const dt = Math.min(deltaTime, 32); // cap delta to prevent jumps
 
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+      maybeSpawnPulse();
+
+      // Update and draw pulse waves
+      pulsesRef.current = pulsesRef.current.filter(pulse => {
+        pulse.radius += dt * 0.08;
+        pulse.opacity = 0.4 * (1 - pulse.radius / pulse.maxRadius);
+        
+        if (pulse.radius >= pulse.maxRadius) return false;
+
+        const color = COLORS[pulse.colorIndex];
+        ctx.beginPath();
+        ctx.arc(pulse.x, pulse.y, pulse.radius, 0, Math.PI * 2);
+        ctx.strokeStyle = `rgba(${color.r}, ${color.g}, ${color.b}, ${pulse.opacity * 0.3})`;
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
+        
+        return true;
+      });
+
+      // Draw neural connections between nearby bright pixels
+      const brightPixels = pixelsRef.current.filter(p => p.opacity > 0.45);
+      ctx.lineWidth = 0.5;
+      for (let i = 0; i < brightPixels.length; i++) {
+        for (let j = i + 1; j < brightPixels.length; j++) {
+          const p1 = brightPixels[i];
+          const p2 = brightPixels[j];
+          const dist = Math.sqrt(Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2));
+          
+          if (dist < 60 && dist > 15) {
+            const connectionOpacity = (1 - dist / 60) * Math.min(p1.opacity, p2.opacity) * 0.25;
+            const color = COLORS[p1.colorIndex];
+            ctx.beginPath();
+            ctx.moveTo(p1.x, p1.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.strokeStyle = `rgba(${color.r}, ${color.g}, ${color.b}, ${connectionOpacity})`;
+            ctx.stroke();
+          }
+        }
+      }
+
+      // Update and draw pixels
       pixelsRef.current.forEach(pixel => {
-        pixel.elapsed += 16;
+        pixel.elapsed += dt;
+        pixel.phase += dt * 0.001;
+
+        // Check if pixel is affected by any pulse wave
+        let pulseBoost = 0;
+        pulsesRef.current.forEach(pulse => {
+          const dist = Math.sqrt(Math.pow(pixel.x - pulse.x, 2) + Math.pow(pixel.y - pulse.y, 2));
+          const ringWidth = 30;
+          if (Math.abs(dist - pulse.radius) < ringWidth) {
+            const proximity = 1 - Math.abs(dist - pulse.radius) / ringWidth;
+            pulseBoost = Math.max(pulseBoost, proximity * pulse.opacity * 0.8);
+          }
+        });
 
         if (pixel.elapsed >= pixel.delay) {
           const progress = Math.min((pixel.elapsed - pixel.delay) / pixel.duration, 1);
@@ -98,22 +199,35 @@ const NeuralGrid: React.FC = () => {
             pixel.delay = Math.random() * 2000;
             pixel.duration = 500 + Math.random() * 1500;
             pixel.elapsed = 0;
+            // Occasionally change color
+            if (Math.random() < 0.1) {
+              pixel.colorIndex = Math.random() < 0.7 ? 4 : Math.floor(Math.random() * 4);
+            }
           }
         }
 
-        if (pixel.opacity > 0.02) {
-          const size = pixel.opacity > 0.5 ? 2.5 : pixel.opacity > 0.3 ? 2 : 1.5;
-          const colorVariation = Math.floor(220 + Math.random() * 12);
-          const glow = pixel.opacity > 0.6 ? 0.3 : 0;
+        const effectiveOpacity = Math.min(pixel.opacity + pulseBoost, 1);
+
+        if (effectiveOpacity > 0.02) {
+          const size = effectiveOpacity > 0.5 ? 2.5 : effectiveOpacity > 0.3 ? 2 : 1.5;
+          const color = COLORS[pixel.colorIndex];
+          
+          // Subtle shimmer effect
+          const shimmer = 1 + Math.sin(pixel.phase) * 0.08;
+          const r = Math.min(255, color.r * shimmer);
+          const g = Math.min(255, color.g * shimmer);
+          const b = Math.min(255, color.b * shimmer);
+          
+          const glow = effectiveOpacity > 0.55 ? 0.35 : 0;
           
           if (glow > 0) {
-            ctx.shadowBlur = 4;
-            ctx.shadowColor = `rgba(${colorVariation}, 222, 244, ${glow})`;
+            ctx.shadowBlur = 5;
+            ctx.shadowColor = `rgba(${r}, ${g}, ${b}, ${glow})`;
           } else {
             ctx.shadowBlur = 0;
           }
           
-          ctx.fillStyle = `rgba(${colorVariation}, 222, 244, ${Math.min(pixel.opacity, 0.95)})`;
+          ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${Math.min(effectiveOpacity, 0.95)})`;
           ctx.fillRect(pixel.x, pixel.y, size, size);
         }
       });
@@ -139,7 +253,7 @@ const NeuralGrid: React.FC = () => {
       className="fixed inset-0 pointer-events-none"
       style={{
         mixBlendMode: 'lighten',
-        opacity: 0.32,
+        opacity: 0.38,
         zIndex: 0,
       }}
       aria-hidden="true"
