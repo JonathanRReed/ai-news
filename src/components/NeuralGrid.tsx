@@ -36,6 +36,7 @@ const NeuralGrid: React.FC = () => {
   const pulsesRef = useRef<PulseWave[]>([]);
   const animationFrameRef = useRef<number>();
   const lastTimeRef = useRef<number>(0);
+  const frameIntervalRef = useRef<number>(0); // For frame throttling
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -55,7 +56,8 @@ const NeuralGrid: React.FC = () => {
 
     const initializePixels = () => {
       const pixels: Pixel[] = [];
-      const spacing = 10;
+      // Increased spacing to reduce pixel count and improve performance
+      const spacing = window.innerWidth < 768 ? 14 : 12;
       const cols = Math.floor(canvas.width / spacing);
       const rows = Math.floor(canvas.height / spacing);
       
@@ -115,8 +117,17 @@ const NeuralGrid: React.FC = () => {
       if (!ctx || !canvas) return;
 
       const deltaTime = timestamp - lastTimeRef.current;
+      
+      // Throttle to ~30fps max to reduce CPU usage
+      frameIntervalRef.current += deltaTime;
+      if (frameIntervalRef.current < 33) {
+        animationFrameRef.current = requestAnimationFrame(animate);
+        return;
+      }
+      
       lastTimeRef.current = timestamp;
-      const dt = Math.min(deltaTime, 32); // cap delta to prevent jumps
+      const dt = Math.min(frameIntervalRef.current, 50); // cap delta to prevent jumps
+      frameIntervalRef.current = 0;
 
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
