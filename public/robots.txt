@@ -97,3 +97,6 @@ Disallow: /search/
 Disallow: /*?s=
 Disallow: /*?q=
 Allow: /
+
+# ███ GLOBAL SITEMAP ███
+Sitemap: https://ai-news.helloworldfirm.com/sitemap.xml
