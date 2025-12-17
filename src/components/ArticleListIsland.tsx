@@ -33,7 +33,9 @@ function getDomain(url: string): string {
 
 // Article type imported from ../types/article
 
-function ArticleCard({ article, density = 'comfortable' }: { article: Article, density?: 'comfortable'|'compact' }) {
+import SpotlightCard from "./SpotlightCard.js";
+
+function ArticleCard({ article, density = 'comfortable' }: { article: Article, density?: 'comfortable' | 'compact' }) {
   // Resolve logo from local /public/logos even if the company string varies slightly
   const logoPath = resolveLogo(article.company);
   const pad = density === 'compact' ? 'p-4' : 'p-6';
@@ -41,7 +43,7 @@ function ArticleCard({ article, density = 'comfortable' }: { article: Article, d
   const title = density === 'compact' ? 'text-base' : 'text-lg';
   const meta = density === 'compact' ? 'text-xs' : 'text-sm';
   return (
-    <div className={`glassmorphic-article-card animated-gradient article-card-hoverable ${pad} mb-6 transition-all`}>
+    <SpotlightCard className={`backdrop-blur-md shadow-lg mb-6 transition-all group ${pad}`} borderColor="rgba(255,255,255,0.1)">
       <div className="flex items-center gap-2 mb-2">
         {logoPath && (
           <span className="w-7 h-7 rounded-full bg-gradient-to-br from-text-2/80 via-blue-ink/25 to-teal-ink/70 ring-2 ring-brand/40 shadow-[0_0_12px_2px_rgba(196,167,231,0.14)] mr-2 flex items-center justify-center">
@@ -63,11 +65,11 @@ function ArticleCard({ article, density = 'comfortable' }: { article: Article, d
         {article.source_type ? <span>• {article.source_type}</span> : null}
       </div>
       <p className={`${meta} text-white/80`}>{article.summary || article.content}</p>
-    </div>
+    </SpotlightCard>
   );
 }
 
-export default function ArticleListIsland({ density = 'comfortable' }: { density?: 'comfortable'|'compact' }) {
+export default function ArticleListIsland({ density = 'comfortable' }: { density?: 'comfortable' | 'compact' }) {
   const { data, isFetching, error, fetchNextPage, hasNextPage, filters } = useArticlesContext();
   // Merge, deduplicate by ID, and sort articles newest-to-oldest
   const articles = useMemo<Article[]>(() => {
@@ -135,7 +137,7 @@ export default function ArticleListIsland({ density = 'comfortable' }: { density
     const checkForNew = async () => {
       // Skip polling if page is hidden to save resources
       if (typeof document !== 'undefined' && document.hidden) return;
-      
+
       try {
         const firstPage = await fetchArticlesPage(filters, 0);
         const page = Array.isArray(firstPage.data) ? firstPage.data : [];
@@ -146,25 +148,25 @@ export default function ArticleListIsland({ density = 'comfortable' }: { density
         // silent fail
       }
     };
-    
+
     // Handle visibility change to pause/resume polling
     const handleVisibilityChange = () => {
       if (!document.hidden) {
         checkForNew(); // Check immediately when tab becomes visible
       }
     };
-    
+
     // initial check and interval
     checkForNew();
     if (pollTimer.current) window.clearInterval(pollTimer.current);
     // poll every 60s
     pollTimer.current = window.setInterval(checkForNew, 60_000) as unknown as number;
-    
+
     // Listen for visibility changes
     if (typeof document !== 'undefined') {
       document.addEventListener('visibilitychange', handleVisibilityChange);
     }
-    
+
     return () => {
       if (pollTimer.current) window.clearInterval(pollTimer.current);
       if (typeof document !== 'undefined') {
@@ -193,7 +195,7 @@ export default function ArticleListIsland({ density = 'comfortable' }: { density
     </>
   );
 
-  
+
 
   // Removed external refreshSignal behavior per request
 

@@ -7,7 +7,8 @@ import NeuralGrid from "../components/NeuralGrid";
 const siteUrl = "https://ai-news.helloworldfirm.com";
 const canonicalUrl = `${siteUrl}/`;
 const title = "AI News Hub | Curated AI updates by Jonathan R Reed";
-const description = "Ai news is a curated AI news hub by Jonathan R Reed, collecting key updates from leading labs and tools into one fast, skimmable feed.";
+const description =
+  "Ai news is a curated AI news hub by Jonathan R Reed, collecting key updates from leading labs and tools into one fast, skimmable feed.";
 const socialImage = "https://img.helloworldfirm.com/logos/512x512-logo.avif";
 const socialImageAlt = "AI News Hub logo";
 const structuredData = {
@@ -19,7 +20,7 @@ const structuredData = {
   creator: {
     "@type": "Person",
     name: "Jonathan R Reed",
-    url: "https://jonathanrreed.com"
+    url: "https://jonathanrreed.com",
   },
   publisher: {
     "@type": "Organization",
@@ -27,17 +28,17 @@ const structuredData = {
     url: "https://helloworldfirm.com",
     logo: {
       "@type": "ImageObject",
-      url: socialImage
-    }
+      url: socialImage,
+    },
   },
   potentialAction: {
     "@type": "SearchAction",
     target: {
       "@type": "EntryPoint",
-      urlTemplate: `${siteUrl}/?q={search_term_string}`
+      urlTemplate: `${siteUrl}/?q={search_term_string}`,
     },
-    "query-input": "required name=search_term_string"
-  }
+    "query-input": "required name=search_term_string",
+  },
 };
 
 const collectionStructuredData = {
@@ -49,18 +50,25 @@ const collectionStructuredData = {
   isPartOf: {
     "@type": "WebSite",
     name: "AI News Hub",
-    url: siteUrl
-  }
+    url: siteUrl,
+  },
 };
 ---
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="keywords" content="AI news, artificial intelligence news, AI research updates, OpenAI news, Anthropic updates, Google DeepMind announcements, Mistral AI, Hugging Face, Meta AI, AI headlines" />
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta
+      name="keywords"
+      content="AI news, artificial intelligence news, AI research updates, OpenAI news, Anthropic updates, Google DeepMind announcements, Mistral AI, Hugging Face, Meta AI, AI headlines"
+    />
+    <meta
+      name="robots"
+      content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+    />
     <meta name="author" content="Hello.World Consulting" />
     <meta name="application-name" content="AI News Hub" />
     <meta name="apple-mobile-web-app-title" content="AI News Hub" />
@@ -87,15 +95,37 @@ const collectionStructuredData = {
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="dns-prefetch" href="https://img.helloworldfirm.com" />
     <link rel="preconnect" href="https://fonts.helloworldfirm.com" />
-    <link rel="preconnect" href="https://fonts.helloworldfirm.com" crossorigin />
+    <link
+      rel="preconnect"
+      href="https://fonts.helloworldfirm.com"
+      crossorigin
+    />
     <link rel="preload" href="/global-font.css" as="style" />
     <link rel="preload" href="/global-animated-gradient.css" as="style" />
     <link rel="stylesheet" href="/global-font.css" />
     <link rel="stylesheet" href="/global-animated-gradient.css" />
-    <link rel="preload" href="https://fonts.helloworldfirm.com/NebulaSans-Book.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="https://fonts.helloworldfirm.com/NebulaSans-BoldItalic.woff2" as="font" type="font/woff2" crossorigin />
-    <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
-    <script type="application/ld+json">{JSON.stringify(collectionStructuredData)}</script>
+    <link
+      rel="preload"
+      href="https://fonts.helloworldfirm.com/NebulaSans-Book.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="https://fonts.helloworldfirm.com/NebulaSans-BoldItalic.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(structuredData)}
+    />
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(collectionStructuredData)}
+    />
     <script>
       (function () {
         if (typeof window === "undefined") return;
@@ -118,10 +148,18 @@ const collectionStructuredData = {
   <body class="bg-bg-0 text-text-1 font-sans">
     <NeuralGrid client:visible />
     <Header currentPage="home" />
-    <main class="container max-w-lg sm:max-w-2xl md:max-w-3xl mx-auto px-2 sm:px-6 md:px-8 py-2 relative z-10">
+    <main
+      class="container max-w-lg sm:max-w-2xl md:max-w-3xl mx-auto px-2 sm:px-6 md:px-8 py-2 relative z-10"
+    >
       <section id="home" class="mb-6">
-        <h2 class="text-xl sm:text-2xl font-semibold mb-1">Welcome to <span class="animated-gradient-logo">Ai-news</span></h2>
-        <p class="text-base sm:text-lg text-white/80">Ai news is a small AI news hub curated by Jonathan R Reed. It pulls together updates from major labs and tools into one place so you can skim what matters.</p>
+        <h2 class="text-xl sm:text-2xl font-semibold mb-1">
+          Welcome to <span class="shimmer-text font-bold">Ai-news</span>
+        </h2>
+        <p class="text-base sm:text-lg text-white/80">
+          Ai news is a small AI news hub curated by Jonathan R Reed. It pulls
+          together updates from major labs and tools into one place so you can
+          skim what matters.
+        </p>
       </section>
       <section id="articles" class="space-y-8">
         <ArticlesIslandWrapper client:visible />
