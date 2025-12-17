@@ -12,7 +12,7 @@ body::before {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: 
+  background:
     radial-gradient(ellipse 80% 50% at 20% 40%, rgba(156, 207, 216, 0.08) 0%, transparent 50%),
     radial-gradient(ellipse 60% 40% at 75% 30%, rgba(196, 167, 231, 0.06) 0%, transparent 45%),
     radial-gradient(ellipse 50% 60% at 50% 80%, rgba(49, 116, 143, 0.07) 0%, transparent 50%);
@@ -21,16 +21,39 @@ body::before {
   z-index: -1;
 }
 
+/* Film Grain Texture */
+html::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 50;
+  /* Top of everything but below modals if needed, or higher? usually distinct overlay */
+  background-image: url("/noise.svg");
+  opacity: 0.15;
+  /* Increased visibility per user feedback */
+  mix-blend-mode: overlay;
+  filter: contrast(120%) brightness(100%);
+}
+
 @keyframes auroraShift {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translate(0%, 0%) rotate(0deg);
   }
+
   25% {
     transform: translate(5%, -3%) rotate(2deg);
   }
+
   50% {
     transform: translate(-3%, 5%) rotate(-1deg);
   }
+
   75% {
     transform: translate(-5%, -2%) rotate(1deg);
   }
@@ -44,7 +67,7 @@ body::after {
   left: 0;
   width: 100%;
   height: 100%;
-  background: 
+  background:
     radial-gradient(circle at 30% 70%, rgba(246, 193, 119, 0.03) 0%, transparent 35%),
     radial-gradient(circle at 70% 20%, rgba(235, 188, 186, 0.025) 0%, transparent 30%);
   animation: subtleGlow 30s ease-in-out infinite alternate;
@@ -57,6 +80,7 @@ body::after {
     opacity: 0.6;
     transform: scale(1);
   }
+
   100% {
     opacity: 1;
     transform: scale(1.05);
@@ -64,29 +88,42 @@ body::after {
 }
 
 .animated-gradient {
-  background: linear-gradient(
-    120deg,
-    rgba(64, 61, 82, 0.85) 0%, /* highlight-med */
-    rgba(82, 79, 103, 0.65) 50%, /* highlight-high */
-    rgba(49, 116, 143, 0.45) 100% /* pine */
-  );
+  background: linear-gradient(120deg,
+      rgba(64, 61, 82, 0.85) 0%,
+      /* highlight-med */
+      rgba(82, 79, 103, 0.65) 50%,
+      /* highlight-high */
+      rgba(49, 116, 143, 0.45) 100%
+      /* pine */
+    );
   background-size: 200% 200%;
   animation: gradientMove 32s ease-in-out infinite;
 }
+
 @keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .article-fade-in {
-  animation: fadeInUp 0.7s cubic-bezier(0.4,0.2,0.2,1);
+  animation: fadeInUp 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
 }
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
     transform: translateY(28px) scale(0.98);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -107,15 +144,18 @@ body::after {
   opacity: 0;
   transform: translateY(28px) scale(0.98);
 }
+
 .article-fade-in-enter-active {
   opacity: 1;
   transform: translateY(0) scale(1);
-  transition: opacity 0.7s cubic-bezier(0.4,0.2,0.2,1), transform 0.7s cubic-bezier(0.4,0.2,0.2,1);
+  transition: opacity 0.7s cubic-bezier(0.4, 0.2, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
 }
+
 .article-fade-in-exit {
   opacity: 1;
   transform: translateY(0) scale(1);
 }
+
 .article-fade-in-exit-active {
   opacity: 0;
   transform: translateY(28px) scale(0.98);
@@ -124,17 +164,20 @@ body::after {
 
 /* Subtle card hover scale animation */
 .article-card-hoverable {
-  transition: transform 0.19s cubic-bezier(0.4, 0.2, 0.2, 1), 
-              box-shadow 0.19s cubic-bezier(0.4, 0.2, 0.2, 1),
-              border-color 0.19s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transition: transform 0.19s cubic-bezier(0.4, 0.2, 0.2, 1),
+    box-shadow 0.19s cubic-bezier(0.4, 0.2, 0.2, 1),
+    border-color 0.19s cubic-bezier(0.4, 0.2, 0.2, 1);
   /* Only enable will-change on hover to reduce GPU memory usage */
 }
+
 .article-card-hoverable:hover {
   will-change: transform, box-shadow;
 }
-.article-card-hoverable:hover, .article-card-hoverable:focus-visible {
+
+.article-card-hoverable:hover,
+.article-card-hoverable:focus-visible {
   transform: scale(1.018) translateY(-2px);
-  box-shadow: 
+  box-shadow:
     0 12px 40px 0 rgba(0, 0, 0, 0.3),
     inset 0 1px 0 0 rgba(255, 255, 255, 0.15);
   border-color: rgba(255, 255, 255, 0.18);
@@ -143,26 +186,58 @@ body::after {
 
 /* Respect reduced motion preferences to lower main-thread work */
 @media (prefers-reduced-motion: reduce) {
+
   body::before,
   body::after {
     animation: none !important;
     transform: none !important;
   }
+
   .animated-gradient {
     animation: none !important;
     background-position: 50% 50% !important;
   }
+
   .article-fade-in,
   .article-fade-in-enter-active,
   .article-fade-in-exit,
-  .article-fade-in-exit-active {
+  .article-fade-in-exit-active,
+  .shimmer-text {
     animation: none !important;
     transition: none !important;
     transform: none !important;
     opacity: 1 !important;
+    background-size: 100% !important;
+    background-position: 0% 0% !important;
   }
+
   .article-card-hoverable,
   .glassmorphic-article-card {
     transition: none !important;
+  }
+}
+
+/* Premium Shimmer Text Effect */
+.shimmer-text {
+  background: linear-gradient(90deg,
+      rgba(255, 255, 255, 0.8) 0%,
+      rgba(255, 255, 255, 1) 40%,
+      rgba(255, 255, 255, 0.6) 55%,
+      rgba(255, 255, 255, 1) 70%,
+      rgba(255, 255, 255, 0.8) 100%);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shimmer 8s linear infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+
+  100% {
+    background-position: 200% center;
   }
 }
