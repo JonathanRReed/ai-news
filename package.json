@@ -31,8 +31,8 @@
   },
   "devDependencies": {
     "@astrojs/tailwind": "^6.0.2",
-    "@typescript-eslint/eslint-plugin": "^8.51.0",
-    "@typescript-eslint/parser": "^8.51.0",
+    "@typescript-eslint/eslint-plugin": "^8.52.0",
+    "@typescript-eslint/parser": "^8.52.0",
     "astro-eslint-parser": "^1.2.2",
     "autoprefixer": "^10.4.23",
     "babel-plugin-react-compiler": "^1.0.0",
