@@ -1,14 +1,14 @@
 ---
-import ArticlesIslandWrapper from "../components/ArticlesIslandWrapper";
+import ArticlesIslandWrapper from "../components/ArticlesIslandWrapper.tsx";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
-import NeuralGrid from "../components/NeuralGrid";
+import NeuralGrid from "../components/NeuralGrid.tsx";
 
 const siteUrl = "https://ai-news.helloworldfirm.com";
 const canonicalUrl = `${siteUrl}/`;
-const title = "AI News Hub | Curated AI updates by Jonathan R Reed";
+const title = "AI News Hub";
 const description =
-  "Ai news is a curated AI news hub by Jonathan R Reed, collecting key updates from leading labs and tools into one fast, skimmable feed.";
+  "AI News Hub collects AI articles from RSS and Atom feeds.";
 const socialImage = "https://img.helloworldfirm.com/logos/512x512-logo.avif";
 const socialImageAlt = "AI News Hub logo";
 const structuredData = {
@@ -63,7 +63,7 @@ const collectionStructuredData = {
     <meta name="description" content={description} />
     <meta
       name="keywords"
-      content="AI news, artificial intelligence news, AI research updates, OpenAI news, Anthropic updates, Google DeepMind announcements, Mistral AI, Hugging Face, Meta AI, AI headlines"
+      content="AI news, artificial intelligence news, AI research updates, OpenAI news, Anthropic updates, Google DeepMind announcements, Mistral AI, Hugging Face, Meta AI, xAI, DeepSeek, IBM Research, Amazon AI, NVIDIA AI, Alibaba Qwen"
     />
     <meta
       name="robots"
@@ -72,8 +72,8 @@ const collectionStructuredData = {
     <meta name="author" content="Hello.World Consulting" />
     <meta name="application-name" content="AI News Hub" />
     <meta name="apple-mobile-web-app-title" content="AI News Hub" />
-    <meta name="theme-color" content="#191724" />
-    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#0A0A0A" />
+    <meta name="color-scheme" content="dark" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={socialImage} />
@@ -119,10 +119,12 @@ const collectionStructuredData = {
       crossorigin
     />
     <script
+      is:inline
       type="application/ld+json"
       set:html={JSON.stringify(structuredData)}
     />
     <script
+      is:inline
       type="application/ld+json"
       set:html={JSON.stringify(collectionStructuredData)}
     />
@@ -139,29 +141,16 @@ const collectionStructuredData = {
  \\|________|\\|__|\\|__|\\|__|\\|__|
         `;
         console.log(ascii);
-        console.log("Hey there. Interested in code?");
-        console.log("Check out my GitHub: https://github.com/JonathanRReed");
-        console.log("Most of my sites repos are open source.");
+        console.log("Source: https://github.com/JonathanRReed/ai-news");
       })();
     </script>
   </head>
   <body class="bg-bg-0 text-text-1 font-sans">
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <NeuralGrid client:visible />
     <Header currentPage="home" />
-    <main
-      class="container max-w-lg sm:max-w-2xl md:max-w-3xl mx-auto px-2 sm:px-6 md:px-8 py-2 relative z-10"
-    >
-      <section id="home" class="mb-6">
-        <h2 class="text-xl sm:text-2xl font-semibold mb-1">
-          Welcome to <span class="shimmer-text font-bold">Ai-news</span>
-        </h2>
-        <p class="text-base sm:text-lg text-white/80">
-          Ai news is a small AI news hub curated by Jonathan R Reed. It pulls
-          together updates from major labs and tools into one place so you can
-          skim what matters.
-        </p>
-      </section>
-      <section id="articles" class="space-y-8">
+    <main id="main-content" class="industrial-shell">
+      <section id="articles" class="industrial-container space-y-8 py-8 md:py-12">
         <ArticlesIslandWrapper client:visible />
       </section>
     </main>

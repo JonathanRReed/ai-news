@@ -1,4 +1,5 @@
 import { createClient } from '@supabase/supabase-js';
+import type { Database } from '../types/database.js';
 
 const url = import.meta.env.PUBLIC_SUPABASE_URL;
 const anonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
@@ -14,4 +15,4 @@ if (!url || !anonKey) {
   throw new Error('Supabase configuration error: PUBLIC_SUPABASE_URL and/or PUBLIC_SUPABASE_ANON_KEY are missing.');
 }
 
-export const supabase = createClient(url, anonKey);
+export const supabase = createClient<Database>(url, anonKey);

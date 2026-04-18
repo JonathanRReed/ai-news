@@ -1,13 +1,13 @@
 # AI News Hub
 
-> AI News Hub is a curated news aggregator that collects and displays the latest updates from leading AI organizations including Meta AI, OpenAI, Anthropic, Google DeepMind, Mistral AI, Hugging Face, and XAI. Built with Astro, React, and Supabase, the platform provides a streamlined interface for staying informed on AI research and developments.
+> AI News Hub collects AI articles from RSS and Atom feeds. It covers Meta AI, OpenAI, Anthropic, Google DeepMind, Mistral AI, Hugging Face, xAI, DeepSeek, IBM Research, Amazon AI, NVIDIA AI, and Alibaba Qwen.
 
 ## Tech Stack
 
 - **Framework**: Astro 5.14.5 with server-side rendering
 - **Runtime**: Bun 1.x (JavaScript runtime and package manager)
 - **UI Library**: React 19.2.0 with React Compiler optimization
-- **Styling**: TailwindCSS 3.4.18 with custom animated gradients
+- **Styling**: TailwindCSS 3.4.18
 - **Database**: Supabase (PostgreSQL) for news article storage and retrieval
 - **State Management**: TanStack React Query 5.90.5 for data fetching and caching
 - **Type Safety**: TypeScript 5.9.3
@@ -22,11 +22,10 @@
 
 ## Key Features
 
-- **Real-time News Aggregation**: Curates updates from 7+ major AI organizations
+- **Article Feed**: Collects articles from major AI organizations
 - **Company Filtering**: Filter articles by specific AI companies
-- **Responsive Design**: Mobile-first approach with TailwindCSS
-- **Animated Neural Grid**: Custom background animation for visual appeal
-- **SEO Optimized**: Comprehensive meta tags, structured data, and OpenGraph support
+- **Responsive Design**: Mobile-first layout with TailwindCSS
+- **SEO**: Meta tags, structured data, and OpenGraph support
 - **Performance**: Island architecture with client-side hydration for interactive components
 
 ## Configuration Files

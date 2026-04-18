@@ -1,12 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 
-// Rose Pine color palette for pixels
 const COLORS = [
-  { r: 156, g: 207, b: 216 }, // foam/cyan - #9ccfd8
-  { r: 196, g: 167, b: 231 }, // iris/purple - #c4a7e7
-  { r: 235, g: 188, b: 186 }, // rose - #ebbcba
-  { r: 246, g: 193, b: 119 }, // gold - #f6c177
-  { r: 224, g: 222, b: 244 }, // text - #e0def4
+  { r: 230, g: 25, b: 25 },
+  { r: 255, g: 42, b: 42 },
+  { r: 234, g: 234, b: 234 },
+  { r: 168, g: 168, b: 168 },
+  { r: 234, g: 234, b: 234 },
 ];
 
 interface Pixel {
@@ -264,7 +263,7 @@ const NeuralGrid: React.FC = () => {
       className="fixed inset-0 pointer-events-none"
       style={{
         mixBlendMode: 'lighten',
-        opacity: 0.38,
+        opacity: 0.24,
         zIndex: 0,
       }}
       aria-hidden="true"

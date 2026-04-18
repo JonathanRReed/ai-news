@@ -1,22 +1,35 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from "../components/Footer.astro";
-import FaqDropdown from '../components/FaqDropdown';
-import NeuralGrid from '../components/NeuralGrid';
+import FaqDropdown from '../components/FaqDropdown.tsx';
+import NeuralGrid from '../components/NeuralGrid.tsx';
+import { companies } from '../lib/companyCatalog.js';
+import type { CompanyEntry } from '../lib/companyCatalog.js';
 
 const siteUrl = "https://ai-news.helloworldfirm.com";
 const canonicalUrl = `${siteUrl}/about`;
-const title = "About AI News Hub | Methodology & Mission";
-const description = "Learn how AI News Hub curates hourly updates from leading AI labs, companies, and research organizations to keep you informed on every major development.";
-const keywords = "About AI News Hub, AI news aggregator, AI curation methodology, Hello.World Consulting";
+const title = "About AI News Hub";
+const description = "AI News Hub collects AI articles from RSS and Atom feeds.";
+const keywords = "About AI News Hub, AI news aggregator, AI RSS feeds, Hello.World Consulting";
 const socialImage = "https://img.helloworldfirm.com/logos/512x512-logo.avif";
 const socialImageAlt = "AI News Hub galaxy-inspired logo";
+const creatorImage = "https://img.helloworldfirm.com/personal/jonathan.avif";
+const sourceCompanies: CompanyEntry[] = companies.filter((company: CompanyEntry) => company.name !== 'All');
+const creator = {
+  "@type": "Person",
+  name: "Jonathan R Reed",
+  url: "https://jonathanrreed.com",
+  image: creatorImage,
+  jobTitle: "Software builder",
+};
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "AboutPage",
   name: title,
   url: canonicalUrl,
   description,
+  author: creator,
+  creator,
   publisher: {
     "@type": "Organization",
     name: "Hello.World Consulting",
@@ -54,11 +67,11 @@ const structuredData = {
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords} />
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-    <meta name="author" content="Hello.World Consulting" />
+    <meta name="author" content="Jonathan R Reed" />
     <meta name="application-name" content="AI News Hub" />
     <meta name="apple-mobile-web-app-title" content="AI News Hub" />
-    <meta name="theme-color" content="#191724" />
-    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#0A0A0A" />
+    <meta name="color-scheme" content="dark" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={socialImage} />
@@ -75,6 +88,7 @@ const structuredData = {
     <meta name="twitter:image" content={socialImage} />
     <meta name="twitter:image:alt" content={socialImageAlt} />
     <link rel="canonical" href={canonicalUrl} />
+    <link rel="author" href="https://jonathanrreed.com" />
     <link rel="icon" type="image/webp" href="/favicon.webp" />
     <link rel="apple-touch-icon" href="/favicon.webp" />
     <link rel="manifest" href="/site.webmanifest" />
@@ -87,21 +101,99 @@ const structuredData = {
     <link rel="stylesheet" href="/global-animated-gradient.css" />
     <link rel="preload" href="https://fonts.helloworldfirm.com/NebulaSans-Book.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="https://fonts.helloworldfirm.com/NebulaSans-BoldItalic.woff2" as="font" type="font/woff2" crossorigin />
-    <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
+    <script
+      is:inline
+      type="application/ld+json"
+      set:html={JSON.stringify(structuredData)}
+    />
   </head>
   <body class="bg-bg-0 text-text-1 font-sans min-h-screen flex flex-col">
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <NeuralGrid client:visible />
     <Header currentPage="about" />
-    <main class="flex-1 flex flex-col items-center justify-center px-4 relative z-10">
-      <section class="max-w-2xl w-full">
-        <h1 class="text-3xl sm:text-4xl font-bold mb-4">About</h1>
-        <p class="text-base sm:text-lg text-text-2 mb-6"><span class="animated-gradient-logo">Ai-news</span> is a curated AI news hub by Jonathan R Reed. It pulls together updates from major labs and tools into one place so you can skim what matters.</p>
-        <p class="text-base sm:text-lg text-text-2 mb-6">Updates & news from Meta AI, OpenAI, Anthropic, Google DeepMind, Mistral AI, Hugging Face, and XAI. <a href="https://jonathanrreed.com/projects/" target="_blank" rel="noopener noreferrer" class="text-brand hover:underline">See more AI and cybersecurity projects by Jonathan R Reed</a>.</p>
-        <a href="/" class="glassmorphic-article-card inline-block mt-4 px-8 py-2 rounded-full font-semibold text-brand border-2 border-brand/40 shadow-lg backdrop-blur-md bg-white/10 hover:shadow-[0_0_16px_3px_rgba(196,167,231,0.28),0_0_20px_6px_rgba(246,193,119,0.2)] hover:bg-white/20 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand/60">
-          Back to Home
-        </a>
+    <main id="main-content" class="industrial-shell flex-1">
+      <section class="industrial-container py-24 md:py-36">
+        <div class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_380px]">
+          <div class="max-w-5xl">
+            <p class="micro-label mb-5 text-brand">[ About ]</p>
+            <h1 class="macro-heading max-w-5xl">AI News Hub</h1>
+            <p class="mt-8 max-w-3xl text-xl leading-relaxed text-text-2">
+              AI News Hub collects articles from RSS and Atom feeds for major AI labs and tools.
+            </p>
+          </div>
+          <aside class="industrial-border h-fit p-6">
+            <p class="micro-label mb-6 text-text-2">[ Made by ]</p>
+            <div class="mb-8 grid grid-cols-[72px_minmax(0,1fr)] items-center gap-4 border-b border-white/15 pb-6">
+              <img
+                src={creatorImage}
+                alt="Jonathan R Reed"
+                width="144"
+                height="144"
+                class="h-[72px] w-[72px] border border-white/20 object-cover grayscale contrast-125"
+                loading="eager"
+                decoding="async"
+              />
+              <div>
+                <h2 class="text-2xl font-black uppercase leading-none text-white">
+                  Jonathan R Reed
+                </h2>
+                <a
+                  href="https://jonathanrreed.com"
+                  target="_blank"
+                  rel="author noopener noreferrer"
+                  class="mt-2 inline-block font-mono text-xs uppercase tracking-[0.08em] text-text-2 underline decoration-brand decoration-2 underline-offset-4 hover:text-white"
+                >
+                  jonathanrreed.com
+                </a>
+              </div>
+            </div>
+            <p class="micro-label mb-8 text-text-2">[ Sources ]</p>
+            <ul class="space-y-3 font-mono text-sm uppercase tracking-[0.08em] text-white">
+              {sourceCompanies.map((company, index) => (
+                <li class={index === sourceCompanies.length - 1 ? '' : 'border-b border-white/15 pb-3'}>
+                  {company.name}
+                </li>
+              ))}
+            </ul>
+          </aside>
+        </div>
       </section>
-      <FaqDropdown client:idle />
+      <section class="industrial-container pb-24 md:pb-36">
+        <div class="industrial-grid">
+          <article class="col-span-12 p-6 md:col-span-4 md:p-8">
+            <p class="micro-label mb-8 text-text-2">[ Sources ]</p>
+            <h2 class="mb-4 text-3xl font-black uppercase leading-none text-white">
+              Feeds
+            </h2>
+            <p class="leading-relaxed text-text-2">
+              Articles come from RSS and Atom feeds.
+            </p>
+          </article>
+          <article class="col-span-12 p-6 md:col-span-4 md:p-8">
+            <p class="micro-label mb-8 text-text-2">[ Updates ]</p>
+            <h2 class="mb-4 text-3xl font-black uppercase leading-none text-white">
+              Hourly
+            </h2>
+            <p class="leading-relaxed text-text-2">
+              The feed updates hourly.
+            </p>
+          </article>
+          <article class="col-span-12 p-6 md:col-span-4 md:p-8">
+            <p class="micro-label mb-8 text-text-2">[ Project ]</p>
+            <h2 class="mb-4 text-3xl font-black uppercase leading-none text-white">
+              Open source
+            </h2>
+            <p class="leading-relaxed text-text-2">
+              See the project on GitHub or visit
+              <a href="https://jonathanrreed.com/projects/" target="_blank" rel="noopener noreferrer" class="text-white underline decoration-brand decoration-2 underline-offset-4 hover:text-brand-hover">JonathanRReed.com</a>.
+            </p>
+          </article>
+        </div>
+        <a href="/" class="signal-button mt-10">Back to home</a>
+      </section>
+      <div class="industrial-container pb-24">
+        <FaqDropdown client:idle />
+      </div>
     </main>
     <Footer />
   </body>

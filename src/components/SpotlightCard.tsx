@@ -35,12 +35,12 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({
     };
 
     return (
-        <div
+        <article
             ref={divRef}
             onMouseMove={handleMouseMove}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            className={`relative rounded-3xl border overflow-hidden transition-colors duration-300 ${className}`}
+            className={`relative overflow-hidden border transition-colors duration-300 ${className}`}
             style={{
                 borderColor: borderColor,
                 background: backgroundColor,
@@ -54,7 +54,7 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({
                 }}
             />
             <div className="relative h-full">{children}</div>
-        </div>
+        </article>
     );
 };
 

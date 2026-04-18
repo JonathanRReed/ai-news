@@ -16,6 +16,7 @@
   },
   "scripts": {
     "dev": "astro dev",
+    "gather:providers": "node scripts/gather-provider-feeds.mjs",
     "build": "astro build",
     "preview": "astro preview",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx,.astro",
