@@ -6,6 +6,7 @@ export const PAGE_SIZE = 20;
 const MAX_COMBINED_ROWS = PAGE_SIZE * 10;
 const SUPPLEMENTAL_ARTICLES_PATH = '/data/provider-articles.json';
 const SUPABASE_TIMEOUT_MS = 900;
+let supplementalArticlesPromise: Promise<Article[]> | null = null;
 type NewsSourceType = Database['public']['Enums']['news_source_type'];
 const NEWS_SOURCE_TYPES = ['rss_official', 'rss_unofficial', 'scraped'] as const satisfies readonly NewsSourceType[];
 type SupabaseArticlesResult = { data: Article[]; error: Error | null };
@@ -36,8 +37,15 @@ function articleKey(article: Article): string {
 }
 
 async function fetchSupplementalArticles(): Promise<Article[]> {
+  if (supplementalArticlesPromise) return supplementalArticlesPromise;
+
+  supplementalArticlesPromise = fetchSupplementalArticlesFromNetwork();
+  return supplementalArticlesPromise;
+}
+
+async function fetchSupplementalArticlesFromNetwork(): Promise<Article[]> {
   try {
-    const response = await fetch(SUPPLEMENTAL_ARTICLES_PATH, { cache: 'no-store' });
+    const response = await fetch(SUPPLEMENTAL_ARTICLES_PATH, { cache: 'force-cache' });
     if (!response.ok) return [];
     const data: unknown = await response.json();
     return Array.isArray(data) ? data.filter(isArticle) : [];

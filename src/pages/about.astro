@@ -109,7 +109,7 @@ const structuredData = {
   </head>
   <body class="bg-bg-0 text-text-1 font-sans min-h-screen flex flex-col">
     <a href="#main-content" class="skip-link">Skip to content</a>
-    <NeuralGrid client:visible />
+    <NeuralGrid client:idle={{ timeout: 1800 }} />
     <Header currentPage="about" />
     <main id="main-content" class="industrial-shell flex-1">
       <section class="industrial-container py-24 md:py-36">
