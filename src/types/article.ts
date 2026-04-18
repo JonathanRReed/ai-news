@@ -7,6 +7,7 @@ export interface Article {
   source_type?: string;
   summary?: string;
   content?: string;
+  source_url?: string;
 }
 
 export type PageData = { data: Article[]; next?: number };

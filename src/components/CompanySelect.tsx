@@ -1,30 +1,20 @@
 import React from 'react';
+import { companies } from '../lib/companyCatalog.js';
 
 interface CompanySelectProps {
   activeCompany: string;
   onCompanyChange: (company: string) => void;
 }
 
-const companies = [
-  { name: 'All', logo: '/logos/Globe Icon.svg' },
-  { name: 'Meta AI', logo: '/logos/Meta_logo.svg' },
-  { name: 'OpenAI', logo: '/logos/OpenAI_logo.svg' },
-  { name: 'Anthropic', logo: '/logos/Anthropic_logo.svg' },
-  { name: 'Google DeepMind', logo: '/logos/DeepMind_logo.svg' },
-  { name: 'Mistral AI', logo: '/logos/Mistral_logo.svg' },
-  { name: 'Hugging Face', logo: '/logos/Hugging_Face_logo.svg' },
-  { name: 'xAI', logo: '/logos/Xai_logo.svg' }
-];
-
 export default function CompanySelect({ activeCompany, onCompanyChange }: CompanySelectProps) {
   return (
-    <div className="w-full mb-8 relative px-4">
-      <div className="max-w-7xl mx-auto rounded-[2rem] border border-white/10 bg-white/5 p-1.5 shadow-2xl backdrop-blur-sm">
+    <div className="relative w-full">
+      <div className="mx-auto max-w-7xl border border-white/20 bg-bg-1">
         <div
-          className="flex gap-2 sm:gap-3 overflow-x-auto pb-2 pt-2 px-2 hide-scrollbar snap-x snap-mandatory mx-auto max-w-full w-full"
+          className="hide-scrollbar mx-auto flex w-full max-w-full snap-x snap-mandatory gap-px overflow-x-auto bg-white/15"
           style={{
-            maskImage: 'linear-gradient(to right, transparent, black 12px, black calc(100% - 12px), transparent)',
-            WebkitMaskImage: 'linear-gradient(to right, transparent, black 12px, black calc(100% - 12px), transparent)'
+            maskImage: 'linear-gradient(to right, transparent, black 10px, black calc(100% - 10px), transparent)',
+            WebkitMaskImage: 'linear-gradient(to right, transparent, black 10px, black calc(100% - 10px), transparent)'
           }}
         >
           {companies.map((company) => {
@@ -34,25 +24,23 @@ export default function CompanySelect({ activeCompany, onCompanyChange }: Compan
                 type="button"
                 key={company.name}
                 className={`
-                group relative flex flex-col items-center justify-center p-2 rounded-2xl transition-all duration-300
-                w-[72px] h-[72px] sm:w-[80px] sm:h-[80px] snap-center shrink-0
+                group relative flex h-[84px] w-[96px] shrink-0 snap-center flex-col items-center justify-center bg-bg-0 p-2 transition-all duration-300 sm:w-[120px]
                 ${isActive
-                    ? 'bg-white/10 shadow-[0_0_24px_-4px_rgba(255,255,255,0.15)] ring-1 ring-white/20'
-                    : 'hover:bg-white/5 opacity-70 hover:opacity-100'
+                    ? 'bg-brand text-white'
+                    : 'text-text-2 hover:bg-white/10 hover:text-white'
                   }
               `}
                 aria-pressed={isActive}
                 aria-label={company.name}
+                title={company.name}
                 onClick={() => onCompanyChange && onCompanyChange(company.name)}
               >
                 <div className={`
-                relative mb-1.5 w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center transition-transform duration-300
-                ${isActive ? 'scale-110' : 'group-hover:scale-105'}
+                relative mb-2 flex h-8 w-8 items-center justify-center border border-white/20 bg-white transition-transform duration-300
+                ${isActive ? 'scale-105' : 'group-hover:scale-105'}
               `}>
                   {company.logo ? (
-                    <img src={company.logo} alt="" className="w-full h-full object-contain drop-shadow-sm" loading="lazy" />
-                  ) : company.name === 'All' ? (
-                    <img src="/logos/Globe Icon.svg" alt="" className="w-full h-full object-contain drop-shadow-sm" loading="lazy" />
+                    <img src={company.logo} alt="" className="h-6 w-6 object-contain grayscale contrast-125" loading="lazy" />
                   ) : (
                     <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <circle cx="12" cy="12" r="10" strokeWidth="2" />
@@ -61,15 +49,14 @@ export default function CompanySelect({ activeCompany, onCompanyChange }: Compan
                 </div>
 
                 <span className={`
-                text-[10px] sm:text-[11px] font-medium tracking-wide transition-colors duration-300 truncate max-w-full
-                ${isActive ? 'text-white' : 'text-white/70'}
+                micro-label max-w-full truncate transition-colors duration-300
+                ${isActive ? 'text-white' : 'text-text-2'}
               `}>
                   {company.name}
                 </span>
 
-                {/* Active Indicator Glow */}
                 {isActive && (
-                  <div className="absolute inset-x-0 -bottom-2 h-8 bg-brand/20 blur-xl rounded-full z-[-1] opacity-60"></div>
+                  <span className="absolute bottom-0 left-0 h-1 w-full bg-white" aria-hidden="true"></span>
                 )}
               </button>
             );

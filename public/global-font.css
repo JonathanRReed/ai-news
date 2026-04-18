@@ -15,30 +15,23 @@
 }
 
 body, html {
-  font-family: 'NebulaSans-Book', Inter, sans-serif;
+  font-family: 'NebulaSans-Book', 'Arial Narrow', Arial, sans-serif;
+  background: #0a0a0a;
+  color: #eaeaea;
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: #e61919;
+  color: #ffffff;
 }
 
 .animated-gradient-logo {
-  background: linear-gradient(
-    270deg,
-    #eb6f92,
-    #c4a7e7,
-    #9ccfd8,
-    #f6c177,
-    #eb6f92
-  );
-  background-size: 200% 200%;
-  animation: gradientMove 8s ease-in-out infinite;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #eaeaea;
   font-family: 'NebulaSans-BoldItalic', 'NebulaSans-Book', 'sans-serif';
   font-weight: bold;
   font-style: italic;
-  /* Layer promotion only during animation - removed persistent will-change */
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  text-shadow: 0 3px 18px rgba(18,17,26,0.6);
+  text-shadow: 2px 0 0 #e61919;
 }
 
 @keyframes gradientMove {
@@ -48,25 +41,12 @@ body, html {
 }
 
 .menu-gradient-link {
-  background: linear-gradient(
-    270deg,
-    #f6c177 5%,
-    #ebbcba 35%,
-    #c4a7e7 65%,
-    #9ccfd8 95%
-  );
-  background-size: 200% 200%;
-  animation: gradientMenuMove 14s ease-in-out infinite;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
+  color: #eaeaea;
   font-family: 'NebulaSans-BoldItalic', 'NebulaSans-Book', 'sans-serif';
   font-weight: bold;
   font-style: italic;
-  opacity: 0.9;
-  transition: opacity 0.25s, transform 0.2s;
-  text-shadow: 0 2px 12px rgba(18,17,26,0.65);
+  opacity: 0.88;
+  transition: opacity 0.25s, transform 0.2s, color 0.2s;
 }
 .menu-gradient-link:hover {
   will-change: opacity, transform;
@@ -74,8 +54,8 @@ body, html {
 
 .menu-gradient-link:hover, .menu-gradient-link:focus {
   opacity: 1;
-  filter: brightness(1.18) saturate(1.2);
-  transform: scale(1.08);
+  color: #ff2a2a;
+  transform: translateX(4px);
 }
 
 @media (max-width: 767px) {

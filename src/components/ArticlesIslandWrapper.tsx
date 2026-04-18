@@ -52,7 +52,7 @@ export default function ArticlesIslandWrapper() {
   return (
     <QueryClientProvider client={queryClient}>
       <ArticlesProvider filters={stableFilters}>
-        <div className="flex flex-col gap-3 mb-4">
+        <div className="mb-8 flex flex-col gap-4">
           <FiltersIsland
             filters={filters}
             setFilters={setFilters}

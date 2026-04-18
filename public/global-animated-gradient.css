@@ -2,26 +2,27 @@ body {
   position: relative;
   isolation: isolate;
   overflow-x: hidden;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.022) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.022) 1px, transparent 1px),
+    #0a0a0a;
+  background-size: 48px 48px, 48px 48px, auto;
 }
 
-/* Subtle aurora glow effect in the background */
 body::before {
   content: "";
   position: fixed;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
+  inset: 0;
   background:
-    radial-gradient(ellipse 80% 50% at 20% 40%, rgba(156, 207, 216, 0.08) 0%, transparent 50%),
-    radial-gradient(ellipse 60% 40% at 75% 30%, rgba(196, 167, 231, 0.06) 0%, transparent 45%),
-    radial-gradient(ellipse 50% 60% at 50% 80%, rgba(49, 116, 143, 0.07) 0%, transparent 50%);
-  animation: auroraShift 45s ease-in-out infinite;
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.035) 0, rgba(255, 255, 255, 0.035) 1px, transparent 1px, transparent 4px),
+    radial-gradient(circle at 78% 12%, rgba(230, 25, 25, 0.16), transparent 28%),
+    radial-gradient(circle at 12% 88%, rgba(255, 255, 255, 0.08), transparent 34%);
   pointer-events: none;
-  z-index: -1;
+  z-index: 0;
+  mix-blend-mode: screen;
+  opacity: 0.68;
 }
 
-/* Film Grain Texture */
 html::before {
   content: "";
   position: fixed;
@@ -31,12 +32,10 @@ html::before {
   height: 100%;
   pointer-events: none;
   z-index: 50;
-  /* Top of everything but below modals if needed, or higher? usually distinct overlay */
   background-image: url("/noise.svg");
-  opacity: 0.15;
-  /* Increased visibility per user feedback */
+  opacity: 0.18;
   mix-blend-mode: overlay;
-  filter: contrast(120%) brightness(100%);
+  filter: contrast(140%) brightness(90%);
 }
 
 @keyframes auroraShift {
@@ -63,16 +62,201 @@ html::before {
 body::after {
   content: "";
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background:
-    radial-gradient(circle at 30% 70%, rgba(246, 193, 119, 0.03) 0%, transparent 35%),
-    radial-gradient(circle at 70% 20%, rgba(235, 188, 186, 0.025) 0%, transparent 30%);
-  animation: subtleGlow 30s ease-in-out infinite alternate;
+    linear-gradient(90deg, rgba(230, 25, 25, 0.34) 0 2px, transparent 2px 100%),
+    linear-gradient(rgba(255, 255, 255, 0.045) 0 1px, transparent 1px 100%);
+  background-size: 100% 100%, 100% 120px;
   pointer-events: none;
-  z-index: -1;
+  z-index: 0;
+  opacity: 0.18;
+}
+
+.skip-link {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  z-index: 10000;
+  transform: translateY(-140%);
+  background: #eaeaea;
+  color: #0a0a0a;
+  padding: 0.75rem 1rem;
+  font: 700 0.75rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+  outline: 2px solid #e61919;
+  outline-offset: 2px;
+}
+
+.industrial-shell {
+  position: relative;
+  z-index: 1;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
+.industrial-container {
+  width: min(100% - 2rem, 1440px);
+  margin-inline: auto;
+}
+
+.industrial-border {
+  border: 1px solid rgba(234, 234, 234, 0.2);
+  background: rgba(10, 10, 10, 0.72);
+}
+
+.industrial-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 1px;
+  background: rgba(234, 234, 234, 0.18);
+  grid-auto-flow: dense;
+}
+
+.industrial-grid > * {
+  background: rgba(10, 10, 10, 0.92);
+}
+
+.macro-heading {
+  font-family: 'NebulaSans-BoldItalic', 'NebulaSans-Book', 'Arial Narrow', Arial, sans-serif;
+  font-size: clamp(3.25rem, 8.2vw, 8.8rem);
+  line-height: 0.88;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+.micro-label {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.72rem;
+  line-height: 1.25;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.signal-button {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e61919;
+  background: #e61919;
+  color: #ffffff;
+  padding: 0.8rem 1.1rem;
+  font: 800 0.78rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease;
+}
+
+.signal-button:hover,
+.signal-button:focus-visible {
+  background: #ff2a2a;
+  border-color: #ff2a2a;
+  transform: translateY(-2px);
+}
+
+.signal-button:active {
+  transform: translateY(1px) scale(0.99);
+}
+
+.ghost-button {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(234, 234, 234, 0.38);
+  color: #eaeaea;
+  padding: 0.8rem 1.1rem;
+  font: 800 0.78rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: transform 180ms ease, border-color 180ms ease, color 180ms ease;
+}
+
+.ghost-button:hover,
+.ghost-button:focus-visible {
+  border-color: #eaeaea;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.focus-industrial:focus-visible,
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid #e61919;
+  outline-offset: 3px;
+}
+
+.inline-feed-image {
+  display: inline-block;
+  width: clamp(4.8rem, 10vw, 9rem);
+  height: clamp(2.2rem, 4vw, 3.4rem);
+  margin-inline: 0.18em;
+  vertical-align: middle;
+  background-image: url("https://picsum.photos/seed/ai-news-terminal/480/220");
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(1) contrast(1.35);
+  border: 1px solid rgba(234, 234, 234, 0.42);
+}
+
+.ticker-track {
+  animation: ticker-move 32s linear infinite;
+  width: max-content;
+}
+
+@keyframes ticker-move {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(28px) scale(0.98);
+  transition: opacity 700ms ease, transform 700ms ease;
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.scroll-words span {
+  opacity: 0.26;
+  transition: opacity 300ms ease, color 300ms ease;
+}
+
+.scroll-words.is-visible span {
+  opacity: 1;
+}
+
+.stack-card {
+  position: sticky;
+  top: 7rem;
+}
+
+.article-card-hoverable {
+  border-radius: 0 !important;
+}
+
+.hide-scrollbar {
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 
 @keyframes subtleGlow {

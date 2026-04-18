@@ -1,8 +1,8 @@
-# robots.txt – https://ai-news.helloworldfirm.com
+# robots.txt - https://ai-news.helloworldfirm.com
 
-# Generated 2025‑05‑07 · SEO‑optimised, AI‑scraper‑aware
+# Generated 2025-05-07 - SEO-optimised, AI-scraper-aware
 # ------------------------------------------------------------------
-# ███ 1. MAJOR SEARCH ENGINES (full access) ███
+# [1] MAJOR SEARCH ENGINES (full access)
 User-agent: Googlebot
 Allow: /*.js$
 Allow: /*.css$
@@ -26,14 +26,14 @@ Disallow: /search/
 Disallow: /*?s=
 Disallow: /*?q=
 
-# ███ 2. SOCIAL‑PREVIEW BOTS (OG/meta only) ███
+# [2] SOCIAL-PREVIEW BOTS (OG/meta only)
 User-agent: FacebookBot
 User-agent: meta-externalagent
 User-agent: LinkedInBot
 Allow: /
 
-# ███ 3. MODEL‑TRAINING & BULK‑AI SCRAPERS ███
-User-agent: GPTBot                     # OpenAI model‑training
+# [3] MODEL-TRAINING AND BULK-AI SCRAPERS
+User-agent: GPTBot                     # OpenAI model-training
 Allow: /
 User-agent: OAI-SearchBot              # OpenAI retrieval indexer
 Allow: /
@@ -62,7 +62,7 @@ Allow: /
 User-agent: Bytespider                 # ByteDance / TikTok AI
 Allow: /
 
-User-agent: MistralAI-User/1.0         # Mistral “Le Chat” crawler
+User-agent: MistralAI-User/1.0         # Mistral "Le Chat" crawler
 Allow: /
 
 User-agent: AI2Bot                     # Allen AI / Semantic Scholar
@@ -74,15 +74,15 @@ Allow: /
 User-agent: cohere-ai                  # Cohere
 Allow: /
 
-# Placeholder — xAI Grok crawler (token unknown as of May‑2025)
+# Placeholder - xAI Grok crawler (token unknown as of May-2025)
 # User-agent: GrokBot
 # Disallow: /
 
-# ███ 4. OTHER SEARCH/ASSIST BOTS (optional block) ███
+# [4] OTHER SEARCH/ASSIST BOTS (optional block)
 User-agent: Applebot                   # Siri / Spotlight search
 Allow: /
 
-# ███ 5. CATCH‑ALL ███
+# [5] CATCH-ALL
 User-agent: *
 Disallow: /cgi-bin/
 Disallow: /wp-admin/
@@ -98,5 +98,5 @@ Disallow: /*?s=
 Disallow: /*?q=
 Allow: /
 
-# ███ GLOBAL SITEMAP ███
+# GLOBAL SITEMAP
 Sitemap: https://ai-news.helloworldfirm.com/sitemap.xml

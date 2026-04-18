@@ -1,26 +1,8 @@
 import React, { useState, useEffect, useRef, useMemo } from "react";
 import { useArticlesContext } from "../hooks/useArticlesContext.js";
 import { fetchArticlesPage } from "../hooks/fetchArticlesPage.js";
+import { resolveCompanyLogo } from "../lib/companyCatalog.js";
 import type { Article, PageData } from "../types/article.js";
-
-const COMPANY_LOGOS = new Map([
-  ['openai', '/logos/OpenAI_logo.svg'],
-  ['meta', '/logos/Meta_logo.svg'],
-  ['deepmind', '/logos/DeepMind_logo.svg'],
-  ['anthropic', '/logos/Anthropic_logo.svg'],
-  ['mistral', '/logos/Mistral_logo.svg'],
-  ['hugging', '/logos/Hugging_Face_logo.svg'],
-  ['x.ai', '/logos/Xai_logo.svg'],
-  ['xai', '/logos/Xai_logo.svg'],
-]);
-
-function resolveLogo(company: string): string {
-  const name = (company || '').toLowerCase();
-  for (const [key, logo] of COMPANY_LOGOS) {
-    if (name.includes(key)) return logo;
-  }
-  return '/logos/Globe Icon.svg';
-}
 
 function getDomain(url: string): string {
   try {
@@ -36,35 +18,43 @@ function getDomain(url: string): string {
 import SpotlightCard from "./SpotlightCard.js";
 
 function ArticleCard({ article, density = 'comfortable' }: { article: Article, density?: 'comfortable' | 'compact' }) {
-  // Resolve logo from local /public/logos even if the company string varies slightly
-  const logoPath = resolveLogo(article.company);
-  const pad = density === 'compact' ? 'p-4' : 'p-6';
-  const gap = density === 'compact' ? 'gap-1' : 'gap-2';
-  const title = density === 'compact' ? 'text-base' : 'text-lg';
-  const meta = density === 'compact' ? 'text-xs' : 'text-sm';
+  const logoPath = resolveCompanyLogo(article.company);
+  const pad = density === 'compact' ? 'p-4' : 'p-5 md:p-6';
+  const title = density === 'compact' ? 'text-lg' : 'text-xl md:text-2xl';
+  const meta = density === 'compact' ? 'text-[0.68rem]' : 'text-xs';
+  const publishedDate = new Date(article.published_at);
   return (
-    <SpotlightCard className={`backdrop-blur-md shadow-lg mb-6 transition-all group ${pad}`} borderColor="rgba(255,255,255,0.1)">
-      <div className="flex items-center gap-2 mb-2">
+    <SpotlightCard
+      className={`article-card-hoverable group mb-4 ${pad}`}
+      borderColor="rgba(234,234,234,0.22)"
+      spotlightColor="rgba(230,25,25,0.26)"
+      backgroundColor="rgba(10,10,10,0.9)"
+    >
+      <div className="mb-4 grid grid-cols-[auto_1fr_auto] items-center gap-3 border-b border-white/15 pb-3">
         {logoPath && (
-          <span className="w-7 h-7 rounded-full bg-gradient-to-br from-text-2/80 via-blue-ink/25 to-teal-ink/70 ring-2 ring-brand/40 shadow-[0_0_12px_2px_rgba(196,167,231,0.14)] mr-2 flex items-center justify-center">
-            <img src={logoPath} alt={article.company + ' logo'} className="w-5 h-5 rounded-full" loading="lazy" width="20" height="20" />
+          <span className="flex h-9 w-9 items-center justify-center border border-white/20 bg-white">
+            <img src={logoPath} alt={article.company + ' logo'} className="h-6 w-6 object-contain grayscale contrast-125" loading="lazy" width="24" height="24" />
           </span>
         )}
-        <span className="font-bold text-brand text-sm">{article.company}</span>
-        <span className="text-xs text-white/60 ml-2">{new Date(article.published_at).toLocaleDateString()}</span>
+        <span className="micro-label text-white">{article.company}</span>
+        <time className="micro-label text-text-2" dateTime={article.published_at}>
+          {publishedDate.toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' })}
+        </time>
       </div>
-      <h2 className={`${title} font-bold text-white mb-1`}>
-        <a href={article.url} target="_blank" rel="noopener noreferrer" className="hover:text-brand-hover underline">
+      <h3 className={`${title} mb-3 font-bold leading-tight text-white text-pretty`}>
+        <a href={article.url} target="_blank" rel="noopener noreferrer" className="decoration-brand decoration-2 underline-offset-4 transition-colors hover:text-brand-hover hover:underline focus-industrial">
           {article.title}
         </a>
-      </h2>
-      <div className={`flex items-center ${gap} ${meta} text-white/60 mb-2`}>
+      </h3>
+      <div className={`mb-3 flex flex-wrap items-center gap-2 font-mono uppercase tracking-[0.08em] text-text-2 ${meta}`}>
         {getDomain(article.url) && (
-          <span className="px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-white/70">{getDomain(article.url)}</span>
+          <span className="border border-white/20 px-2 py-1 text-white">{getDomain(article.url)}</span>
         )}
-        {article.source_type ? <span>• {article.source_type}</span> : null}
+        {article.source_type ? <span>[ {article.source_type} ]</span> : null}
       </div>
-      <p className={`${meta} text-white/80`}>{article.summary || article.content}</p>
+      <p className={`${density === 'compact' ? 'text-sm' : 'text-base'} max-w-3xl leading-relaxed text-text-2 text-pretty`}>
+        {article.summary || article.content}
+      </p>
     </SpotlightCard>
   );
 }
@@ -176,20 +166,19 @@ export default function ArticleListIsland({ density = 'comfortable' }: { density
   }, [filters, latestVisibleTs]);
 
   if (error) {
-    return <div className="text-brand-hover text-center mt-8">Error loading articles.</div>;
+    return <div className="mt-8 border border-brand bg-bg-1 p-5 text-center font-mono text-sm uppercase tracking-[0.08em] text-brand-hover">Connection failed. Please try again.</div>;
   }
   if (!isFetching && visibleArticles.length === 0) {
-    return <div className="text-white/70 text-center mt-8">No articles found.</div>;
+    return <div className="mt-8 border border-white/20 bg-bg-1 p-8 text-center text-text-2">No articles match the active filters.</div>;
   }
 
-  // Skeletons for initial load
   const skeletons = (
     <>
       {[...Array(4)].map((_, i) => (
-        <div key={i} className="glassmorphic-article-card mb-6 p-6 animate-pulse bg-white/5 rounded-xl">
-          <div className="h-4 w-40 bg-white/10 rounded mb-3"></div>
-          <div className="h-6 w-3/4 bg-white/10 rounded mb-2"></div>
-          <div className="h-4 w-2/3 bg-white/10 rounded"></div>
+        <div key={i} className="mb-4 animate-pulse border border-white/15 bg-bg-1 p-6">
+          <div className="mb-3 h-4 w-40 bg-white/10"></div>
+          <div className="mb-2 h-7 w-3/4 bg-white/10"></div>
+          <div className="h-4 w-2/3 bg-white/10"></div>
         </div>
       ))}
     </>
@@ -211,14 +200,14 @@ export default function ArticleListIsland({ density = 'comfortable' }: { density
         {isFetching && visibleArticles.length === 0 ? skeletons : null}
       </div>
       {newCount > 0 && (
-        <div className="fixed top-20 left-1/2 -translate-x-1/2 z-40 glassmorphic-article-card px-4 py-2 rounded-full border border-cyan/30 bg-white/10 backdrop-blur-md shadow-md">
-          <span className="text-sm text-white/90">{newCount} new {newCount === 1 ? 'story' : 'stories'} available</span>
+        <div className="fixed left-1/2 top-24 z-40 -translate-x-1/2 border border-brand bg-bg-1 px-4 py-2 shadow-md">
+          <span className="micro-label text-white">{newCount} new {newCount === 1 ? 'story' : 'stories'} available</span>
         </div>
       )}
-      <div className="flex justify-center mt-8">
+      <div className="mt-8 flex justify-center">
         <button
           ref={buttonRef}
-          className={`glassmorphic-article-card px-8 py-2 rounded-full font-semibold text-cyan border-2 border-cyan/40 shadow-lg backdrop-blur-md bg-white/10 hover:shadow-[0_0_16px_3px_rgba(196,167,231,0.28),0_0_20px_6px_rgba(246,193,119,0.2)] hover:bg-white/20 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cyan/60 disabled:opacity-40 ${pendingIncrease ? 'animate-pulse' : ''}`}
+          className={`signal-button disabled:cursor-not-allowed disabled:opacity-40 ${pendingIncrease ? 'animate-pulse' : ''}`}
           onClick={async () => {
             if (visibleCount + 20 > articles.length && hasNextPage) {
               setPendingIncrease(true);
@@ -229,17 +218,17 @@ export default function ArticleListIsland({ density = 'comfortable' }: { density
           }}
           disabled={pendingIncrease || (!hasNextPage && visibleCount >= articles.length)}
         >
-          {pendingIncrease ? <span className="inline-block w-5 h-5 border-2 border-cyan-400 border-t-transparent rounded-full animate-spin align-middle mr-2"></span> : null}
-          Load 20 More
+          {pendingIncrease ? <span className="mr-2 inline-block h-5 w-5 animate-spin border-2 border-white border-t-transparent align-middle"></span> : null}
+          Load 20 more
         </button>
       </div>
       {visibleCount > 20 && (
         <button
-          className="fixed bottom-6 right-6 z-40 rounded-full bg-white/15 text-white border border-white/20 px-4 py-2 shadow-lg backdrop-blur-md hover:bg-white/25 transition"
+          className="ghost-button fixed bottom-6 right-6 z-40 bg-bg-1"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           aria-label="Back to top"
         >
-          ↑ Top
+          Top
         </button>
       )}
     </>
