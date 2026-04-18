@@ -147,7 +147,7 @@ const collectionStructuredData = {
   </head>
   <body class="bg-bg-0 text-text-1 font-sans">
     <a href="#main-content" class="skip-link">Skip to content</a>
-    <NeuralGrid client:visible />
+    <NeuralGrid client:idle={{ timeout: 1800 }} />
     <Header currentPage="home" />
     <main id="main-content" class="industrial-shell">
       <section id="articles" class="industrial-container space-y-8 py-8 md:py-12">

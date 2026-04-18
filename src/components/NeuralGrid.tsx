@@ -29,9 +29,23 @@ interface PulseWave {
   colorIndex: number;
 }
 
+interface Connection {
+  from: number;
+  to: number;
+  distance: number;
+}
+
+const MAX_PIXELS = 900;
+const MAX_MOBILE_PIXELS = 360;
+const CONNECTION_DISTANCE = 64;
+const MIN_CONNECTION_DISTANCE = 18;
+const TARGET_FRAME_MS = 50;
+const START_DELAY_MS = 300;
+
 const NeuralGrid: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const pixelsRef = useRef<Pixel[]>([]);
+  const connectionsRef = useRef<Connection[]>([]);
   const pulsesRef = useRef<PulseWave[]>([]);
   const animationFrameRef = useRef<number>();
   const lastTimeRef = useRef<number>(0);
@@ -47,16 +61,67 @@ const NeuralGrid: React.FC = () => {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) return;
 
-    const updateCanvasSize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      initializePixels();
+    let resizeTimer: number | undefined;
+    let startTimer: number | undefined;
+    let isRunning = false;
+
+    const buildConnections = (pixels: Pixel[]) => {
+      const connections: Connection[] = [];
+      const buckets = new Map<string, number[]>();
+
+      pixels.forEach((pixel, index) => {
+        const bucketX = Math.floor(pixel.x / CONNECTION_DISTANCE);
+        const bucketY = Math.floor(pixel.y / CONNECTION_DISTANCE);
+        const key = `${bucketX}:${bucketY}`;
+        const bucket = buckets.get(key);
+
+        if (bucket) {
+          bucket.push(index);
+        } else {
+          buckets.set(key, [index]);
+        }
+      });
+
+      for (let i = 0; i < pixels.length; i++) {
+        const p1 = pixels[i];
+        const bucketX = Math.floor(p1.x / CONNECTION_DISTANCE);
+        const bucketY = Math.floor(p1.y / CONNECTION_DISTANCE);
+
+        for (let y = bucketY - 1; y <= bucketY + 1; y++) {
+          for (let x = bucketX - 1; x <= bucketX + 1; x++) {
+            const bucket = buckets.get(`${x}:${y}`);
+            if (!bucket) continue;
+
+            for (const j of bucket) {
+              if (j <= i) continue;
+
+              const p2 = pixels[j];
+              const dx = p1.x - p2.x;
+              const dy = p1.y - p2.y;
+              const distanceSquared = dx * dx + dy * dy;
+
+              if (
+                distanceSquared > MIN_CONNECTION_DISTANCE * MIN_CONNECTION_DISTANCE &&
+                distanceSquared < CONNECTION_DISTANCE * CONNECTION_DISTANCE
+              ) {
+                connections.push({
+                  from: i,
+                  to: j,
+                  distance: Math.sqrt(distanceSquared),
+                });
+              }
+            }
+          }
+        }
+      }
+
+      connectionsRef.current = connections;
     };
 
     const initializePixels = () => {
       const pixels: Pixel[] = [];
-      // Increased spacing to reduce pixel count and improve performance
-      const spacing = window.innerWidth < 768 ? 14 : 12;
+      const targetPixels = window.innerWidth < 768 ? MAX_MOBILE_PIXELS : MAX_PIXELS;
+      const spacing = Math.max(24, Math.ceil(Math.sqrt((canvas.width * canvas.height) / targetPixels)));
       const cols = Math.floor(canvas.width / spacing);
       const rows = Math.floor(canvas.height / spacing);
       
@@ -73,7 +138,7 @@ const NeuralGrid: React.FC = () => {
           const centerFade = 1 - (distFromCenter / maxDistFromCenter);
           const edgeFade = Math.pow(centerFade, 1.5);
           
-          if (Math.random() > 0.25 && edgeFade > 0.03) {
+          if (Math.random() > 0.42 && edgeFade > 0.04) {
             pixels.push({
               x: col * spacing,
               y: row * spacing,
@@ -90,12 +155,24 @@ const NeuralGrid: React.FC = () => {
       }
 
       pixelsRef.current = pixels;
+      buildConnections(pixels);
       pulsesRef.current = [];
+    };
+
+    const updateCanvasSize = () => {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+
+      canvas.width = width;
+      canvas.height = height;
+      canvas.style.width = `${width}px`;
+      canvas.style.height = `${height}px`;
+      initializePixels();
     };
 
     // Spawn a new pulse wave occasionally
     const maybeSpawnPulse = () => {
-      if (Math.random() < 0.003 && pulsesRef.current.length < 3) {
+      if (Math.random() < 0.0025 && pulsesRef.current.length < 2) {
         const brightPixels = pixelsRef.current.filter(p => p.opacity > 0.5);
         if (brightPixels.length > 0) {
           const source = brightPixels[Math.floor(Math.random() * brightPixels.length)];
@@ -103,7 +180,7 @@ const NeuralGrid: React.FC = () => {
             x: source.x,
             y: source.y,
             radius: 0,
-            maxRadius: 150 + Math.random() * 200,
+            maxRadius: 120 + Math.random() * 160,
             opacity: 0.4,
             colorIndex: Math.floor(Math.random() * 4),
           });
@@ -117,9 +194,9 @@ const NeuralGrid: React.FC = () => {
 
       const deltaTime = timestamp - lastTimeRef.current;
       
-      // Throttle to ~30fps max to reduce CPU usage
+      // Throttle to ~20fps max to keep the decorative layer off the critical path.
       frameIntervalRef.current += deltaTime;
-      if (frameIntervalRef.current < 33) {
+      if (frameIntervalRef.current < TARGET_FRAME_MS) {
         animationFrameRef.current = requestAnimationFrame(animate);
         return;
       }
@@ -128,7 +205,7 @@ const NeuralGrid: React.FC = () => {
       const dt = Math.min(frameIntervalRef.current, 50); // cap delta to prevent jumps
       frameIntervalRef.current = 0;
 
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
 
       maybeSpawnPulse();
 
@@ -149,25 +226,22 @@ const NeuralGrid: React.FC = () => {
         return true;
       });
 
-      // Draw neural connections between nearby bright pixels
-      const brightPixels = pixelsRef.current.filter(p => p.opacity > 0.45);
+      // Draw precomputed nearby connections. Avoid pairwise distance checks per frame.
       ctx.lineWidth = 0.5;
-      for (let i = 0; i < brightPixels.length; i++) {
-        for (let j = i + 1; j < brightPixels.length; j++) {
-          const p1 = brightPixels[i];
-          const p2 = brightPixels[j];
-          const dist = Math.sqrt(Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2));
-          
-          if (dist < 60 && dist > 15) {
-            const connectionOpacity = (1 - dist / 60) * Math.min(p1.opacity, p2.opacity) * 0.25;
-            const color = COLORS[p1.colorIndex];
-            ctx.beginPath();
-            ctx.moveTo(p1.x, p1.y);
-            ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(${color.r}, ${color.g}, ${color.b}, ${connectionOpacity})`;
-            ctx.stroke();
-          }
-        }
+      for (const connection of connectionsRef.current) {
+        const p1 = pixelsRef.current[connection.from];
+        const p2 = pixelsRef.current[connection.to];
+        const minOpacity = Math.min(p1.opacity, p2.opacity);
+
+        if (minOpacity <= 0.42) continue;
+
+        const connectionOpacity = (1 - connection.distance / CONNECTION_DISTANCE) * minOpacity * 0.22;
+        const color = COLORS[p1.colorIndex];
+        ctx.beginPath();
+        ctx.moveTo(p1.x, p1.y);
+        ctx.lineTo(p2.x, p2.y);
+        ctx.strokeStyle = `rgba(${color.r}, ${color.g}, ${color.b}, ${connectionOpacity})`;
+        ctx.stroke();
       }
 
       // Update and draw pixels
@@ -242,18 +316,55 @@ const NeuralGrid: React.FC = () => {
         }
       });
 
+      if (isRunning) {
+        animationFrameRef.current = requestAnimationFrame(animate);
+      }
+    };
+
+    const start = () => {
+      if (isRunning || document.hidden) return;
+      isRunning = true;
+      updateCanvasSize();
+      lastTimeRef.current = window.performance.now();
       animationFrameRef.current = requestAnimationFrame(animate);
     };
 
-    updateCanvasSize();
-    window.addEventListener('resize', updateCanvasSize);
-    animationFrameRef.current = requestAnimationFrame(animate);
-
-    return () => {
-      window.removeEventListener('resize', updateCanvasSize);
+    const stop = () => {
+      isRunning = false;
       if (animationFrameRef.current) {
         cancelAnimationFrame(animationFrameRef.current);
       }
+    };
+
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        stop();
+      } else {
+        start();
+      }
+    };
+
+    const handleResize = () => {
+      if (resizeTimer) {
+        window.clearTimeout(resizeTimer);
+      }
+      resizeTimer = window.setTimeout(updateCanvasSize, 150);
+    };
+
+    window.addEventListener('resize', handleResize);
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    startTimer = window.setTimeout(start, START_DELAY_MS);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+      if (resizeTimer) {
+        window.clearTimeout(resizeTimer);
+      }
+      if (startTimer) {
+        window.clearTimeout(startTimer);
+      }
+      stop();
     };
   }, []);
 
