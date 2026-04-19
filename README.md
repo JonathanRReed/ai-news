@@ -1,42 +1,65 @@
-# AI News Hub
+# AI News
 
-This project uses Bun as the JavaScript runtime and package manager.
+AI News is an Astro app for tracking updates from a curated list of AI companies and labs.
 
-## Prerequisites
+This repo powers the AI News site at `ai-news.helloworldfirm.com`.
 
-- Bun 1.x installed
-  - Install: [bun.sh](https://bun.sh)
+## What it does
 
-## Install dependencies
+- Aggregates articles from official RSS and Atom feeds
+- Normalizes company names and logos
+- Pulls in Supabase-backed article data
+- Generates supplemental provider articles into `public/data/provider-articles.json`
+- Ships as a fast front end built with Astro and React
+
+## Stack
+
+- [Astro](https://astro.build)
+- [React](https://react.dev)
+- [Bun](https://bun.sh)
+- [Tailwind CSS](https://tailwindcss.com)
+- [Supabase](https://supabase.com)
+
+## Requirements
+
+- Bun 1.x
+- Node.js 20.3 or newer
+- Supabase credentials in your environment
+
+## Setup
 
 ```sh
 bun install
 ```
 
-This will generate `bun.lock`.
+Configure your local environment for Supabase before running the app.
 
-Optionally, you can remove the old `package-lock.json` after verifying everything works.
+## Run locally
+
+```sh
+bun run dev
+```
 
 ## Common scripts
 
 ```sh
-# Start dev server
-bun run dev
-
-# Build for production
 bun run build
-
-# Preview the production build
 bun run preview
-
-# Lint
 bun run lint
-
-# Lint and fix
 bun run lint:fix
+bun run gather:providers
 ```
+
+`bun run gather:providers` refreshes the provider article cache from the official feeds listed in `src/lib/providerSources.ts`.
+
+## Project structure
+
+- `src/pages/index.astro` - main homepage and metadata
+- `src/lib/` - feed sources, company logos, and Supabase client setup
+- `src/components/` - UI components
+- `scripts/gather-provider-feeds.mjs` - feed fetcher that writes the cached provider article data
 
 ## Notes
 
-- `package.json` declares `"packageManager": "bun@1"` and an engine constraint for Bun.
-- Astro works seamlessly with Bun; no script changes were required.
+- This repo is designed to be boring in production and easy to maintain.
+- If the app cannot find the Supabase env vars, it will fail fast with a clear error.
