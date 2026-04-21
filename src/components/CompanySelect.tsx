@@ -42,7 +42,7 @@ export default function CompanySelect({ activeCompany, onCompanyChange }: Compan
                   {company.logo ? (
                     <img
                       src={company.logo}
-                      alt={`${company.name} logo`}
+                      alt={`${company.name} provider mark`}
                       className="h-6 w-6 object-contain grayscale contrast-125"
                       loading={index < 3 ? "eager" : "lazy"}
                       width="24"
