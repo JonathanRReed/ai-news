@@ -16,7 +16,6 @@ const { currentPage } = Astro.props;
     <a
       href="/"
       class="group inline-flex min-h-11 items-center gap-3 focus-industrial"
-      aria-label="AI News home"
     >
       <span
         class="grid h-10 w-10 place-items-center border border-brand bg-brand text-[0.7rem] font-black tracking-[0.12em] text-white"
@@ -42,7 +41,7 @@ const { currentPage } = Astro.props;
         [ Home ]
       </a>
       <a
-        href="/about"
+        href="/about/"
         class={`micro-label inline-flex min-h-[68px] items-center px-7 transition-colors ${currentPage === "about" ? "bg-brand text-white" : "text-text-2 hover:bg-white/10 hover:text-white"}`}
         aria-current={currentPage === "about" ? "page" : undefined}
       >

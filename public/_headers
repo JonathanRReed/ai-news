@@ -15,7 +15,7 @@
   Cross-Origin-Resource-Policy: same-origin
   
   # Content Security Policy
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com https://*.supabase.co; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://img.helloworldfirm.com https://*.supabase.co; font-src 'self' https://fonts.helloworldfirm.com; connect-src 'self' https://*.supabase.co https://static.cloudflareinsights.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://img.helloworldfirm.com https://arejerdupcduqhgdoyht.supabase.co; font-src 'self' https://fonts.helloworldfirm.com; connect-src 'self' https://arejerdupcduqhgdoyht.supabase.co https://static.cloudflareinsights.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests
 
 # Cache static assets aggressively
 /_astro/*

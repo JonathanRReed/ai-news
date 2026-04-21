@@ -17,7 +17,7 @@ export default function CompanySelect({ activeCompany, onCompanyChange }: Compan
             WebkitMaskImage: 'linear-gradient(to right, transparent, black 10px, black calc(100% - 10px), transparent)'
           }}
         >
-          {companies.map((company) => {
+          {companies.map((company, index) => {
             const isActive = activeCompany === company.name;
             return (
               <button
@@ -40,7 +40,14 @@ export default function CompanySelect({ activeCompany, onCompanyChange }: Compan
                 ${isActive ? 'scale-105' : 'group-hover:scale-105'}
               `}>
                   {company.logo ? (
-                    <img src={company.logo} alt="" className="h-6 w-6 object-contain grayscale contrast-125" loading="lazy" />
+                    <img
+                      src={company.logo}
+                      alt={`${company.name} logo`}
+                      className="h-6 w-6 object-contain grayscale contrast-125"
+                      loading={index < 3 ? "eager" : "lazy"}
+                      width="24"
+                      height="24"
+                    />
                   ) : (
                     <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <circle cx="12" cy="12" r="10" strokeWidth="2" />

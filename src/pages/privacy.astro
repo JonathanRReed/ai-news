@@ -1,0 +1,109 @@
+---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import NeuralGrid from "../components/NeuralGrid.tsx";
+
+const siteUrl = "https://ai-news.helloworldfirm.com";
+const canonicalUrl = `${siteUrl}/privacy/`;
+const title = "Privacy Policy for AI News Hub";
+const description =
+  "Privacy policy for AI News Hub, including source-feed data, hosting logs, Cloudflare services, Supabase requests and contact handling.";
+const socialImage = "https://img.helloworldfirm.com/logos/512x512-logo.avif";
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: title,
+  url: canonicalUrl,
+  description,
+  author: {
+    "@type": "Person",
+    name: "Jonathan R Reed",
+    url: "https://jonathanrreed.com",
+  },
+  datePublished: "2026-04-21",
+  dateModified: "2026-04-21",
+  isPartOf: {
+    "@type": "WebSite",
+    name: "AI News Hub",
+    url: siteUrl,
+  },
+};
+---
+
+<html lang="en">
+  <head>
+    <title>{title}</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Jonathan R Reed" />
+    <meta name="theme-color" content="#0A0A0A" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage} />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="icon" type="image/webp" href="/favicon.webp" />
+    <link rel="stylesheet" href="/global-font.css" />
+    <link rel="stylesheet" href="/global-animated-gradient.css" />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  </head>
+  <body class="min-h-screen bg-bg-0 font-sans text-text-1">
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    <NeuralGrid client:idle={{ timeout: 1800 }} />
+    <Header currentPage="home" />
+    <main id="main-content" class="industrial-shell">
+      <section class="industrial-container py-24 md:py-36">
+        <div class="max-w-5xl">
+          <p class="micro-label mb-5 text-brand">[ Privacy ]</p>
+          <h1 class="macro-heading max-w-5xl">Privacy Policy</h1>
+          <div class="mt-8 max-w-4xl space-y-5 text-lg leading-relaxed text-text-2">
+            <p>
+              AI News Hub is a public feed reader for AI articles, release notes and research posts.
+              The site primarily displays public source-feed data from third-party publishers. That
+              feed data can include article titles, summaries, source names, publication dates and
+              outbound links to original publisher pages.
+            </p>
+            <p>
+              The site is hosted through Cloudflare Pages and may use Cloudflare caching, security
+              and anti-abuse services. Normal request metadata such as IP address, user agent,
+              referrer, requested URL, timestamp and security signals may be processed by hosting and
+              security infrastructure to deliver the site and reduce abuse.
+            </p>
+            <p>
+              AI News Hub may request article data from Supabase-backed endpoints or static data
+              files. These requests are used to load, filter and search public article listings. The
+              site does not require user accounts, payments or private profile data to browse the
+              feed.
+            </p>
+            <p>
+              If you contact Hello.World Consulting about AI News Hub, the information you provide
+              can be used to respond to the inquiry, review source suggestions, investigate bugs or
+              maintain normal business records. Inquiry information is not sold.
+            </p>
+            <p>
+              Avoid sending secrets, private tokens, unpublished research or confidential project
+              data through casual source suggestions. If a private discussion is needed, agree on an
+              appropriate handling process before sharing sensitive material.
+            </p>
+          </div>
+          <div class="mt-10 flex flex-wrap gap-4">
+            <a class="signal-button" href="/contact/">
+              Contact
+            </a>
+            <a class="signal-button" href="/">
+              Back to AI News
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>
