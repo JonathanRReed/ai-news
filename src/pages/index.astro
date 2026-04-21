@@ -6,9 +6,9 @@ import NeuralGrid from "../components/NeuralGrid.tsx";
 
 const siteUrl = "https://ai-news.helloworldfirm.com";
 const canonicalUrl = `${siteUrl}/`;
-const title = "AI News Hub";
+const title = "AI News Hub for Research Lab and Model Provider Updates";
 const description =
-  "AI News Hub collects AI articles from RSS and Atom feeds.";
+  "AI News Hub tracks current articles, releases and research updates from major AI labs, infrastructure providers and model companies in one searchable feed.";
 const socialImage = "https://img.helloworldfirm.com/logos/512x512-logo.avif";
 const socialImageAlt = "AI News Hub logo";
 const structuredData = {
@@ -44,9 +44,16 @@ const structuredData = {
 const collectionStructuredData = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  name: "AI News Articles",
-  description: "Latest news and updates from leading AI organizations",
+  name: title,
+  description,
   url: siteUrl,
+  author: {
+    "@type": "Person",
+    name: "Jonathan R Reed",
+    url: "https://jonathanrreed.com",
+  },
+  datePublished: "2026-04-21",
+  dateModified: "2026-04-21",
   isPartOf: {
     "@type": "WebSite",
     name: "AI News Hub",
@@ -150,6 +157,37 @@ const collectionStructuredData = {
     <NeuralGrid client:idle={{ timeout: 1800 }} />
     <Header currentPage="home" />
     <main id="main-content" class="industrial-shell">
+      <section class="industrial-container py-14 md:py-20">
+        <div class="max-w-5xl">
+          <p class="micro-label mb-5 text-brand">[ AI source monitor ]</p>
+          <h1 class="macro-heading max-w-5xl">
+            AI News Hub tracks primary-source updates from major AI organizations.
+          </h1>
+          <div class="mt-8 grid gap-5 text-lg leading-relaxed text-text-2 md:grid-cols-2">
+            <p>
+              The feed collects articles, release notes and research posts from model labs, cloud AI
+              teams, infrastructure providers and open research organizations. It is built for quick
+              scanning when you need to see what changed across the AI ecosystem without opening a
+              dozen separate blogs.
+            </p>
+            <p>
+              Use the provider filters, search field and density controls to compare updates from
+              OpenAI, Anthropic, Google DeepMind, Meta AI, Mistral AI, Hugging Face, xAI, DeepSeek,
+              IBM Research, Amazon AI, NVIDIA AI and Alibaba Qwen.
+            </p>
+            <p>
+              Each article card keeps the source, publish date, title and summary close together so
+              builders can spot model launches, platform changes, safety research, infrastructure
+              guidance and applied engineering posts quickly.
+            </p>
+            <p>
+              AI News Hub is maintained by Hello.World Consulting as a practical monitoring surface
+              for teams following model capability, deployment patterns, agent tooling, retrieval,
+              security and local AI infrastructure.
+            </p>
+          </div>
+        </div>
+      </section>
       <section id="articles" class="industrial-container space-y-8 py-8 md:py-12">
         <ArticlesIslandWrapper client:visible />
       </section>

@@ -56,9 +56,9 @@ export default function HamburgerMenu() {
                 [ Home ]
               </a>
               <a
-                href="/about"
+                href="/about/"
                 className="menu-gradient-link w-full border border-white/20 px-6 py-4 text-left text-2xl transition-all focus-industrial md:text-3xl"
-                onClick={e => { e.preventDefault(); handleNav('/about'); }}
+                onClick={e => { e.preventDefault(); handleNav('/about/'); }}
               >
                 [ About ]
               </a>

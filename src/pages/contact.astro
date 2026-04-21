@@ -1,0 +1,102 @@
+---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import NeuralGrid from "../components/NeuralGrid.tsx";
+
+const siteUrl = "https://ai-news.helloworldfirm.com";
+const canonicalUrl = `${siteUrl}/contact/`;
+const title = "Contact AI News Hub and Hello.World Consulting";
+const description =
+  "Contact AI News Hub about source coverage, feed issues, AI research updates, provider additions and Hello.World Consulting maintenance.";
+const socialImage = "https://img.helloworldfirm.com/logos/512x512-logo.avif";
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  name: title,
+  url: canonicalUrl,
+  description,
+  author: {
+    "@type": "Person",
+    name: "Jonathan R Reed",
+    url: "https://jonathanrreed.com",
+  },
+  datePublished: "2026-04-21",
+  dateModified: "2026-04-21",
+  isPartOf: {
+    "@type": "WebSite",
+    name: "AI News Hub",
+    url: siteUrl,
+  },
+};
+---
+
+<html lang="en">
+  <head>
+    <title>{title}</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Jonathan R Reed" />
+    <meta name="theme-color" content="#0A0A0A" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage} />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="icon" type="image/webp" href="/favicon.webp" />
+    <link rel="stylesheet" href="/global-font.css" />
+    <link rel="stylesheet" href="/global-animated-gradient.css" />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  </head>
+  <body class="min-h-screen bg-bg-0 font-sans text-text-1">
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    <NeuralGrid client:idle={{ timeout: 1800 }} />
+    <Header currentPage="home" />
+    <main id="main-content" class="industrial-shell">
+      <section class="industrial-container py-24 md:py-36">
+        <div class="max-w-5xl">
+          <p class="micro-label mb-5 text-brand">[ Contact ]</p>
+          <h1 class="macro-heading max-w-5xl">Contact AI News Hub</h1>
+          <div class="mt-8 max-w-4xl space-y-5 text-lg leading-relaxed text-text-2">
+            <p>
+              Reach out about missing source feeds, broken provider links, stale AI research
+              updates, source attribution, accessibility issues or potential additions to the AI
+              News Hub provider list.
+            </p>
+            <p>
+              The best source suggestions include the organization name, the official RSS or Atom
+              feed URL, the public blog or research page, and a short note about why the source is
+              useful for builders who follow model releases, AI infrastructure, agent tooling,
+              safety research or deployment guidance.
+            </p>
+            <p>
+              AI News Hub is maintained by Hello.World Consulting as a practical monitoring surface.
+              It is not a paid news placement product, and source inclusion depends on whether the
+              organization provides stable public updates that fit the feed.
+            </p>
+            <p>
+              For consulting work connected to private AI systems, local LLM deployment, retrieval
+              architecture or AI security review, contact Hello.World Consulting through the main
+              firm website.
+            </p>
+          </div>
+          <div class="mt-10 flex flex-wrap gap-4">
+            <a class="signal-button" href="https://helloworldfirm.com/contact/">
+              Contact Hello.World Consulting
+            </a>
+            <a class="signal-button" href="/">
+              Back to AI News
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>

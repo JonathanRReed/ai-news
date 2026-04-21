@@ -10,9 +10,21 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://ai-news.helloworldfirm.com/about</loc>
-    <lastmod>2025-01-15</lastmod>
+    <loc>https://ai-news.helloworldfirm.com/about/</loc>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ai-news.helloworldfirm.com/contact/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://ai-news.helloworldfirm.com/privacy/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>

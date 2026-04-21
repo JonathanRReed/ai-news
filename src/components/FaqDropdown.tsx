@@ -19,7 +19,7 @@ const faqs = [
   {
     question: "Is the project open source?",
     answer:
-      "Yes. The repository is available on <a href=\"https://github.com/JonathanRReed/ai-news.git\" class='underline decoration-brand decoration-2 underline-offset-4 text-white hover:text-brand-hover transition-colors'>GitHub</a>.",
+      "Yes. The repository is available on <a href=\"https://github.com/JonathanRReed/ai-news.git\" class='underline decoration-brand decoration-2 underline-offset-4 text-white hover:text-brand-hover transition-colors'>the AI News Hub source repository</a>.",
   },
 ];
 
@@ -57,7 +57,7 @@ export default function FaqDropdown() {
                 openIndex === idx ? "max-h-40 py-2 opacity-100" : "max-h-0 py-0 opacity-0"
               }`}
               style={{ pointerEvents: openIndex === idx ? "auto" : "none" }}
-              aria-hidden={openIndex !== idx}
+              hidden={openIndex !== idx}
             >
               <div
                 className="max-w-2xl pb-4 text-base leading-relaxed text-text-2"

@@ -7,9 +7,9 @@ import { companies } from '../lib/companyCatalog.js';
 import type { CompanyEntry } from '../lib/companyCatalog.js';
 
 const siteUrl = "https://ai-news.helloworldfirm.com";
-const canonicalUrl = `${siteUrl}/about`;
-const title = "About AI News Hub";
-const description = "AI News Hub collects AI articles from RSS and Atom feeds.";
+const canonicalUrl = `${siteUrl}/about/`;
+const title = "About AI News Hub and Its Primary-Source AI Feed";
+const description = "Learn how AI News Hub tracks primary-source AI articles, model updates, research posts and infrastructure news from major AI organizations.";
 const keywords = "About AI News Hub, AI news aggregator, AI RSS feeds, Hello.World Consulting";
 const socialImage = "https://img.helloworldfirm.com/logos/512x512-logo.avif";
 const socialImageAlt = "AI News Hub galaxy-inspired logo";
@@ -30,6 +30,8 @@ const structuredData = {
   description,
   author: creator,
   creator,
+  datePublished: "2026-04-21",
+  dateModified: "2026-04-21",
   publisher: {
     "@type": "Organization",
     name: "Hello.World Consulting",
@@ -95,6 +97,7 @@ const structuredData = {
     <link rel="dns-prefetch" href="https://img.helloworldfirm.com" />
     <link rel="preconnect" href="https://fonts.helloworldfirm.com" />
     <link rel="preconnect" href="https://fonts.helloworldfirm.com" crossorigin />
+    <link rel="preload" href={creatorImage} as="image" type="image/avif" />
     <link rel="preload" href="/global-font.css" as="style" />
     <link rel="preload" href="/global-animated-gradient.css" as="style" />
     <link rel="stylesheet" href="/global-font.css" />
@@ -118,7 +121,8 @@ const structuredData = {
             <p class="micro-label mb-5 text-brand">[ About ]</p>
             <h1 class="macro-heading max-w-5xl">AI News Hub</h1>
             <p class="mt-8 max-w-3xl text-xl leading-relaxed text-text-2">
-              AI News Hub collects articles from RSS and Atom feeds for major AI labs and tools.
+              AI News Hub collects articles, releases and research updates from RSS and Atom feeds
+              published by major AI labs, model providers and infrastructure teams.
             </p>
           </div>
           <aside class="industrial-border h-fit p-6">
@@ -126,7 +130,7 @@ const structuredData = {
             <div class="mb-8 grid grid-cols-[72px_minmax(0,1fr)] items-center gap-4 border-b border-white/15 pb-6">
               <img
                 src={creatorImage}
-                alt="Jonathan R Reed"
+                alt="Portrait of the AI News Hub creator"
                 width="144"
                 height="144"
                 class="h-[72px] w-[72px] border border-white/20 object-cover grayscale contrast-125"
@@ -166,7 +170,9 @@ const structuredData = {
               Feeds
             </h2>
             <p class="leading-relaxed text-text-2">
-              Articles come from RSS and Atom feeds.
+              Articles come from public RSS and Atom feeds provided by source organizations. The
+              project favors official blogs, engineering posts, release notes and research updates
+              over reposted summaries.
             </p>
           </article>
           <article class="col-span-12 p-6 md:col-span-4 md:p-8">
@@ -175,7 +181,8 @@ const structuredData = {
               Hourly
             </h2>
             <p class="leading-relaxed text-text-2">
-              The feed updates hourly.
+              The feed is designed to refresh hourly so new model releases, research notes, safety
+              posts and infrastructure announcements can appear without manual curation.
             </p>
           </article>
           <article class="col-span-12 p-6 md:col-span-4 md:p-8">
@@ -184,10 +191,29 @@ const structuredData = {
               Open source
             </h2>
             <p class="leading-relaxed text-text-2">
-              See the project on GitHub or visit
-              <a href="https://jonathanrreed.com/projects/" target="_blank" rel="noopener noreferrer" class="text-white underline decoration-brand decoration-2 underline-offset-4 hover:text-brand-hover">JonathanRReed.com</a>.
+              See the source repository on GitHub or visit the
+              <a href="https://jonathanrreed.com/projects/" target="_blank" rel="noopener noreferrer" class="text-white underline decoration-brand decoration-2 underline-offset-4 hover:text-brand-hover">project archive</a>.
             </p>
           </article>
+        </div>
+        <div class="mt-10 max-w-4xl space-y-5 text-lg leading-relaxed text-text-2">
+          <p>
+            AI News Hub exists because the most useful AI updates often live across many separate
+            source sites. Model labs publish launch notes, research teams publish technical details,
+            cloud providers publish implementation guidance and infrastructure companies publish
+            performance or deployment updates. A single feed makes those changes easier to compare.
+          </p>
+          <p>
+            The site is intentionally source-led. It does not rewrite articles into synthetic
+            summaries or hide the original publisher. Cards preserve the company, title, date,
+            source link and available excerpt so readers can decide which announcements deserve a
+            deeper read.
+          </p>
+          <p>
+            The project is maintained by Jonathan R Reed and Hello.World Consulting for builders,
+            researchers and operators who track local AI, agent systems, retrieval, model releases,
+            security guidance and platform changes.
+          </p>
         </div>
         <a href="/" class="signal-button mt-10">Back to home</a>
       </section>
