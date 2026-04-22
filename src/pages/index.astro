@@ -157,49 +157,38 @@ const collectionStructuredData = {
     <NeuralGrid client:idle={{ timeout: 1800 }} />
     <Header currentPage="home" />
     <main id="main-content" class="industrial-shell">
-      <section class="industrial-container py-14 md:py-20">
+      <section class="industrial-container py-10 md:py-14">
         <div class="max-w-5xl">
           <p class="micro-label mb-5 text-brand">[ AI source monitor ]</p>
           <h1 class="macro-heading max-w-5xl">
             AI News Hub tracks primary-source updates from major AI organizations.
           </h1>
-          <div class="mt-8 grid gap-5 text-lg leading-relaxed text-text-2 md:grid-cols-2">
-            <p>
-              The feed collects articles, release notes and research posts from model labs, cloud AI
-              teams, infrastructure providers and open research organizations. It is built for quick
-              scanning when you need to see what changed across the AI ecosystem without opening a
-              dozen separate blogs.
-            </p>
-            <p>
-              Use the provider filters, search field and density controls to compare updates from
-              OpenAI, Anthropic, Google DeepMind, Meta AI, Mistral AI, Hugging Face, xAI, DeepSeek,
-              IBM Research, Amazon AI, NVIDIA AI and Alibaba Qwen.
-            </p>
-            <p>
-              Each article card keeps the source, publish date, title and summary close together so
-              builders can spot model launches, platform changes, safety research, infrastructure
-              guidance and applied engineering posts quickly.
-            </p>
-            <p>
-              AI News Hub is maintained by Hello.World Consulting as a practical monitoring surface
-              for teams following model capability, deployment patterns, agent tooling, retrieval,
-              security and local AI infrastructure.
-            </p>
-            <p>
-              The homepage keeps browsing intentionally direct. Select an organization, search for a
-              technical theme, switch density for faster scanning and open the original publisher
-              page when an item needs deeper review.
-            </p>
-            <p>
-              The feed is useful for product teams, security reviewers and independent builders who
-              want to track releases without relying on social timelines. It brings vendor posts,
-              research notes and infrastructure writing into one compact workspace.
-            </p>
-            <p>
-              New providers can be added when they publish stable public feeds with enough technical
-              detail to support meaningful monitoring.
-            </p>
-          </div>
+          <details class="mt-6 max-w-3xl border border-brand/45 bg-bg-1/55 p-4 text-text-2">
+            <summary class="cursor-pointer select-none font-mono text-xs font-black uppercase tracking-[0.16em] text-text-1">
+              About this feed
+            </summary>
+            <div class="mt-4 grid gap-4 text-base leading-relaxed md:grid-cols-2">
+              <p>
+                The feed collects articles, release notes and research posts from model labs, cloud
+                AI teams, infrastructure providers and open research organizations.
+              </p>
+              <p>
+                Use the provider filters, search field and density controls to compare updates from
+                OpenAI, Anthropic, Google DeepMind, Meta AI, Mistral AI, Hugging Face, xAI, DeepSeek,
+                IBM Research, Amazon AI, NVIDIA AI and Alibaba Qwen.
+              </p>
+              <p>
+                Each card keeps the source, publish date, title and summary close together so model
+                launches, platform changes, safety research and infrastructure guidance are easier
+                to scan.
+              </p>
+              <p>
+                AI News Hub is maintained by Hello.World Consulting as a source-led monitoring
+                surface for builders following model capability, deployment patterns, agent tooling,
+                retrieval, security and local AI infrastructure.
+              </p>
+            </div>
+          </details>
         </div>
       </section>
       <section id="articles" class="industrial-container space-y-8 py-8 md:py-12">
