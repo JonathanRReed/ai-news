@@ -124,8 +124,8 @@ body::after {
 
 .macro-heading {
   font-family: 'NebulaSans-BoldItalic', 'NebulaSans-Book', 'Arial Narrow', Arial, sans-serif;
-  font-size: clamp(3.25rem, 8.2vw, 8.8rem);
-  line-height: 0.88;
+  font-size: clamp(2.6rem, 5.8vw, 6.25rem);
+  line-height: 0.94;
   letter-spacing: 0;
   text-transform: uppercase;
   text-wrap: balance;

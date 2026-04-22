@@ -115,12 +115,12 @@ const structuredData = {
     <NeuralGrid client:idle={{ timeout: 1800 }} />
     <Header currentPage="about" />
     <main id="main-content" class="industrial-shell flex-1">
-      <section class="industrial-container py-24 md:py-36">
-        <div class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_380px]">
+      <section class="industrial-container py-10 md:py-16">
+        <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_380px] lg:items-start">
           <div class="max-w-5xl">
             <p class="micro-label mb-5 text-brand">[ About ]</p>
             <h1 class="macro-heading max-w-5xl">AI News Hub</h1>
-            <p class="mt-8 max-w-3xl text-xl leading-relaxed text-text-2">
+            <p class="mt-6 max-w-3xl text-lg leading-relaxed text-text-2 md:text-xl">
               AI News Hub collects articles, releases and research updates from RSS and Atom feeds
               published by major AI labs, model providers and infrastructure teams.
             </p>
@@ -151,18 +151,22 @@ const structuredData = {
                 </a>
               </div>
             </div>
-            <p class="micro-label mb-8 text-text-2">[ Sources ]</p>
-            <ul class="space-y-3 font-mono text-sm uppercase tracking-[0.08em] text-white">
-              {sourceCompanies.map((company, index) => (
-                <li class={index === sourceCompanies.length - 1 ? '' : 'border-b border-white/15 pb-3'}>
-                  {company.name}
-                </li>
-              ))}
-            </ul>
+            <details class="border-t border-white/15 pt-6">
+              <summary class="cursor-pointer select-none font-mono text-xs font-black uppercase tracking-[0.12em] text-text-2 hover:text-white">
+                [ Sources ]
+              </summary>
+              <ul class="mt-6 space-y-3 font-mono text-sm uppercase tracking-[0.08em] text-white">
+                {sourceCompanies.map((company, index) => (
+                  <li class={index === sourceCompanies.length - 1 ? '' : 'border-b border-white/15 pb-3'}>
+                    {company.name}
+                  </li>
+                ))}
+              </ul>
+            </details>
           </aside>
         </div>
       </section>
-      <section class="industrial-container pb-24 md:pb-36">
+      <section class="industrial-container pb-16 md:pb-24">
         <div class="industrial-grid">
           <article class="col-span-12 p-6 md:col-span-4 md:p-8">
             <p class="micro-label mb-8 text-text-2">[ Sources ]</p>
@@ -196,7 +200,7 @@ const structuredData = {
             </p>
           </article>
         </div>
-        <div class="mt-10 max-w-4xl space-y-5 text-lg leading-relaxed text-text-2">
+        <div class="mt-8 max-w-4xl space-y-4 text-base leading-relaxed text-text-2 md:text-lg">
           <p>
             AI News Hub exists because the most useful AI updates often live across many separate
             source sites. Model labs publish launch notes, research teams publish technical details,
@@ -215,9 +219,9 @@ const structuredData = {
             security guidance and platform changes.
           </p>
         </div>
-        <a href="/" class="signal-button mt-10">Back to home</a>
+        <a href="/" class="signal-button mt-8">Back to home</a>
       </section>
-      <div class="industrial-container pb-24">
+      <div class="industrial-container pb-16">
         <FaqDropdown client:idle />
       </div>
     </main>
