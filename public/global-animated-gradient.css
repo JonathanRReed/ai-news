@@ -368,6 +368,53 @@ input:focus-visible {
   z-index: 2;
 }
 
+/* Staggered scroll-reveal utility */
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1),
+              transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.reveal-stagger.is-visible > *:nth-child(1)  { opacity:1; transform:translateY(0); transition-delay:  0ms; }
+.reveal-stagger.is-visible > *:nth-child(2)  { opacity:1; transform:translateY(0); transition-delay: 50ms; }
+.reveal-stagger.is-visible > *:nth-child(3)  { opacity:1; transform:translateY(0); transition-delay:100ms; }
+.reveal-stagger.is-visible > *:nth-child(4)  { opacity:1; transform:translateY(0); transition-delay:150ms; }
+.reveal-stagger.is-visible > *:nth-child(5)  { opacity:1; transform:translateY(0); transition-delay:200ms; }
+.reveal-stagger.is-visible > *:nth-child(6)  { opacity:1; transform:translateY(0); transition-delay:250ms; }
+.reveal-stagger.is-visible > *:nth-child(7)  { opacity:1; transform:translateY(0); transition-delay:300ms; }
+.reveal-stagger.is-visible > *:nth-child(8)  { opacity:1; transform:translateY(0); transition-delay:350ms; }
+.reveal-stagger.is-visible > *:nth-child(9)  { opacity:1; transform:translateY(0); transition-delay:400ms; }
+.reveal-stagger.is-visible > *:nth-child(10) { opacity:1; transform:translateY(0); transition-delay:450ms; }
+.reveal-stagger.is-visible > *:nth-child(11) { opacity:1; transform:translateY(0); transition-delay:500ms; }
+.reveal-stagger.is-visible > *:nth-child(12) { opacity:1; transform:translateY(0); transition-delay:550ms; }
+
+/* Underline-grow hover for text links */
+.link-underline-grow {
+  position: relative;
+  text-decoration: none;
+}
+.link-underline-grow::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 1.5px;
+  background: currentColor;
+  transition: width 280ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.link-underline-grow:hover::after,
+.link-underline-grow:focus-visible::after {
+  width: 100%;
+}
+
+/* Glow focus ring variant */
+.focus-glow:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #0a0a0a, 0 0 0 4px rgba(230,25,25,0.7);
+  border-radius: 2px;
+}
+
 /* Respect reduced motion preferences to lower main-thread work */
 @media (prefers-reduced-motion: reduce) {
 
@@ -386,7 +433,8 @@ input:focus-visible {
   .article-fade-in-enter-active,
   .article-fade-in-exit,
   .article-fade-in-exit-active,
-  .shimmer-text {
+  .shimmer-text,
+  .reveal-stagger > * {
     animation: none !important;
     transition: none !important;
     transform: none !important;

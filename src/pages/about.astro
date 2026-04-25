@@ -91,8 +91,10 @@ const structuredData = {
     <meta name="twitter:image:alt" content={socialImageAlt} />
     <link rel="canonical" href={canonicalUrl} />
     <link rel="author" href="https://jonathanrreed.com" />
-    <link rel="icon" type="image/webp" href="/favicon.webp" />
-    <link rel="apple-touch-icon" href="/favicon.webp" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="dns-prefetch" href="https://img.helloworldfirm.com" />
     <link rel="preconnect" href="https://fonts.helloworldfirm.com" />
@@ -116,7 +118,7 @@ const structuredData = {
     <Header currentPage="about" />
     <main id="main-content" class="industrial-shell flex-1">
       <section class="industrial-container py-10 md:py-16">
-        <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_380px] lg:items-start">
+        <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_380px] lg:items-start reveal-stagger">
           <div class="max-w-5xl">
             <p class="micro-label mb-5 text-brand">[ About ]</p>
             <h1 class="macro-heading max-w-5xl">AI News Hub</h1>
@@ -167,7 +169,7 @@ const structuredData = {
         </div>
       </section>
       <section class="industrial-container pb-16 md:pb-24">
-        <div class="industrial-grid">
+        <div class="industrial-grid reveal-stagger">
           <article class="col-span-12 p-6 md:col-span-4 md:p-8">
             <p class="micro-label mb-8 text-text-2">[ Sources ]</p>
             <h2 class="mb-4 text-3xl font-black uppercase leading-none text-white">
@@ -200,7 +202,7 @@ const structuredData = {
             </p>
           </article>
         </div>
-        <div class="mt-8 max-w-4xl space-y-4 text-base leading-relaxed text-text-2 md:text-lg">
+        <div class="mt-8 max-w-4xl space-y-4 text-base leading-relaxed text-text-2 md:text-lg reveal-stagger">
           <p>
             AI News Hub exists because the most useful AI updates often live across many separate
             source sites. Model labs publish launch notes, research teams publish technical details,
@@ -219,6 +221,13 @@ const structuredData = {
             security guidance and platform changes.
           </p>
         </div>
+      <script is:inline>
+        (function(){
+          if(typeof window==='undefined')return;
+          var ro=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-visible');ro.unobserve(e.target);}});},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+          document.querySelectorAll('.reveal-stagger').forEach(function(el){ro.observe(el);});
+        })();
+      </script>
         <a href="/" class="signal-button mt-8">Back to home</a>
       </section>
       <div class="industrial-container pb-16">
