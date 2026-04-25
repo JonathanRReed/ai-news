@@ -3,7 +3,7 @@
   src: url('https://fonts.helloworldfirm.com/NebulaSans-Book.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
@@ -11,15 +11,54 @@
   src: url('https://fonts.helloworldfirm.com/NebulaSans-BoldItalic.woff2') format('woff2');
   font-weight: bold;
   font-style: italic;
-  font-display: swap;
+  font-display: block;
 }
 
-body, html {
-  font-family: 'NebulaSans-Book', 'Arial Narrow', Arial, sans-serif;
+/* Fallback font metric override to minimise CLS while NebulaSans loads */
+@font-face {
+  font-family: 'NebulaSans-Fallback';
+  src: local('Arial Narrow'), local('Arial');
+  font-weight: 400;
+  font-style: normal;
+  size-adjust: 97%;
+  ascent-override: 94%;
+  descent-override: 20%;
+  line-gap-override: 2%;
+}
+
+@font-face {
+  font-family: 'NebulaSans-Fallback';
+  src: local('Arial Narrow'), local('Arial');
+  font-weight: bold;
+  font-style: italic;
+  size-adjust: 97%;
+  ascent-override: 94%;
+  descent-override: 20%;
+  line-gap-override: 2%;
+}
+
+html {
+  font-family: 'NebulaSans-Book', 'NebulaSans-Fallback', 'Arial Narrow', Arial, sans-serif;
   background: #0a0a0a;
   color: #eaeaea;
   scroll-behavior: smooth;
+  /* Custom scrollbar for WebKit + Firefox */
+  scrollbar-color: rgba(230,25,25,0.6) rgba(10,10,10,0.9);
+  scrollbar-width: thin;
 }
+
+body {
+  font-family: inherit;
+  background: inherit;
+  color: inherit;
+}
+
+/* WebKit custom scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: rgba(10,10,10,0.9); }
+::-webkit-scrollbar-thumb { background: rgba(230,25,25,0.5); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(230,25,25,0.8); }
+::-webkit-scrollbar-corner { background: transparent; }
 
 ::selection {
   background: #e61919;

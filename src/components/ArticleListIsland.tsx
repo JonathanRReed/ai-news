@@ -192,8 +192,15 @@ export default function ArticleListIsland({ density = 'comfortable' }: { density
     <>
       {/* Refresh button removed per request */}
       <div className="cv-auto">
-        {visibleArticles.map((article: Article) => (
-          <div key={article.id} className={justLoadedIds.includes(article.id) ? 'article-fade-in-enter-active' : ''}>
+        {visibleArticles.map((article: Article, idx: number) => (
+          <div
+            key={article.id}
+            className={justLoadedIds.includes(article.id) ? 'article-fade-in-enter-active' : ''}
+            style={!justLoadedIds.includes(article.id) && idx < 20 ? {
+              opacity: 0,
+              animation: `fadeInUp 0.5s cubic-bezier(0.4, 0.2, 0.2, 1) ${Math.min(idx, 12) * 40}ms forwards`
+            } : undefined}
+          >
             <ArticleCard article={article} density={density} />
           </div>
         ))}
@@ -207,7 +214,7 @@ export default function ArticleListIsland({ density = 'comfortable' }: { density
       <div className="mt-8 flex justify-center">
         <button
           ref={buttonRef}
-          className={`signal-button disabled:cursor-not-allowed disabled:opacity-40 ${pendingIncrease ? 'animate-pulse' : ''}`}
+          className={`signal-button transition-all duration-200 disabled:cursor-not-allowed disabled:opacity-30 disabled:translate-y-0 disabled:hover:translate-y-0 ${pendingIncrease ? 'opacity-80' : ''}`}
           onClick={async () => {
             if (visibleCount + 20 > articles.length && hasNextPage) {
               setPendingIncrease(true);
@@ -218,8 +225,10 @@ export default function ArticleListIsland({ density = 'comfortable' }: { density
           }}
           disabled={pendingIncrease || (!hasNextPage && visibleCount >= articles.length)}
         >
-          {pendingIncrease ? <span className="mr-2 inline-block h-5 w-5 animate-spin border-2 border-white border-t-transparent align-middle"></span> : null}
-          Load 20 more
+          {pendingIncrease ? (
+            <span className="mr-2 inline-block h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white align-middle"></span>
+          ) : null}
+          {pendingIncrease ? 'Loading…' : (!hasNextPage && visibleCount >= articles.length) ? 'All caught up' : 'Load 20 more'}
         </button>
       </div>
       {visibleCount > 20 && (

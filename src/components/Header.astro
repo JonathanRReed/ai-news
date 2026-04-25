@@ -8,44 +8,50 @@ const { currentPage } = Astro.props;
 ---
 
 <header
-  class="sticky top-0 z-50 w-full border-b border-white/20 bg-bg-0/92 backdrop-blur-md"
+  class="sticky top-0 z-50 w-full border-b border-white/[0.12] bg-bg-0/85 backdrop-blur-xl transition-colors duration-300"
 >
   <div
     class="industrial-container grid min-h-[68px] grid-cols-[1fr_auto] items-center gap-4 md:grid-cols-[1fr_auto_1fr]"
   >
     <a
       href="/"
-      class="group inline-flex min-h-11 items-center gap-3 focus-industrial"
+      class="group inline-flex min-h-11 items-center gap-3 focus-glow"
+      aria-label="AI News Hub – Home"
     >
-      <span
-        class="grid h-10 w-10 place-items-center border border-brand bg-brand text-[0.7rem] font-black tracking-[0.12em] text-white"
-        aria-hidden="true">AI</span
-      >
-      <span class="flex flex-col leading-none">
-        <span class="animated-gradient-logo text-xl uppercase tracking-normal"
-          >AI News</span
-        >
-        <span class="micro-label hidden text-text-2 sm:block">News feed</span>
-      </span>
+      <img
+        src="/ai_news_logo_assets/ai-news-logo-normal-transparent.png"
+        alt="AI News Hub"
+        width="512"
+        height="128"
+        class="h-9 w-auto transition-all duration-200 group-hover:drop-shadow-[0_0_8px_rgba(230,25,25,0.45)] group-active:scale-95"
+        loading="eager"
+        decoding="async"
+      />
     </a>
 
     <nav
-      class="hidden items-center border-x border-white/20 md:flex"
+      class="hidden items-center border-x border-white/[0.12] md:flex"
       aria-label="Primary navigation"
     >
       <a
         href="/"
-        class={`micro-label inline-flex min-h-[68px] items-center border-r border-white/20 px-7 transition-colors ${currentPage === "home" ? "bg-brand text-white" : "text-text-2 hover:bg-white/10 hover:text-white"}`}
+        class={`micro-label relative inline-flex min-h-[68px] items-center border-r border-white/[0.12] px-7 transition-all duration-200 ${currentPage === "home" ? "bg-brand text-white" : "text-text-2 hover:bg-white/[0.06] hover:text-white"}`}
         aria-current={currentPage === "home" ? "page" : undefined}
       >
         [ Home ]
+        {currentPage === "home" && (
+          <span class="absolute bottom-0 left-0 h-[2px] w-full bg-white/40" aria-hidden="true" />
+        )}
       </a>
       <a
         href="/about/"
-        class={`micro-label inline-flex min-h-[68px] items-center px-7 transition-colors ${currentPage === "about" ? "bg-brand text-white" : "text-text-2 hover:bg-white/10 hover:text-white"}`}
+        class={`micro-label relative inline-flex min-h-[68px] items-center px-7 transition-all duration-200 ${currentPage === "about" ? "bg-brand text-white" : "text-text-2 hover:bg-white/[0.06] hover:text-white"}`}
         aria-current={currentPage === "about" ? "page" : undefined}
       >
         [ About ]
+        {currentPage === "about" && (
+          <span class="absolute bottom-0 left-0 h-[2px] w-full bg-white/40" aria-hidden="true" />
+        )}
       </a>
     </nav>
 
