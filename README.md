@@ -1,6 +1,6 @@
 # AI News
 
-AI News is an Astro app for tracking updates from a curated list of AI companies and labs.
+AI News is an Astro app for tracking updates from a curated list of AI companies and labs. It is designed as a fast, maintainable portfolio project that combines curated official sources, Supabase-backed article data, and a static Astro front end.
 
 This repo powers the AI News site at `ai-news.helloworldfirm.com`.
 
@@ -29,10 +29,12 @@ This repo powers the AI News site at `ai-news.helloworldfirm.com`.
 ## Setup
 
 ```sh
+git clone https://github.com/JonathanRReed/ai-news.git
+cd ai-news
 bun install
 ```
 
-Configure your local environment for Supabase before running the app.
+Configure your local environment for Supabase before running the app. Use `.env.example` as the expected shape for local credentials. Do not commit real Supabase credentials.
 
 ## Run locally
 
@@ -43,9 +45,9 @@ bun run dev
 ## Common scripts
 
 ```sh
+bun run lint
 bun run build
 bun run preview
-bun run lint
 bun run lint:fix
 bun run gather:providers
 ```
@@ -62,4 +64,5 @@ bun run gather:providers
 ## Notes
 
 - This repo is designed to be boring in production and easy to maintain.
-- If the app cannot find the Supabase env vars, it will fail fast with a clear error.
+- If the app cannot find the Supabase env vars, it fails fast with a clear local setup error.
+- The provider article cache can be regenerated with `bun run gather:providers` before a release or demo.
