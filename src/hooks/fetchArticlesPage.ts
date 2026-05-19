@@ -54,6 +54,32 @@ async function fetchSupplementalArticlesFromNetwork(): Promise<Article[]> {
   }
 }
 
+async function fetchSupabaseArticles(filters: ArticleFilters): Promise<SupabaseArticlesResult> {
+  if (!supabase) return { data: [], error: null };
+
+  let q = supabase
+    .from('ai_company_news')
+    .select('id, company, published_at, url, title, summary, source_type, content')
+    .order('published_at', { ascending: false })
+    .range(0, MAX_COMBINED_ROWS - 1);
+
+  if (filters.category && filters.category !== 'All' && isNewsSourceType(filters.category))
+    q = q.eq('source_type', filters.category);
+  if (filters.company && filters.company !== 'All')
+    q = q.eq('company', filters.company);
+  if (filters.q && filters.q.trim() !== '') {
+    const pattern = `%${filters.q.trim()}%`;
+    q = q.or(`title.ilike.${pattern},summary.ilike.${pattern},content.ilike.${pattern}`);
+  }
+
+  return Promise.resolve(q)
+    .then(({ data, error }) => ({
+      data: Array.isArray(data) ? (data as Article[]) : [],
+      error: error ? new Error(error.message) : null,
+    }))
+    .catch((error: Error) => ({ data: [], error }));
+}
+
 function filterSupplementalArticles(articles: Article[], filters: ArticleFilters): Article[] {
   const search = filters.q?.trim().toLowerCase();
   return articles.filter((article) => {
@@ -101,27 +127,7 @@ export interface ArticleFilters {
 }
 
 export async function fetchArticlesPage(filters: ArticleFilters, pageParam = 0): Promise<PageData> {
-  let q = supabase
-    .from('ai_company_news')
-    .select('id, company, published_at, url, title, summary, source_type, content')
-    .order('published_at', { ascending: false })
-    .range(0, MAX_COMBINED_ROWS - 1);
-
-  if (filters.category && filters.category !== 'All' && isNewsSourceType(filters.category))
-    q = q.eq('source_type', filters.category);
-  if (filters.company && filters.company !== 'All')
-    q = q.eq('company', filters.company);
-  if (filters.q && filters.q.trim() !== '') {
-    const pattern = `%${filters.q.trim()}%`;
-    q = q.or(`title.ilike.${pattern},summary.ilike.${pattern},content.ilike.${pattern}`);
-  }
-
-  const supabaseArticles = Promise.resolve(q)
-    .then(({ data, error }) => ({
-      data: Array.isArray(data) ? data as Article[] : [],
-      error: error ? new Error(error.message) : null,
-    }))
-    .catch((error: Error) => ({ data: [], error }));
+  const supabaseArticles = fetchSupabaseArticles(filters);
 
   const [supabaseResult, supplementalArticles] = await Promise.all([
     Promise.race([supabaseArticles, timeoutSupabase()]),
