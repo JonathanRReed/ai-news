@@ -1,10 +1,11 @@
 import { createClient } from '@supabase/supabase-js';
 import type { Database } from '../types/database.js';
 
-const url = import.meta.env.PUBLIC_SUPABASE_URL;
-const anonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
+const url = import.meta.env.PUBLIC_SUPABASE_URL?.trim();
+const anonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY?.trim();
+export const hasSupabaseConfig = Boolean(url && anonKey);
 
-if (!url || !anonKey) {
+if (!hasSupabaseConfig) {
   // Provide a clear, actionable error in development.
   const msg = `Missing Supabase environment variables.\n` +
     `Expected PUBLIC_SUPABASE_URL and PUBLIC_SUPABASE_ANON_KEY to be set in your .env file.\n` +
@@ -12,7 +13,6 @@ if (!url || !anonKey) {
   if (import.meta.env?.DEV) {
     console.error(msg);
   }
-  throw new Error('Supabase configuration error: PUBLIC_SUPABASE_URL and/or PUBLIC_SUPABASE_ANON_KEY are missing.');
 }
 
-export const supabase = createClient<Database>(url, anonKey);
+export const supabase = hasSupabaseConfig ? createClient<Database>(url, anonKey) : null;
