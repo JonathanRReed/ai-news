@@ -32,6 +32,7 @@ This repo powers the AI News site at `ai-news.helloworldfirm.com`.
 git clone https://github.com/JonathanRReed/ai-news.git
 cd ai-news
 bun install
+cp .env.example .env
 ```
 
 Configure your local environment for Supabase before running the app. Use `.env.example` as the expected shape for local credentials. Do not commit real Supabase credentials.
