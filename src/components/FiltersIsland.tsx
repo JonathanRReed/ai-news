@@ -2,6 +2,12 @@ import React from "react";
 import CompanySelect from "./CompanySelect.js";
 
 type Filters = { company: string; category: string; q?: string };
+const sourceTypes = [
+  { value: "All", label: "All" },
+  { value: "rss_official", label: "Official" },
+  { value: "rss_unofficial", label: "Community" },
+  { value: "scraped", label: "Indexed" },
+];
 
 export default function FiltersIsland({ filters, setFilters, onPrefetch: _onPrefetch, density, setDensity }: {
   filters: Filters;
@@ -17,8 +23,8 @@ export default function FiltersIsland({ filters, setFilters, onPrefetch: _onPref
         onCompanyChange={company => setFilters(f => ({ ...f, company }))}
       />
 
-      <div className="industrial-grid relative z-20 w-full max-w-5xl">
-        <div className="group relative col-span-12 flex min-h-[64px] items-center bg-bg-0 md:col-span-7">
+      <div className="industrial-grid relative z-20 w-full max-w-7xl">
+        <div className="group relative col-span-12 flex min-h-[64px] items-center bg-bg-0 lg:col-span-5">
           <label htmlFor="article-search" className="sr-only">Search articles</label>
           <div className="pointer-events-none absolute inset-y-0 left-4 flex items-center text-text-2 transition-colors group-focus-within:text-brand">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -50,7 +56,21 @@ export default function FiltersIsland({ filters, setFilters, onPrefetch: _onPref
           )}
         </div>
 
-        <div className="col-span-12 grid grid-cols-2 bg-bg-0 md:col-span-5">
+        <div className="col-span-12 grid grid-cols-4 bg-bg-0 lg:col-span-4">
+          {sourceTypes.map((sourceType, index) => (
+            <button
+              key={sourceType.value}
+              type="button"
+              aria-pressed={filters.category === sourceType.value}
+              className={`micro-label min-h-[64px] px-3 transition-all duration-200 focus-industrial ${index === sourceTypes.length - 1 ? '' : 'border-r border-white/20'} ${filters.category === sourceType.value ? 'bg-white text-bg-0' : 'text-text-2 hover:bg-white/10 hover:text-white'}`}
+              onClick={() => setFilters(f => ({ ...f, category: sourceType.value }))}
+            >
+              {sourceType.label}
+            </button>
+          ))}
+        </div>
+
+        <div className="col-span-12 grid grid-cols-2 bg-bg-0 lg:col-span-3">
           <button
             type="button"
             aria-pressed={density === 'comfortable'}

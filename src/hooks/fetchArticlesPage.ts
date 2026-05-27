@@ -45,7 +45,7 @@ async function fetchSupplementalArticles(): Promise<Article[]> {
 
 async function fetchSupplementalArticlesFromNetwork(): Promise<Article[]> {
   try {
-    const response = await fetch(SUPPLEMENTAL_ARTICLES_PATH, { cache: 'force-cache' });
+    const response = await fetch(SUPPLEMENTAL_ARTICLES_PATH, { cache: 'no-cache' });
     if (!response.ok) return [];
     const data: unknown = await response.json();
     return Array.isArray(data) ? data.filter(isArticle) : [];
@@ -54,33 +54,11 @@ async function fetchSupplementalArticlesFromNetwork(): Promise<Article[]> {
   }
 }
 
-async function fetchSupabaseArticles(filters: ArticleFilters): Promise<SupabaseArticlesResult> {
-  if (!supabase) return { data: [], error: null };
-
-  let q = supabase
-    .from('ai_company_news')
-    .select('id, company, published_at, url, title, summary, source_type, content')
-    .order('published_at', { ascending: false })
-    .range(0, MAX_COMBINED_ROWS - 1);
-
-  if (filters.category && filters.category !== 'All' && isNewsSourceType(filters.category))
-    q = q.eq('source_type', filters.category);
-  if (filters.company && filters.company !== 'All')
-    q = q.eq('company', filters.company);
-  if (filters.q && filters.q.trim() !== '') {
-    const pattern = `%${filters.q.trim()}%`;
-    q = q.or(`title.ilike.${pattern},summary.ilike.${pattern},content.ilike.${pattern}`);
-  }
-
-  return Promise.resolve(q)
-    .then(({ data, error }) => ({
-      data: Array.isArray(data) ? (data as Article[]) : [],
-      error: error ? new Error(error.message) : null,
-    }))
-    .catch((error: Error) => ({ data: [], error }));
+function filterSupplementalArticles(articles: Article[], filters: ArticleFilters): Article[] {
+  return filterArticles(articles, filters);
 }
 
-function filterSupplementalArticles(articles: Article[], filters: ArticleFilters): Article[] {
+function filterArticles(articles: Article[], filters: ArticleFilters): Article[] {
   const search = filters.q?.trim().toLowerCase();
   return articles.filter((article) => {
     if (filters.category && filters.category !== 'All' && isNewsSourceType(filters.category)) {
@@ -127,14 +105,30 @@ export interface ArticleFilters {
 }
 
 export async function fetchArticlesPage(filters: ArticleFilters, pageParam = 0): Promise<PageData> {
-  const supabaseArticles = fetchSupabaseArticles(filters);
+  let q = supabase
+    ?.from('ai_company_news')
+    .select('id, company, published_at, url, title, summary, source_type, content')
+    .order('published_at', { ascending: false })
+    .range(0, MAX_COMBINED_ROWS - 1);
+
+  if (q && filters.category && filters.category !== 'All' && isNewsSourceType(filters.category))
+    q = q.eq('source_type', filters.category);
+  if (q && filters.company && filters.company !== 'All')
+    q = q.eq('company', filters.company);
+
+  const supabaseArticles = q ? Promise.resolve(q)
+    .then(({ data, error }) => ({
+      data: Array.isArray(data) ? data as Article[] : [],
+      error: error ? new Error(error.message) : null,
+    }))
+    .catch((error: Error) => ({ data: [], error })) : Promise.resolve({ data: [], error: null });
 
   const [supabaseResult, supplementalArticles] = await Promise.all([
     Promise.race([supabaseArticles, timeoutSupabase()]),
     fetchSupplementalArticles(),
   ]);
   const filteredSupplemental = filterSupplementalArticles(supplementalArticles, filters);
-  const articles = mergeArticles(supabaseResult.data, filteredSupplemental);
+  const articles = filterArticles(mergeArticles(supabaseResult.data, filteredSupplemental), filters);
 
   if (supabaseResult.error && articles.length === 0) throw supabaseResult.error;
 

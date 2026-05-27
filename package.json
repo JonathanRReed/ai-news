@@ -35,16 +35,16 @@
   "dependencies": {
     "@astrojs/check": "^0.9.9",
     "@astrojs/react": "5.0.5",
-    "@supabase/supabase-js": "^2.105.4",
-    "@tanstack/react-query": "^5.100.10",
-    "astro": "^6.3.2",
+    "@supabase/supabase-js": "^2.106.2",
+    "@tanstack/react-query": "^5.100.14",
+    "astro": "^6.3.8",
     "react": "^19.2.6",
     "react-dom": "^19.2.6"
   },
   "devDependencies": {
     "@astrojs/tailwind": "^6.0.2",
-    "@typescript-eslint/eslint-plugin": "^8.59.3",
-    "@typescript-eslint/parser": "^8.59.3",
+    "@typescript-eslint/eslint-plugin": "^8.60.0",
+    "@typescript-eslint/parser": "^8.60.0",
     "astro-eslint-parser": "^1.4.0",
     "autoprefixer": "^10.5.0",
     "babel-plugin-react-compiler": "^1.0.0",

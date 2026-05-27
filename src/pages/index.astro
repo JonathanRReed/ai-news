@@ -3,6 +3,8 @@ import ArticlesIslandWrapper from "../components/ArticlesIslandWrapper.tsx";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import NeuralGrid from "../components/NeuralGrid.tsx";
+import { companies } from "../lib/companyCatalog.js";
+import providerArticles from "../../public/data/provider-articles.json";
 
 const siteUrl = "https://ai-news.helloworldfirm.com";
 const canonicalUrl = `${siteUrl}/`;
@@ -11,6 +13,20 @@ const description =
   "AI News Hub tracks current articles, releases and research updates from major AI labs, infrastructure providers and model companies in one searchable feed.";
 const socialImage = "https://img.helloworldfirm.com/logos/512x512-logo.avif";
 const socialImageAlt = "AI News Hub logo";
+const providerRows = providerArticles as Array<{ company: string; published_at: string; source_type?: string }>;
+const trackedProviderCount = companies.filter((company) => company.name !== "All").length;
+const cachedArticleCount = providerRows.length;
+const cachedCompanyCount = new Set(providerRows.map((article) => article.company)).size;
+const latestCacheDate = providerRows
+  .map((article) => new Date(article.published_at).getTime())
+  .filter((time) => Number.isFinite(time))
+  .sort((a, b) => b - a)[0];
+const latestCacheIso = latestCacheDate ? new Date(latestCacheDate).toISOString() : "2026-04-21T00:00:00.000Z";
+const latestCacheLabel = new Intl.DateTimeFormat("en-US", {
+  month: "short",
+  day: "numeric",
+  year: "numeric",
+}).format(new Date(latestCacheIso));
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "WebSite",
@@ -53,7 +69,7 @@ const collectionStructuredData = {
     url: "https://jonathanrreed.com",
   },
   datePublished: "2026-04-21",
-  dateModified: "2026-04-21",
+  dateModified: latestCacheIso.slice(0, 10),
   isPartOf: {
     "@type": "WebSite",
     name: "AI News Hub",
@@ -160,37 +176,39 @@ const collectionStructuredData = {
     <Header currentPage="home" />
     <main id="main-content" class="industrial-shell">
       <section class="industrial-container py-10 md:py-14">
-        <div class="max-w-5xl reveal-stagger">
-          <p class="micro-label mb-5 text-brand">[ AI source monitor ]</p>
-          <h1 class="macro-heading max-w-5xl">
-            AI News Hub tracks primary-source updates from major AI organizations.
-          </h1>
-          <details class="mt-6 max-w-3xl border border-brand/45 bg-bg-1/55 p-4 text-text-2">
-            <summary class="cursor-pointer select-none font-mono text-xs font-black uppercase tracking-[0.16em] text-text-1">
-              About this feed
-            </summary>
-            <div class="mt-4 grid gap-4 text-base leading-relaxed md:grid-cols-2">
-              <p>
-                The feed collects articles, release notes and research posts from model labs, cloud
-                AI teams, infrastructure providers and open research organizations.
-              </p>
-              <p>
-                Use the provider filters, search field and density controls to compare updates from
-                OpenAI, Anthropic, Google DeepMind, Meta AI, Mistral AI, Hugging Face, xAI, DeepSeek,
-                IBM Research, Amazon AI, NVIDIA AI and Alibaba Qwen.
-              </p>
-              <p>
-                Each card keeps the source, publish date, title and summary close together so model
-                launches, platform changes, safety research and infrastructure guidance are easier
-                to scan.
-              </p>
-              <p>
-                AI News Hub is maintained by Hello.World Consulting as a source-led monitoring
-                surface for builders following model capability, deployment patterns, agent tooling,
-                retrieval, security and local AI infrastructure.
-              </p>
-            </div>
-          </details>
+        <div class="grid gap-6 lg:grid-cols-[minmax(0,1fr)_420px] lg:items-end reveal-stagger">
+          <div class="max-w-5xl">
+            <p class="micro-label mb-5 text-brand">[ AI source monitor ]</p>
+            <h1 class="macro-heading max-w-5xl">
+              Primary-source AI news, releases and research in one fast feed.
+            </h1>
+            <p class="mt-6 max-w-3xl text-lg leading-relaxed text-text-2 md:text-xl">
+              Track model labs, infrastructure teams and research groups without opening a dozen
+              separate blogs. Search, filter by provider and switch density when you need a tighter
+              briefing surface.
+            </p>
+          </div>
+          <aside class="industrial-border p-5">
+            <p class="micro-label mb-4 text-text-2">[ Source board ]</p>
+            <dl class="grid grid-cols-2 gap-px bg-white/15">
+              <div class="bg-bg-0 p-4">
+                <dt class="micro-label text-text-2">Tracked</dt>
+                <dd class="mt-2 font-mono text-2xl font-black text-white">{trackedProviderCount}</dd>
+              </div>
+              <div class="bg-bg-0 p-4">
+                <dt class="micro-label text-text-2">Cached</dt>
+                <dd class="mt-2 font-mono text-2xl font-black text-white">{cachedArticleCount}</dd>
+              </div>
+              <div class="bg-bg-0 p-4">
+                <dt class="micro-label text-text-2">Cache sources</dt>
+                <dd class="mt-2 font-mono text-2xl font-black text-white">{cachedCompanyCount}</dd>
+              </div>
+              <div class="bg-bg-0 p-4">
+                <dt class="micro-label text-text-2">Latest cache</dt>
+                <dd class="mt-2 font-mono text-sm font-black text-white">{latestCacheLabel}</dd>
+              </div>
+            </dl>
+          </aside>
         </div>
       </section>
       <script is:inline>

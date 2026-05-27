@@ -35,3 +35,9 @@
 
 /*.woff2
   Cache-Control: public, max-age=31536000, immutable
+
+https://ai-news-df6.pages.dev/*
+  X-Robots-Tag: noindex
+
+https://:version.ai-news-df6.pages.dev/*
+  X-Robots-Tag: noindex
