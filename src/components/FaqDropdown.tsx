@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 
-const faqs = [
+type FaqItem = {
+  question: string;
+  answer: React.ReactNode;
+};
+
+const faqs: FaqItem[] = [
   {
     question: "How does this site get its data?",
     answer:
@@ -18,8 +23,19 @@ const faqs = [
   },
   {
     question: "Is the project open source?",
-    answer:
-      "Yes. The repository is available on <a href=\"https://github.com/JonathanRReed/ai-news.git\" class='underline decoration-brand decoration-2 underline-offset-4 text-white hover:text-brand-hover transition-colors'>the AI News Hub source repository</a>.",
+    answer: (
+      <>
+        Yes. The repository is available on{" "}
+        <a
+          href="https://github.com/JonathanRReed/ai-news.git"
+          className="underline decoration-brand decoration-2 underline-offset-4 transition-colors hover:text-brand-hover"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          the AI News Hub source repository
+        </a>.
+      </>
+    ),
   },
 ];
 
@@ -59,10 +75,7 @@ export default function FaqDropdown() {
               style={{ pointerEvents: openIndex === idx ? "auto" : "none" }}
               hidden={openIndex !== idx}
             >
-              <div
-                className="max-w-2xl pb-4 text-base leading-relaxed text-text-2"
-                dangerouslySetInnerHTML={{ __html: faq.answer }}
-              />
+              <div className="max-w-2xl pb-4 text-base leading-relaxed text-text-2">{faq.answer}</div>
             </div>
           </div>
         ))}

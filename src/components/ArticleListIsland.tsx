@@ -7,9 +7,38 @@ import type { Article, PageData } from "../types/article.js";
 function getDomain(url: string): string {
   try {
     const u = new URL(url);
+    if (u.protocol !== "https:" && u.protocol !== "http:") return "";
     return u.hostname.replace(/^www\./, "");
   } catch {
     return "";
+  }
+}
+
+function getSafeArticleUrl(url: string): string {
+  try {
+    const parsed = new URL(url);
+    return parsed.protocol === "https:" || parsed.protocol === "http:" ? parsed.toString() : "";
+  } catch {
+    return "";
+  }
+}
+
+function formatArticleDate(value: string): string {
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return "Undated";
+  return date.toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' });
+}
+
+function sourceTypeLabel(sourceType?: string): string {
+  switch (sourceType) {
+    case "rss_official":
+      return "Official feed";
+    case "rss_unofficial":
+      return "Community feed";
+    case "scraped":
+      return "Indexed page";
+    default:
+      return "Source feed";
   }
 }
 
@@ -22,7 +51,8 @@ function ArticleCard({ article, density = 'comfortable' }: { article: Article, d
   const pad = density === 'compact' ? 'p-4' : 'p-5 md:p-6';
   const title = density === 'compact' ? 'text-lg' : 'text-xl md:text-2xl';
   const meta = density === 'compact' ? 'text-[0.68rem]' : 'text-xs';
-  const publishedDate = new Date(article.published_at);
+  const safeUrl = getSafeArticleUrl(article.url);
+  const domain = getDomain(article.url);
   return (
     <SpotlightCard
       className={`article-card-hoverable group mb-4 ${pad}`}
@@ -38,19 +68,23 @@ function ArticleCard({ article, density = 'comfortable' }: { article: Article, d
         )}
         <span className="micro-label text-white">{article.company}</span>
         <time className="micro-label text-text-2" dateTime={article.published_at}>
-          {publishedDate.toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' })}
+          {formatArticleDate(article.published_at)}
         </time>
       </div>
       <h3 className={`${title} mb-3 font-bold leading-tight text-white text-pretty`}>
-        <a href={article.url} target="_blank" rel="noopener noreferrer" className="decoration-brand decoration-2 underline-offset-4 transition-colors hover:text-brand-hover hover:underline focus-industrial">
-          {article.title}
-        </a>
+        {safeUrl ? (
+          <a href={safeUrl} target="_blank" rel="noopener noreferrer" className="decoration-brand decoration-2 underline-offset-4 transition-colors hover:text-brand-hover hover:underline focus-industrial">
+            {article.title}
+          </a>
+        ) : (
+          <span>{article.title}</span>
+        )}
       </h3>
       <div className={`mb-3 flex flex-wrap items-center gap-2 font-mono uppercase tracking-[0.08em] text-text-2 ${meta}`}>
-        {getDomain(article.url) && (
-          <span className="border border-white/20 px-2 py-1 text-white">{getDomain(article.url)}</span>
+        {domain && (
+          <span className="border border-white/20 px-2 py-1 text-white">{domain}</span>
         )}
-        {article.source_type ? <span>[ {article.source_type} ]</span> : null}
+        <span>[ {sourceTypeLabel(article.source_type)} ]</span>
       </div>
       <p className={`${density === 'compact' ? 'text-sm' : 'text-base'} max-w-3xl leading-relaxed text-text-2 text-pretty`}>
         {article.summary || article.content}
@@ -120,6 +154,13 @@ export default function ArticleListIsland({ density = 'comfortable' }: { density
   // Only show the top N (visibleCount) articles, always from the newest
   const visibleArticles = articles.slice(0, visibleCount);
   const latestVisibleTs = visibleArticles.length > 0 ? new Date(visibleArticles[0].published_at).getTime() : 0;
+  const latestVisibleLabel = visibleArticles.length > 0 ? formatArticleDate(visibleArticles[0].published_at) : "No matches";
+  const loadedArticlesLabel = hasNextPage ? `${visibleArticles.length} loaded` : `${visibleArticles.length} total`;
+  const activeFilters = [
+    filters.company && filters.company !== "All" ? filters.company : null,
+    filters.category && filters.category !== "All" ? sourceTypeLabel(filters.category) : null,
+    filters.q?.trim() ? `"${filters.q.trim()}"` : null,
+  ].filter(Boolean);
 
   // Poll for newer items periodically and update newCount (must be before any early returns)
   // Optimized with Page Visibility API to pause when tab is hidden
@@ -166,10 +207,24 @@ export default function ArticleListIsland({ density = 'comfortable' }: { density
   }, [filters, latestVisibleTs]);
 
   if (error) {
-    return <div className="mt-8 border border-brand bg-bg-1 p-5 text-center font-mono text-sm uppercase tracking-[0.08em] text-brand-hover">Connection failed. Please try again.</div>;
+    return (
+      <div className="mt-8 border border-brand bg-bg-1 p-6">
+        <p className="micro-label mb-3 text-brand-hover">[ Feed connection failed ]</p>
+        <p className="max-w-2xl text-base leading-relaxed text-text-2">
+          Live articles are unavailable right now. The static provider cache will load again once the connection recovers.
+        </p>
+      </div>
+    );
   }
   if (!isFetching && visibleArticles.length === 0) {
-    return <div className="mt-8 border border-white/20 bg-bg-1 p-8 text-center text-text-2">No articles match the active filters.</div>;
+    return (
+      <div className="mt-8 border border-white/20 bg-bg-1 p-8">
+        <p className="micro-label mb-3 text-white">[ No matching dispatches ]</p>
+        <p className="max-w-2xl text-base leading-relaxed text-text-2">
+          Try a different provider, source type or search phrase.
+        </p>
+      </div>
+    );
   }
 
   const skeletons = (
@@ -191,6 +246,22 @@ export default function ArticleListIsland({ density = 'comfortable' }: { density
   return (
     <>
       {/* Refresh button removed per request */}
+      <div className="mb-5 grid gap-px bg-white/15 md:grid-cols-[1fr_auto_auto]">
+        <div className="bg-bg-1 p-4">
+          <p className="micro-label text-text-2">[ Feed scope ]</p>
+          <p className="mt-2 text-sm leading-relaxed text-white">
+            {activeFilters.length > 0 ? activeFilters.join(" / ") : "All tracked sources"}
+          </p>
+        </div>
+        <div className="bg-bg-1 p-4 md:min-w-44">
+          <p className="micro-label text-text-2">[ Showing ]</p>
+          <p className="mt-2 font-mono text-sm text-white">{loadedArticlesLabel}</p>
+        </div>
+        <div className="bg-bg-1 p-4 md:min-w-48">
+          <p className="micro-label text-text-2">[ Latest ]</p>
+          <p className="mt-2 font-mono text-sm text-white">{latestVisibleLabel}</p>
+        </div>
+      </div>
       <div className="cv-auto">
         {visibleArticles.map((article: Article, idx: number) => (
           <div

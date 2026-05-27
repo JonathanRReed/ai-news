@@ -6,6 +6,24 @@ import { URL } from 'node:url';
 
 const feeds = [
   {
+    company: 'OpenAI',
+    sourceType: 'rss_official',
+    kind: 'rss',
+    url: 'https://openai.com/news/rss.xml',
+  },
+  {
+    company: 'Google DeepMind',
+    sourceType: 'rss_official',
+    kind: 'rss',
+    url: 'https://deepmind.google/blog/rss.xml',
+  },
+  {
+    company: 'Hugging Face',
+    sourceType: 'rss_official',
+    kind: 'rss',
+    url: 'https://huggingface.co/blog/feed.xml',
+  },
+  {
     company: 'DeepSeek',
     sourceType: 'rss_official',
     kind: 'atom',
