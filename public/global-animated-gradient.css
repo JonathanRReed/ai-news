@@ -1,3 +1,17 @@
+/* Design tokens — single source of truth (channels so Tailwind's /opacity works). */
+:root {
+  --bg-0: 10 10 10;
+  --bg-1: 18 18 18;
+  --bg-2: 26 26 26;
+  --bg-3: 36 36 36;
+  --text-1: 234 234 234;
+  --text-2: 168 168 168;
+  --muted: 138 138 138;
+  --brand: 230 25 25;
+  --brand-hover: 255 42 42;
+  --line: 234 234 234;
+}
+
 body {
   position: relative;
   isolation: isolate;
@@ -9,20 +23,7 @@ body {
   background-size: 48px 48px, 48px 48px, auto;
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background:
-    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.035) 0, rgba(255, 255, 255, 0.035) 1px, transparent 1px, transparent 4px),
-    radial-gradient(circle at 78% 12%, rgba(230, 25, 25, 0.16), transparent 28%),
-    radial-gradient(circle at 12% 88%, rgba(255, 255, 255, 0.08), transparent 34%);
-  pointer-events: none;
-  z-index: 0;
-  mix-blend-mode: screen;
-  opacity: 0.68;
-}
-
+/* Single ambient layer: a faint film grain over the base grid. Nothing else. */
 html::before {
   content: "";
   position: fixed;
@@ -33,43 +34,8 @@ html::before {
   pointer-events: none;
   z-index: 50;
   background-image: url("/noise.svg");
-  opacity: 0.18;
+  opacity: 0.035;
   mix-blend-mode: overlay;
-  filter: contrast(140%) brightness(90%);
-}
-
-@keyframes auroraShift {
-
-  0%,
-  100% {
-    transform: translate(0%, 0%) rotate(0deg);
-  }
-
-  25% {
-    transform: translate(5%, -3%) rotate(2deg);
-  }
-
-  50% {
-    transform: translate(-3%, 5%) rotate(-1deg);
-  }
-
-  75% {
-    transform: translate(-5%, -2%) rotate(1deg);
-  }
-}
-
-/* Secondary subtle moving highlight */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background:
-    linear-gradient(90deg, rgba(230, 25, 25, 0.34) 0 2px, transparent 2px 100%),
-    linear-gradient(rgba(255, 255, 255, 0.045) 0 1px, transparent 1px 100%);
-  background-size: 100% 100%, 100% 120px;
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.18;
 }
 
 .skip-link {
@@ -194,59 +160,6 @@ input:focus-visible {
   outline-offset: 3px;
 }
 
-.inline-feed-image {
-  display: inline-block;
-  width: clamp(4.8rem, 10vw, 9rem);
-  height: clamp(2.2rem, 4vw, 3.4rem);
-  margin-inline: 0.18em;
-  vertical-align: middle;
-  background-image: url("https://picsum.photos/seed/ai-news-terminal/480/220");
-  background-size: cover;
-  background-position: center;
-  filter: grayscale(1) contrast(1.35);
-  border: 1px solid rgba(234, 234, 234, 0.42);
-}
-
-.ticker-track {
-  animation: ticker-move 32s linear infinite;
-  width: max-content;
-}
-
-@keyframes ticker-move {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-.reveal-on-scroll {
-  opacity: 0;
-  transform: translateY(28px) scale(0.98);
-  transition: opacity 700ms ease, transform 700ms ease;
-}
-
-.reveal-on-scroll.is-visible {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
-
-.scroll-words span {
-  opacity: 0.26;
-  transition: opacity 300ms ease, color 300ms ease;
-}
-
-.scroll-words.is-visible span {
-  opacity: 1;
-}
-
-.stack-card {
-  position: sticky;
-  top: 7rem;
-}
-
 .article-card-hoverable {
   border-radius: 0 !important;
 }
@@ -257,45 +170,6 @@ input:focus-visible {
 
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
-}
-
-@keyframes subtleGlow {
-  0% {
-    opacity: 0.6;
-    transform: scale(1);
-  }
-
-  100% {
-    opacity: 1;
-    transform: scale(1.05);
-  }
-}
-
-.animated-gradient {
-  background: linear-gradient(120deg,
-      rgba(64, 61, 82, 0.85) 0%,
-      /* highlight-med */
-      rgba(82, 79, 103, 0.65) 50%,
-      /* highlight-high */
-      rgba(49, 116, 143, 0.45) 100%
-      /* pine */
-    );
-  background-size: 200% 200%;
-  animation: gradientMove 32s ease-in-out infinite;
-}
-
-@keyframes gradientMove {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
 }
 
 .article-fade-in {
@@ -387,6 +261,8 @@ input:focus-visible {
 .reveal-stagger.is-visible > *:nth-child(10) { opacity:1; transform:translateY(0); transition-delay:450ms; }
 .reveal-stagger.is-visible > *:nth-child(11) { opacity:1; transform:translateY(0); transition-delay:500ms; }
 .reveal-stagger.is-visible > *:nth-child(12) { opacity:1; transform:translateY(0); transition-delay:550ms; }
+/* Catch-all so lists longer than 12 still reveal fully (the first 12 stagger, the rest appear together). */
+.reveal-stagger.is-visible > * { opacity:1; transform:translateY(0); }
 
 /* Underline-grow hover for text links */
 .link-underline-grow {
@@ -433,7 +309,6 @@ input:focus-visible {
   .article-fade-in-enter-active,
   .article-fade-in-exit,
   .article-fade-in-exit-active,
-  .shimmer-text,
   .reveal-stagger > * {
     animation: none !important;
     transition: none !important;
@@ -446,30 +321,5 @@ input:focus-visible {
   .article-card-hoverable,
   .glassmorphic-article-card {
     transition: none !important;
-  }
-}
-
-/* Premium Shimmer Text Effect */
-.shimmer-text {
-  background: linear-gradient(90deg,
-      rgba(255, 255, 255, 0.8) 0%,
-      rgba(255, 255, 255, 1) 40%,
-      rgba(255, 255, 255, 0.6) 55%,
-      rgba(255, 255, 255, 1) 70%,
-      rgba(255, 255, 255, 0.8) 100%);
-  background-size: 200% auto;
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-  animation: shimmer 8s linear infinite;
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: -200% center;
-  }
-
-  100% {
-    background-position: 200% center;
   }
 }

@@ -1,0 +1,87 @@
+---
+import { resolveCompanyLogo } from "../lib/companyCatalog.js";
+import { deriveTopics, topicLabel } from "../lib/articleTags.js";
+import type { DigestWeek } from "../lib/digest.js";
+import type { Article } from "../types/article.js";
+
+interface Props {
+  digest: DigestWeek;
+  allWeeks: DigestWeek[];
+}
+const { digest, allWeeks } = Astro.props as Props;
+
+function dateLabel(iso: string): string {
+  return new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric" }).format(new Date(iso));
+}
+---
+
+<section class="industrial-container py-10 md:py-14">
+  <div class="max-w-5xl reveal-stagger">
+    <p class="micro-label mb-5 text-brand-hover">[ This week in AI ]</p>
+    <h1 class="macro-heading max-w-4xl">{digest.label}</h1>
+    <p class="mt-6 max-w-2xl text-lg leading-relaxed text-text-2">
+      The week's most significant primary-source updates, ranked — {digest.count} stories across {digest.labs} labs.
+      Every link goes to the original source.
+    </p>
+  </div>
+</section>
+
+<section class="industrial-container pb-16 md:pb-24">
+  <ol class="reveal-stagger border-t border-white/15">
+    {digest.topStories.map((article: Article, index: number) => {
+      const logo = resolveCompanyLogo(article.company);
+      const topics = deriveTopics(article).slice(0, 3);
+      return (
+        <li class="grid grid-cols-[auto_minmax(0,1fr)] gap-4 border-b border-white/15 py-6 md:gap-6">
+          <span class="font-mono text-2xl font-black tabular-nums text-muted md:text-3xl">{String(index + 1).padStart(2, "0")}</span>
+          <div>
+            <div class="mb-2 flex items-center gap-3">
+              {logo && (
+                <span class="flex h-8 w-8 items-center justify-center border border-white/20 bg-white">
+                  <img src={logo} alt="" aria-hidden="true" width="22" height="22" class="h-[22px] w-[22px] object-contain" />
+                </span>
+              )}
+              <span class="micro-label text-white">{article.company}</span>
+              <time class="micro-label tabular-nums text-text-2" datetime={article.published_at}>{dateLabel(article.published_at)}</time>
+            </div>
+            <h2 class="text-xl font-bold leading-tight text-white md:text-2xl text-pretty">
+              <a href={`/article/${article.id}/`} class="decoration-brand decoration-2 underline-offset-4 transition-colors hover:text-brand-hover hover:underline focus-industrial">
+                {article.title}
+              </a>
+            </h2>
+            {(article.summary || article.content) && (
+              <p class="mt-2 max-w-3xl leading-relaxed text-text-2 text-pretty line-clamp-2">{article.summary || article.content}</p>
+            )}
+            {topics.length > 0 && (
+              <div class="mt-2 flex flex-wrap gap-2 font-mono text-[0.68rem] uppercase tracking-[0.06em] text-text-2">
+                {topics.map((key) => <span>· {topicLabel(key)}</span>)}
+              </div>
+            )}
+          </div>
+        </li>
+      );
+    })}
+  </ol>
+
+  <div class="mt-10 flex flex-wrap items-center gap-4">
+    <a href="/" class="signal-button">Back to the feed</a>
+  </div>
+
+  {allWeeks.length > 1 && (
+    <div class="mt-12 border-t border-white/15 pt-8 reveal-stagger">
+      <p class="micro-label mb-4 text-text-2">Past weeks</p>
+      <ul class="flex flex-wrap gap-3">
+        {allWeeks.map((w) => (
+          <li>
+            <a
+              href={`/digest/${w.week}/`}
+              class={`inline-flex min-h-9 items-center border px-3 font-mono text-xs uppercase tracking-[0.06em] transition-colors focus-industrial ${w.week === digest.week ? "border-brand bg-brand text-white" : "border-white/20 text-text-2 hover:border-white/40 hover:text-white"}`}
+            >
+              {w.label.replace("Week of ", "")}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )}
+</section>

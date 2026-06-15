@@ -1,0 +1,34 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import DigestView from "../../components/DigestView.astro";
+import { digestWeeks } from "../../lib/digest.js";
+import type { DigestWeek } from "../../lib/digest.js";
+
+export function getStaticPaths() {
+  const weeks = digestWeeks();
+  return weeks.map((digest) => ({ params: { week: digest.week }, props: { digest, allWeeks: weeks } }));
+}
+
+const { digest, allWeeks } = Astro.props as { digest: DigestWeek; allWeeks: DigestWeek[] };
+const siteUrl = "https://ai-news.helloworldfirm.com";
+// The latest week is also served at the evergreen /digest/ URL; defer its canonical there
+// so the two identical pages consolidate instead of competing.
+const isLatest = digest.week === allWeeks[0]?.week;
+const canonicalUrl = isLatest ? `${siteUrl}/digest/` : `${siteUrl}/digest/${digest.week}/`;
+const title = `${digest.label} — This Week in AI · AI News Hub`;
+const description = `The ${digest.count} most significant AI updates from ${digest.labs} labs — ${digest.label}. Ranked, primary-source.`;
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: title,
+  description,
+  url: canonicalUrl,
+  isPartOf: { "@type": "WebSite", name: "AI News Hub", url: siteUrl },
+};
+---
+
+<Layout title={title} description={description} canonical={canonicalUrl} currentPage="digest" structuredData={structuredData}>
+  <main id="main-content" class="industrial-shell flex-1">
+    <DigestView digest={digest} allWeeks={allWeeks} />
+  </main>
+</Layout>

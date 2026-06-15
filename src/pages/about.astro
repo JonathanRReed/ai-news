@@ -1,8 +1,6 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from "../components/Footer.astro";
+import Layout from "../layouts/Layout.astro";
 import FaqDropdown from '../components/FaqDropdown.tsx';
-import NeuralGrid from '../components/NeuralGrid.tsx';
 import { companies } from '../lib/companyCatalog.js';
 import type { CompanyEntry } from '../lib/companyCatalog.js';
 
@@ -45,195 +43,132 @@ const structuredData = {
   breadcrumb: {
     "@type": "BreadcrumbList",
     itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: siteUrl
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "About",
-        item: canonicalUrl
-      }
+      { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
+      { "@type": "ListItem", position: 2, name: "About", item: canonicalUrl }
     ]
   }
 };
 ---
-<html lang="en">
-  <head>
-    <title>{title}</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content={description} />
-    <meta name="keywords" content={keywords} />
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-    <meta name="author" content="Jonathan R Reed" />
-    <meta name="application-name" content="AI News Hub" />
-    <meta name="apple-mobile-web-app-title" content="AI News Hub" />
-    <meta name="theme-color" content="#0A0A0A" />
-    <meta name="color-scheme" content="dark" />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content={socialImage} />
-    <meta property="og:image:alt" content={socialImageAlt} />
-    <meta property="og:image:width" content="512" />
-    <meta property="og:image:height" content="512" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={canonicalUrl} />
-    <meta property="og:site_name" content="AI News Hub" />
-    <meta property="og:locale" content="en_US" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={socialImage} />
-    <meta name="twitter:image:alt" content={socialImageAlt} />
-    <link rel="canonical" href={canonicalUrl} />
-    <link rel="author" href="https://jonathanrreed.com" />
-    <link rel="icon" href="/favicon.ico" sizes="any" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <link rel="dns-prefetch" href="https://img.helloworldfirm.com" />
-    <link rel="preconnect" href="https://fonts.helloworldfirm.com" />
-    <link rel="preconnect" href="https://fonts.helloworldfirm.com" crossorigin />
-    <link rel="preload" href={creatorImage} as="image" type="image/avif" />
-    <link rel="preload" href="/global-font.css" as="style" />
-    <link rel="preload" href="/global-animated-gradient.css" as="style" />
-    <link rel="stylesheet" href="/global-font.css" />
-    <link rel="stylesheet" href="/global-animated-gradient.css" />
-    <link rel="preload" href="https://fonts.helloworldfirm.com/NebulaSans-Book.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="https://fonts.helloworldfirm.com/NebulaSans-BoldItalic.woff2" as="font" type="font/woff2" crossorigin />
-    <script
-      is:inline
-      type="application/ld+json"
-      set:html={JSON.stringify(structuredData)}
-    />
-  </head>
-  <body class="bg-bg-0 text-text-1 font-sans min-h-screen flex flex-col">
-    <a href="#main-content" class="skip-link">Skip to content</a>
-    <NeuralGrid client:idle={{ timeout: 1800 }} />
-    <Header currentPage="about" />
-    <main id="main-content" class="industrial-shell flex-1">
-      <section class="industrial-container py-10 md:py-16">
-        <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_380px] lg:items-start reveal-stagger">
-          <div class="max-w-5xl">
-            <p class="micro-label mb-5 text-brand">[ About ]</p>
-            <h1 class="macro-heading max-w-5xl">AI News Hub</h1>
-            <p class="mt-6 max-w-3xl text-lg leading-relaxed text-text-2 md:text-xl">
-              AI News Hub collects articles, releases and research updates from RSS and Atom feeds
-              published by major AI labs, model providers and infrastructure teams.
-            </p>
-          </div>
-          <aside class="industrial-border h-fit p-6">
-            <p class="micro-label mb-6 text-text-2">[ Made by ]</p>
-            <div class="mb-8 grid grid-cols-[72px_minmax(0,1fr)] items-center gap-4 border-b border-white/15 pb-6">
-              <img
-                src={creatorImage}
-                alt="Portrait of the AI News Hub creator"
-                width="144"
-                height="144"
-                class="h-[72px] w-[72px] border border-white/20 object-cover grayscale contrast-125"
-                loading="eager"
-                decoding="async"
-              />
-              <div>
-                <h2 class="text-2xl font-black uppercase leading-none text-white">
-                  Jonathan R Reed
-                </h2>
-                <a
-                  href="https://jonathanrreed.com"
-                  target="_blank"
-                  rel="author noopener noreferrer"
-                  class="mt-2 inline-block font-mono text-xs uppercase tracking-[0.08em] text-text-2 underline decoration-brand decoration-2 underline-offset-4 hover:text-white"
-                >
-                  jonathanrreed.com
-                </a>
-              </div>
+
+<Layout
+  title={title}
+  description={description}
+  canonical={canonicalUrl}
+  keywords={keywords}
+  ogImageAlt={socialImageAlt}
+  currentPage="about"
+  preloadImage={creatorImage}
+  structuredData={structuredData}
+>
+  <main id="main-content" class="industrial-shell flex-1">
+    <section class="industrial-container py-10 md:py-16">
+      <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_380px] lg:items-start reveal-stagger">
+        <div class="max-w-5xl">
+          <p class="micro-label mb-5 text-brand-hover">[ About ]</p>
+          <h1 class="macro-heading max-w-5xl">AI News Hub</h1>
+          <p class="mt-6 max-w-3xl text-lg leading-relaxed text-text-2 md:text-xl">
+            AI News Hub collects articles, releases and research updates from RSS and Atom feeds
+            published by major AI labs, model providers and infrastructure teams.
+          </p>
+        </div>
+        <aside class="industrial-border h-fit p-6">
+          <p class="micro-label mb-6 text-text-2">Made by</p>
+          <div class="mb-8 grid grid-cols-[72px_minmax(0,1fr)] items-center gap-4 border-b border-white/15 pb-6">
+            <img
+              src={creatorImage}
+              alt="Portrait of the AI News Hub creator"
+              width="144"
+              height="144"
+              class="h-[72px] w-[72px] border border-white/20 object-cover grayscale contrast-125"
+              loading="eager"
+              decoding="async"
+            />
+            <div>
+              <h2 class="text-2xl font-black uppercase leading-none text-white">
+                Jonathan R Reed
+              </h2>
+              <a
+                href="https://jonathanrreed.com"
+                target="_blank"
+                rel="author noopener noreferrer"
+                class="mt-2 inline-block font-mono text-xs uppercase tracking-[0.08em] text-text-2 underline decoration-brand decoration-2 underline-offset-4 hover:text-white"
+              >
+                jonathanrreed.com
+              </a>
             </div>
-            <details class="border-t border-white/15 pt-6">
-              <summary class="cursor-pointer select-none font-mono text-xs font-black uppercase tracking-[0.12em] text-text-2 hover:text-white">
-                [ Sources ]
-              </summary>
-              <ul class="mt-6 space-y-3 font-mono text-sm uppercase tracking-[0.08em] text-white">
-                {sourceCompanies.map((company, index) => (
-                  <li class={index === sourceCompanies.length - 1 ? '' : 'border-b border-white/15 pb-3'}>
-                    {company.name}
-                  </li>
-                ))}
-              </ul>
-            </details>
-          </aside>
-        </div>
-      </section>
-      <section class="industrial-container pb-16 md:pb-24">
-        <div class="industrial-grid reveal-stagger">
-          <article class="col-span-12 p-6 md:col-span-4 md:p-8">
-            <p class="micro-label mb-8 text-text-2">[ Sources ]</p>
-            <h2 class="mb-4 text-3xl font-black uppercase leading-none text-white">
-              Feeds
-            </h2>
-            <p class="leading-relaxed text-text-2">
-              Articles come from public RSS and Atom feeds provided by source organizations. The
-              project favors official blogs, engineering posts, release notes and research updates
-              over reposted summaries.
-            </p>
-          </article>
-          <article class="col-span-12 p-6 md:col-span-4 md:p-8">
-            <p class="micro-label mb-8 text-text-2">[ Updates ]</p>
-            <h2 class="mb-4 text-3xl font-black uppercase leading-none text-white">
-              Hourly
-            </h2>
-            <p class="leading-relaxed text-text-2">
-              The feed is designed to refresh hourly so new model releases, research notes, safety
-              posts and infrastructure announcements can appear without manual curation.
-            </p>
-          </article>
-          <article class="col-span-12 p-6 md:col-span-4 md:p-8">
-            <p class="micro-label mb-8 text-text-2">[ Project ]</p>
-            <h2 class="mb-4 text-3xl font-black uppercase leading-none text-white">
-              Open source
-            </h2>
-            <p class="leading-relaxed text-text-2">
-              See the source repository on GitHub or visit the
-              <a href="https://jonathanrreed.com/projects/" target="_blank" rel="noopener noreferrer" class="text-white underline decoration-brand decoration-2 underline-offset-4 hover:text-brand-hover">project archive</a>.
-            </p>
-          </article>
-        </div>
-        <div class="mt-8 max-w-4xl space-y-4 text-base leading-relaxed text-text-2 md:text-lg reveal-stagger">
-          <p>
-            AI News Hub exists because the most useful AI updates often live across many separate
-            source sites. Model labs publish launch notes, research teams publish technical details,
-            cloud providers publish implementation guidance and infrastructure companies publish
-            performance or deployment updates. A single feed makes those changes easier to compare.
-          </p>
-          <p>
-            The site is intentionally source-led. It does not rewrite articles into synthetic
-            summaries or hide the original publisher. Cards preserve the company, title, date,
-            source link and available excerpt so readers can decide which announcements deserve a
-            deeper read.
-          </p>
-          <p>
-            The project is maintained by Jonathan R Reed and Hello.World Consulting for builders,
-            researchers and operators who track local AI, agent systems, retrieval, model releases,
-            security guidance and platform changes.
-          </p>
-        </div>
-      <script is:inline>
-        (function(){
-          if(typeof window==='undefined')return;
-          var ro=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-visible');ro.unobserve(e.target);}});},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
-          document.querySelectorAll('.reveal-stagger').forEach(function(el){ro.observe(el);});
-        })();
-      </script>
-        <a href="/" class="signal-button mt-8">Back to home</a>
-      </section>
-      <div class="industrial-container pb-16">
-        <FaqDropdown client:idle />
+          </div>
+          <details class="border-t border-white/15 pt-6">
+            <summary class="cursor-pointer select-none font-mono text-xs font-black uppercase tracking-[0.12em] text-text-2 hover:text-white">
+              Sources
+            </summary>
+            <ul class="mt-6 space-y-3 font-mono text-sm uppercase tracking-[0.08em] text-white">
+              {sourceCompanies.map((company, index) => (
+                <li class={index === sourceCompanies.length - 1 ? '' : 'border-b border-white/15 pb-3'}>
+                  {company.name}
+                </li>
+              ))}
+            </ul>
+          </details>
+        </aside>
       </div>
-    </main>
-    <Footer />
-  </body>
-</html>
+    </section>
+    <section class="industrial-container pb-16 md:pb-24">
+      <div class="industrial-grid reveal-stagger">
+        <article class="col-span-12 p-6 md:col-span-4 md:p-8">
+          <p class="micro-label mb-8 text-text-2">Sources</p>
+          <h2 class="mb-4 text-3xl font-black uppercase leading-none text-white">
+            Feeds
+          </h2>
+          <p class="leading-relaxed text-text-2">
+            Articles come from public RSS and Atom feeds provided by source organizations. The
+            project favors official blogs, engineering posts, release notes and research updates
+            over reposted summaries.
+          </p>
+        </article>
+        <article class="col-span-12 p-6 md:col-span-4 md:p-8">
+          <p class="micro-label mb-8 text-text-2">Updates</p>
+          <h2 class="mb-4 text-3xl font-black uppercase leading-none text-white">
+            Daily
+          </h2>
+          <p class="leading-relaxed text-text-2">
+            The feed refreshes from source feeds so new model releases, research notes, safety
+            posts and infrastructure announcements appear without manual curation.
+          </p>
+        </article>
+        <article class="col-span-12 p-6 md:col-span-4 md:p-8">
+          <p class="micro-label mb-8 text-text-2">Project</p>
+          <h2 class="mb-4 text-3xl font-black uppercase leading-none text-white">
+            Open source
+          </h2>
+          <p class="leading-relaxed text-text-2">
+            See the source repository on GitHub or visit the
+            <a href="https://jonathanrreed.com/projects/" target="_blank" rel="noopener noreferrer" class="text-white underline decoration-brand decoration-2 underline-offset-4 hover:text-brand-hover">project archive</a>.
+          </p>
+        </article>
+      </div>
+      <div class="mt-8 max-w-4xl space-y-4 text-base leading-relaxed text-text-2 md:text-lg reveal-stagger">
+        <p>
+          AI News Hub exists because the most useful AI updates often live across many separate
+          source sites. Model labs publish launch notes, research teams publish technical details,
+          cloud providers publish implementation guidance and infrastructure companies publish
+          performance or deployment updates. A single feed makes those changes easier to compare.
+        </p>
+        <p>
+          The site is intentionally source-led. It does not rewrite articles into synthetic
+          summaries or hide the original publisher. Cards preserve the company, title, date,
+          source link and available excerpt so readers can decide which announcements deserve a
+          deeper read.
+        </p>
+        <p>
+          The project is maintained by Jonathan R Reed and Hello.World Consulting for builders,
+          researchers and operators who track local AI, agent systems, retrieval, model releases,
+          security guidance and platform changes.
+        </p>
+      </div>
+      <a href="/" class="signal-button mt-8">Back to the feed</a>
+    </section>
+    <div class="industrial-container pb-16">
+      <FaqDropdown client:idle />
+    </div>
+  </main>
+</Layout>

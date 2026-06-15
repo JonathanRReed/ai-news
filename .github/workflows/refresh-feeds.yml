@@ -1,0 +1,43 @@
+name: Refresh provider feeds
+
+# Keeps the freshness contract true: re-gathers official RSS/Atom feeds once a day and
+# commits the updated cache. The push triggers the normal Cloudflare Pages deploy.
+on:
+  schedule:
+    - cron: "0 11 * * *" # daily, ~11:00 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-feeds
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Gather provider feeds
+        # The script exits non-zero on a partial failure but still writes a merged,
+        # cache-preserving result — don't let that abort the commit step below.
+        continue-on-error: true
+        run: node scripts/gather-provider-feeds.mjs
+
+      - name: Commit refreshed cache
+        run: |
+          if [[ -n "$(git status --porcelain public/data/provider-articles.json)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add public/data/provider-articles.json
+            git commit -m "chore: refresh provider feed cache"
+            git push
+          else
+            echo "No feed changes today."
+          fi

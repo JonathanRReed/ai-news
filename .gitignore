@@ -1,6 +1,13 @@
 # Node modules
 node_modules/
 
+# This repo is bun-first; Cloudflare builds with npm but resolves from package.json.
+# Keep a stray npm lockfile out so it can't drift from bun.lock.
+package-lock.json
+
+# Local Claude Code tooling (preview launch config, etc.)
+.claude/
+
 # Build output
 dist/
 .astro/
