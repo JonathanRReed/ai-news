@@ -165,7 +165,7 @@ const collectionStructuredData = {
       </section>
     )}
     <section id="articles" class="industrial-container space-y-8 py-8 md:py-12">
-      <ArticlesIslandWrapper client:load initialArticles={initialArticles} />
+      <ArticlesIslandWrapper client:load initialArticles={initialArticles} now={nowMs} />
     </section>
   </main>
 </Layout>

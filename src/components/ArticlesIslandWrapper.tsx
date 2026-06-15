@@ -36,7 +36,7 @@ function urlFilters(): ArticleFilters | null {
   };
 }
 
-export default function ArticlesIslandWrapper({ initialArticles = [] }: { initialArticles?: Article[] }) {
+export default function ArticlesIslandWrapper({ initialArticles = [], now = 0 }: { initialArticles?: Article[]; now?: number }) {
   // Start from defaults so the server render and the first client render match (no
   // hydration mismatch); URL filters and saved density are applied after mount.
   const [filters, setFilters] = useState<ArticleFilters>({ company: "All", topics: [], q: "" });
@@ -97,7 +97,7 @@ export default function ArticlesIslandWrapper({ initialArticles = [] }: { initia
             savedCount={readState.saved.size}
           />
         </div>
-        <ArticleListIsland density={density} view={view} readState={readState} />
+        <ArticleListIsland density={density} view={view} readState={readState} now={now} />
       </ArticlesProvider>
     </QueryClientProvider>
   );

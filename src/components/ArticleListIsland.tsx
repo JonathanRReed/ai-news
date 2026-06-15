@@ -146,11 +146,9 @@ function ArticleCard({
         )}
         <span className="micro-label text-white">{article.company}</span>
         {isLead && <span className="micro-label border border-brand px-2 py-0.5 text-brand-hover">Top story</span>}
-        <a href={`/article/${article.id}/`} className="ml-auto focus-industrial" aria-label={`Open “${article.title}” on AI News Hub`} title="Open on AI News Hub">
-          <time className="micro-label tabular-nums text-text-2 transition-colors hover:text-white" dateTime={article.published_at}>
-            {relativeTime(article.published_at, nowMs)}
-          </time>
-        </a>
+        <time className="micro-label tabular-nums ml-auto text-text-2" dateTime={article.published_at} title={new Date(article.published_at).toLocaleString()}>
+          {relativeTime(article.published_at, nowMs)}
+        </time>
         <SavedButton saved={saved} onToggle={() => onToggleSaved(article.id)} title={article.title} />
       </div>
 
@@ -192,16 +190,18 @@ export default function ArticleListIsland({
   density = "comfortable",
   view = "all",
   readState,
+  now = 0,
 }: {
   density?: "comfortable" | "compact";
   view?: FeedView;
   readState: ReadState;
+  now?: number;
 }) {
   const { data, isFetching, error, fetchNextPage, hasNextPage, filters } = useArticlesContext();
   const { seen, saved, markSeen, toggleSaved } = readState;
-  // "now" is captured after mount (Date.now() is impure, so not during render) and
-  // refreshed each minute so relative timestamps stay accurate.
-  const [nowMs, setNowMs] = useState(0);
+  // Seed "now" from a build-time timestamp (prop) so the SSR/crawler render shows real
+  // relative times instead of "Just now"; the effect then refreshes to the live clock.
+  const [nowMs, setNowMs] = useState(now);
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setNowMs(Date.now());
@@ -245,11 +245,13 @@ export default function ArticleListIsland({
     selectedIndexRef.current = selectedIndex;
   }, [selectedIndex]);
 
+  // Reset to the top only when the filter/view actually changes — NOT when data.pages
+  // grows from "Load more" (that would wipe the just-appended page).
   /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(() => {
     setVisibleCount(20);
     setSelectedIndex(-1);
-  }, [data?.pages, view, filters.company, filters.q, filters.topics]);
+  }, [view, filters.company, filters.q, filters.topics]);
   /* eslint-enable react-hooks/set-state-in-effect */
 
   const visibleArticles = articles.slice(0, visibleCount);
@@ -332,7 +334,9 @@ export default function ArticleListIsland({
     const handler = (e: KeyboardEvent) => {
       const target = e.target as HTMLElement | null;
       const tag = (target?.tagName || "").toLowerCase();
-      if (tag === "input" || tag === "textarea" || target?.isContentEditable) {
+      // Let interactive controls keep their own keys (Enter activates them, arrows scroll/move
+      // focus) instead of also firing an article shortcut.
+      if (tag === "input" || tag === "textarea" || tag === "select" || tag === "button" || tag === "a" || target?.isContentEditable) {
         if (e.key === "Escape") target?.blur();
         return;
       }
@@ -446,6 +450,20 @@ export default function ArticleListIsland({
       <div className="mt-8 border border-white/20 bg-bg-1 p-8">
         <p className="micro-label mb-3 text-white">Nothing to show here</p>
         <p className="max-w-2xl text-base leading-relaxed text-text-2">{reason}</p>
+        {hasNextPage && (
+          <button
+            className="signal-button mt-6 disabled:cursor-not-allowed disabled:opacity-40"
+            disabled={pendingIncrease}
+            onClick={async () => {
+              setPendingIncrease(true);
+              await fetchNextPage();
+              setPendingIncrease(false);
+              setVisibleCount((c) => c + 20);
+            }}
+          >
+            {pendingIncrease ? "Loading…" : "Load more to keep looking"}
+          </button>
+        )}
       </div>
     );
   }

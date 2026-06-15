@@ -92,7 +92,7 @@ const jsonLdBlocks = structuredData ? (Array.isArray(structuredData) ? structure
       crossorigin
     />
     {jsonLdBlocks.map((block) => (
-      <script is:inline type="application/ld+json" set:html={JSON.stringify(block)} />
+      <script is:inline type="application/ld+json" set:html={JSON.stringify(block).replace(/</g, "\\u003c")} />
     ))}
     <slot name="head" />
   </head>

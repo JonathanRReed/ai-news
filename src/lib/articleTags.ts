@@ -12,8 +12,8 @@ export interface TopicFacet {
 }
 
 export const TOPICS: TopicFacet[] = [
-  { key: "releases", label: "Releases", re: /\b(launch(?:e|es|ed|ing)?|releas(?:e|es|ed|ing)|announc|introduc|now available|generally available|unveil|debut|rolling out)\b/i },
-  { key: "agents", label: "Agents", re: /\b(agent|agentic|tool[ -]use|mcp|orchestrat|workflow automation)\b/i },
+  { key: "releases", label: "Releases", re: /\b(launch(?:e|es|ed|ing)?|releas(?:e|es|ed|ing)|announc(?:e|es|ed|ing|ement|ements)?|introduc(?:e|es|ed|ing|tion|tions)?|now available|generally available|unveil(?:s|ed|ing)?|debut(?:s|ed|ing)?|rolling out)\b/i },
+  { key: "agents", label: "Agents", re: /\b(agents?|agentic|tool[ -]use|mcp|orchestrat(?:e|es|ed|ing|ion)?|workflow automation)\b/i },
   { key: "infra", label: "Infra & hardware", re: /\b(gpu|chip|hardware|infrastructure|data ?center|cluster|inference|training|compute|kernel|cuda|accelerat|blackwell|nvlink|throughput|latency)\b/i },
   { key: "multimodal", label: "Multimodal", re: /\b(voice|audio|speech|image|video|vision|diffusion|text-to-|multimodal|render)\b/i },
   { key: "tooling", label: "Tooling", re: /\b(api|sdk|developer|library|framework|cli|open[ -]?source|open[ -]?weight|integration|plugin|toolkit)\b/i },

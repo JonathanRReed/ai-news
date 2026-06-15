@@ -1,6 +1,6 @@
 /* global console */
 import { createHash } from 'node:crypto';
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, writeFile, readFile } from 'node:fs/promises';
 import process from 'node:process';
 import { URL } from 'node:url';
 
@@ -245,7 +245,24 @@ for (const feed of feeds) {
   }
 }
 
-const articles = dedupeArticles(gathered).sort(compareNewest);
+// Preserve previously-cached articles for any feed that failed this run, so a transient
+// outage in one provider doesn't drop its stories (or, on total failure, wipe the cache).
+let existing = [];
+try {
+  const parsed = JSON.parse(await readFile(outputPath, 'utf8'));
+  if (Array.isArray(parsed)) existing = parsed;
+} catch {
+  existing = [];
+}
+const failedUrls = new Set(failures.map((failure) => failure.url));
+const recovered = existing.filter((article) => failedUrls.has(article.source_url));
+let articles = dedupeArticles([...gathered, ...recovered]).sort(compareNewest);
+// Never replace a non-empty cache with nothing (e.g. every feed silently returned empty).
+if (articles.length === 0 && existing.length > 0) {
+  console.error('No articles gathered this run; keeping the existing cache unchanged.');
+  articles = existing;
+}
+
 await mkdir(new URL('../public/data/', import.meta.url), { recursive: true });
 await writeFile(outputPath, `${JSON.stringify(articles, null, 2)}\n`);
 

@@ -25,6 +25,9 @@ jobs:
           node-version: "22"
 
       - name: Gather provider feeds
+        # The script exits non-zero on a partial failure but still writes a merged,
+        # cache-preserving result — don't let that abort the commit step below.
+        continue-on-error: true
         run: node scripts/gather-provider-feeds.mjs
 
       - name: Commit refreshed cache
