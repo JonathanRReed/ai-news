@@ -29,11 +29,13 @@ const latestCacheIso = latestCacheDate ? new Date(latestCacheDate).toISOString()
 const newestLabel = latestCacheDate
   ? new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", year: "numeric" }).format(new Date(latestCacheDate))
   : "—";
+// Anchor "this week" to the newest story (data-derived), not the build clock, so the
+// count stays correct between rebuilds and never drifts on code-only deploys.
+const weekAnchor = latestCacheDate ?? nowMs;
 const storiesThisWeek = providerRows.filter((article) => {
   const time = new Date(article.published_at).getTime();
-  return Number.isFinite(time) && time > nowMs - 7 * 86400000;
+  return Number.isFinite(time) && time > weekAnchor - 7 * 86400000;
 }).length;
-const lastCheckedLabel = new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric" }).format(new Date(nowMs));
 // Seed the first 20 (content stripped to keep the HTML lean) so the island renders
 // server-side for crawlers and first paint, then refetches full data on the client.
 const initialArticles: Article[] = (providerArticles as Article[])
@@ -134,7 +136,7 @@ const collectionStructuredData = {
               <dd class="mt-2 font-mono text-lg font-black tabular-nums text-white">{newestLabel}</dd>
             </div>
           </dl>
-          <p class="micro-label mt-4 text-muted">Sources last checked {lastCheckedLabel}</p>
+          <p class="micro-label mt-4 text-muted">Sources checked daily</p>
         </aside>
       </div>
     </section>
