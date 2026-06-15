@@ -16,7 +16,7 @@
     "rollup": ">=4.59.0",
     "@isaacs/brace-expansion": ">=5.0.1",
     "yaml": ">=2.8.3",
-    "postcss": "8.5.14",
+    "postcss": "$postcss",
     "picomatch": ">=2.3.2",
     "fast-uri": ">=3.1.2"
   },

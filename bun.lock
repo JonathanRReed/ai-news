@@ -41,7 +41,7 @@
     "mdast-util-to-hast": ">=13.2.1",
     "minimatch": ">=10.2.2",
     "picomatch": ">=2.3.2",
-    "postcss": "8.5.14",
+    "postcss": "^8.5.14",
     "rollup": ">=4.59.0",
     "svgo": ">=4.0.1",
     "vite": "^7.3.2",
