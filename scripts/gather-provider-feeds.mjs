@@ -237,8 +237,15 @@ const failures = [];
 for (const feed of feeds) {
   try {
     const articles = await fetchFeed(feed);
-    gathered.push(...articles);
-    console.log(`${feed.company}: ${articles.length} from ${feed.url}`);
+    if (articles.length === 0) {
+      // HTTP 200 but zero parsed items (markup change / bot-check page / transient empty):
+      // treat as a failure so this feed's cached articles are preserved, not dropped.
+      failures.push({ company: feed.company, url: feed.url, error: 'parsed 0 items' });
+      console.error(`${feed.company}: 0 items from ${feed.url} (preserving cached entries)`);
+    } else {
+      gathered.push(...articles);
+      console.log(`${feed.company}: ${articles.length} from ${feed.url}`);
+    }
   } catch (error) {
     failures.push({ company: feed.company, url: feed.url, error: error.message });
     console.error(`${feed.company}: failed ${feed.url}, ${error.message}`);

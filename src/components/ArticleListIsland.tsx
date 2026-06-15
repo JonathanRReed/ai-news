@@ -48,9 +48,9 @@ function relativeTime(value: string, nowMs: number): string {
 function timeBucket(value: string, nowMs: number): string {
   const t = new Date(value).getTime();
   if (Number.isNaN(t)) return "Undated";
-  const startOfToday = new Date(nowMs);
-  startOfToday.setHours(0, 0, 0, 0);
-  const ms = startOfToday.getTime();
+  // UTC day boundaries so the SSR (build-server tz) and client (user tz) renders agree.
+  const n = new Date(nowMs);
+  const ms = Date.UTC(n.getUTCFullYear(), n.getUTCMonth(), n.getUTCDate());
   const day = 86400000;
   if (t >= ms) return "Today";
   if (t >= ms - day) return "Yesterday";
@@ -238,12 +238,16 @@ export default function ArticleListIsland({
   const selectedIndexRef = useRef(selectedIndex);
   const dialogRef = useRef<HTMLDivElement>(null);
   const restoreFocusRef = useRef<HTMLElement | null>(null);
+  const showHelpRef = useRef(showHelp);
 
-  // Mirror the selected index into a ref so the keyboard handler can read the latest
-  // value without listing selectedIndex as a dependency (avoids rebinding per keystroke).
+  // Mirror selection + dialog state into refs so the keyboard handler reads the latest
+  // values without listing them as deps (avoids rebinding the listener per keystroke).
   useEffect(() => {
     selectedIndexRef.current = selectedIndex;
   }, [selectedIndex]);
+  useEffect(() => {
+    showHelpRef.current = showHelp;
+  }, [showHelp]);
 
   // Reset to the top only when the filter/view actually changes — NOT when data.pages
   // grows from "Load more" (that would wipe the just-appended page).
@@ -306,7 +310,9 @@ export default function ArticleListIsland({
   useEffect(() => {
     const checkForNew = async () => {
       if (typeof document !== "undefined" && document.hidden) return;
-      if (!latestLoadedTs) {
+      // The COUNT only scopes by company; don't show a misleading banner while a text
+      // search or topic filter is narrowing the feed (those can't be applied server-side).
+      if (!latestLoadedTs || filters.q?.trim() || (filters.topics && filters.topics.length)) {
         setNewCount(0);
         return;
       }
@@ -334,6 +340,15 @@ export default function ArticleListIsland({
     const handler = (e: KeyboardEvent) => {
       const target = e.target as HTMLElement | null;
       const tag = (target?.tagName || "").toLowerCase();
+      // While the shortcuts dialog is open, only Escape acts (closes it); swallow the rest so
+      // they don't reach the background article (focus sits on the dialog div, not a control).
+      if (showHelpRef.current) {
+        if (e.key === "Escape") {
+          setShowHelp(false);
+          setSelectedIndex(-1);
+        }
+        return;
+      }
       // Let interactive controls keep their own keys (Enter activates them, arrows scroll/move
       // focus) instead of also firing an article shortcut.
       if (tag === "input" || tag === "textarea" || tag === "select" || tag === "button" || tag === "a" || target?.isContentEditable) {
