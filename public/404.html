@@ -3,156 +3,103 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>404 | Ai-news</title>
-  <link rel="icon" type="image/webp" href="/favicon.webp" />
+  <title>404 — Page not found · AI News Hub</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="stylesheet" href="/global-font.css" />
   <style>
     body {
-      background: #191724;
-      color: #e0def4;
-      font-family: 'NebulaSans-Book', Inter, sans-serif;
+      background:
+        linear-gradient(rgba(255,255,255,0.022) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.022) 1px, transparent 1px),
+        #0a0a0a;
+      background-size: 48px 48px, 48px 48px, auto;
+      color: #eaeaea;
+      font-family: 'NebulaSans-Book', 'Arial Narrow', Arial, sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       min-height: 100vh;
       margin: 0;
+      padding: 1.5rem;
+      box-sizing: border-box;
     }
-    .glassmorphic-article-card {
-      background: rgba(31,29,46,0.32);
-      border: 1.5px solid rgba(224,222,244,0.08);
-      border-radius: 2rem;
-      padding: 3.5rem 2.5rem 2.5rem 2.5rem;
-      box-shadow: 0 2px 24px 0 rgba(18,17,26,0.48);
-      backdrop-filter: blur(18px) saturate(1.3);
-      -webkit-backdrop-filter: blur(18px) saturate(1.3);
-      text-align: center;
-      max-width: 420px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 2;
+    .panel {
+      width: min(100%, 460px);
+      border: 1px solid rgba(234,234,234,0.2);
+      background: rgba(10,10,10,0.72);
+      padding: 2.75rem 2rem;
     }
-    .animated-gradient-logo {
-      background: linear-gradient(270deg, #eb6f92, #c4a7e7, #9ccfd8, #f6c177, #eb6f92);
-      background-size: 200% 200%;
-      animation: gradientMove 8s ease-in-out infinite;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      font-family: 'NebulaSans-BoldItalic', 'NebulaSans-Book', 'sans-serif';
-      font-weight: bold;
+    .eyebrow {
+      font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #e61919;
+      margin: 0 0 1.25rem;
+    }
+    h1 {
+      font-family: 'NebulaSans-BoldItalic', 'NebulaSans-Book', sans-serif;
       font-style: italic;
-      font-size: 3.7rem;
-      display: inline-block;
-      margin-bottom: 1.3rem;
-      letter-spacing: 0.01em;
-      line-height: 1.1;
+      font-size: clamp(2.4rem, 8vw, 3.4rem);
+      line-height: 0.95;
+      text-transform: uppercase;
+      margin: 0 0 1rem;
     }
-    @keyframes gradientMove {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+    p {
+      color: #a8a8a8;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      margin: 0 0 1.5rem;
     }
-    .notfound-code {
-      font-size: 2.3rem;
-      font-weight: bold;
-      color: #e0def4;
-      margin-bottom: 0.3em;
-      letter-spacing: 0.01em;
-      font-family: 'NebulaSans-BoldItalic', 'NebulaSans-Book', 'sans-serif';
-      text-shadow: 0 2px 24px rgba(196,167,231,0.26);
+    .path {
+      font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.85rem;
+      color: #a8a8a8;
+      border: 1px solid rgba(234,234,234,0.2);
+      padding: 0.55rem 0.85rem;
+      word-break: break-all;
     }
-    .notfound-message {
-      font-size: 1.25rem;
-      color: #e0def4;
-      margin-bottom: 2rem;
-      font-family: 'NebulaSans-Book', Inter, sans-serif;
-      opacity: 0.93;
+    .path span { color: #eaeaea; }
+    .home-btn {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      margin-top: 1.75rem;
+      padding: 0.8rem 1.1rem;
+      border: 1px solid #e61919;
+      background: #e61919;
+      color: #fff;
+      font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-weight: 800;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease;
     }
-    .notfound-path {
-      margin: 1.5rem auto 0 auto;
-      display: inline-block;
-      background: rgba(64,61,82,0.36);
-      border-radius: 0.7rem;
-      padding: 0.4rem 1.1rem;
-      font-size: 1.08rem;
-      color: #908caa;
-      font-family: 'Fira Mono', 'Menlo', 'Consolas', monospace;
-      box-shadow: 0 1px 8px 0 rgba(196,167,231,0.18);
-      border: 1.2px solid rgba(156,207,216,0.18);
-    }
-    .notfound-home-btn {
-      display: inline-block;
-      margin: 2.5rem auto 1.6rem auto;
-      padding: 0.85rem 2.3rem 0.85rem 2.3rem;
-      font-size: 1.19rem;
-      font-family: 'NebulaSans-BoldItalic', 'NebulaSans-Book', 'sans-serif';
-      font-weight: bold;
-      font-style: italic;
-      border: 1.5px solid rgba(224,222,244,0.18);
-      border-radius: 1.3rem;
-      background: linear-gradient(270deg, rgba(235,111,146,0.28) 10%, rgba(196,167,231,0.28) 40%, rgba(156,207,216,0.28) 60%, rgba(246,193,119,0.28) 90%);
-      background-size: 200% 200%;
-      animation: gradientMove 8s ease-in-out infinite;
-      color: #e0def4;
-      box-shadow: 0 2px 24px 0 rgba(18,17,26,0.48);
-      backdrop-filter: blur(18px) saturate(1.15);
-      -webkit-backdrop-filter: blur(18px) saturate(1.15);
-      transition: transform 0.18s, box-shadow 0.2s, opacity 0.2s;
-      cursor: pointer;
+    .home-btn:hover, .home-btn:focus-visible {
+      background: #ff2a2a;
+      border-color: #ff2a2a;
+      transform: translateY(-2px);
       outline: none;
-      text-decoration: none;
-      filter: brightness(1) saturate(1.04);
-      position: relative;
     }
-    .notfound-home-btn:focus, .notfound-home-btn:hover {
-      opacity: 1;
-      filter: brightness(1.09) saturate(1.12);
-      transform: scale(1.06);
-      box-shadow: 0 4px 32px 0 rgba(196,167,231,0.24);
-      text-decoration: none;
-      border: 1.5px solid rgba(224,222,244,0.26);
-    }
-    a {
-      color: #9ccfd8;
-      text-decoration: underline;
-      transition: color 0.2s;
-      font-size: 1.12rem;
-      font-weight: 500;
-      font-family: 'NebulaSans-Book', Inter, sans-serif;
-    }
-    a:hover {
-      color: #eb6f92;
-    }
-    @media (max-width: 520px) {
-      .glassmorphic-article-card {
-        max-width: 97vw;
-        padding: 2.2rem 0.7rem 1.7rem 0.7rem;
-      }
-      .animated-gradient-logo {
-        font-size: 2.4rem;
-      }
-      .notfound-code {
-        font-size: 1.3rem;
-      }
-      .notfound-home-btn {
-        font-size: 1rem;
-        padding: 0.7rem 1.3rem;
-        margin: 2rem auto 1.6rem auto;
-      }
+    @media (prefers-reduced-motion: reduce) {
+      .home-btn { transition: none; }
     }
   </style>
 </head>
 <body>
-  <div class="glassmorphic-article-card animated-gradient">
-    <div class="animated-gradient-logo">Ai-news</div>
-    <div class="notfound-code">404: Not found</div>
-    <div class="notfound-message">Sorry, the page you’re looking for can’t be found.</div>
-    <div class="notfound-path">Path: <span id="notfound-path"></span></div>
+  <div class="panel">
+    <p class="eyebrow">[ 404 ]</p>
+    <h1>Page not found</h1>
+    <p>That page isn't here. It may have moved, or the link was mistyped.</p>
+    <div class="path">Path: <span id="notfound-path"></span></div>
+    <a href="/" class="home-btn">Back to the feed</a>
   </div>
-  <a href="/" class="notfound-home-btn" tabindex="0">Back to Ai-news Home</a>
   <script>
-    // Show the attempted path for context
     document.getElementById('notfound-path').textContent = window.location.pathname;
   </script>
 </body>

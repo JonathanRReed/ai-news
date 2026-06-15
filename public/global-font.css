@@ -42,8 +42,8 @@ html {
   background: #0a0a0a;
   color: #eaeaea;
   scroll-behavior: smooth;
-  /* Custom scrollbar for WebKit + Firefox */
-  scrollbar-color: rgba(230,25,25,0.6) rgba(10,10,10,0.9);
+  /* Custom scrollbar for WebKit + Firefox — neutral, not branded */
+  scrollbar-color: rgba(234,234,234,0.24) rgba(10,10,10,0.9);
   scrollbar-width: thin;
 }
 
@@ -56,29 +56,16 @@ body {
 /* WebKit custom scrollbar */
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: rgba(10,10,10,0.9); }
-::-webkit-scrollbar-thumb { background: rgba(230,25,25,0.5); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: rgba(230,25,25,0.8); }
+::-webkit-scrollbar-thumb { background: rgba(234,234,234,0.2); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(234,234,234,0.38); }
 ::-webkit-scrollbar-corner { background: transparent; }
 
 ::selection {
-  background: #e61919;
-  color: #ffffff;
+  background: #eaeaea;
+  color: #0a0a0a;
 }
 
-.animated-gradient-logo {
-  color: #eaeaea;
-  font-family: 'NebulaSans-BoldItalic', 'NebulaSans-Book', 'sans-serif';
-  font-weight: bold;
-  font-style: italic;
-  text-shadow: 2px 0 0 #e61919;
-}
-
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
+/* Mobile menu links (HamburgerMenu) */
 .menu-gradient-link {
   color: #eaeaea;
   font-family: 'NebulaSans-BoldItalic', 'NebulaSans-Book', 'sans-serif';
@@ -93,7 +80,7 @@ body {
 
 .menu-gradient-link:hover, .menu-gradient-link:focus {
   opacity: 1;
-  color: #ff2a2a;
+  color: #ffffff;
   transform: translateX(4px);
 }
 
@@ -109,210 +96,10 @@ body {
   }
 }
 
-.menu-modal {
-  transition: max-width 0.3s, padding 0.3s;
-  max-width: 96vw;
-  min-height: 260px;
-  min-width: 220px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: stretch;
-}
-
-@media (min-width: 768px) {
-  .menu-modal {
-    max-width: 520px;
-    min-height: 320px;
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
-  }
-}
-
-@keyframes gradientMenuMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.glassmorphic-header {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.09) 0%,
-    rgba(255, 255, 255, 0.04) 100%
-  );
-  box-shadow: 
-    0 4px 24px 0 rgba(0, 0, 0, 0.2),
-    inset 0 1px 0 0 rgba(255, 255, 255, 0.12);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(12px) saturate(1.3) brightness(1.05);
-  -webkit-backdrop-filter: blur(12px) saturate(1.3) brightness(1.05);
-  border-radius: 0 0 2rem 2rem;
-  position: relative;
-  z-index: 10;
-  /* Layer promotion for scroll performance */
-  transform: translateZ(0);
-}
-.glassmorphic-header::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.25) 50%,
-    transparent 100%
-  );
-  pointer-events: none;
-}
-
-@media (max-width: 640px) {
-  .glassmorphic-header {
-    border-radius: 0 0 1.2rem 1.2rem;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-  }
-}
-
-.glassmorphic-modal {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.1) 0%,
-    rgba(255, 255, 255, 0.05) 100%
-  );
-  box-shadow: 
-    0 12px 48px 0 rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 0 rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  backdrop-filter: blur(14px) saturate(1.3) brightness(1.05);
-  -webkit-backdrop-filter: blur(14px) saturate(1.3) brightness(1.05);
-  border-radius: 2rem;
-  position: relative;
-  overflow: hidden;
-}
-.glassmorphic-modal::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.4) 50%,
-    transparent 100%
-  );
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* Respect reduced motion preferences for the logo animation */
 @media (prefers-reduced-motion: reduce) {
-  .animated-gradient-logo {
-    animation: none !important;
+  .menu-gradient-link {
+    transition: none !important;
     transform: none !important;
     will-change: auto !important;
   }
-}
-
-.glassmorphic-company-card {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.09) 0%,
-    rgba(255, 255, 255, 0.04) 100%
-  );
-  box-shadow: 
-    0 6px 24px 0 rgba(0, 0, 0, 0.2),
-    inset 0 1px 0 0 rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px) saturate(1.3) brightness(1.05);
-  -webkit-backdrop-filter: blur(10px) saturate(1.3) brightness(1.05);
-  border-radius: 1.2rem;
-  position: relative;
-  overflow: hidden;
-  transition: box-shadow 0.2s, border 0.2s, transform 0.2s;
-}
-.glassmorphic-company-card:hover {
-  transform: translateY(-2px);
-  border-color: rgba(255, 255, 255, 0.22);
-}
-.glassmorphic-company-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.35) 50%,
-    transparent 100%
-  );
-  pointer-events: none;
-  z-index: 1;
-}
-
-.glassmorphic-article-card {
-  /* Liquid glass effect with clean transparency */
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.08) 0%,
-    rgba(255, 255, 255, 0.03) 100%
-  );
-  /* Subtle shadow for depth without halo */
-  box-shadow: 
-    0 8px 32px 0 rgba(0, 0, 0, 0.25),
-    inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
-  /* Clean glass border */
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  /* Frosted glass blur effect */
-  backdrop-filter: blur(12px) saturate(1.4) brightness(1.05);
-  -webkit-backdrop-filter: blur(12px) saturate(1.4) brightness(1.05);
-  border-radius: 2rem;
-  position: relative;
-  overflow: hidden;
-}
-.glassmorphic-article-card::before {
-  /* Subtle top highlight for glass refraction effect */
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.3) 50%,
-    transparent 100%
-  );
-  pointer-events: none;
-  z-index: 2;
-}
-.glassmorphic-article-card::after {
-  /* Subtle shine effect on hover */
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0;
-  background: linear-gradient(
-    120deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.06) 50%,
-    transparent 100%
-  );
-  border-radius: inherit;
-  transition: opacity 0.4s ease-out;
-  z-index: 1;
-}
-.glassmorphic-article-card:hover::after {
-  opacity: 1;
 }

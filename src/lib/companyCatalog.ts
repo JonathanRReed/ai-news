@@ -5,20 +5,19 @@ export interface CompanyEntry {
 
 export const FALLBACK_COMPANY_LOGO = '/logos/Globe Icon.svg';
 
+// Labs with live, wired feeds (see scripts/gather-provider-feeds.mjs). Meta, Anthropic,
+// Mistral and xAI are intentionally omitted until their official feeds are wired so the
+// filter bar never offers a lab that returns an empty feed.
 export const companies: CompanyEntry[] = [
   { name: 'All', logo: FALLBACK_COMPANY_LOGO },
-  { name: 'Meta AI', logo: '/logos/Meta_logo.svg' },
   { name: 'OpenAI', logo: '/logos/OpenAI_logo.svg' },
-  { name: 'Anthropic', logo: '/logos/Anthropic_logo.svg' },
   { name: 'Google DeepMind', logo: '/logos/DeepMind_logo.svg' },
-  { name: 'Mistral AI', logo: '/logos/Mistral_logo.svg' },
   { name: 'Hugging Face', logo: '/logos/Hugging_Face_logo.svg' },
-  { name: 'xAI', logo: '/logos/Xai_logo.svg' },
-  { name: 'DeepSeek', logo: '/logos/DeepSeek_logo.svg' },
-  { name: 'IBM Research', logo: '/logos/IBM_logo.svg' },
-  { name: 'Amazon AI', logo: '/logos/AWS_logo.svg' },
   { name: 'NVIDIA AI', logo: '/logos/NVIDIA_logo.svg' },
+  { name: 'Amazon AI', logo: '/logos/AWS_logo.svg' },
   { name: 'Alibaba Qwen', logo: '/logos/Qwen_logo.svg' },
+  { name: 'IBM Research', logo: '/logos/IBM_logo.svg' },
+  { name: 'DeepSeek', logo: '/logos/DeepSeek_logo.svg' },
 ];
 
 const COMPANY_LOGO_MATCHERS = [

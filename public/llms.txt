@@ -1,59 +1,55 @@
 # AI News Hub
 
-> AI News Hub collects AI articles from RSS and Atom feeds. It covers Meta AI, OpenAI, Anthropic, Google DeepMind, Mistral AI, Hugging Face, xAI, DeepSeek, IBM Research, Amazon AI, NVIDIA AI, and Alibaba Qwen.
+> AI News Hub is a primary-source feed for AI news: official RSS and Atom posts from the major labs, deduplicated, ranked into an editorial feed, and linked straight to the source — never rewritten. Live coverage: OpenAI, Google DeepMind, Hugging Face, NVIDIA AI, Amazon AI, Alibaba Qwen, IBM Research, and DeepSeek.
 
 ## Tech Stack
 
-- **Framework**: Astro 5.14.5 with server-side rendering
-- **Runtime**: Bun 1.x (JavaScript runtime and package manager)
-- **UI Library**: React 19.2.0 with React Compiler optimization
-- **Styling**: TailwindCSS 3.4.18
-- **Database**: Supabase (PostgreSQL) for news article storage and retrieval
-- **State Management**: TanStack React Query 5.90.5 for data fetching and caching
-- **Type Safety**: TypeScript 5.9.3
+- **Framework**: Astro 6 (static output)
+- **Runtime**: Bun 1.x
+- **UI**: React 19 islands with the React Compiler
+- **Styling**: TailwindCSS 3.4 with CSS-variable design tokens
+- **Data**: Supabase (PostgreSQL) for live articles + a static provider cache (`/data/provider-articles.json`)
+- **Fetching**: TanStack React Query 5
+- **Types**: TypeScript 5.9
 
 ## Project Structure
 
-- [Source Code](https://github.com/JonathanRReed/ai-news): Main repository (if public)
-- **Pages**: `/src/pages/index.astro` (home), `/src/pages/about.astro`
-- **Components**: `/src/components/` includes ArticlesIslandWrapper, Header, Footer, NeuralGrid, FaqDropdown
-- **Hooks**: Custom React hooks in `/src/hooks/`
-- **Types**: TypeScript definitions in `/src/types/`
+- [Source Code](https://github.com/JonathanRReed/ai-news): Main repository
+- **Pages**: `index.astro` (3-tier feed), `digest/` + `digest/[week].astro` (weekly "This Week in AI"), `models.astro` (release timeline), `article/[id].astro` (per-article pages with NewsArticle JSON-LD), `about.astro`, `contact.astro`, `privacy.astro`
+- **Layout**: `/src/layouts/Layout.astro` (shared head, SEO, header/footer)
+- **Components**: `/src/components/` — ArticlesIslandWrapper, ArticleListIsland, FiltersIsland, CompanySelect, DigestView, Header, Footer, HamburgerMenu, FaqDropdown
+- **Hooks**: `/src/hooks/` — useArticles, fetchArticlesPage, useArticlesContext, useReadState
+- **Lib**: `/src/lib/` — companyCatalog, providerSources, articleTags (topic/entity tagging), digest, feeds
+- **Feed builder**: `scripts/gather-provider-feeds.mjs` (refreshed daily by `.github/workflows/refresh-feeds.yml`)
 
 ## Key Features
 
-- **Article Feed**: Collects articles from major AI organizations
-- **Company Filtering**: Filter articles by specific AI companies
-- **Responsive Design**: Mobile-first layout with TailwindCSS
-- **SEO**: Meta tags, structured data, and OpenGraph support
-- **Performance**: Island architecture with client-side hydration for interactive components
+- **Editorial feed**: a lead story + top stories + a time-bucketed river, ranked by a transparent recency/provider/release score
+- **Topic facets**: data-derived chips (Releases, Agents, Infra & hardware, Multimodal, Tooling, Research); multi-select and URL-encoded for shareable views
+- **Read state**: localStorage seen/saved with All / Unread / Saved views
+- **Keyboard navigation**: j/k move, o open, s save, m mark read, / search, ? help
+- **Weekly digest** and a **model release timeline**
+- **Primary-source links**: every card and article page links to the original publisher
 
-## Configuration Files
+## Feeds and data
 
-- [Package Configuration](/package.json): Dependencies and scripts
-- [Astro Config](/astro.config.mjs): Astro framework configuration with React integration
-- [Tailwind Config](/tailwind.config.mjs): Custom design system configuration
-- [TypeScript Config](/tsconfig.json): TypeScript compiler options
-- [ESLint Config](/eslint.config.js): Linting rules for code quality
+- [RSS — all](/feed.xml)
+- [JSON — all](/articles.json)
+- Per-company RSS: `/feed/company/{slug}.xml`
+- Per-topic RSS: `/feed/topic/{slug}.xml`
+- [Sitemap](/sitemap-index.xml)
 
 ## Development
 
 - **Install**: `bun install`
-- **Dev Server**: `bun run dev`
+- **Dev**: `bun run dev`
 - **Build**: `bun run build`
 - **Preview**: `bun run preview`
-- **Lint**: `bun run lint` or `bun run lint:fix`
+- **Lint**: `bun run lint`
+- **Refresh feed cache**: `bun run gather:providers`
 
 ## Deployment
 
 - **Production URL**: https://ai-news.helloworldfirm.com
 - **Publisher**: Hello.World Consulting (https://helloworldfirm.com)
-- **Hosting**: Static site deployment (Astro generates static HTML)
-
-## Optional
-
-- [Astro Documentation](https://docs.astro.build): Official Astro framework documentation
-- [React Documentation](https://react.dev): React library documentation
-- [TailwindCSS Documentation](https://tailwindcss.com/docs): Styling framework documentation
-- [Supabase Documentation](https://supabase.com/docs): Backend and database documentation
-- [Bun Documentation](https://bun.sh/docs): JavaScript runtime documentation
+- **Hosting**: Cloudflare Pages (static)

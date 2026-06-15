@@ -1,0 +1,37 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import DigestView from "../../components/DigestView.astro";
+import { digestWeeks } from "../../lib/digest.js";
+
+const weeks = digestWeeks();
+const latest = weeks[0];
+const siteUrl = "https://ai-news.helloworldfirm.com";
+const canonicalUrl = `${siteUrl}/digest/`;
+const title = "This Week in AI — the weekly digest · AI News Hub";
+const description = latest
+  ? `The most significant AI updates this week, ranked across ${latest.labs} labs. Primary-source, nothing rewritten.`
+  : "The weekly rundown of the most significant primary-source AI updates.";
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: title,
+  description,
+  url: canonicalUrl,
+  isPartOf: { "@type": "WebSite", name: "AI News Hub", url: siteUrl },
+};
+---
+
+<Layout title={title} description={description} canonical={canonicalUrl} currentPage="digest" structuredData={structuredData}>
+  <main id="main-content" class="industrial-shell flex-1">
+    {latest ? (
+      <DigestView digest={latest} allWeeks={weeks} />
+    ) : (
+      <section class="industrial-container py-24">
+        <p class="micro-label mb-5 text-brand-hover">[ This week in AI ]</p>
+        <h1 class="macro-heading">No digest yet</h1>
+        <p class="mt-6 max-w-2xl text-lg leading-relaxed text-text-2">Check back once this week's stories have been gathered.</p>
+        <a href="/" class="signal-button mt-8">Back to the feed</a>
+      </section>
+    )}
+  </main>
+</Layout>

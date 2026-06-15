@@ -2,21 +2,22 @@ import { createContext, useContext } from "react";
 import type { ReactNode } from "react";
 import type { UseInfiniteQueryResult, InfiniteData } from "@tanstack/react-query";
 import { useArticles, PAGE_SIZE } from "./useArticles.js";
+import type { ArticleFilters } from "./fetchArticlesPage.js";
 import type { PageData } from "../types/article.js";
 
-type Filters = { category?: string; company?: string; q?: string };
+type Props = { filters: ArticleFilters; initialData?: InfiniteData<PageData>; children: ReactNode };
 
 export type ArticlesContextValue = (
   UseInfiniteQueryResult<InfiniteData<PageData>, Error> & {
-    filters: Filters;
+    filters: ArticleFilters;
     PAGE_SIZE: number;
   }
 );
 
 const ArticlesContext = createContext<ArticlesContextValue | null>(null);
 
-export function ArticlesProvider({ filters, children }: { filters: Filters; children: ReactNode }) {
-  const query = useArticles(filters);
+export function ArticlesProvider({ filters, initialData, children }: Props) {
+  const query = useArticles(filters, initialData);
   return (
     <ArticlesContext.Provider value={{ ...query, filters, PAGE_SIZE }}>
       {children}

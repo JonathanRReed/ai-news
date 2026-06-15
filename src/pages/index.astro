@@ -1,32 +1,52 @@
 ---
+import Layout from "../layouts/Layout.astro";
 import ArticlesIslandWrapper from "../components/ArticlesIslandWrapper.tsx";
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
-import NeuralGrid from "../components/NeuralGrid.tsx";
-import { companies } from "../lib/companyCatalog.js";
 import providerArticles from "../../public/data/provider-articles.json";
+import { digestWeeks } from "../lib/digest.js";
+import type { Article } from "../types/article.js";
+
+const latestDigest = digestWeeks()[0];
 
 const siteUrl = "https://ai-news.helloworldfirm.com";
 const canonicalUrl = `${siteUrl}/`;
 const title = "AI News Hub for Research Lab and Model Provider Updates";
 const description =
   "AI News Hub tracks current articles, releases and research updates from major AI labs, infrastructure providers and model companies in one searchable feed.";
+const keywords =
+  "AI news, artificial intelligence news, AI research updates, OpenAI news, Anthropic updates, Google DeepMind announcements, Mistral AI, Hugging Face, Meta AI, xAI, DeepSeek, IBM Research, Amazon AI, NVIDIA AI, Alibaba Qwen";
 const socialImage = "https://img.helloworldfirm.com/logos/512x512-logo.avif";
-const socialImageAlt = "AI News Hub logo";
 const providerRows = providerArticles as Array<{ company: string; published_at: string; source_type?: string }>;
-const trackedProviderCount = companies.filter((company) => company.name !== "All").length;
 const cachedArticleCount = providerRows.length;
 const cachedCompanyCount = new Set(providerRows.map((article) => article.company)).size;
+const nowMs = Date.now();
 const latestCacheDate = providerRows
   .map((article) => new Date(article.published_at).getTime())
   .filter((time) => Number.isFinite(time))
   .sort((a, b) => b - a)[0];
-const latestCacheIso = latestCacheDate ? new Date(latestCacheDate).toISOString() : "2026-04-21T00:00:00.000Z";
-const latestCacheLabel = new Intl.DateTimeFormat("en-US", {
-  month: "short",
-  day: "numeric",
-  year: "numeric",
-}).format(new Date(latestCacheIso));
+const latestCacheIso = latestCacheDate ? new Date(latestCacheDate).toISOString() : new Date(nowMs).toISOString();
+const daysSinceNewest = latestCacheDate ? Math.max(0, Math.round((nowMs - latestCacheDate) / 86400000)) : null;
+const newestRelative =
+  daysSinceNewest === null ? "—" : daysSinceNewest === 0 ? "Today" : daysSinceNewest === 1 ? "1 day ago" : `${daysSinceNewest} days ago`;
+const storiesThisWeek = providerRows.filter((article) => {
+  const time = new Date(article.published_at).getTime();
+  return Number.isFinite(time) && time > nowMs - 7 * 86400000;
+}).length;
+const lastCheckedLabel = new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric" }).format(new Date(nowMs));
+// Seed the first 20 (content stripped to keep the HTML lean) so the island renders
+// server-side for crawlers and first paint, then refetches full data on the client.
+const initialArticles: Article[] = (providerArticles as Article[])
+  .slice()
+  .sort((a, b) => new Date(b.published_at).getTime() - new Date(a.published_at).getTime())
+  .slice(0, 20)
+  .map((a) => ({
+    id: a.id,
+    company: a.company,
+    title: a.title,
+    url: a.url,
+    published_at: a.published_at,
+    source_type: a.source_type,
+    summary: a.summary ?? "",
+  }));
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "WebSite",
@@ -46,14 +66,6 @@ const structuredData = {
       "@type": "ImageObject",
       url: socialImage,
     },
-  },
-  potentialAction: {
-    "@type": "SearchAction",
-    target: {
-      "@type": "EntryPoint",
-      urlTemplate: `${siteUrl}/?q={search_term_string}`,
-    },
-    "query-input": "required name=search_term_string",
   },
 };
 
@@ -78,150 +90,82 @@ const collectionStructuredData = {
 };
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title}</title>
-    <meta name="description" content={description} />
-    <meta
-      name="keywords"
-      content="AI news, artificial intelligence news, AI research updates, OpenAI news, Anthropic updates, Google DeepMind announcements, Mistral AI, Hugging Face, Meta AI, xAI, DeepSeek, IBM Research, Amazon AI, NVIDIA AI, Alibaba Qwen"
-    />
-    <meta
-      name="robots"
-      content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    />
-    <meta name="author" content="Hello.World Consulting" />
-    <meta name="application-name" content="AI News Hub" />
-    <meta name="apple-mobile-web-app-title" content="AI News Hub" />
-    <meta name="theme-color" content="#0A0A0A" />
-    <meta name="color-scheme" content="dark" />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content={socialImage} />
-    <meta property="og:image:alt" content={socialImageAlt} />
-    <meta property="og:image:width" content="512" />
-    <meta property="og:image:height" content="512" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={canonicalUrl} />
-    <meta property="og:site_name" content="AI News Hub" />
-    <meta property="og:locale" content="en_US" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={socialImage} />
-    <meta name="twitter:image:alt" content={socialImageAlt} />
-    <link rel="canonical" href={canonicalUrl} />
-    <link rel="icon" href="/favicon.ico" sizes="any" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <link rel="dns-prefetch" href="https://img.helloworldfirm.com" />
-    <link rel="preconnect" href="https://fonts.helloworldfirm.com" />
-    <link
-      rel="preconnect"
-      href="https://fonts.helloworldfirm.com"
-      crossorigin
-    />
-    <link rel="preload" href="/global-font.css" as="style" />
-    <link rel="preload" href="/global-animated-gradient.css" as="style" />
-    <link rel="stylesheet" href="/global-font.css" />
-    <link rel="stylesheet" href="/global-animated-gradient.css" />
-    <link
-      rel="preload"
-      href="https://fonts.helloworldfirm.com/NebulaSans-Book.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-    <link
-      rel="preload"
-      href="https://fonts.helloworldfirm.com/NebulaSans-BoldItalic.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-    <script
-      is:inline
-      type="application/ld+json"
-      set:html={JSON.stringify(structuredData)}
-    />
-    <script
-      is:inline
-      type="application/ld+json"
-      set:html={JSON.stringify(collectionStructuredData)}
-    />
-    <script>
-      (function () {
-        if (typeof window === "undefined") return;
-        const ascii = `
-    ___  ________  ________     
-   |\\  \\|\\   __  \\|\\   __  \\    
-   \\ \\  \\ \\  \\|\\  \\ \\  \\|\\  \\   
- __ \\ \\  \\ \\   _  _\\ \\   _  _\\  
-|\\  \\\\_\\  \\ \\  \\\\  \\\\ \\  \\\\  \\| 
-\\ \\________\\ \\__\\\\ _\\\\ \\__\\\\ _\\ 
- \\|________|\\|__|\\|__|\\|__|\\|__|
-        `;
-        console.log(ascii);
-        console.log("Source: https://github.com/JonathanRReed/ai-news");
-      })();
-    </script>
-  </head>
-  <body class="bg-bg-0 text-text-1 font-sans">
-    <a href="#main-content" class="skip-link">Skip to content</a>
-    <NeuralGrid client:idle={{ timeout: 1800 }} />
-    <Header currentPage="home" />
-    <main id="main-content" class="industrial-shell">
-      <section class="industrial-container py-10 md:py-14">
-        <div class="grid gap-6 lg:grid-cols-[minmax(0,1fr)_420px] lg:items-end reveal-stagger">
-          <div class="max-w-5xl">
-            <p class="micro-label mb-5 text-brand">[ AI source monitor ]</p>
-            <h1 class="macro-heading max-w-5xl">
-              Primary-source AI news, releases and research in one fast feed.
-            </h1>
-            <p class="mt-6 max-w-3xl text-lg leading-relaxed text-text-2 md:text-xl">
-              Track model labs, infrastructure teams and research groups without opening a dozen
-              separate blogs. Search, filter by provider and switch density when you need a tighter
-              briefing surface.
-            </p>
+<Layout
+  title={title}
+  description={description}
+  canonical={canonicalUrl}
+  keywords={keywords}
+  currentPage="home"
+  bodyClass="bg-bg-0 text-text-1 font-sans"
+  structuredData={[structuredData, collectionStructuredData]}
+>
+  <main id="main-content" class="industrial-shell">
+    <section class="industrial-container py-10 md:py-14">
+      <div class="grid gap-6 lg:grid-cols-[minmax(0,1fr)_420px] lg:items-end reveal-stagger">
+        <div class="max-w-5xl">
+          <p class="micro-label mb-5 text-brand-hover">[ Primary sources only ]</p>
+          <h1 class="macro-heading max-w-5xl">
+            Primary-source AI news, releases and research in one fast feed.
+          </h1>
+          <p class="mt-6 max-w-3xl text-lg leading-relaxed text-text-2 md:text-xl">
+            Every major AI lab, model provider and research team in one place — official posts only,
+            linked straight to the source. We point you at the news; we don't rewrite it.
+          </p>
+        </div>
+        <aside class="industrial-border p-5">
+          <p class="micro-label mb-4 text-text-2">At a glance</p>
+          <dl class="grid grid-cols-2 gap-px bg-white/15">
+            <div class="bg-bg-0 p-4">
+              <dt class="micro-label text-text-2">Labs tracked</dt>
+              <dd class="mt-2 font-mono text-2xl font-black tabular-nums text-white">{cachedCompanyCount}</dd>
+            </div>
+            <div class="bg-bg-0 p-4">
+              <dt class="micro-label text-text-2">Stories</dt>
+              <dd class="mt-2 font-mono text-2xl font-black tabular-nums text-white">{cachedArticleCount}</dd>
+            </div>
+            <div class="bg-bg-0 p-4">
+              <dt class="micro-label text-text-2">New this week</dt>
+              <dd class="mt-2 font-mono text-2xl font-black tabular-nums text-white">{storiesThisWeek}</dd>
+            </div>
+            <div class="bg-bg-0 p-4">
+              <dt class="micro-label text-text-2">Newest story</dt>
+              <dd class="mt-2 font-mono text-lg font-black text-white">{newestRelative}</dd>
+            </div>
+          </dl>
+          <p class="micro-label mt-4 text-muted">Sources last checked {lastCheckedLabel}</p>
+        </aside>
+      </div>
+    </section>
+    {latestDigest && (
+      <section class="industrial-container pb-2">
+        <div class="industrial-border reveal-stagger p-6 md:p-8">
+          <div class="flex flex-wrap items-baseline justify-between gap-3 border-b border-white/15 pb-4">
+            <h2 class="micro-label text-brand-hover">This week in AI</h2>
+            <a
+              href="/digest/"
+              class="micro-label text-text-2 underline decoration-brand decoration-2 underline-offset-4 transition-colors hover:text-white focus-industrial"
+            >
+              See the full digest →
+            </a>
           </div>
-          <aside class="industrial-border p-5">
-            <p class="micro-label mb-4 text-text-2">[ Source board ]</p>
-            <dl class="grid grid-cols-2 gap-px bg-white/15">
-              <div class="bg-bg-0 p-4">
-                <dt class="micro-label text-text-2">Tracked</dt>
-                <dd class="mt-2 font-mono text-2xl font-black text-white">{trackedProviderCount}</dd>
-              </div>
-              <div class="bg-bg-0 p-4">
-                <dt class="micro-label text-text-2">Cached</dt>
-                <dd class="mt-2 font-mono text-2xl font-black text-white">{cachedArticleCount}</dd>
-              </div>
-              <div class="bg-bg-0 p-4">
-                <dt class="micro-label text-text-2">Cache sources</dt>
-                <dd class="mt-2 font-mono text-2xl font-black text-white">{cachedCompanyCount}</dd>
-              </div>
-              <div class="bg-bg-0 p-4">
-                <dt class="micro-label text-text-2">Latest cache</dt>
-                <dd class="mt-2 font-mono text-sm font-black text-white">{latestCacheLabel}</dd>
-              </div>
-            </dl>
-          </aside>
+          <ol class="mt-4 space-y-3">
+            {latestDigest.topStories.slice(0, 3).map((article, index) => (
+              <li class="grid grid-cols-[auto_minmax(0,1fr)] gap-3">
+                <span class="font-mono text-sm tabular-nums text-muted">{String(index + 1).padStart(2, "0")}</span>
+                <a
+                  href={`/article/${article.id}/`}
+                  class="leading-snug text-white decoration-brand decoration-2 underline-offset-4 transition-colors hover:text-brand-hover hover:underline focus-industrial text-pretty"
+                >
+                  <span class="micro-label mr-2 text-text-2">{article.company}</span>{article.title}
+                </a>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
-      <script is:inline>
-        (function(){
-          if(typeof window==='undefined')return;
-          var ro=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-visible');ro.unobserve(e.target);}});},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
-          document.querySelectorAll('.reveal-stagger').forEach(function(el){ro.observe(el);});
-        })();
-      </script>
-      <section id="articles" class="industrial-container space-y-8 py-8 md:py-12">
-        <ArticlesIslandWrapper client:visible />
-      </section>
-    </main>
-    <Footer />
-  </body>
-</html>
+    )}
+    <section id="articles" class="industrial-container space-y-8 py-8 md:py-12">
+      <ArticlesIslandWrapper client:load initialArticles={initialArticles} />
+    </section>
+  </main>
+</Layout>

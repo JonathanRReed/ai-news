@@ -53,14 +53,28 @@ export default function HamburgerMenu() {
                 className="menu-gradient-link w-full border border-white/20 px-6 py-4 text-left text-2xl transition-all focus-industrial md:text-3xl"
                 onClick={e => { e.preventDefault(); handleNav('/'); }}
               >
-                [ Home ]
+                Home
+              </a>
+              <a
+                href="/digest/"
+                className="menu-gradient-link w-full border border-white/20 px-6 py-4 text-left text-2xl transition-all focus-industrial md:text-3xl"
+                onClick={e => { e.preventDefault(); handleNav('/digest/'); }}
+              >
+                This week
+              </a>
+              <a
+                href="/models/"
+                className="menu-gradient-link w-full border border-white/20 px-6 py-4 text-left text-2xl transition-all focus-industrial md:text-3xl"
+                onClick={e => { e.preventDefault(); handleNav('/models/'); }}
+              >
+                Models
               </a>
               <a
                 href="/about/"
                 className="menu-gradient-link w-full border border-white/20 px-6 py-4 text-left text-2xl transition-all focus-industrial md:text-3xl"
                 onClick={e => { e.preventDefault(); handleNav('/about/'); }}
               >
-                [ About ]
+                About
               </a>
             </nav>
           </div>

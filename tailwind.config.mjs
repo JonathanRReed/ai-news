@@ -2,35 +2,17 @@ export default {
   theme: {
     extend: {
       colors: {
-        'bg-0': '#0A0A0A',
-        'bg-1': '#121212',
-        'bg-2': '#1A1A1A',
-        'bg-3': '#242424',
-        'text-1': '#EAEAEA',
-        'text-2': '#A8A8A8',
-        muted: '#737373',
-        'card-bg': 'rgba(18,18,18,0.86)',
+        'bg-0': 'rgb(var(--bg-0) / <alpha-value>)',
+        'bg-1': 'rgb(var(--bg-1) / <alpha-value>)',
+        'bg-2': 'rgb(var(--bg-2) / <alpha-value>)',
+        'bg-3': 'rgb(var(--bg-3) / <alpha-value>)',
+        'text-1': 'rgb(var(--text-1) / <alpha-value>)',
+        'text-2': 'rgb(var(--text-2) / <alpha-value>)',
+        muted: 'rgb(var(--muted) / <alpha-value>)',
 
-        brand: '#E61919',
-        'brand-hover': '#FF2A2A',
-        'brand-visited': '#A40F0F',
-        focus: '#EAEAEA',
-
-        'cyan-ink': '#EAEAEA',
-        'cyan-tint': '#3A3A3A',
-        'blue-ink': '#D8D8D8',
-        'blue-tint': '#202020',
-        'teal-ink': '#BEBEBE',
-        'teal-tint': '#191919',
-        'green-ink': '#4AF626',
-        'green-tint': '#10220C',
-        'gold-ink': '#E61919',
-        'gold-tint': '#2B0A0A',
-
-        'navy-tint': '#191919',
-        'halo-cool': '#E61919',
-
-        cyan: '#9ccfd8'
+        brand: 'rgb(var(--brand) / <alpha-value>)',
+        'brand-hover': 'rgb(var(--brand-hover) / <alpha-value>)',
+        focus: 'rgb(var(--text-1) / <alpha-value>)'
       },
       backdropBlur: {
         glass: '16px',

@@ -1,19 +1,15 @@
-import { supabase } from '../lib/supabaseClient.js';
-import type { Database } from '../types/database.js';
+/* global AbortSignal */
+import { SUPABASE_URL, SUPABASE_REST_HEADERS, supabaseConfigured } from '../lib/supabaseClient.js';
+import { deriveTopics } from '../lib/articleTags.js';
 import type { Article, PageData } from '../types/article.js';
 
 export const PAGE_SIZE = 20;
 const MAX_COMBINED_ROWS = PAGE_SIZE * 10;
 const SUPPLEMENTAL_ARTICLES_PATH = '/data/provider-articles.json';
 const SUPABASE_TIMEOUT_MS = 900;
+const REST_TABLE = 'ai_company_news';
 let supplementalArticlesPromise: Promise<Article[]> | null = null;
-type NewsSourceType = Database['public']['Enums']['news_source_type'];
-const NEWS_SOURCE_TYPES = ['rss_official', 'rss_unofficial', 'scraped'] as const satisfies readonly NewsSourceType[];
 type SupabaseArticlesResult = { data: Article[]; error: Error | null };
-
-function isNewsSourceType(value: string): value is NewsSourceType {
-  return NEWS_SOURCE_TYPES.some((sourceType) => sourceType === value);
-}
 
 function isArticle(value: unknown): value is Article {
   if (!value || typeof value !== 'object') return false;
@@ -38,14 +34,14 @@ function articleKey(article: Article): string {
 
 async function fetchSupplementalArticles(): Promise<Article[]> {
   if (supplementalArticlesPromise) return supplementalArticlesPromise;
-
   supplementalArticlesPromise = fetchSupplementalArticlesFromNetwork();
   return supplementalArticlesPromise;
 }
 
 async function fetchSupplementalArticlesFromNetwork(): Promise<Article[]> {
   try {
-    const response = await fetch(SUPPLEMENTAL_ARTICLES_PATH, { cache: 'no-cache' });
+    // Default caching honours the public, max-age=300 header set on /data/* in public/_headers.
+    const response = await fetch(SUPPLEMENTAL_ARTICLES_PATH);
     if (!response.ok) return [];
     const data: unknown = await response.json();
     return Array.isArray(data) ? data.filter(isArticle) : [];
@@ -54,26 +50,67 @@ async function fetchSupplementalArticlesFromNetwork(): Promise<Article[]> {
   }
 }
 
-function filterSupplementalArticles(articles: Article[], filters: ArticleFilters): Article[] {
-  return filterArticles(articles, filters);
+// Anonymous PostgREST read — the newest rows, optionally scoped to one company.
+async function fetchSupabaseArticles(filters: ArticleFilters): Promise<SupabaseArticlesResult> {
+  if (!supabaseConfigured) return { data: [], error: null };
+  const params = new URLSearchParams({
+    select: 'id,company,published_at,url,title,summary,source_type,content',
+    order: 'published_at.desc',
+    limit: String(MAX_COMBINED_ROWS),
+  });
+  if (filters.company && filters.company !== 'All') params.set('company', `eq.${filters.company}`);
+  try {
+    const response = await fetch(`${SUPABASE_URL}/rest/v1/${REST_TABLE}?${params.toString()}`, {
+      headers: SUPABASE_REST_HEADERS,
+      signal: AbortSignal.timeout(SUPABASE_TIMEOUT_MS),
+    });
+    if (!response.ok) return { data: [], error: new Error(`Supabase responded ${response.status}`) };
+    const json: unknown = await response.json();
+    return { data: Array.isArray(json) ? (json as Article[]) : [], error: null };
+  } catch (error) {
+    return { data: [], error: error instanceof Error ? error : new Error('Supabase request failed') };
+  }
+}
+
+// Cheap server-side COUNT of rows newer than `sinceMs` — no rows transferred (HEAD + count=exact).
+// Topic chips are derived client-side so they can't be applied here; the banner may slightly
+// over-count while a topic filter is active, which is acceptable for an advisory signal.
+export async function countNewerThan(filters: ArticleFilters, sinceMs: number): Promise<number> {
+  if (!supabaseConfigured || !sinceMs) return 0;
+  const params = new URLSearchParams({ select: 'id', published_at: `gt.${new Date(sinceMs).toISOString()}` });
+  if (filters.company && filters.company !== 'All') params.set('company', `eq.${filters.company}`);
+  try {
+    const response = await fetch(`${SUPABASE_URL}/rest/v1/${REST_TABLE}?${params.toString()}`, {
+      method: 'HEAD',
+      headers: { ...SUPABASE_REST_HEADERS, Prefer: 'count=exact', 'Range-Unit': 'items', Range: '0-0' },
+      signal: AbortSignal.timeout(SUPABASE_TIMEOUT_MS),
+    });
+    const total = (response.headers.get('content-range') || '').split('/')[1];
+    const count = total ? Number.parseInt(total, 10) : 0;
+    return Number.isFinite(count) ? count : 0;
+  } catch {
+    return 0;
+  }
 }
 
 function filterArticles(articles: Article[], filters: ArticleFilters): Article[] {
   const search = filters.q?.trim().toLowerCase();
+  const terms = search ? search.split(/\s+/).filter(Boolean) : [];
+  const topics = filters.topics && filters.topics.length ? filters.topics : null;
   return articles.filter((article) => {
-    if (filters.category && filters.category !== 'All' && isNewsSourceType(filters.category)) {
-      if (article.source_type !== filters.category) return false;
-    }
-
     if (filters.company && filters.company !== 'All' && article.company !== filters.company) {
       return false;
     }
-
-    if (search) {
-      const haystack = `${article.title} ${article.summary ?? ''} ${article.content ?? ''}`.toLowerCase();
-      if (!haystack.includes(search)) return false;
+    if (topics) {
+      const articleTopics = deriveTopics(article);
+      // OR within the topic facet: show articles matching ANY selected topic.
+      if (!topics.some((topic) => articleTopics.includes(topic))) return false;
     }
-
+    if (terms.length) {
+      const haystack = `${article.title} ${article.summary ?? ''} ${article.content ?? ''}`.toLowerCase();
+      // AND across query terms: every word must appear.
+      if (!terms.every((term) => haystack.includes(term))) return false;
+    }
     return true;
   });
 }
@@ -90,44 +127,18 @@ function mergeArticles(primary: Article[], supplemental: Article[]): Article[] {
     .sort((a, b) => articleTime(b) - articleTime(a));
 }
 
-function timeoutSupabase(): Promise<SupabaseArticlesResult> {
-  return new Promise((resolve) => {
-    globalThis.setTimeout(() => {
-      resolve({ data: [], error: new Error('Supabase request timed out.') });
-    }, SUPABASE_TIMEOUT_MS);
-  });
-}
-
 export interface ArticleFilters {
-  category?: string;
   company?: string;
+  topics?: string[];
   q?: string;
 }
 
 export async function fetchArticlesPage(filters: ArticleFilters, pageParam = 0): Promise<PageData> {
-  let q = supabase
-    ?.from('ai_company_news')
-    .select('id, company, published_at, url, title, summary, source_type, content')
-    .order('published_at', { ascending: false })
-    .range(0, MAX_COMBINED_ROWS - 1);
-
-  if (q && filters.category && filters.category !== 'All' && isNewsSourceType(filters.category))
-    q = q.eq('source_type', filters.category);
-  if (q && filters.company && filters.company !== 'All')
-    q = q.eq('company', filters.company);
-
-  const supabaseArticles = q ? Promise.resolve(q)
-    .then(({ data, error }) => ({
-      data: Array.isArray(data) ? data as Article[] : [],
-      error: error ? new Error(error.message) : null,
-    }))
-    .catch((error: Error) => ({ data: [], error })) : Promise.resolve({ data: [], error: null });
-
   const [supabaseResult, supplementalArticles] = await Promise.all([
-    Promise.race([supabaseArticles, timeoutSupabase()]),
+    fetchSupabaseArticles(filters),
     fetchSupplementalArticles(),
   ]);
-  const filteredSupplemental = filterSupplementalArticles(supplementalArticles, filters);
+  const filteredSupplemental = filterArticles(supplementalArticles, filters);
   const articles = filterArticles(mergeArticles(supabaseResult.data, filteredSupplemental), filters);
 
   if (supabaseResult.error && articles.length === 0) throw supabaseResult.error;

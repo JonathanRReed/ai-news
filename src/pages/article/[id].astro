@@ -1,0 +1,107 @@
+---
+import { URL } from "node:url";
+import Layout from "../../layouts/Layout.astro";
+import providerArticles from "../../../public/data/provider-articles.json";
+import { resolveCompanyLogo } from "../../lib/companyCatalog.js";
+import { deriveTopics, topicLabel, deriveEntities, readingMinutes } from "../../lib/articleTags.js";
+import type { Article } from "../../types/article.js";
+
+export function getStaticPaths() {
+  const articles = providerArticles as Article[];
+  return articles.map((article) => ({ params: { id: article.id }, props: { article } }));
+}
+
+const { article } = Astro.props as { article: Article };
+const siteUrl = "https://ai-news.helloworldfirm.com";
+const canonicalUrl = `${siteUrl}/article/${article.id}/`;
+
+function safeUrl(url: string): string {
+  try {
+    const parsed = new URL(url);
+    return parsed.protocol === "https:" || parsed.protocol === "http:" ? parsed.toString() : "";
+  } catch {
+    return "";
+  }
+}
+const originalUrl = safeUrl(article.url);
+const domain = originalUrl ? new URL(originalUrl).hostname.replace(/^www\./, "") : "";
+const logo = resolveCompanyLogo(article.company);
+const topics = deriveTopics(article);
+const entities = deriveEntities(article);
+const minutes = readingMinutes(article);
+const dateLabel = new Intl.DateTimeFormat("en-US", { month: "long", day: "numeric", year: "numeric" }).format(new Date(article.published_at));
+const excerpt = (article.summary || article.content || "").trim();
+const description = excerpt ? excerpt.slice(0, 158) : `${article.company} update tracked by AI News Hub.`;
+const title = `${article.title} — ${article.company} · AI News Hub`;
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  headline: article.title,
+  datePublished: article.published_at,
+  dateModified: article.published_at,
+  url: canonicalUrl,
+  image: ["https://img.helloworldfirm.com/logos/512x512-logo.avif"],
+  ...(originalUrl ? { isBasedOn: originalUrl } : {}),
+  ...(excerpt ? { description: excerpt.slice(0, 300) } : {}),
+  ...(topics.length ? { keywords: topics.map(topicLabel).join(", ") } : {}),
+  author: { "@type": "Organization", name: article.company },
+  publisher: {
+    "@type": "Organization",
+    name: "AI News Hub",
+    url: siteUrl,
+    logo: { "@type": "ImageObject", url: "https://img.helloworldfirm.com/logos/512x512-logo.avif" },
+  },
+  mainEntityOfPage: canonicalUrl,
+  isPartOf: { "@type": "WebSite", name: "AI News Hub", url: siteUrl },
+};
+---
+
+<Layout title={title} description={description} canonical={canonicalUrl} ogType="article" structuredData={structuredData}>
+  <main id="main-content" class="industrial-shell flex-1">
+    <article class="industrial-container max-w-3xl py-12 md:py-16 reveal-stagger">
+      <a href="/" class="micro-label inline-flex items-center gap-2 text-text-2 transition-colors hover:text-white focus-industrial">← Back to the feed</a>
+
+      <div class="mt-8 flex items-center gap-3 border-b border-white/15 pb-5">
+        {logo && (
+          <span class="flex h-11 w-11 shrink-0 items-center justify-center border border-white/20 bg-white">
+            <img src={logo} alt="" aria-hidden="true" width="32" height="32" class="h-8 w-8 object-contain" />
+          </span>
+        )}
+        <div>
+          <p class="micro-label text-white">{article.company}</p>
+          <time class="micro-label tabular-nums text-text-2" datetime={article.published_at}>{dateLabel}</time>
+        </div>
+      </div>
+
+      <h1 class="mt-8 text-3xl font-black leading-tight text-white md:text-5xl text-pretty">{article.title}</h1>
+
+      <div class="mt-5 flex flex-wrap items-center gap-x-2 gap-y-2 font-mono text-xs uppercase tracking-[0.06em] text-text-2">
+        {domain && <span class="border border-white/20 px-2 py-1 text-white">{domain}</span>}
+        {topics.map((key) => (
+          <span class="border border-white/15 px-2 py-1">{topicLabel(key)}</span>
+        ))}
+        {entities.map((entity) => (
+          <span class="border border-brand/40 px-2 py-1 text-brand-hover">{entity}</span>
+        ))}
+        {minutes > 0 && <span class="border border-white/15 px-2 py-1 tabular-nums">{minutes} min read</span>}
+      </div>
+
+      {excerpt && (
+        <p class="mt-8 max-w-2xl text-lg leading-relaxed text-text-2 text-pretty">{excerpt}</p>
+      )}
+
+      {originalUrl && (
+        <div class="mt-10">
+          <a class="signal-button" href={originalUrl} target="_blank" rel="noopener noreferrer">
+            Read the original on {domain || "the source"}
+          </a>
+        </div>
+      )}
+
+      <p class="micro-label mt-10 max-w-2xl leading-relaxed text-muted">
+        AI News Hub links to primary sources. This page shows the publisher&apos;s own title and excerpt with a link to the full article — we point you at the news; we don&apos;t rewrite it.
+      </p>
+    </article>
+  </main>
+</Layout>

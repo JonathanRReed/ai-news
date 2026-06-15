@@ -1,0 +1,106 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { allArticles } from "../lib/feeds.js";
+import { deriveTopics, deriveEntities } from "../lib/articleTags.js";
+import { resolveCompanyLogo, companies } from "../lib/companyCatalog.js";
+import type { Article } from "../types/article.js";
+
+const siteUrl = "https://ai-news.helloworldfirm.com";
+const canonicalUrl = `${siteUrl}/models/`;
+const title = "AI Model Release Timeline — what each lab shipped · AI News Hub";
+const description =
+  "A reverse-chronological timeline of model and product releases from the major AI labs, built from primary-source feeds.";
+
+const releases = allArticles().filter((a) => deriveTopics(a).includes("releases"));
+
+// Latest release per lab (catalog order), skipping labs with nothing.
+const labNames = companies.filter((c) => c.name !== "All").map((c) => c.name);
+const latestPerLab = labNames
+  .map((name) => ({ name, article: releases.find((a) => a.company === name) }))
+  .filter((entry): entry is { name: string; article: Article } => Boolean(entry.article));
+
+const timeline = releases.slice(0, 60);
+
+function dateLabel(iso: string): string {
+  return new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", year: "numeric" }).format(new Date(iso));
+}
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: title,
+  description,
+  url: canonicalUrl,
+  isPartOf: { "@type": "WebSite", name: "AI News Hub", url: siteUrl },
+};
+---
+
+<Layout title={title} description={description} canonical={canonicalUrl} currentPage="models" structuredData={structuredData}>
+  <main id="main-content" class="industrial-shell flex-1">
+    <section class="industrial-container py-10 md:py-14">
+      <div class="max-w-5xl reveal-stagger">
+        <p class="micro-label mb-5 text-brand-hover">[ Model releases ]</p>
+        <h1 class="macro-heading max-w-4xl">What each lab shipped, newest first.</h1>
+        <p class="mt-6 max-w-2xl text-lg leading-relaxed text-text-2">
+          Release and launch posts pulled from official feeds — the fastest way to see when something shipped and
+          what's newest from each lab right now.
+        </p>
+      </div>
+    </section>
+
+    <section class="industrial-container pb-12">
+      <p class="micro-label mb-4 text-text-2">Latest from each lab</p>
+      <div class="industrial-grid">
+        {latestPerLab.map(({ name, article }) => {
+          const logo = resolveCompanyLogo(name);
+          return (
+            <article class="col-span-12 p-5 sm:col-span-6 lg:col-span-4">
+              <div class="mb-3 flex items-center gap-3">
+                {logo && (
+                  <span class="flex h-8 w-8 items-center justify-center border border-white/20 bg-white">
+                    <img src={logo} alt="" aria-hidden="true" width="22" height="22" class="h-[22px] w-[22px] object-contain" />
+                  </span>
+                )}
+                <span class="micro-label text-white">{name}</span>
+                <time class="micro-label tabular-nums ml-auto text-text-2" datetime={article.published_at}>{dateLabel(article.published_at)}</time>
+              </div>
+              <h2 class="text-lg font-bold leading-tight text-white text-pretty">
+                <a href={`/article/${article.id}/`} class="decoration-brand decoration-2 underline-offset-4 transition-colors hover:text-brand-hover hover:underline focus-industrial">
+                  {article.title}
+                </a>
+              </h2>
+            </article>
+          );
+        })}
+      </div>
+    </section>
+
+    <section class="industrial-container pb-16 md:pb-24">
+      <p class="micro-label mb-4 text-text-2">Release timeline</p>
+      <ol class="reveal-stagger border-t border-white/15">
+        {timeline.map((article) => {
+          const entities = deriveEntities(article);
+          const logo = resolveCompanyLogo(article.company);
+          return (
+            <li class="grid grid-cols-[auto_minmax(0,1fr)_auto] items-baseline gap-3 border-b border-white/15 py-4 md:gap-5">
+              <time class="font-mono text-xs tabular-nums text-muted" datetime={article.published_at}>{dateLabel(article.published_at)}</time>
+              <div>
+                <a href={`/article/${article.id}/`} class="font-bold text-white decoration-brand decoration-2 underline-offset-4 transition-colors hover:text-brand-hover hover:underline focus-industrial">
+                  {article.title}
+                </a>
+                <div class="mt-1 flex flex-wrap items-center gap-2 font-mono text-[0.68rem] uppercase tracking-[0.06em] text-text-2">
+                  <span class="inline-flex items-center gap-1.5 text-white">
+                    {logo && <img src={logo} alt="" width="14" height="14" class="h-3.5 w-3.5 object-contain" aria-hidden="true" />}
+                    {article.company}
+                  </span>
+                  {entities.map((entity) => <span class="border border-brand/40 px-1.5 py-0.5 text-brand-hover">{entity}</span>)}
+                </div>
+              </div>
+            </li>
+          );
+        })}
+      </ol>
+      <a href="/" class="signal-button mt-10">Back to the feed</a>
+    </section>
+  </main>
+</Layout>

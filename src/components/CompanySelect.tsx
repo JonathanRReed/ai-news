@@ -11,6 +11,8 @@ export default function CompanySelect({ activeCompany, onCompanyChange }: Compan
     <div className="relative w-full">
       <div className="mx-auto max-w-7xl border border-white/20 bg-bg-1">
         <div
+          role="group"
+          aria-label="Filter by lab"
           className="hide-scrollbar mx-auto flex w-full max-w-full snap-x snap-mandatory gap-px overflow-x-auto bg-white/15"
           style={{
             maskImage: 'linear-gradient(to right, transparent, black 10px, black calc(100% - 10px), transparent)',
@@ -42,8 +44,9 @@ export default function CompanySelect({ activeCompany, onCompanyChange }: Compan
                   {company.logo ? (
                     <img
                       src={company.logo}
-                      alt={`${company.name} provider mark`}
-                      className="h-6 w-6 object-contain grayscale contrast-125"
+                      alt=""
+                      aria-hidden="true"
+                      className="h-6 w-6 object-contain"
                       loading={index < 3 ? "eager" : "lazy"}
                       width="24"
                       height="24"
