@@ -137,7 +137,7 @@ function ArticleCard({
   const Heading = isLead ? "h2" : "h3";
 
   return (
-    <article data-article-id={article.id} className={`article-card-hoverable group relative border bg-bg-0/90 ${pad} ${selected ? "border-brand outline outline-2 outline-brand" : "border-white/[0.14]"} ${seen ? "opacity-60 hover:opacity-100" : ""}`}>
+    <article data-article-id={article.id} className={`article-card-hoverable group relative border border-white/[0.14] bg-bg-0/90 ${pad} ${selected ? "outline outline-2 outline-brand outline-offset-2" : ""} ${seen ? "opacity-60 hover:opacity-100" : ""}`}>
       <div className="mb-3 flex items-center gap-3 border-b border-white/[0.1] pb-3">
         {logoPath && (
           <span className={`flex shrink-0 items-center justify-center border border-white/20 bg-white ${isLead ? "h-11 w-11" : "h-9 w-9"}`}>
