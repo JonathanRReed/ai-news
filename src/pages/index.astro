@@ -24,9 +24,11 @@ const latestCacheDate = providerRows
   .filter((time) => Number.isFinite(time))
   .sort((a, b) => b - a)[0];
 const latestCacheIso = latestCacheDate ? new Date(latestCacheDate).toISOString() : new Date(nowMs).toISOString();
-const daysSinceNewest = latestCacheDate ? Math.max(0, Math.round((nowMs - latestCacheDate) / 86400000)) : null;
-const newestRelative =
-  daysSinceNewest === null ? "—" : daysSinceNewest === 0 ? "Today" : daysSinceNewest === 1 ? "1 day ago" : `${daysSinceNewest} days ago`;
+// Absolute date, not a relative label: this is static HTML that only rebuilds when the
+// cache changes, so a relative value would go stale (and lie) on quiet days.
+const newestLabel = latestCacheDate
+  ? new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", year: "numeric" }).format(new Date(latestCacheDate))
+  : "—";
 const storiesThisWeek = providerRows.filter((article) => {
   const time = new Date(article.published_at).getTime();
   return Number.isFinite(time) && time > nowMs - 7 * 86400000;
@@ -129,7 +131,7 @@ const collectionStructuredData = {
             </div>
             <div class="bg-bg-0 p-4">
               <dt class="micro-label text-text-2">Newest story</dt>
-              <dd class="mt-2 font-mono text-lg font-black text-white">{newestRelative}</dd>
+              <dd class="mt-2 font-mono text-lg font-black tabular-nums text-white">{newestLabel}</dd>
             </div>
           </dl>
           <p class="micro-label mt-4 text-muted">Sources last checked {lastCheckedLabel}</p>
