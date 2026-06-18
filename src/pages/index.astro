@@ -14,7 +14,7 @@ const description =
   "AI News Hub tracks current articles, releases and research updates from major AI labs, infrastructure providers and model companies in one searchable feed.";
 const keywords =
   "AI news, artificial intelligence news, AI research updates, OpenAI news, Anthropic updates, Google DeepMind announcements, Mistral AI, Hugging Face, Meta AI, xAI, DeepSeek, IBM Research, Amazon AI, NVIDIA AI, Alibaba Qwen";
-const socialImage = "https://img.helloworldfirm.com/logos/512x512-logo.avif";
+const socialImage = `${siteUrl}/ai-news-favicon-512x512.png`;
 const providerRows = providerArticles as Array<{ company: string; published_at: string; source_type?: string }>;
 const cachedArticleCount = providerRows.length;
 const cachedCompanyCount = new Set(providerRows.map((article) => article.company)).size;

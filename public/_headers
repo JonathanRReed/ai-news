@@ -15,7 +15,7 @@
   Cross-Origin-Resource-Policy: same-origin
   
   # Content Security Policy
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://img.helloworldfirm.com https://arejerdupcduqhgdoyht.supabase.co; font-src 'self' https://fonts.helloworldfirm.com; connect-src 'self' https://arejerdupcduqhgdoyht.supabase.co https://static.cloudflareinsights.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://arejerdupcduqhgdoyht.supabase.co; font-src 'self' https://fonts.helloworldfirm.com; connect-src 'self' https://arejerdupcduqhgdoyht.supabase.co https://static.cloudflareinsights.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests
 
 # Cache static assets aggressively
 /_astro/*
@@ -23,6 +23,25 @@
 
 /logos/*
   Cache-Control: public, max-age=604800
+  X-Robots-Tag: noindex
+
+/ai_news_logo_assets/*
+  X-Robots-Tag: noindex
+
+/favicon*
+  X-Robots-Tag: noindex
+
+/apple-touch-icon.png
+  X-Robots-Tag: noindex
+
+/android-chrome-192x192.png
+  X-Robots-Tag: noindex
+
+/ai-news-favicon-512x512.png
+  X-Robots-Tag: noindex
+
+/jonathan.avif
+  X-Robots-Tag: noindex
 
 /data/*
   Cache-Control: public, max-age=300, stale-while-revalidate=86400

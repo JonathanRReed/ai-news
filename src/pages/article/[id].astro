@@ -14,6 +14,7 @@ export function getStaticPaths() {
 const { article } = Astro.props as { article: Article };
 const siteUrl = "https://ai-news.helloworldfirm.com";
 const canonicalUrl = `${siteUrl}/article/${article.id}/`;
+const socialImage = `${siteUrl}/ai-news-favicon-512x512.png`;
 
 function safeUrl(url: string): string {
   try {
@@ -41,7 +42,7 @@ const structuredData = {
   datePublished: article.published_at,
   dateModified: article.published_at,
   url: canonicalUrl,
-  image: ["https://img.helloworldfirm.com/logos/512x512-logo.avif"],
+  image: [socialImage],
   ...(originalUrl ? { isBasedOn: originalUrl } : {}),
   ...(excerpt ? { description: excerpt.slice(0, 300) } : {}),
   ...(topics.length ? { keywords: topics.map(topicLabel).join(", ") } : {}),
@@ -50,7 +51,7 @@ const structuredData = {
     "@type": "Organization",
     name: "AI News Hub",
     url: siteUrl,
-    logo: { "@type": "ImageObject", url: "https://img.helloworldfirm.com/logos/512x512-logo.avif" },
+    logo: { "@type": "ImageObject", url: socialImage },
   },
   mainEntityOfPage: canonicalUrl,
   isPartOf: { "@type": "WebSite", name: "AI News Hub", url: siteUrl },

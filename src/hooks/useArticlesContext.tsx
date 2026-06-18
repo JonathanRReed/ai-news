@@ -5,7 +5,7 @@ import { useArticles, PAGE_SIZE } from "./useArticles.js";
 import type { ArticleFilters } from "./fetchArticlesPage.js";
 import type { PageData } from "../types/article.js";
 
-type Props = { filters: ArticleFilters; initialData?: InfiniteData<PageData>; children: ReactNode };
+type Props = { filters: ArticleFilters; initialData?: InfiniteData<PageData, number>; children: ReactNode };
 
 export type ArticlesContextValue = (
   UseInfiniteQueryResult<InfiniteData<PageData>, Error> & {

@@ -78,7 +78,7 @@ export default function ArticlesIslandWrapper({ initialArticles = [], now = 0 }:
   const stableFilters = useMemo<ArticleFilters>(() => ({ company, topics, q }), [company, topics, q]);
   const isDefault = company === "All" && !(topics && topics.length) && !(q && q.trim());
 
-  const initialData: InfiniteData<PageData> | undefined =
+  const initialData: InfiniteData<PageData, number> | undefined =
     isDefault && initialArticles.length
       ? { pages: [{ data: initialArticles, next: initialArticles.length >= PAGE_SIZE ? PAGE_SIZE : undefined }], pageParams: [0] }
       : undefined;

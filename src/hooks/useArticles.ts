@@ -7,7 +7,7 @@ import type { PageData } from '../types/article.js';
 
 export { PAGE_SIZE };
 
-export const useArticles = (filters: ArticleFilters, initialData?: InfiniteData<PageData>) => {
+export const useArticles = (filters: ArticleFilters, initialData?: InfiniteData<PageData, number>) => {
   const { company, topics, q } = filters;
   const queryKey = useMemo<[string, string]>(
     () => ['articles', JSON.stringify({ company, topics, q })],
