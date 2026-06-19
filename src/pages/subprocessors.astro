@@ -1,0 +1,110 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const siteUrl = "https://ai-news.helloworldfirm.com";
+const canonicalUrl = `${siteUrl}/subprocessors/`;
+const title = "Sub-processor Disclosure for AI News Hub";
+const description =
+  "Sub-processor and data-processing disclosure for AI News Hub, including Cloudflare and Supabase provider purposes.";
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: title,
+  url: canonicalUrl,
+  description,
+  author: {
+    "@type": "Person",
+    name: "Jonathan R Reed",
+    url: "https://jonathanrreed.com",
+  },
+  datePublished: "2026-06-19",
+  dateModified: "2026-06-19",
+  isPartOf: {
+    "@type": "WebSite",
+    name: "AI News Hub",
+    url: siteUrl,
+  },
+};
+
+const providers = [
+  {
+    name: "Cloudflare",
+    purpose: "Hosting, security, caching, analytics and abuse prevention.",
+    data: "Request metadata such as IP address, user agent, requested URL, timestamp, referrer and security signals.",
+    location: "United States and global Cloudflare network locations.",
+  },
+  {
+    name: "Supabase",
+    purpose: "Public article data requests and feed data storage for the browsing experience.",
+    data: "Request metadata and public article-feed records needed to load, filter and search listings.",
+    location: "United States and Supabase-managed infrastructure locations.",
+  },
+];
+---
+
+<Layout
+  title={title}
+  description={description}
+  canonical={canonicalUrl}
+  robots="index, follow, max-image-preview:large"
+  structuredData={structuredData}
+>
+  <main id="main-content" class="industrial-shell flex-1">
+    <section class="industrial-container py-24 md:py-36">
+      <div class="max-w-5xl reveal-stagger">
+        <p class="micro-label mb-5 text-brand-hover">[ Legal ]</p>
+        <h1 class="macro-heading max-w-5xl">Sub-processor Disclosure</h1>
+        <div class="mt-8 max-w-4xl space-y-5 text-lg leading-relaxed text-text-2">
+          <p>
+            AI News Hub uses a small set of third-party providers to host the site, protect the
+            service and serve public article-feed data. These providers may process personal data
+            that appears in normal web request metadata.
+          </p>
+          <p>
+            This page is the current sub-processor and data-processing disclosure for AI News Hub.
+            For business work that requires a Data Processing Agreement (DPA), contact Hello.World
+            Consulting before sharing private or regulated data.
+          </p>
+        </div>
+
+        <div class="mt-10 grid gap-4">
+          {providers.map((provider) => (
+            <article class="industrial-border p-6">
+              <p class="micro-label mb-4 text-text-2">{provider.name}</p>
+              <dl class="grid gap-4 text-base leading-relaxed text-text-2 md:grid-cols-3">
+                <div>
+                  <dt class="font-mono text-xs font-black uppercase tracking-[0.12em] text-white">Purpose</dt>
+                  <dd class="mt-2">{provider.purpose}</dd>
+                </div>
+                <div>
+                  <dt class="font-mono text-xs font-black uppercase tracking-[0.12em] text-white">Data</dt>
+                  <dd class="mt-2">{provider.data}</dd>
+                </div>
+                <div>
+                  <dt class="font-mono text-xs font-black uppercase tracking-[0.12em] text-white">Location</dt>
+                  <dd class="mt-2">{provider.location}</dd>
+                </div>
+              </dl>
+            </article>
+          ))}
+        </div>
+
+        <div class="mt-10 max-w-4xl space-y-5 text-lg leading-relaxed text-text-2">
+          <p>
+            This list is reviewed as the hosting, analytics and data stack changes. AI News Hub
+            does not require accounts, payments or private profile data for normal browsing.
+          </p>
+        </div>
+
+        <div class="mt-10 flex flex-wrap gap-4">
+          <a class="signal-button" href="/privacy/">
+            Privacy policy
+          </a>
+          <a class="signal-button" href="/contact/">
+            Contact
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
