@@ -43,5 +43,5 @@ export function resolveCompanyLogo(company: string): string {
 
 export function companyLogoAlt(company: string): string {
   const name = (company || '').trim();
-  return name ? `${name} logo` : 'AI lab logo';
+  return name ? `Provider mark for ${name}` : 'AI provider mark';
 }

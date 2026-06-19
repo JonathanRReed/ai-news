@@ -9,7 +9,6 @@ Allow: /*.css$
 Disallow: /search/
 Disallow: /*?s=
 Disallow: /*?q=
-Sitemap: https://ai-news.helloworldfirm.com/sitemap.xml
 
 User-agent: Bingbot
 Allow: /*.js$
