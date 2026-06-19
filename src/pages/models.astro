@@ -2,14 +2,14 @@
 import Layout from "../layouts/Layout.astro";
 import { allArticles } from "../lib/feeds.js";
 import { deriveTopics, deriveEntities } from "../lib/articleTags.js";
-import { resolveCompanyLogo, companies } from "../lib/companyCatalog.js";
+import { companyLogoAlt, resolveCompanyLogo, companies } from "../lib/companyCatalog.js";
 import type { Article } from "../types/article.js";
 
 const siteUrl = "https://ai-news.helloworldfirm.com";
 const canonicalUrl = `${siteUrl}/models/`;
-const title = "AI Model Release Timeline — what each lab shipped · AI News Hub";
+const title = "AI Model Release Timeline | AI News Hub";
 const description =
-  "A reverse-chronological timeline of model and product releases from the major AI labs, built from primary-source feeds.";
+  "Reverse-chronological model and product releases from major AI labs, pulled from primary-source feeds with dates, companies, and links.";
 
 const releases = allArticles().filter((a) => deriveTopics(a).includes("releases"));
 
@@ -42,7 +42,7 @@ const structuredData = {
         <p class="micro-label mb-5 text-brand-hover">[ Model releases ]</p>
         <h1 class="macro-heading max-w-4xl">What each lab shipped, newest first.</h1>
         <p class="mt-6 max-w-2xl text-lg leading-relaxed text-text-2">
-          Release and launch posts pulled from official feeds — the fastest way to see when something shipped and
+          Release and launch posts pulled from official feeds, the fastest way to see when something shipped and
           what's newest from each lab right now.
         </p>
       </div>
@@ -58,7 +58,7 @@ const structuredData = {
               <div class="mb-3 flex items-center gap-3">
                 {logo && (
                   <span class="flex h-8 w-8 items-center justify-center border border-white/20 bg-white">
-                    <img src={logo} alt="" aria-hidden="true" width="22" height="22" class="h-[22px] w-[22px] object-contain" />
+                    <img src={logo} alt={companyLogoAlt(name)} width="22" height="22" class="h-[22px] w-[22px] object-contain" />
                   </span>
                 )}
                 <span class="micro-label text-white">{name}</span>
@@ -90,7 +90,7 @@ const structuredData = {
                 </a>
                 <div class="mt-1 flex flex-wrap items-center gap-2 font-mono text-[0.68rem] uppercase tracking-[0.06em] text-text-2">
                   <span class="inline-flex items-center gap-1.5 text-white">
-                    {logo && <img src={logo} alt="" width="14" height="14" class="h-3.5 w-3.5 object-contain" aria-hidden="true" />}
+                    {logo && <img src={logo} alt={companyLogoAlt(article.company)} width="14" height="14" class="h-3.5 w-3.5 object-contain" />}
                     {article.company}
                   </span>
                   {entities.map((entity) => <span class="border border-brand/40 px-1.5 py-0.5 text-brand-hover">{entity}</span>)}

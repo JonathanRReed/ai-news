@@ -7,10 +7,10 @@ const weeks = digestWeeks();
 const latest = weeks[0];
 const siteUrl = "https://ai-news.helloworldfirm.com";
 const canonicalUrl = `${siteUrl}/digest/`;
-const title = "This Week in AI — the weekly digest · AI News Hub";
+const title = "This Week in AI | Weekly Digest | AI News Hub";
 const description = latest
-  ? `The most significant AI updates this week, ranked across ${latest.labs} labs. Primary-source, nothing rewritten.`
-  : "The weekly rundown of the most significant primary-source AI updates.";
+  ? `The most significant AI updates this week, ranked across ${latest.labs} labs from primary-source feeds with original links and dates.`
+  : "The weekly rundown of significant primary-source AI updates, with original links, dates, publisher context, and no rewritten summaries.";
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",

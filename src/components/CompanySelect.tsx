@@ -1,5 +1,5 @@
 import React from 'react';
-import { companies } from '../lib/companyCatalog.js';
+import { companies, companyLogoAlt } from '../lib/companyCatalog.js';
 
 interface CompanySelectProps {
   activeCompany: string;
@@ -44,8 +44,7 @@ export default function CompanySelect({ activeCompany, onCompanyChange }: Compan
                   {company.logo ? (
                     <img
                       src={company.logo}
-                      alt=""
-                      aria-hidden="true"
+                      alt={companyLogoAlt(company.name)}
                       className="h-6 w-6 object-contain"
                       loading={index < 3 ? "eager" : "lazy"}
                       width="24"

@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef, useMemo } from "react";
 import { useArticlesContext } from "../hooks/useArticlesContext.js";
 import { countNewerThan } from "../hooks/fetchArticlesPage.js";
-import { resolveCompanyLogo } from "../lib/companyCatalog.js";
+import { companyLogoAlt, resolveCompanyLogo } from "../lib/companyCatalog.js";
 import { deriveTopics, topicLabel, readingMinutes, importanceScore } from "../lib/articleTags.js";
 import type { Article, PageData } from "../types/article.js";
 import type { ReadState } from "../hooks/useReadState.js";
@@ -141,7 +141,7 @@ function ArticleCard({
       <div className="mb-3 flex items-center gap-3 border-b border-white/[0.1] pb-3">
         {logoPath && (
           <span className={`flex shrink-0 items-center justify-center border border-white/20 bg-white ${isLead ? "h-11 w-11" : "h-9 w-9"}`}>
-            <img src={logoPath} alt="" aria-hidden="true" className={isLead ? "h-8 w-8 object-contain" : "h-6 w-6 object-contain"} loading="lazy" width={isLead ? 32 : 24} height={isLead ? 32 : 24} />
+            <img src={logoPath} alt={companyLogoAlt(article.company)} className={isLead ? "h-8 w-8 object-contain" : "h-6 w-6 object-contain"} loading="lazy" width={isLead ? 32 : 24} height={isLead ? 32 : 24} />
           </span>
         )}
         <span className="micro-label text-white">{article.company}</span>
@@ -249,7 +249,7 @@ export default function ArticleListIsland({
     showHelpRef.current = showHelp;
   }, [showHelp]);
 
-  // Reset to the top only when the filter/view actually changes — NOT when data.pages
+  // Reset to the top only when the filter/view actually changes, not when data.pages
   // grows from "Load more" (that would wipe the just-appended page).
   /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(() => {
@@ -276,7 +276,7 @@ export default function ArticleListIsland({
     return { lead: leadArticle, topPicks: tops, riverGroups: groupByBucket(river, nowMs) };
   }, [visibleArticles, view, nowMs]);
 
-  // Flat list in visual order — powers keyboard navigation (j/k/o/s/m).
+  // Flat list in visual order, powers keyboard navigation (j/k/o/s/m).
   const orderedArticles = useMemo<Article[]>(() => {
     const list: Article[] = [];
     if (lead) list.push(lead);
@@ -448,7 +448,7 @@ export default function ArticleListIsland({
       <div className="mt-8 border border-brand bg-bg-1 p-6">
         <p className="micro-label mb-3 text-brand-hover">Couldn&apos;t load the live feed</p>
         <p className="max-w-2xl text-base leading-relaxed text-text-2">
-          The live connection dropped. Cached stories will load again as soon as it recovers — try refreshing in a moment.
+          The live connection dropped. Cached stories will load again as soon as it recovers. Try refreshing in a moment.
         </p>
       </div>
     );
@@ -459,7 +459,7 @@ export default function ArticleListIsland({
       view === "saved"
         ? "You haven't saved any stories yet. Tap the bookmark on a card to keep it here."
         : view === "unread"
-          ? "You're all caught up — every loaded story has been opened."
+          ? "You're all caught up. Every loaded story has been opened."
           : "Try a different lab, topic or search term.";
     return (
       <div className="mt-8 border border-white/20 bg-bg-1 p-8">

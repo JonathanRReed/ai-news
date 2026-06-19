@@ -15,8 +15,8 @@ const siteUrl = "https://ai-news.helloworldfirm.com";
 // so the two identical pages consolidate instead of competing.
 const isLatest = digest.week === allWeeks[0]?.week;
 const canonicalUrl = isLatest ? `${siteUrl}/digest/` : `${siteUrl}/digest/${digest.week}/`;
-const title = `${digest.label} — This Week in AI · AI News Hub`;
-const description = `The ${digest.count} most significant AI updates from ${digest.labs} labs — ${digest.label}. Ranked, primary-source.`;
+const title = `${digest.label} | This Week in AI | AI News Hub`;
+const description = `The ${digest.count} most significant AI updates from ${digest.labs} labs for ${digest.label}, ranked from primary-source feeds with original links and dates.`;
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",

@@ -2,7 +2,7 @@
 import { URL } from "node:url";
 import Layout from "../../layouts/Layout.astro";
 import providerArticles from "../../../public/data/provider-articles.json";
-import { resolveCompanyLogo } from "../../lib/companyCatalog.js";
+import { companyLogoAlt, resolveCompanyLogo } from "../../lib/companyCatalog.js";
 import { deriveTopics, topicLabel, deriveEntities, readingMinutes } from "../../lib/articleTags.js";
 import type { Article } from "../../types/article.js";
 
@@ -31,9 +31,38 @@ const topics = deriveTopics(article);
 const entities = deriveEntities(article);
 const minutes = readingMinutes(article);
 const dateLabel = new Intl.DateTimeFormat("en-US", { month: "long", day: "numeric", year: "numeric" }).format(new Date(article.published_at));
-const excerpt = (article.summary || article.content || "").trim();
-const description = excerpt ? excerpt.slice(0, 158) : `${article.company} update tracked by AI News Hub.`;
-const title = `${article.title} — ${article.company} · AI News Hub`;
+
+function cleanText(text: string): string {
+  return text.replace(/\s+/g, " ").trim();
+}
+
+function truncateAtWord(text: string, maxLength: number): string {
+  const clean = cleanText(text);
+  if (clean.length <= maxLength) return clean;
+
+  const clipped = clean.slice(0, Math.max(0, maxLength - 3));
+  const lastSpace = clipped.lastIndexOf(" ");
+  const base = lastSpace > 40 ? clipped.slice(0, lastSpace) : clipped;
+  return `${base.trim()}...`;
+}
+
+function articlePageTitle(currentArticle: Article): string {
+  const suffix = ` | ${currentArticle.company}`;
+  const titleBudget = Math.max(32, 60 - suffix.length);
+  return `${truncateAtWord(currentArticle.title, titleBudget)}${suffix}`;
+}
+
+function articleMetaDescription(currentArticle: Article, currentExcerpt: string): string {
+  const sourceText = currentExcerpt || `${currentArticle.company}: ${currentArticle.title}.`;
+  return truncateAtWord(
+    `${sourceText} Linked by AI News Hub with source, date, publisher context, and the original article preserved for verification.`,
+    155,
+  );
+}
+
+const excerpt = cleanText(article.summary || article.content || "");
+const description = articleMetaDescription(article, excerpt);
+const title = articlePageTitle(article);
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -66,7 +95,7 @@ const structuredData = {
       <div class="mt-8 flex items-center gap-3 border-b border-white/15 pb-5">
         {logo && (
           <span class="flex h-11 w-11 shrink-0 items-center justify-center border border-white/20 bg-white">
-            <img src={logo} alt="" aria-hidden="true" width="32" height="32" class="h-8 w-8 object-contain" />
+            <img src={logo} alt={companyLogoAlt(article.company)} width="32" height="32" class="h-8 w-8 object-contain" />
           </span>
         )}
         <div>
@@ -101,7 +130,7 @@ const structuredData = {
       )}
 
       <p class="micro-label mt-10 max-w-2xl leading-relaxed text-muted">
-        AI News Hub links to primary sources. This page shows the publisher&apos;s own title and excerpt with a link to the full article — we point you at the news; we don&apos;t rewrite it.
+        AI News Hub links to primary sources. This page shows the publisher&apos;s own title and excerpt with a link to the full article. We point you at the news; we don&apos;t rewrite it.
       </p>
     </article>
   </main>

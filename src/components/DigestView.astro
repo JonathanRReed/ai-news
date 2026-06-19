@@ -1,5 +1,5 @@
 ---
-import { resolveCompanyLogo } from "../lib/companyCatalog.js";
+import { companyLogoAlt, resolveCompanyLogo } from "../lib/companyCatalog.js";
 import { deriveTopics, topicLabel } from "../lib/articleTags.js";
 import type { DigestWeek } from "../lib/digest.js";
 import type { Article } from "../types/article.js";
@@ -20,7 +20,7 @@ function dateLabel(iso: string): string {
     <p class="micro-label mb-5 text-brand-hover">[ This week in AI ]</p>
     <h1 class="macro-heading max-w-4xl">{digest.label}</h1>
     <p class="mt-6 max-w-2xl text-lg leading-relaxed text-text-2">
-      The week's most significant primary-source updates, ranked — {digest.count} stories across {digest.labs} labs.
+      The week's most significant primary-source updates, ranked across {digest.count} stories from {digest.labs} labs.
       Every link goes to the original source.
     </p>
   </div>
@@ -38,7 +38,7 @@ function dateLabel(iso: string): string {
             <div class="mb-2 flex items-center gap-3">
               {logo && (
                 <span class="flex h-8 w-8 items-center justify-center border border-white/20 bg-white">
-                  <img src={logo} alt="" aria-hidden="true" width="22" height="22" class="h-[22px] w-[22px] object-contain" />
+                  <img src={logo} alt={companyLogoAlt(article.company)} width="22" height="22" class="h-[22px] w-[22px] object-contain" />
                 </span>
               )}
               <span class="micro-label text-white">{article.company}</span>

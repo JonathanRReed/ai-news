@@ -40,3 +40,8 @@ export function resolveCompanyLogo(company: string): string {
   const match = COMPANY_LOGO_MATCHERS.find(({ keys }) => keys.some((key) => normalizedName.includes(key)));
   return match?.logo ?? FALLBACK_COMPANY_LOGO;
 }
+
+export function companyLogoAlt(company: string): string {
+  const name = (company || '').trim();
+  return name ? `${name} logo` : 'AI lab logo';
+}
