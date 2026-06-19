@@ -20,7 +20,7 @@ function persist(key: string, set: Set<string>, cap?: number) {
     const arr = [...set];
     window.localStorage.setItem(key, JSON.stringify(cap ? arr.slice(-cap) : arr));
   } catch {
-    /* storage full or unavailable — non-fatal */
+    /* storage full or unavailable, non-fatal */
   }
 }
 

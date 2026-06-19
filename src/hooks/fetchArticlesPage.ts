@@ -50,7 +50,7 @@ async function fetchSupplementalArticlesFromNetwork(): Promise<Article[]> {
   }
 }
 
-// Anonymous PostgREST read — the newest rows, optionally scoped to one company.
+// Anonymous PostgREST read, the newest rows, optionally scoped to one company.
 async function fetchSupabaseArticles(filters: ArticleFilters): Promise<SupabaseArticlesResult> {
   if (!supabaseConfigured) return { data: [], error: null };
   const params = new URLSearchParams({
@@ -72,7 +72,7 @@ async function fetchSupabaseArticles(filters: ArticleFilters): Promise<SupabaseA
   }
 }
 
-// Cheap server-side COUNT of rows newer than `sinceMs` — no rows transferred (HEAD + count=exact).
+// Cheap server-side COUNT of rows newer than `sinceMs`, no rows transferred (HEAD + count=exact).
 // Topic chips are derived client-side so they can't be applied here; the banner may slightly
 // over-count while a topic filter is active, which is acceptable for an advisory signal.
 export async function countNewerThan(filters: ArticleFilters, sinceMs: number): Promise<number> {

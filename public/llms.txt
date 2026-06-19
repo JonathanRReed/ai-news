@@ -1,6 +1,6 @@
 # AI News Hub
 
-> AI News Hub is a primary-source feed for AI news: official RSS and Atom posts from the major labs, deduplicated, ranked into an editorial feed, and linked straight to the source — never rewritten. Live coverage: OpenAI, Google DeepMind, Hugging Face, NVIDIA AI, Amazon AI, Alibaba Qwen, IBM Research, and DeepSeek.
+> AI News Hub is a primary-source feed for AI news: official RSS and Atom posts from major labs, deduplicated, ranked into an editorial feed, and linked straight to the source. It does not rewrite the news. Live coverage: OpenAI, Google DeepMind, Hugging Face, NVIDIA AI, Amazon AI, Alibaba Qwen, IBM Research, and DeepSeek.
 
 ## Tech Stack
 
@@ -17,9 +17,9 @@
 - [Source Code](https://github.com/JonathanRReed/ai-news): Main repository
 - **Pages**: `index.astro` (3-tier feed), `digest/` + `digest/[week].astro` (weekly "This Week in AI"), `models.astro` (release timeline), `article/[id].astro` (per-article pages with NewsArticle JSON-LD), `about.astro`, `contact.astro`, `privacy.astro`
 - **Layout**: `/src/layouts/Layout.astro` (shared head, SEO, header/footer)
-- **Components**: `/src/components/` — ArticlesIslandWrapper, ArticleListIsland, FiltersIsland, CompanySelect, DigestView, Header, Footer, HamburgerMenu, FaqDropdown
-- **Hooks**: `/src/hooks/` — useArticles, fetchArticlesPage, useArticlesContext, useReadState
-- **Lib**: `/src/lib/` — companyCatalog, providerSources, articleTags (topic/entity tagging), digest, feeds
+- **Components**: `/src/components/` - ArticlesIslandWrapper, ArticleListIsland, FiltersIsland, CompanySelect, DigestView, Header, Footer, HamburgerMenu, FaqDropdown
+- **Hooks**: `/src/hooks/` - useArticles, fetchArticlesPage, useArticlesContext, useReadState
+- **Lib**: `/src/lib/` - companyCatalog, providerSources, articleTags (topic/entity tagging), digest, feeds
 - **Feed builder**: `scripts/gather-provider-feeds.mjs` (refreshed daily by `.github/workflows/refresh-feeds.yml`)
 
 ## Key Features
@@ -33,8 +33,8 @@
 
 ## Feeds and data
 
-- [RSS — all](/feed.xml)
-- [JSON — all](/articles.json)
+- [RSS - all](/feed.xml)
+- [JSON - all](/articles.json)
 - Per-company RSS: `/feed/company/{slug}.xml`
 - Per-topic RSS: `/feed/topic/{slug}.xml`
 - [Sitemap](/sitemap.xml)

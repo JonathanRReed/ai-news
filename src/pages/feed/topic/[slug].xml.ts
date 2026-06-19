@@ -11,7 +11,7 @@ export const GET: APIRoute = ({ props }) => {
   const items = allArticles().filter((a) => deriveTopics(a).includes(key));
   return new Response(
     buildRss({
-      title: `AI News Hub — ${label}`,
+      title: `AI News Hub - ${label}`,
       description: `${label} stories across every tracked AI lab.`,
       feedPath: `/feed/topic/${key}.xml`,
       items,

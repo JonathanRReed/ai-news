@@ -3,7 +3,7 @@ import type { Article } from "../types/article.js";
 // Topic facets are data-derived: each was confirmed to have >60 members in the
 // current corpus (Releases 114, Agents 101, Infra 100, Multimodal 95, Tooling 68,
 // Research 64). We deliberately omit "models/reasoning" (matched ~45% of items, too
-// broad to filter on — the entity tags cover "which model") and funding/policy (too
+// broad to filter on, the entity tags cover "which model") and funding/policy (too
 // few members) so a chip never returns an empty feed.
 export interface TopicFacet {
   key: string;

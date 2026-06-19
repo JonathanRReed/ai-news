@@ -13,7 +13,7 @@ export const GET: APIRoute = ({ props }) => {
   const items = allArticles().filter((a) => a.company === name);
   return new Response(
     buildRss({
-      title: `AI News Hub — ${name}`,
+      title: `AI News Hub - ${name}`,
       description: `Latest primary-source updates from ${name}.`,
       feedPath: `/feed/company/${companySlug(name)}.xml`,
       items,

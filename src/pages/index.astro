@@ -9,9 +9,9 @@ const latestDigest = digestWeeks()[0];
 
 const siteUrl = "https://ai-news.helloworldfirm.com";
 const canonicalUrl = `${siteUrl}/`;
-const title = "AI News Hub for Research Lab and Model Provider Updates";
+const title = "AI News Hub | Primary-Source AI News Feed";
 const description =
-  "AI News Hub tracks current articles, releases and research updates from major AI labs, infrastructure providers and model companies in one searchable feed.";
+  "AI News Hub tracks official AI lab, model-provider, and infrastructure posts in one searchable feed. It links to the source and does not rewrite the news.";
 const keywords =
   "AI news, artificial intelligence news, AI research updates, OpenAI news, Anthropic updates, Google DeepMind announcements, Mistral AI, Hugging Face, Meta AI, xAI, DeepSeek, IBM Research, Amazon AI, NVIDIA AI, Alibaba Qwen";
 const socialImage = `${siteUrl}/ai-news-favicon-512x512.png`;
@@ -28,7 +28,7 @@ const latestCacheIso = latestCacheDate ? new Date(latestCacheDate).toISOString()
 // cache changes, so a relative value would go stale (and lie) on quiet days.
 const newestLabel = latestCacheDate
   ? new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", year: "numeric" }).format(new Date(latestCacheDate))
-  : "—";
+  : "No date";
 // Anchor "this week" to the newest story (data-derived), not the build clock, so the
 // count stays correct between rebuilds and never drifts on code-only deploys.
 const weekAnchor = latestCacheDate ?? nowMs;
@@ -59,8 +59,12 @@ const structuredData = {
   description,
   creator: {
     "@type": "Person",
-    name: "Jonathan R Reed",
+    name: "Jonathan R. Reed",
     url: "https://jonathanrreed.com",
+    sameAs: [
+      "https://github.com/JonathanRReed",
+      "https://helloworldfirm.com",
+    ],
   },
   publisher: {
     "@type": "Organization",
@@ -81,8 +85,12 @@ const collectionStructuredData = {
   url: siteUrl,
   author: {
     "@type": "Person",
-    name: "Jonathan R Reed",
+    name: "Jonathan R. Reed",
     url: "https://jonathanrreed.com",
+    sameAs: [
+      "https://github.com/JonathanRReed",
+      "https://helloworldfirm.com",
+    ],
   },
   datePublished: "2026-04-21",
   dateModified: latestCacheIso.slice(0, 10),
@@ -112,7 +120,7 @@ const collectionStructuredData = {
             Primary-source AI news, releases and research in one fast feed.
           </h1>
           <p class="mt-6 max-w-3xl text-lg leading-relaxed text-text-2 md:text-xl">
-            Every major AI lab, model provider and research team in one place — official posts only,
+            Every major AI lab, model provider and research team in one place: official posts only,
             linked straight to the source. We point you at the news; we don't rewrite it.
           </p>
         </div>
