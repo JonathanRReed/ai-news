@@ -12,6 +12,7 @@ export function getStaticPaths() {
 }
 
 const { article } = Astro.props as { article: Article };
+const allArticles = providerArticles as Article[];
 const siteUrl = "https://ai-news.helloworldfirm.com";
 const canonicalUrl = `${siteUrl}/article/${article.id}/`;
 const socialImage = `${siteUrl}/ai-news-favicon-512x512.png`;
@@ -47,9 +48,12 @@ function truncateAtWord(text: string, maxLength: number): string {
   return `${base.trim()}...`;
 }
 
-function articlePageTitle(currentArticle: Article, currentDateLabel: string): string {
-  const suffix = ` | ${currentArticle.company} | ${currentDateLabel} | AI News Hub`;
-  const titleBudget = Math.max(32, 60 - suffix.length);
+function articlePageTitle(currentArticle: Article, currentDateLabel: string, includeDate: boolean): string {
+  const suffix = includeDate
+    ? ` | ${currentArticle.company} | ${currentDateLabel} | AI News Hub`
+    : ` | ${currentArticle.company} | AI News Hub`;
+  const minTitleLength = includeDate ? 24 : 32;
+  const titleBudget = Math.max(minTitleLength, 60 - suffix.length);
   return `${truncateAtWord(currentArticle.title, titleBudget)}${suffix}`;
 }
 
@@ -66,8 +70,15 @@ function articleMetaDescription(currentArticle: Article, currentExcerpt: string,
 }
 
 const excerpt = cleanText(article.summary || article.content || "");
+const defaultTitleCounts = new Map<string, number>();
+for (const currentArticle of allArticles) {
+  const defaultTitle = articlePageTitle(currentArticle, "", false);
+  defaultTitleCounts.set(defaultTitle, (defaultTitleCounts.get(defaultTitle) ?? 0) + 1);
+}
+const defaultTitle = articlePageTitle(article, "", false);
+const includeDateInTitle = (defaultTitleCounts.get(defaultTitle) ?? 0) > 1;
 const description = articleMetaDescription(article, excerpt, seoDateLabel);
-const title = articlePageTitle(article, seoDateLabel);
+const title = articlePageTitle(article, seoDateLabel, includeDateInTitle);
 
 const structuredData = {
   "@context": "https://schema.org",
