@@ -47,7 +47,7 @@ function truncateAtWord(text: string, maxLength: number): string {
 }
 
 function articlePageTitle(currentArticle: Article): string {
-  const suffix = ` | ${currentArticle.company}`;
+  const suffix = ` | ${currentArticle.company} | AI News Hub`;
   const titleBudget = Math.max(32, 60 - suffix.length);
   return `${truncateAtWord(currentArticle.title, titleBudget)}${suffix}`;
 }
