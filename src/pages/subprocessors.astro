@@ -5,7 +5,7 @@ const siteUrl = "https://ai-news.helloworldfirm.com";
 const canonicalUrl = `${siteUrl}/subprocessors/`;
 const title = "Sub-processor Disclosure for AI News Hub";
 const description =
-  "Sub-processor and data-processing disclosure for AI News Hub, including Cloudflare and Supabase provider purposes.";
+  "Sub-processor and data-processing disclosure for AI News Hub, including provider purposes, request metadata handling, locations and DPA contact guidance.";
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -65,6 +65,12 @@ const providers = [
             For business work that requires a Data Processing Agreement (DPA), contact Hello.World
             Consulting before sharing private or regulated data.
           </p>
+          <p>
+            The site is designed as a public reading surface. Visitors can browse the feed without
+            creating an account, entering payment details or sending private profile information.
+            The records shown on article pages come from public publisher feeds and link back to
+            the original source pages.
+          </p>
         </div>
 
         <div class="mt-10 grid gap-4">
@@ -94,11 +100,30 @@ const providers = [
             This list is reviewed as the hosting, analytics and data stack changes. AI News Hub
             does not require accounts, payments or private profile data for normal browsing.
           </p>
+          <p>
+            If a provider is added for hosting, security, analytics, source ingestion or storage,
+            this page should be updated with the provider name, the reason it is used, the kind of
+            request or feed information involved and the relevant infrastructure location when it
+            is known.
+          </p>
+          <p>
+            Source suggestions and bug reports should not include secrets, private tokens,
+            unpublished research, customer records or regulated data. Use the contact page first
+            when a private handling process, security review or DPA discussion is needed.
+          </p>
+          <p>
+            For general privacy details, including how public feed data, hosting logs, external
+            links and business inquiries are handled, read the privacy policy. For project context,
+            source scope and maintenance notes, read the about page.
+          </p>
         </div>
 
         <div class="mt-10 flex flex-wrap gap-4">
           <a class="signal-button" href="/privacy/">
             Privacy policy
+          </a>
+          <a class="signal-button" href="/about/">
+            About
           </a>
           <a class="signal-button" href="/contact/">
             Contact
