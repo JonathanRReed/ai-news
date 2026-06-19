@@ -31,6 +31,7 @@ const topics = deriveTopics(article);
 const entities = deriveEntities(article);
 const minutes = readingMinutes(article);
 const dateLabel = new Intl.DateTimeFormat("en-US", { month: "long", day: "numeric", year: "numeric" }).format(new Date(article.published_at));
+const seoDateLabel = new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", year: "numeric" }).format(new Date(article.published_at));
 
 function cleanText(text: string): string {
   return text.replace(/\s+/g, " ").trim();
@@ -46,14 +47,18 @@ function truncateAtWord(text: string, maxLength: number): string {
   return `${base.trim()}...`;
 }
 
-function articlePageTitle(currentArticle: Article): string {
-  const suffix = ` | ${currentArticle.company} | AI News Hub`;
+function articlePageTitle(currentArticle: Article, currentDateLabel: string): string {
+  const suffix = ` | ${currentArticle.company} | ${currentDateLabel} | AI News Hub`;
   const titleBudget = Math.max(32, 60 - suffix.length);
   return `${truncateAtWord(currentArticle.title, titleBudget)}${suffix}`;
 }
 
-function articleMetaDescription(currentArticle: Article, currentExcerpt: string): string {
-  const sourceText = currentExcerpt || `${currentArticle.company}: ${currentArticle.title}.`;
+function articleMetaDescription(currentArticle: Article, currentExcerpt: string, currentDateLabel: string): string {
+  const placeholderExcerpt = currentExcerpt.toLowerCase() === "no content.";
+  const sourceText =
+    !currentExcerpt || placeholderExcerpt
+      ? `${currentArticle.company} release ${currentArticle.title} published ${currentDateLabel}.`
+      : currentExcerpt;
   return truncateAtWord(
     `${sourceText} Linked by AI News Hub with source, date, publisher context, and the original article preserved for verification.`,
     155,
@@ -61,8 +66,8 @@ function articleMetaDescription(currentArticle: Article, currentExcerpt: string)
 }
 
 const excerpt = cleanText(article.summary || article.content || "");
-const description = articleMetaDescription(article, excerpt);
-const title = articlePageTitle(article);
+const description = articleMetaDescription(article, excerpt, seoDateLabel);
+const title = articlePageTitle(article, seoDateLabel);
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -73,7 +78,7 @@ const structuredData = {
   url: canonicalUrl,
   image: [socialImage],
   ...(originalUrl ? { isBasedOn: originalUrl } : {}),
-  ...(excerpt ? { description: excerpt.slice(0, 300) } : {}),
+  description,
   ...(topics.length ? { keywords: topics.map(topicLabel).join(", ") } : {}),
   author: { "@type": "Organization", name: article.company },
   publisher: {
