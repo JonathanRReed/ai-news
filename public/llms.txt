@@ -37,7 +37,7 @@
 - [JSON — all](/articles.json)
 - Per-company RSS: `/feed/company/{slug}.xml`
 - Per-topic RSS: `/feed/topic/{slug}.xml`
-- [Sitemap](/sitemap-index.xml)
+- [Sitemap](/sitemap.xml)
 
 ## Development
 

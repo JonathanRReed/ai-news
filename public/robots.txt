@@ -1,6 +1,6 @@
 # robots.txt - https://ai-news.helloworldfirm.com
 
-# Generated 2025-05-07 - SEO-optimised, AI-scraper-aware
+# Generated 2026-06-19 - SEO-optimised, AI-scraper-aware
 # ------------------------------------------------------------------
 # [1] MAJOR SEARCH ENGINES (full access)
 User-agent: Googlebot
@@ -9,7 +9,7 @@ Allow: /*.css$
 Disallow: /search/
 Disallow: /*?s=
 Disallow: /*?q=
-Sitemap: https://ai-news.helloworldfirm.com/sitemap-index.xml
+Sitemap: https://ai-news.helloworldfirm.com/sitemap.xml
 
 User-agent: Bingbot
 Allow: /*.js$
@@ -99,4 +99,4 @@ Disallow: /*?q=
 Allow: /
 
 # GLOBAL SITEMAP
-Sitemap: https://ai-news.helloworldfirm.com/sitemap-index.xml
+Sitemap: https://ai-news.helloworldfirm.com/sitemap.xml
