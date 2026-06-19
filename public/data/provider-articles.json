@@ -1,5 +1,71 @@
 [
   {
+    "id": "provider-93cd1bc107b92e72ff",
+    "company": "Amazon AI",
+    "title": "Accelerate campaign workflow with insights from Adobe Marketing Agent for Amazon Quick",
+    "url": "https://aws.amazon.com/blogs/machine-learning/accelerate-campaign-workflow-with-insights-from-adobe-marketing-agent-for-amazon-quick/",
+    "published_at": "2026-06-19T14:05:04.000Z",
+    "source_type": "rss_official",
+    "summary": "This post shows how to enable Adobe Marketing Agent for Amazon Quick using a Model Context Protocol (MCP). We walk you through how to configure the integration, authenticate using your Adobe credentials, and get the latest insights in Amazon Quick. The sample workflow returns audience rankings, loyalty segment summaries, journey usage, and conflict recommendations.",
+    "content": "This post shows how to enable Adobe Marketing Agent for Amazon Quick using a Model Context Protocol (MCP). We walk you through how to configure the integration, authenticate using your Adobe credentials, and get the latest insights in Amazon Quick. The sample workflow returns audience rankings, loyalty segment summaries, journey usage, and conflict recommendations.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-6cc5a49189bb026c8d",
+    "company": "Amazon AI",
+    "title": "Monitor and debug generative AI inference with SageMaker detailed metrics and Insights dashboard on CloudWatch",
+    "url": "https://aws.amazon.com/blogs/machine-learning/monitor-and-debug-generative-ai-inference-with-sagemaker-detailed-metrics-and-insights-dashboard-on-cloudwatch/",
+    "published_at": "2026-06-18T23:31:58.000Z",
+    "source_type": "rss_official",
+    "summary": "Amazon SageMaker AI provides fully managed real-time inference hosting for machine learning models. You deploy a model to a SageMaker endpoint backed by one or more compute instances, and SageMaker handles provisioning and scaling. SageMaker supports multiple endpoint architectures. This post focuses on the two most relevant to generative AI workloads with detailed observability: Single-model endpoints (SME) and Inference component (IC) endpoints.",
+    "content": "Amazon SageMaker AI provides fully managed real-time inference hosting for machine learning models. You deploy a model to a SageMaker endpoint backed by one or more compute instances, and SageMaker handles provisioning and scaling. SageMaker supports multiple endpoint architectures. This post focuses on the two most relevant to generative AI workloads with detailed observability: Single-model endpoints (SME) and Inference component (IC) endpoints.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-596a3693d7dc81ea51",
+    "company": "NVIDIA AI",
+    "title": "How FERC’s Large-Load Interconnection Actions Help Address Grid Stress, Improve Affordability",
+    "url": "https://blogs.nvidia.com/blog/ferc-large-load-interconnection/",
+    "published_at": "2026-06-18T20:00:27.000Z",
+    "source_type": "rss_official",
+    "summary": "In a consequential grid infrastructure decision, the Federal Energy Regulatory Commission (FERC) today issued a major milestone on large-load interconnection impacting how those building AI factories, semiconductor fabrication support systems and advanced manufacturing facilities can connect to the grid. In the era of AI, which NVIDIA founder and CEO Jensen Huang has described as a […]",
+    "content": "In a consequential grid infrastructure decision, the Federal Energy Regulatory Commission (FERC) today issued a major milestone on large-load interconnection impacting how those building AI factories, semiconductor fabrication support systems and advanced manufacturing facilities can connect to the grid. In the era of AI, which NVIDIA founder and CEO Jensen Huang has described as a […]",
+    "source_url": "https://blogs.nvidia.com/feed/"
+  },
+  {
+    "id": "provider-121729e24978cbfe07",
+    "company": "Hugging Face",
+    "title": "MosaicLeaks: Can your research agent keep a secret?",
+    "url": "https://huggingface.co/blog/ServiceNow/mosaicleaks",
+    "published_at": "2026-06-18T18:13:13.000Z",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://huggingface.co/blog/feed.xml"
+  },
+  {
+    "id": "provider-6b8042abbe29be589e",
+    "company": "Amazon AI",
+    "title": "Amazon Bedrock AgentCore harness is now generally available: Go from idea to production-grade agent in minutes",
+    "url": "https://aws.amazon.com/blogs/machine-learning/amazon-bedrock-agentcore-harness-is-now-generally-available-go-from-idea-to-production-grade-agent-in-minutes/",
+    "published_at": "2026-06-18T17:32:22.000Z",
+    "source_type": "rss_official",
+    "summary": "Today, Amazon Bedrock AgentCore harness is generally available. Two API calls (CreateHarness to define an agent, and InvokeHarness to run it), and you have an agent running in seconds. The agent runs in its own isolated environment with a filesystem and shell, so it can read files, run commands, and write code safely. It remembers users and conversations across sessions, picks up skills you point it at (including the AWS-curated catalog), browses the web, calls your tools through gateway or MCP,",
+    "content": "Today, Amazon Bedrock AgentCore harness is generally available. Two API calls (CreateHarness to define an agent, and InvokeHarness to run it), and you have an agent running in seconds. The agent runs in its own isolated environment with a filesystem and shell, so it can read files, run commands, and write code safely. It remembers users and conversations across sessions, picks up skills you point it at (including the AWS-curated catalog), browses the web, calls your tools through gateway or MCP, and switches model providers mid-session without losing context. Every step streams back to you in real time and is automatically traced to Amazon CloudWatch. You don’t need to write orchestration code or build a container, unless you want to.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-a8a48c3b3b70188786",
+    "company": "OpenAI",
+    "title": "New usage analytics and updated spend controls for enterprises",
+    "url": "https://openai.com/index/chatgpt-enterprise-spend-controls",
+    "published_at": "2026-06-18T17:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "OpenAI introduces new spend controls and usage analytics for ChatGPT Enterprise, helping organizations manage costs and scale AI with confidence.",
+    "content": "OpenAI introduces new spend controls and usage analytics for ChatGPT Enterprise, helping organizations manage costs and scale AI with confidence.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
     "id": "provider-86c43061612c7b50f5",
     "company": "NVIDIA AI",
     "title": "At Cannes Lions, NVIDIA Partners Reshape Advertising and Marketing With AI",
@@ -22,6 +88,28 @@
     "source_url": "https://blogs.nvidia.com/feed/"
   },
   {
+    "id": "provider-f7e92e0abe0068751e",
+    "company": "OpenAI",
+    "title": "Improving health intelligence in ChatGPT",
+    "url": "https://openai.com/index/improving-health-intelligence-in-chatgpt",
+    "published_at": "2026-06-18T11:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Learn how GPT-5.5 Instant improves ChatGPT’s health and wellness responses with stronger reasoning, better context, clearer communication, and physician-informed evaluations.",
+    "content": "Learn how GPT-5.5 Instant improves ChatGPT’s health and wellness responses with stronger reasoning, better context, clearer communication, and physician-informed evaluations.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-cdae118f5e2b1b0dde",
+    "company": "OpenAI",
+    "title": "Using AI to help physicians diagnose rare genetic diseases affecting children",
+    "url": "https://openai.com/index/diagnose-rare-childhood-diseases",
+    "published_at": "2026-06-18T08:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Researchers used an OpenAI reasoning model to help diagnose rare diseases, identifying 18 new diagnoses in previously unsolved cases.",
+    "content": "Researchers used an OpenAI reasoning model to help diagnose rare diseases, identifying 18 new diagnoses in previously unsolved cases.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
     "id": "provider-27ee5583f70f6027f2",
     "company": "NVIDIA AI",
     "title": "France Advances Europe’s AI Future With NVIDIA Technologies",
@@ -31,6 +119,28 @@
     "summary": "A year ago at NVIDIA GTC Paris at VivaTech, France laid out plans to advance local AI — from new AI factories and national compute capacity to open frontier models and industrial platforms. Now, that AI infrastructure is coming online. AI agents are running in production, startups are deploying applications and the French AI ecosystem […]",
     "content": "A year ago at NVIDIA GTC Paris at VivaTech, France laid out plans to advance local AI — from new AI factories and national compute capacity to open frontier models and industrial platforms. Now, that AI infrastructure is coming online. AI agents are running in production, startups are deploying applications and the French AI ecosystem […]",
     "source_url": "https://blogs.nvidia.com/feed/"
+  },
+  {
+    "id": "provider-bf0b22e763b1339f08",
+    "company": "IBM Research",
+    "title": "Allstate explores quantum computing for insurance portfolios",
+    "url": "https://research.ibm.com/blog/allstate-quantum-insurance-portfolio?utm_medium=rss&utm_source=rss",
+    "published_at": "2026-06-18T04:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Insurance involves hard problems with complex, correlated risks. Allstate and IBM are showing how quantum could help solve them.",
+    "content": "Insurance involves hard problems with complex, correlated risks. Allstate and IBM are showing how quantum could help solve them.",
+    "source_url": "https://research.ibm.com/rss"
+  },
+  {
+    "id": "provider-4c3abb262078de7a84",
+    "company": "Hugging Face",
+    "title": "Beyond LoRA: Can you beat the most popular fine-tuning technique?",
+    "url": "https://huggingface.co/blog/peft-beyond-lora",
+    "published_at": "2026-06-18T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://huggingface.co/blog/feed.xml"
   },
   {
     "id": "provider-43325f0432eefad4ef",
@@ -506,17 +616,6 @@
     "source_url": "https://research.ibm.com/rss"
   },
   {
-    "id": "provider-3bbbcbb111fb651fe3",
-    "company": "Amazon AI",
-    "title": "Optimize blueprint extraction accuracy in Amazon Bedrock Data Automation",
-    "url": "https://aws.amazon.com/blogs/machine-learning/optimize-blueprint-extraction-accuracy-in-amazon-bedrock-data-automation/",
-    "published_at": "2026-06-11T15:11:56.000Z",
-    "source_type": "rss_official",
-    "summary": "Blueprint instruction optimization is a BDA feature that automatically refines your extraction instructions to address this challenge directly. You provide three to ten example documents with expected values, and BDA refines your blueprint instructions to improve accuracy in minutes, not weeks. No separate model fine-tuning is required. By the end of this post, you can optimize your blueprints to improve accuracy, run the optimization workflow through the Amazon Bedrock console or the API, and a",
-    "content": "Blueprint instruction optimization is a BDA feature that automatically refines your extraction instructions to address this challenge directly. You provide three to ten example documents with expected values, and BDA refines your blueprint instructions to improve accuracy in minutes, not weeks. No separate model fine-tuning is required. By the end of this post, you can optimize your blueprints to improve accuracy, run the optimization workflow through the Amazon Bedrock console or the API, and apply best practices for selecting examples and ground truth.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
     "id": "provider-530a77f8d1506f882a",
     "company": "NVIDIA AI",
     "title": "Save Big and Play Bigger: GeForce NOW Summer Sale Brings Major Membership Savings",
@@ -539,15 +638,26 @@
     "source_url": "https://research.ibm.com/rss"
   },
   {
-    "id": "provider-5fc69a11d271148ba4",
-    "company": "Amazon AI",
-    "title": "How frontier teams are reinventing AI-native development",
-    "url": "https://aws.amazon.com/blogs/machine-learning/how-frontier-teams-are-reinventing-ai-native-development/",
-    "published_at": "2026-06-11T00:54:42.000Z",
+    "id": "provider-6b45da215c922c7846",
+    "company": "OpenAI",
+    "title": "Supporting Europe’s work in ensuring a trustworthy AI ecosystem",
+    "url": "https://openai.com/index/supporting-eu-trustworthy-ai-ecosystem",
+    "published_at": "2026-06-11T00:00:00.000Z",
     "source_type": "rss_official",
-    "summary": "Frontier teams are not just using AI to code faster. They’re redesigning how software gets built. The result is 4.5x productivity gains, in some cases more than 10x.",
-    "content": "Frontier teams are not just using AI to code faster. They’re redesigning how software gets built. The result is 4.5x productivity gains, in some cases more than 10x.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+    "summary": "OpenAI supports the EU Code of Practice on AI content transparency, advancing provenance standards and tools to help people understand AI-generated content.",
+    "content": "OpenAI supports the EU Code of Practice on AI content transparency, advancing provenance standards and tools to help people understand AI-generated content.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-53f9d319e8ae0bb1f1",
+    "company": "OpenAI",
+    "title": "BBVA puts AI at the core of banking with OpenAI",
+    "url": "https://openai.com/index/bbva",
+    "published_at": "2026-06-11T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Learn how BBVA scaled ChatGPT Enterprise to 100,000 employees and partnered with OpenAI to accelerate AI-powered banking transformation worldwide.",
+    "content": "Learn how BBVA scaled ChatGPT Enterprise to 100,000 employees and partnered with OpenAI to accelerate AI-powered banking transformation worldwide.",
+    "source_url": "https://openai.com/news/rss.xml"
   },
   {
     "id": "provider-511ab3a14c077aa0bc",
@@ -561,17 +671,6 @@
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
-    "id": "provider-6b45da215c922c7846",
-    "company": "OpenAI",
-    "title": "Supporting Europe’s work in ensuring a trustworthy AI ecosystem",
-    "url": "https://openai.com/index/supporting-eu-trustworthy-ai-ecosystem",
-    "published_at": "2026-06-11T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "OpenAI supports the EU Code of Practice on AI content transparency, advancing provenance standards and tools to help people understand AI-generated content.",
-    "content": "OpenAI supports the EU Code of Practice on AI content transparency, advancing provenance standards and tools to help people understand AI-generated content.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-c3f06ceec6a17e4b54",
     "company": "OpenAI",
     "title": "OpenAI to acquire Ona",
@@ -580,17 +679,6 @@
     "source_type": "rss_official",
     "summary": "OpenAI plans to acquire Ona to expand Codex with secure, persistent cloud environments, enabling long-running AI agents across enterprise workflows.",
     "content": "OpenAI plans to acquire Ona to expand Codex with secure, persistent cloud environments, enabling long-running AI agents across enterprise workflows.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
-    "id": "provider-53f9d319e8ae0bb1f1",
-    "company": "OpenAI",
-    "title": "BBVA puts AI at the core of banking with OpenAI",
-    "url": "https://openai.com/index/bbva",
-    "published_at": "2026-06-11T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Learn how BBVA scaled ChatGPT Enterprise to 100,000 employees and partnered with OpenAI to accelerate AI-powered banking transformation worldwide.",
-    "content": "Learn how BBVA scaled ChatGPT Enterprise to 100,000 employees and partnered with OpenAI to accelerate AI-powered banking transformation worldwide.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -658,17 +746,6 @@
     "summary": "Today, Google DeepMind released DiffusionGemma — an experimental open model built for exceptionally fast text generation. NVIDIA has optimized DiffusionGemma to run even faster across NVIDIA GeForce RTX GPUs, the NVIDIA RTX PRO platform and NVIDIA DGX Spark systems, from local PCs to the cloud. Rather than generating text one word at a time, DiffusionGemma generates multiple words in parallel to output whole blocks of text, opening a new, low-latency frontier for the kind of single-user workload",
     "content": "Today, Google DeepMind released DiffusionGemma — an experimental open model built for exceptionally fast text generation. NVIDIA has optimized DiffusionGemma to run even faster across NVIDIA GeForce RTX GPUs, the NVIDIA RTX PRO platform and NVIDIA DGX Spark systems, from local PCs to the cloud. Rather than generating text one word at a time, DiffusionGemma generates multiple words in parallel to output whole blocks of text, opening a new, low-latency frontier for the kind of single-user workloads that developers, […]",
     "source_url": "https://blogs.nvidia.com/feed/"
-  },
-  {
-    "id": "provider-7ceee5bc36f6926302",
-    "company": "Amazon AI",
-    "title": "Stop hand-tuning kernels: How Neuron Agentic Development accelerates AWS Trainium optimizations",
-    "url": "https://aws.amazon.com/blogs/machine-learning/stop-hand-tuning-kernels-how-neuron-agentic-development-accelerates-aws-trainium-optimizations/",
-    "published_at": "2026-06-10T15:26:45.000Z",
-    "source_type": "rss_official",
-    "summary": "Today, we’re announcing the Neuron Agentic Development capabilities: a collection of AI agents and skills that make this possible for developers building on AWS Trainium and AWS Inferentia. In this post, we explain how the Neuron Agentic Development capabilities accelerate the kernel development workflow.",
-    "content": "Today, we’re announcing the Neuron Agentic Development capabilities: a collection of AI agents and skills that make this possible for developers building on AWS Trainium and AWS Inferentia. In this post, we explain how the Neuron Agentic Development capabilities accelerate the kernel development workflow.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
   },
   {
     "id": "provider-a536fad8a99904b37f",
@@ -1056,17 +1133,6 @@
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
-    "id": "provider-aa2775e71c2f4ab0a8",
-    "company": "NVIDIA AI",
-    "title": "Forecast: Fun Ahead — 18 Games Join in June to Stream on GeForce NOW",
-    "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-june-2026-games-list/",
-    "published_at": "2026-06-04T13:00:27.000Z",
-    "source_type": "rss_official",
-    "summary": "June’s forecast with GeForce NOW: 100% chance of gaming. GeForce NOW is lining up new adventures for the month, from big-name blockbusters to quirky indies ready for the spotlight. Members can dive into fresh worlds, squad up in new playlists and discover “just one more run” favorites — all streaming from the cloud, no downloads […]",
-    "content": "June’s forecast with GeForce NOW: 100% chance of gaming. GeForce NOW is lining up new adventures for the month, from big-name blockbusters to quirky indies ready for the spotlight. Members can dive into fresh worlds, squad up in new playlists and discover “just one more run” favorites — all streaming from the cloud, no downloads […]",
-    "source_url": "https://blogs.nvidia.com/feed/"
-  },
-  {
     "id": "provider-bd7b94e703eaf0faae",
     "company": "IBM Research",
     "title": "How to build AI more like software",
@@ -1188,17 +1254,6 @@
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
-    "id": "provider-76b4195f74bb6d9c92",
-    "company": "OpenAI",
-    "title": "A blueprint for democratic governance of frontier AI",
-    "url": "https://openai.com/index/frontier-safety-blueprint",
-    "published_at": "2026-06-03T10:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "OpenAI outlines a blueprint for U.S. governance of frontier AI, proposing a federal framework for safety, resilience, and national security.",
-    "content": "OpenAI outlines a blueprint for U.S. governance of frontier AI, proposing a federal framework for safety, resilience, and national security.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-8f56487ce735112480",
     "company": "OpenAI",
     "title": "OpenAI public policy agenda",
@@ -1207,6 +1262,17 @@
     "source_type": "rss_official",
     "summary": "OpenAI outlines its public policy agenda for AI, including safety, youth protection, workforce transition, and global standards to ensure AI benefits society.",
     "content": "OpenAI outlines its public policy agenda for AI, including safety, youth protection, workforce transition, and global standards to ensure AI benefits society.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-76b4195f74bb6d9c92",
+    "company": "OpenAI",
+    "title": "A blueprint for democratic governance of frontier AI",
+    "url": "https://openai.com/index/frontier-safety-blueprint",
+    "published_at": "2026-06-03T10:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "OpenAI outlines a blueprint for U.S. governance of frontier AI, proposing a federal framework for safety, resilience, and national security.",
+    "content": "OpenAI outlines a blueprint for U.S. governance of frontier AI, proposing a federal framework for safety, resilience, and national security.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -1727,17 +1793,6 @@
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
-    "id": "provider-d528fe9da9a64cc8b1",
-    "company": "OpenAI",
-    "title": "How Virgin Atlantic ships faster with Codex",
-    "url": "https://openai.com/index/virgin-atlantic",
-    "published_at": "2026-05-22T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "How Virgin Atlantic used Codex to ship its revamped mobile app on a fixed holiday travel deadline, reaching near-total unit test coverage and zero P1 defects.",
-    "content": "How Virgin Atlantic used Codex to ship its revamped mobile app on a fixed holiday travel deadline, reaching near-total unit test coverage and zero P1 defects.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-a30d13ed273dd64e85",
     "company": "OpenAI",
     "title": "OpenAI named a Leader in enterprise coding agents by Gartner",
@@ -1746,6 +1801,17 @@
     "source_type": "rss_official",
     "summary": "OpenAI is named a leader in the 2026 Gartner Magic Quadrant for Enterprise AI Coding Agents, with Codex recognized for innovation and enterprise-scale deployment.",
     "content": "OpenAI is named a leader in the 2026 Gartner Magic Quadrant for Enterprise AI Coding Agents, with Codex recognized for innovation and enterprise-scale deployment.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-d528fe9da9a64cc8b1",
+    "company": "OpenAI",
+    "title": "How Virgin Atlantic ships faster with Codex",
+    "url": "https://openai.com/index/virgin-atlantic",
+    "published_at": "2026-05-22T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "How Virgin Atlantic used Codex to ship its revamped mobile app on a fixed holiday travel deadline, reaching near-total unit test coverage and zero P1 defects.",
+    "content": "How Virgin Atlantic used Codex to ship its revamped mobile app on a fixed holiday travel deadline, reaching near-total unit test coverage and zero P1 defects.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -1837,14 +1903,14 @@
     "source_url": "https://research.ibm.com/rss"
   },
   {
-    "id": "provider-f73b8a8a9df451169b",
+    "id": "provider-7bbc67f0d6064fdc98",
     "company": "OpenAI",
-    "title": "An OpenAI model has disproved a central conjecture in discrete geometry",
-    "url": "https://openai.com/index/model-disproves-discrete-geometry-conjecture",
+    "title": "How Ramp engineers accelerate code review with Codex",
+    "url": "https://openai.com/index/ramp",
     "published_at": "2026-05-20T00:00:00.000Z",
     "source_type": "rss_official",
-    "summary": "An OpenAI model solved the 80-year-old unit distance problem, disproving a major conjecture in discrete geometry and marking a milestone in AI-driven mathematics.",
-    "content": "An OpenAI model solved the 80-year-old unit distance problem, disproving a major conjecture in discrete geometry and marking a milestone in AI-driven mathematics.",
+    "summary": "How Ramp engineers use Codex with GPT-5.5 to review code and ship improvements, allowing them to get substantive feedback in minutes instead of hours.",
+    "content": "How Ramp engineers use Codex with GPT-5.5 to review code and ship improvements, allowing them to get substantive feedback in minutes instead of hours.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -1859,14 +1925,14 @@
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
-    "id": "provider-7bbc67f0d6064fdc98",
+    "id": "provider-f73b8a8a9df451169b",
     "company": "OpenAI",
-    "title": "How Ramp engineers accelerate code review with Codex",
-    "url": "https://openai.com/index/ramp",
+    "title": "An OpenAI model has disproved a central conjecture in discrete geometry",
+    "url": "https://openai.com/index/model-disproves-discrete-geometry-conjecture",
     "published_at": "2026-05-20T00:00:00.000Z",
     "source_type": "rss_official",
-    "summary": "How Ramp engineers use Codex with GPT-5.5 to review code and ship improvements, allowing them to get substantive feedback in minutes instead of hours.",
-    "content": "How Ramp engineers use Codex with GPT-5.5 to review code and ship improvements, allowing them to get substantive feedback in minutes instead of hours.",
+    "summary": "An OpenAI model solved the 80-year-old unit distance problem, disproving a major conjecture in discrete geometry and marking a milestone in AI-driven mathematics.",
+    "content": "An OpenAI model solved the 80-year-old unit distance problem, disproving a major conjecture in discrete geometry and marking a milestone in AI-driven mathematics.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -2134,6 +2200,28 @@
     "source_url": "https://www.amazon.science/index.rss"
   },
   {
+    "id": "provider-a1fd3050e456e69db2",
+    "company": "OpenAI",
+    "title": "How business operations teams use Codex",
+    "url": "https://openai.com/academy/codex-for-work/how-business-operations-teams-use-codex",
+    "published_at": "2026-05-15T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "See how business operations teams can use Codex to create initiative briefs, strategy updates, leadership decision packets, progress updates, and more from real work inputs.",
+    "content": "See how business operations teams can use Codex to create initiative briefs, strategy updates, leadership decision packets, progress updates, and more from real work inputs.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-fc541baa18acce0369",
+    "company": "OpenAI",
+    "title": "Databricks brings GPT-5.5 to enterprise agent workflows",
+    "url": "https://openai.com/index/databricks",
+    "published_at": "2026-05-15T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Databricks uses GPT-5.5 for enterprise agent workflows after the model set a new state of the art on the OfficeQA Pro benchmark.",
+    "content": "Databricks uses GPT-5.5 for enterprise agent workflows after the model set a new state of the art on the OfficeQA Pro benchmark.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
     "id": "provider-011d5d09fe62148621",
     "company": "OpenAI",
     "title": "A new personal finance experience in ChatGPT",
@@ -2164,28 +2252,6 @@
     "source_type": "rss_official",
     "summary": "See how data science teams can use Codex to build root-cause briefs, impact readouts, KPI memos, scoped analyses, and dashboard specs from real work inputs.",
     "content": "See how data science teams can use Codex to build root-cause briefs, impact readouts, KPI memos, scoped analyses, and dashboard specs from real work inputs.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
-    "id": "provider-fc541baa18acce0369",
-    "company": "OpenAI",
-    "title": "Databricks brings GPT-5.5 to enterprise agent workflows",
-    "url": "https://openai.com/index/databricks",
-    "published_at": "2026-05-15T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Databricks uses GPT-5.5 for enterprise agent workflows after the model set a new state of the art on the OfficeQA Pro benchmark.",
-    "content": "Databricks uses GPT-5.5 for enterprise agent workflows after the model set a new state of the art on the OfficeQA Pro benchmark.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
-    "id": "provider-a1fd3050e456e69db2",
-    "company": "OpenAI",
-    "title": "How business operations teams use Codex",
-    "url": "https://openai.com/academy/codex-for-work/how-business-operations-teams-use-codex",
-    "published_at": "2026-05-15T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "See how business operations teams can use Codex to create initiative briefs, strategy updates, leadership decision packets, progress updates, and more from real work inputs.",
-    "content": "See how business operations teams can use Codex to create initiative briefs, strategy updates, leadership decision packets, progress updates, and more from real work inputs.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -2343,17 +2409,6 @@
     "source_url": "https://deepmind.google/blog/rss.xml"
   },
   {
-    "id": "provider-e8da3943deffe32438",
-    "company": "OpenAI",
-    "title": "What Parameter Golf taught us about AI-assisted research",
-    "url": "https://openai.com/index/what-parameter-golf-taught-us",
-    "published_at": "2026-05-12T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Parameter Golf brought together 1,000+ participants and 2,000+ submissions to explore AI-assisted machine learning research, coding agents, quantization, and novel model design under strict constraints.",
-    "content": "Parameter Golf brought together 1,000+ participants and 2,000+ submissions to explore AI-assisted machine learning research, coding agents, quantization, and novel model design under strict constraints.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-b00fe951101c9ae1a0",
     "company": "OpenAI",
     "title": "AutoScout24 scales engineering with AI-powered workflows",
@@ -2373,6 +2428,17 @@
     "source_type": "rss_official",
     "summary": "Teams use Codex with GPT-5.5 to ship production systems and turn research ideas into runnable experiments.",
     "content": "Teams use Codex with GPT-5.5 to ship production systems and turn research ideas into runnable experiments.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-e8da3943deffe32438",
+    "company": "OpenAI",
+    "title": "What Parameter Golf taught us about AI-assisted research",
+    "url": "https://openai.com/index/what-parameter-golf-taught-us",
+    "published_at": "2026-05-12T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Parameter Golf brought together 1,000+ participants and 2,000+ submissions to explore AI-assisted machine learning research, coding agents, quantization, and novel model design under strict constraints.",
+    "content": "Parameter Golf brought together 1,000+ participants and 2,000+ submissions to explore AI-assisted machine learning research, coding agents, quantization, and novel model design under strict constraints.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -2527,39 +2593,6 @@
     "source_type": "rss_official",
     "summary": "Explore new realtime voice models in the OpenAI API that can reason, translate, and transcribe speech, enabling more natural and intelligent voice experiences.",
     "content": "Explore new realtime voice models in the OpenAI API that can reason, translate, and transcribe speech, enabling more natural and intelligent voice experiences.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
-    "id": "provider-bf1d1d6fe453d247d3",
-    "company": "OpenAI",
-    "title": "Testing ads in ChatGPT",
-    "url": "https://openai.com/index/testing-ads-in-chatgpt",
-    "published_at": "2026-05-07T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "OpenAI begins testing ads in ChatGPT to support free access, with clear labeling, answer independence, strong privacy protections, and user control.",
-    "content": "OpenAI begins testing ads in ChatGPT to support free access, with clear labeling, answer independence, strong privacy protections, and user control.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
-    "id": "provider-1f3eca02952c97572e",
-    "company": "OpenAI",
-    "title": "Introducing Trusted Contact in ChatGPT",
-    "url": "https://openai.com/index/introducing-trusted-contact-in-chatgpt",
-    "published_at": "2026-05-07T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Introducing Trusted Contact in ChatGPT, an optional safety feature that notifies someone you trust if serious self-harm concerns are detected.",
-    "content": "Introducing Trusted Contact in ChatGPT, an optional safety feature that notifies someone you trust if serious self-harm concerns are detected.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
-    "id": "provider-ceece6528b1b6e8fe2",
-    "company": "OpenAI",
-    "title": "Simplex rethinks software development with Codex",
-    "url": "https://openai.com/index/simplex",
-    "published_at": "2026-05-07T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Simplex boosts software development with ChatGPT Enterprise and Codex, reducing design, build, and testing time while scaling AI-driven workflows.",
-    "content": "Simplex boosts software development with ChatGPT Enterprise and Codex, reducing design, build, and testing time while scaling AI-driven workflows.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -2737,17 +2770,6 @@
     "summary": "Researching the path to AI-augmented care and development of an AI co-clinician.",
     "content": "Researching the path to AI-augmented care and development of an AI co-clinician.",
     "source_url": "https://deepmind.google/blog/rss.xml"
-  },
-  {
-    "id": "provider-37626dff59575ae14d",
-    "company": "IBM Research",
-    "title": "AI-powered design comes to high-speed racing",
-    "url": "https://research.ibm.com/blog/dallara-ai-accelerated-simulation?utm_medium=rss&utm_source=rss",
-    "published_at": "2026-04-30T10:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "IBM and Dallara are exploring how physics-based AI and quantum computing could improve the design of race cars and every day vehicles",
-    "content": "IBM and Dallara are exploring how physics-based AI and quantum computing could improve the design of race cars and every day vehicles",
-    "source_url": "https://research.ibm.com/rss"
   },
   {
     "id": "provider-57a1ccb589459feecc",
@@ -4064,28 +4086,6 @@
     "title": "Architectural Choices in China's Open-Source AI Ecosystem: Building Beyond DeepSeek",
     "url": "https://huggingface.co/blog/huggingface/one-year-since-the-deepseek-moment-blog-2",
     "published_at": "2026-01-27T15:01:45.000Z",
-    "source_type": "rss_official",
-    "summary": "",
-    "content": "",
-    "source_url": "https://huggingface.co/blog/feed.xml"
-  },
-  {
-    "id": "provider-2e943a65230d35782b",
-    "company": "Hugging Face",
-    "title": "Alyah ⭐️: Toward Robust Evaluation of Emirati Dialect Capabilities in Arabic LLMs",
-    "url": "https://huggingface.co/blog/tiiuae/emirati-benchmarks",
-    "published_at": "2026-01-27T10:26:42.000Z",
-    "source_type": "rss_official",
-    "summary": "",
-    "content": "",
-    "source_url": "https://huggingface.co/blog/feed.xml"
-  },
-  {
-    "id": "provider-6a4a2fbd5c05b06c2f",
-    "company": "Hugging Face",
-    "title": "Unlocking Agentic RL Training for GPT-OSS: A Practical Retrospective",
-    "url": "https://huggingface.co/blog/LinkedIn/gpt-oss-agentic-rl",
-    "published_at": "2026-01-27T01:53:15.000Z",
     "source_type": "rss_official",
     "summary": "",
     "content": "",
