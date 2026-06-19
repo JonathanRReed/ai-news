@@ -33,6 +33,7 @@ const entities = deriveEntities(article);
 const minutes = readingMinutes(article);
 const dateLabel = new Intl.DateTimeFormat("en-US", { month: "long", day: "numeric", year: "numeric" }).format(new Date(article.published_at));
 const seoDateLabel = new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", year: "numeric" }).format(new Date(article.published_at));
+const shortDateFormatter = new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", year: "numeric" });
 
 function cleanText(text: string): string {
   return text.replace(/\s+/g, " ").trim();
@@ -69,6 +70,24 @@ function articleMetaDescription(currentArticle: Article, currentExcerpt: string,
   );
 }
 
+function articlePath(currentArticle: Article): string {
+  return `/article/${currentArticle.id}/`;
+}
+
+function absoluteArticleUrl(currentArticle: Article): string {
+  return `${siteUrl}${articlePath(currentArticle)}`;
+}
+
+function articleTimestamp(currentArticle: Article): number {
+  const time = new Date(currentArticle.published_at).getTime();
+  return Number.isNaN(time) ? 0 : time;
+}
+
+function shortDate(value: string): string {
+  const date = new Date(value);
+  return Number.isNaN(date.getTime()) ? "Undated" : shortDateFormatter.format(date);
+}
+
 const excerpt = cleanText(article.summary || article.content || "");
 const defaultTitleCounts = new Map<string, number>();
 for (const currentArticle of allArticles) {
@@ -79,6 +98,22 @@ const defaultTitle = articlePageTitle(article, "", false);
 const includeDateInTitle = (defaultTitleCounts.get(defaultTitle) ?? 0) > 1;
 const description = articleMetaDescription(article, excerpt, seoDateLabel);
 const title = articlePageTitle(article, seoDateLabel, includeDateInTitle);
+const articleTimeline = [...allArticles].sort((a, b) => articleTimestamp(b) - articleTimestamp(a));
+const currentArticleIndex = articleTimeline.findIndex((currentArticle) => currentArticle.id === article.id);
+const relatedArticleIds = new Set<string>();
+const nearbyArticles = [-2, -1, 1, 2]
+  .map((offset) => {
+    if (currentArticleIndex < 0 || articleTimeline.length < 2) return null;
+    const index = (currentArticleIndex + offset + articleTimeline.length) % articleTimeline.length;
+    return articleTimeline[index] ?? null;
+  })
+  .filter((currentArticle): currentArticle is Article => {
+    if (!currentArticle || currentArticle.id === article.id || relatedArticleIds.has(currentArticle.id)) {
+      return false;
+    }
+    relatedArticleIds.add(currentArticle.id);
+    return true;
+  });
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -92,6 +127,7 @@ const structuredData = {
   description,
   ...(topics.length ? { keywords: topics.map(topicLabel).join(", ") } : {}),
   author: { "@type": "Organization", name: article.company },
+  ...(nearbyArticles.length ? { relatedLink: nearbyArticles.map(absoluteArticleUrl) } : {}),
   publisher: {
     "@type": "Organization",
     name: "AI News Hub",
@@ -148,6 +184,23 @@ const structuredData = {
       <p class="micro-label mt-10 max-w-2xl leading-relaxed text-muted">
         AI News Hub links to primary sources. This page shows the publisher&apos;s own title and excerpt with a link to the full article. We point you at the news; we don&apos;t rewrite it.
       </p>
+
+      {nearbyArticles.length > 0 && (
+        <nav class="mt-10 border-t border-white/15 pt-6" aria-label="More AI News Hub source pages">
+          <h2 class="micro-label text-text-2">More source pages</h2>
+          <ul class="mt-4 space-y-3">
+            {nearbyArticles.map((relatedArticle) => (
+              <li>
+                <a href={articlePath(relatedArticle)} class="block border border-white/15 p-3 transition-colors hover:border-brand/60 focus-industrial">
+                  <span class="micro-label text-brand-hover">{relatedArticle.company}</span>
+                  <span class="mt-1 block text-sm font-bold leading-snug text-white text-pretty">{relatedArticle.title}</span>
+                  <time class="micro-label mt-1 block text-text-2" datetime={relatedArticle.published_at}>{shortDate(relatedArticle.published_at)}</time>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )}
     </article>
   </main>
 </Layout>
