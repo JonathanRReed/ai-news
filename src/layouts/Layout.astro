@@ -15,6 +15,7 @@ export interface Props {
   bodyClass?: string;
   structuredData?: Record<string, unknown> | Array<Record<string, unknown>>;
   preloadImage?: string;
+  preloadImages?: string[];
 }
 
 const {
@@ -30,9 +31,12 @@ const {
   bodyClass = "bg-bg-0 text-text-1 font-sans min-h-screen flex flex-col",
   structuredData,
   preloadImage,
+  preloadImages = [],
 } = Astro.props;
 
 const jsonLdBlocks = structuredData ? (Array.isArray(structuredData) ? structuredData : [structuredData]) : [];
+const headerLogoImage = "/ai_news_logo_assets/ai-news-logo-normal-transparent.png";
+const imagePreloads = Array.from(new Set([headerLogoImage, preloadImage, ...preloadImages].filter(Boolean)));
 ---
 
 <html lang="en">
@@ -71,7 +75,7 @@ const jsonLdBlocks = structuredData ? (Array.isArray(structuredData) ? structure
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="preconnect" href="https://fonts.helloworldfirm.com" />
     <link rel="preconnect" href="https://fonts.helloworldfirm.com" crossorigin />
-    {preloadImage && <link rel="preload" href={preloadImage} as="image" type="image/avif" />}
+    {imagePreloads.map((href) => <link rel="preload" href={href} as="image" />)}
     <link rel="preload" href="/global-font.css" as="style" />
     <link rel="preload" href="/global-animated-gradient.css" as="style" />
     <link rel="stylesheet" href="/global-font.css" />

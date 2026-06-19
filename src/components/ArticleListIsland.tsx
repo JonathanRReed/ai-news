@@ -141,7 +141,7 @@ function ArticleCard({
       <div className="mb-3 flex items-center gap-3 border-b border-white/[0.1] pb-3">
         {logoPath && (
           <span className={`flex shrink-0 items-center justify-center border border-white/20 bg-white ${isLead ? "h-11 w-11" : "h-9 w-9"}`}>
-            <img src={logoPath} alt={companyLogoAlt(article.company)} className={isLead ? "h-8 w-8 object-contain" : "h-6 w-6 object-contain"} loading={isLead || tier === "top" ? "eager" : "lazy"} decoding="async" width={isLead ? 32 : 24} height={isLead ? 32 : 24} />
+            <img src={logoPath} alt={companyLogoAlt(article.company)} className={isLead ? "h-8 w-8 object-contain" : "h-6 w-6 object-contain"} loading={isLead || tier === "top" ? "eager" : "lazy"} decoding="async" fetchPriority={isLead ? "high" : undefined} width={isLead ? 32 : 24} height={isLead ? 32 : 24} />
           </span>
         )}
         <span className="micro-label text-white">{article.company}</span>

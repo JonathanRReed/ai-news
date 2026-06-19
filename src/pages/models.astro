@@ -20,6 +20,7 @@ const latestPerLab = labNames
   .filter((entry): entry is { name: string; article: Article } => Boolean(entry.article));
 
 const timeline = releases.slice(0, 60);
+const leadReleaseLogo = latestPerLab[0] ? resolveCompanyLogo(latestPerLab[0].name) : "";
 
 function dateLabel(iso: string): string {
   return new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", year: "numeric" }).format(new Date(iso));
@@ -35,7 +36,7 @@ const structuredData = {
 };
 ---
 
-<Layout title={title} description={description} canonical={canonicalUrl} currentPage="models" structuredData={structuredData}>
+<Layout title={title} description={description} canonical={canonicalUrl} currentPage="models" structuredData={structuredData} preloadImages={leadReleaseLogo ? [leadReleaseLogo] : []}>
   <main id="main-content" class="industrial-shell flex-1">
     <section class="industrial-container py-10 md:py-14">
       <div class="max-w-5xl reveal-stagger">
@@ -58,7 +59,7 @@ const structuredData = {
               <div class="mb-3 flex items-center gap-3">
                 {logo && (
                   <span class="flex h-8 w-8 items-center justify-center border border-white/20 bg-white">
-                    <img src={logo} alt={companyLogoAlt(name)} width="22" height="22" class="h-[22px] w-[22px] object-contain" loading={index < 4 ? "eager" : "lazy"} decoding="async" />
+                    <img src={logo} alt={companyLogoAlt(name)} width="22" height="22" class="h-[22px] w-[22px] object-contain" loading={index < 4 ? "eager" : "lazy"} decoding="async" fetchpriority={index === 0 ? "high" : undefined} />
                   </span>
                 )}
                 <span class="micro-label text-white">{name}</span>
@@ -90,7 +91,7 @@ const structuredData = {
                 </a>
                 <div class="mt-1 flex flex-wrap items-center gap-2 font-mono text-[0.68rem] uppercase tracking-[0.06em] text-text-2">
                   <span class="inline-flex items-center gap-1.5 text-white">
-                    {logo && <img src={logo} alt={companyLogoAlt(article.company)} width="14" height="14" class="h-3.5 w-3.5 object-contain" loading={index < 5 ? "eager" : "lazy"} decoding="async" />}
+                    {logo && <img src={logo} alt={companyLogoAlt(article.company)} width="14" height="14" class="h-3.5 w-3.5 object-contain" loading={index < 5 ? "eager" : "lazy"} decoding="async" fetchpriority={index === 0 ? "high" : undefined} />}
                     {article.company}
                   </span>
                   {entities.map((entity) => <span class="border border-brand/40 px-1.5 py-0.5 text-brand-hover">{entity}</span>)}

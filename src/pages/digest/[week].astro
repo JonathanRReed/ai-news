@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import DigestView from "../../components/DigestView.astro";
 import { digestWeeks } from "../../lib/digest.js";
+import { resolveCompanyLogo } from "../../lib/companyCatalog.js";
 import type { DigestWeek } from "../../lib/digest.js";
 
 export function getStaticPaths() {
@@ -25,9 +26,10 @@ const structuredData = {
   url: canonicalUrl,
   isPartOf: { "@type": "WebSite", name: "AI News Hub", url: siteUrl },
 };
+const leadDigestLogo = digest.topStories[0] ? resolveCompanyLogo(digest.topStories[0].company) : "";
 ---
 
-<Layout title={title} description={description} canonical={canonicalUrl} currentPage="digest" structuredData={structuredData}>
+<Layout title={title} description={description} canonical={canonicalUrl} currentPage="digest" structuredData={structuredData} preloadImages={leadDigestLogo ? [leadDigestLogo] : []}>
   <main id="main-content" class="industrial-shell flex-1">
     <DigestView digest={digest} allWeeks={allWeeks} />
   </main>

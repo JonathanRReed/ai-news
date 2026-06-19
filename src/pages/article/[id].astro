@@ -139,7 +139,14 @@ const structuredData = {
 };
 ---
 
-<Layout title={title} description={description} canonical={canonicalUrl} ogType="article" structuredData={structuredData}>
+<Layout
+  title={title}
+  description={description}
+  canonical={canonicalUrl}
+  ogType="article"
+  structuredData={structuredData}
+  preloadImages={logo ? [logo] : []}
+>
   <main id="main-content" class="industrial-shell flex-1">
     <article class="industrial-container max-w-3xl py-12 md:py-16 reveal-stagger">
       <a href="/" class="micro-label inline-flex items-center gap-2 text-text-2 transition-colors hover:text-white focus-industrial">← Back to the feed</a>
@@ -147,7 +154,7 @@ const structuredData = {
       <div class="mt-8 flex items-center gap-3 border-b border-white/15 pb-5">
         {logo && (
           <span class="flex h-11 w-11 shrink-0 items-center justify-center border border-white/20 bg-white">
-            <img src={logo} alt={companyLogoAlt(article.company)} width="32" height="32" class="h-8 w-8 object-contain" />
+            <img src={logo} alt={companyLogoAlt(article.company)} width="32" height="32" class="h-8 w-8 object-contain" loading="eager" decoding="async" fetchpriority="high" />
           </span>
         )}
         <div>

@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import ArticlesIslandWrapper from "../components/ArticlesIslandWrapper.tsx";
 import providerArticles from "../../public/data/provider-articles.json";
 import { digestWeeks } from "../lib/digest.js";
+import { resolveCompanyLogo } from "../lib/companyCatalog.js";
 import type { Article } from "../types/article.js";
 
 const latestDigest = digestWeeks()[0];
@@ -51,6 +52,7 @@ const initialArticles: Article[] = (providerArticles as Article[])
     source_type: a.source_type,
     summary: a.summary ?? "",
   }));
+const leadArticleLogo = initialArticles[0] ? resolveCompanyLogo(initialArticles[0].company) : "";
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "WebSite",
@@ -110,6 +112,7 @@ const collectionStructuredData = {
   currentPage="home"
   bodyClass="bg-bg-0 text-text-1 font-sans"
   structuredData={[structuredData, collectionStructuredData]}
+  preloadImages={leadArticleLogo ? [leadArticleLogo] : []}
 >
   <main id="main-content" class="industrial-shell">
     <section class="industrial-container py-10 md:py-14">
