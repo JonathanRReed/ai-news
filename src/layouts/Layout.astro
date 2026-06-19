@@ -36,7 +36,8 @@ const {
 
 const jsonLdBlocks = structuredData ? (Array.isArray(structuredData) ? structuredData : [structuredData]) : [];
 const headerLogoImage = "/ai_news_logo_assets/ai-news-logo-normal-transparent.png";
-const imagePreloads = Array.from(new Set([headerLogoImage, preloadImage, ...preloadImages].filter(Boolean)));
+const footerLogoImage = "/ai_news_logo_assets/ai-news-logo-footer-512w.png";
+const imagePreloads = Array.from(new Set([headerLogoImage, footerLogoImage, preloadImage, ...preloadImages].filter(Boolean)));
 ---
 
 <html lang="en">
