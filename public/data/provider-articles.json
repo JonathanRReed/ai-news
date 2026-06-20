@@ -1,5 +1,16 @@
 [
   {
+    "id": "provider-f35141b6713a90751f",
+    "company": "Amazon AI",
+    "title": "Introducing Web Search on Amazon Bedrock AgentCore",
+    "url": "https://aws.amazon.com/blogs/machine-learning/introducing-web-search-on-amazon-bedrock-agentcore/",
+    "published_at": "2026-06-19T14:15:24.000Z",
+    "source_type": "rss_official",
+    "summary": "Web Search on Amazon Bedrock AgentCore is now generally available. In this post, we walk through what makes Web Search on Amazon Bedrock AgentCore different, why it matters, and how to wire it in with a few lines of code.",
+    "content": "Web Search on Amazon Bedrock AgentCore is now generally available. In this post, we walk through what makes Web Search on Amazon Bedrock AgentCore different, why it matters, and how to wire it in with a few lines of code.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
     "id": "provider-93cd1bc107b92e72ff",
     "company": "Amazon AI",
     "title": "Accelerate campaign workflow with insights from Adobe Marketing Agent for Amazon Quick",
@@ -594,17 +605,6 @@
     "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
   },
   {
-    "id": "provider-1986d6e154297615c9",
-    "company": "Amazon AI",
-    "title": "Spot trends faster, sort smarter: Unlocking Sparklines and Custom Sort in Amazon Quick",
-    "url": "https://aws.amazon.com/blogs/machine-learning/spot-trends-faster-sort-smarter-unlocking-sparklines-and-custom-sort-in-amazon-quick/",
-    "published_at": "2026-06-11T15:36:31.000Z",
-    "source_type": "rss_official",
-    "summary": "Today, we’re excited to announce two new capabilities that make Quick Sight dashboards even more expressive and business-aligned: sparklines and custom sort for controls. In this post, we walk through both features, what they are, when to use them, and how to configure them, with real-world scenarios that bring them together in a practical, decision-ready dashboard.",
-    "content": "Today, we’re excited to announce two new capabilities that make Quick Sight dashboards even more expressive and business-aligned: sparklines and custom sort for controls. In this post, we walk through both features, what they are, when to use them, and how to configure them, with real-world scenarios that bring them together in a practical, decision-ready dashboard.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
     "id": "provider-8edbaf933d27053d44",
     "company": "IBM Research",
     "title": "Can LLMs discover quantum error correction codes?",
@@ -638,14 +638,14 @@
     "source_url": "https://research.ibm.com/rss"
   },
   {
-    "id": "provider-6b45da215c922c7846",
+    "id": "provider-c3f06ceec6a17e4b54",
     "company": "OpenAI",
-    "title": "Supporting Europe’s work in ensuring a trustworthy AI ecosystem",
-    "url": "https://openai.com/index/supporting-eu-trustworthy-ai-ecosystem",
+    "title": "OpenAI to acquire Ona",
+    "url": "https://openai.com/index/openai-to-acquire-ona",
     "published_at": "2026-06-11T00:00:00.000Z",
     "source_type": "rss_official",
-    "summary": "OpenAI supports the EU Code of Practice on AI content transparency, advancing provenance standards and tools to help people understand AI-generated content.",
-    "content": "OpenAI supports the EU Code of Practice on AI content transparency, advancing provenance standards and tools to help people understand AI-generated content.",
+    "summary": "OpenAI plans to acquire Ona to expand Codex with secure, persistent cloud environments, enabling long-running AI agents across enterprise workflows.",
+    "content": "OpenAI plans to acquire Ona to expand Codex with secure, persistent cloud environments, enabling long-running AI agents across enterprise workflows.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -660,6 +660,17 @@
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
+    "id": "provider-6b45da215c922c7846",
+    "company": "OpenAI",
+    "title": "Supporting Europe’s work in ensuring a trustworthy AI ecosystem",
+    "url": "https://openai.com/index/supporting-eu-trustworthy-ai-ecosystem",
+    "published_at": "2026-06-11T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "OpenAI supports the EU Code of Practice on AI content transparency, advancing provenance standards and tools to help people understand AI-generated content.",
+    "content": "OpenAI supports the EU Code of Practice on AI content transparency, advancing provenance standards and tools to help people understand AI-generated content.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
     "id": "provider-511ab3a14c077aa0bc",
     "company": "OpenAI",
     "title": "How an astrophysicist uses Codex to help simulate black holes",
@@ -668,17 +679,6 @@
     "source_type": "rss_official",
     "summary": "Discover how astrophysicist Chi-kwan Chan uses Codex to build black hole simulations, helping scientists study extreme physics and test Einstein’s theory of general relativity.",
     "content": "Discover how astrophysicist Chi-kwan Chan uses Codex to build black hole simulations, helping scientists study extreme physics and test Einstein’s theory of general relativity.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
-    "id": "provider-c3f06ceec6a17e4b54",
-    "company": "OpenAI",
-    "title": "OpenAI to acquire Ona",
-    "url": "https://openai.com/index/openai-to-acquire-ona",
-    "published_at": "2026-06-11T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "OpenAI plans to acquire Ona to expand Codex with secure, persistent cloud environments, enabling long-running AI agents across enterprise workflows.",
-    "content": "OpenAI plans to acquire Ona to expand Codex with secure, persistent cloud environments, enabling long-running AI agents across enterprise workflows.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -1903,6 +1903,17 @@
     "source_url": "https://research.ibm.com/rss"
   },
   {
+    "id": "provider-f73b8a8a9df451169b",
+    "company": "OpenAI",
+    "title": "An OpenAI model has disproved a central conjecture in discrete geometry",
+    "url": "https://openai.com/index/model-disproves-discrete-geometry-conjecture",
+    "published_at": "2026-05-20T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "An OpenAI model solved the 80-year-old unit distance problem, disproving a major conjecture in discrete geometry and marking a milestone in AI-driven mathematics.",
+    "content": "An OpenAI model solved the 80-year-old unit distance problem, disproving a major conjecture in discrete geometry and marking a milestone in AI-driven mathematics.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
     "id": "provider-7bbc67f0d6064fdc98",
     "company": "OpenAI",
     "title": "How Ramp engineers accelerate code review with Codex",
@@ -1922,17 +1933,6 @@
     "source_type": "rss_official",
     "summary": "OpenAI advances Education for Countries, expanding AI adoption in schools with new partnerships, teacher training, and tools to improve global learning outcomes.",
     "content": "OpenAI advances Education for Countries, expanding AI adoption in schools with new partnerships, teacher training, and tools to improve global learning outcomes.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
-    "id": "provider-f73b8a8a9df451169b",
-    "company": "OpenAI",
-    "title": "An OpenAI model has disproved a central conjecture in discrete geometry",
-    "url": "https://openai.com/index/model-disproves-discrete-geometry-conjecture",
-    "published_at": "2026-05-20T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "An OpenAI model solved the 80-year-old unit distance problem, disproving a major conjecture in discrete geometry and marking a milestone in AI-driven mathematics.",
-    "content": "An OpenAI model solved the 80-year-old unit distance problem, disproving a major conjecture in discrete geometry and marking a milestone in AI-driven mathematics.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -2200,6 +2200,17 @@
     "source_url": "https://www.amazon.science/index.rss"
   },
   {
+    "id": "provider-fc541baa18acce0369",
+    "company": "OpenAI",
+    "title": "Databricks brings GPT-5.5 to enterprise agent workflows",
+    "url": "https://openai.com/index/databricks",
+    "published_at": "2026-05-15T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Databricks uses GPT-5.5 for enterprise agent workflows after the model set a new state of the art on the OfficeQA Pro benchmark.",
+    "content": "Databricks uses GPT-5.5 for enterprise agent workflows after the model set a new state of the art on the OfficeQA Pro benchmark.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
     "id": "provider-a1fd3050e456e69db2",
     "company": "OpenAI",
     "title": "How business operations teams use Codex",
@@ -2211,14 +2222,14 @@
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
-    "id": "provider-fc541baa18acce0369",
+    "id": "provider-5a42e1a49c5662b1ee",
     "company": "OpenAI",
-    "title": "Databricks brings GPT-5.5 to enterprise agent workflows",
-    "url": "https://openai.com/index/databricks",
+    "title": "How data science teams use Codex",
+    "url": "https://openai.com/academy/codex-for-work/how-data-science-teams-use-codex",
     "published_at": "2026-05-15T00:00:00.000Z",
     "source_type": "rss_official",
-    "summary": "Databricks uses GPT-5.5 for enterprise agent workflows after the model set a new state of the art on the OfficeQA Pro benchmark.",
-    "content": "Databricks uses GPT-5.5 for enterprise agent workflows after the model set a new state of the art on the OfficeQA Pro benchmark.",
+    "summary": "See how data science teams can use Codex to build root-cause briefs, impact readouts, KPI memos, scoped analyses, and dashboard specs from real work inputs.",
+    "content": "See how data science teams can use Codex to build root-cause briefs, impact readouts, KPI memos, scoped analyses, and dashboard specs from real work inputs.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -2241,17 +2252,6 @@
     "source_type": "rss_official",
     "summary": "See how sales teams can use ChatGPT Codex to create pipeline briefs, meeting prep packets, forecast reviews, account plans, and stalled-deal diagnoses from real work inputs.",
     "content": "See how sales teams can use ChatGPT Codex to create pipeline briefs, meeting prep packets, forecast reviews, account plans, and stalled-deal diagnoses from real work inputs.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
-    "id": "provider-5a42e1a49c5662b1ee",
-    "company": "OpenAI",
-    "title": "How data science teams use Codex",
-    "url": "https://openai.com/academy/codex-for-work/how-data-science-teams-use-codex",
-    "published_at": "2026-05-15T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "See how data science teams can use Codex to build root-cause briefs, impact readouts, KPI memos, scoped analyses, and dashboard specs from real work inputs.",
-    "content": "See how data science teams can use Codex to build root-cause briefs, impact readouts, KPI memos, scoped analyses, and dashboard specs from real work inputs.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -2409,6 +2409,17 @@
     "source_url": "https://deepmind.google/blog/rss.xml"
   },
   {
+    "id": "provider-e8da3943deffe32438",
+    "company": "OpenAI",
+    "title": "What Parameter Golf taught us about AI-assisted research",
+    "url": "https://openai.com/index/what-parameter-golf-taught-us",
+    "published_at": "2026-05-12T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Parameter Golf brought together 1,000+ participants and 2,000+ submissions to explore AI-assisted machine learning research, coding agents, quantization, and novel model design under strict constraints.",
+    "content": "Parameter Golf brought together 1,000+ participants and 2,000+ submissions to explore AI-assisted machine learning research, coding agents, quantization, and novel model design under strict constraints.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
     "id": "provider-b00fe951101c9ae1a0",
     "company": "OpenAI",
     "title": "AutoScout24 scales engineering with AI-powered workflows",
@@ -2428,17 +2439,6 @@
     "source_type": "rss_official",
     "summary": "Teams use Codex with GPT-5.5 to ship production systems and turn research ideas into runnable experiments.",
     "content": "Teams use Codex with GPT-5.5 to ship production systems and turn research ideas into runnable experiments.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
-    "id": "provider-e8da3943deffe32438",
-    "company": "OpenAI",
-    "title": "What Parameter Golf taught us about AI-assisted research",
-    "url": "https://openai.com/index/what-parameter-golf-taught-us",
-    "published_at": "2026-05-12T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Parameter Golf brought together 1,000+ participants and 2,000+ submissions to explore AI-assisted machine learning research, coding agents, quantization, and novel model design under strict constraints.",
-    "content": "Parameter Golf brought together 1,000+ participants and 2,000+ submissions to explore AI-assisted machine learning research, coding agents, quantization, and novel model design under strict constraints.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -2475,17 +2475,6 @@
     "source_url": "https://research.ibm.com/rss"
   },
   {
-    "id": "provider-211e79df771f8db4a0",
-    "company": "OpenAI",
-    "title": "How enterprises are scaling AI",
-    "url": "https://openai.com/business/guides-and-resources/how-enterprises-are-scaling-ai",
-    "published_at": "2026-05-11T10:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "How enterprises scale AI: from early experiments to compounding impact through trust, governance, workflow design, and quality at scale.",
-    "content": "How enterprises scale AI: from early experiments to compounding impact through trust, governance, workflow design, and quality at scale.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-a0cf8bba9050a06e49",
     "company": "OpenAI",
     "title": "OpenAI Campus Network: Student club interest form",
@@ -2494,6 +2483,17 @@
     "source_type": "rss_official",
     "summary": "Join the OpenAI Campus Network—connect student clubs worldwide, access AI tools, host events, and build an AI-powered campus community.",
     "content": "Join the OpenAI Campus Network—connect student clubs worldwide, access AI tools, host events, and build an AI-powered campus community.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-211e79df771f8db4a0",
+    "company": "OpenAI",
+    "title": "How enterprises are scaling AI",
+    "url": "https://openai.com/business/guides-and-resources/how-enterprises-are-scaling-ai",
+    "published_at": "2026-05-11T10:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "How enterprises scale AI: from early experiments to compounding impact through trust, governance, workflow design, and quality at scale.",
+    "content": "How enterprises scale AI: from early experiments to compounding impact through trust, governance, workflow design, and quality at scale.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
