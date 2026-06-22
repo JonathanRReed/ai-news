@@ -1,5 +1,126 @@
 [
   {
+    "id": "provider-84c007c77a36d3d5ac",
+    "company": "NVIDIA AI",
+    "title": "Enable Real-Time AI for High-Speed Data Acquisition with DAQIRI",
+    "url": "https://developer.nvidia.com/blog/enable-real-time-ai-for-high-speed-data-acquisition-with-daqiri/",
+    "published_at": "2026-06-22T15:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "When AlphaFold2 revolutionized drug discovery in 2020, its success relied entirely on the roughly 170,000 protein structures collected by scientists since 1971...",
+    "content": "When AlphaFold2 revolutionized drug discovery in 2020, its success relied entirely on the roughly 170,000 protein structures collected by scientists since 1971...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
+  },
+  {
+    "id": "provider-e6c40040a17515d633",
+    "company": "Hugging Face",
+    "title": "PP-OCRv6 on Hugging Face: 50-Language OCR from 1.5M to 34.5M Parameters",
+    "url": "https://huggingface.co/blog/PaddlePaddle/pp-ocrv6",
+    "published_at": "2026-06-22T13:18:56.000Z",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://huggingface.co/blog/feed.xml"
+  },
+  {
+    "id": "provider-c40fb5d14685ca4c18",
+    "company": "NVIDIA AI",
+    "title": "At ISC, JUPITER Shows What Exascale Science Looks Like",
+    "url": "https://blogs.nvidia.com/blog/jupiter-exascale-supercomputing-science/",
+    "published_at": "2026-06-22T13:00:48.000Z",
+    "source_type": "rss_official",
+    "summary": "JUPITER, Europe’s first exascale supercomputer at Germany’s Forschungszentrum Jülich, runs on NVIDIA Grace Hopper Superchips and NVIDIA Quantum-X800 InfiniBand networking — and it’s had a busy year. As the international supercomputing community gathers at ISC in Hamburg this week, four projects running on JUPITER point to what exascale computing can actually do: map the human […]",
+    "content": "JUPITER, Europe’s first exascale supercomputer at Germany’s Forschungszentrum Jülich, runs on NVIDIA Grace Hopper Superchips and NVIDIA Quantum-X800 InfiniBand networking — and it’s had a busy year. As the international supercomputing community gathers at ISC in Hamburg this week, four projects running on JUPITER point to what exascale computing can actually do: map the human […]",
+    "source_url": "https://blogs.nvidia.com/feed/"
+  },
+  {
+    "id": "provider-326cab39e546ba6bd5",
+    "company": "NVIDIA AI",
+    "title": "NAIRR Science Program Reshapes Scientific Research, Powered by NVIDIA AI Infrastructure",
+    "url": "https://blogs.nvidia.com/blog/nairr-scientific-research-ai-infrastructure/",
+    "published_at": "2026-06-22T13:00:38.000Z",
+    "source_type": "rss_official",
+    "summary": "For the past two years, the U.S. National Science Foundation’s National Artificial Intelligence Research Resource (NAIRR) pilot program has driven innovative research across the U.S. for over 700 projects — spanning protein prediction and infectious disease outbreak management. NVIDIA contributed to the NAIRR pilot through a cloud-based resource that gives researchers dedicated access to a […]",
+    "content": "For the past two years, the U.S. National Science Foundation’s National Artificial Intelligence Research Resource (NAIRR) pilot program has driven innovative research across the U.S. for over 700 projects — spanning protein prediction and infectious disease outbreak management. NVIDIA contributed to the NAIRR pilot through a cloud-based resource that gives researchers dedicated access to a […]",
+    "source_url": "https://blogs.nvidia.com/feed/"
+  },
+  {
+    "id": "provider-d8a2414e25ccef2704",
+    "company": "NVIDIA AI",
+    "title": "From Materials Simulation to Experimental Astronomy, New NVIDIA AI Software Unlocks Scientific Discoveries",
+    "url": "https://blogs.nvidia.com/blog/ai-for-science-software-cuda/",
+    "published_at": "2026-06-22T13:00:20.000Z",
+    "source_type": "rss_official",
+    "summary": "At the ISC conference running in Hamburg this week, NVIDIA is introducing new software that speeds AI for science, from chemistry and materials discovery to the search for dark matter. The NVIDIA DAQIRI library and new NVIDIA ALCHEMI NIM microservices — as well as the NVIDIA cuPhoton reference code, coming soon — turn work that […]",
+    "content": "At the ISC conference running in Hamburg this week, NVIDIA is introducing new software that speeds AI for science, from chemistry and materials discovery to the search for dark matter. The NVIDIA DAQIRI library and new NVIDIA ALCHEMI NIM microservices — as well as the NVIDIA cuPhoton reference code, coming soon — turn work that […]",
+    "source_url": "https://blogs.nvidia.com/feed/"
+  },
+  {
+    "id": "provider-51202cf84b2250b36e",
+    "company": "NVIDIA AI",
+    "title": "NVIDIA Vera CPU Opens the Way for Agentic Scientific AI at Los Alamos National Laboratory",
+    "url": "https://blogs.nvidia.com/blog/nvidia-vera-cpu-los-alamos-national-laboratory/",
+    "published_at": "2026-06-22T13:00:20.000Z",
+    "source_type": "rss_official",
+    "summary": "Mission, Vision and Veritas — new Los Alamos National Laboratory (LANL) supercomputers to be built with HPE and NVIDIA — are tapping NVIDIA Vera CPUs to accelerate scientific discovery, unlocking agentic AI for science. The supercomputers will use the HPE Cray Supercomputing GX5000 architecture with the NVIDIA Vera Rubin platform, combining NVIDIA Vera CPUs, NVIDIA […]",
+    "content": "Mission, Vision and Veritas — new Los Alamos National Laboratory (LANL) supercomputers to be built with HPE and NVIDIA — are tapping NVIDIA Vera CPUs to accelerate scientific discovery, unlocking agentic AI for science. The supercomputers will use the HPE Cray Supercomputing GX5000 architecture with the NVIDIA Vera Rubin platform, combining NVIDIA Vera CPUs, NVIDIA […]",
+    "source_url": "https://blogs.nvidia.com/feed/"
+  },
+  {
+    "id": "provider-41122b3642227f6529",
+    "company": "NVIDIA AI",
+    "title": "Eco Wave Power Turns Waves Into Watts With NVIDIA AI Infrastructure and Digital Twins",
+    "url": "https://blogs.nvidia.com/blog/eco-wave-power-ai-digital-twins/",
+    "published_at": "2026-06-22T13:00:13.000Z",
+    "source_type": "rss_official",
+    "summary": "The next era of AI will not be defined by compute alone. Its growth will be determined by energy. As accelerated computing scales across AI factories, agentic AI, industrial AI, edge computing and physical AI — including robotics and autonomous systems — global electricity demand is rising at unprecedented speed. In many regions, expanding grid […]",
+    "content": "The next era of AI will not be defined by compute alone. Its growth will be determined by energy. As accelerated computing scales across AI factories, agentic AI, industrial AI, edge computing and physical AI — including robotics and autonomous systems — global electricity demand is rising at unprecedented speed. In many regions, expanding grid […]",
+    "source_url": "https://blogs.nvidia.com/feed/"
+  },
+  {
+    "id": "provider-74b46840f981e34d28",
+    "company": "NVIDIA AI",
+    "title": "Inside NVIDIA Halos for Robotics: A Full-Stack Functional Safety System for Physical AI",
+    "url": "https://developer.nvidia.com/blog/inside-nvidia-halos-for-robotics-a-full-stack-functional-safety-system-for-physical-ai/",
+    "published_at": "2026-06-22T13:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Physical AI—robots working autonomously alongside people in factories, warehouses, hospitals, and homes—is arriving faster than most expected. Traditional...",
+    "content": "Physical AI—robots working autonomously alongside people in factories, warehouses, hospitals, and homes—is arriving faster than most expected. Traditional...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
+  },
+  {
+    "id": "provider-7644cff51da85ccc99",
+    "company": "IBM Research",
+    "title": "Explore next-gen quantum algorithms with IBM Quantum Credits",
+    "url": "https://research.ibm.com/blog/credits-recipients?utm_medium=rss&utm_source=rss",
+    "published_at": "2026-06-22T12:45:00.000Z",
+    "source_type": "rss_official",
+    "summary": "See how top researchers used IBM Quantum Credits to develop new methods that extend today’s quantum hardware.",
+    "content": "See how top researchers used IBM Quantum Credits to develop new methods that extend today’s quantum hardware.",
+    "source_url": "https://research.ibm.com/rss"
+  },
+  {
+    "id": "provider-49c338e18f5ac6bbbc",
+    "company": "NVIDIA AI",
+    "title": "Hotter Than a Hot Tub: The 45°C Breakthrough to Cool AI’s Biggest Machines",
+    "url": "https://blogs.nvidia.com/blog/liquid-cooling-ai-factories/",
+    "published_at": "2026-06-22T05:00:22.000Z",
+    "source_type": "rss_official",
+    "summary": "Hot tubs sit at about 38 to 40 degrees Celsius, warm enough that most people can only soak for about 15 minutes. NVIDIA’s newest AI servers can run their cooling liquid even hotter — up to 45 degrees Celsius, or 113 degrees Fahrenheit. That higher temperature limit is precisely what makes them more energy efficient. […]",
+    "content": "Hot tubs sit at about 38 to 40 degrees Celsius, warm enough that most people can only soak for about 15 minutes. NVIDIA’s newest AI servers can run their cooling liquid even hotter — up to 45 degrees Celsius, or 113 degrees Fahrenheit. That higher temperature limit is precisely what makes them more energy efficient. […]",
+    "source_url": "https://blogs.nvidia.com/feed/"
+  },
+  {
+    "id": "provider-d961da14bafdeb4fb0",
+    "company": "OpenAI",
+    "title": "Samsung Electronics brings ChatGPT and Codex to employees",
+    "url": "https://openai.com/index/samsung-electronics-chatgpt-codex-deployment",
+    "published_at": "2026-06-21T23:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Samsung Electronics deploys ChatGPT Enterprise and Codex to employees worldwide, marking one of OpenAI’s largest enterprise AI rollouts.",
+    "content": "Samsung Electronics deploys ChatGPT Enterprise and Codex to employees worldwide, marking one of OpenAI’s largest enterprise AI rollouts.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
     "id": "provider-f35141b6713a90751f",
     "company": "Amazon AI",
     "title": "Introducing Web Search on Amazon Bedrock AgentCore",
@@ -638,17 +759,6 @@
     "source_url": "https://research.ibm.com/rss"
   },
   {
-    "id": "provider-c3f06ceec6a17e4b54",
-    "company": "OpenAI",
-    "title": "OpenAI to acquire Ona",
-    "url": "https://openai.com/index/openai-to-acquire-ona",
-    "published_at": "2026-06-11T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "OpenAI plans to acquire Ona to expand Codex with secure, persistent cloud environments, enabling long-running AI agents across enterprise workflows.",
-    "content": "OpenAI plans to acquire Ona to expand Codex with secure, persistent cloud environments, enabling long-running AI agents across enterprise workflows.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-53f9d319e8ae0bb1f1",
     "company": "OpenAI",
     "title": "BBVA puts AI at the core of banking with OpenAI",
@@ -660,17 +770,6 @@
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
-    "id": "provider-6b45da215c922c7846",
-    "company": "OpenAI",
-    "title": "Supporting Europe’s work in ensuring a trustworthy AI ecosystem",
-    "url": "https://openai.com/index/supporting-eu-trustworthy-ai-ecosystem",
-    "published_at": "2026-06-11T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "OpenAI supports the EU Code of Practice on AI content transparency, advancing provenance standards and tools to help people understand AI-generated content.",
-    "content": "OpenAI supports the EU Code of Practice on AI content transparency, advancing provenance standards and tools to help people understand AI-generated content.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-511ab3a14c077aa0bc",
     "company": "OpenAI",
     "title": "How an astrophysicist uses Codex to help simulate black holes",
@@ -679,6 +778,28 @@
     "source_type": "rss_official",
     "summary": "Discover how astrophysicist Chi-kwan Chan uses Codex to build black hole simulations, helping scientists study extreme physics and test Einstein’s theory of general relativity.",
     "content": "Discover how astrophysicist Chi-kwan Chan uses Codex to build black hole simulations, helping scientists study extreme physics and test Einstein’s theory of general relativity.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-c3f06ceec6a17e4b54",
+    "company": "OpenAI",
+    "title": "OpenAI to acquire Ona",
+    "url": "https://openai.com/index/openai-to-acquire-ona",
+    "published_at": "2026-06-11T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "OpenAI plans to acquire Ona to expand Codex with secure, persistent cloud environments, enabling long-running AI agents across enterprise workflows.",
+    "content": "OpenAI plans to acquire Ona to expand Codex with secure, persistent cloud environments, enabling long-running AI agents across enterprise workflows.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-6b45da215c922c7846",
+    "company": "OpenAI",
+    "title": "Supporting Europe’s work in ensuring a trustworthy AI ecosystem",
+    "url": "https://openai.com/index/supporting-eu-trustworthy-ai-ecosystem",
+    "published_at": "2026-06-11T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "OpenAI supports the EU Code of Practice on AI content transparency, advancing provenance standards and tools to help people understand AI-generated content.",
+    "content": "OpenAI supports the EU Code of Practice on AI content transparency, advancing provenance standards and tools to help people understand AI-generated content.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -801,17 +922,6 @@
     "summary": "See how LSEG uses OpenAI to scale trusted AI across its global business, accelerating insights, shrinking release cycles, and empowering 4,000 employees.",
     "content": "See how LSEG uses OpenAI to scale trusted AI across its global business, accelerating insights, shrinking release cycles, and empowering 4,000 employees.",
     "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
-    "id": "provider-55248bae2de8455620",
-    "company": "NVIDIA AI",
-    "title": "NVIDIA Confidential Computing to Help Expand Apple’s Private Cloud Compute",
-    "url": "https://blogs.nvidia.com/blog/nvidia-confidential-computing-apple-private-cloud-compute/",
-    "published_at": "2026-06-09T22:34:27.000Z",
-    "source_type": "rss_official",
-    "summary": "NVIDIA GPUs with Confidential Computing are now used for confidential inference in Apple’s Private Cloud Compute (PCC), as it expands beyond Apple’s data centers to Google Cloud. Unveiled during Apple’s annual WWDC gathering for developers from around the globe, NVIDIA GPUs will support server-side inference for Apple Foundation Models, custom-built by Apple and Google, leveraging […]",
-    "content": "NVIDIA GPUs with Confidential Computing are now used for confidential inference in Apple’s Private Cloud Compute (PCC), as it expands beyond Apple’s data centers to Google Cloud. Unveiled during Apple’s annual WWDC gathering for developers from around the globe, NVIDIA GPUs will support server-side inference for Apple Foundation Models, custom-built by Apple and Google, leveraging […]",
-    "source_url": "https://blogs.nvidia.com/feed/"
   },
   {
     "id": "provider-682086c8e651b53340",
@@ -1012,28 +1122,6 @@
     "source_url": "https://deepmind.google/blog/rss.xml"
   },
   {
-    "id": "provider-082eb6bf05d827eeb6",
-    "company": "NVIDIA AI",
-    "title": "How the UK Is Turning Sovereign AI Ambition Into Action With NVIDIA Technologies",
-    "url": "https://blogs.nvidia.com/blog/uk-sovereign-ai-advancements/",
-    "published_at": "2026-06-08T06:00:57.000Z",
-    "source_type": "rss_official",
-    "summary": "A year ago at London Tech Week, NVIDIA founder and CEO Jensen Huang and U.K. Prime Minister Keir Starmer made a declaration: the U.K. would be an AI maker, not an AI taker. At this year’s event, NVIDIA and its partners are showcasing how that commitment is producing real momentum across the nation’s infrastructure, startups […]",
-    "content": "A year ago at London Tech Week, NVIDIA founder and CEO Jensen Huang and U.K. Prime Minister Keir Starmer made a declaration: the U.K. would be an AI maker, not an AI taker. At this year’s event, NVIDIA and its partners are showcasing how that commitment is producing real momentum across the nation’s infrastructure, startups […]",
-    "source_url": "https://blogs.nvidia.com/feed/"
-  },
-  {
-    "id": "provider-e84f3bbcc49f98def6",
-    "company": "NVIDIA AI",
-    "title": "NVIDIA and LG Group Build an AI Factory to Advance Physical AI, Mobility and AI Infrastructure",
-    "url": "https://blogs.nvidia.com/blog/nvidia-and-lg-group-ai-factory/",
-    "published_at": "2026-06-08T03:00:50.000Z",
-    "source_type": "rss_official",
-    "summary": "NVIDIA and LG Group are building an AI factory to accelerate LG Group’s next wave of AI-driven businesses, spanning robotics, autonomous driving, data center technologies and GPU cloud services. The AI factory will provide LG Group with accelerated computing infrastructure to train, simulate, validate and deploy AI-based applications across its key businesses. The collaboration brings […]",
-    "content": "NVIDIA and LG Group are building an AI factory to accelerate LG Group’s next wave of AI-driven businesses, spanning robotics, autonomous driving, data center technologies and GPU cloud services. The AI factory will provide LG Group with accelerated computing infrastructure to train, simulate, validate and deploy AI-based applications across its key businesses. The collaboration brings […]",
-    "source_url": "https://blogs.nvidia.com/feed/"
-  },
-  {
     "id": "provider-3715814820eecbfd63",
     "company": "OpenAI",
     "title": "Built to benefit everyone: our plan",
@@ -1065,39 +1153,6 @@
     "summary": "",
     "content": "",
     "source_url": "https://huggingface.co/blog/feed.xml"
-  },
-  {
-    "id": "provider-ccf14eddfe9c06ca46",
-    "company": "NVIDIA AI",
-    "title": "NVIDIA and Doosan Group Collaborate to Advance Physical AI and AI Factory Infrastructure",
-    "url": "https://blogs.nvidia.com/blog/nvidia-and-doosan-group-physical-ai/",
-    "published_at": "2026-06-07T23:00:36.000Z",
-    "source_type": "rss_official",
-    "summary": "NVIDIA and Doosan Group are expanding their collaboration to advance new opportunities across physical AI, robotics and AI factory infrastructure, spanning Doosan Robotics, Doosan Bobcat, Doosan Enerbility and Doosan Corporation Electro-Materials BG. The collaboration will bring together NVIDIA’s full-stack accelerated computing platforms with Doosan Group’s capabilities in industrial automation, power generation and advanced electronics materials […]",
-    "content": "NVIDIA and Doosan Group are expanding their collaboration to advance new opportunities across physical AI, robotics and AI factory infrastructure, spanning Doosan Robotics, Doosan Bobcat, Doosan Enerbility and Doosan Corporation Electro-Materials BG. The collaboration will bring together NVIDIA’s full-stack accelerated computing platforms with Doosan Group’s capabilities in industrial automation, power generation and advanced electronics materials […]",
-    "source_url": "https://blogs.nvidia.com/feed/"
-  },
-  {
-    "id": "provider-2783ef2671b397eb62",
-    "company": "NVIDIA AI",
-    "title": "NVIDIA, KRAFTON, NC and Reigning ‘League of Legends’ Champions T1 Celebrate RTX Spark at Korea’s PC Bangs",
-    "url": "https://blogs.nvidia.com/blog/krafton-nc-t1-korea-gaming-pc-bang-rtx-spark/",
-    "published_at": "2026-06-07T07:00:15.000Z",
-    "source_type": "rss_official",
-    "summary": "At GTC Taipei at COMPUTEX last week, NVIDIA unveiled RTX Spark, the superchip that reinvents Windows PCs for the era of personal AI agents. On the heels of this announcement, NVIDIA founder and CEO Jensen Huang headed to South Korea, where he introduced RTX Spark to the nation’s passionate gaming community. Leading game developers — […]",
-    "content": "At GTC Taipei at COMPUTEX last week, NVIDIA unveiled RTX Spark, the superchip that reinvents Windows PCs for the era of personal AI agents. On the heels of this announcement, NVIDIA founder and CEO Jensen Huang headed to South Korea, where he introduced RTX Spark to the nation’s passionate gaming community. Leading game developers — […]",
-    "source_url": "https://blogs.nvidia.com/feed/"
-  },
-  {
-    "id": "provider-d404a7e46158a8fb5e",
-    "company": "NVIDIA AI",
-    "title": "Seoul Purpose: How NVIDIA and South Korea Are Building the Future of AI",
-    "url": "https://blogs.nvidia.com/blog/korea-ecosystem-2026/",
-    "published_at": "2026-06-05T05:38:37.000Z",
-    "source_type": "rss_official",
-    "summary": "Home to cutting-edge sovereign AI infrastructure and robotics innovators, as well as one of the world’s most passionate gaming communities, South Korea is one of the world’s centers of AI. NVIDIA founder and CEO Jensen Huang is in Seoul this week to meet the partners and builders behind that work. Monday, June 8, 10:00 a.m. […]",
-    "content": "Home to cutting-edge sovereign AI infrastructure and robotics innovators, as well as one of the world’s most passionate gaming communities, South Korea is one of the world’s centers of AI. NVIDIA founder and CEO Jensen Huang is in Seoul this week to meet the partners and builders behind that work. Monday, June 8, 10:00 a.m. […]",
-    "source_url": "https://blogs.nvidia.com/feed/"
   },
   {
     "id": "provider-4448135187bdfb1f53",
@@ -1617,17 +1672,6 @@
     "source_url": "https://research.ibm.com/rss"
   },
   {
-    "id": "provider-b74b3aee2ee54d82e3",
-    "company": "OpenAI",
-    "title": "OpenAI’s Frontier Governance Framework",
-    "url": "https://openai.com/index/openai-frontier-governance-framework",
-    "published_at": "2026-05-28T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Explore OpenAI’s Frontier Governance Framework and how our AI safety, security, and risk practices align with emerging EU and California regulations.",
-    "content": "Explore OpenAI’s Frontier Governance Framework and how our AI safety, security, and risk practices align with emerging EU and California regulations.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-7ae6a57d8db0a9364c",
     "company": "OpenAI",
     "title": "MUFG aims to become AI-native with OpenAI",
@@ -1636,6 +1680,17 @@
     "source_type": "rss_official",
     "summary": "MUFG uses ChatGPT Enterprise to build an AI-native organization, improve workflows, and deliver new AI-powered financial services at scale.",
     "content": "MUFG uses ChatGPT Enterprise to build an AI-native organization, improve workflows, and deliver new AI-powered financial services at scale.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-b74b3aee2ee54d82e3",
+    "company": "OpenAI",
+    "title": "OpenAI’s Frontier Governance Framework",
+    "url": "https://openai.com/index/openai-frontier-governance-framework",
+    "published_at": "2026-05-28T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Explore OpenAI’s Frontier Governance Framework and how our AI safety, security, and risk practices align with emerging EU and California regulations.",
+    "content": "Explore OpenAI’s Frontier Governance Framework and how our AI safety, security, and risk practices align with emerging EU and California regulations.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -1793,17 +1848,6 @@
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
-    "id": "provider-a30d13ed273dd64e85",
-    "company": "OpenAI",
-    "title": "OpenAI named a Leader in enterprise coding agents by Gartner",
-    "url": "https://openai.com/index/gartner-2026-agentic-coding-leader",
-    "published_at": "2026-05-22T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "OpenAI is named a leader in the 2026 Gartner Magic Quadrant for Enterprise AI Coding Agents, with Codex recognized for innovation and enterprise-scale deployment.",
-    "content": "OpenAI is named a leader in the 2026 Gartner Magic Quadrant for Enterprise AI Coding Agents, with Codex recognized for innovation and enterprise-scale deployment.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-d528fe9da9a64cc8b1",
     "company": "OpenAI",
     "title": "How Virgin Atlantic ships faster with Codex",
@@ -1812,6 +1856,17 @@
     "source_type": "rss_official",
     "summary": "How Virgin Atlantic used Codex to ship its revamped mobile app on a fixed holiday travel deadline, reaching near-total unit test coverage and zero P1 defects.",
     "content": "How Virgin Atlantic used Codex to ship its revamped mobile app on a fixed holiday travel deadline, reaching near-total unit test coverage and zero P1 defects.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-a30d13ed273dd64e85",
+    "company": "OpenAI",
+    "title": "OpenAI named a Leader in enterprise coding agents by Gartner",
+    "url": "https://openai.com/index/gartner-2026-agentic-coding-leader",
+    "published_at": "2026-05-22T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "OpenAI is named a leader in the 2026 Gartner Magic Quadrant for Enterprise AI Coding Agents, with Codex recognized for innovation and enterprise-scale deployment.",
+    "content": "OpenAI is named a leader in the 2026 Gartner Magic Quadrant for Enterprise AI Coding Agents, with Codex recognized for innovation and enterprise-scale deployment.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -1903,14 +1958,14 @@
     "source_url": "https://research.ibm.com/rss"
   },
   {
-    "id": "provider-f73b8a8a9df451169b",
+    "id": "provider-45f30e700b32f6b67c",
     "company": "OpenAI",
-    "title": "An OpenAI model has disproved a central conjecture in discrete geometry",
-    "url": "https://openai.com/index/model-disproves-discrete-geometry-conjecture",
+    "title": "The next phase of OpenAI’s Education for Countries",
+    "url": "https://openai.com/index/the-next-phase-of-education-for-countries",
     "published_at": "2026-05-20T00:00:00.000Z",
     "source_type": "rss_official",
-    "summary": "An OpenAI model solved the 80-year-old unit distance problem, disproving a major conjecture in discrete geometry and marking a milestone in AI-driven mathematics.",
-    "content": "An OpenAI model solved the 80-year-old unit distance problem, disproving a major conjecture in discrete geometry and marking a milestone in AI-driven mathematics.",
+    "summary": "OpenAI advances Education for Countries, expanding AI adoption in schools with new partnerships, teacher training, and tools to improve global learning outcomes.",
+    "content": "OpenAI advances Education for Countries, expanding AI adoption in schools with new partnerships, teacher training, and tools to improve global learning outcomes.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -1925,14 +1980,14 @@
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
-    "id": "provider-45f30e700b32f6b67c",
+    "id": "provider-f73b8a8a9df451169b",
     "company": "OpenAI",
-    "title": "The next phase of OpenAI’s Education for Countries",
-    "url": "https://openai.com/index/the-next-phase-of-education-for-countries",
+    "title": "An OpenAI model has disproved a central conjecture in discrete geometry",
+    "url": "https://openai.com/index/model-disproves-discrete-geometry-conjecture",
     "published_at": "2026-05-20T00:00:00.000Z",
     "source_type": "rss_official",
-    "summary": "OpenAI advances Education for Countries, expanding AI adoption in schools with new partnerships, teacher training, and tools to improve global learning outcomes.",
-    "content": "OpenAI advances Education for Countries, expanding AI adoption in schools with new partnerships, teacher training, and tools to improve global learning outcomes.",
+    "summary": "An OpenAI model solved the 80-year-old unit distance problem, disproving a major conjecture in discrete geometry and marking a milestone in AI-driven mathematics.",
+    "content": "An OpenAI model solved the 80-year-old unit distance problem, disproving a major conjecture in discrete geometry and marking a milestone in AI-driven mathematics.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -2211,17 +2266,6 @@
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
-    "id": "provider-a1fd3050e456e69db2",
-    "company": "OpenAI",
-    "title": "How business operations teams use Codex",
-    "url": "https://openai.com/academy/codex-for-work/how-business-operations-teams-use-codex",
-    "published_at": "2026-05-15T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "See how business operations teams can use Codex to create initiative briefs, strategy updates, leadership decision packets, progress updates, and more from real work inputs.",
-    "content": "See how business operations teams can use Codex to create initiative briefs, strategy updates, leadership decision packets, progress updates, and more from real work inputs.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-5a42e1a49c5662b1ee",
     "company": "OpenAI",
     "title": "How data science teams use Codex",
@@ -2230,6 +2274,17 @@
     "source_type": "rss_official",
     "summary": "See how data science teams can use Codex to build root-cause briefs, impact readouts, KPI memos, scoped analyses, and dashboard specs from real work inputs.",
     "content": "See how data science teams can use Codex to build root-cause briefs, impact readouts, KPI memos, scoped analyses, and dashboard specs from real work inputs.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-3310bc9491a42df8e5",
+    "company": "OpenAI",
+    "title": "How sales teams use Codex",
+    "url": "https://openai.com/academy/codex-for-work/how-sales-teams-use-codex",
+    "published_at": "2026-05-15T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "See how sales teams can use ChatGPT Codex to create pipeline briefs, meeting prep packets, forecast reviews, account plans, and stalled-deal diagnoses from real work inputs.",
+    "content": "See how sales teams can use ChatGPT Codex to create pipeline briefs, meeting prep packets, forecast reviews, account plans, and stalled-deal diagnoses from real work inputs.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -2244,14 +2299,14 @@
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
-    "id": "provider-3310bc9491a42df8e5",
+    "id": "provider-a1fd3050e456e69db2",
     "company": "OpenAI",
-    "title": "How sales teams use Codex",
-    "url": "https://openai.com/academy/codex-for-work/how-sales-teams-use-codex",
+    "title": "How business operations teams use Codex",
+    "url": "https://openai.com/academy/codex-for-work/how-business-operations-teams-use-codex",
     "published_at": "2026-05-15T00:00:00.000Z",
     "source_type": "rss_official",
-    "summary": "See how sales teams can use ChatGPT Codex to create pipeline briefs, meeting prep packets, forecast reviews, account plans, and stalled-deal diagnoses from real work inputs.",
-    "content": "See how sales teams can use ChatGPT Codex to create pipeline briefs, meeting prep packets, forecast reviews, account plans, and stalled-deal diagnoses from real work inputs.",
+    "summary": "See how business operations teams can use Codex to create initiative briefs, strategy updates, leadership decision packets, progress updates, and more from real work inputs.",
+    "content": "See how business operations teams can use Codex to create initiative briefs, strategy updates, leadership decision packets, progress updates, and more from real work inputs.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -2409,14 +2464,14 @@
     "source_url": "https://deepmind.google/blog/rss.xml"
   },
   {
-    "id": "provider-e8da3943deffe32438",
+    "id": "provider-534e82e684925d516f",
     "company": "OpenAI",
-    "title": "What Parameter Golf taught us about AI-assisted research",
-    "url": "https://openai.com/index/what-parameter-golf-taught-us",
+    "title": "How NVIDIA engineers and researchers build with Codex",
+    "url": "https://openai.com/index/nvidia",
     "published_at": "2026-05-12T00:00:00.000Z",
     "source_type": "rss_official",
-    "summary": "Parameter Golf brought together 1,000+ participants and 2,000+ submissions to explore AI-assisted machine learning research, coding agents, quantization, and novel model design under strict constraints.",
-    "content": "Parameter Golf brought together 1,000+ participants and 2,000+ submissions to explore AI-assisted machine learning research, coding agents, quantization, and novel model design under strict constraints.",
+    "summary": "Teams use Codex with GPT-5.5 to ship production systems and turn research ideas into runnable experiments.",
+    "content": "Teams use Codex with GPT-5.5 to ship production systems and turn research ideas into runnable experiments.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -2431,14 +2486,14 @@
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
-    "id": "provider-534e82e684925d516f",
+    "id": "provider-e8da3943deffe32438",
     "company": "OpenAI",
-    "title": "How NVIDIA engineers and researchers build with Codex",
-    "url": "https://openai.com/index/nvidia",
+    "title": "What Parameter Golf taught us about AI-assisted research",
+    "url": "https://openai.com/index/what-parameter-golf-taught-us",
     "published_at": "2026-05-12T00:00:00.000Z",
     "source_type": "rss_official",
-    "summary": "Teams use Codex with GPT-5.5 to ship production systems and turn research ideas into runnable experiments.",
-    "content": "Teams use Codex with GPT-5.5 to ship production systems and turn research ideas into runnable experiments.",
+    "summary": "Parameter Golf brought together 1,000+ participants and 2,000+ submissions to explore AI-assisted machine learning research, coding agents, quantization, and novel model design under strict constraints.",
+    "content": "Parameter Golf brought together 1,000+ participants and 2,000+ submissions to explore AI-assisted machine learning research, coding agents, quantization, and novel model design under strict constraints.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -2475,17 +2530,6 @@
     "source_url": "https://research.ibm.com/rss"
   },
   {
-    "id": "provider-a0cf8bba9050a06e49",
-    "company": "OpenAI",
-    "title": "OpenAI Campus Network: Student club interest form",
-    "url": "https://openai.com/index/openai-campus-network-student-club-interest-form",
-    "published_at": "2026-05-11T10:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Join the OpenAI Campus Network—connect student clubs worldwide, access AI tools, host events, and build an AI-powered campus community.",
-    "content": "Join the OpenAI Campus Network—connect student clubs worldwide, access AI tools, host events, and build an AI-powered campus community.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-211e79df771f8db4a0",
     "company": "OpenAI",
     "title": "How enterprises are scaling AI",
@@ -2494,6 +2538,17 @@
     "source_type": "rss_official",
     "summary": "How enterprises scale AI: from early experiments to compounding impact through trust, governance, workflow design, and quality at scale.",
     "content": "How enterprises scale AI: from early experiments to compounding impact through trust, governance, workflow design, and quality at scale.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-a0cf8bba9050a06e49",
+    "company": "OpenAI",
+    "title": "OpenAI Campus Network: Student club interest form",
+    "url": "https://openai.com/index/openai-campus-network-student-club-interest-form",
+    "published_at": "2026-05-11T10:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Join the OpenAI Campus Network—connect student clubs worldwide, access AI tools, host events, and build an AI-powered campus community.",
+    "content": "Join the OpenAI Campus Network—connect student clubs worldwide, access AI tools, host events, and build an AI-powered campus community.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -2582,17 +2637,6 @@
     "source_type": "rss_official",
     "summary": "Parloa leverages OpenAI models to power scalable, voice-driven AI customer service agents, enabling enterprises to design, simulate, and deploy reliable, real-time interactions.",
     "content": "Parloa leverages OpenAI models to power scalable, voice-driven AI customer service agents, enabling enterprises to design, simulate, and deploy reliable, real-time interactions.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
-    "id": "provider-057076afb497cef937",
-    "company": "OpenAI",
-    "title": "Advancing voice intelligence with new models in the API",
-    "url": "https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api",
-    "published_at": "2026-05-07T10:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Explore new realtime voice models in the OpenAI API that can reason, translate, and transcribe speech, enabling more natural and intelligent voice experiences.",
-    "content": "Explore new realtime voice models in the OpenAI API that can reason, translate, and transcribe speech, enabling more natural and intelligent voice experiences.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -2725,17 +2769,6 @@
     "source_type": "rss_official",
     "summary": "How a single decision democratized quantum research, launched a new industry, and changed lives around the world.",
     "content": "How a single decision democratized quantum research, launched a new industry, and changed lives around the world.",
-    "source_url": "https://research.ibm.com/rss"
-  },
-  {
-    "id": "provider-305aae2bdc80358228",
-    "company": "IBM Research",
-    "title": "Ponder This Challenge - May 2026 - The Powers of a Binary Matrix",
-    "url": "https://research.ibm.com/blog/ponder-this-may-2026?utm_medium=rss&utm_source=rss",
-    "published_at": "2026-05-01T06:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "",
-    "content": "",
     "source_url": "https://research.ibm.com/rss"
   },
   {
@@ -3542,17 +3575,6 @@
     "source_url": "https://huggingface.co/blog/feed.xml"
   },
   {
-    "id": "provider-f08052bc6a1834db5d",
-    "company": "NVIDIA AI",
-    "title": "How NVIDIA Dynamo 1.0 Powers Multi-Node Inference at Production Scale",
-    "url": "https://developer.nvidia.com/blog/nvidia-dynamo-1-production-ready/",
-    "published_at": "2026-03-16T20:30:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Reasoning models are growing rapidly in size and are increasingly being integrated into agentic AI workflows that interact with other models and external tools....",
-    "content": "Reasoning models are growing rapidly in size and are increasingly being integrated into agentic AI workflows that interact with other models and external tools....",
-    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
     "id": "provider-478289e272b8228be2",
     "company": "NVIDIA AI",
     "title": "Scaling Autonomous AI Agents and Workloads with NVIDIA DGX Spark",
@@ -3561,6 +3583,17 @@
     "source_type": "rss_official",
     "summary": "Autonomous AI agents are driving the next wave of AI innovation. These agents must often manage long-running tasks that use multiple communication channels and...",
     "content": "Autonomous AI agents are driving the next wave of AI innovation. These agents must often manage long-running tasks that use multiple communication channels and...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
+  },
+  {
+    "id": "provider-f08052bc6a1834db5d",
+    "company": "NVIDIA AI",
+    "title": "How NVIDIA Dynamo 1.0 Powers Multi-Node Inference at Production Scale",
+    "url": "https://developer.nvidia.com/blog/nvidia-dynamo-1-production-ready/",
+    "published_at": "2026-03-16T20:30:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Reasoning models are growing rapidly in size and are increasingly being integrated into agentic AI workflows that interact with other models and external tools....",
+    "content": "Reasoning models are growing rapidly in size and are increasingly being integrated into agentic AI workflows that interact with other models and external tools....",
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
@@ -3817,28 +3850,6 @@
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
-    "id": "provider-f2d503e84e8b0db117",
-    "company": "NVIDIA AI",
-    "title": "Develop Native Multimodal Agents with Qwen3.5 VLM Using NVIDIA GPU-Accelerated Endpoints",
-    "url": "https://developer.nvidia.com/blog/develop-native-multimodal-agents-with-qwen3-5-vlm-using-nvidia-gpu-accelerated-endpoints/",
-    "published_at": "2026-02-27T17:30:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Alibaba has introduced the new open source Qwen3.5 series built for native multimodal agents. The first model in this series is a ~400B parameter native...",
-    "content": "Alibaba has introduced the new open source Qwen3.5 series built for native multimodal agents. The first model in this series is a ~400B parameter native...",
-    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
-    "id": "provider-1a4ec4f2203ed1fb97",
-    "company": "NVIDIA AI",
-    "title": "Maximizing GPU Utilization with NVIDIA Run:ai and NVIDIA NIM",
-    "url": "https://developer.nvidia.com/blog/maximizing-gpu-utilization-with-nvidia-runai-and-nvidia-nim/",
-    "published_at": "2026-02-27T17:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Organizations deploying LLMs are challenged by inference workloads with different resource requirements. A small embedding model might use only a few gigabytes...",
-    "content": "Organizations deploying LLMs are challenged by inference workloads with different resource requirements. A small embedding model might use only a few gigabytes...",
-    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
     "id": "provider-e3b67386180669ee5d",
     "company": "Google DeepMind",
     "title": "Nano Banana 2: Combining Pro capabilities with lightning-fast speed",
@@ -4075,17 +4086,6 @@
     "title": "We Got Claude to Build CUDA Kernels and teach open models!",
     "url": "https://huggingface.co/blog/upskill",
     "published_at": "2026-01-28T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "",
-    "content": "",
-    "source_url": "https://huggingface.co/blog/feed.xml"
-  },
-  {
-    "id": "provider-8af9364c2e75cb8985",
-    "company": "Hugging Face",
-    "title": "Architectural Choices in China's Open-Source AI Ecosystem: Building Beyond DeepSeek",
-    "url": "https://huggingface.co/blog/huggingface/one-year-since-the-deepseek-moment-blog-2",
-    "published_at": "2026-01-27T15:01:45.000Z",
     "source_type": "rss_official",
     "summary": "",
     "content": "",
