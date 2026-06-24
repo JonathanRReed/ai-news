@@ -1,5 +1,27 @@
 [
   {
+    "id": "provider-dd1f718a4b07727aee",
+    "company": "OpenAI",
+    "title": "OpenAI and Broadcom unveil LLM-optimized inference chip",
+    "url": "https://openai.com/index/openai-broadcom-jalapeno-inference-chip",
+    "published_at": "2026-06-24T06:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "OpenAI and Broadcom introduce Jalapeño, a custom AI chip built for LLM inference to improve performance, efficiency, and scale across AI systems.",
+    "content": "OpenAI and Broadcom introduce Jalapeño, a custom AI chip built for LLM inference to improve performance, efficiency, and scale across AI systems.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-304054e631c6bfda65",
+    "company": "NVIDIA AI",
+    "title": "NVIDIA and AWS Collaborate to Bring AI to Production at Scale",
+    "url": "https://blogs.nvidia.com/blog/nvidia-aws-ai-production-scale/",
+    "published_at": "2026-06-24T00:05:37.000Z",
+    "source_type": "rss_official",
+    "summary": "Building AI systems at scale is demanding, requiring low-latency inference, fast vector search, strong GPU price-performance and infrastructure that can grow without multiplying operational complexity. NVIDIA’s latest work with Amazon Web Services (AWS) addresses each of those constraints. Across Amazon OpenSearch and Amazon EC2, NVIDIA AI infrastructure is giving enterprises more practical paths to deploy […]",
+    "content": "Building AI systems at scale is demanding, requiring low-latency inference, fast vector search, strong GPU price-performance and infrastructure that can grow without multiplying operational complexity. NVIDIA’s latest work with Amazon Web Services (AWS) addresses each of those constraints. Across Amazon OpenSearch and Amazon EC2, NVIDIA AI infrastructure is giving enterprises more practical paths to deploy […]",
+    "source_url": "https://blogs.nvidia.com/feed/"
+  },
+  {
     "id": "provider-afe34ddaf7d99e6f88",
     "company": "IBM Research",
     "title": "Running AI on mixed hardware for speed and affordability",
@@ -11,6 +33,50 @@
     "source_url": "https://research.ibm.com/rss"
   },
   {
+    "id": "provider-1205d99a4cc08d3a86",
+    "company": "OpenAI",
+    "title": "How GPT-5 helped immunologist Derya Unutmaz solve a 3-year-old mystery",
+    "url": "https://openai.com/index/gpt-5-immunology-mystery",
+    "published_at": "2026-06-23T17:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "GPT-5 Pro helped solve a 3-year-old immunology mystery, offering insights into T cell behavior. The breakthrough could support cancer and autoimmune research.",
+    "content": "GPT-5 Pro helped solve a 3-year-old immunology mystery, offering insights into T cell behavior. The breakthrough could support cancer and autoimmune research.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-8ad5da5844b8f31d1d",
+    "company": "Amazon AI",
+    "title": "Build a protein research copilot with Amazon Bedrock AgentCore",
+    "url": "https://aws.amazon.com/blogs/machine-learning/build-a-protein-research-copilot-with-amazon-bedrock-agentcore/",
+    "published_at": "2026-06-23T16:39:34.000Z",
+    "source_type": "rss_official",
+    "summary": "This post shows you how to build a conversational protein research assistant that combines three capabilities: Natural language query parsing to extract structured search parameters, vector similarity search over protein embeddings using a specialized language model and ai-generated scientific summaries of search results.",
+    "content": "This post shows you how to build a conversational protein research assistant that combines three capabilities: Natural language query parsing to extract structured search parameters, vector similarity search over protein embeddings using a specialized language model and ai-generated scientific summaries of search results.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-c14b471ffcd85d456a",
+    "company": "Amazon AI",
+    "title": "Shared infrastructure, isolated tenants: Pool model multi-tenancy with Amazon Bedrock AgentCore",
+    "url": "https://aws.amazon.com/blogs/machine-learning/shared-infrastructure-isolated-tenants-pool-model-multi-tenancy-with-amazon-bedrock-agentcore/",
+    "published_at": "2026-06-23T15:43:59.000Z",
+    "source_type": "rss_official",
+    "summary": "In this post, you will learn patterns for implementing production-ready multi-tenant systems using Amazon Bedrock AgentCore. You will see these patterns demonstrated through healthcare AI agents that serve multiple clinics and hospitals.",
+    "content": "In this post, you will learn patterns for implementing production-ready multi-tenant systems using Amazon Bedrock AgentCore. You will see these patterns demonstrated through healthcare AI agents that serve multiple clinics and hospitals.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-810e9c2a8042e055d0",
+    "company": "NVIDIA AI",
+    "title": "Boost Inference Performance up to 15x on NVIDIA Blackwell Using DFlash Speculative Decoding",
+    "url": "https://developer.nvidia.com/blog/boost-inference-performance-up-to-15x-on-nvidia-blackwell-using-dflash-speculative-decoding/",
+    "published_at": "2026-06-23T15:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "As AI systems move from single-turn interactions to coordinated multiagent workflows, low-latency inference becomes increasingly important. Autoregressive LLMs...",
+    "content": "As AI systems move from single-turn interactions to coordinated multiagent workflows, low-latency inference becomes increasingly important. Autoregressive LLMs...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
+  },
+  {
     "id": "provider-7390096358bd721a64",
     "company": "NVIDIA AI",
     "title": "How Businesses Are Building Specialized AI They Can Trust",
@@ -20,6 +86,17 @@
     "summary": "Companies are asking how to build specialized AI that fits with the way their workflows actually run. The first wave of enterprise AI was about access. Companies experimented with new frontier and open models, ran pilots and explored how AI can help. Now, specialized agents — systems of models that can reason, use tools and […]",
     "content": "Companies are asking how to build specialized AI that fits with the way their workflows actually run. The first wave of enterprise AI was about access. Companies experimented with new frontier and open models, ran pilots and explored how AI can help. Now, specialized agents — systems of models that can reason, use tools and […]",
     "source_url": "https://blogs.nvidia.com/feed/"
+  },
+  {
+    "id": "provider-63cf5bae4883a2b11b",
+    "company": "OpenAI",
+    "title": "Helping build shared standards for advanced AI",
+    "url": "https://openai.com/index/helping-build-shared-standards-for-advanced-ai",
+    "published_at": "2026-06-23T13:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "OpenAI helps build shared standards for advanced AI, supporting evaluation frameworks, safety practices, and global cooperation through the Appia Foundation.",
+    "content": "OpenAI helps build shared standards for advanced AI, supporting evaluation frameworks, safety practices, and global cooperation through the Appia Foundation.",
+    "source_url": "https://openai.com/news/rss.xml"
   },
   {
     "id": "provider-a9748ef231a2f39aab",
@@ -39,8 +116,8 @@
     "url": "https://blogs.nvidia.com/blog/top500-green500-supercomputers-isc-2026/",
     "published_at": "2026-06-23T09:00:38.000Z",
     "source_type": "rss_official",
-    "summary": "News Highlights: NVIDIA technology runs 81% of the TOP500 and 90% of the systems new to the list. 26 systems on the TOP500 adopted the NVIDIA Grace CPU, up eight from the previous list. The top eight systems on the Green500 run on NVIDIA GPUs and nine of the top 10 use NVIDIA technologies. No. […]",
-    "content": "News Highlights: NVIDIA technology runs 81% of the TOP500 and 90% of the systems new to the list. 26 systems on the TOP500 adopted the NVIDIA Grace CPU, up eight from the previous list. The top eight systems on the Green500 run on NVIDIA GPUs and nine of the top 10 use NVIDIA technologies. No. […]",
+    "summary": "NVIDIA technologies power more than 400 of the world’s 500 fastest supercomputers — 81% of the TOP500 — according to the latest rankings released this week at the ISC High Performance conference in Hamburg, Germany.",
+    "content": "NVIDIA technologies power more than 400 of the world’s 500 fastest supercomputers — 81% of the TOP500 — according to the latest rankings released this week at the ISC High Performance conference in Hamburg, Germany.",
     "source_url": "https://blogs.nvidia.com/feed/"
   },
   {
@@ -81,6 +158,17 @@
     "company": "Hugging Face",
     "title": "Shipping huggingface_hub every week with AI, open tools, and a human in the loop",
     "url": "https://huggingface.co/blog/huggingface-hub-release-ci",
+    "published_at": "2026-06-23T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://huggingface.co/blog/feed.xml"
+  },
+  {
+    "id": "provider-d904d28029d56fc860",
+    "company": "Hugging Face",
+    "title": "Experimenting with the proposed Cross-Origin Storage API in Transformers.js",
+    "url": "https://huggingface.co/blog/cross-origin-storage",
     "published_at": "2026-06-23T00:00:00.000Z",
     "source_type": "rss_official",
     "summary": "",
@@ -165,17 +253,6 @@
     "source_url": "https://blogs.nvidia.com/feed/"
   },
   {
-    "id": "provider-51202cf84b2250b36e",
-    "company": "NVIDIA AI",
-    "title": "NVIDIA Vera CPU Opens the Way for Agentic Scientific AI at Los Alamos National Laboratory",
-    "url": "https://blogs.nvidia.com/blog/nvidia-vera-cpu-los-alamos-national-laboratory/",
-    "published_at": "2026-06-22T13:00:20.000Z",
-    "source_type": "rss_official",
-    "summary": "Mission, Vision and Veritas — new Los Alamos National Laboratory (LANL) supercomputers to be built with HPE and NVIDIA — are tapping NVIDIA Vera CPUs to accelerate scientific discovery, unlocking agentic AI for science. The supercomputers will use the HPE Cray Supercomputing GX5000 architecture with the NVIDIA Vera Rubin platform, combining NVIDIA Vera CPUs, NVIDIA […]",
-    "content": "Mission, Vision and Veritas — new Los Alamos National Laboratory (LANL) supercomputers to be built with HPE and NVIDIA — are tapping NVIDIA Vera CPUs to accelerate scientific discovery, unlocking agentic AI for science. The supercomputers will use the HPE Cray Supercomputing GX5000 architecture with the NVIDIA Vera Rubin platform, combining NVIDIA Vera CPUs, NVIDIA […]",
-    "source_url": "https://blogs.nvidia.com/feed/"
-  },
-  {
     "id": "provider-d8a2414e25ccef2704",
     "company": "NVIDIA AI",
     "title": "From Materials Simulation to Experimental Astronomy, New NVIDIA AI Software Unlocks Scientific Discoveries",
@@ -184,6 +261,17 @@
     "source_type": "rss_official",
     "summary": "At the ISC conference running in Hamburg this week, NVIDIA is introducing new software that speeds AI for science, from chemistry and materials discovery to the search for dark matter. The NVIDIA DAQIRI library and new NVIDIA ALCHEMI NIM microservices — as well as the NVIDIA cuPhoton reference code, coming soon — turn work that […]",
     "content": "At the ISC conference running in Hamburg this week, NVIDIA is introducing new software that speeds AI for science, from chemistry and materials discovery to the search for dark matter. The NVIDIA DAQIRI library and new NVIDIA ALCHEMI NIM microservices — as well as the NVIDIA cuPhoton reference code, coming soon — turn work that […]",
+    "source_url": "https://blogs.nvidia.com/feed/"
+  },
+  {
+    "id": "provider-51202cf84b2250b36e",
+    "company": "NVIDIA AI",
+    "title": "NVIDIA Vera CPU Opens the Way for Agentic Scientific AI at Los Alamos National Laboratory",
+    "url": "https://blogs.nvidia.com/blog/nvidia-vera-cpu-los-alamos-national-laboratory/",
+    "published_at": "2026-06-22T13:00:20.000Z",
+    "source_type": "rss_official",
+    "summary": "Mission, Vision and Veritas — new Los Alamos National Laboratory (LANL) supercomputers to be built with HPE and NVIDIA — are tapping NVIDIA Vera CPUs to accelerate scientific discovery, unlocking agentic AI for science. The supercomputers will use the HPE Cray Supercomputing GX5000 architecture with the NVIDIA Vera Rubin platform, combining NVIDIA Vera CPUs, NVIDIA […]",
+    "content": "Mission, Vision and Veritas — new Los Alamos National Laboratory (LANL) supercomputers to be built with HPE and NVIDIA — are tapping NVIDIA Vera CPUs to accelerate scientific discovery, unlocking agentic AI for science. The supercomputers will use the HPE Cray Supercomputing GX5000 architecture with the NVIDIA Vera Rubin platform, combining NVIDIA Vera CPUs, NVIDIA […]",
     "source_url": "https://blogs.nvidia.com/feed/"
   },
   {
@@ -220,17 +308,6 @@
     "source_url": "https://research.ibm.com/rss"
   },
   {
-    "id": "provider-47bf7e22d29459f96a",
-    "company": "OpenAI",
-    "title": "Daybreak: Tools for securing every organization in the world",
-    "url": "https://openai.com/index/daybreak-securing-the-world",
-    "published_at": "2026-06-22T10:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "OpenAI introduces new Daybreak tools, including Codex Security and GPT-5.5-Cyber, to help organizations find, validate, and patch vulnerabilities at scale.",
-    "content": "OpenAI introduces new Daybreak tools, including Codex Security and GPT-5.5-Cyber, to help organizations find, validate, and patch vulnerabilities at scale.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-950caa79948d4d0f9a",
     "company": "OpenAI",
     "title": "Patch the Planet: a Daybreak initiative to support open source maintainers",
@@ -239,6 +316,17 @@
     "source_type": "rss_official",
     "summary": "OpenAI introduces Patch the Planet, a Daybreak initiative helping open-source maintainers find, validate, and fix vulnerabilities with AI and expert review.",
     "content": "OpenAI introduces Patch the Planet, a Daybreak initiative helping open-source maintainers find, validate, and fix vulnerabilities with AI and expert review.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-47bf7e22d29459f96a",
+    "company": "OpenAI",
+    "title": "Daybreak: Tools for securing every organization in the world",
+    "url": "https://openai.com/index/daybreak-securing-the-world",
+    "published_at": "2026-06-22T10:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "OpenAI introduces new Daybreak tools, including Codex Security and GPT-5.5-Cyber, to help organizations find, validate, and patch vulnerabilities at scale.",
+    "content": "OpenAI introduces new Daybreak tools, including Codex Security and GPT-5.5-Cyber, to help organizations find, validate, and patch vulnerabilities at scale.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -770,17 +858,6 @@
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
-    "id": "provider-c60526fc06f7992d16",
-    "company": "NVIDIA AI",
-    "title": "NVIDIA Blackwell Leads on First Agentic AI Infrastructure Benchmark",
-    "url": "https://blogs.nvidia.com/blog/nvidia-blackwell-agentperf-artificial-analysis/",
-    "published_at": "2026-06-12T21:00:08.000Z",
-    "source_type": "rss_official",
-    "summary": "AgentPerf from Artificial Analysis, the industry’s first agentic AI benchmark, gives developers, enterprises and infrastructure providers a clear way to compare systems for agentic AI. In the first round of published results, the NVIDIA Blackwell Ultra NVL72 platform delivers leading performance across the agentic AI workloads tested, running 20x more agents per megawatt than NVIDIA […]",
-    "content": "AgentPerf from Artificial Analysis, the industry’s first agentic AI benchmark, gives developers, enterprises and infrastructure providers a clear way to compare systems for agentic AI. In the first round of published results, the NVIDIA Blackwell Ultra NVL72 platform delivers leading performance across the agentic AI workloads tested, running 20x more agents per megawatt than NVIDIA […]",
-    "source_url": "https://blogs.nvidia.com/feed/"
-  },
-  {
     "id": "provider-e186afcb6ecab730d5",
     "company": "Amazon AI",
     "title": "Building Supercharger: How Rocket Close optimized title operations with agentic AI",
@@ -789,17 +866,6 @@
     "source_type": "rss_official",
     "summary": "In this post, we explore how Rocket Close built a solution using Strands Agents, large language models (LLMs), Amazon Bedrock, Amazon Bedrock Knowledge Bases, and Model Context Protocol (MCP) tools. We cover solution features, the rationale for the technology stack, lessons learned, and the business impact at Rocket Close.",
     "content": "In this post, we explore how Rocket Close built a solution using Strands Agents, large language models (LLMs), Amazon Bedrock, Amazon Bedrock Knowledge Bases, and Model Context Protocol (MCP) tools. We cover solution features, the rationale for the technology stack, lessons learned, and the business impact at Rocket Close.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
-    "id": "provider-6f78fb7f94445a018c",
-    "company": "Amazon AI",
-    "title": "Build a meeting prep and follow-up assistant with Amazon Quick and Cisco Webex MCP servers",
-    "url": "https://aws.amazon.com/blogs/machine-learning/build-a-meeting-prep-and-follow-up-assistant-with-amazon-quick-and-cisco-webex-mcp-servers/",
-    "published_at": "2026-06-12T14:49:40.000Z",
-    "source_type": "rss_official",
-    "summary": "This post shows how to build a custom meeting prep and follow-up assistant using Amazon Quick and Cisco Webex MCP servers. From a single prompt, the agent finds an upcoming Webex meeting, reviews prior meeting summaries and transcripts, and pulls related Vidcast highlights and transcript context. It then searches Webex message threads for unresolved follow-ups and creates a concise prep brief. After the meeting, the same assistant can summarize the discussion and identify action items. It can al",
-    "content": "This post shows how to build a custom meeting prep and follow-up assistant using Amazon Quick and Cisco Webex MCP servers. From a single prompt, the agent finds an upcoming Webex meeting, reviews prior meeting summaries and transcripts, and pulls related Vidcast highlights and transcript context. It then searches Webex message threads for unresolved follow-ups and creates a concise prep brief. After the meeting, the same assistant can summarize the discussion and identify action items. It can also find related Vidcast updates and draft a follow-up message for the right Webex space.",
     "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
   },
   {
@@ -812,17 +878,6 @@
     "summary": "As enterprise AI adoption scales, developers are increasingly forced to stitch together fragmented pipelines—separate models for text, vision, and...",
     "content": "As enterprise AI adoption scales, developers are increasingly forced to stitch together fragmented pipelines—separate models for text, vision, and...",
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
-    "id": "provider-8f4d883fc8ddf91ef7",
-    "company": "Amazon AI",
-    "title": "From PDFs to insights: Architecting an intelligent document processing pipeline with AWS generative AI services",
-    "url": "https://aws.amazon.com/blogs/machine-learning/from-pdfs-to-insights-architecting-an-intelligent-document-processing-pipeline-with-aws-generative-ai-services/",
-    "published_at": "2026-06-12T14:43:11.000Z",
-    "source_type": "rss_official",
-    "summary": "This post outlines the development of a cost-effective and scalable intelligent document processing pipeline on AWS, powered by Amazon Bedrock and its features. BDA is a managed service within Amazon Bedrock that automates the extraction of insights from documents. We demonstrate how BDA extracts and analyzes document content, while Strands Agent hosted on Amazon Bedrock AgentCore Runtime coordinate specialized processing tasks, and Amazon Bedrock Knowledge Base enable contextual understanding a",
-    "content": "This post outlines the development of a cost-effective and scalable intelligent document processing pipeline on AWS, powered by Amazon Bedrock and its features. BDA is a managed service within Amazon Bedrock that automates the extraction of insights from documents. We demonstrate how BDA extracts and analyzes document content, while Strands Agent hosted on Amazon Bedrock AgentCore Runtime coordinate specialized processing tasks, and Amazon Bedrock Knowledge Base enable contextual understanding across multiple documents. By combining these capabilities within a unified architecture, organizations can transform their document processing workflows with minimal development effort.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
   },
   {
     "id": "provider-ed1666455a0bdce0fc",
@@ -880,14 +935,14 @@
     "source_url": "https://research.ibm.com/rss"
   },
   {
-    "id": "provider-53f9d319e8ae0bb1f1",
+    "id": "provider-6b45da215c922c7846",
     "company": "OpenAI",
-    "title": "BBVA puts AI at the core of banking with OpenAI",
-    "url": "https://openai.com/index/bbva",
+    "title": "Supporting Europe’s work in ensuring a trustworthy AI ecosystem",
+    "url": "https://openai.com/index/supporting-eu-trustworthy-ai-ecosystem",
     "published_at": "2026-06-11T00:00:00.000Z",
     "source_type": "rss_official",
-    "summary": "Learn how BBVA scaled ChatGPT Enterprise to 100,000 employees and partnered with OpenAI to accelerate AI-powered banking transformation worldwide.",
-    "content": "Learn how BBVA scaled ChatGPT Enterprise to 100,000 employees and partnered with OpenAI to accelerate AI-powered banking transformation worldwide.",
+    "summary": "OpenAI supports the EU Code of Practice on AI content transparency, advancing provenance standards and tools to help people understand AI-generated content.",
+    "content": "OpenAI supports the EU Code of Practice on AI content transparency, advancing provenance standards and tools to help people understand AI-generated content.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -913,14 +968,14 @@
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
-    "id": "provider-6b45da215c922c7846",
+    "id": "provider-53f9d319e8ae0bb1f1",
     "company": "OpenAI",
-    "title": "Supporting Europe’s work in ensuring a trustworthy AI ecosystem",
-    "url": "https://openai.com/index/supporting-eu-trustworthy-ai-ecosystem",
+    "title": "BBVA puts AI at the core of banking with OpenAI",
+    "url": "https://openai.com/index/bbva",
     "published_at": "2026-06-11T00:00:00.000Z",
     "source_type": "rss_official",
-    "summary": "OpenAI supports the EU Code of Practice on AI content transparency, advancing provenance standards and tools to help people understand AI-generated content.",
-    "content": "OpenAI supports the EU Code of Practice on AI content transparency, advancing provenance standards and tools to help people understand AI-generated content.",
+    "summary": "Learn how BBVA scaled ChatGPT Enterprise to 100,000 employees and partnered with OpenAI to accelerate AI-powered banking transformation worldwide.",
+    "content": "Learn how BBVA scaled ChatGPT Enterprise to 100,000 employees and partnered with OpenAI to accelerate AI-powered banking transformation worldwide.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -1408,17 +1463,6 @@
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
-    "id": "provider-8f56487ce735112480",
-    "company": "OpenAI",
-    "title": "OpenAI public policy agenda",
-    "url": "https://openai.com/index/public-policy-agenda",
-    "published_at": "2026-06-03T10:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "OpenAI outlines its public policy agenda for AI, including safety, youth protection, workforce transition, and global standards to ensure AI benefits society.",
-    "content": "OpenAI outlines its public policy agenda for AI, including safety, youth protection, workforce transition, and global standards to ensure AI benefits society.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-76b4195f74bb6d9c92",
     "company": "OpenAI",
     "title": "A blueprint for democratic governance of frontier AI",
@@ -1427,6 +1471,17 @@
     "source_type": "rss_official",
     "summary": "OpenAI outlines a blueprint for U.S. governance of frontier AI, proposing a federal framework for safety, resilience, and national security.",
     "content": "OpenAI outlines a blueprint for U.S. governance of frontier AI, proposing a federal framework for safety, resilience, and national security.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-8f56487ce735112480",
+    "company": "OpenAI",
+    "title": "OpenAI public policy agenda",
+    "url": "https://openai.com/index/public-policy-agenda",
+    "published_at": "2026-06-03T10:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "OpenAI outlines its public policy agenda for AI, including safety, youth protection, workforce transition, and global standards to ensure AI benefits society.",
+    "content": "OpenAI outlines its public policy agenda for AI, including safety, youth protection, workforce transition, and global standards to ensure AI benefits society.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -2365,6 +2420,17 @@
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
+    "id": "provider-011d5d09fe62148621",
+    "company": "OpenAI",
+    "title": "A new personal finance experience in ChatGPT",
+    "url": "https://openai.com/index/personal-finance-chatgpt",
+    "published_at": "2026-05-15T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Preview a new personal finance experience in ChatGPT for Pro users in the U.S. Securely connect your financial accounts and get AI-powered insights and guidance grounded in your financial context, goals, and priorities.",
+    "content": "Preview a new personal finance experience in ChatGPT for Pro users in the U.S. Securely connect your financial accounts and get AI-powered insights and guidance grounded in your financial context, goals, and priorities.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
     "id": "provider-fc541baa18acce0369",
     "company": "OpenAI",
     "title": "Databricks brings GPT-5.5 to enterprise agent workflows",
@@ -2395,17 +2461,6 @@
     "source_type": "rss_official",
     "summary": "See how business operations teams can use Codex to create initiative briefs, strategy updates, leadership decision packets, progress updates, and more from real work inputs.",
     "content": "See how business operations teams can use Codex to create initiative briefs, strategy updates, leadership decision packets, progress updates, and more from real work inputs.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
-    "id": "provider-011d5d09fe62148621",
-    "company": "OpenAI",
-    "title": "A new personal finance experience in ChatGPT",
-    "url": "https://openai.com/index/personal-finance-chatgpt",
-    "published_at": "2026-05-15T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Preview a new personal finance experience in ChatGPT for Pro users in the U.S. Securely connect your financial accounts and get AI-powered insights and guidance grounded in your financial context, goals, and priorities.",
-    "content": "Preview a new personal finance experience in ChatGPT for Pro users in the U.S. Securely connect your financial accounts and get AI-powered insights and guidance grounded in your financial context, goals, and priorities.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -2563,6 +2618,17 @@
     "source_url": "https://deepmind.google/blog/rss.xml"
   },
   {
+    "id": "provider-b00fe951101c9ae1a0",
+    "company": "OpenAI",
+    "title": "AutoScout24 scales engineering with AI-powered workflows",
+    "url": "https://openai.com/index/autoscout24",
+    "published_at": "2026-05-12T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Learn how AutoScout24 Group uses Codex and ChatGPT to speed development cycles, improve code quality, and expand AI adoption.",
+    "content": "Learn how AutoScout24 Group uses Codex and ChatGPT to speed development cycles, improve code quality, and expand AI adoption.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
     "id": "provider-e8da3943deffe32438",
     "company": "OpenAI",
     "title": "What Parameter Golf taught us about AI-assisted research",
@@ -2585,17 +2651,6 @@
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
-    "id": "provider-b00fe951101c9ae1a0",
-    "company": "OpenAI",
-    "title": "AutoScout24 scales engineering with AI-powered workflows",
-    "url": "https://openai.com/index/autoscout24",
-    "published_at": "2026-05-12T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Learn how AutoScout24 Group uses Codex and ChatGPT to speed development cycles, improve code quality, and expand AI adoption.",
-    "content": "Learn how AutoScout24 Group uses Codex and ChatGPT to speed development cycles, improve code quality, and expand AI adoption.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-920026102ed3058e95",
     "company": "Hugging Face",
     "title": "Building Blocks for Foundation Model Training and Inference on AWS",
@@ -2607,17 +2662,6 @@
     "source_url": "https://huggingface.co/blog/feed.xml"
   },
   {
-    "id": "provider-3b68efdf857b38202d",
-    "company": "OpenAI",
-    "title": "How ChatGPT adoption broadened in early 2026",
-    "url": "https://openai.com/signals/research/2026q1-update",
-    "published_at": "2026-05-11T15:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "ChatGPT adoption surged in Q1 2026, with fastest growth among users over 35 and more balanced gender usage, signaling broader mainstream AI adoption.",
-    "content": "ChatGPT adoption surged in Q1 2026, with fastest growth among users over 35 and more balanced gender usage, signaling broader mainstream AI adoption.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-ceb8405acea36991ed",
     "company": "IBM Research",
     "title": "MIT and IBM renew their research collaboration",
@@ -2627,28 +2671,6 @@
     "summary": "We spoke with IBM’s David Cox about the lab's evolution and what it takes for an industry-academia collaboration to succeed.",
     "content": "We spoke with IBM’s David Cox about the lab's evolution and what it takes for an industry-academia collaboration to succeed.",
     "source_url": "https://research.ibm.com/rss"
-  },
-  {
-    "id": "provider-211e79df771f8db4a0",
-    "company": "OpenAI",
-    "title": "How enterprises are scaling AI",
-    "url": "https://openai.com/business/guides-and-resources/how-enterprises-are-scaling-ai",
-    "published_at": "2026-05-11T10:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "How enterprises scale AI: from early experiments to compounding impact through trust, governance, workflow design, and quality at scale.",
-    "content": "How enterprises scale AI: from early experiments to compounding impact through trust, governance, workflow design, and quality at scale.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
-    "id": "provider-a0cf8bba9050a06e49",
-    "company": "OpenAI",
-    "title": "OpenAI Campus Network: Student club interest form",
-    "url": "https://openai.com/index/openai-campus-network-student-club-interest-form",
-    "published_at": "2026-05-11T10:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Join the OpenAI Campus Network—connect student clubs worldwide, access AI tools, host events, and build an AI-powered campus community.",
-    "content": "Join the OpenAI Campus Network—connect student clubs worldwide, access AI tools, host events, and build an AI-powered campus community.",
-    "source_url": "https://openai.com/news/rss.xml"
   },
   {
     "id": "provider-cf7b13e4fc7e1f2b70",
@@ -3850,17 +3872,6 @@
     "source_url": "https://huggingface.co/blog/feed.xml"
   },
   {
-    "id": "provider-f1266caa66d20010b9",
-    "company": "NVIDIA AI",
-    "title": "How to Minimize Game Runtime Inference Costs with Coding Agents",
-    "url": "https://developer.nvidia.com/blog/how-to-minimize-game-runtime-inference-costs-with-coding-agents/",
-    "published_at": "2026-03-03T19:49:57.000Z",
-    "source_type": "rss_official",
-    "summary": "NVIDIA ACE is a suite of technologies for building AI agents for gaming. ACE provides ready-to-integrate cloud and on-device AI models for every part of in-game...",
-    "content": "NVIDIA ACE is a suite of technologies for building AI agents for gaming. ACE provides ready-to-integrate cloud and on-device AI models for every part of in-game...",
-    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
     "id": "provider-53f206053be40021a2",
     "company": "Hugging Face",
     "title": "PRX Part 3 — Training a Text-to-Image Model in 24h!",
@@ -4064,17 +4075,6 @@
     "title": "H Company's new Holo2 model takes the lead in UI Localization",
     "url": "https://huggingface.co/blog/Hcompany/introducing-holo2-235b-a22b",
     "published_at": "2026-02-03T17:40:14.000Z",
-    "source_type": "rss_official",
-    "summary": "",
-    "content": "",
-    "source_url": "https://huggingface.co/blog/feed.xml"
-  },
-  {
-    "id": "provider-2a7a046a599282cf46",
-    "company": "Hugging Face",
-    "title": "The Future of the Global Open-Source AI Ecosystem: From DeepSeek to AI+",
-    "url": "https://huggingface.co/blog/huggingface/one-year-since-the-deepseek-moment-blog-3",
-    "published_at": "2026-02-03T15:03:19.000Z",
     "source_type": "rss_official",
     "summary": "",
     "content": "",
