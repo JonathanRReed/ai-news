@@ -1,5 +1,49 @@
 [
   {
+    "id": "provider-e2abdaea94dbb10b35",
+    "company": "IBM Research",
+    "title": "Apply to IBM Quantum Developer Conference 2026",
+    "url": "https://research.ibm.com/blog/qdc-application-2026?utm_medium=rss&utm_source=rss",
+    "published_at": "2026-06-29T14:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Get an exclusive look at the breakthroughs, tools, and workflows shaping the path to quantum advantage.",
+    "content": "Get an exclusive look at the breakthroughs, tools, and workflows shaping the path to quantum advantage.",
+    "source_url": "https://research.ibm.com/rss"
+  },
+  {
+    "id": "provider-d944aa1e925730c079",
+    "company": "NVIDIA AI",
+    "title": "Open Models, Closed Environments: Palantir Brings Secure AI to US Agencies With NVIDIA Nemotron",
+    "url": "https://blogs.nvidia.com/blog/palantir-secure-ai-us-agencies-nemotron-open-models/",
+    "published_at": "2026-06-29T10:59:38.000Z",
+    "source_type": "rss_official",
+    "summary": "Showcasing the importance of open source innovation in American AI, Palantir’s new intelligent engine — introduced today — uses NVIDIA Nemotron open models to serve the needs of U.S. government agencies. Open source software has long been a pillar of U.S. technology leadership. In 1969, DARPA connected four university computers — from UCLA, Stanford, UCSB […]",
+    "content": "Showcasing the importance of open source innovation in American AI, Palantir’s new intelligent engine — introduced today — uses NVIDIA Nemotron open models to serve the needs of U.S. government agencies. Open source software has long been a pillar of U.S. technology leadership. In 1969, DARPA connected four university computers — from UCLA, Stanford, UCSB […]",
+    "source_url": "https://blogs.nvidia.com/feed/"
+  },
+  {
+    "id": "provider-7f2fc7acc27f3a1364",
+    "company": "OpenAI",
+    "title": "Mapping Europe’s AI Workforce Opportunity",
+    "url": "https://openai.com/index/mapping-ai-jobs-transition-eu",
+    "published_at": "2026-06-29T07:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "A new OpenAI report maps how AI could reshape jobs across the EU, highlighting which occupations may face automation, growth, or workflow changes.",
+    "content": "A new OpenAI report maps how AI could reshape jobs across the EU, highlighting which occupations may face automation, growth, or workflow changes.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-c5f124047ea8ce3c95",
+    "company": "OpenAI",
+    "title": "HP Inc. launches Frontier strategic partnership with OpenAI",
+    "url": "https://openai.com/index/hp-frontier-partnership",
+    "published_at": "2026-06-28T17:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "HP Inc. scales its OpenAI Frontier partnership to deploy AI across customer experiences, software development, and enterprise operations.",
+    "content": "HP Inc. scales its OpenAI Frontier partnership to deploy AI across customer experiences, software development, and enterprise operations.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
     "id": "provider-46d389120561b5c493",
     "company": "NVIDIA AI",
     "title": "Deploy a Production-Ready NVIDIA AI-Q Blueprint on Oracle Cloud Infrastructure",
@@ -616,17 +660,6 @@
     "source_url": "https://research.ibm.com/rss"
   },
   {
-    "id": "provider-950caa79948d4d0f9a",
-    "company": "OpenAI",
-    "title": "Patch the Planet: a Daybreak initiative to support open source maintainers",
-    "url": "https://openai.com/index/patch-the-planet",
-    "published_at": "2026-06-22T10:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "OpenAI introduces Patch the Planet, a Daybreak initiative helping open-source maintainers find, validate, and fix vulnerabilities with AI and expert review.",
-    "content": "OpenAI introduces Patch the Planet, a Daybreak initiative helping open-source maintainers find, validate, and fix vulnerabilities with AI and expert review.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-47bf7e22d29459f96a",
     "company": "OpenAI",
     "title": "Daybreak: Tools for securing every organization in the world",
@@ -635,6 +668,17 @@
     "source_type": "rss_official",
     "summary": "OpenAI introduces new Daybreak tools, including Codex Security and GPT-5.5-Cyber, to help organizations find, validate, and patch vulnerabilities at scale.",
     "content": "OpenAI introduces new Daybreak tools, including Codex Security and GPT-5.5-Cyber, to help organizations find, validate, and patch vulnerabilities at scale.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-950caa79948d4d0f9a",
+    "company": "OpenAI",
+    "title": "Patch the Planet: a Daybreak initiative to support open source maintainers",
+    "url": "https://openai.com/index/patch-the-planet",
+    "published_at": "2026-06-22T10:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "OpenAI introduces Patch the Planet, a Daybreak initiative helping open-source maintainers find, validate, and fix vulnerabilities with AI and expert review.",
+    "content": "OpenAI introduces Patch the Planet, a Daybreak initiative helping open-source maintainers find, validate, and fix vulnerabilities with AI and expert review.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -946,17 +990,6 @@
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
-    "id": "provider-cc735625f874e15456",
-    "company": "NVIDIA AI",
-    "title": "HPE AI Factory With NVIDIA Expands for the Era of Agents",
-    "url": "https://blogs.nvidia.com/blog/hpe-ai-factory-agentic-enterprise/",
-    "published_at": "2026-06-16T16:30:27.000Z",
-    "source_type": "rss_official",
-    "summary": "Enterprises are moving agentic AI from proof of concept to production — and the next generation of AI factories are built for the era of agents. At HPE Discover Las Vegas, running through Thursday, June 18, NVIDIA and HPE are expanding the HPE AI Factory with NVIDIA, including NVIDIA Vera CPU and NVIDIA Agent Toolkit […]",
-    "content": "Enterprises are moving agentic AI from proof of concept to production — and the next generation of AI factories are built for the era of agents. At HPE Discover Las Vegas, running through Thursday, June 18, NVIDIA and HPE are expanding the HPE AI Factory with NVIDIA, including NVIDIA Vera CPU and NVIDIA Agent Toolkit […]",
-    "source_url": "https://blogs.nvidia.com/feed/"
-  },
-  {
     "id": "provider-eb1b9a2ae81f9316f0",
     "company": "Google DeepMind",
     "title": "Securing the future of AI agents",
@@ -1100,28 +1133,6 @@
     "source_url": "https://research.ibm.com/rss"
   },
   {
-    "id": "provider-53f9d319e8ae0bb1f1",
-    "company": "OpenAI",
-    "title": "BBVA puts AI at the core of banking with OpenAI",
-    "url": "https://openai.com/index/bbva",
-    "published_at": "2026-06-11T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Learn how BBVA scaled ChatGPT Enterprise to 100,000 employees and partnered with OpenAI to accelerate AI-powered banking transformation worldwide.",
-    "content": "Learn how BBVA scaled ChatGPT Enterprise to 100,000 employees and partnered with OpenAI to accelerate AI-powered banking transformation worldwide.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
-    "id": "provider-511ab3a14c077aa0bc",
-    "company": "OpenAI",
-    "title": "How an astrophysicist uses Codex to help simulate black holes",
-    "url": "https://openai.com/index/using-codex-to-simulate-black-holes",
-    "published_at": "2026-06-11T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Discover how astrophysicist Chi-kwan Chan uses Codex to build black hole simulations, helping scientists study extreme physics and test Einstein’s theory of general relativity.",
-    "content": "Discover how astrophysicist Chi-kwan Chan uses Codex to build black hole simulations, helping scientists study extreme physics and test Einstein’s theory of general relativity.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-6b45da215c922c7846",
     "company": "OpenAI",
     "title": "Supporting Europe’s work in ensuring a trustworthy AI ecosystem",
@@ -1133,6 +1144,17 @@
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
+    "id": "provider-53f9d319e8ae0bb1f1",
+    "company": "OpenAI",
+    "title": "BBVA puts AI at the core of banking with OpenAI",
+    "url": "https://openai.com/index/bbva",
+    "published_at": "2026-06-11T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Learn how BBVA scaled ChatGPT Enterprise to 100,000 employees and partnered with OpenAI to accelerate AI-powered banking transformation worldwide.",
+    "content": "Learn how BBVA scaled ChatGPT Enterprise to 100,000 employees and partnered with OpenAI to accelerate AI-powered banking transformation worldwide.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
     "id": "provider-c3f06ceec6a17e4b54",
     "company": "OpenAI",
     "title": "OpenAI to acquire Ona",
@@ -1141,6 +1163,17 @@
     "source_type": "rss_official",
     "summary": "OpenAI plans to acquire Ona to expand Codex with secure, persistent cloud environments, enabling long-running AI agents across enterprise workflows.",
     "content": "OpenAI plans to acquire Ona to expand Codex with secure, persistent cloud environments, enabling long-running AI agents across enterprise workflows.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-511ab3a14c077aa0bc",
+    "company": "OpenAI",
+    "title": "How an astrophysicist uses Codex to help simulate black holes",
+    "url": "https://openai.com/index/using-codex-to-simulate-black-holes",
+    "published_at": "2026-06-11T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Discover how astrophysicist Chi-kwan Chan uses Codex to build black hole simulations, helping scientists study extreme physics and test Einstein’s theory of general relativity.",
+    "content": "Discover how astrophysicist Chi-kwan Chan uses Codex to build black hole simulations, helping scientists study extreme physics and test Einstein’s theory of general relativity.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -1980,17 +2013,6 @@
     "source_url": "https://research.ibm.com/rss"
   },
   {
-    "id": "provider-b74b3aee2ee54d82e3",
-    "company": "OpenAI",
-    "title": "OpenAI’s Frontier Governance Framework",
-    "url": "https://openai.com/index/openai-frontier-governance-framework",
-    "published_at": "2026-05-28T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Explore OpenAI’s Frontier Governance Framework and how our AI safety, security, and risk practices align with emerging EU and California regulations.",
-    "content": "Explore OpenAI’s Frontier Governance Framework and how our AI safety, security, and risk practices align with emerging EU and California regulations.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-7ae6a57d8db0a9364c",
     "company": "OpenAI",
     "title": "MUFG aims to become AI-native with OpenAI",
@@ -1999,6 +2021,17 @@
     "source_type": "rss_official",
     "summary": "MUFG uses ChatGPT Enterprise to build an AI-native organization, improve workflows, and deliver new AI-powered financial services at scale.",
     "content": "MUFG uses ChatGPT Enterprise to build an AI-native organization, improve workflows, and deliver new AI-powered financial services at scale.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-b74b3aee2ee54d82e3",
+    "company": "OpenAI",
+    "title": "OpenAI’s Frontier Governance Framework",
+    "url": "https://openai.com/index/openai-frontier-governance-framework",
+    "published_at": "2026-05-28T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Explore OpenAI’s Frontier Governance Framework and how our AI safety, security, and risk practices align with emerging EU and California regulations.",
+    "content": "Explore OpenAI’s Frontier Governance Framework and how our AI safety, security, and risk practices align with emerging EU and California regulations.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -2057,17 +2090,6 @@
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
-    "id": "provider-eba53cab6075e13c03",
-    "company": "OpenAI",
-    "title": "Warp’s big bet on building open source with GPT-5.5",
-    "url": "https://openai.com/index/warp",
-    "published_at": "2026-05-27T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Warp uses GPT-5.5 and OpenAI models to coordinate coding agents across local, cloud, and open-source development workflows.",
-    "content": "Warp uses GPT-5.5 and OpenAI models to coordinate coding agents across local, cloud, and open-source development workflows.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-094fa9a9b0dc9737d3",
     "company": "OpenAI",
     "title": "Election information and safeguards in 2026",
@@ -2076,6 +2098,17 @@
     "source_type": "rss_official",
     "summary": "Ahead of global elections, we’re helping people access information, supporting cyber defenders, and increasing AI transparency",
     "content": "Ahead of global elections, we’re helping people access information, supporting cyber defenders, and increasing AI transparency",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-eba53cab6075e13c03",
+    "company": "OpenAI",
+    "title": "Warp’s big bet on building open source with GPT-5.5",
+    "url": "https://openai.com/index/warp",
+    "published_at": "2026-05-27T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Warp uses GPT-5.5 and OpenAI models to coordinate coding agents across local, cloud, and open-source development workflows.",
+    "content": "Warp uses GPT-5.5 and OpenAI models to coordinate coding agents across local, cloud, and open-source development workflows.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -2114,7 +2147,7 @@
   {
     "id": "provider-c2ea635cfee88f514a",
     "company": "IBM Research",
-    "title": "Qiskit Global Summer School 2026: Registration now open",
+    "title": "[Registrations closed] Qiskit Global Summer School 2026",
     "url": "https://research.ibm.com/blog/qiskit-summer-school-2026?utm_medium=rss&utm_source=rss",
     "published_at": "2026-05-26T04:00:00.000Z",
     "source_type": "rss_official",
@@ -2255,25 +2288,14 @@
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
-    "id": "provider-5fb85c0981958ea0fb",
-    "company": "IBM Research",
-    "title": "How researchers built a record-setting quantum circuit",
-    "url": "https://research.ibm.com/blog/qft-benchmark?utm_medium=rss&utm_source=rss",
-    "published_at": "2026-05-20T04:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "New demonstration of a 52-qubit quantum Fourier transform shows how ecosystem innovation improves algorithm performance on quantum hardware.",
-    "content": "New demonstration of a 52-qubit quantum Fourier transform shows how ecosystem innovation improves algorithm performance on quantum hardware.",
-    "source_url": "https://research.ibm.com/rss"
-  },
-  {
-    "id": "provider-45f30e700b32f6b67c",
+    "id": "provider-f73b8a8a9df451169b",
     "company": "OpenAI",
-    "title": "The next phase of OpenAI’s Education for Countries",
-    "url": "https://openai.com/index/the-next-phase-of-education-for-countries",
+    "title": "An OpenAI model has disproved a central conjecture in discrete geometry",
+    "url": "https://openai.com/index/model-disproves-discrete-geometry-conjecture",
     "published_at": "2026-05-20T00:00:00.000Z",
     "source_type": "rss_official",
-    "summary": "OpenAI advances Education for Countries, expanding AI adoption in schools with new partnerships, teacher training, and tools to improve global learning outcomes.",
-    "content": "OpenAI advances Education for Countries, expanding AI adoption in schools with new partnerships, teacher training, and tools to improve global learning outcomes.",
+    "summary": "An OpenAI model solved the 80-year-old unit distance problem, disproving a major conjecture in discrete geometry and marking a milestone in AI-driven mathematics.",
+    "content": "An OpenAI model solved the 80-year-old unit distance problem, disproving a major conjecture in discrete geometry and marking a milestone in AI-driven mathematics.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -2288,14 +2310,14 @@
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
-    "id": "provider-f73b8a8a9df451169b",
+    "id": "provider-45f30e700b32f6b67c",
     "company": "OpenAI",
-    "title": "An OpenAI model has disproved a central conjecture in discrete geometry",
-    "url": "https://openai.com/index/model-disproves-discrete-geometry-conjecture",
+    "title": "The next phase of OpenAI’s Education for Countries",
+    "url": "https://openai.com/index/the-next-phase-of-education-for-countries",
     "published_at": "2026-05-20T00:00:00.000Z",
     "source_type": "rss_official",
-    "summary": "An OpenAI model solved the 80-year-old unit distance problem, disproving a major conjecture in discrete geometry and marking a milestone in AI-driven mathematics.",
-    "content": "An OpenAI model solved the 80-year-old unit distance problem, disproving a major conjecture in discrete geometry and marking a milestone in AI-driven mathematics.",
+    "summary": "OpenAI advances Education for Countries, expanding AI adoption in schools with new partnerships, teacher training, and tools to improve global learning outcomes.",
+    "content": "OpenAI advances Education for Countries, expanding AI adoption in schools with new partnerships, teacher training, and tools to improve global learning outcomes.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -2563,6 +2585,28 @@
     "source_url": "https://www.amazon.science/index.rss"
   },
   {
+    "id": "provider-5a42e1a49c5662b1ee",
+    "company": "OpenAI",
+    "title": "How data science teams use Codex",
+    "url": "https://openai.com/academy/codex-for-work/how-data-science-teams-use-codex",
+    "published_at": "2026-05-15T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "See how data science teams can use Codex to build root-cause briefs, impact readouts, KPI memos, scoped analyses, and dashboard specs from real work inputs.",
+    "content": "See how data science teams can use Codex to build root-cause briefs, impact readouts, KPI memos, scoped analyses, and dashboard specs from real work inputs.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-fc541baa18acce0369",
+    "company": "OpenAI",
+    "title": "Databricks brings GPT-5.5 to enterprise agent workflows",
+    "url": "https://openai.com/index/databricks",
+    "published_at": "2026-05-15T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Databricks uses GPT-5.5 for enterprise agent workflows after the model set a new state of the art on the OfficeQA Pro benchmark.",
+    "content": "Databricks uses GPT-5.5 for enterprise agent workflows after the model set a new state of the art on the OfficeQA Pro benchmark.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
     "id": "provider-a1fd3050e456e69db2",
     "company": "OpenAI",
     "title": "How business operations teams use Codex",
@@ -2593,28 +2637,6 @@
     "source_type": "rss_official",
     "summary": "See how sales teams can use ChatGPT Codex to create pipeline briefs, meeting prep packets, forecast reviews, account plans, and stalled-deal diagnoses from real work inputs.",
     "content": "See how sales teams can use ChatGPT Codex to create pipeline briefs, meeting prep packets, forecast reviews, account plans, and stalled-deal diagnoses from real work inputs.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
-    "id": "provider-5a42e1a49c5662b1ee",
-    "company": "OpenAI",
-    "title": "How data science teams use Codex",
-    "url": "https://openai.com/academy/codex-for-work/how-data-science-teams-use-codex",
-    "published_at": "2026-05-15T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "See how data science teams can use Codex to build root-cause briefs, impact readouts, KPI memos, scoped analyses, and dashboard specs from real work inputs.",
-    "content": "See how data science teams can use Codex to build root-cause briefs, impact readouts, KPI memos, scoped analyses, and dashboard specs from real work inputs.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
-    "id": "provider-fc541baa18acce0369",
-    "company": "OpenAI",
-    "title": "Databricks brings GPT-5.5 to enterprise agent workflows",
-    "url": "https://openai.com/index/databricks",
-    "published_at": "2026-05-15T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Databricks uses GPT-5.5 for enterprise agent workflows after the model set a new state of the art on the OfficeQA Pro benchmark.",
-    "content": "Databricks uses GPT-5.5 for enterprise agent workflows after the model set a new state of the art on the OfficeQA Pro benchmark.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -2750,17 +2772,6 @@
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
-    "id": "provider-e12bdfcd605e6180cf",
-    "company": "OpenAI",
-    "title": "How finance teams use Codex",
-    "url": "https://openai.com/academy/how-finance-teams-use-codex",
-    "published_at": "2026-05-12T15:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "See how finance teams can use Codex to build MBRs, reporting packs, variance bridges, model checks, and planning scenarios from real work inputs.",
-    "content": "See how finance teams can use Codex to build MBRs, reporting packs, variance bridges, model checks, and planning scenarios from real work inputs.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-aaa7583d4a792498ca",
     "company": "Google DeepMind",
     "title": "Co-Scientist: A multi-agent AI partner to accelerate research",
@@ -2770,17 +2781,6 @@
     "summary": "Introducing Co-Scientist, a collaborative AI partner built with Gemini to help researchers accelerate scientific breakthroughs.",
     "content": "Introducing Co-Scientist, a collaborative AI partner built with Gemini to help researchers accelerate scientific breakthroughs.",
     "source_url": "https://deepmind.google/blog/rss.xml"
-  },
-  {
-    "id": "provider-534e82e684925d516f",
-    "company": "OpenAI",
-    "title": "How NVIDIA engineers and researchers build with Codex",
-    "url": "https://openai.com/index/nvidia",
-    "published_at": "2026-05-12T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Teams use Codex with GPT-5.5 to ship production systems and turn research ideas into runnable experiments.",
-    "content": "Teams use Codex with GPT-5.5 to ship production systems and turn research ideas into runnable experiments.",
-    "source_url": "https://openai.com/news/rss.xml"
   },
   {
     "id": "provider-920026102ed3058e95",
