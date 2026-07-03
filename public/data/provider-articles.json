@@ -1,5 +1,49 @@
 [
   {
+    "id": "provider-4c0fe294775cddfe62",
+    "company": "NVIDIA AI",
+    "title": "Hardware-Rooted AI Security That Won’t Slow You Down",
+    "url": "https://developer.nvidia.com/blog/hardware-rooted-ai-security-that-wont-slow-you-down/",
+    "published_at": "2026-07-02T21:25:42.000Z",
+    "source_type": "rss_official",
+    "summary": "AI has transformed how organizations operate, driving unprecedented levels of productivity and innovation. However, AI adoption can be impeded by concerns...",
+    "content": "AI has transformed how organizations operate, driving unprecedented levels of productivity and innovation. However, AI adoption can be impeded by concerns...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
+  },
+  {
+    "id": "provider-1a1b2f19c27df407ab",
+    "company": "Amazon AI",
+    "title": "How Amazon Bedrock catches AI-generated phishing",
+    "url": "https://aws.amazon.com/blogs/machine-learning/how-amazon-bedrock-catches-ai-generated-phishing/",
+    "published_at": "2026-07-02T17:55:41.000Z",
+    "source_type": "rss_official",
+    "summary": "Social engineering through phishing remains one of the most common tactics for launching cyberattacks. AI-generated phishing email messages now pose a new challenge for security teams managing email systems, significantly raising the risk because of their advanced sophistication. Modern social engineers use generative AI and open source intelligence (OSINT) to craft thousands of unique messages […]",
+    "content": "Social engineering through phishing remains one of the most common tactics for launching cyberattacks. AI-generated phishing email messages now pose a new challenge for security teams managing email systems, significantly raising the risk because of their advanced sophistication. Modern social engineers use generative AI and open source intelligence (OSINT) to craft thousands of unique messages […]",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-08069a1c3f7a5ba210",
+    "company": "Amazon AI",
+    "title": "Best practices for multi-turn reinforcement learning in Amazon SageMaker AI",
+    "url": "https://aws.amazon.com/blogs/machine-learning/best-practices-for-multi-turn-reinforcement-learning-in-amazon-sagemaker-ai/",
+    "published_at": "2026-07-02T17:50:23.000Z",
+    "source_type": "rss_official",
+    "summary": "In this post, we share best practices for reliable multi-turn RL training. We cover how to build a training environment you can trust, set up an external evaluation, design a reward aligned with the end task, manage what changes once the agent runs for multiple turns, and monitor the metrics that tell you when to iterate.",
+    "content": "In this post, we share best practices for reliable multi-turn RL training. We cover how to build a training environment you can trust, set up an external evaluation, design a reward aligned with the end task, manage what changes once the agent runs for multiple turns, and monitor the metrics that tell you when to iterate.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-ad5c954d581abf857a",
+    "company": "NVIDIA AI",
+    "title": "Joyride Through July With 12 Games Coming to GeForce NOW",
+    "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-july-2026-games-list/",
+    "published_at": "2026-07-02T13:00:23.000Z",
+    "source_type": "rss_official",
+    "summary": "Summer is heating up — and GeForce NOW is taking players along for the ride. Start the month with Monopoly: Star Wars Heroes vs. Villains, bringing a galaxy far, far away to the iconic board-game franchise, alongside 12 new games joining the cloud this month. Plus, don’t let the sun set on the biggest GeForce […]",
+    "content": "Summer is heating up — and GeForce NOW is taking players along for the ride. Start the month with Monopoly: Star Wars Heroes vs. Villains, bringing a galaxy far, far away to the iconic board-game franchise, alongside 12 new games joining the cloud this month. Plus, don’t let the sun set on the biggest GeForce […]",
+    "source_url": "https://blogs.nvidia.com/feed/"
+  },
+  {
     "id": "provider-da0ebd58290ec4688d",
     "company": "NVIDIA AI",
     "title": "NVIDIA Unlocks AI Compute at Scale, Inviting Partners to Power the AI Infrastructure Buildout",
@@ -404,28 +448,6 @@
     "source_type": "rss_official",
     "summary": "In this post, we show you how PAR built a production-ready multi-tenant LLM analytics system that enforces row-level security through a three-layer architecture: cryptographic request signing with AWS SigV4, semantic validation on Amazon Bedrock, and programmatic data isolation via Split-Plane SQL. We demonstrate how each layer operates independently to reduce the risk of cross-tenant data exposure, even when the LLM itself is compromised or manipulated.",
     "content": "In this post, we show you how PAR built a production-ready multi-tenant LLM analytics system that enforces row-level security through a three-layer architecture: cryptographic request signing with AWS SigV4, semantic validation on Amazon Bedrock, and programmatic data isolation via Split-Plane SQL. We demonstrate how each layer operates independently to reduce the risk of cross-tenant data exposure, even when the LLM itself is compromised or manipulated.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
-    "id": "provider-2f84dc8ba78b47d4b1",
-    "company": "Amazon AI",
-    "title": "Build an agentic AI healthcare claims pipeline with Amazon Bedrock and AWS HealthLake",
-    "url": "https://aws.amazon.com/blogs/machine-learning/build-an-agentic-ai-healthcare-claims-pipeline-with-amazon-bedrock-and-aws-healthlake/",
-    "published_at": "2026-06-29T17:36:34.000Z",
-    "source_type": "rss_official",
-    "summary": "In this post, we show you how to build an automated claims processing pipeline using two key Amazon Bedrock capabilities: Amazon Bedrock Data Automation for intelligent document extraction from healthcare claim forms, and Amazon Bedrock AgentCore for hosting an AI agent that validates and transforms the extracted data into FHIR (Fast Healthcare Interoperable Resources) resources in AWS HealthLake. You will learn how to combine these services to create an end-to-end workflow that reduces manual p",
-    "content": "In this post, we show you how to build an automated claims processing pipeline using two key Amazon Bedrock capabilities: Amazon Bedrock Data Automation for intelligent document extraction from healthcare claim forms, and Amazon Bedrock AgentCore for hosting an AI agent that validates and transforms the extracted data into FHIR (Fast Healthcare Interoperable Resources) resources in AWS HealthLake. You will learn how to combine these services to create an end-to-end workflow that reduces manual processing while maintaining accuracy through automated validation checks.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
-    "id": "provider-e5110602cbef16e44e",
-    "company": "Amazon AI",
-    "title": "Debugging production agents with Amazon Bedrock AgentCore Observability",
-    "url": "https://aws.amazon.com/blogs/machine-learning/debugging-production-agents-with-amazon-bedrock-agentcore-observability/",
-    "published_at": "2026-06-29T17:25:21.000Z",
-    "source_type": "rss_official",
-    "summary": "In this post, you learn how to debug production agent failures using built-in observability capabilities. We walk through common failure patterns, show how to analyze agent behavior with traces and metrics, and provide structured workflows for resolving issues such as infinite loops and tool invocation failures. This is Part 1 of a two-part series. Part 2 covers performance optimization and memory management.",
-    "content": "In this post, you learn how to debug production agent failures using built-in observability capabilities. We walk through common failure patterns, show how to analyze agent behavior with traces and metrics, and provide structured workflows for resolving issues such as infinite loops and tool invocation failures. This is Part 1 of a two-part series. Part 2 covers performance optimization and memory management.",
     "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
   },
   {
@@ -866,17 +888,6 @@
     "source_type": "rss_official",
     "summary": "At the ISC conference running in Hamburg this week, NVIDIA is introducing new software that speeds AI for science, from chemistry and materials discovery to the search for dark matter. The NVIDIA DAQIRI library and new NVIDIA ALCHEMI NIM microservices — as well as the NVIDIA cuPhoton reference code, coming soon — turn work that […]",
     "content": "At the ISC conference running in Hamburg this week, NVIDIA is introducing new software that speeds AI for science, from chemistry and materials discovery to the search for dark matter. The NVIDIA DAQIRI library and new NVIDIA ALCHEMI NIM microservices — as well as the NVIDIA cuPhoton reference code, coming soon — turn work that […]",
-    "source_url": "https://blogs.nvidia.com/feed/"
-  },
-  {
-    "id": "provider-51202cf84b2250b36e",
-    "company": "NVIDIA AI",
-    "title": "NVIDIA Vera CPU Opens the Way for Agentic Scientific AI at Los Alamos National Laboratory",
-    "url": "https://blogs.nvidia.com/blog/nvidia-vera-cpu-los-alamos-national-laboratory/",
-    "published_at": "2026-06-22T13:00:20.000Z",
-    "source_type": "rss_official",
-    "summary": "Mission, Vision and Veritas — new Los Alamos National Laboratory (LANL) supercomputers to be built with HPE and NVIDIA — are tapping NVIDIA Vera CPUs to accelerate scientific discovery, unlocking agentic AI for science. The supercomputers will use the HPE Cray Supercomputing GX5000 architecture with the NVIDIA Vera Rubin platform, combining NVIDIA Vera CPUs, NVIDIA […]",
-    "content": "Mission, Vision and Veritas — new Los Alamos National Laboratory (LANL) supercomputers to be built with HPE and NVIDIA — are tapping NVIDIA Vera CPUs to accelerate scientific discovery, unlocking agentic AI for science. The supercomputers will use the HPE Cray Supercomputing GX5000 architecture with the NVIDIA Vera Rubin platform, combining NVIDIA Vera CPUs, NVIDIA […]",
     "source_url": "https://blogs.nvidia.com/feed/"
   },
   {
@@ -3869,17 +3880,6 @@
     "source_type": "rss_official",
     "summary": "The next generation of AI-driven robots like humanoids and autonomous vehicles depends on high-fidelity, physics-aware training data. Without diverse and...",
     "content": "The next generation of AI-driven robots like humanoids and autonomous vehicles depends on high-fidelity, physics-aware training data. Without diverse and...",
-    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
-    "id": "provider-0677e9818442d8a32d",
-    "company": "NVIDIA AI",
-    "title": "Introducing Nemotron 3 Super: An Open Hybrid Mamba-Transformer MoE for Agentic Reasoning",
-    "url": "https://developer.nvidia.com/blog/introducing-nemotron-3-super-an-open-hybrid-mamba-transformer-moe-for-agentic-reasoning/",
-    "published_at": "2026-03-11T16:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Agentic AI systems need models with the specialized depth to solve dense technical problems autonomously. They must excel at reasoning, coding, and long-context...",
-    "content": "Agentic AI systems need models with the specialized depth to solve dense technical problems autonomously. They must excel at reasoning, coding, and long-context...",
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
