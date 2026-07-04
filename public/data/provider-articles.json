@@ -1,5 +1,16 @@
 [
   {
+    "id": "provider-7de99c41f743cb8ec2",
+    "company": "Google DeepMind",
+    "title": "Google DeepMind and A24 announce first-of-its-kind research partnership",
+    "url": "https://deepmind.google/blog/google-deepmind-and-a24-announce-first-of-its-kind-research-partnership/",
+    "published_at": "2026-07-03T14:25:43.000Z",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://deepmind.google/blog/rss.xml"
+  },
+  {
     "id": "provider-4c0fe294775cddfe62",
     "company": "NVIDIA AI",
     "title": "Hardware-Rooted AI Security That Won’t Slow You Down",
@@ -4463,17 +4474,6 @@
     "source_type": "rss_official",
     "summary": "We partnered with Darren Aronofsky, Eliza McNitt and a team of more than 200 people to make a film using Veo and live-action filmmaking.",
     "content": "We partnered with Darren Aronofsky, Eliza McNitt and a team of more than 200 people to make a film using Veo and live-action filmmaking.",
-    "source_url": "https://deepmind.google/blog/rss.xml"
-  },
-  {
-    "id": "provider-b4db87163222f2aad7",
-    "company": "Google DeepMind",
-    "title": "AlphaEarth Foundations helps map our planet in unprecedented detail",
-    "url": "https://deepmind.google/blog/alphaearth-foundations-helps-map-our-planet-in-unprecedented-detail/",
-    "published_at": "2025-10-24T19:06:32.000Z",
-    "source_type": "rss_official",
-    "summary": "New AI model integrates petabytes of Earth observation data to generate a unified data representation that revolutionizes global mapping and monitoring",
-    "content": "New AI model integrates petabytes of Earth observation data to generate a unified data representation that revolutionizes global mapping and monitoring",
     "source_url": "https://deepmind.google/blog/rss.xml"
   },
   {
