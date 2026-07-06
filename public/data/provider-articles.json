@@ -1,5 +1,38 @@
 [
   {
+    "id": "provider-ccb017eb8674f0338f",
+    "company": "Hugging Face",
+    "title": "LeRobot v0.6.0: Imagine, Evaluate, Improve",
+    "url": "https://huggingface.co/blog/lerobot-release-v060",
+    "published_at": "2026-07-07T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://huggingface.co/blog/feed.xml"
+  },
+  {
+    "id": "provider-1851b96d9b03fe755e",
+    "company": "IBM Research",
+    "title": "Modeling the chemistry of fusion reactor material",
+    "url": "https://research.ibm.com/blog/molten-salts-fusion-quantum?utm_medium=rss&utm_source=rss",
+    "published_at": "2026-07-06T11:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Researchers used quantum-centric supercomputing to simulate molten salts, in an early step toward solving a key problem in fusion power.",
+    "content": "Researchers used quantum-centric supercomputing to simulate molten salts, in an early step toward solving a key problem in fusion power.",
+    "source_url": "https://research.ibm.com/rss"
+  },
+  {
+    "id": "provider-8bd46cb2b3d94e0a96",
+    "company": "Hugging Face",
+    "title": "🤗 Kernels: Major Updates",
+    "url": "https://huggingface.co/blog/revamped-kernels",
+    "published_at": "2026-07-06T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://huggingface.co/blog/feed.xml"
+  },
+  {
     "id": "provider-7de99c41f743cb8ec2",
     "company": "Google DeepMind",
     "title": "Google DeepMind and A24 announce first-of-its-kind research partnership",
@@ -2156,17 +2189,6 @@
     "source_url": "https://www.amazon.science/index.rss"
   },
   {
-    "id": "provider-b8b38ca82abf961ef6",
-    "company": "IBM Research",
-    "title": "New Classroom Accounts expand quantum access for educators",
-    "url": "https://research.ibm.com/blog/classroom-accounts?utm_medium=rss&utm_source=rss",
-    "published_at": "2026-05-28T04:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Classroom Accounts are a new way for educators to give large groups of students free, hands-on access to real quantum computers.",
-    "content": "Classroom Accounts are a new way for educators to give large groups of students free, hands-on access to real quantum computers.",
-    "source_url": "https://research.ibm.com/rss"
-  },
-  {
     "id": "provider-7ae6a57d8db0a9364c",
     "company": "OpenAI",
     "title": "MUFG aims to become AI-native with OpenAI",
@@ -4048,17 +4070,6 @@
     "source_url": "https://deepmind.google/blog/rss.xml"
   },
   {
-    "id": "provider-3d09b7d998572cb0e2",
-    "company": "Hugging Face",
-    "title": "IBM and UC Berkeley Diagnose Why Enterprise Agents Fail Using IT-Bench and MAST",
-    "url": "https://huggingface.co/blog/ibm-research/itbenchandmast",
-    "published_at": "2026-02-18T16:15:45.000Z",
-    "source_type": "rss_official",
-    "summary": "",
-    "content": "",
-    "source_url": "https://huggingface.co/blog/feed.xml"
-  },
-  {
     "id": "provider-b7d65ed8be1776ed8d",
     "company": "Google DeepMind",
     "title": "A new way to express yourself: Gemini can now create music",
@@ -4068,17 +4079,6 @@
     "summary": "The Gemini app now features our most advanced music generation model Lyria 3, empowering anyone to make 30-second tracks using text or images.",
     "content": "The Gemini app now features our most advanced music generation model Lyria 3, empowering anyone to make 30-second tracks using text or images.",
     "source_url": "https://deepmind.google/blog/rss.xml"
-  },
-  {
-    "id": "provider-8c2e58a8833d988917",
-    "company": "Hugging Face",
-    "title": "One-Shot Any Web App with Gradio's gr.HTML",
-    "url": "https://huggingface.co/blog/gradio-html-one-shot-apps",
-    "published_at": "2026-02-18T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "",
-    "content": "",
-    "source_url": "https://huggingface.co/blog/feed.xml"
   },
   {
     "id": "provider-3f6201b81f2a0c0466",
