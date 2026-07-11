@@ -1,5 +1,115 @@
 [
   {
+    "id": "provider-32c42153e53ef10b4c",
+    "company": "NVIDIA AI",
+    "title": "Reducing High-Bandwidth Memory Bottlenecks in JAX-Based LLM Training with Host Offloading",
+    "url": "https://developer.nvidia.com/blog/reducing-high-bandwidth-memory-bottlenecks-in-jax-based-llm-training-with-host-offloading/",
+    "published_at": "2026-07-10T18:17:40.000Z",
+    "source_type": "rss_official",
+    "summary": "Large language model (LLM) training workloads increasingly run into GPU memory limits before compute is fully used. Model weights, gradients, optimizer states,...",
+    "content": "Large language model (LLM) training workloads increasingly run into GPU memory limits before compute is fully used. Model weights, gradients, optimizer states,...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
+  },
+  {
+    "id": "provider-fecd1513849c8fba39",
+    "company": "Amazon AI",
+    "title": "Amazon and University of Michigan give robots a sense of touch",
+    "url": "https://www.amazon.science/blog/amazon-and-university-of-michigan-give-robots-a-sense-of-touch",
+    "published_at": "2026-07-10T17:13:31.000Z",
+    "source_type": "rss_official",
+    "summary": "HydroShear, a new physics-based simulator, teaches robots how to use their sense of touch to perform complex manipulation tasks, in a way that transfers seamlessly to the real world.",
+    "content": "HydroShear, a new physics-based simulator, teaches robots how to use their sense of touch to perform complex manipulation tasks, in a way that transfers seamlessly to the real world.",
+    "source_url": "https://www.amazon.science/index.rss"
+  },
+  {
+    "id": "provider-70803e0b98d39cdc20",
+    "company": "NVIDIA AI",
+    "title": "AI Model Co-Design: Hardware-Friendly LLM Design",
+    "url": "https://developer.nvidia.com/blog/ai-model-co-design-hardware-friendly-llm-design/",
+    "published_at": "2026-07-10T16:36:02.000Z",
+    "source_type": "rss_official",
+    "summary": "AI performance comes down to three dimensions:&nbsp; Accuracy: How well the model reasons and produces outputs Throughput: How many tokens per second a...",
+    "content": "AI performance comes down to three dimensions:&nbsp; Accuracy: How well the model reasons and produces outputs Throughput: How many tokens per second a...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
+  },
+  {
+    "id": "provider-13d8fc9a1cfeb2ce88",
+    "company": "Amazon AI",
+    "title": "Fine-tune NVIDIA Nemotron 3 models with Amazon SageMaker AI serverless model customization",
+    "url": "https://aws.amazon.com/blogs/machine-learning/fine-tune-nvidia-nemotron-3-models-with-amazon-sagemaker-ai-serverless-model-customization/",
+    "published_at": "2026-07-10T15:35:05.000Z",
+    "source_type": "rss_official",
+    "summary": "In this post, we explore what makes the Nemotron 3 architecture unique, walk through the fine-tuning techniques available, and show you step-by-step how to get started with serverless customization using SageMaker Studio.",
+    "content": "In this post, we explore what makes the Nemotron 3 architecture unique, walk through the fine-tuning techniques available, and show you step-by-step how to get started with serverless customization using SageMaker Studio.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-f0bd85d52d24763fcd",
+    "company": "Amazon AI",
+    "title": "Real-time dental image verification with Amazon SageMaker AI at Henry Schein One",
+    "url": "https://aws.amazon.com/blogs/machine-learning/real-time-dental-image-verification-with-amazon-sagemaker-ai-at-henry-schein-one/",
+    "published_at": "2026-07-10T15:33:47.000Z",
+    "source_type": "rss_official",
+    "summary": "This post describes how Henry Schein One closed that gap by building Image Verify, an AI-powered quality verification system on Amazon SageMaker AI that evaluates dental X-ray quality at the point of capture, in real time, across thousands of locations. The system went from concept to over 10,000 active locations within months and has already processed over 11 million X-rays and growing at 1.5 million per week. Henry Schein One is now scaling toward 40,000 locations globally across four regions.",
+    "content": "This post describes how Henry Schein One closed that gap by building Image Verify, an AI-powered quality verification system on Amazon SageMaker AI that evaluates dental X-ray quality at the point of capture, in real time, across thousands of locations. The system went from concept to over 10,000 active locations within months and has already processed over 11 million X-rays and growing at 1.5 million per week. Henry Schein One is now scaling toward 40,000 locations globally across four regions.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-8ceb48da6896d4720d",
+    "company": "Amazon AI",
+    "title": "Build a semantic layer for agentic AI on AWS with Stardog and Amazon Bedrock AgentCore",
+    "url": "https://aws.amazon.com/blogs/machine-learning/build-a-semantic-layer-for-agentic-ai-on-aws-with-stardog-and-amazon-bedrock-agentcore/",
+    "published_at": "2026-07-10T15:31:12.000Z",
+    "source_type": "rss_official",
+    "summary": "In this post we show how to build a semantic layer on AWS using Stardog’s Semantic AI Application over Amazon Aurora and Amazon Redshift, and how to run a Strands Agents agent on Amazon Bedrock AgentCore that queries the layer to answer customer 360 questions across both sources without extract, transform, and load (ETL). The same Stardog deployment works behind AWS computes (Amazon Elastic Kubernetes Service (Amazon EKS), Amazon Elastic Container Service (Amazon ECS), and AWS Lambda). We use Ag",
+    "content": "In this post we show how to build a semantic layer on AWS using Stardog’s Semantic AI Application over Amazon Aurora and Amazon Redshift, and how to run a Strands Agents agent on Amazon Bedrock AgentCore that queries the layer to answer customer 360 questions across both sources without extract, transform, and load (ETL). The same Stardog deployment works behind AWS computes (Amazon Elastic Kubernetes Service (Amazon EKS), Amazon Elastic Container Service (Amazon ECS), and AWS Lambda). We use AgentCore here because it bundles inbound auth, hosting, and tool credentials into one managed service.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-623757991a20f4569f",
+    "company": "Amazon AI",
+    "title": "Scaling agentic workflows with native case management in Amazon Quick Automate",
+    "url": "https://aws.amazon.com/blogs/machine-learning/scaling-agentic-workflows-with-native-case-management-in-amazon-quick-automate/",
+    "published_at": "2026-07-10T15:28:54.000Z",
+    "source_type": "rss_official",
+    "summary": "In this post, we show you how to combine case management with agentic automation capabilities in Quick Automate. We introduce case management and explore the lifecycle of cases in an agentic workflow from case creation through processing to resolution. We cover how to create and manage single or multiple cases, automatically track and update status, handle exceptions, and incorporate Human-in-the-loop (HITL) steps within workflows. We also show the case creator-processor pattern that enables dyn",
+    "content": "In this post, we show you how to combine case management with agentic automation capabilities in Quick Automate. We introduce case management and explore the lifecycle of cases in an agentic workflow from case creation through processing to resolution. We cover how to create and manage single or multiple cases, automatically track and update status, handle exceptions, and incorporate Human-in-the-loop (HITL) steps within workflows. We also show the case creator-processor pattern that enables dynamic scaling. Finally, we walk through how to structure case management for enterprise processes, including HITL and case tracking, through a real-life use case.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-a725b436b37571f612",
+    "company": "Amazon AI",
+    "title": "Deploying quantized models on Amazon SageMaker AI with Unsloth",
+    "url": "https://aws.amazon.com/blogs/machine-learning/deploying-quantized-models-on-amazon-sagemaker-ai-with-unsloth/",
+    "published_at": "2026-07-10T15:26:05.000Z",
+    "source_type": "rss_official",
+    "summary": "In this post, you will learn four deployment patterns for taking models that have already been quantized with Unsloth and deploying them on AWS infrastructure. The patterns use Amazon Elastic Compute Cloud (Amazon EC2) for direct instance access, Amazon SageMaker AI inference endpoints for managed serving, and Amazon Elastic Kubernetes Service (Amazon EKS) or Amazon Elastic Container Service (Amazon ECS) when inference needs to fit into an existing container framework. You also learn operational",
+    "content": "In this post, you will learn four deployment patterns for taking models that have already been quantized with Unsloth and deploying them on AWS infrastructure. The patterns use Amazon Elastic Compute Cloud (Amazon EC2) for direct instance access, Amazon SageMaker AI inference endpoints for managed serving, and Amazon Elastic Kubernetes Service (Amazon EKS) or Amazon Elastic Container Service (Amazon ECS) when inference needs to fit into an existing container framework. You also learn operational practices for production deployments.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-288a392308aaa11f7f",
+    "company": "Amazon AI",
+    "title": "How KTern.AI built agentic AI for SAP on Amazon Bedrock AgentCore",
+    "url": "https://aws.amazon.com/blogs/machine-learning/how-ktern-ai-built-agentic-ai-for-sap-on-amazon-bedrock-agentcore/",
+    "published_at": "2026-07-10T15:23:25.000Z",
+    "source_type": "rss_official",
+    "summary": "Evolving from a traditional software as a service (SaaS) platform into a next-generation agentic AI platform meant orchestrating multiple specialized agents across long-running enterprise programs. Each agent operates with persistent context, secure tool access, and production-grade reliability. We built that system on Amazon Bedrock AgentCore using the Strands Agents SDK. This post walks through how we architected it, which agents we built, and the outcomes for our customers.",
+    "content": "Evolving from a traditional software as a service (SaaS) platform into a next-generation agentic AI platform meant orchestrating multiple specialized agents across long-running enterprise programs. Each agent operates with persistent context, secure tool access, and production-grade reliability. We built that system on Amazon Bedrock AgentCore using the Strands Agents SDK. This post walks through how we architected it, which agents we built, and the outcomes for our customers.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-1797b3f6359c2c5a1d",
+    "company": "Amazon AI",
+    "title": "Disaggregated prefill and decode for LLM inference on SageMaker HyperPod",
+    "url": "https://aws.amazon.com/blogs/machine-learning/disaggregated-prefill-and-decode-for-llm-inference-on-sagemaker-hyperpod/",
+    "published_at": "2026-07-10T15:20:16.000Z",
+    "source_type": "rss_official",
+    "summary": "In this post, we show how to implement DPD with vLLM on Amazon SageMaker HyperPod using the HyperPod Inference Operator.",
+    "content": "In this post, we show how to implement DPD with vLLM on Amazon SageMaker HyperPod using the HyperPod Inference Operator.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
     "id": "provider-ba74cb89781d62cbf3",
     "company": "NVIDIA AI",
     "title": "Accelerating End-to-End Co-Folding Performance with NVIDIA BioNeMo Agent Toolkit",
@@ -407,50 +517,6 @@
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
-    "id": "provider-43088e8d0e046e767d",
-    "company": "Amazon AI",
-    "title": "Build a serverless image editing agent with Amazon Bedrock AgentCore harness",
-    "url": "https://aws.amazon.com/blogs/machine-learning/build-a-serverless-image-editing-agent-with-amazon-bedrock-agentcore-harness/",
-    "published_at": "2026-07-07T16:51:29.000Z",
-    "source_type": "rss_official",
-    "summary": "This post walks through building a serverless image editor where users upload a photo, describe an edit in plain English, and receive the result in seconds. The agent runs on AgentCore harness without custom orchestration code. We deploy the full solution, including authentication, encrypted storage, three image editing tools, and a React frontend, with a single deployment command. The infrastructure is defined using AWS Cloud Development Kit (AWS CDK).",
-    "content": "This post walks through building a serverless image editor where users upload a photo, describe an edit in plain English, and receive the result in seconds. The agent runs on AgentCore harness without custom orchestration code. We deploy the full solution, including authentication, encrypted storage, three image editing tools, and a React frontend, with a single deployment command. The infrastructure is defined using AWS Cloud Development Kit (AWS CDK).",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
-    "id": "provider-26ee2c34775027eab4",
-    "company": "Amazon AI",
-    "title": "Monitoring discriminative ML models using Amazon SageMaker AI with MLflow",
-    "url": "https://aws.amazon.com/blogs/machine-learning/monitoring-discriminative-ml-models-using-amazon-sagemaker-ai-with-mlflow/",
-    "published_at": "2026-07-07T16:49:09.000Z",
-    "source_type": "rss_official",
-    "summary": "Implementing a data and model monitoring solution is necessary to maintain prediction accuracy and help achieve the best outcome for your machine learning use case. This post shows how you can use open source Evidently together with Amazon SageMaker AI to generate monitoring reports, organize and compare the results in MLflow, scale through pipelines, and trigger drift notifications.",
-    "content": "Implementing a data and model monitoring solution is necessary to maintain prediction accuracy and help achieve the best outcome for your machine learning use case. This post shows how you can use open source Evidently together with Amazon SageMaker AI to generate monitoring reports, organize and compare the results in MLflow, scale through pipelines, and trigger drift notifications.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
-    "id": "provider-b7e87e107d5af65cea",
-    "company": "Amazon AI",
-    "title": "Build an AI-powered AWS support companion with Amazon Bedrock AgentCore",
-    "url": "https://aws.amazon.com/blogs/machine-learning/build-an-ai-powered-aws-support-companion-with-amazon-bedrock-agentcore/",
-    "published_at": "2026-07-07T16:46:43.000Z",
-    "source_type": "rss_official",
-    "summary": "In this post, you build an AWS Support Companion using Amazon Bedrock AgentCore. The agent uses Strands Agents as the orchestration framework and connects to AWS services through the Model Context Protocol (MCP). By the end, you have a working agent that can analyze CloudWatch logs, search AWS documentation, query community knowledge from AWS re:Post, and create support cases, all from a single conversational interface. The solution deploys with a single script using AWS CloudFormation and inclu",
-    "content": "In this post, you build an AWS Support Companion using Amazon Bedrock AgentCore. The agent uses Strands Agents as the orchestration framework and connects to AWS services through the Model Context Protocol (MCP). By the end, you have a working agent that can analyze CloudWatch logs, search AWS documentation, query community knowledge from AWS re:Post, and create support cases, all from a single conversational interface. The solution deploys with a single script using AWS CloudFormation and includes a web frontend built on AWS Amplify for interacting with the agent.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
-    "id": "provider-a10b10c47befee766e",
-    "company": "Amazon AI",
-    "title": "How AWS Finance teams reclaimed hundreds of hours with Amazon Quick",
-    "url": "https://aws.amazon.com/blogs/machine-learning/how-aws-finance-teams-reclaimed-hundreds-of-hours-with-amazon-quick/",
-    "published_at": "2026-07-07T16:43:11.000Z",
-    "source_type": "rss_official",
-    "summary": "In this post, we show how AWS Finance used chat agents and Flows in Amazin Quick to transform two of their most time-consuming workflows.",
-    "content": "In this post, we show how AWS Finance used chat agents and Flows in Amazin Quick to transform two of their most time-consuming workflows.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
     "id": "provider-cfef80ced1c1d55f69",
     "company": "Hugging Face",
     "title": "Hugging Face Models on Foundry Managed Compute",
@@ -526,39 +592,6 @@
     "summary": "",
     "content": "",
     "source_url": "https://huggingface.co/blog/feed.xml"
-  },
-  {
-    "id": "provider-6b2b235d205b184b21",
-    "company": "Amazon AI",
-    "title": "From Hugging Face to Amazon SageMaker Studio in one click",
-    "url": "https://aws.amazon.com/blogs/machine-learning/from-hugging-face-to-amazon-sagemaker-studio-in-one-click-2/",
-    "published_at": "2026-07-06T22:35:55.000Z",
-    "source_type": "rss_official",
-    "summary": "Today, we’re excited to announce a deep-link integration between Hugging Face and Amazon SageMaker AI. Developers can now go from model discovery to hands-on experimentation in SageMaker Studio with a single selection.",
-    "content": "Today, we’re excited to announce a deep-link integration between Hugging Face and Amazon SageMaker AI. Developers can now go from model discovery to hands-on experimentation in SageMaker Studio with a single selection.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
-    "id": "provider-5da75f04fb2fd84147",
-    "company": "Amazon AI",
-    "title": "Teaching models to forget: Selective unlearning with Amazon Nova",
-    "url": "https://aws.amazon.com/blogs/machine-learning/teaching-models-to-forget-selective-unlearning-with-amazon-nova/",
-    "published_at": "2026-07-06T22:23:45.000Z",
-    "source_type": "rss_official",
-    "summary": "In this post, we introduce Reverse Direct Preference Optimization (rDPO), the novel unlearning technique behind Amazon Nova Customizable Content Moderation Settings (CCMS), and show how it reduces over-deflection while preserving model quality. We also provide pointers for customers who want to apply these preference optimization techniques to their own experiments.",
-    "content": "In this post, we introduce Reverse Direct Preference Optimization (rDPO), the novel unlearning technique behind Amazon Nova Customizable Content Moderation Settings (CCMS), and show how it reduces over-deflection while preserving model quality. We also provide pointers for customers who want to apply these preference optimization techniques to their own experiments.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
-    "id": "provider-6ca16cf2c23677ceeb",
-    "company": "Amazon AI",
-    "title": "Run MiniMax models on Amazon Bedrock",
-    "url": "https://aws.amazon.com/blogs/machine-learning/run-minimax-models-on-amazon-bedrock/",
-    "published_at": "2026-07-06T17:00:44.000Z",
-    "source_type": "rss_official",
-    "summary": "In this post, we walk through how to get started with MiniMax models on Amazon Bedrock, including the capabilities supported by these models, the service tiers available, how on-demand inference scales to handle your workloads, and the different APIs you can use to access them. Using these models, customers can build agentic applications, long-context document analysis pipelines, and software engineering workflows, all backed by the security and operational guarantees of AWS.",
-    "content": "In this post, we walk through how to get started with MiniMax models on Amazon Bedrock, including the capabilities supported by these models, the service tiers available, how on-demand inference scales to handle your workloads, and the different APIs you can use to access them. Using these models, customers can build agentic applications, long-context document analysis pipelines, and software engineering workflows, all backed by the security and operational guarantees of AWS.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
   },
   {
     "id": "provider-354c1266c030a93c9f",
@@ -3927,28 +3960,6 @@
     "source_url": "https://huggingface.co/blog/feed.xml"
   },
   {
-    "id": "provider-d30f6ef28037ed1a7f",
-    "company": "Amazon AI",
-    "title": "Formally verified AES-XTS: The first AES algorithm to join s2n-bignum",
-    "url": "https://www.amazon.science/blog/formally-verified-aes-xts-the-first-aes-algorithm-to-join-s2n-bignum",
-    "published_at": "2026-03-20T16:38:44.000Z",
-    "source_type": "rss_official",
-    "summary": "Simplifying and clarifying the assembly code for core operations enabled automated optimization and verification.",
-    "content": "Simplifying and clarifying the assembly code for core operations enabled automated optimization and verification.",
-    "source_url": "https://www.amazon.science/index.rss"
-  },
-  {
-    "id": "provider-ca6c6576dc6779dcea",
-    "company": "NVIDIA AI",
-    "title": "How to Build Deep Agents for Enterprise Search with NVIDIA AI-Q and LangChain",
-    "url": "https://developer.nvidia.com/blog/how-to-build-deep-agents-for-enterprise-search-with-nvidia-ai-q-and-langchain/",
-    "published_at": "2026-03-18T16:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "While consumer AI offers powerful capabilities, workplace tools often suffer from disjointed data and limited context. Built with LangChain, the NVIDIA AI-Q...",
-    "content": "While consumer AI offers powerful capabilities, workplace tools often suffer from disjointed data and limited context. Built with LangChain, the NVIDIA AI-Q...",
-    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
     "id": "provider-89c3b696676de31cad",
     "company": "Hugging Face",
     "title": "State of Open Source on Hugging Face: Spring 2026",
@@ -3980,17 +3991,6 @@
     "summary": "",
     "content": "",
     "source_url": "https://huggingface.co/blog/feed.xml"
-  },
-  {
-    "id": "provider-f08052bc6a1834db5d",
-    "company": "NVIDIA AI",
-    "title": "How NVIDIA Dynamo 1.0 Powers Multi-Node Inference at Production Scale",
-    "url": "https://developer.nvidia.com/blog/nvidia-dynamo-1-production-ready/",
-    "published_at": "2026-03-16T20:30:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Reasoning models are growing rapidly in size and are increasingly being integrated into agentic AI workflows that interact with other models and external tools....",
-    "content": "Reasoning models are growing rapidly in size and are increasingly being integrated into agentic AI workflows that interact with other models and external tools....",
-    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
     "id": "provider-44d1ff907eb0259274",
