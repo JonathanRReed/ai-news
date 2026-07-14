@@ -1,14 +1,102 @@
 [
   {
-    "id": "provider-35460141eb5688b15a",
-    "company": "IBM Research",
-    "title": "This could be the largest synthetic code dataset yet",
-    "url": "https://research.ibm.com/blog/code-alchemy-for-synthetic-code?utm_medium=rss&utm_source=rss",
-    "published_at": "2026-07-13T12:00:00.000Z",
+    "id": "provider-5a42e1a49c5662b1ee",
+    "company": "OpenAI",
+    "title": "How data science teams use ChatGPT Work",
+    "url": "https://openai.com/academy/codex-for-work/how-data-science-teams-use-codex",
+    "published_at": "2026-07-14T00:00:00.000Z",
     "source_type": "rss_official",
-    "summary": "Introducing CodeAlchemy, a synthetic data pipeline that has already produced nearly 1 trillion tokens of open-source code",
-    "content": "Introducing CodeAlchemy, a synthetic data pipeline that has already produced nearly 1 trillion tokens of open-source code",
-    "source_url": "https://research.ibm.com/rss"
+    "summary": "See how data science teams can use ChatGPT Work to build root-cause briefs, impact readouts, KPI memos, scoped analyses, and dashboard specs from real work inputs.",
+    "content": "See how data science teams can use ChatGPT Work to build root-cause briefs, impact readouts, KPI memos, scoped analyses, and dashboard specs from real work inputs.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-3310bc9491a42df8e5",
+    "company": "OpenAI",
+    "title": "How sales teams use ChatGPT Work",
+    "url": "https://openai.com/academy/codex-for-work/how-sales-teams-use-codex",
+    "published_at": "2026-07-14T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "See how sales teams can use ChatGPT Work to create pipeline briefs, meeting prep packets, forecast reviews, account plans, and stalled-deal diagnoses from real work inputs.",
+    "content": "See how sales teams can use ChatGPT Work to create pipeline briefs, meeting prep packets, forecast reviews, account plans, and stalled-deal diagnoses from real work inputs.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-e7ce8ac960b1962d15",
+    "company": "Amazon AI",
+    "title": "OpenAI GPT-5.6 Sol, Terra, and Luna are now generally available on Amazon Bedrock",
+    "url": "https://aws.amazon.com/blogs/machine-learning/openai-gpt-5-6-sol-terra-and-luna-are-now-generally-available-on-amazon-bedrock/",
+    "published_at": "2026-07-13T21:01:20.000Z",
+    "source_type": "rss_official",
+    "summary": "Today, GPT-5.6 Sol, Terra, and Luna from OpenAI are generally available on Amazon Bedrock, bringing the smartest family of models from OpenAI yet to Amazon Bedrock’s next-generation inference engine built for high-performance, security and reliability.",
+    "content": "Today, GPT-5.6 Sol, Terra, and Luna from OpenAI are generally available on Amazon Bedrock, bringing the smartest family of models from OpenAI yet to Amazon Bedrock’s next-generation inference engine built for high-performance, security and reliability.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-1c0a5529624092749b",
+    "company": "NVIDIA AI",
+    "title": "NVIDIA Ising Decoding Cuts Color Code Logical Error Rates by Over 300X",
+    "url": "https://developer.nvidia.com/blog/nvidia-ising-decoding-cuts-color-code-logical-error-rates-by-over-300x/",
+    "published_at": "2026-07-13T19:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Useful quantum computers will require fault tolerant logical operations. Researchers are actively exploring many different quantum error correction (QEC) codes...",
+    "content": "Useful quantum computers will require fault tolerant logical operations. Researchers are actively exploring many different quantum error correction (QEC) codes...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
+  },
+  {
+    "id": "provider-791d372451dd178b87",
+    "company": "Amazon AI",
+    "title": "When your brain works differently, AI isn’t a luxury—it’s accessibility",
+    "url": "https://aws.amazon.com/blogs/machine-learning/when-your-brain-works-differently-ai-isnt-a-luxury-its-accessibility/",
+    "published_at": "2026-07-13T17:50:16.000Z",
+    "source_type": "rss_official",
+    "summary": "In this post, I share how AI serves as an accessibility tool for neurodivergent professionals. The system is built on Amazon Quick on your desktop, an AI-powered desktop and web assistant that compensates for executive function gaps every day.",
+    "content": "In this post, I share how AI serves as an accessibility tool for neurodivergent professionals. The system is built on Amazon Quick on your desktop, an AI-powered desktop and web assistant that compensates for executive function gaps every day.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-62106667e0679ccf88",
+    "company": "Amazon AI",
+    "title": "Building an agentic AI solution at Bluesight with Amazon Bedrock",
+    "url": "https://aws.amazon.com/blogs/machine-learning/building-an-agentic-ai-solution-at-bluesight-with-amazon-bedrock/",
+    "published_at": "2026-07-13T17:34:38.000Z",
+    "source_type": "rss_official",
+    "summary": "In this post, we describe how Bluesight used two AWS engagements and Amazon Bedrock AgentCore to evolve from a single-product AI prototype to Prism, a unified agentic AI solution spanning six healthcare compliance products. Prism Assistant for ControlCheck launched in May 2026 and is already in use by 20 health systems. A more complex multi-product agentic solution is on track for later in 2026.",
+    "content": "In this post, we describe how Bluesight used two AWS engagements and Amazon Bedrock AgentCore to evolve from a single-product AI prototype to Prism, a unified agentic AI solution spanning six healthcare compliance products. Prism Assistant for ControlCheck launched in May 2026 and is already in use by 20 health systems. A more complex multi-product agentic solution is on track for later in 2026.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-846d669b00fe844bc6",
+    "company": "Amazon AI",
+    "title": "Implement on-behalf-of token exchange for multi-tenant agents with Amazon Bedrock AgentCore Gateway",
+    "url": "https://aws.amazon.com/blogs/machine-learning/implement-on-behalf-of-token-exchange-for-multi-tenant-agents-with-amazon-bedrock-agentcore-gateway/",
+    "published_at": "2026-07-13T17:27:40.000Z",
+    "source_type": "rss_official",
+    "summary": "Building multi-tenant agents with Amazon Bedrock AgentCore and Apply fine-grained access control with Bedrock AgentCore Gateway interceptors establish the conceptual foundation for on-behalf-of (OBO) token exchange in agentic systems. This post is the implementation guide. It walks through a complete multi-tenant OBO setup against Okta, shows the JSON Web Token (JWT) claim transformations on each hop, and demonstrates how audience binding produces defense in depth that scales across tenants.",
+    "content": "Building multi-tenant agents with Amazon Bedrock AgentCore and Apply fine-grained access control with Bedrock AgentCore Gateway interceptors establish the conceptual foundation for on-behalf-of (OBO) token exchange in agentic systems. This post is the implementation guide. It walks through a complete multi-tenant OBO setup against Okta, shows the JSON Web Token (JWT) claim transformations on each hop, and demonstrates how audience binding produces defense in depth that scales across tenants.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-d9db76ee4af6a6a765",
+    "company": "Amazon AI",
+    "title": "Launching UI for generative AI inference recommendations in Amazon SageMaker AI",
+    "url": "https://aws.amazon.com/blogs/machine-learning/launching-ui-for-generative-ai-inference-recommendations-in-amazon-sagemaker-ai/",
+    "published_at": "2026-07-13T16:42:15.000Z",
+    "source_type": "rss_official",
+    "summary": "In this post, we introduce the UI for optimized generative AI inference recommendations in Amazon SageMaker AI Studio, a low-code no-code (LCNC) experience. The API already gives you programmatic access to recommendations, but it assumes you know which parameters to set and how to interpret raw benchmark output. The UI removes that assumption. It guides you through preset use-case profiles, visual comparisons of results, and one-click deployment, so teams without deep infrastructure expertise ca",
+    "content": "In this post, we introduce the UI for optimized generative AI inference recommendations in Amazon SageMaker AI Studio, a low-code no-code (LCNC) experience. The API already gives you programmatic access to recommendations, but it assumes you know which parameters to set and how to interpret raw benchmark output. The UI removes that assumption. It guides you through preset use-case profiles, visual comparisons of results, and one-click deployment, so teams without deep infrastructure expertise can get a validated configuration on their own.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-33fb8fcaaae9abbdd4",
+    "company": "Google DeepMind",
+    "title": "Empowering India’s next generation of innovators with ATL Saathi",
+    "url": "https://deepmind.google/blog/empowering-indias-next-generation-of-innovators-with-atl-saathi/",
+    "published_at": "2026-07-13T12:37:28.000Z",
+    "source_type": "rss_official",
+    "summary": "Google and AIM launched ATL Saathi, a Gemini-powered AI tool empowering Indian educators in robotics labs.",
+    "content": "Google and AIM launched ATL Saathi, a Gemini-powered AI tool empowering Indian educators in robotics labs.",
+    "source_url": "https://deepmind.google/blog/rss.xml"
   },
   {
     "id": "provider-32c42153e53ef10b4c",
@@ -253,17 +341,6 @@
     "source_url": "https://www.amazon.science/index.rss"
   },
   {
-    "id": "provider-9ebac2fe7079e530f0",
-    "company": "OpenAI",
-    "title": "GPT-5.5 Bio Bug Bounty",
-    "url": "https://openai.com/index/bio-bug-bounty",
-    "published_at": "2026-07-09T10:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Details about the OpenAI Bio Bounty program",
-    "content": "Details about the OpenAI Bio Bounty program",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-f4c384923355e0e070",
     "company": "OpenAI",
     "title": "GPT-5.6: Frontier intelligence that scales with your ambition",
@@ -283,6 +360,17 @@
     "source_type": "rss_official",
     "summary": "ChatGPT Work is an agent that can take action across your apps and files, stay with a project for hours if needed, and turn a goal into finished work.",
     "content": "ChatGPT Work is an agent that can take action across your apps and files, stay with a project for hours if needed, and turn a goal into finished work.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-9ebac2fe7079e530f0",
+    "company": "OpenAI",
+    "title": "GPT-5.5 Bio Bug Bounty",
+    "url": "https://openai.com/index/bio-bug-bounty",
+    "published_at": "2026-07-09T10:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Details about the OpenAI Bio Bounty program",
+    "content": "Details about the OpenAI Bio Bounty program",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -473,61 +561,6 @@
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
-    "id": "provider-1b88f6e3b855c42fcc",
-    "company": "Amazon AI",
-    "title": "Enrich your datasets with business context: Migrating from legacy Topics to semantic datasets in Amazon Quick",
-    "url": "https://aws.amazon.com/blogs/machine-learning/enrich-your-datasets-with-business-context-migrating-from-legacy-topics-to-semantic-datasets-in-amazon-quick/",
-    "published_at": "2026-07-07T17:07:57.000Z",
-    "source_type": "rss_official",
-    "summary": "In this post, we walk through what Dataset Enrichment is, how it differs from legacy Topics, and provide three migration scenarios with step-by-step guidance so you can move your business context into the dataset layer with confidence.",
-    "content": "In this post, we walk through what Dataset Enrichment is, how it differs from legacy Topics, and provide three migration scenarios with step-by-step guidance so you can move your business context into the dataset layer with confidence.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
-    "id": "provider-9aede5ea47efda9880",
-    "company": "Amazon AI",
-    "title": "Data modeling best practices for Amazon Quick Sight multi-dataset relationships",
-    "url": "https://aws.amazon.com/blogs/machine-learning/data-modeling-best-practices-for-amazon-quick-sight-multi-dataset-relationships/",
-    "published_at": "2026-07-07T17:07:49.000Z",
-    "source_type": "rss_official",
-    "summary": "Today, we are excited to announce Multi-Dataset Relationships in Amazon Quick Sight. This new capability lets you define logical relationships between Quick Sight datasets and perform runtime joins at query time. Instead of flattening tables ahead of time, you keep each table as its own Quick Sight dataset and declare how those datasets relate to one another inside a Quick Sight Topic.",
-    "content": "Today, we are excited to announce Multi-Dataset Relationships in Amazon Quick Sight. This new capability lets you define logical relationships between Quick Sight datasets and perform runtime joins at query time. Instead of flattening tables ahead of time, you keep each table as its own Quick Sight dataset and declare how those datasets relate to one another inside a Quick Sight Topic.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
-    "id": "provider-e639c8b48c733048b2",
-    "company": "Amazon AI",
-    "title": "Data modeling patterns for Amazon Quick Sight multi-dataset relationships",
-    "url": "https://aws.amazon.com/blogs/machine-learning/data-modeling-patterns-for-amazon-quick-sight-multi-dataset-relationships/",
-    "published_at": "2026-07-07T17:07:39.000Z",
-    "source_type": "rss_official",
-    "summary": "In this post, we shift from concepts to patterns. For each schema, you’ll find a table structure, use cases, implementation steps, and sample SQL queries. We also cover workarounds for advanced scenarios that require extra modeling steps, and close with a summary of current limitations.",
-    "content": "In this post, we shift from concepts to patterns. For each schema, you’ll find a table structure, use cases, implementation steps, and sample SQL queries. We also cover workarounds for advanced scenarios that require extra modeling steps, and close with a summary of current limitations.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
-    "id": "provider-ad7dee740c589a56f9",
-    "company": "Amazon AI",
-    "title": "Multi-dataset Topic best practices for Amazon Quick Chat",
-    "url": "https://aws.amazon.com/blogs/machine-learning/multi-dataset-topic-best-practices-for-amazon-quick-chat/",
-    "published_at": "2026-07-07T17:07:31.000Z",
-    "source_type": "rss_official",
-    "summary": "This post is for data architects, business intelligence (BI) engineers, and analytics engineers building or optimizing Quick Sight Topics for natural-language Chat-based exploration.",
-    "content": "This post is for data architects, business intelligence (BI) engineers, and analytics engineers building or optimizing Quick Sight Topics for natural-language Chat-based exploration.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
-    "id": "provider-63f346a55b86c60333",
-    "company": "Amazon AI",
-    "title": "Build a unified semantic layer across datasets with multi-dataset Topics in Amazon Quick",
-    "url": "https://aws.amazon.com/blogs/machine-learning/build-a-unified-semantic-layer-across-datasets-with-multi-dataset-topics-in-amazon-quick/",
-    "published_at": "2026-07-07T17:07:22.000Z",
-    "source_type": "rss_official",
-    "summary": "In this post, we walk through how multi-dataset Topics work, explain how the chat agent uses defined relationships to generate cross-dataset queries, and demonstrate an end-to-end implementation using a retail analytics scenario in Quick Sight.",
-    "content": "In this post, we walk through how multi-dataset Topics work, explain how the chat agent uses defined relationships to generate cross-dataset queries, and demonstrate an end-to-end implementation using a retail analytics scenario in Quick Sight.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
     "id": "provider-c02f842399d19ade8b",
     "company": "NVIDIA AI",
     "title": "Building an Analysis AI Agent for Industrial Alarm Management with NVIDIA Nemotron",
@@ -572,17 +605,6 @@
     "source_url": "https://blogs.nvidia.com/feed/"
   },
   {
-    "id": "provider-7ae6a57d8db0a9364c",
-    "company": "OpenAI",
-    "title": "MUFG aims to become AI-native with OpenAI",
-    "url": "https://openai.com/index/mufg",
-    "published_at": "2026-07-07T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "MUFG uses ChatGPT Enterprise to build an AI-native organization, improve workflows, and deliver new AI-powered financial services at scale.",
-    "content": "MUFG uses ChatGPT Enterprise to build an AI-native organization, improve workflows, and deliver new AI-powered financial services at scale.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-1933ecbe72f0449e76",
     "company": "OpenAI",
     "title": "Australian Payments Plus moves faster with ChatGPT and Codex",
@@ -591,6 +613,17 @@
     "source_type": "rss_official",
     "summary": "See how Australian Payments Plus uses ChatGPT Enterprise and Codex to move faster through payments complexity. AP+ saves time, improves quality, and keeps human judgment central.",
     "content": "See how Australian Payments Plus uses ChatGPT Enterprise and Codex to move faster through payments complexity. AP+ saves time, improves quality, and keeps human judgment central.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-7ae6a57d8db0a9364c",
+    "company": "OpenAI",
+    "title": "MUFG aims to become AI-native with OpenAI",
+    "url": "https://openai.com/index/mufg",
+    "published_at": "2026-07-07T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "MUFG uses ChatGPT Enterprise to build an AI-native organization, improve workflows, and deliver new AI-powered financial services at scale.",
+    "content": "MUFG uses ChatGPT Enterprise to build an AI-native organization, improve workflows, and deliver new AI-powered financial services at scale.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -858,14 +891,14 @@
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
-    "id": "provider-571e95ccf7287f6600",
+    "id": "provider-413b6224c8f2540224",
     "company": "OpenAI",
-    "title": "Introducing GeneBench-Pro",
-    "url": "https://openai.com/index/introducing-genebench-pro",
+    "title": "Core dump epidemiology: fixing an 18-year-old bug",
+    "url": "https://openai.com/index/core-dump-epidemiology-data-infrastructure-bug",
     "published_at": "2026-06-30T00:00:00.000Z",
     "source_type": "rss_official",
-    "summary": "Introducing GeneBench-Pro, a new benchmark testing AI performance in genomics, biology, and scientific research using complex, real-world datasets.",
-    "content": "Introducing GeneBench-Pro, a new benchmark testing AI performance in genomics, biology, and scientific research using complex, real-world datasets.",
+    "summary": "OpenAI engineers used large-scale core dump analysis to debug rare infrastructure crashes, uncovering both a hardware fault and a long-standing software bug.",
+    "content": "OpenAI engineers used large-scale core dump analysis to debug rare infrastructure crashes, uncovering both a hardware fault and a long-standing software bug.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -880,14 +913,14 @@
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
-    "id": "provider-413b6224c8f2540224",
+    "id": "provider-571e95ccf7287f6600",
     "company": "OpenAI",
-    "title": "Core dump epidemiology: fixing an 18-year-old bug",
-    "url": "https://openai.com/index/core-dump-epidemiology-data-infrastructure-bug",
+    "title": "Introducing GeneBench-Pro",
+    "url": "https://openai.com/index/introducing-genebench-pro",
     "published_at": "2026-06-30T00:00:00.000Z",
     "source_type": "rss_official",
-    "summary": "OpenAI engineers used large-scale core dump analysis to debug rare infrastructure crashes, uncovering both a hardware fault and a long-standing software bug.",
-    "content": "OpenAI engineers used large-scale core dump analysis to debug rare infrastructure crashes, uncovering both a hardware fault and a long-standing software bug.",
+    "summary": "Introducing GeneBench-Pro, a new benchmark testing AI performance in genomics, biology, and scientific research using complex, real-world datasets.",
+    "content": "Introducing GeneBench-Pro, a new benchmark testing AI performance in genomics, biology, and scientific research using complex, real-world datasets.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -1309,17 +1342,6 @@
     "source_url": "https://research.ibm.com/rss"
   },
   {
-    "id": "provider-950caa79948d4d0f9a",
-    "company": "OpenAI",
-    "title": "Patch the Planet: a Daybreak initiative to support open source maintainers",
-    "url": "https://openai.com/index/patch-the-planet",
-    "published_at": "2026-06-22T10:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "OpenAI introduces Patch the Planet, a Daybreak initiative helping open-source maintainers find, validate, and fix vulnerabilities with AI and expert review.",
-    "content": "OpenAI introduces Patch the Planet, a Daybreak initiative helping open-source maintainers find, validate, and fix vulnerabilities with AI and expert review.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-47bf7e22d29459f96a",
     "company": "OpenAI",
     "title": "Daybreak: Tools for securing every organization in the world",
@@ -1328,6 +1350,17 @@
     "source_type": "rss_official",
     "summary": "OpenAI introduces new Daybreak tools, including Codex Security and GPT-5.5-Cyber, to help organizations find, validate, and patch vulnerabilities at scale.",
     "content": "OpenAI introduces new Daybreak tools, including Codex Security and GPT-5.5-Cyber, to help organizations find, validate, and patch vulnerabilities at scale.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-950caa79948d4d0f9a",
+    "company": "OpenAI",
+    "title": "Patch the Planet: a Daybreak initiative to support open source maintainers",
+    "url": "https://openai.com/index/patch-the-planet",
+    "published_at": "2026-06-22T10:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "OpenAI introduces Patch the Planet, a Daybreak initiative helping open-source maintainers find, validate, and fix vulnerabilities with AI and expert review.",
+    "content": "OpenAI introduces Patch the Planet, a Daybreak initiative helping open-source maintainers find, validate, and fix vulnerabilities with AI and expert review.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -1683,17 +1716,6 @@
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
-    "id": "provider-6b45da215c922c7846",
-    "company": "OpenAI",
-    "title": "Supporting Europe’s work in ensuring a trustworthy AI ecosystem",
-    "url": "https://openai.com/index/supporting-eu-trustworthy-ai-ecosystem",
-    "published_at": "2026-06-11T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "OpenAI supports the EU Code of Practice on AI content transparency, advancing provenance standards and tools to help people understand AI-generated content.",
-    "content": "OpenAI supports the EU Code of Practice on AI content transparency, advancing provenance standards and tools to help people understand AI-generated content.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-c3f06ceec6a17e4b54",
     "company": "OpenAI",
     "title": "OpenAI to acquire Ona",
@@ -1702,6 +1724,17 @@
     "source_type": "rss_official",
     "summary": "OpenAI plans to acquire Ona to expand Codex with secure, persistent cloud environments, enabling long-running AI agents across enterprise workflows.",
     "content": "OpenAI plans to acquire Ona to expand Codex with secure, persistent cloud environments, enabling long-running AI agents across enterprise workflows.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-6b45da215c922c7846",
+    "company": "OpenAI",
+    "title": "Supporting Europe’s work in ensuring a trustworthy AI ecosystem",
+    "url": "https://openai.com/index/supporting-eu-trustworthy-ai-ecosystem",
+    "published_at": "2026-06-11T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "OpenAI supports the EU Code of Practice on AI content transparency, advancing provenance standards and tools to help people understand AI-generated content.",
+    "content": "OpenAI supports the EU Code of Practice on AI content transparency, advancing provenance standards and tools to help people understand AI-generated content.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -2156,6 +2189,17 @@
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
+    "id": "provider-ca635e9ab3b45953be",
+    "company": "IBM Research",
+    "title": "Qiskit Fall Fest 2026: Applications open",
+    "url": "https://research.ibm.com/blog/qiskit-fall-fest-2026?utm_medium=rss&utm_source=rss",
+    "published_at": "2026-06-03T13:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Apply to host a Qiskit Fall Fest 2026 event and lead a global quantum computing experience on your campus or in your community.",
+    "content": "Apply to host a Qiskit Fall Fest 2026 event and lead a global quantum computing experience on your campus or in your community.",
+    "source_url": "https://research.ibm.com/rss"
+  },
+  {
     "id": "provider-5a76287a05bf9a0623",
     "company": "Hugging Face",
     "title": "Direct Preference Optimization Beyond Chatbots",
@@ -2178,17 +2222,6 @@
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
-    "id": "provider-76b4195f74bb6d9c92",
-    "company": "OpenAI",
-    "title": "A blueprint for democratic governance of frontier AI",
-    "url": "https://openai.com/index/frontier-safety-blueprint",
-    "published_at": "2026-06-03T10:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "OpenAI outlines a blueprint for U.S. governance of frontier AI, proposing a federal framework for safety, resilience, and national security.",
-    "content": "OpenAI outlines a blueprint for U.S. governance of frontier AI, proposing a federal framework for safety, resilience, and national security.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-8f56487ce735112480",
     "company": "OpenAI",
     "title": "OpenAI public policy agenda",
@@ -2197,6 +2230,17 @@
     "source_type": "rss_official",
     "summary": "OpenAI outlines its public policy agenda for AI, including safety, youth protection, workforce transition, and global standards to ensure AI benefits society.",
     "content": "OpenAI outlines its public policy agenda for AI, including safety, youth protection, workforce transition, and global standards to ensure AI benefits society.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-76b4195f74bb6d9c92",
+    "company": "OpenAI",
+    "title": "A blueprint for democratic governance of frontier AI",
+    "url": "https://openai.com/index/frontier-safety-blueprint",
+    "published_at": "2026-06-03T10:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "OpenAI outlines a blueprint for U.S. governance of frontier AI, proposing a federal framework for safety, resilience, and national security.",
+    "content": "OpenAI outlines a blueprint for U.S. governance of frontier AI, proposing a federal framework for safety, resilience, and national security.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -2673,17 +2717,6 @@
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
-    "id": "provider-a30d13ed273dd64e85",
-    "company": "OpenAI",
-    "title": "OpenAI named a Leader in enterprise coding agents by Gartner",
-    "url": "https://openai.com/index/gartner-2026-agentic-coding-leader",
-    "published_at": "2026-05-22T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "OpenAI is named a leader in the 2026 Gartner Magic Quadrant for Enterprise AI Coding Agents, with Codex recognized for innovation and enterprise-scale deployment.",
-    "content": "OpenAI is named a leader in the 2026 Gartner Magic Quadrant for Enterprise AI Coding Agents, with Codex recognized for innovation and enterprise-scale deployment.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-d528fe9da9a64cc8b1",
     "company": "OpenAI",
     "title": "How Virgin Atlantic ships faster with Codex",
@@ -2737,17 +2770,6 @@
     "summary": "Telcos around the world are building sovereign AI factories based on the NVIDIA Cloud Partner (NCP) reference architecture, giving governments, enterprises, and...",
     "content": "Telcos around the world are building sovereign AI factories based on the NVIDIA Cloud Partner (NCP) reference architecture, giving governments, enterprises, and...",
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
-    "id": "provider-1f4e955cf5ac642ef9",
-    "company": "OpenAI",
-    "title": "AdventHealth advances whole-person care with OpenAI",
-    "url": "https://openai.com/index/adventhealth",
-    "published_at": "2026-05-21T12:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "AdventHealth is using ChatGPT for Healthcare to streamline workflows, reduce administrative burden, and return more time to patient care.",
-    "content": "AdventHealth is using ChatGPT for Healthcare to streamline workflows, reduce administrative burden, and return more time to patient care.",
-    "source_url": "https://openai.com/news/rss.xml"
   },
   {
     "id": "provider-cd9f8d8d27486df287",
@@ -3938,17 +3960,6 @@
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
-    "id": "provider-e6ac343bdf5e469fd4",
-    "company": "NVIDIA AI",
-    "title": "Deploying Disaggregated LLM Inference Workloads on Kubernetes",
-    "url": "https://developer.nvidia.com/blog/deploying-disaggregated-llm-inference-workloads-on-kubernetes/",
-    "published_at": "2026-03-23T07:01:00.000Z",
-    "source_type": "rss_official",
-    "summary": "As large language model (LLM) inference workloads grow in complexity, a single monolithic serving process starts to hit its limits. Prefill and decode stages...",
-    "content": "As large language model (LLM) inference workloads grow in complexity, a single monolithic serving process starts to hit its limits. Prefill and decode stages...",
-    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
     "id": "provider-d1d01b2d31f7e56a39",
     "company": "Hugging Face",
     "title": "Build a Domain-Specific Embedding Model in Under a Day",
@@ -4463,17 +4474,6 @@
     "source_type": "rss_official",
     "summary": "Gemini 2.5 Flash-Lite, previously in preview, is now stable and generally available. This cost-efficient model provides high quality in a small size, and includes 2.5 family features like a 1 million-token context window and multimodality.",
     "content": "Gemini 2.5 Flash-Lite, previously in preview, is now stable and generally available. This cost-efficient model provides high quality in a small size, and includes 2.5 family features like a 1 million-token context window and multimodality.",
-    "source_url": "https://deepmind.google/blog/rss.xml"
-  },
-  {
-    "id": "provider-827ea214eec10fe4d9",
-    "company": "Google DeepMind",
-    "title": "Behind “ANCESTRA”: combining Veo with live-action filmmaking",
-    "url": "https://deepmind.google/blog/behind-ancestra-combining-veo-with-live-action-filmmaking/",
-    "published_at": "2025-10-25T17:27:10.000Z",
-    "source_type": "rss_official",
-    "summary": "We partnered with Darren Aronofsky, Eliza McNitt and a team of more than 200 people to make a film using Veo and live-action filmmaking.",
-    "content": "We partnered with Darren Aronofsky, Eliza McNitt and a team of more than 200 people to make a film using Veo and live-action filmmaking.",
     "source_url": "https://deepmind.google/blog/rss.xml"
   },
   {
