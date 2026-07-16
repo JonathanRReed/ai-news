@@ -1,14 +1,168 @@
 [
   {
+    "id": "provider-c6733b919a1cc91dfd",
+    "company": "Hugging Face",
+    "title": "Newer Models, Same Advantage",
+    "url": "https://huggingface.co/blog/Dharma-AI/newer-models-same-advantages",
+    "published_at": "2026-07-16T11:49:48.000Z",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://huggingface.co/blog/feed.xml"
+  },
+  {
+    "id": "provider-db43f3918a91172ae0",
+    "company": "Google DeepMind",
+    "title": "Our approach to bioresilience",
+    "url": "https://deepmind.google/blog/our-approach-to-bioresilience/",
+    "published_at": "2026-07-16T09:30:42.000Z",
+    "source_type": "rss_official",
+    "summary": "Google DeepMind and Isomorphic Labs are sharing our joint approach to bioresilience and AI models.",
+    "content": "Google DeepMind and Isomorphic Labs are sharing our joint approach to bioresilience and AI models.",
+    "source_url": "https://deepmind.google/blog/rss.xml"
+  },
+  {
+    "id": "provider-8edaec13b207581939",
+    "company": "Hugging Face",
+    "title": "Security incident disclosure — July 2026",
+    "url": "https://huggingface.co/blog/security-incident-july-2026",
+    "published_at": "2026-07-16T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://huggingface.co/blog/feed.xml"
+  },
+  {
+    "id": "provider-a3a8b55d7f9f4d7bbf",
+    "company": "NVIDIA AI",
+    "title": "NVIDIA Introduces New Jetson Thor Computers to Advance Mainstream Robotics and Edge AI",
+    "url": "https://blogs.nvidia.com/blog/jetson-thor-robotics-edge-ai-agent/",
+    "published_at": "2026-07-15T23:00:54.000Z",
+    "source_type": "rss_official",
+    "summary": "General-purpose robots and autonomous machines are moving from research labs to real-world mass-market deployment, creating demand for compact, power-efficient AI supercomputers capable of running foundation models at the edge. To meet that need, NVIDIA today introduced the T3000 and T2000, new modules based on the NVIDIA Thor architecture that enable mass-market robotics and edge AI […]",
+    "content": "General-purpose robots and autonomous machines are moving from research labs to real-world mass-market deployment, creating demand for compact, power-efficient AI supercomputers capable of running foundation models at the edge. To meet that need, NVIDIA today introduced the T3000 and T2000, new modules based on the NVIDIA Thor architecture that enable mass-market robotics and edge AI […]",
+    "source_url": "https://blogs.nvidia.com/feed/"
+  },
+  {
+    "id": "provider-c79289a403fd719ab9",
+    "company": "NVIDIA AI",
+    "title": "Build a Multi-Camera 3D Tracking Application with NVIDIA DeepStream 9.1 Skills",
+    "url": "https://developer.nvidia.com/blog/build-a-multi-camera-3d-tracking-application-with-nvidia-deepstream-9-1-skills/",
+    "published_at": "2026-07-15T23:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Developers building video analytics applications across large spaces must track the same object as it moves between camera views. Single-camera 2D tracking...",
+    "content": "Developers building video analytics applications across large spaces must track the same object as it moves between camera views. Single-camera 2D tracking...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
+  },
+  {
+    "id": "provider-5d785ab9d8a71f193a",
+    "company": "Amazon AI",
+    "title": "Built Technologies builds an AI-powered document intelligence solution on AWS to power agents across real estate finance",
+    "url": "https://aws.amazon.com/blogs/machine-learning/built-technologies-builds-an-ai-powered-document-intelligence-solution-on-aws-to-power-agents-across-real-estate-finance/",
+    "published_at": "2026-07-15T18:14:31.000Z",
+    "source_type": "rss_official",
+    "summary": "Built partnered with the AWS Generative AI Innovation Center (GenAIIC), AWS Partner AND Digital, and AWS account teams to create a scalable, AI-powered document processing engine that can classify, split, extract, evaluate, and reason over complex real estate finance documents. It reduces workflows that previously took days to minutes, supports hundreds of document types, and gives technical teams and industry experts a shared environment for building and improving document processors.",
+    "content": "Built partnered with the AWS Generative AI Innovation Center (GenAIIC), AWS Partner AND Digital, and AWS account teams to create a scalable, AI-powered document processing engine that can classify, split, extract, evaluate, and reason over complex real estate finance documents. It reduces workflows that previously took days to minutes, supports hundreds of document types, and gives technical teams and industry experts a shared environment for building and improving document processors.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-c7c9af69acd31c198d",
+    "company": "Amazon AI",
+    "title": "Agentic vision: Building visual intelligence with Amazon Bedrock and MCP servers",
+    "url": "https://aws.amazon.com/blogs/machine-learning/agentic-vision-building-visual-intelligence-with-amazon-bedrock-and-mcp-servers/",
+    "published_at": "2026-07-15T18:11:57.000Z",
+    "source_type": "rss_official",
+    "summary": "In this post, we walk you through the Computer Vision MCP Server, which illustrates this approach, representing how AI systems can process visual information and make intelligent decisions through a single, standardized interface. This convergence transforms what was once a complex integration challenge into a streamlined process, making AI capabilities accessible to a broader range of applications and developers.",
+    "content": "In this post, we walk you through the Computer Vision MCP Server, which illustrates this approach, representing how AI systems can process visual information and make intelligent decisions through a single, standardized interface. This convergence transforms what was once a complex integration challenge into a streamlined process, making AI capabilities accessible to a broader range of applications and developers.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-5df0236c137e7f2862",
+    "company": "Amazon AI",
+    "title": "Monitor Amazon SageMaker Pipelines cross-account with custom Amazon CloudWatch dashboards",
+    "url": "https://aws.amazon.com/blogs/machine-learning/monitor-amazon-sagemaker-pipelines-cross-account-with-custom-amazon-cloudwatch-dashboards/",
+    "published_at": "2026-07-15T18:08:50.000Z",
+    "source_type": "rss_official",
+    "summary": "In this post, we present a solution designed to centralize the monitoring of SageMaker Pipelines across AWS accounts and Regions using Amazon CloudWatch custom dashboards. The accompanying GitHub repository provides a customizable AWS Cloud Development Kit (AWS CDK) example of the required infrastructure.",
+    "content": "In this post, we present a solution designed to centralize the monitoring of SageMaker Pipelines across AWS accounts and Regions using Amazon CloudWatch custom dashboards. The accompanying GitHub repository provides a customizable AWS Cloud Development Kit (AWS CDK) example of the required infrastructure.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-8495180d57c9ea28cb",
+    "company": "Hugging Face",
+    "title": "What building Shippy taught us about building agents",
+    "url": "https://huggingface.co/blog/allenai/shippy-tech-blog",
+    "published_at": "2026-07-15T17:29:41.000Z",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://huggingface.co/blog/feed.xml"
+  },
+  {
+    "id": "provider-5c0ca9091ee16b4a84",
+    "company": "Hugging Face",
+    "title": "Model Routing Is Simple. Until It Isn’t.",
+    "url": "https://huggingface.co/blog/ibm-research/model-routing-is-simple-until-it-isnt",
+    "published_at": "2026-07-15T17:27:01.000Z",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://huggingface.co/blog/feed.xml"
+  },
+  {
+    "id": "provider-85f83a5a23d889cdc9",
+    "company": "OpenAI",
+    "title": "The US is advancing AI safety through state and federal action",
+    "url": "https://openai.com/index/advancing-ai-safety-through-state-and-federal-action",
+    "published_at": "2026-07-15T12:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "OpenAI outlines a “reverse federalism” approach to AI governance, where state laws help build a national framework for safe, democratic AI.",
+    "content": "OpenAI outlines a “reverse federalism” approach to AI governance, where state laws help build a national framework for safe, democratic AI.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
     "id": "provider-52ec83bfebdc75a47d",
     "company": "NVIDIA AI",
     "title": "NVIDIA and Japan Bring Full-Stack AI and Robotics to Every Industry",
     "url": "https://blogs.nvidia.com/blog/japan-ecosystem-2026/",
     "published_at": "2026-07-15T10:51:37.000Z",
     "source_type": "rss_official",
-    "summary": "Home to leading manufacturers, robotics pioneers and infrastructure builders, Japan is one of the world’s centers of AI — building across the full stack with NVIDIA technologies. NVIDIA and its partners in Japan are this week showcasing the AI ecosystem’s latest advancements. Check back here for updates. NVIDIA and SEGA Celebrate 30 Years of […]",
-    "content": "Home to leading manufacturers, robotics pioneers and infrastructure builders, Japan is one of the world’s centers of AI — building across the full stack with NVIDIA technologies. NVIDIA and its partners in Japan are this week showcasing the AI ecosystem’s latest advancements. Check back here for updates. NVIDIA and SEGA Celebrate 30 Years of […]",
+    "summary": "Home to leading manufacturers, robotics pioneers, infrastructure builders and iconic gaming companies, of course, Japan is one of the world’s centers of AI — building across the full stack with NVIDIA technologies. This week NVIDIA and its partners in Japan are showcasing the AI ecosystem’s latest advancements. Check back here for updates.",
+    "content": "Home to leading manufacturers, robotics pioneers, infrastructure builders and iconic gaming companies, of course, Japan is one of the world’s centers of AI — building across the full stack with NVIDIA technologies. This week NVIDIA and its partners in Japan are showcasing the AI ecosystem’s latest advancements. Check back here for updates.",
     "source_url": "https://blogs.nvidia.com/feed/"
+  },
+  {
+    "id": "provider-564b7d4eed3ab1f41c",
+    "company": "OpenAI",
+    "title": "GPT-Red: Unlocking Self-Improvement for Robustness",
+    "url": "https://openai.com/index/unlocking-self-improvement-gpt-red",
+    "published_at": "2026-07-15T10:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Explore GPT-Red, OpenAI’s automated red teaming system that uses self-play to improve AI safety, alignment, and prompt injection robustness.",
+    "content": "Explore GPT-Red, OpenAI’s automated red teaming system that uses self-play to improve AI safety, alignment, and prompt injection robustness.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-b2c6dd8eba8d75f26e",
+    "company": "Hugging Face",
+    "title": "Welcome Inkling by Thinking Machines",
+    "url": "https://huggingface.co/blog/thinkingmachines-inkling",
+    "published_at": "2026-07-15T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://huggingface.co/blog/feed.xml"
+  },
+  {
+    "id": "provider-20b5f5085c84f016e9",
+    "company": "Hugging Face",
+    "title": "Introducing Real World VoiceEQ: Measuring the human quality of voice AI",
+    "url": "https://huggingface.co/blog/real-world-voiceeq",
+    "published_at": "2026-07-15T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://huggingface.co/blog/feed.xml"
   },
   {
     "id": "provider-abecd72caa18a2b1b2",
@@ -88,17 +242,6 @@
     "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
   },
   {
-    "id": "provider-3a98145a3310a1e119",
-    "company": "NVIDIA AI",
-    "title": "Post-Train NVIDIA Cosmos 3 in One Day Using Agent Skills",
-    "url": "https://developer.nvidia.com/blog/post-train-nvidia-cosmos-3-in-one-day-using-agent-skills/",
-    "published_at": "2026-07-14T16:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "What if autonomous coding AI agents could push your vision reasoning models above 90% accuracy with almost no manual effort? When adapting vision reasoning...",
-    "content": "What if autonomous coding AI agents could push your vision reasoning models above 90% accuracy with almost no manual effort? When adapting vision reasoning...",
-    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
     "id": "provider-82a6fc4eef8ad34bc2",
     "company": "NVIDIA AI",
     "title": "How to Run an Autoresearch Workflow with RL Agent Skills and NVIDIA NeMo",
@@ -107,6 +250,17 @@
     "source_type": "rss_official",
     "summary": "Coding AI agents are becoming practical operators for long-running machine learning (ML) workflows. They can inspect repositories, set up runtimes, resolve...",
     "content": "Coding AI agents are becoming practical operators for long-running machine learning (ML) workflows. They can inspect repositories, set up runtimes, resolve...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
+  },
+  {
+    "id": "provider-3a98145a3310a1e119",
+    "company": "NVIDIA AI",
+    "title": "Post-Train NVIDIA Cosmos 3 in One Day Using Agent Skills",
+    "url": "https://developer.nvidia.com/blog/post-train-nvidia-cosmos-3-in-one-day-using-agent-skills/",
+    "published_at": "2026-07-14T16:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "What if autonomous coding AI agents could push your vision reasoning models above 90% accuracy with almost no manual effort? When adapting vision reasoning...",
+    "content": "What if autonomous coding AI agents could push your vision reasoning models above 90% accuracy with almost no manual effort? When adapting vision reasoning...",
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
@@ -143,17 +297,6 @@
     "source_url": "https://research.ibm.com/rss"
   },
   {
-    "id": "provider-5a42e1a49c5662b1ee",
-    "company": "OpenAI",
-    "title": "How data science teams use ChatGPT Work",
-    "url": "https://openai.com/academy/codex-for-work/how-data-science-teams-use-codex",
-    "published_at": "2026-07-14T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "See how data science teams can use ChatGPT Work to build root-cause briefs, impact readouts, KPI memos, scoped analyses, and dashboard specs from real work inputs.",
-    "content": "See how data science teams can use ChatGPT Work to build root-cause briefs, impact readouts, KPI memos, scoped analyses, and dashboard specs from real work inputs.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-3310bc9491a42df8e5",
     "company": "OpenAI",
     "title": "How sales teams use ChatGPT Work",
@@ -162,6 +305,17 @@
     "source_type": "rss_official",
     "summary": "See how sales teams can use ChatGPT Work to create pipeline briefs, meeting prep packets, forecast reviews, account plans, and stalled-deal diagnoses from real work inputs.",
     "content": "See how sales teams can use ChatGPT Work to create pipeline briefs, meeting prep packets, forecast reviews, account plans, and stalled-deal diagnoses from real work inputs.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-5a42e1a49c5662b1ee",
+    "company": "OpenAI",
+    "title": "How data science teams use ChatGPT Work",
+    "url": "https://openai.com/academy/codex-for-work/how-data-science-teams-use-codex",
+    "published_at": "2026-07-14T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "See how data science teams can use ChatGPT Work to build root-cause briefs, impact readouts, KPI memos, scoped analyses, and dashboard specs from real work inputs.",
+    "content": "See how data science teams can use ChatGPT Work to build root-cause briefs, impact readouts, KPI memos, scoped analyses, and dashboard specs from real work inputs.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -407,28 +561,6 @@
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
-    "id": "provider-ba0440f8b1a237fa5b",
-    "company": "Amazon AI",
-    "title": "MCP tool design: Practical approaches and tradeoffs",
-    "url": "https://aws.amazon.com/blogs/machine-learning/mcp-tool-design-practical-approaches-and-tradeoffs/",
-    "published_at": "2026-07-09T16:40:16.000Z",
-    "source_type": "rss_official",
-    "summary": "In this post, we show where MCP tool design goes wrong and how to fix it with practical context engineering approaches.",
-    "content": "In this post, we show where MCP tool design goes wrong and how to fix it with practical context engineering approaches.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
-    "id": "provider-a8d773242483102c91",
-    "company": "Amazon AI",
-    "title": "Enhancing enterprise inference on Amazon SageMaker HyperPod with data capture, Hugging Face, NVMe, and Route 53 integration",
-    "url": "https://aws.amazon.com/blogs/machine-learning/enhancing-enterprise-inference-on-amazon-sagemaker-hyperpod-with-data-capture-hugging-face-nvme-and-route-53-integration/",
-    "published_at": "2026-07-09T16:38:11.000Z",
-    "source_type": "rss_official",
-    "summary": "In this post, we walk through five capabilities now available in SageMaker HyperPod inference: multi-tier data capture for auditing and model improvement, direct deployment from Hugging Face Hub, local NVMe model loading for faster cold starts, automated Route 53 DNS for custom domains, and pod-level IAM through custom service accounts.",
-    "content": "In this post, we walk through five capabilities now available in SageMaker HyperPod inference: multi-tier data capture for auditing and model improvement, direct deployment from Hugging Face Hub, local NVMe model loading for faster cold starts, automated Route 53 DNS for custom domains, and pod-level IAM through custom service accounts.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
     "id": "provider-8ed9bf76fe00be065e",
     "company": "IBM Research",
     "title": "CoFrGeNets replace the ‘bones’ of transformer-based models",
@@ -484,6 +616,17 @@
     "source_url": "https://www.amazon.science/index.rss"
   },
   {
+    "id": "provider-028e0ed48b9aed998a",
+    "company": "OpenAI",
+    "title": "ChatGPT is now a partner for your most ambitious work",
+    "url": "https://openai.com/index/chatgpt-for-your-most-ambitious-work",
+    "published_at": "2026-07-09T10:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "ChatGPT Work is an agent that can take action across your apps and files, stay with a project for hours if needed, and turn a goal into finished work.",
+    "content": "ChatGPT Work is an agent that can take action across your apps and files, stay with a project for hours if needed, and turn a goal into finished work.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
     "id": "provider-f4c384923355e0e070",
     "company": "OpenAI",
     "title": "GPT-5.6: Frontier intelligence that scales with your ambition",
@@ -504,28 +647,6 @@
     "summary": "Details about the OpenAI Bio Bounty program",
     "content": "Details about the OpenAI Bio Bounty program",
     "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
-    "id": "provider-028e0ed48b9aed998a",
-    "company": "OpenAI",
-    "title": "ChatGPT is now a partner for your most ambitious work",
-    "url": "https://openai.com/index/chatgpt-for-your-most-ambitious-work",
-    "published_at": "2026-07-09T10:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "ChatGPT Work is an agent that can take action across your apps and files, stay with a project for hours if needed, and turn a goal into finished work.",
-    "content": "ChatGPT Work is an agent that can take action across your apps and files, stay with a project for hours if needed, and turn a goal into finished work.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
-    "id": "provider-841a0ba44b074e039f",
-    "company": "Amazon AI",
-    "title": "Introducing Claude apps gateway for AWS",
-    "url": "https://aws.amazon.com/blogs/machine-learning/introducing-claude-apps-gateway-for-aws/",
-    "published_at": "2026-07-08T19:49:22.000Z",
-    "source_type": "rss_official",
-    "summary": "Today, we're announcing the Claude apps gateway for AWS, a self-hosted control plane that gives organizations a single point of control over access, cost, and policy for Claude Code and Claude Desktop. In this post, we show how to set up and run Claude apps gateway for AWS with Amazon Bedrock and Claude Platform on AWS.",
-    "content": "Today, we're announcing the Claude apps gateway for AWS, a self-hosted control plane that gives organizations a single point of control over access, cost, and policy for Claude Code and Claude Desktop. In this post, we show how to set up and run Claude apps gateway for AWS with Amazon Bedrock and Claude Platform on AWS.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
   },
   {
     "id": "provider-e12a140c23bfe1a7e6",
@@ -979,17 +1100,6 @@
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
-    "id": "provider-5686b86e0924457be6",
-    "company": "OpenAI",
-    "title": "Inside Genebench-Pro",
-    "url": "https://openai.com/index/genebench-pro/case-studies",
-    "published_at": "2026-06-30T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "",
-    "content": "",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-571e95ccf7287f6600",
     "company": "OpenAI",
     "title": "Introducing GeneBench-Pro",
@@ -998,6 +1108,17 @@
     "source_type": "rss_official",
     "summary": "Introducing GeneBench-Pro, a new benchmark testing AI performance in genomics, biology, and scientific research using complex, real-world datasets.",
     "content": "Introducing GeneBench-Pro, a new benchmark testing AI performance in genomics, biology, and scientific research using complex, real-world datasets.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-5686b86e0924457be6",
+    "company": "OpenAI",
+    "title": "Inside Genebench-Pro",
+    "url": "https://openai.com/index/genebench-pro/case-studies",
+    "published_at": "2026-06-30T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -1054,17 +1175,6 @@
     "summary": "AI agents are quickly moving beyond chat. They inspect code, run tests, read documents, search knowledge bases, query internal systems, and operate for hours on...",
     "content": "AI agents are quickly moving beyond chat. They inspect code, run tests, read documents, search knowledge bases, query internal systems, and operate for hours on...",
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
-    "id": "provider-6d4b4b8505b12a9d5e",
-    "company": "NVIDIA AI",
-    "title": "Firefly Aerospace Operates NVIDIA Jetson in Lunar Orbit for the First Time",
-    "url": "https://blogs.nvidia.com/blog/firefly-aerospace-nvidia-jetson-lunar-orbit/",
-    "published_at": "2026-06-29T15:00:04.000Z",
-    "source_type": "rss_official",
-    "summary": "",
-    "content": "",
-    "source_url": "https://blogs.nvidia.com/feed/"
   },
   {
     "id": "provider-e2abdaea94dbb10b35",
@@ -2266,17 +2376,6 @@
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
-    "id": "provider-76b4195f74bb6d9c92",
-    "company": "OpenAI",
-    "title": "A blueprint for democratic governance of frontier AI",
-    "url": "https://openai.com/index/frontier-safety-blueprint",
-    "published_at": "2026-06-03T10:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "OpenAI outlines a blueprint for U.S. governance of frontier AI, proposing a federal framework for safety, resilience, and national security.",
-    "content": "OpenAI outlines a blueprint for U.S. governance of frontier AI, proposing a federal framework for safety, resilience, and national security.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-8f56487ce735112480",
     "company": "OpenAI",
     "title": "OpenAI public policy agenda",
@@ -2285,6 +2384,17 @@
     "source_type": "rss_official",
     "summary": "OpenAI outlines its public policy agenda for AI, including safety, youth protection, workforce transition, and global standards to ensure AI benefits society.",
     "content": "OpenAI outlines its public policy agenda for AI, including safety, youth protection, workforce transition, and global standards to ensure AI benefits society.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-76b4195f74bb6d9c92",
+    "company": "OpenAI",
+    "title": "A blueprint for democratic governance of frontier AI",
+    "url": "https://openai.com/index/frontier-safety-blueprint",
+    "published_at": "2026-06-03T10:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "OpenAI outlines a blueprint for U.S. governance of frontier AI, proposing a federal framework for safety, resilience, and national security.",
+    "content": "OpenAI outlines a blueprint for U.S. governance of frontier AI, proposing a federal framework for safety, resilience, and national security.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -2662,17 +2772,6 @@
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
-    "id": "provider-eba53cab6075e13c03",
-    "company": "OpenAI",
-    "title": "Warp’s big bet on building open source with GPT-5.5",
-    "url": "https://openai.com/index/warp",
-    "published_at": "2026-05-27T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Warp uses GPT-5.5 and OpenAI models to coordinate coding agents across local, cloud, and open-source development workflows.",
-    "content": "Warp uses GPT-5.5 and OpenAI models to coordinate coding agents across local, cloud, and open-source development workflows.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-094fa9a9b0dc9737d3",
     "company": "OpenAI",
     "title": "Election information and safeguards in 2026",
@@ -2681,6 +2780,17 @@
     "source_type": "rss_official",
     "summary": "Ahead of global elections, we’re helping people access information, supporting cyber defenders, and increasing AI transparency",
     "content": "Ahead of global elections, we’re helping people access information, supporting cyber defenders, and increasing AI transparency",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-eba53cab6075e13c03",
+    "company": "OpenAI",
+    "title": "Warp’s big bet on building open source with GPT-5.5",
+    "url": "https://openai.com/index/warp",
+    "published_at": "2026-05-27T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Warp uses GPT-5.5 and OpenAI models to coordinate coding agents across local, cloud, and open-source development workflows.",
+    "content": "Warp uses GPT-5.5 and OpenAI models to coordinate coding agents across local, cloud, and open-source development workflows.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -2715,28 +2825,6 @@
     "summary": "How to train language models to generate diverse, accurate reasoning paths using tokens that control distinct reasoning strategies.",
     "content": "How to train language models to generate diverse, accurate reasoning paths using tokens that control distinct reasoning strategies.",
     "source_url": "https://www.amazon.science/index.rss"
-  },
-  {
-    "id": "provider-0d40118f9a43c8f970",
-    "company": "OpenAI",
-    "title": "AI is becoming a first hire for small businesses",
-    "url": "https://openai.com/index/ai-first-hire-small-business",
-    "published_at": "2026-05-25T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "New research shows how 4 million Americans use ChatGPT to start, run, and grow small businesses, lowering the cost of entrepreneurship with AI.",
-    "content": "New research shows how 4 million Americans use ChatGPT to start, run, and grow small businesses, lowering the cost of entrepreneurship with AI.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
-    "id": "provider-a14abe02dc6f5b52ce",
-    "company": "OpenAI",
-    "title": "OpenAI, Grupo Folha and Grupo UOL announce strategic content partnership",
-    "url": "https://openai.com/index/grupo-folha-grupo-uol-partnership",
-    "published_at": "2026-05-25T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "OpenAI partners with Grupo Folha and Grupo UOL to bring trusted Brazilian journalism to ChatGPT, expanding access to news with attribution and transparency.",
-    "content": "OpenAI partners with Grupo Folha and Grupo UOL to bring trusted Brazilian journalism to ChatGPT, expanding access to news with attribution and transparency.",
-    "source_url": "https://openai.com/news/rss.xml"
   },
   {
     "id": "provider-847a2f1d748d2c6564",
@@ -3938,44 +4026,11 @@
     "source_url": "https://deepmind.google/blog/rss.xml"
   },
   {
-    "id": "provider-9723cb1248554632c1",
-    "company": "NVIDIA AI",
-    "title": "Designing Protein Binders Using the Generative Model Proteina-Complexa",
-    "url": "https://developer.nvidia.com/blog/designing-protein-binders-using-the-generative-model-proteina-complexa/",
-    "published_at": "2026-03-25T13:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Developing new protein-based therapies and catalysts involves the challenging task of designing protein binders, or proteins that bind to a target protein or...",
-    "content": "Developing new protein-based therapies and catalysts involves the challenging task of designing protein binders, or proteins that bind to a target protein or...",
-    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
     "id": "provider-04fcf3f422c1a5eceb",
     "company": "Hugging Face",
     "title": "A New Framework for Evaluating Voice Agents (EVA)",
     "url": "https://huggingface.co/blog/ServiceNow-AI/eva",
     "published_at": "2026-03-24T02:01:52.000Z",
-    "source_type": "rss_official",
-    "summary": "",
-    "content": "",
-    "source_url": "https://huggingface.co/blog/feed.xml"
-  },
-  {
-    "id": "provider-d1d01b2d31f7e56a39",
-    "company": "Hugging Face",
-    "title": "Build a Domain-Specific Embedding Model in Under a Day",
-    "url": "https://huggingface.co/blog/nvidia/domain-specific-embedding-finetune",
-    "published_at": "2026-03-20T19:38:16.000Z",
-    "source_type": "rss_official",
-    "summary": "",
-    "content": "",
-    "source_url": "https://huggingface.co/blog/feed.xml"
-  },
-  {
-    "id": "provider-89c3b696676de31cad",
-    "company": "Hugging Face",
-    "title": "State of Open Source on Hugging Face: Spring 2026",
-    "url": "https://huggingface.co/blog/huggingface/state-of-os-hf-spring-2026",
-    "published_at": "2026-03-17T16:37:55.000Z",
     "source_type": "rss_official",
     "summary": "",
     "content": "",
@@ -3993,39 +4048,6 @@
     "source_url": "https://deepmind.google/blog/rss.xml"
   },
   {
-    "id": "provider-c7c5b34e13b8f2a1b8",
-    "company": "Hugging Face",
-    "title": "Holotron-12B - High Throughput Computer Use Agent",
-    "url": "https://huggingface.co/blog/Hcompany/holotron-12b",
-    "published_at": "2026-03-17T12:33:39.000Z",
-    "source_type": "rss_official",
-    "summary": "",
-    "content": "",
-    "source_url": "https://huggingface.co/blog/feed.xml"
-  },
-  {
-    "id": "provider-44d1ff907eb0259274",
-    "company": "Hugging Face",
-    "title": "Introducing Storage Buckets on the Hugging Face Hub",
-    "url": "https://huggingface.co/blog/storage-buckets",
-    "published_at": "2026-03-10T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "",
-    "content": "",
-    "source_url": "https://huggingface.co/blog/feed.xml"
-  },
-  {
-    "id": "provider-a526cf5e06e7eb1b8c",
-    "company": "Hugging Face",
-    "title": "Keep the Tokens Flowing: Lessons from 16 Open-Source RL Libraries",
-    "url": "https://huggingface.co/blog/async-rl-training-landscape",
-    "published_at": "2026-03-10T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "",
-    "content": "",
-    "source_url": "https://huggingface.co/blog/feed.xml"
-  },
-  {
     "id": "provider-ac72889079c8f80884",
     "company": "Google DeepMind",
     "title": "From games to biology and beyond: 10 years of AlphaGo’s impact",
@@ -4035,17 +4057,6 @@
     "summary": "Ten years since AlphaGo, we explore how it is catalyzing scientific discovery and paving a path to AGI.",
     "content": "Ten years since AlphaGo, we explore how it is catalyzing scientific discovery and paving a path to AGI.",
     "source_url": "https://deepmind.google/blog/rss.xml"
-  },
-  {
-    "id": "provider-ae37635cf11bbb990d",
-    "company": "Hugging Face",
-    "title": "Ulysses Sequence Parallelism: Training with Million-Token Contexts",
-    "url": "https://huggingface.co/blog/ulysses-sp",
-    "published_at": "2026-03-09T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "",
-    "content": "",
-    "source_url": "https://huggingface.co/blog/feed.xml"
   },
   {
     "id": "provider-c752c68823380aea28",
@@ -4463,17 +4474,6 @@
     "source_type": "rss_official",
     "summary": "Gemma 3n is designed for the developer community that helped shape Gemma.",
     "content": "Gemma 3n is designed for the developer community that helped shape Gemma.",
-    "source_url": "https://deepmind.google/blog/rss.xml"
-  },
-  {
-    "id": "provider-4d4bdcfb2b69190d0a",
-    "company": "Google DeepMind",
-    "title": "Gemini 2.5 Flash-Lite is now ready for scaled production use",
-    "url": "https://deepmind.google/blog/gemini-25-flash-lite-is-now-ready-for-scaled-production-use/",
-    "published_at": "2025-10-25T17:34:32.000Z",
-    "source_type": "rss_official",
-    "summary": "Gemini 2.5 Flash-Lite, previously in preview, is now stable and generally available. This cost-efficient model provides high quality in a small size, and includes 2.5 family features like a 1 million-token context window and multimodality.",
-    "content": "Gemini 2.5 Flash-Lite, previously in preview, is now stable and generally available. This cost-efficient model provides high quality in a small size, and includes 2.5 family features like a 1 million-token context window and multimodality.",
     "source_url": "https://deepmind.google/blog/rss.xml"
   },
   {
