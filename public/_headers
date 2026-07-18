@@ -17,7 +17,6 @@
   # Content Security Policy
   Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://arejerdupcduqhgdoyht.supabase.co; font-src 'self' https://fonts.helloworldfirm.com; connect-src 'self' https://arejerdupcduqhgdoyht.supabase.co https://static.cloudflareinsights.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests
   Cache-Control: public, max-age=300, must-revalidate, stale-while-revalidate=86400
-  Last-Modified: Fri, 19 Jun 2026 00:00:00 GMT
 
 # Cache static assets aggressively
 /_astro/*
