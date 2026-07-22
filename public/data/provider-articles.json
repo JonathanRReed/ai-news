@@ -1,5 +1,137 @@
 [
   {
+    "id": "provider-a35393c3554396db98",
+    "company": "NVIDIA AI",
+    "title": "Built in Fort Worth: Wistron Opens Advanced Manufacturing Plant to Produce NVIDIA AI Systems",
+    "url": "https://blogs.nvidia.com/blog/wistron-manufacturing-texas/",
+    "published_at": "2026-07-21T22:35:45.000Z",
+    "source_type": "rss_official",
+    "summary": "The AI era runs on AI infrastructure. Many of these advanced systems are built and tested in Texas. Wistron opened its first U.S. manufacturing facility today in Fort Worth — a 324,000-square-foot greenfield plant producing superchips at the heart of some of the world’s most capable AI systems. In front of an audience of Wistron […]",
+    "content": "The AI era runs on AI infrastructure. Many of these advanced systems are built and tested in Texas. Wistron opened its first U.S. manufacturing facility today in Fort Worth — a 324,000-square-foot greenfield plant producing superchips at the heart of some of the world’s most capable AI systems. In front of an audience of Wistron […]",
+    "source_url": "https://blogs.nvidia.com/feed/"
+  },
+  {
+    "id": "provider-3ae715ab10d8ad2140",
+    "company": "Hugging Face",
+    "title": "The State of Simulation for Physical AI: An Overview",
+    "url": "https://huggingface.co/blog/nvidia/state-of-simulation-for-physical-ai",
+    "published_at": "2026-07-21T20:00:27.000Z",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://huggingface.co/blog/feed.xml"
+  },
+  {
+    "id": "provider-44454ba4b6480ad71c",
+    "company": "OpenAI",
+    "title": "Introducing the ChatGPT for small business program",
+    "url": "https://openai.com/index/introducing-chatgpt-small-business-program",
+    "published_at": "2026-07-21T17:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "OpenAI launches the ChatGPT for Small Businesses program, helping entrepreneurs build AI skills, automate work, and grow with ChatGPT Work.",
+    "content": "OpenAI launches the ChatGPT for Small Businesses program, helping entrepreneurs build AI skills, automate work, and grow with ChatGPT Work.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-4fa9b764c7b59a22d3",
+    "company": "Amazon AI",
+    "title": "Exploring self-distilled reasoning for supervised fine-tuning with Amazon Nova",
+    "url": "https://aws.amazon.com/blogs/machine-learning/exploring-self-distilled-reasoning-for-supervised-fine-tuning-with-amazon-nova/",
+    "published_at": "2026-07-21T16:23:12.000Z",
+    "source_type": "rss_official",
+    "summary": "In this post, we explore an idea for generating thinking tokens for datasets that lack reasoning traces in SFT customization. We first examine the reasoning suppression problem, then introduce Self-Distilled Reasoning (SDR), validate it across three benchmarks, and provide practical recommendations.",
+    "content": "In this post, we explore an idea for generating thinking tokens for datasets that lack reasoning traces in SFT customization. We first examine the reasoning suppression problem, then introduce Self-Distilled Reasoning (SDR), validate it across three benchmarks, and provide practical recommendations.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-f57d330952579e06c9",
+    "company": "NVIDIA AI",
+    "title": "NVIDIA Vera Rubin Driving Performance Per Watt, Lowest Token Cost for Partners Worldwide",
+    "url": "https://blogs.nvidia.com/blog/vera-rubin/",
+    "published_at": "2026-07-21T15:36:43.000Z",
+    "source_type": "rss_official",
+    "summary": "NVIDIA Vera Rubin is here, and it’s going gigascale. Vera Rubin NVL72 production is ramping up with racks running at partners CoreWeave, Google Cloud, Microsoft Azure and Oracle Cloud Infrastructure. Spanning 350+ factory sites in 30 countries, Vera Rubin has the largest, most mature rack-scale supply chain ever assembled to meet customer compute demand. The […]",
+    "content": "NVIDIA Vera Rubin is here, and it’s going gigascale. Vera Rubin NVL72 production is ramping up with racks running at partners CoreWeave, Google Cloud, Microsoft Azure and Oracle Cloud Infrastructure. Spanning 350+ factory sites in 30 countries, Vera Rubin has the largest, most mature rack-scale supply chain ever assembled to meet customer compute demand. The […]",
+    "source_url": "https://blogs.nvidia.com/feed/"
+  },
+  {
+    "id": "provider-6bbeffdb11dee5dffc",
+    "company": "Google DeepMind",
+    "title": "Introducing Gemini 3.6 Flash, 3.5 Flash-Lite, and 3.5 Flash Cyber",
+    "url": "https://deepmind.google/blog/introducing-gemini-36-flash-35-flash-lite-and-35-flash-cyber/",
+    "published_at": "2026-07-21T15:16:30.000Z",
+    "source_type": "rss_official",
+    "summary": "We’re introducing new Gemini models, including Gemini 3.6 Flash, 3.5 Flash-Lite and 3.5 Flash Cyber.",
+    "content": "We’re introducing new Gemini models, including Gemini 3.6 Flash, 3.5 Flash-Lite and 3.5 Flash Cyber.",
+    "source_url": "https://deepmind.google/blog/rss.xml"
+  },
+  {
+    "id": "provider-b70987c66605d7abcc",
+    "company": "NVIDIA AI",
+    "title": "Built for Vera Rubin, NVIDIA Spectrum-6 Arrives in Gigascale AI Factories",
+    "url": "https://blogs.nvidia.com/blog/nvidia-spectrum-six-arrives-in-gigascale-ai-factories/",
+    "published_at": "2026-07-21T15:00:20.000Z",
+    "source_type": "rss_official",
+    "summary": "AI has entered the gigascale era. The world’s most advanced AI factories are bringing together hundreds of thousands of GPUs and CPUs to train frontier models, power agentic AI and generate intelligence at unprecedented scale. At this level, networking becomes a critical computing power multiplier in driving token generation. Marking a networking milestone, NVIDIA Spectrum-6 […]",
+    "content": "AI has entered the gigascale era. The world’s most advanced AI factories are bringing together hundreds of thousands of GPUs and CPUs to train frontier models, power agentic AI and generate intelligence at unprecedented scale. At this level, networking becomes a critical computing power multiplier in driving token generation. Marking a networking milestone, NVIDIA Spectrum-6 […]",
+    "source_url": "https://blogs.nvidia.com/feed/"
+  },
+  {
+    "id": "provider-09fb78e78bc1488858",
+    "company": "NVIDIA AI",
+    "title": "Inside NVIDIA Rubin GPU Architecture: Powering the Era of Agentic AI",
+    "url": "https://developer.nvidia.com/blog/inside-nvidia-rubin-gpu-architecture-powering-the-era-of-agentic-ai/",
+    "published_at": "2026-07-21T15:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "What began as discrete AI model training and human-facing chat interfaces has evolved into always-on AI factories dedicated to producing intelligence at scale....",
+    "content": "What began as discrete AI model training and human-facing chat interfaces has evolved into always-on AI factories dedicated to producing intelligence at scale....",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
+  },
+  {
+    "id": "provider-151cb7ebeadc21532c",
+    "company": "NVIDIA AI",
+    "title": "NVIDIA Vera CPU: Olympus Cores Built for Maximum Single-Thread Performance in Agentic AI",
+    "url": "https://developer.nvidia.com/blog/inside-nvidia-vera-cpu-olympus-cores-built-for-maximum-single-threaded-performance-in-agentic-ai/",
+    "published_at": "2026-07-21T15:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Agentic AI shifts more of the critical execution path onto the CPU. Agents operate in sandboxes to execute code, invoke tools, retrieve context, interact with...",
+    "content": "Agentic AI shifts more of the critical execution path onto the CPU. Agents operate in sandboxes to execute code, invoke tools, retrieve context, interact with...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
+  },
+  {
+    "id": "provider-9adb547fc29dcebc02",
+    "company": "NVIDIA AI",
+    "title": "Setting a World Record for MoE Pre-Training on NVIDIA GB300 NVL72",
+    "url": "https://developer.nvidia.com/blog/setting-a-world-record-for-moe-pre-training-on-nvidia-gb300-nvl72/",
+    "published_at": "2026-07-21T15:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Frontier model pre-training has converged on mixture of experts (MoE), which is fundamentally changing what limits large-scale AI training. As compute per token...",
+    "content": "Frontier model pre-training has converged on mixture of experts (MoE), which is fundamentally changing what limits large-scale AI training. As compute per token...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
+  },
+  {
+    "id": "provider-a23ab0d33ad731aa55",
+    "company": "OpenAI",
+    "title": "OpenAI and Hugging Face partner to address security incident during model evaluation",
+    "url": "https://openai.com/index/hugging-face-model-evaluation-security-incident",
+    "published_at": "2026-07-21T07:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "OpenAI and Hugging Face share early findings from a security incident during AI model evaluation, highlighting advanced cyber capabilities and lessons for defenders.",
+    "content": "OpenAI and Hugging Face share early findings from a security incident during AI model evaluation, highlighting advanced cyber capabilities and lessons for defenders.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-a06e3411e0d69536f8",
+    "company": "OpenAI",
+    "title": "David Vélez and Robin Vince join the boards of the OpenAI Foundation and OpenAI Group PBC",
+    "url": "https://openai.com/index/david-velez-robin-vince-join-openai-boards",
+    "published_at": "2026-07-21T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "David Vélez and Robin Vince join the boards of the OpenAI Foundation and OpenAI Group PBC, bringing global leadership in finance, technology, and governance.",
+    "content": "David Vélez and Robin Vince join the boards of the OpenAI Foundation and OpenAI Group PBC, bringing global leadership in finance, technology, and governance.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
     "id": "provider-8c872237e519e522ed",
     "company": "Hugging Face",
     "title": "Grabette: an open system to record robot-manipulation data",
@@ -53,17 +185,6 @@
     "summary": "In this post, we describe how Tradeshift deployed Amazon Quick with agentic AI capabilities to replace our legacy BI tool, resulting in query response times up to 30 times faster, a 40 percent reduction in total cost of ownership, and turned embedded analytics into a product that generates revenue.",
     "content": "In this post, we describe how Tradeshift deployed Amazon Quick with agentic AI capabilities to replace our legacy BI tool, resulting in query response times up to 30 times faster, a 40 percent reduction in total cost of ownership, and turned embedded analytics into a product that generates revenue.",
     "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
-    "id": "provider-647cda03cedeeb94b6",
-    "company": "Hugging Face",
-    "title": "Introducing Cosmos 3 Edge",
-    "url": "https://huggingface.co/blog/nvidia/cosmos3edge",
-    "published_at": "2026-07-20T15:58:51.000Z",
-    "source_type": "rss_official",
-    "summary": "",
-    "content": "",
-    "source_url": "https://huggingface.co/blog/feed.xml"
   },
   {
     "id": "provider-113890241eec45a1eb",
@@ -163,6 +284,17 @@
     "summary": "Lowest cost per token from extreme codesign maximizes intelligence per dollar for post-training in the agentic era.",
     "content": "Lowest cost per token from extreme codesign maximizes intelligence per dollar for post-training in the agentic era.",
     "source_url": "https://blogs.nvidia.com/feed/"
+  },
+  {
+    "id": "provider-fd6cc6537f85f08e49",
+    "company": "Google DeepMind",
+    "title": "Introducing Gemini 3.5 Flash Cyber",
+    "url": "https://deepmind.google/blog/introducing-gemini-3-5-flash-cyber/",
+    "published_at": "2026-07-17T15:00:11.000Z",
+    "source_type": "rss_official",
+    "summary": "Google introduces Gemini 3.5 Flash Cyber, a lightweight cybersecurity model to find and patch vulnerabilities.",
+    "content": "Google introduces Gemini 3.5 Flash Cyber, a lightweight cybersecurity model to find and patch vulnerabilities.",
+    "source_url": "https://deepmind.google/blog/rss.xml"
   },
   {
     "id": "provider-46d48c63e2441a692e",
@@ -638,17 +770,6 @@
     "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
   },
   {
-    "id": "provider-62106667e0679ccf88",
-    "company": "Amazon AI",
-    "title": "Building an agentic AI solution at Bluesight with Amazon Bedrock",
-    "url": "https://aws.amazon.com/blogs/machine-learning/building-an-agentic-ai-solution-at-bluesight-with-amazon-bedrock/",
-    "published_at": "2026-07-13T17:34:38.000Z",
-    "source_type": "rss_official",
-    "summary": "In this post, we describe how Bluesight used two AWS engagements and Amazon Bedrock AgentCore to evolve from a single-product AI prototype to Prism, a unified agentic AI solution spanning six healthcare compliance products. Prism Assistant for ControlCheck launched in May 2026 and is already in use by 20 health systems. A more complex multi-product agentic solution is on track for later in 2026.",
-    "content": "In this post, we describe how Bluesight used two AWS engagements and Amazon Bedrock AgentCore to evolve from a single-product AI prototype to Prism, a unified agentic AI solution spanning six healthcare compliance products. Prism Assistant for ControlCheck launched in May 2026 and is already in use by 20 health systems. A more complex multi-product agentic solution is on track for later in 2026.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
     "id": "provider-33fb8fcaaae9abbdd4",
     "company": "Google DeepMind",
     "title": "Empowering India’s next generation of innovators with ATL Saathi",
@@ -814,17 +935,6 @@
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
-    "id": "provider-028e0ed48b9aed998a",
-    "company": "OpenAI",
-    "title": "ChatGPT is now a partner for your most ambitious work",
-    "url": "https://openai.com/index/chatgpt-for-your-most-ambitious-work",
-    "published_at": "2026-07-09T10:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "ChatGPT Work is an agent that can take action across your apps and files, stay with a project for hours if needed, and turn a goal into finished work.",
-    "content": "ChatGPT Work is an agent that can take action across your apps and files, stay with a project for hours if needed, and turn a goal into finished work.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-9ebac2fe7079e530f0",
     "company": "OpenAI",
     "title": "GPT-5.5 Bio Bug Bounty",
@@ -833,6 +943,17 @@
     "source_type": "rss_official",
     "summary": "Details about the OpenAI Bio Bounty program",
     "content": "Details about the OpenAI Bio Bounty program",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-028e0ed48b9aed998a",
+    "company": "OpenAI",
+    "title": "ChatGPT is now a partner for your most ambitious work",
+    "url": "https://openai.com/index/chatgpt-for-your-most-ambitious-work",
+    "published_at": "2026-07-09T10:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "ChatGPT Work is an agent that can take action across your apps and files, stay with a project for hours if needed, and turn a goal into finished work.",
+    "content": "ChatGPT Work is an agent that can take action across your apps and files, stay with a project for hours if needed, and turn a goal into finished work.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -990,17 +1111,6 @@
     "source_url": "https://blogs.nvidia.com/feed/"
   },
   {
-    "id": "provider-1933ecbe72f0449e76",
-    "company": "OpenAI",
-    "title": "Australian Payments Plus moves faster with ChatGPT and Codex",
-    "url": "https://openai.com/index/australian-payments-plus",
-    "published_at": "2026-07-07T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "See how Australian Payments Plus uses ChatGPT Enterprise and Codex to move faster through payments complexity. AP+ saves time, improves quality, and keeps human judgment central.",
-    "content": "See how Australian Payments Plus uses ChatGPT Enterprise and Codex to move faster through payments complexity. AP+ saves time, improves quality, and keeps human judgment central.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-7ae6a57d8db0a9364c",
     "company": "OpenAI",
     "title": "MUFG aims to become AI-native with OpenAI",
@@ -1009,6 +1119,17 @@
     "source_type": "rss_official",
     "summary": "MUFG uses ChatGPT Enterprise to build an AI-native organization, improve workflows, and deliver new AI-powered financial services at scale.",
     "content": "MUFG uses ChatGPT Enterprise to build an AI-native organization, improve workflows, and deliver new AI-powered financial services at scale.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-1933ecbe72f0449e76",
+    "company": "OpenAI",
+    "title": "Australian Payments Plus moves faster with ChatGPT and Codex",
+    "url": "https://openai.com/index/australian-payments-plus",
+    "published_at": "2026-07-07T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "See how Australian Payments Plus uses ChatGPT Enterprise and Codex to move faster through payments complexity. AP+ saves time, improves quality, and keeps human judgment central.",
+    "content": "See how Australian Payments Plus uses ChatGPT Enterprise and Codex to move faster through payments complexity. AP+ saves time, improves quality, and keeps human judgment central.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -1122,17 +1243,6 @@
     "source_url": "https://blogs.nvidia.com/feed/"
   },
   {
-    "id": "provider-da0ebd58290ec4688d",
-    "company": "NVIDIA AI",
-    "title": "NVIDIA Unlocks AI Compute at Scale, Inviting Partners to Power the AI Infrastructure Buildout",
-    "url": "https://blogs.nvidia.com/blog/nvidia-unlocks-ai-compute-at-scale-capital-partners-to-power-ai-infrastructure-buildout/",
-    "published_at": "2026-07-02T03:34:48.000Z",
-    "source_type": "rss_official",
-    "summary": "As AI moves from model development to production inference, compute demand is accelerating and shifting toward continuously operating AI factories that generate tokens at scale. This shift requires access to large‑scale, multi‑tenant accelerated computing that can come online quickly, stay highly utilized and support the economics of token‑scale AI services. Emerging AI companies historically have […]",
-    "content": "As AI moves from model development to production inference, compute demand is accelerating and shifting toward continuously operating AI factories that generate tokens at scale. This shift requires access to large‑scale, multi‑tenant accelerated computing that can come online quickly, stay highly utilized and support the economics of token‑scale AI services. Emerging AI companies historically have […]",
-    "source_url": "https://blogs.nvidia.com/feed/"
-  },
-  {
     "id": "provider-1c018fd5b4943e1495",
     "company": "NVIDIA AI",
     "title": "Mastering Agentic Techniques: AI Agent Reinforcement Learning",
@@ -1166,17 +1276,6 @@
     "source_url": "https://research.ibm.com/rss"
   },
   {
-    "id": "provider-27a12d1637655edccc",
-    "company": "NVIDIA AI",
-    "title": "NVIDIA and Partners Build in America, for America",
-    "url": "https://blogs.nvidia.com/blog/nvidia-and-partners-build-in-america-for-america/",
-    "published_at": "2026-07-01T13:00:47.000Z",
-    "source_type": "rss_official",
-    "summary": "NVIDIA and its partners are investing in American manufacturing, supply chains, energy grids and skilled workforces so the U.S. can produce the infrastructure needed for better healthcare, breakthrough scientific discovery, stronger industrial productivity and global technology leadership.",
-    "content": "NVIDIA and its partners are investing in American manufacturing, supply chains, energy grids and skilled workforces so the U.S. can produce the infrastructure needed for better healthcare, breakthrough scientific discovery, stronger industrial productivity and global technology leadership.",
-    "source_url": "https://blogs.nvidia.com/feed/"
-  },
-  {
     "id": "provider-af1ed631797e0a7511",
     "company": "Hugging Face",
     "title": "Hugging Face and Cerebras bring Gemma 4 to real-time voice AI",
@@ -1197,17 +1296,6 @@
     "summary": "",
     "content": "",
     "source_url": "https://huggingface.co/blog/feed.xml"
-  },
-  {
-    "id": "provider-16c947376356e20ee3",
-    "company": "NVIDIA AI",
-    "title": "NVIDIA BioNeMo Agent Toolkit Brings Accelerated AI to Life Sciences Researchers in Claude Science",
-    "url": "https://blogs.nvidia.com/blog/claude-science-bionemo-agent-toolkit/",
-    "published_at": "2026-06-30T17:00:38.000Z",
-    "source_type": "rss_official",
-    "summary": "Life sciences has entered an era of computational scale, and for more than a decade, NVIDIA has built the full GPU-accelerated computing stack — spanning hardware, frameworks, libraries, models, microservices and domain-specific tools — to help researchers run more sophisticated workflows and iterate faster. This week, Anthropic announced Claude Science, an AI workbench for science […]",
-    "content": "Life sciences has entered an era of computational scale, and for more than a decade, NVIDIA has built the full GPU-accelerated computing stack — spanning hardware, frameworks, libraries, models, microservices and domain-specific tools — to help researchers run more sophisticated workflows and iterate faster. This week, Anthropic announced Claude Science, an AI workbench for science […]",
-    "source_url": "https://blogs.nvidia.com/feed/"
   },
   {
     "id": "provider-84f05bcddf64210bd3",
@@ -1243,6 +1331,17 @@
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
+    "id": "provider-5686b86e0924457be6",
+    "company": "OpenAI",
+    "title": "Inside Genebench-Pro",
+    "url": "https://openai.com/index/genebench-pro/case-studies",
+    "published_at": "2026-06-30T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
     "id": "provider-413b6224c8f2540224",
     "company": "OpenAI",
     "title": "Core dump epidemiology: fixing an 18-year-old bug",
@@ -1262,17 +1361,6 @@
     "source_type": "rss_official",
     "summary": "Introducing GeneBench-Pro, a new benchmark testing AI performance in genomics, biology, and scientific research using complex, real-world datasets.",
     "content": "Introducing GeneBench-Pro, a new benchmark testing AI performance in genomics, biology, and scientific research using complex, real-world datasets.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
-    "id": "provider-5686b86e0924457be6",
-    "company": "OpenAI",
-    "title": "Inside Genebench-Pro",
-    "url": "https://openai.com/index/genebench-pro/case-studies",
-    "published_at": "2026-06-30T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "",
-    "content": "",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -1639,17 +1727,6 @@
     "source_url": "https://research.ibm.com/rss"
   },
   {
-    "id": "provider-47bf7e22d29459f96a",
-    "company": "OpenAI",
-    "title": "Daybreak: Tools for securing every organization in the world",
-    "url": "https://openai.com/index/daybreak-securing-the-world",
-    "published_at": "2026-06-22T10:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "OpenAI introduces new Daybreak tools, including Codex Security and GPT-5.5-Cyber, to help organizations find, validate, and patch vulnerabilities at scale.",
-    "content": "OpenAI introduces new Daybreak tools, including Codex Security and GPT-5.5-Cyber, to help organizations find, validate, and patch vulnerabilities at scale.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-950caa79948d4d0f9a",
     "company": "OpenAI",
     "title": "Patch the Planet: a Daybreak initiative to support open source maintainers",
@@ -1658,6 +1735,17 @@
     "source_type": "rss_official",
     "summary": "OpenAI introduces Patch the Planet, a Daybreak initiative helping open-source maintainers find, validate, and fix vulnerabilities with AI and expert review.",
     "content": "OpenAI introduces Patch the Planet, a Daybreak initiative helping open-source maintainers find, validate, and fix vulnerabilities with AI and expert review.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-47bf7e22d29459f96a",
+    "company": "OpenAI",
+    "title": "Daybreak: Tools for securing every organization in the world",
+    "url": "https://openai.com/index/daybreak-securing-the-world",
+    "published_at": "2026-06-22T10:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "OpenAI introduces new Daybreak tools, including Codex Security and GPT-5.5-Cyber, to help organizations find, validate, and patch vulnerabilities at scale.",
+    "content": "OpenAI introduces new Daybreak tools, including Codex Security and GPT-5.5-Cyber, to help organizations find, validate, and patch vulnerabilities at scale.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -2013,17 +2101,6 @@
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
-    "id": "provider-53f9d319e8ae0bb1f1",
-    "company": "OpenAI",
-    "title": "BBVA puts AI at the core of banking with OpenAI",
-    "url": "https://openai.com/index/bbva",
-    "published_at": "2026-06-11T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Learn how BBVA scaled ChatGPT Enterprise to 100,000 employees and partnered with OpenAI to accelerate AI-powered banking transformation worldwide.",
-    "content": "Learn how BBVA scaled ChatGPT Enterprise to 100,000 employees and partnered with OpenAI to accelerate AI-powered banking transformation worldwide.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-511ab3a14c077aa0bc",
     "company": "OpenAI",
     "title": "How an astrophysicist uses Codex to help simulate black holes",
@@ -2032,6 +2109,17 @@
     "source_type": "rss_official",
     "summary": "Discover how astrophysicist Chi-kwan Chan uses Codex to build black hole simulations, helping scientists study extreme physics and test Einstein’s theory of general relativity.",
     "content": "Discover how astrophysicist Chi-kwan Chan uses Codex to build black hole simulations, helping scientists study extreme physics and test Einstein’s theory of general relativity.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-53f9d319e8ae0bb1f1",
+    "company": "OpenAI",
+    "title": "BBVA puts AI at the core of banking with OpenAI",
+    "url": "https://openai.com/index/bbva",
+    "published_at": "2026-06-11T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Learn how BBVA scaled ChatGPT Enterprise to 100,000 employees and partnered with OpenAI to accelerate AI-powered banking transformation worldwide.",
+    "content": "Learn how BBVA scaled ChatGPT Enterprise to 100,000 employees and partnered with OpenAI to accelerate AI-powered banking transformation worldwide.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -2475,17 +2563,6 @@
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
-    "id": "provider-8f56487ce735112480",
-    "company": "OpenAI",
-    "title": "OpenAI public policy agenda",
-    "url": "https://openai.com/index/public-policy-agenda",
-    "published_at": "2026-06-03T10:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "OpenAI outlines its public policy agenda for AI, including safety, youth protection, workforce transition, and global standards to ensure AI benefits society.",
-    "content": "OpenAI outlines its public policy agenda for AI, including safety, youth protection, workforce transition, and global standards to ensure AI benefits society.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-76b4195f74bb6d9c92",
     "company": "OpenAI",
     "title": "A blueprint for democratic governance of frontier AI",
@@ -2494,6 +2571,17 @@
     "source_type": "rss_official",
     "summary": "OpenAI outlines a blueprint for U.S. governance of frontier AI, proposing a federal framework for safety, resilience, and national security.",
     "content": "OpenAI outlines a blueprint for U.S. governance of frontier AI, proposing a federal framework for safety, resilience, and national security.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-8f56487ce735112480",
+    "company": "OpenAI",
+    "title": "OpenAI public policy agenda",
+    "url": "https://openai.com/index/public-policy-agenda",
+    "published_at": "2026-06-03T10:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "OpenAI outlines its public policy agenda for AI, including safety, youth protection, workforce transition, and global standards to ensure AI benefits society.",
+    "content": "OpenAI outlines its public policy agenda for AI, including safety, youth protection, workforce transition, and global standards to ensure AI benefits society.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -2761,17 +2849,6 @@
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
-    "id": "provider-e7b81b61911a3feb65",
-    "company": "OpenAI",
-    "title": "A shared playbook for trustworthy third party evaluations",
-    "url": "https://openai.com/index/trustworthy-third-party-evaluations-foundations",
-    "published_at": "2026-05-29T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "OpenAI shares guidance on third-party AI evaluations, covering how to assess model capabilities, safeguards, and validity for frontier systems.",
-    "content": "OpenAI shares guidance on third-party AI evaluations, covering how to assess model capabilities, safeguards, and validity for frontier systems.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-e9ad0aa7ccdbcf6f92",
     "company": "Hugging Face",
     "title": "Profiling in PyTorch (Part 1): A Beginner's Guide to torch.profiler",
@@ -2783,17 +2860,6 @@
     "source_url": "https://huggingface.co/blog/feed.xml"
   },
   {
-    "id": "provider-6a831509101bcba449",
-    "company": "OpenAI",
-    "title": "How Endava builds an agentic organization with Codex",
-    "url": "https://openai.com/index/endava",
-    "published_at": "2026-05-28T12:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Learn how Endava uses Codex to build an agentic organization, accelerating software delivery and reducing requirements analysis from weeks to hours.",
-    "content": "Learn how Endava uses Codex to build an agentic organization, accelerating software delivery and reducing requirements analysis from weeks to hours.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-d960e3d74e94a1253a",
     "company": "Amazon AI",
     "title": "How flat is replacing fat in AWS data center networks",
@@ -2803,17 +2869,6 @@
     "summary": "“Quasi-random” network topologies and new passive optical components called ShuffleBoxes make more-efficient flat networks as practical as traditional “fat-tree” networks.",
     "content": "“Quasi-random” network topologies and new passive optical components called ShuffleBoxes make more-efficient flat networks as practical as traditional “fat-tree” networks.",
     "source_url": "https://www.amazon.science/index.rss"
-  },
-  {
-    "id": "provider-b74b3aee2ee54d82e3",
-    "company": "OpenAI",
-    "title": "OpenAI’s Frontier Governance Framework",
-    "url": "https://openai.com/index/openai-frontier-governance-framework",
-    "published_at": "2026-05-28T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Explore OpenAI’s Frontier Governance Framework and how our AI safety, security, and risk practices align with emerging EU and California regulations.",
-    "content": "Explore OpenAI’s Frontier Governance Framework and how our AI safety, security, and risk practices align with emerging EU and California regulations.",
-    "source_url": "https://openai.com/news/rss.xml"
   },
   {
     "id": "provider-d2303627a7701c4383",
@@ -3707,17 +3762,6 @@
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
-    "id": "provider-cd8d43fc3d6d1f6166",
-    "company": "NVIDIA AI",
-    "title": "Build a More Secure, Always-On Local AI Agent with OpenClaw and NVIDIA NemoClaw",
-    "url": "https://developer.nvidia.com/blog/build-a-secure-always-on-local-ai-agent-with-nvidia-nemoclaw-and-openclaw/",
-    "published_at": "2026-04-17T18:59:12.000Z",
-    "source_type": "rss_official",
-    "summary": "Agents are evolving from question-and-answer systems into long-running autonomous assistants that read files, call APIs, and drive multi-step workflows....",
-    "content": "Agents are evolving from question-and-answer systems into long-running autonomous assistants that read files, call APIs, and drive multi-step workflows....",
-    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
     "id": "provider-861439005f13d6a3ba",
     "company": "Amazon AI",
     "title": "Isabelle/HOL: The proof assistant behind the Nitro Isolation Engine",
@@ -3806,17 +3850,6 @@
     "source_url": "https://huggingface.co/blog/feed.xml"
   },
   {
-    "id": "provider-c8a1e77c51f3c16935",
-    "company": "NVIDIA AI",
-    "title": "NVIDIA Ising Introduces AI-Powered Workflows to Build Fault-Tolerant Quantum Systems",
-    "url": "https://developer.nvidia.com/blog/nvidia-ising-introduces-ai-powered-workflows-to-build-fault-tolerant-quantum-systems/",
-    "published_at": "2026-04-14T14:15:56.000Z",
-    "source_type": "rss_official",
-    "summary": "NVIDIA Ising is the world's first family of open AI models for building quantum processors, launching with two model domains: Ising Calibration and Ising...",
-    "content": "NVIDIA Ising is the world's first family of open AI models for building quantum processors, launching with two model domains: Ising Calibration and Ising...",
-    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
     "id": "provider-5ad23b3448237a96f1",
     "company": "Amazon AI",
     "title": "AWS and Hopkins Engineering announce groundbreaking database for AI/ML antibody design",
@@ -3837,17 +3870,6 @@
     "summary": "Gemini Robotics ER 1.6: Enhancing spatial reasoning and multi-view understanding for autonomous robotics.",
     "content": "Gemini Robotics ER 1.6: Enhancing spatial reasoning and multi-view understanding for autonomous robotics.",
     "source_url": "https://deepmind.google/blog/rss.xml"
-  },
-  {
-    "id": "provider-36fdbe46a5e5dfd925",
-    "company": "NVIDIA AI",
-    "title": "MiniMax M2.7 Advances Scalable Agentic Workflows on NVIDIA Platforms for Complex AI Applications",
-    "url": "https://developer.nvidia.com/blog/minimax-m2-7-advances-scalable-agentic-workflows-on-nvidia-platforms-for-complex-ai-applications/",
-    "published_at": "2026-04-12T01:02:44.000Z",
-    "source_type": "rss_official",
-    "summary": "The release of&nbsp;MiniMax M2.7&nbsp;adds enhancements to the popular&nbsp;MiniMax&nbsp;M2.5 model,&nbsp;built for agentic harnesses,...",
-    "content": "The release of&nbsp;MiniMax M2.7&nbsp;adds enhancements to the popular&nbsp;MiniMax&nbsp;M2.5 model,&nbsp;built for agentic harnesses,...",
-    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
     "id": "provider-9df1b966092bcd6b2c",
@@ -4463,28 +4485,6 @@
     "source_type": "rss_official",
     "summary": "Introducing T5Gemma, a new collection of encoder-decoder LLMs.",
     "content": "Introducing T5Gemma, a new collection of encoder-decoder LLMs.",
-    "source_url": "https://deepmind.google/blog/rss.xml"
-  },
-  {
-    "id": "provider-f93c4f3f2f9a39fa0e",
-    "company": "Google DeepMind",
-    "title": "MedGemma: Our most capable open models for health AI development",
-    "url": "https://deepmind.google/blog/medgemma-our-most-capable-open-models-for-health-ai-development/",
-    "published_at": "2025-10-25T18:02:50.000Z",
-    "source_type": "rss_official",
-    "summary": "We’re announcing new multimodal models in the MedGemma collection, our most capable open models for health AI development.",
-    "content": "We’re announcing new multimodal models in the MedGemma collection, our most capable open models for health AI development.",
-    "source_url": "https://deepmind.google/blog/rss.xml"
-  },
-  {
-    "id": "provider-9571f0c8b0013adb9a",
-    "company": "Google DeepMind",
-    "title": "Introducing Gemma 3n: The developer guide",
-    "url": "https://deepmind.google/blog/introducing-gemma-3n-the-developer-guide/",
-    "published_at": "2025-10-25T17:54:47.000Z",
-    "source_type": "rss_official",
-    "summary": "Gemma 3n is designed for the developer community that helped shape Gemma.",
-    "content": "Gemma 3n is designed for the developer community that helped shape Gemma.",
     "source_url": "https://deepmind.google/blog/rss.xml"
   },
   {
