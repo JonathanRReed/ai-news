@@ -1,5 +1,49 @@
 [
   {
+    "id": "provider-844d8aa0470fcb264b",
+    "company": "Amazon AI",
+    "title": "Introducing Claude Opus 5 on AWS: Anthropic’s most capable Opus model",
+    "url": "https://aws.amazon.com/blogs/machine-learning/introducing-claude-opus-5-on-aws-anthropics-most-capable-opus-model/",
+    "published_at": "2026-07-24T17:59:03.000Z",
+    "source_type": "rss_official",
+    "summary": "This post covers Opus 5’s improvements and practical guidance for AI engineers integrating the model into agentic systems and production inference workloads on Amazon Bedrock. See the documentation for Claude Platform on AWS.",
+    "content": "This post covers Opus 5’s improvements and practical guidance for AI engineers integrating the model into agentic systems and production inference workloads on Amazon Bedrock. See the documentation for Claude Platform on AWS.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-037ee887a3e98968aa",
+    "company": "NVIDIA AI",
+    "title": "ModelExpress: Distributing Model Artifacts at the Speed of Light",
+    "url": "https://developer.nvidia.com/blog/modelexpress-distributing-model-artifacts-at-the-speed-of-light/",
+    "published_at": "2026-07-24T16:45:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Every byte moved has a cost. As model checkpoints grow to hundreds of gigabytes or even a terabyte, that cost adds up quickly. To make things even worse, moving...",
+    "content": "Every byte moved has a cost. As model checkpoints grow to hundreds of gigabytes or even a terabyte, that cost adds up quickly. To make things even worse, moving...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
+  },
+  {
+    "id": "provider-91749b2ebe34dcc885",
+    "company": "Amazon AI",
+    "title": "Build an explainable next-best-product recommendation system for banking on AWS",
+    "url": "https://aws.amazon.com/blogs/machine-learning/build-an-explainable-next-best-product-recommendation-system-for-banking-on-aws/",
+    "published_at": "2026-07-24T15:42:11.000Z",
+    "source_type": "rss_official",
+    "summary": "Learn the architecture and design decisions behind an explainable next-best-product recommendation system for banking, built with Amazon SageMaker AI and PyTorch. A multi-tower neural network with learned attention delivers accurate, per-customer recommendations while providing the explainability that banking regulators require.",
+    "content": "Learn the architecture and design decisions behind an explainable next-best-product recommendation system for banking, built with Amazon SageMaker AI and PyTorch. A multi-tower neural network with learned attention delivers accurate, per-customer recommendations while providing the explainability that banking regulators require.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-2fa3d74637dd8e0eb8",
+    "company": "Amazon AI",
+    "title": "Get started with OpenAI GPT-5.6 Sol, Terra, and Luna on Amazon Bedrock",
+    "url": "https://aws.amazon.com/blogs/machine-learning/get-started-with-openai-gpt-5-6-sol-terra-and-luna-on-amazon-bedrock/",
+    "published_at": "2026-07-24T15:40:08.000Z",
+    "source_type": "rss_official",
+    "summary": "OpenAI GPT-5.6 Sol, Terra, and Luna are now generally available on Amazon Bedrock. Learn how to select a model, run inference through the Responses API on the bedrock-mantle endpoint, reduce cost with prompt caching, connect the OpenAI Codex coding agent, and plan for quotas and scaling.",
+    "content": "OpenAI GPT-5.6 Sol, Terra, and Luna are now generally available on Amazon Bedrock. Learn how to select a model, run inference through the Responses API on the bedrock-mantle endpoint, reduce cost with prompt caching, connect the OpenAI Codex coding agent, and plan for quotas and scaling.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
     "id": "provider-45c55c8a176a61be8f",
     "company": "NVIDIA AI",
     "title": "At AI Summit, South Korea Outlines Its AI Future With NVIDIA and Partners",
@@ -583,10 +627,10 @@
     "source_url": "https://deepmind.google/blog/rss.xml"
   },
   {
-    "id": "provider-46d48c63e2441a692e",
+    "id": "provider-899b8567355db0eee6",
     "company": "IBM Research",
     "title": "It’s time for cryptography to get its own abstraction layer",
-    "url": "https://research.ibm.com/blog/cyrography-abstraction-layer?utm_medium=rss&utm_source=rss",
+    "url": "https://research.ibm.com/blog/cryptography-abstraction-layer?utm_medium=rss&utm_source=rss",
     "published_at": "2026-07-17T10:15:00.000Z",
     "source_type": "rss_official",
     "summary": "Filesystems and sockets once looked like unnecessary layers of indirection; now they’re the foundation of modern systems. Cryptography is ready for the same shift — and with PQC on the horizon, the timing is right.",
@@ -770,39 +814,6 @@
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
-    "id": "provider-5d785ab9d8a71f193a",
-    "company": "Amazon AI",
-    "title": "Built Technologies builds an AI-powered document intelligence solution on AWS to power agents across real estate finance",
-    "url": "https://aws.amazon.com/blogs/machine-learning/built-technologies-builds-an-ai-powered-document-intelligence-solution-on-aws-to-power-agents-across-real-estate-finance/",
-    "published_at": "2026-07-15T18:14:31.000Z",
-    "source_type": "rss_official",
-    "summary": "Built partnered with the AWS Generative AI Innovation Center (GenAIIC), AWS Partner AND Digital, and AWS account teams to create a scalable, AI-powered document processing engine that can classify, split, extract, evaluate, and reason over complex real estate finance documents. It reduces workflows that previously took days to minutes, supports hundreds of document types, and gives technical teams and industry experts a shared environment for building and improving document processors.",
-    "content": "Built partnered with the AWS Generative AI Innovation Center (GenAIIC), AWS Partner AND Digital, and AWS account teams to create a scalable, AI-powered document processing engine that can classify, split, extract, evaluate, and reason over complex real estate finance documents. It reduces workflows that previously took days to minutes, supports hundreds of document types, and gives technical teams and industry experts a shared environment for building and improving document processors.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
-    "id": "provider-c7c9af69acd31c198d",
-    "company": "Amazon AI",
-    "title": "Agentic vision: Building visual intelligence with Amazon Bedrock and MCP servers",
-    "url": "https://aws.amazon.com/blogs/machine-learning/agentic-vision-building-visual-intelligence-with-amazon-bedrock-and-mcp-servers/",
-    "published_at": "2026-07-15T18:11:57.000Z",
-    "source_type": "rss_official",
-    "summary": "In this post, we walk you through the Computer Vision MCP Server, which illustrates this approach, representing how AI systems can process visual information and make intelligent decisions through a single, standardized interface. This convergence transforms what was once a complex integration challenge into a streamlined process, making AI capabilities accessible to a broader range of applications and developers.",
-    "content": "In this post, we walk you through the Computer Vision MCP Server, which illustrates this approach, representing how AI systems can process visual information and make intelligent decisions through a single, standardized interface. This convergence transforms what was once a complex integration challenge into a streamlined process, making AI capabilities accessible to a broader range of applications and developers.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
-    "id": "provider-5df0236c137e7f2862",
-    "company": "Amazon AI",
-    "title": "Monitor Amazon SageMaker Pipelines cross-account with custom Amazon CloudWatch dashboards",
-    "url": "https://aws.amazon.com/blogs/machine-learning/monitor-amazon-sagemaker-pipelines-cross-account-with-custom-amazon-cloudwatch-dashboards/",
-    "published_at": "2026-07-15T18:08:50.000Z",
-    "source_type": "rss_official",
-    "summary": "In this post, we present a solution designed to centralize the monitoring of SageMaker Pipelines across AWS accounts and Regions using Amazon CloudWatch custom dashboards. The accompanying GitHub repository provides a customizable AWS Cloud Development Kit (AWS CDK) example of the required infrastructure.",
-    "content": "In this post, we present a solution designed to centralize the monitoring of SageMaker Pipelines across AWS accounts and Regions using Amazon CloudWatch custom dashboards. The accompanying GitHub repository provides a customizable AWS Cloud Development Kit (AWS CDK) example of the required infrastructure.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
     "id": "provider-8495180d57c9ea28cb",
     "company": "Hugging Face",
     "title": "What building Shippy taught us about building agents",
@@ -902,17 +913,6 @@
     "source_url": "https://blogs.nvidia.com/feed/"
   },
   {
-    "id": "provider-3a98145a3310a1e119",
-    "company": "NVIDIA AI",
-    "title": "Post-Train NVIDIA Cosmos 3 in One Day Using Agent Skills",
-    "url": "https://developer.nvidia.com/blog/post-train-nvidia-cosmos-3-in-one-day-using-agent-skills/",
-    "published_at": "2026-07-14T16:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "What if autonomous coding AI agents could push your vision reasoning models above 90% accuracy with almost no manual effort? When adapting vision reasoning...",
-    "content": "What if autonomous coding AI agents could push your vision reasoning models above 90% accuracy with almost no manual effort? When adapting vision reasoning...",
-    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
     "id": "provider-82a6fc4eef8ad34bc2",
     "company": "NVIDIA AI",
     "title": "How to Run an Autoresearch Workflow with RL Agent Skills and NVIDIA NeMo",
@@ -921,6 +921,17 @@
     "source_type": "rss_official",
     "summary": "Coding AI agents are becoming practical operators for long-running machine learning (ML) workflows. They can inspect repositories, set up runtimes, resolve...",
     "content": "Coding AI agents are becoming practical operators for long-running machine learning (ML) workflows. They can inspect repositories, set up runtimes, resolve...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
+  },
+  {
+    "id": "provider-3a98145a3310a1e119",
+    "company": "NVIDIA AI",
+    "title": "Post-Train NVIDIA Cosmos 3 in One Day Using Agent Skills",
+    "url": "https://developer.nvidia.com/blog/post-train-nvidia-cosmos-3-in-one-day-using-agent-skills/",
+    "published_at": "2026-07-14T16:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "What if autonomous coding AI agents could push your vision reasoning models above 90% accuracy with almost no manual effort? When adapting vision reasoning...",
+    "content": "What if autonomous coding AI agents could push your vision reasoning models above 90% accuracy with almost no manual effort? When adapting vision reasoning...",
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
@@ -957,17 +968,6 @@
     "source_url": "https://research.ibm.com/rss"
   },
   {
-    "id": "provider-5a42e1a49c5662b1ee",
-    "company": "OpenAI",
-    "title": "How data science teams use ChatGPT Work",
-    "url": "https://openai.com/academy/codex-for-work/how-data-science-teams-use-codex",
-    "published_at": "2026-07-14T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "See how data science teams can use ChatGPT Work to build root-cause briefs, impact readouts, KPI memos, scoped analyses, and dashboard specs from real work inputs.",
-    "content": "See how data science teams can use ChatGPT Work to build root-cause briefs, impact readouts, KPI memos, scoped analyses, and dashboard specs from real work inputs.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-3310bc9491a42df8e5",
     "company": "OpenAI",
     "title": "How sales teams use ChatGPT Work",
@@ -976,6 +976,17 @@
     "source_type": "rss_official",
     "summary": "See how sales teams can use ChatGPT Work to create pipeline briefs, meeting prep packets, forecast reviews, account plans, and stalled-deal diagnoses from real work inputs.",
     "content": "See how sales teams can use ChatGPT Work to create pipeline briefs, meeting prep packets, forecast reviews, account plans, and stalled-deal diagnoses from real work inputs.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-5a42e1a49c5662b1ee",
+    "company": "OpenAI",
+    "title": "How data science teams use ChatGPT Work",
+    "url": "https://openai.com/academy/codex-for-work/how-data-science-teams-use-codex",
+    "published_at": "2026-07-14T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "See how data science teams can use ChatGPT Work to build root-cause briefs, impact readouts, KPI memos, scoped analyses, and dashboard specs from real work inputs.",
+    "content": "See how data science teams can use ChatGPT Work to build root-cause briefs, impact readouts, KPI memos, scoped analyses, and dashboard specs from real work inputs.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -1155,17 +1166,6 @@
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
-    "id": "provider-9ebac2fe7079e530f0",
-    "company": "OpenAI",
-    "title": "GPT-5.5 Bio Bug Bounty",
-    "url": "https://openai.com/index/bio-bug-bounty",
-    "published_at": "2026-07-09T10:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Details about the OpenAI Bio Bounty program",
-    "content": "Details about the OpenAI Bio Bounty program",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-028e0ed48b9aed998a",
     "company": "OpenAI",
     "title": "ChatGPT is now a partner for your most ambitious work",
@@ -1174,6 +1174,17 @@
     "source_type": "rss_official",
     "summary": "ChatGPT Work is an agent that can take action across your apps and files, stay with a project for hours if needed, and turn a goal into finished work.",
     "content": "ChatGPT Work is an agent that can take action across your apps and files, stay with a project for hours if needed, and turn a goal into finished work.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-9ebac2fe7079e530f0",
+    "company": "OpenAI",
+    "title": "GPT-5.5 Bio Bug Bounty",
+    "url": "https://openai.com/index/bio-bug-bounty",
+    "published_at": "2026-07-09T10:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Details about the OpenAI Bio Bounty program",
+    "content": "Details about the OpenAI Bio Bounty program",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -1309,17 +1320,6 @@
     "source_url": "https://huggingface.co/blog/feed.xml"
   },
   {
-    "id": "provider-7ae6a57d8db0a9364c",
-    "company": "OpenAI",
-    "title": "MUFG aims to become AI-native with OpenAI",
-    "url": "https://openai.com/index/mufg",
-    "published_at": "2026-07-07T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "MUFG uses ChatGPT Enterprise to build an AI-native organization, improve workflows, and deliver new AI-powered financial services at scale.",
-    "content": "MUFG uses ChatGPT Enterprise to build an AI-native organization, improve workflows, and deliver new AI-powered financial services at scale.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-1933ecbe72f0449e76",
     "company": "OpenAI",
     "title": "Australian Payments Plus moves faster with ChatGPT and Codex",
@@ -1328,6 +1328,17 @@
     "source_type": "rss_official",
     "summary": "See how Australian Payments Plus uses ChatGPT Enterprise and Codex to move faster through payments complexity. AP+ saves time, improves quality, and keeps human judgment central.",
     "content": "See how Australian Payments Plus uses ChatGPT Enterprise and Codex to move faster through payments complexity. AP+ saves time, improves quality, and keeps human judgment central.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-7ae6a57d8db0a9364c",
+    "company": "OpenAI",
+    "title": "MUFG aims to become AI-native with OpenAI",
+    "url": "https://openai.com/index/mufg",
+    "published_at": "2026-07-07T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "MUFG uses ChatGPT Enterprise to build an AI-native organization, improve workflows, and deliver new AI-powered financial services at scale.",
+    "content": "MUFG uses ChatGPT Enterprise to build an AI-native organization, improve workflows, and deliver new AI-powered financial services at scale.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -1496,14 +1507,14 @@
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
-    "id": "provider-571e95ccf7287f6600",
+    "id": "provider-413b6224c8f2540224",
     "company": "OpenAI",
-    "title": "Introducing GeneBench-Pro",
-    "url": "https://openai.com/index/introducing-genebench-pro",
+    "title": "Core dump epidemiology: fixing an 18-year-old bug",
+    "url": "https://openai.com/index/core-dump-epidemiology-data-infrastructure-bug",
     "published_at": "2026-06-30T00:00:00.000Z",
     "source_type": "rss_official",
-    "summary": "Introducing GeneBench-Pro, a new benchmark testing AI performance in genomics, biology, and scientific research using complex, real-world datasets.",
-    "content": "Introducing GeneBench-Pro, a new benchmark testing AI performance in genomics, biology, and scientific research using complex, real-world datasets.",
+    "summary": "OpenAI engineers used large-scale core dump analysis to debug rare infrastructure crashes, uncovering both a hardware fault and a long-standing software bug.",
+    "content": "OpenAI engineers used large-scale core dump analysis to debug rare infrastructure crashes, uncovering both a hardware fault and a long-standing software bug.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -1518,14 +1529,14 @@
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
-    "id": "provider-413b6224c8f2540224",
+    "id": "provider-571e95ccf7287f6600",
     "company": "OpenAI",
-    "title": "Core dump epidemiology: fixing an 18-year-old bug",
-    "url": "https://openai.com/index/core-dump-epidemiology-data-infrastructure-bug",
+    "title": "Introducing GeneBench-Pro",
+    "url": "https://openai.com/index/introducing-genebench-pro",
     "published_at": "2026-06-30T00:00:00.000Z",
     "source_type": "rss_official",
-    "summary": "OpenAI engineers used large-scale core dump analysis to debug rare infrastructure crashes, uncovering both a hardware fault and a long-standing software bug.",
-    "content": "OpenAI engineers used large-scale core dump analysis to debug rare infrastructure crashes, uncovering both a hardware fault and a long-standing software bug.",
+    "summary": "Introducing GeneBench-Pro, a new benchmark testing AI performance in genomics, biology, and scientific research using complex, real-world datasets.",
+    "content": "Introducing GeneBench-Pro, a new benchmark testing AI performance in genomics, biology, and scientific research using complex, real-world datasets.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -2222,14 +2233,14 @@
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
-    "id": "provider-6b45da215c922c7846",
+    "id": "provider-c3f06ceec6a17e4b54",
     "company": "OpenAI",
-    "title": "Supporting Europe’s work in ensuring a trustworthy AI ecosystem",
-    "url": "https://openai.com/index/supporting-eu-trustworthy-ai-ecosystem",
+    "title": "OpenAI to acquire Ona",
+    "url": "https://openai.com/index/openai-to-acquire-ona",
     "published_at": "2026-06-11T00:00:00.000Z",
     "source_type": "rss_official",
-    "summary": "OpenAI supports the EU Code of Practice on AI content transparency, advancing provenance standards and tools to help people understand AI-generated content.",
-    "content": "OpenAI supports the EU Code of Practice on AI content transparency, advancing provenance standards and tools to help people understand AI-generated content.",
+    "summary": "OpenAI plans to acquire Ona to expand Codex with secure, persistent cloud environments, enabling long-running AI agents across enterprise workflows.",
+    "content": "OpenAI plans to acquire Ona to expand Codex with secure, persistent cloud environments, enabling long-running AI agents across enterprise workflows.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -2244,17 +2255,6 @@
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
-    "id": "provider-c3f06ceec6a17e4b54",
-    "company": "OpenAI",
-    "title": "OpenAI to acquire Ona",
-    "url": "https://openai.com/index/openai-to-acquire-ona",
-    "published_at": "2026-06-11T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "OpenAI plans to acquire Ona to expand Codex with secure, persistent cloud environments, enabling long-running AI agents across enterprise workflows.",
-    "content": "OpenAI plans to acquire Ona to expand Codex with secure, persistent cloud environments, enabling long-running AI agents across enterprise workflows.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-511ab3a14c077aa0bc",
     "company": "OpenAI",
     "title": "How an astrophysicist uses Codex to help simulate black holes",
@@ -2263,6 +2263,17 @@
     "source_type": "rss_official",
     "summary": "Discover how astrophysicist Chi-kwan Chan uses Codex to build black hole simulations, helping scientists study extreme physics and test Einstein’s theory of general relativity.",
     "content": "Discover how astrophysicist Chi-kwan Chan uses Codex to build black hole simulations, helping scientists study extreme physics and test Einstein’s theory of general relativity.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-6b45da215c922c7846",
+    "company": "OpenAI",
+    "title": "Supporting Europe’s work in ensuring a trustworthy AI ecosystem",
+    "url": "https://openai.com/index/supporting-eu-trustworthy-ai-ecosystem",
+    "published_at": "2026-06-11T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "OpenAI supports the EU Code of Practice on AI content transparency, advancing provenance standards and tools to help people understand AI-generated content.",
+    "content": "OpenAI supports the EU Code of Practice on AI content transparency, advancing provenance standards and tools to help people understand AI-generated content.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -2684,17 +2695,6 @@
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
-    "id": "provider-76b4195f74bb6d9c92",
-    "company": "OpenAI",
-    "title": "A blueprint for democratic governance of frontier AI",
-    "url": "https://openai.com/index/frontier-safety-blueprint",
-    "published_at": "2026-06-03T10:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "OpenAI outlines a blueprint for U.S. governance of frontier AI, proposing a federal framework for safety, resilience, and national security.",
-    "content": "OpenAI outlines a blueprint for U.S. governance of frontier AI, proposing a federal framework for safety, resilience, and national security.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-8f56487ce735112480",
     "company": "OpenAI",
     "title": "OpenAI public policy agenda",
@@ -2703,6 +2703,17 @@
     "source_type": "rss_official",
     "summary": "OpenAI outlines its public policy agenda for AI, including safety, youth protection, workforce transition, and global standards to ensure AI benefits society.",
     "content": "OpenAI outlines its public policy agenda for AI, including safety, youth protection, workforce transition, and global standards to ensure AI benefits society.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-76b4195f74bb6d9c92",
+    "company": "OpenAI",
+    "title": "A blueprint for democratic governance of frontier AI",
+    "url": "https://openai.com/index/frontier-safety-blueprint",
+    "published_at": "2026-06-03T10:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "OpenAI outlines a blueprint for U.S. governance of frontier AI, proposing a federal framework for safety, resilience, and national security.",
+    "content": "OpenAI outlines a blueprint for U.S. governance of frontier AI, proposing a federal framework for safety, resilience, and national security.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -3771,17 +3782,6 @@
     "summary": "",
     "content": "",
     "source_url": "https://huggingface.co/blog/feed.xml"
-  },
-  {
-    "id": "provider-b0db8238656466976f",
-    "company": "NVIDIA AI",
-    "title": "Run High-Throughput Reinforcement Learning Training with End-to-End FP8 Precision",
-    "url": "https://developer.nvidia.com/blog/run-high-throughput-reinforcement-learning-training-with-end-to-end-fp8-precision/",
-    "published_at": "2026-04-20T22:52:15.000Z",
-    "source_type": "rss_official",
-    "summary": "As LLMs transition from simple text generation to complex reasoning, reinforcement learning (RL) plays a central role. Algorithms like Group Relative Policy...",
-    "content": "As LLMs transition from simple text generation to complex reasoning, reinforcement learning (RL) plays a central role. Algorithms like Group Relative Policy...",
-    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
     "id": "provider-861439005f13d6a3ba",
