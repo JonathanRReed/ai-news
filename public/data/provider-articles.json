@@ -1,5 +1,16 @@
 [
   {
+    "id": "provider-35640343376c8a8504",
+    "company": "Amazon AI",
+    "title": "Amazon is investing in the Lean Focused Research Organization",
+    "url": "https://www.amazon.science/news/amazon-is-investing-in-the-lean-focused-research-organization",
+    "published_at": "2026-07-26T08:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "As AI agents take on higher-stakes decisions, Lean programming language makes it possible to mathematically prove they will behave safely.",
+    "content": "As AI agents take on higher-stakes decisions, Lean programming language makes it possible to mathematically prove they will behave safely.",
+    "source_url": "https://www.amazon.science/index.rss"
+  },
+  {
     "id": "provider-844d8aa0470fcb264b",
     "company": "Amazon AI",
     "title": "Introducing Claude Opus 5 on AWS: Anthropic’s most capable Opus model",
@@ -3969,17 +3980,6 @@
     "summary": "",
     "content": "",
     "source_url": "https://huggingface.co/blog/feed.xml"
-  },
-  {
-    "id": "provider-ddbc43b5c4898dfa16",
-    "company": "Amazon AI",
-    "title": "Improving quality and robustness in LLM-based text-to-speech systems",
-    "url": "https://www.amazon.science/blog/improving-quality-and-robustness-in-llm-based-text-to-speech-systems",
-    "published_at": "2026-04-01T18:13:19.000Z",
-    "source_type": "rss_official",
-    "summary": "Low-rank adaptation, data augmentation, and chain-of-thought reasoning are among the techniques enabling accent-free polyglot outputs, improved expressiveness, and reliable synthesis.",
-    "content": "Low-rank adaptation, data augmentation, and chain-of-thought reasoning are among the techniques enabling accent-free polyglot outputs, improved expressiveness, and reliable synthesis.",
-    "source_url": "https://www.amazon.science/index.rss"
   },
   {
     "id": "provider-363abff33901e27e34",
