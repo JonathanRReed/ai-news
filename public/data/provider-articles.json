@@ -1,5 +1,71 @@
 [
   {
+    "id": "provider-f112f2ca867868bafb",
+    "company": "Hugging Face",
+    "title": "NVIDIA Cosmos-H-Dreams: Bringing Real-Time Generative Simulation to Surgical Robotics",
+    "url": "https://huggingface.co/blog/nvidia/cosmos-h-dreams",
+    "published_at": "2026-07-27T09:32:20.000Z",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://huggingface.co/blog/feed.xml"
+  },
+  {
+    "id": "provider-aad1d0a16447fa7a53",
+    "company": "NVIDIA AI",
+    "title": "Industry Leaders Unite in Open Secure AI Alliance for AI Safety and Security",
+    "url": "https://blogs.nvidia.com/blog/open-secure-ai-alliance/",
+    "published_at": "2026-07-27T09:00:07.000Z",
+    "source_type": "rss_official",
+    "summary": "Open source software is a critical pillar of the global economy. It underpins cloud computing, financial services, manufacturing, telecommunications, government and internet services by making technology accessible and observable to communities of experts. Cybersecurity is among the top three beneficiaries of open source software. The Open Secure AI Alliance — building on the leadership of […]",
+    "content": "Open source software is a critical pillar of the global economy. It underpins cloud computing, financial services, manufacturing, telecommunications, government and internet services by making technology accessible and observable to communities of experts. Cybersecurity is among the top three beneficiaries of open source software. The Open Secure AI Alliance — building on the leadership of […]",
+    "source_url": "https://blogs.nvidia.com/feed/"
+  },
+  {
+    "id": "provider-d703c04b0c456e90f3",
+    "company": "NVIDIA AI",
+    "title": "Six Agent Harness Capabilities for Higher Model Performance",
+    "url": "https://developer.nvidia.com/blog/six-agent-harness-capabilities-for-higher-model-performance/",
+    "published_at": "2026-07-27T09:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Building a great AI agent isn’t just about choosing the right models. The harness is the architecture surrounding the model. How it renders context, executes...",
+    "content": "Building a great AI agent isn’t just about choosing the right models. The harness is the architecture surrounding the model. How it renders context, executes...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
+  },
+  {
+    "id": "provider-589fe409cbbcf01b18",
+    "company": "OpenAI",
+    "title": "How AI is expanding what people do at work",
+    "url": "https://openai.com/index/how-ai-is-expanding-what-people-do-at-work",
+    "published_at": "2026-07-27T03:30:00.000Z",
+    "source_type": "rss_official",
+    "summary": "New OpenAI research shows how AI is expanding what workers do, with ChatGPT users taking on tasks across roles and reshaping job boundaries.",
+    "content": "New OpenAI research shows how AI is expanding what workers do, with ChatGPT users taking on tasks across roles and reshaping job boundaries.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-a2d4c03b7f14bbe416",
+    "company": "NVIDIA AI",
+    "title": "NVIDIA Harnesses Vera CPU to Speed Up Design of Next-Generation CPUs and GPUs",
+    "url": "https://blogs.nvidia.com/blog/vera-cpu-eda/",
+    "published_at": "2026-07-27T00:45:42.000Z",
+    "source_type": "rss_official",
+    "summary": "The complexity of modern chip design continues to grow as engineering teams work to develop increasingly sophisticated CPUs, GPUs and AI systems. To help meet that challenge, NVIDIA is collaborating with industry leaders Cadence and Synopsys to optimize critical electronic design automation (EDA) applications for the NVIDIA Vera CPU. NVIDIA is now deploying Vera across […]",
+    "content": "The complexity of modern chip design continues to grow as engineering teams work to develop increasingly sophisticated CPUs, GPUs and AI systems. To help meet that challenge, NVIDIA is collaborating with industry leaders Cadence and Synopsys to optimize critical electronic design automation (EDA) applications for the NVIDIA Vera CPU. NVIDIA is now deploying Vera across […]",
+    "source_url": "https://blogs.nvidia.com/feed/"
+  },
+  {
+    "id": "provider-8c377856776966a7ff",
+    "company": "NVIDIA AI",
+    "title": "NVIDIA Nemotron 3 Ultra Leads Open Models on Accuracy and Efficiency in Agentic RTL Coding",
+    "url": "https://developer.nvidia.com/blog/nvidia-nemotron-3-ultra-leads-open-models-on-accuracy-and-efficiency-in-agentic-rtl-coding/",
+    "published_at": "2026-07-27T00:45:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Modern chip design is increasingly limited by engineering time. Register transfer level (RTL) development and verification require specialized hardware...",
+    "content": "Modern chip design is increasingly limited by engineering time. Register transfer level (RTL) development and verification require specialized hardware...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
+  },
+  {
     "id": "provider-35640343376c8a8504",
     "company": "Amazon AI",
     "title": "Amazon is investing in the Lean Focused Research Organization",
@@ -341,17 +407,6 @@
     "source_url": "https://blogs.nvidia.com/feed/"
   },
   {
-    "id": "provider-3ae715ab10d8ad2140",
-    "company": "Hugging Face",
-    "title": "The State of Simulation for Physical AI: An Overview",
-    "url": "https://huggingface.co/blog/nvidia/state-of-simulation-for-physical-ai",
-    "published_at": "2026-07-21T20:00:27.000Z",
-    "source_type": "rss_official",
-    "summary": "",
-    "content": "",
-    "source_url": "https://huggingface.co/blog/feed.xml"
-  },
-  {
     "id": "provider-9adb547fc29dcebc02",
     "company": "NVIDIA AI",
     "title": "Setting a World Record for MoE Pre-Training on NVIDIA GB300 NVL72",
@@ -413,15 +468,15 @@
     "url": "https://blogs.nvidia.com/blog/vera-rubin/",
     "published_at": "2026-07-21T15:36:43.000Z",
     "source_type": "rss_official",
-    "summary": "NVIDIA Vera Rubin is here, and it’s going gigascale. Vera Rubin NVL72 production is ramping up with racks running at partners CoreWeave, Google Cloud, Microsoft Azure and Oracle Cloud Infrastructure. Spanning 350+ factory sites in 30 countries, Vera Rubin has the largest, most mature rack-scale supply chain ever assembled to meet customer compute demand. The […]",
-    "content": "NVIDIA Vera Rubin is here, and it’s going gigascale. Vera Rubin NVL72 production is ramping up with racks running at partners CoreWeave, Google Cloud, Microsoft Azure and Oracle Cloud Infrastructure. Spanning 350+ factory sites in 30 countries, Vera Rubin has the largest, most mature rack-scale supply chain ever assembled to meet customer compute demand. The […]",
+    "summary": "NVIDIA Vera Rubin is here, and it’s going gigascale. Vera Rubin NVL72 production is ramping up with racks running at partners CoreWeave, Google Cloud, Microsoft Azure, Oracle Cloud Infrastructure and Nebius. Spanning 350+ factory sites in 30 countries, Vera Rubin has the largest, most mature rack-scale supply chain ever assembled to meet customer compute demand. […]",
+    "content": "NVIDIA Vera Rubin is here, and it’s going gigascale. Vera Rubin NVL72 production is ramping up with racks running at partners CoreWeave, Google Cloud, Microsoft Azure, Oracle Cloud Infrastructure and Nebius. Spanning 350+ factory sites in 30 countries, Vera Rubin has the largest, most mature rack-scale supply chain ever assembled to meet customer compute demand. […]",
     "source_url": "https://blogs.nvidia.com/feed/"
   },
   {
-    "id": "provider-6bbeffdb11dee5dffc",
+    "id": "provider-cc43fbe0e1cb4d457b",
     "company": "Google DeepMind",
     "title": "Introducing Gemini 3.6 Flash, 3.5 Flash-Lite, and 3.5 Flash Cyber",
-    "url": "https://deepmind.google/blog/introducing-gemini-36-flash-35-flash-lite-and-35-flash-cyber/",
+    "url": "https://deepmind.google/blog/introducing-gemini-3-6-flash-3-5-flash-lite-and-3-5-flash-cyber/",
     "published_at": "2026-07-21T15:16:30.000Z",
     "source_type": "rss_official",
     "summary": "We’re introducing new Gemini models, including Gemini 3.6 Flash, 3.5 Flash-Lite and 3.5 Flash Cyber.",
@@ -924,17 +979,6 @@
     "source_url": "https://blogs.nvidia.com/feed/"
   },
   {
-    "id": "provider-82a6fc4eef8ad34bc2",
-    "company": "NVIDIA AI",
-    "title": "How to Run an Autoresearch Workflow with RL Agent Skills and NVIDIA NeMo",
-    "url": "https://developer.nvidia.com/blog/how-to-run-an-autoresearch-workflow-with-rl-agent-skills-and-nvidia-nemo/",
-    "published_at": "2026-07-14T16:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Coding AI agents are becoming practical operators for long-running machine learning (ML) workflows. They can inspect repositories, set up runtimes, resolve...",
-    "content": "Coding AI agents are becoming practical operators for long-running machine learning (ML) workflows. They can inspect repositories, set up runtimes, resolve...",
-    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
     "id": "provider-3a98145a3310a1e119",
     "company": "NVIDIA AI",
     "title": "Post-Train NVIDIA Cosmos 3 in One Day Using Agent Skills",
@@ -943,6 +987,17 @@
     "source_type": "rss_official",
     "summary": "What if autonomous coding AI agents could push your vision reasoning models above 90% accuracy with almost no manual effort? When adapting vision reasoning...",
     "content": "What if autonomous coding AI agents could push your vision reasoning models above 90% accuracy with almost no manual effort? When adapting vision reasoning...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
+  },
+  {
+    "id": "provider-82a6fc4eef8ad34bc2",
+    "company": "NVIDIA AI",
+    "title": "How to Run an Autoresearch Workflow with RL Agent Skills and NVIDIA NeMo",
+    "url": "https://developer.nvidia.com/blog/how-to-run-an-autoresearch-workflow-with-rl-agent-skills-and-nvidia-nemo/",
+    "published_at": "2026-07-14T16:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Coding AI agents are becoming practical operators for long-running machine learning (ML) workflows. They can inspect repositories, set up runtimes, resolve...",
+    "content": "Coding AI agents are becoming practical operators for long-running machine learning (ML) workflows. They can inspect repositories, set up runtimes, resolve...",
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
@@ -1133,17 +1188,6 @@
     "source_url": "https://research.ibm.com/rss"
   },
   {
-    "id": "provider-c1146aa572059d9035",
-    "company": "NVIDIA AI",
-    "title": "GeForce NOW Turns Up the Heat With New GeForce RTX 5080-Powered Toronto Server",
-    "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-toronto-expansion/",
-    "published_at": "2026-07-09T13:00:55.000Z",
-    "source_type": "rss_official",
-    "summary": "This GFN Thursday brings more games, more power and more ways to play on GeForce NOW. The cloud gaming service is expanding with a new GeForce RTX 5080-powered server in Toronto, bringing dedicated high performance in the cloud closer to members across the region. NTE: Neverness to Everness also gets an update in the cloud, […]",
-    "content": "This GFN Thursday brings more games, more power and more ways to play on GeForce NOW. The cloud gaming service is expanding with a new GeForce RTX 5080-powered server in Toronto, bringing dedicated high performance in the cloud closer to members across the region. NTE: Neverness to Everness also gets an update in the cloud, […]",
-    "source_url": "https://blogs.nvidia.com/feed/"
-  },
-  {
     "id": "provider-b2b790408afafab1f5",
     "company": "OpenAI",
     "title": "GPT-5.6 is now the preferred model in Microsoft 365 Copilot",
@@ -1208,17 +1252,6 @@
     "summary": "Agentic systems often face a trade-off between accuracy and cost. The highest-performing proprietary frontier models and harnesses provide top accuracy but are...",
     "content": "Agentic systems often face a trade-off between accuracy and cost. The highest-performing proprietary frontier models and harnesses provide top accuracy but are...",
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
-    "id": "provider-da06ad9efa9aaa9d7e",
-    "company": "NVIDIA AI",
-    "title": "NVIDIA Nemotron Achieves Benchmark-Leading Performance With LangChain Deep Agents Harness",
-    "url": "https://blogs.nvidia.com/blog/nemotron-langchain-agents-open-stack/",
-    "published_at": "2026-07-08T15:00:27.000Z",
-    "source_type": "rss_official",
-    "summary": "NVIDIA Nemotron 3 Ultra is offering leading performance at lower cost than top closed models with the largest and most widely adopted AI agent orchestration platform. LangChain tuned its Deep Agents harness for NVIDIA Nemotron 3 Ultra, achieving the highest accuracy among open models, while completing more tasks at higher throughput and running at 10x […]",
-    "content": "NVIDIA Nemotron 3 Ultra is offering leading performance at lower cost than top closed models with the largest and most widely adopted AI agent orchestration platform. LangChain tuned its Deep Agents harness for NVIDIA Nemotron 3 Ultra, achieving the highest accuracy among open models, while completing more tasks at higher throughput and running at 10x […]",
-    "source_url": "https://blogs.nvidia.com/feed/"
   },
   {
     "id": "provider-2af0f9bb5af6ee2be9",
@@ -1518,17 +1551,6 @@
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
-    "id": "provider-413b6224c8f2540224",
-    "company": "OpenAI",
-    "title": "Core dump epidemiology: fixing an 18-year-old bug",
-    "url": "https://openai.com/index/core-dump-epidemiology-data-infrastructure-bug",
-    "published_at": "2026-06-30T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "OpenAI engineers used large-scale core dump analysis to debug rare infrastructure crashes, uncovering both a hardware fault and a long-standing software bug.",
-    "content": "OpenAI engineers used large-scale core dump analysis to debug rare infrastructure crashes, uncovering both a hardware fault and a long-standing software bug.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-5686b86e0924457be6",
     "company": "OpenAI",
     "title": "Inside Genebench-Pro",
@@ -1548,6 +1570,17 @@
     "source_type": "rss_official",
     "summary": "Introducing GeneBench-Pro, a new benchmark testing AI performance in genomics, biology, and scientific research using complex, real-world datasets.",
     "content": "Introducing GeneBench-Pro, a new benchmark testing AI performance in genomics, biology, and scientific research using complex, real-world datasets.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-413b6224c8f2540224",
+    "company": "OpenAI",
+    "title": "Core dump epidemiology: fixing an 18-year-old bug",
+    "url": "https://openai.com/index/core-dump-epidemiology-data-infrastructure-bug",
+    "published_at": "2026-06-30T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "OpenAI engineers used large-scale core dump analysis to debug rare infrastructure crashes, uncovering both a hardware fault and a long-standing software bug.",
+    "content": "OpenAI engineers used large-scale core dump analysis to debug rare infrastructure crashes, uncovering both a hardware fault and a long-standing software bug.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -1914,17 +1947,6 @@
     "source_url": "https://research.ibm.com/rss"
   },
   {
-    "id": "provider-47bf7e22d29459f96a",
-    "company": "OpenAI",
-    "title": "Daybreak: Tools for securing every organization in the world",
-    "url": "https://openai.com/index/daybreak-securing-the-world",
-    "published_at": "2026-06-22T10:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "OpenAI introduces new Daybreak tools, including Codex Security and GPT-5.5-Cyber, to help organizations find, validate, and patch vulnerabilities at scale.",
-    "content": "OpenAI introduces new Daybreak tools, including Codex Security and GPT-5.5-Cyber, to help organizations find, validate, and patch vulnerabilities at scale.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-950caa79948d4d0f9a",
     "company": "OpenAI",
     "title": "Patch the Planet: a Daybreak initiative to support open source maintainers",
@@ -1933,6 +1955,17 @@
     "source_type": "rss_official",
     "summary": "OpenAI introduces Patch the Planet, a Daybreak initiative helping open-source maintainers find, validate, and fix vulnerabilities with AI and expert review.",
     "content": "OpenAI introduces Patch the Planet, a Daybreak initiative helping open-source maintainers find, validate, and fix vulnerabilities with AI and expert review.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-47bf7e22d29459f96a",
+    "company": "OpenAI",
+    "title": "Daybreak: Tools for securing every organization in the world",
+    "url": "https://openai.com/index/daybreak-securing-the-world",
+    "published_at": "2026-06-22T10:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "OpenAI introduces new Daybreak tools, including Codex Security and GPT-5.5-Cyber, to help organizations find, validate, and patch vulnerabilities at scale.",
+    "content": "OpenAI introduces new Daybreak tools, including Codex Security and GPT-5.5-Cyber, to help organizations find, validate, and patch vulnerabilities at scale.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -2244,28 +2277,6 @@
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
-    "id": "provider-c3f06ceec6a17e4b54",
-    "company": "OpenAI",
-    "title": "OpenAI to acquire Ona",
-    "url": "https://openai.com/index/openai-to-acquire-ona",
-    "published_at": "2026-06-11T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "OpenAI plans to acquire Ona to expand Codex with secure, persistent cloud environments, enabling long-running AI agents across enterprise workflows.",
-    "content": "OpenAI plans to acquire Ona to expand Codex with secure, persistent cloud environments, enabling long-running AI agents across enterprise workflows.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
-    "id": "provider-53f9d319e8ae0bb1f1",
-    "company": "OpenAI",
-    "title": "BBVA puts AI at the core of banking with OpenAI",
-    "url": "https://openai.com/index/bbva",
-    "published_at": "2026-06-11T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Learn how BBVA scaled ChatGPT Enterprise to 100,000 employees and partnered with OpenAI to accelerate AI-powered banking transformation worldwide.",
-    "content": "Learn how BBVA scaled ChatGPT Enterprise to 100,000 employees and partnered with OpenAI to accelerate AI-powered banking transformation worldwide.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-511ab3a14c077aa0bc",
     "company": "OpenAI",
     "title": "How an astrophysicist uses Codex to help simulate black holes",
@@ -2285,6 +2296,28 @@
     "source_type": "rss_official",
     "summary": "OpenAI supports the EU Code of Practice on AI content transparency, advancing provenance standards and tools to help people understand AI-generated content.",
     "content": "OpenAI supports the EU Code of Practice on AI content transparency, advancing provenance standards and tools to help people understand AI-generated content.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-c3f06ceec6a17e4b54",
+    "company": "OpenAI",
+    "title": "OpenAI to acquire Ona",
+    "url": "https://openai.com/index/openai-to-acquire-ona",
+    "published_at": "2026-06-11T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "OpenAI plans to acquire Ona to expand Codex with secure, persistent cloud environments, enabling long-running AI agents across enterprise workflows.",
+    "content": "OpenAI plans to acquire Ona to expand Codex with secure, persistent cloud environments, enabling long-running AI agents across enterprise workflows.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-53f9d319e8ae0bb1f1",
+    "company": "OpenAI",
+    "title": "BBVA puts AI at the core of banking with OpenAI",
+    "url": "https://openai.com/index/bbva",
+    "published_at": "2026-06-11T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Learn how BBVA scaled ChatGPT Enterprise to 100,000 employees and partnered with OpenAI to accelerate AI-powered banking transformation worldwide.",
+    "content": "Learn how BBVA scaled ChatGPT Enterprise to 100,000 employees and partnered with OpenAI to accelerate AI-powered banking transformation worldwide.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -2802,17 +2835,6 @@
     "source_type": "rss_official",
     "summary": "Discover new Codex plugins, sites, and annotations that help analysts, marketers, designers, investors, and other teams get more done with AI.",
     "content": "Discover new Codex plugins, sites, and annotations that help analysts, marketers, designers, investors, and other teams get more done with AI.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
-    "id": "provider-b5f756c4b535d7239b",
-    "company": "OpenAI",
-    "title": "Advancing youth safety and opportunity through global leadership",
-    "url": "https://openai.com/index/advancing-youth-safety-and-opportunity-through-global-leadership",
-    "published_at": "2026-06-02T07:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "OpenAI calls for global action on youth AI safety, proposing an international institute to strengthen safeguards, standards, and opportunities for young people.",
-    "content": "OpenAI calls for global action on youth AI safety, proposing an international institute to strengthen safeguards, standards, and opportunities for young people.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -3707,17 +3729,6 @@
     "source_url": "https://huggingface.co/blog/feed.xml"
   },
   {
-    "id": "provider-5873aae836699b36d4",
-    "company": "NVIDIA AI",
-    "title": "Winning a Kaggle Competition with Generative AI–Assisted Coding",
-    "url": "https://developer.nvidia.com/blog/winning-a-kaggle-competition-with-generative-ai-assisted-coding/",
-    "published_at": "2026-04-23T20:15:02.000Z",
-    "source_type": "rss_official",
-    "summary": "In March 2026, three LLM agents generated over 600,000 lines of code, ran 850 experiments, and helped secure a first-place finish in a Kaggle playground...",
-    "content": "In March 2026, three LLM agents generated over 600,000 lines of code, ran 850 experiments, and helped secure a first-place finish in a Kaggle playground...",
-    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
     "id": "provider-de0c870e1b11c4c07e",
     "company": "Hugging Face",
     "title": "How to Use Transformers.js in a Chrome Extension",
@@ -3727,17 +3738,6 @@
     "summary": "",
     "content": "",
     "source_url": "https://huggingface.co/blog/feed.xml"
-  },
-  {
-    "id": "provider-05874df19f75979520",
-    "company": "NVIDIA AI",
-    "title": "Advancing Emerging Optimizers for Accelerated LLM Training with NVIDIA Megatron",
-    "url": "https://developer.nvidia.com/blog/advancing-emerging-optimizers-for-accelerated-llm-training-with-nvidia-megatron/",
-    "published_at": "2026-04-22T20:01:03.000Z",
-    "source_type": "rss_official",
-    "summary": "Higher-order optimization algorithms such as Shampoo have been effectively applied in neural network training for at least a decade. These methods have achieved...",
-    "content": "Higher-order optimization algorithms such as Shampoo have been effectively applied in neural network training for at least a decade. These methods have achieved...",
-    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
     "id": "provider-3e8995928429dc6319",
