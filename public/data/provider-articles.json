@@ -1,5 +1,60 @@
 [
   {
+    "id": "provider-4ff73a950b10db92cf",
+    "company": "OpenAI",
+    "title": "Ten advances in mathematics and theoretical computer science",
+    "url": "https://openai.com/index/ten-advances-in-mathematics",
+    "published_at": "2026-08-01T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "OpenAI shares new results on long-standing open problems in mathematics and theoretical computer science, including advances in geometry, cryptography, and complexity.",
+    "content": "OpenAI shares new results on long-standing open problems in mathematics and theoretical computer science, including advances in geometry, cryptography, and complexity.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-cac81ceed8e0729e93",
+    "company": "NVIDIA AI",
+    "title": "Co-Designing AI Model Attention for Fast, Interactive Long-Context Inference",
+    "url": "https://developer.nvidia.com/blog/co-designing-ai-model-attention-for-fast-interactive-long-context-inference/",
+    "published_at": "2026-07-31T22:16:17.000Z",
+    "source_type": "rss_official",
+    "summary": "As agentic and long-context workloads become common, the context lengths increase and attention consumes a larger share of inference time (Figure 1). Because...",
+    "content": "As agentic and long-context workloads become common, the context lengths increase and attention consumes a larger share of inference time (Figure 1). Because...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
+  },
+  {
+    "id": "provider-6ea05c84e98530a1a4",
+    "company": "IBM Research",
+    "title": "Ponder This Challenge - August 2026 - The Wheel of Buttons",
+    "url": "https://research.ibm.com/blog/ponder-this-august-2026?utm_medium=rss&utm_source=rss",
+    "published_at": "2026-07-31T22:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://research.ibm.com/rss"
+  },
+  {
+    "id": "provider-279c3886555c457735",
+    "company": "Amazon AI",
+    "title": "Announcing the Agentic Catalog Experience in Amazon Quick",
+    "url": "https://aws.amazon.com/blogs/machine-learning/announcing-the-agentic-catalog-experience-in-amazon-quick/",
+    "published_at": "2026-07-31T19:53:04.000Z",
+    "source_type": "rss_official",
+    "summary": "Amazon Quick introduces the Agentic Catalog Experience, an AI-powered workflow for data curators to discover upstream catalog assets in natural language and auto-create Datasets and Topics with inherited semantics. Now in preview for AWS Glue Data Catalog and Databricks Unity Catalog.",
+    "content": "Amazon Quick introduces the Agentic Catalog Experience, an AI-powered workflow for data curators to discover upstream catalog assets in natural language and auto-create Datasets and Topics with inherited semantics. Now in preview for AWS Glue Data Catalog and Databricks Unity Catalog.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-430a664b11bec0c282",
+    "company": "Amazon AI",
+    "title": "Optimizing production agents with Amazon Bedrock AgentCore Observability",
+    "url": "https://aws.amazon.com/blogs/machine-learning/optimizing-production-agents-with-amazon-bedrock-agentcore-observability/",
+    "published_at": "2026-07-31T15:33:11.000Z",
+    "source_type": "rss_official",
+    "summary": "As your AI agents move from prototype to production, the challenge shifts from getting them to work to keeping them fast and efficient. Learn how to use Amazon Bedrock AgentCore Observability and Amazon CloudWatch to find performance bottlenecks and diagnose memory issues in long-running agent sessions.",
+    "content": "As your AI agents move from prototype to production, the challenge shifts from getting them to work to keeping them fast and efficient. Learn how to use Amazon Bedrock AgentCore Observability and Amazon CloudWatch to find performance bottlenecks and diagnose memory issues in long-running agent sessions.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
     "id": "provider-981a7938e5e633cb52",
     "company": "OpenAI",
     "title": "Advancing responsible AI across Europe",
@@ -11,6 +66,17 @@
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
+    "id": "provider-fbb76e91048a508124",
+    "company": "OpenAI",
+    "title": "Building abundant intelligence",
+    "url": "https://openai.com/index/building-abundant-intelligence",
+    "published_at": "2026-07-31T15:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "A full-stack approach to making advanced AI more capable, more affordable, and more widely useful.",
+    "content": "A full-stack approach to making advanced AI more capable, more affordable, and more widely useful.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
     "id": "provider-4abbcdf1635d29ce5d",
     "company": "OpenAI",
     "title": "Univé builds an AI-ready workforce",
@@ -19,6 +85,17 @@
     "source_type": "rss_official",
     "summary": "See how Univé built an AI-ready workforce with ChatGPT Enterprise by combining leadership, responsible governance, and employee-led innovation to transform work at scale.",
     "content": "See how Univé built an AI-ready workforce with ChatGPT Enterprise by combining leadership, responsible governance, and employee-led innovation to transform work at scale.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-97f44878bc758526ea",
+    "company": "OpenAI",
+    "title": "Disrupting a Criminal Scam Operation",
+    "url": "https://openai.com/index/disrupting-malicious-uses-of-ai-criminal-scam-operation",
+    "published_at": "2026-07-31T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "OpenAI disrupted a Cambodia-based scam operation using ChatGPT to support investment, romance, gambling, and impersonation schemes.",
+    "content": "OpenAI disrupted a Cambodia-based scam operation using ChatGPT to support investment, romance, gambling, and impersonation schemes.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -55,10 +132,10 @@
     "source_url": "https://www.amazon.science/index.rss"
   },
   {
-    "id": "provider-59c3f73234f4bbb89c",
+    "id": "provider-80e945108c6b731733",
     "company": "Amazon AI",
-    "title": "Deploying Kimi K3 on AWS",
-    "url": "https://aws.amazon.com/blogs/machine-learning/deploying-kimi-k3-on-aws/",
+    "title": "Deploying Kimi K3 on Amazon SageMaker HyperPod and Amazon EKS",
+    "url": "https://aws.amazon.com/blogs/machine-learning/deploying-kimi-k3-on-amazon-sagemaker-hyperpod-and-amazon-eks/",
     "published_at": "2026-07-30T17:22:32.000Z",
     "source_type": "rss_official",
     "summary": "This post walks through deploying Kimi K3 on AWS using two approaches: Amazon SageMaker HyperPod, and&nbsp; Amazon Elastic Kubernetes Service (Amazon EKS) cluster.",
@@ -569,28 +646,6 @@
     "source_type": "rss_official",
     "summary": "Together, Motorway and AWS built an end-to-end evaluation pipeline that reduced incorrect results from 1 in 8 queries to 1 in 50 and cut issue detection time from few hours to few minutes. The pipeline combines the Strands Agents SDK with Amazon Bedrock AgentCore, a fully managed service for deploying and operating AI agents at scale. In this post, you will learn how to build this pipeline for your own agents.",
     "content": "Together, Motorway and AWS built an end-to-end evaluation pipeline that reduced incorrect results from 1 in 8 queries to 1 in 50 and cut issue detection time from few hours to few minutes. The pipeline combines the Strands Agents SDK with Amazon Bedrock AgentCore, a fully managed service for deploying and operating AI agents at scale. In this post, you will learn how to build this pipeline for your own agents.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
-    "id": "provider-7f9f5c112ca74ffbb8",
-    "company": "Amazon AI",
-    "title": "Building trade assistant: How Jefferies optimized front office trading operations with AI",
-    "url": "https://aws.amazon.com/blogs/machine-learning/building-trade-assistant-how-jefferies-optimized-front-office-trading-operations-with-ai/",
-    "published_at": "2026-07-23T16:42:54.000Z",
-    "source_type": "rss_official",
-    "summary": "In this post, we explore how Jefferies overcame these challenges with a solution built on Strands Agents, an agent harness SDK for building AI agents that can reason, plan, and act by orchestrating calls to foundation models (FMs) and external tools. The solution uses large language models (LLMs), Amazon Bedrock, and Amazon Bedrock Knowledge Bases. It also uses Model Context Protocol (MCP), an open standard that helps AI agents securely connect to diverse data sources and tools through a unified",
-    "content": "In this post, we explore how Jefferies overcame these challenges with a solution built on Strands Agents, an agent harness SDK for building AI agents that can reason, plan, and act by orchestrating calls to foundation models (FMs) and external tools. The solution uses large language models (LLMs), Amazon Bedrock, and Amazon Bedrock Knowledge Bases. It also uses Model Context Protocol (MCP), an open standard that helps AI agents securely connect to diverse data sources and tools through a unified interface. We cover the solution overview, the rationale for selecting the underlying technology stack, lessons learned, and the business impact the solution created at Jefferies.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
-    "id": "provider-c76e701e808eda6d08",
-    "company": "Amazon AI",
-    "title": "Building multi-Region visualizations with Highcharts in Amazon Quick",
-    "url": "https://aws.amazon.com/blogs/machine-learning/building-multi-region-visualizations-with-highcharts-in-amazon-quick/",
-    "published_at": "2026-07-23T16:40:59.000Z",
-    "source_type": "rss_official",
-    "summary": "This post shows you how to build multi-Region carrier performance dashboards in Quick Sight using Highcharts custom visualizations to overcome native chart limitations. You will learn how to maintain data sovereignty across AWS Regions while creating unified visualizations through the Quick Sight federated dataset capability. The solution includes production-ready chart configurations and addresses security, compliance, and scalability requirements.",
-    "content": "This post shows you how to build multi-Region carrier performance dashboards in Quick Sight using Highcharts custom visualizations to overcome native chart limitations. You will learn how to maintain data sovereignty across AWS Regions while creating unified visualizations through the Quick Sight federated dataset capability. The solution includes production-ready chart configurations and addresses security, compliance, and scalability requirements.",
     "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
   },
   {
@@ -1232,17 +1287,6 @@
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
-    "id": "provider-82a6fc4eef8ad34bc2",
-    "company": "NVIDIA AI",
-    "title": "How to Run an Autoresearch Workflow with RL Agent Skills and NVIDIA NeMo",
-    "url": "https://developer.nvidia.com/blog/how-to-run-an-autoresearch-workflow-with-rl-agent-skills-and-nvidia-nemo/",
-    "published_at": "2026-07-14T16:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Coding AI agents are becoming practical operators for long-running machine learning (ML) workflows. They can inspect repositories, set up runtimes, resolve...",
-    "content": "Coding AI agents are becoming practical operators for long-running machine learning (ML) workflows. They can inspect repositories, set up runtimes, resolve...",
-    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
     "id": "provider-3a98145a3310a1e119",
     "company": "NVIDIA AI",
     "title": "Post-Train NVIDIA Cosmos 3 in One Day Using Agent Skills",
@@ -1251,6 +1295,17 @@
     "source_type": "rss_official",
     "summary": "What if autonomous coding AI agents could push your vision reasoning models above 90% accuracy with almost no manual effort? When adapting vision reasoning...",
     "content": "What if autonomous coding AI agents could push your vision reasoning models above 90% accuracy with almost no manual effort? When adapting vision reasoning...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
+  },
+  {
+    "id": "provider-82a6fc4eef8ad34bc2",
+    "company": "NVIDIA AI",
+    "title": "How to Run an Autoresearch Workflow with RL Agent Skills and NVIDIA NeMo",
+    "url": "https://developer.nvidia.com/blog/how-to-run-an-autoresearch-workflow-with-rl-agent-skills-and-nvidia-nemo/",
+    "published_at": "2026-07-14T16:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Coding AI agents are becoming practical operators for long-running machine learning (ML) workflows. They can inspect repositories, set up runtimes, resolve...",
+    "content": "Coding AI agents are becoming practical operators for long-running machine learning (ML) workflows. They can inspect repositories, set up runtimes, resolve...",
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
@@ -2057,17 +2112,6 @@
     "source_url": "https://huggingface.co/blog/feed.xml"
   },
   {
-    "id": "provider-afe34ddaf7d99e6f88",
-    "company": "IBM Research",
-    "title": "Running AI on mixed hardware for speed and affordability",
-    "url": "https://research.ibm.com/blog/fast-inference-mixed-gpus?utm_medium=rss&utm_source=rss",
-    "published_at": "2026-06-23T18:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Researchers show that serving AI models with llm-d can boost inference speeds by up to 5 times and double throughput — all while using heterogeneous GPUs.",
-    "content": "Researchers show that serving AI models with llm-d can boost inference speeds by up to 5 times and double throughput — all while using heterogeneous GPUs.",
-    "source_url": "https://research.ibm.com/rss"
-  },
-  {
     "id": "provider-1205d99a4cc08d3a86",
     "company": "OpenAI",
     "title": "How GPT-5 helped immunologist Derya Unutmaz solve a 3-year-old mystery",
@@ -2838,17 +2882,6 @@
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
-    "id": "provider-4c49a1dbecf8578096",
-    "company": "OpenAI",
-    "title": "Introducing the OpenAI Economic Research Exchange",
-    "url": "https://openai.com/index/economic-research-exchange",
-    "published_at": "2026-06-08T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "OpenAI launches the Economic Research Exchange to study AI’s impact on jobs, productivity, and the economy. Applications are now open for selected research projects.",
-    "content": "OpenAI launches the Economic Research Exchange to study AI’s impact on jobs, productivity, and the economy. Applications are now open for selected research projects.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-e6e494994781b8636c",
     "company": "Hugging Face",
     "title": "The Open Source Community is backing OpenEnv for Agentic RL",
@@ -2880,28 +2913,6 @@
     "summary": "Single-turn chatbots are evolving into long-running agents that can reason, maintain context, use tools, and run efficiently across many turns to complete...",
     "content": "Single-turn chatbots are evolving into long-running agents that can reason, maintain context, use tools, and run efficiently across many turns to complete...",
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
-    "id": "provider-3a52c932bb52523b4b",
-    "company": "OpenAI",
-    "title": "How Endava is redesigning software delivery around AI agents",
-    "url": "https://openai.com/index/endava-frontiers",
-    "published_at": "2026-06-04T12:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Learn how Endava is using AI agents, ChatGPT Enterprise, and Codex to accelerate software delivery, automate workflows, and build an AI-native culture across the enterprise.",
-    "content": "Learn how Endava is using AI agents, ChatGPT Enterprise, and Codex to accelerate software delivery, automate workflows, and build an AI-native culture across the enterprise.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
-    "id": "provider-ae10c9617396061da2",
-    "company": "OpenAI",
-    "title": "Dreaming: Better memory for a more helpful ChatGPT",
-    "url": "https://openai.com/index/chatgpt-memory-dreaming",
-    "published_at": "2026-06-04T09:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "ChatGPT introduces a new memory system to better remember preferences, keeping context fresh and relevant across conversations.",
-    "content": "ChatGPT introduces a new memory system to better remember preferences, keeping context fresh and relevant across conversations.",
-    "source_url": "https://openai.com/news/rss.xml"
   },
   {
     "id": "provider-2ac829ee17621fcc61",
@@ -3705,17 +3716,6 @@
     "summary": "Amazon scientists and policy experts discuss how the company’s responsible-AI pipeline embeds safety and values throughout the AI development lifecycle.",
     "content": "Amazon scientists and policy experts discuss how the company’s responsible-AI pipeline embeds safety and values throughout the AI development lifecycle.",
     "source_url": "https://www.amazon.science/index.rss"
-  },
-  {
-    "id": "provider-78013f6b822debcc61",
-    "company": "NVIDIA AI",
-    "title": "Speed Up Unreal Engine NNE Inference with NVIDIA TensorRT for RTX Runtime",
-    "url": "https://developer.nvidia.com/blog/speed-up-unreal-engine-nne-inference-with-nvidia-tensorrt-for-rtx-runtime/",
-    "published_at": "2026-04-30T17:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Neural network techniques are increasingly used in computer graphics to boost image quality, improve performance, and streamline content creation. Approaches...",
-    "content": "Neural network techniques are increasingly used in computer graphics to boost image quality, improve performance, and streamline content creation. Approaches...",
-    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
     "id": "provider-ac8eb5bb1042dfac8e",
