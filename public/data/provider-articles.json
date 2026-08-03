@@ -1,5 +1,16 @@
 [
   {
+    "id": "provider-0ba3f840697f896676",
+    "company": "IBM Research",
+    "title": "The search for quantum advantage in differential equations",
+    "url": "https://research.ibm.com/blog/hari-krovi-differential-equations?utm_medium=rss&utm_source=rss",
+    "published_at": "2026-08-03T13:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "New quantum algorithms could unlock faster ways to model the complex systems behind circuits, fluids, finance, and more.",
+    "content": "New quantum algorithms could unlock faster ways to model the complex systems behind circuits, fluids, finance, and more.",
+    "source_url": "https://research.ibm.com/rss"
+  },
+  {
     "id": "provider-4ff73a950b10db92cf",
     "company": "OpenAI",
     "title": "Ten advances in mathematics and theoretical computer science",
@@ -2088,17 +2099,6 @@
     "summary": "OpenAI and Broadcom introduce Jalapeño, a custom AI chip built for LLM inference to improve performance, efficiency, and scale across AI systems.",
     "content": "OpenAI and Broadcom introduce Jalapeño, a custom AI chip built for LLM inference to improve performance, efficiency, and scale across AI systems.",
     "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
-    "id": "provider-e4f1a3e8aa4597561c",
-    "company": "IBM Research",
-    "title": "A new playbook for quantum optimization benchmarking",
-    "url": "https://research.ibm.com/blog/stefan-woerner-optimization-benchmarking?utm_medium=rss&utm_source=rss",
-    "published_at": "2026-06-24T04:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Novel algorithms and community benchmarking efforts are reshaping how researchers search for advantage in quantum optimization.",
-    "content": "Novel algorithms and community benchmarking efforts are reshaping how researchers search for advantage in quantum optimization.",
-    "source_url": "https://research.ibm.com/rss"
   },
   {
     "id": "provider-6c130060cde8b2c902",
