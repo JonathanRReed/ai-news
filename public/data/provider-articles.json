@@ -1,5 +1,49 @@
 [
   {
+    "id": "provider-747daf6899ed786595",
+    "company": "OpenAI",
+    "title": "Apple is getting this wrong",
+    "url": "https://openai.com/index/apple-is-getting-this-wrong",
+    "published_at": "2026-08-03T22:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "OpenAI addresses Apple’s baseless lawsuit, corrects claims about its employees, and shares messages documenting what happened.",
+    "content": "OpenAI addresses Apple’s baseless lawsuit, corrects claims about its employees, and shares messages documenting what happened.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-d52400f8999495c22e",
+    "company": "Amazon AI",
+    "title": "From weeks to minutes: How Formula 1® uses agentic AI on AWS to accelerate data operations",
+    "url": "https://aws.amazon.com/blogs/machine-learning/from-weeks-to-minutes-how-formula-1-uses-agentic-ai-on-aws-to-accelerate-data-operations/",
+    "published_at": "2026-08-03T17:24:15.000Z",
+    "source_type": "rss_official",
+    "summary": "Formula 1® partnered with AWS to build the Data Accelerator, using agentic AI on Amazon Bedrock AgentCore to transform its MarTech data platform. Learn how F1 cut data source onboarding from up to 8 weeks to about 40 minutes, automated schema evolution, and gained end-to-end observability across its fan-engagement data estate.",
+    "content": "Formula 1® partnered with AWS to build the Data Accelerator, using agentic AI on Amazon Bedrock AgentCore to transform its MarTech data platform. Learn how F1 cut data source onboarding from up to 8 weeks to about 40 minutes, automated schema evolution, and gained end-to-end observability across its fan-engagement data estate.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-46c9b8cf676c8be7af",
+    "company": "Amazon AI",
+    "title": "Automated Reasoning policy refinement in Amazon Bedrock",
+    "url": "https://aws.amazon.com/blogs/machine-learning/automated-reasoning-policy-refinement-in-amazon-bedrock/",
+    "published_at": "2026-08-03T16:30:58.000Z",
+    "source_type": "rss_official",
+    "summary": "Amazon Bedrock now supports automatic Automated Reasoning policy refinement. The refinement engine diagnoses failing tests and proposes formal-logic fixes for rule issues and language issues, and you approve every change before it takes effect. This post walks through both refinement modes with complete API and console workflows.",
+    "content": "Amazon Bedrock now supports automatic Automated Reasoning policy refinement. The refinement engine diagnoses failing tests and proposes formal-logic fixes for rule issues and language issues, and you approve every change before it takes effect. This post walks through both refinement modes with complete API and console workflows.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-be889f1599221cfcc7",
+    "company": "NVIDIA AI",
+    "title": "NVIDIA Vera Storage Benchmarks: Faster Encryption, Compression, Integrity Checking, and Recovery for AI-Native Storage",
+    "url": "https://developer.nvidia.com/blog/nvidia-vera-storage-benchmarks-faster-encryption-compression-integrity-checking-and-recovery-for-ai-native-storage/",
+    "published_at": "2026-08-03T16:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Storage is an active part of every agentic AI workflow. As agents retrieve enterprise knowledge, access persistent memory, reuse key-value (KV) cache data,...",
+    "content": "Storage is an active part of every agentic AI workflow. As agents retrieve enterprise knowledge, access persistent memory, reuse key-value (KV) cache data,...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
+  },
+  {
     "id": "provider-0ba3f840697f896676",
     "company": "IBM Research",
     "title": "The search for quantum advantage in differential equations",
@@ -9,6 +53,28 @@
     "summary": "New quantum algorithms could unlock faster ways to model the complex systems behind circuits, fluids, finance, and more.",
     "content": "New quantum algorithms could unlock faster ways to model the complex systems behind circuits, fluids, finance, and more.",
     "source_url": "https://research.ibm.com/rss"
+  },
+  {
+    "id": "provider-3649531fd82fcfe52f",
+    "company": "OpenAI",
+    "title": "How we built a realtime system for responsive voice AI in six months",
+    "url": "https://openai.com/index/continuous-voice-interaction-with-gpt-live",
+    "published_at": "2026-08-03T07:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "GPT-Live enables continuous voice interaction with AI, using a turnless speech model and low-latency architecture for faster, more natural conversations.",
+    "content": "GPT-Live enables continuous voice interaction with AI, using a turnless speech model and low-latency architecture for faster, more natural conversations.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-046d22d26debd5e0f1",
+    "company": "OpenAI",
+    "title": "Circles powers telco personalization with OpenAI technology",
+    "url": "https://openai.com/index/circles",
+    "published_at": "2026-08-03T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Circles uses the OpenAI API and Codex to power AI-native telco experiences, increasing ARPU by 22%, reducing churn by 9%, and improving development efficiency.",
+    "content": "Circles uses the OpenAI API and Codex to power AI-native telco experiences, increasing ARPU by 22%, reducing churn by 9%, and improving development efficiency.",
+    "source_url": "https://openai.com/news/rss.xml"
   },
   {
     "id": "provider-4ff73a950b10db92cf",
@@ -636,28 +702,6 @@
     "summary": "At this week’s AI Summit in San Francisco, South Korean President Jae Myung Lee and some of the country’s top business leaders and researchers are meeting with NVIDIA and ecosystem partners to chart Korea’s AI progress. Building on NVIDIA founder and CEO Jensen Huang’s visit to Korea last month, this week’s discussions and announcements advance […]",
     "content": "At this week’s AI Summit in San Francisco, South Korean President Jae Myung Lee and some of the country’s top business leaders and researchers are meeting with NVIDIA and ecosystem partners to chart Korea’s AI progress. Building on NVIDIA founder and CEO Jensen Huang’s visit to Korea last month, this week’s discussions and announcements advance […]",
     "source_url": "https://blogs.nvidia.com/feed/"
-  },
-  {
-    "id": "provider-adc4e944c63bd2ba00",
-    "company": "Amazon AI",
-    "title": "Best practices for applying Amazon Bedrock Guardrails to code generation workflows",
-    "url": "https://aws.amazon.com/blogs/machine-learning/best-practices-for-applying-amazon-bedrock-guardrails-to-code-generation-workflows/",
-    "published_at": "2026-07-23T23:03:44.000Z",
-    "source_type": "rss_official",
-    "summary": "In this post, we explain how Amazon Bedrock Guardrails can be configured for code generation workflows with coding assistants to overcome these constraints. With these best practices, you can build an efficient blueprint helping you with effective capacity planning with robust safety coverage.",
-    "content": "In this post, we explain how Amazon Bedrock Guardrails can be configured for code generation workflows with coding assistants to overcome these constraints. With these best practices, you can build an efficient blueprint helping you with effective capacity planning with robust safety coverage.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
-    "id": "provider-44b0103293315621a9",
-    "company": "Amazon AI",
-    "title": "Evaluating AI Agents: A production blueprint with Strands and AgentCore",
-    "url": "https://aws.amazon.com/blogs/machine-learning/evaluating-ai-agents-a-production-blueprint-with-strands-and-agentcore/",
-    "published_at": "2026-07-23T17:00:20.000Z",
-    "source_type": "rss_official",
-    "summary": "Together, Motorway and AWS built an end-to-end evaluation pipeline that reduced incorrect results from 1 in 8 queries to 1 in 50 and cut issue detection time from few hours to few minutes. The pipeline combines the Strands Agents SDK with Amazon Bedrock AgentCore, a fully managed service for deploying and operating AI agents at scale. In this post, you will learn how to build this pipeline for your own agents.",
-    "content": "Together, Motorway and AWS built an end-to-end evaluation pipeline that reduced incorrect results from 1 in 8 queries to 1 in 50 and cut issue detection time from few hours to few minutes. The pipeline combines the Strands Agents SDK with Amazon Bedrock AgentCore, a fully managed service for deploying and operating AI agents at scale. In this post, you will learn how to build this pipeline for your own agents.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
   },
   {
     "id": "provider-78fe3514d071cc2c55",
@@ -2794,17 +2838,6 @@
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
-    "id": "provider-173ba251bf3a757979",
-    "company": "OpenAI",
-    "title": "Industrial policy for the Intelligence Age",
-    "url": "https://openai.com/index/industrial-policy-for-the-intelligence-age",
-    "published_at": "2026-06-09T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Explore our ambitious, people-first industrial policy ideas for the AI era—focused on expanding opportunity, sharing prosperity, and building resilient institutions as advanced intelligence evolves.",
-    "content": "Explore our ambitious, people-first industrial policy ideas for the AI era—focused on expanding opportunity, sharing prosperity, and building resilient institutions as advanced intelligence evolves.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-64ae8e608b8ebac40d",
     "company": "Hugging Face",
     "title": "Migrating Your GitHub CI to Hugging Face Jobs",
@@ -2849,17 +2882,6 @@
     "source_url": "https://www.amazon.science/index.rss"
   },
   {
-    "id": "provider-9875a3bc284f1e0948",
-    "company": "OpenAI",
-    "title": "Confidential submission of draft S-1 to the SEC",
-    "url": "https://openai.com/index/openai-submits-confidential-s-1",
-    "published_at": "2026-06-08T14:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "OpenAI confirms a confidential S-1 submission to the SEC and has not yet determined timing for further action.",
-    "content": "OpenAI confirms a confidential S-1 submission to the SEC and has not yet determined timing for further action.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-9097048dc3dc54efb2",
     "company": "Google DeepMind",
     "title": "Measuring the impact of learning with AI in Sierra Leone and beyond",
@@ -2869,17 +2891,6 @@
     "summary": "Results from a randomized controlled trial show the potential of Gemini’s Guided Learning feature to boost engagement and accelerate learning.",
     "content": "Results from a randomized controlled trial show the potential of Gemini’s Guided Learning feature to boost engagement and accelerate learning.",
     "source_url": "https://deepmind.google/blog/rss.xml"
-  },
-  {
-    "id": "provider-3715814820eecbfd63",
-    "company": "OpenAI",
-    "title": "Built to benefit everyone: our plan",
-    "url": "https://openai.com/index/built-to-benefit-everyone-our-plan",
-    "published_at": "2026-06-08T01:30:00.000Z",
-    "source_type": "rss_official",
-    "summary": "A vision for the future of AI, focusing on access, safety, and shared prosperity as OpenAI works to ensure AGI benefits everyone.",
-    "content": "A vision for the future of AI, focusing on access, safety, and shared prosperity as OpenAI works to ensure AGI benefits everyone.",
-    "source_url": "https://openai.com/news/rss.xml"
   },
   {
     "id": "provider-e6e494994781b8636c",
@@ -3694,17 +3705,6 @@
     "summary": "Agentic mechanism enables Amazon and vendors to optimize supply chain management without disclosing private information.",
     "content": "Agentic mechanism enables Amazon and vendors to optimize supply chain management without disclosing private information.",
     "source_url": "https://www.amazon.science/index.rss"
-  },
-  {
-    "id": "provider-cb2bc5a7385e863664",
-    "company": "NVIDIA AI",
-    "title": "Optimize Supply Chain Decision Systems Using NVIDIA cuOpt Agent Skills",
-    "url": "https://developer.nvidia.com/blog/optimize-supply-chain-decision-systems-using-nvidia-cuopt-agent-skills/",
-    "published_at": "2026-05-04T20:55:05.000Z",
-    "source_type": "rss_official",
-    "summary": "Modern supply chains operate under the constant pressures of fluctuating demand, volatile costs, constrained capacity, and interdependent decision-making....",
-    "content": "Modern supply chains operate under the constant pressures of fluctuating demand, volatile costs, constrained capacity, and interdependent decision-making....",
-    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
     "id": "provider-be9602acf966ccccd8",
