@@ -1,6 +1,6 @@
 # AI News Hub
 
-> AI News Hub is a primary-source feed for AI news: official RSS and Atom posts from major labs, deduplicated, ranked into an editorial feed, and linked straight to the source. It does not rewrite the news. Live coverage: OpenAI, Google DeepMind, Hugging Face, NVIDIA AI, Amazon AI, Alibaba Qwen, IBM Research, and DeepSeek.
+> AI News Hub is a primary-source feed for AI news: official RSS and Atom posts from major labs, deduplicated, ranked into an editorial feed, and linked straight to the source. Titles and excerpts stay the publisher's own. Live coverage: OpenAI, Google DeepMind, Hugging Face, NVIDIA AI, Amazon AI, Alibaba Qwen, IBM Research, and DeepSeek.
 
 ## Tech Stack
 

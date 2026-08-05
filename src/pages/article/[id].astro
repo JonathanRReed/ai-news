@@ -65,7 +65,7 @@ function articleMetaDescription(currentArticle: Article, currentExcerpt: string,
       ? `${currentArticle.company} release ${currentArticle.title} published ${currentDateLabel}.`
       : currentExcerpt;
   return truncateAtWord(
-    `${sourceText} Linked by AI News Hub with source, date, publisher context, and the original article preserved for verification.`,
+    `${sourceText} Linked by AI News Hub with the company, publication date and a link to the original post.`,
     155,
   );
 }
@@ -189,7 +189,7 @@ const structuredData = {
       )}
 
       <p class="micro-label mt-10 max-w-2xl leading-relaxed text-muted">
-        AI News Hub links to primary sources. This page shows the publisher&apos;s own title and excerpt with a link to the full article. We point you at the news; we don&apos;t rewrite it.
+        AI News Hub links to primary sources. The title and excerpt above are the publisher&apos;s own. Use the link to read the full post on their site.
       </p>
 
       {nearbyArticles.length > 0 && (

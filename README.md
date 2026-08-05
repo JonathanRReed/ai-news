@@ -1,6 +1,6 @@
 # AI News
 
-AI News is an Astro app for tracking updates from a curated list of AI companies and labs. It is designed as a fast, maintainable portfolio project that combines curated official sources, Supabase-backed article data, and a static Astro front end.
+AI News is an Astro app for tracking updates from a fixed list of AI companies and labs. It combines official source feeds, Supabase-backed article data and a static Astro front end.
 
 This repo powers the AI News site at `ai-news.helloworldfirm.com`.
 

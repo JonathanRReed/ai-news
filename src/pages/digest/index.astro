@@ -10,8 +10,8 @@ const siteUrl = "https://ai-news.helloworldfirm.com";
 const canonicalUrl = `${siteUrl}/digest/`;
 const title = "This Week in AI | Weekly Digest | AI News Hub";
 const description = latest
-  ? `The most significant AI updates this week, ranked across ${latest.labs} labs from primary-source feeds with original links and dates.`
-  : "The weekly rundown of significant primary-source AI updates, with original links, dates, publisher context, and no rewritten summaries.";
+  ? `The top AI news of the week, ranked across ${latest.labs} labs from primary-source feeds, with original links and publication dates.`
+  : "The weekly rundown of primary-source AI news from major labs and model providers, with original links, publication dates and publisher names.";
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
@@ -31,7 +31,7 @@ const leadDigestLogo = latest?.topStories[0] ? resolveCompanyLogo(latest.topStor
       <section class="industrial-container py-24">
         <p class="micro-label mb-5 text-brand-hover">[ This week in AI ]</p>
         <h1 class="macro-heading">No digest yet</h1>
-        <p class="mt-6 max-w-2xl text-lg leading-relaxed text-text-2">Check back once this week's stories have been gathered.</p>
+        <p class="mt-6 max-w-2xl text-lg leading-relaxed text-text-2">No stories have come in for this week yet. Check back after the next feed refresh.</p>
         <a href="/" class="signal-button mt-8">Back to the feed</a>
       </section>
     )}

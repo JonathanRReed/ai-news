@@ -17,7 +17,7 @@ const siteUrl = "https://ai-news.helloworldfirm.com";
 const isLatest = digest.week === allWeeks[0]?.week;
 const canonicalUrl = isLatest ? `${siteUrl}/digest/` : `${siteUrl}/digest/${digest.week}/`;
 const title = `${digest.label} | This Week in AI | AI News Hub`;
-const description = `The ${digest.count} most significant AI updates from ${digest.labs} labs for ${digest.label}, ranked from primary-source feeds with original links and dates.`;
+const description = `The ${digest.count} top AI stories from ${digest.labs} labs for ${digest.label}, ranked from primary-source feeds, with original links and publication dates.`;
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
