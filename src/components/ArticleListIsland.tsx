@@ -566,7 +566,8 @@ export default function ArticleListIsland({
       )}
 
       {newCount > 0 && (
-        <div role="status" aria-live="polite" className="fixed left-1/2 top-[84px] z-40 -translate-x-1/2 border border-brand bg-bg-1 px-4 py-2 shadow-md">
+        <div role="status" aria-live="polite" className="fixed left-1/2 top-[84px] z-40 flex -translate-x-1/2 items-center gap-2 rounded-full border border-brand/40 bg-bg-1/85 px-4 py-2 shadow-lg backdrop-blur-glass">
+          <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-brand" aria-hidden="true"></span>
           <span className="micro-label tabular-nums text-white">{newCount} new {newCount === 1 ? "story" : "stories"} available</span>
         </div>
       )}
