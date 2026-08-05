@@ -7,16 +7,6 @@ type FaqItem = {
 
 const faqs: FaqItem[] = [
   {
-    question: "How does this site get its data?",
-    answer:
-      "Articles come from RSS and Atom feeds.",
-  },
-  {
-    question: "How often does it update?",
-    answer:
-      "The feed updates hourly.",
-  },
-  {
     question: "Will other sources be added?",
     answer:
       "New sources can be added when they have a stable RSS or Atom feed.",
