@@ -1,9 +1,9 @@
 # Node modules
 node_modules/
 
-# This repo is bun-first; Cloudflare builds with npm but resolves from package.json.
-# Keep a stray npm lockfile out so it can't drift from bun.lock.
-package-lock.json
+# This repo is bun-first, but Cloudflare Pages does not detect the text-format
+# bun.lock and falls back to a bare `npm install`. package-lock.json is committed
+# so Pages installs from a lockfile; keep it in sync with package.json.
 
 # Local Claude Code tooling (preview launch config, etc.)
 .claude/
@@ -87,8 +87,7 @@ public/font/*.otf
 *.bak
 *.tmp
 
-# Ignore lockfiles (optional, if you use only one package manager)
-package-lock.json
+# Ignore lockfiles from package managers this repo does not use
 yarn.lock
 pnpm-lock.yaml
 
