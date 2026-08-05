@@ -1,5 +1,115 @@
 [
   {
+    "id": "provider-46131e46af617cec8a",
+    "company": "OpenAI",
+    "title": "Third-party cyber evaluations involving OpenAI models",
+    "url": "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models",
+    "published_at": "2026-08-04T19:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "OpenAI explains recent third-party cybersecurity evaluation incidents and outlines new safeguards to strengthen AI model testing and evaluation.",
+    "content": "OpenAI explains recent third-party cybersecurity evaluation incidents and outlines new safeguards to strengthen AI model testing and evaluation.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-23377ac17e155e5482",
+    "company": "Amazon AI",
+    "title": "Introducing Web Search on Amazon Bedrock for foundation model grounding",
+    "url": "https://aws.amazon.com/blogs/machine-learning/introducing-web-search-on-amazon-bedrock-for-foundation-model-grounding/",
+    "published_at": "2026-08-04T18:39:14.000Z",
+    "source_type": "rss_official",
+    "summary": "Today, we are introducing the general availability of Web Search on Amazon Bedrock. It is a server-side built-in tool that grounds model responses in current web knowledge. With Web Search, grounding becomes a native capability of Amazon Bedrock, with no third-party vendors to onboard, no external APIs to orchestrate, and no additional third party vendor security reviews to conduct. In this post, we walk through what Web Search on Amazon Bedrock is, why it matters, how to enable it using the Ope",
+    "content": "Today, we are introducing the general availability of Web Search on Amazon Bedrock. It is a server-side built-in tool that grounds model responses in current web knowledge. With Web Search, grounding becomes a native capability of Amazon Bedrock, with no third-party vendors to onboard, no external APIs to orchestrate, and no additional third party vendor security reviews to conduct. In this post, we walk through what Web Search on Amazon Bedrock is, why it matters, how to enable it using the OpenAI Responses API, and how to get started with the tool.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-6fa7337adbfcfb0a8f",
+    "company": "Amazon AI",
+    "title": "Automated web insight extraction with Amazon Bedrock AgentCore",
+    "url": "https://aws.amazon.com/blogs/machine-learning/automated-web-insight-extraction-with-amazon-bedrock-agentcore/",
+    "published_at": "2026-08-04T16:02:21.000Z",
+    "source_type": "rss_official",
+    "summary": "Extracting insights from dozens of websites by hand quickly becomes overwhelming. This post shows how to build an automated web insight extraction solution with Amazon Bedrock AgentCore Browser, Amazon Bedrock, Amazon OpenSearch Serverless, and AWS Lambda that monitors RSS feeds, renders pages reliably, and makes AI-extracted insights searchable.",
+    "content": "Extracting insights from dozens of websites by hand quickly becomes overwhelming. This post shows how to build an automated web insight extraction solution with Amazon Bedrock AgentCore Browser, Amazon Bedrock, Amazon OpenSearch Serverless, and AWS Lambda that monitors RSS feeds, renders pages reliably, and makes AI-extracted insights searchable.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-63d82906bf34f42d6a",
+    "company": "NVIDIA AI",
+    "title": "NVIDIA Joins NSF State and Regional AI Hubs Program to Expand AI Research and Education Across the US",
+    "url": "https://blogs.nvidia.com/blog/nsf-state-regional-ai-hub-program/",
+    "published_at": "2026-08-04T16:00:56.000Z",
+    "source_type": "rss_official",
+    "summary": "NVIDIA is participating in the U.S. National Science Foundation’s (NSF) State and Regional Artificial Intelligence Infrastructure Hubs program, an effort launching today to expand access to the advanced computing, data, software and expertise needed for AI-enabled research and education. Consistent with the aims of the Genesis Mission, the program will support state and multistate groups […]",
+    "content": "NVIDIA is participating in the U.S. National Science Foundation’s (NSF) State and Regional Artificial Intelligence Infrastructure Hubs program, an effort launching today to expand access to the advanced computing, data, software and expertise needed for AI-enabled research and education. Consistent with the aims of the Genesis Mission, the program will support state and multistate groups […]",
+    "source_url": "https://blogs.nvidia.com/feed/"
+  },
+  {
+    "id": "provider-3352a6f872329aefb2",
+    "company": "NVIDIA AI",
+    "title": "Beyond VLAs: How World Action Models Reshape Robot Manipulation",
+    "url": "https://developer.nvidia.com/blog/beyond-vlas-how-world-action-models-reshape-robot-manipulation/",
+    "published_at": "2026-08-04T16:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "A central challenge in robotics is building policies that generalize beyond the demonstrations they’re trained on. A policy that succeeds in a training scene...",
+    "content": "A central challenge in robotics is building policies that generalize beyond the demonstrations they’re trained on. A policy that succeeds in a training scene...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
+  },
+  {
+    "id": "provider-dabecf00d0eae5cdb9",
+    "company": "NVIDIA AI",
+    "title": "NVIDIA Alpamayo 2 Super, the Frontier Open Model for Robotaxis and Autonomous Vehicles, Now Available for Commercial Use",
+    "url": "https://blogs.nvidia.com/blog/alpamayo-2-super-open-model-now-available/",
+    "published_at": "2026-08-04T15:00:49.000Z",
+    "source_type": "rss_official",
+    "summary": "For robotaxis and other autonomous vehicles (AVs), the hardest problems aren’t the everyday scenarios. They’re the rare, complex situations that are difficult to anticipate and train for. Handling these long‑tail events takes more than just object detection and motion prediction. AVs must understand the situation, reason about cause and effect, choose the right action and […]",
+    "content": "For robotaxis and other autonomous vehicles (AVs), the hardest problems aren’t the everyday scenarios. They’re the rare, complex situations that are difficult to anticipate and train for. Handling these long‑tail events takes more than just object detection and motion prediction. AVs must understand the situation, reason about cause and effect, choose the right action and […]",
+    "source_url": "https://blogs.nvidia.com/feed/"
+  },
+  {
+    "id": "provider-6a0237bb9483eb0342",
+    "company": "NVIDIA AI",
+    "title": "As AI Increases Demands on Memory, Storage Steps Up",
+    "url": "https://blogs.nvidia.com/blog/ai-storage-fms/",
+    "published_at": "2026-08-04T15:00:47.000Z",
+    "source_type": "rss_official",
+    "summary": "Surging AI demands are driving the need for massive datasets and context windows that burst past the confines of system memory. But rising needs aren’t met by simply adding more storage capacity. What’s needed is useful, grounded insights from AI factories and efficient, secure storage architectures that enable those insights. At this week’s Future of […]",
+    "content": "Surging AI demands are driving the need for massive datasets and context windows that burst past the confines of system memory. But rising needs aren’t met by simply adding more storage capacity. What’s needed is useful, grounded insights from AI factories and efficient, secure storage architectures that enable those insights. At this week’s Future of […]",
+    "source_url": "https://blogs.nvidia.com/feed/"
+  },
+  {
+    "id": "provider-594a6abaa8cfd28283",
+    "company": "Hugging Face",
+    "title": "Deploy local agents everywhere with LFM2.5-2.6B",
+    "url": "https://huggingface.co/blog/LiquidAI/lfm2-5-2-6b",
+    "published_at": "2026-08-04T13:58:29.000Z",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://huggingface.co/blog/feed.xml"
+  },
+  {
+    "id": "provider-00fdd6427576802fc9",
+    "company": "NVIDIA AI",
+    "title": "AI Leaders Propose SAFE Guidelines for Cybersecurity Transparency",
+    "url": "https://blogs.nvidia.com/blog/open-secure-ai-alliance-contributions/",
+    "published_at": "2026-08-04T13:00:47.000Z",
+    "source_type": "rss_official",
+    "summary": "Members of the Open Secure AI Alliance — now more than 120 organizations strong — are developing new guidelines to strengthen agentic AI cybersecurity as the annual Black Hat conference begins in Las Vegas today. The Linux Foundation today shared a Request for Comments on Shared AI Findings Exchange (SAFE), a proposed set of guidelines […]",
+    "content": "Members of the Open Secure AI Alliance — now more than 120 organizations strong — are developing new guidelines to strengthen agentic AI cybersecurity as the annual Black Hat conference begins in Las Vegas today. The Linux Foundation today shared a Request for Comments on Shared AI Findings Exchange (SAFE), a proposed set of guidelines […]",
+    "source_url": "https://blogs.nvidia.com/feed/"
+  },
+  {
+    "id": "provider-95fd855a276dfc15c0",
+    "company": "OpenAI",
+    "title": "New ways to learn and teach with ChatGPT Work and Codex",
+    "url": "https://openai.com/index/learn-teach-chatgpt-work-codex",
+    "published_at": "2026-08-04T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Explore new education plugins for ChatGPT Work and Codex that help K–12 teachers, college educators, and students learn, teach, research, and build.",
+    "content": "Explore new education plugins for ChatGPT Work and Codex that help K–12 teachers, college educators, and students learn, teach, research, and build.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
     "id": "provider-747daf6899ed786595",
     "company": "OpenAI",
     "title": "Apple is getting this wrong",
@@ -484,17 +594,6 @@
     "source_url": "https://huggingface.co/blog/feed.xml"
   },
   {
-    "id": "provider-b9265391bad26680ef",
-    "company": "Hugging Face",
-    "title": "LFM2.5-Encoders for Fast Long-Context Inference on CPU",
-    "url": "https://huggingface.co/blog/LiquidAI/lfm2-5-encoders",
-    "published_at": "2026-07-28T15:01:45.000Z",
-    "source_type": "rss_official",
-    "summary": "",
-    "content": "",
-    "source_url": "https://huggingface.co/blog/feed.xml"
-  },
-  {
     "id": "provider-a98a3d96db108a01bc",
     "company": "NVIDIA AI",
     "title": "Powerful Compute So Compact, It’s Clutch — Build AI Anywhere With NVIDIA Jetson",
@@ -669,28 +768,6 @@
     "summary": "Every byte moved has a cost. As model checkpoints grow to hundreds of gigabytes or even a terabyte, that cost adds up quickly. To make things even worse, moving...",
     "content": "Every byte moved has a cost. As model checkpoints grow to hundreds of gigabytes or even a terabyte, that cost adds up quickly. To make things even worse, moving...",
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
-    "id": "provider-91749b2ebe34dcc885",
-    "company": "Amazon AI",
-    "title": "Build an explainable next-best-product recommendation system for banking on AWS",
-    "url": "https://aws.amazon.com/blogs/machine-learning/build-an-explainable-next-best-product-recommendation-system-for-banking-on-aws/",
-    "published_at": "2026-07-24T15:42:11.000Z",
-    "source_type": "rss_official",
-    "summary": "Learn the architecture and design decisions behind an explainable next-best-product recommendation system for banking, built with Amazon SageMaker AI and PyTorch. A multi-tower neural network with learned attention delivers accurate, per-customer recommendations while providing the explainability that banking regulators require.",
-    "content": "Learn the architecture and design decisions behind an explainable next-best-product recommendation system for banking, built with Amazon SageMaker AI and PyTorch. A multi-tower neural network with learned attention delivers accurate, per-customer recommendations while providing the explainability that banking regulators require.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
-    "id": "provider-2fa3d74637dd8e0eb8",
-    "company": "Amazon AI",
-    "title": "Get started with OpenAI GPT-5.6 Sol, Terra, and Luna on Amazon Bedrock",
-    "url": "https://aws.amazon.com/blogs/machine-learning/get-started-with-openai-gpt-5-6-sol-terra-and-luna-on-amazon-bedrock/",
-    "published_at": "2026-07-24T15:40:08.000Z",
-    "source_type": "rss_official",
-    "summary": "OpenAI GPT-5.6 Sol, Terra, and Luna are now generally available on Amazon Bedrock. Learn how to select a model, run inference through the Responses API on the bedrock-mantle endpoint, reduce cost with prompt caching, connect the OpenAI Codex coding agent, and plan for quotas and scaling.",
-    "content": "OpenAI GPT-5.6 Sol, Terra, and Luna are now generally available on Amazon Bedrock. Learn how to select a model, run inference through the Responses API on the bedrock-mantle endpoint, reduce cost with prompt caching, connect the OpenAI Codex coding agent, and plan for quotas and scaling.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
   },
   {
     "id": "provider-45c55c8a176a61be8f",
@@ -1078,17 +1155,6 @@
     "source_url": "https://github.com/deepseek-ai/DeepGEMM/releases.atom"
   },
   {
-    "id": "provider-27e567d6d58d2ce401",
-    "company": "NVIDIA AI",
-    "title": "NVIDIA Vera Rubin Maximizes Intelligence per Dollar for Post-Training Workloads — a Key Metric for Agentic AI",
-    "url": "https://blogs.nvidia.com/blog/nvidia-vera-rubin-post-training-intelligence-per-dollar/",
-    "published_at": "2026-07-17T15:00:14.000Z",
-    "source_type": "rss_official",
-    "summary": "Lowest cost per token from extreme codesign maximizes intelligence per dollar for post-training in the agentic era.",
-    "content": "Lowest cost per token from extreme codesign maximizes intelligence per dollar for post-training in the agentic era.",
-    "source_url": "https://blogs.nvidia.com/feed/"
-  },
-  {
     "id": "provider-fd6cc6537f85f08e49",
     "company": "Google DeepMind",
     "title": "Introducing Gemini 3.5 Flash Cyber",
@@ -1166,17 +1232,6 @@
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
-    "id": "provider-452721e3ec3a60bb6f",
-    "company": "NVIDIA AI",
-    "title": "Sharpen the Sword, Skip the Downloads — ‘Onimusha: Way of the Sword’ Is Coming to GeForce NOW",
-    "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-onimusha-coming/",
-    "published_at": "2026-07-16T13:00:34.000Z",
-    "source_type": "rss_official",
-    "summary": "Onimusha: Way of the Sword is coming to GeForce NOW at launch, with the playable demo available this week. It’s joined by Denshattack! rolling in with five new games arriving in the cloud. Plus, GeForce NOW officially launches in India, moving from beta to public availability — meaning gamers can sign up without a waitlist. […]",
-    "content": "Onimusha: Way of the Sword is coming to GeForce NOW at launch, with the playable demo available this week. It’s joined by Denshattack! rolling in with five new games arriving in the cloud. Plus, GeForce NOW officially launches in India, moving from beta to public availability — meaning gamers can sign up without a waitlist. […]",
-    "source_url": "https://blogs.nvidia.com/feed/"
-  },
-  {
     "id": "provider-c6733b919a1cc91dfd",
     "company": "Hugging Face",
     "title": "Newer Models, Same Advantage",
@@ -1243,17 +1298,6 @@
     "source_url": "https://huggingface.co/blog/feed.xml"
   },
   {
-    "id": "provider-a3a8b55d7f9f4d7bbf",
-    "company": "NVIDIA AI",
-    "title": "NVIDIA Introduces New Jetson Thor Computers to Advance Mainstream Robotics and Edge AI",
-    "url": "https://blogs.nvidia.com/blog/jetson-thor-robotics-edge-ai-agent/",
-    "published_at": "2026-07-15T23:00:54.000Z",
-    "source_type": "rss_official",
-    "summary": "General-purpose robots and autonomous machines are moving from research labs to real-world mass-market deployment, creating demand for compact, power-efficient AI supercomputers capable of running foundation models at the edge. To meet that need, NVIDIA today introduced the T3000 and T2000, new modules based on the NVIDIA Thor architecture that enable mass-market robotics and edge AI […]",
-    "content": "General-purpose robots and autonomous machines are moving from research labs to real-world mass-market deployment, creating demand for compact, power-efficient AI supercomputers capable of running foundation models at the edge. To meet that need, NVIDIA today introduced the T3000 and T2000, new modules based on the NVIDIA Thor architecture that enable mass-market robotics and edge AI […]",
-    "source_url": "https://blogs.nvidia.com/feed/"
-  },
-  {
     "id": "provider-c79289a403fd719ab9",
     "company": "NVIDIA AI",
     "title": "Build a Multi-Camera 3D Tracking Application with NVIDIA DeepStream 9.1 Skills",
@@ -1285,17 +1329,6 @@
     "summary": "OpenAI outlines a “reverse federalism” approach to AI governance, where state laws help build a national framework for safe, democratic AI.",
     "content": "OpenAI outlines a “reverse federalism” approach to AI governance, where state laws help build a national framework for safe, democratic AI.",
     "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
-    "id": "provider-52ec83bfebdc75a47d",
-    "company": "NVIDIA AI",
-    "title": "NVIDIA and Japan Bring Full-Stack AI and Robotics to Every Industry",
-    "url": "https://blogs.nvidia.com/blog/japan-ecosystem-2026/",
-    "published_at": "2026-07-15T10:51:37.000Z",
-    "source_type": "rss_official",
-    "summary": "Home to leading manufacturers, robotics pioneers, infrastructure builders and iconic gaming companies, of course, Japan is one of the world’s centers of AI — building across the full stack with NVIDIA technologies. This week NVIDIA and its partners in Japan are showcasing the AI ecosystem’s latest advancements. Check back here for updates.",
-    "content": "Home to leading manufacturers, robotics pioneers, infrastructure builders and iconic gaming companies, of course, Japan is one of the world’s centers of AI — building across the full stack with NVIDIA technologies. This week NVIDIA and its partners in Japan are showcasing the AI ecosystem’s latest advancements. Check back here for updates.",
-    "source_url": "https://blogs.nvidia.com/feed/"
   },
   {
     "id": "provider-564b7d4eed3ab1f41c",
@@ -1342,17 +1375,6 @@
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
-    "id": "provider-3a98145a3310a1e119",
-    "company": "NVIDIA AI",
-    "title": "Post-Train NVIDIA Cosmos 3 in One Day Using Agent Skills",
-    "url": "https://developer.nvidia.com/blog/post-train-nvidia-cosmos-3-in-one-day-using-agent-skills/",
-    "published_at": "2026-07-14T16:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "What if autonomous coding AI agents could push your vision reasoning models above 90% accuracy with almost no manual effort? When adapting vision reasoning...",
-    "content": "What if autonomous coding AI agents could push your vision reasoning models above 90% accuracy with almost no manual effort? When adapting vision reasoning...",
-    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
     "id": "provider-82a6fc4eef8ad34bc2",
     "company": "NVIDIA AI",
     "title": "How to Run an Autoresearch Workflow with RL Agent Skills and NVIDIA NeMo",
@@ -1361,6 +1383,17 @@
     "source_type": "rss_official",
     "summary": "Coding AI agents are becoming practical operators for long-running machine learning (ML) workflows. They can inspect repositories, set up runtimes, resolve...",
     "content": "Coding AI agents are becoming practical operators for long-running machine learning (ML) workflows. They can inspect repositories, set up runtimes, resolve...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
+  },
+  {
+    "id": "provider-3a98145a3310a1e119",
+    "company": "NVIDIA AI",
+    "title": "Post-Train NVIDIA Cosmos 3 in One Day Using Agent Skills",
+    "url": "https://developer.nvidia.com/blog/post-train-nvidia-cosmos-3-in-one-day-using-agent-skills/",
+    "published_at": "2026-07-14T16:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "What if autonomous coding AI agents could push your vision reasoning models above 90% accuracy with almost no manual effort? When adapting vision reasoning...",
+    "content": "What if autonomous coding AI agents could push your vision reasoning models above 90% accuracy with almost no manual effort? When adapting vision reasoning...",
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
@@ -2805,17 +2838,6 @@
     "source_url": "https://deepmind.google/blog/rss.xml"
   },
   {
-    "id": "provider-3d31dda955f1febbc9",
-    "company": "OpenAI",
-    "title": "How engineers at Nextdoor use Codex to build without limits",
-    "url": "https://openai.com/index/nextdoor",
-    "published_at": "2026-06-09T12:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "How engineers at Nextdoor use Codex with GPT-5.5 to investigate hard-to-reproduce issues, build across platforms, and focus on product outcomes.",
-    "content": "How engineers at Nextdoor use Codex with GPT-5.5 to investigate hard-to-reproduce issues, build across platforms, and focus on product outcomes.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-383855cec643e80330",
     "company": "Hugging Face",
     "title": "How an Agent Built a 3D Paris Gallery by Chaining Two Hugging Face Spaces",
@@ -2825,17 +2847,6 @@
     "summary": "",
     "content": "",
     "source_url": "https://huggingface.co/blog/feed.xml"
-  },
-  {
-    "id": "provider-4d1b154784510023c0",
-    "company": "OpenAI",
-    "title": "What Codex unlocks for Notion",
-    "url": "https://openai.com/index/notion",
-    "published_at": "2026-06-09T10:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "How Notion uses Codex to one-shot specs, build AI Voice Input for the web, and multiply engineering power across small teams.",
-    "content": "How Notion uses Codex to one-shot specs, build AI Voice Input for the web, and multiply engineering power across small teams.",
-    "source_url": "https://openai.com/news/rss.xml"
   },
   {
     "id": "provider-64ae8e608b8ebac40d",
@@ -3682,17 +3693,6 @@
     "source_type": "rss_official",
     "summary": "The automotive cockpit is undergoing a fundamental shift from rule-based interfaces to agentic, multimodal AI systems capable of reasoning, planning, and...",
     "content": "The automotive cockpit is undergoing a fundamental shift from rule-based interfaces to agentic, multimodal AI systems capable of reasoning, planning, and...",
-    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
-    "id": "provider-08e5a53b4df9914cee",
-    "company": "NVIDIA AI",
-    "title": "Building for the Rising Complexity of Agentic Systems with Extreme Co-Design",
-    "url": "https://developer.nvidia.com/blog/building-for-the-rising-complexity-of-agentic-systems-with-extreme-co-design/",
-    "published_at": "2026-05-05T15:52:15.000Z",
-    "source_type": "rss_official",
-    "summary": "Generative AI’s explosive first chapter was defined by humans sending requests and models responding. The agentic chapter is different.&nbsp; Agents don't...",
-    "content": "Generative AI’s explosive first chapter was defined by humans sending requests and models responding. The agentic chapter is different.&nbsp; Agents don't...",
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
