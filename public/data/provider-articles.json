@@ -1,5 +1,181 @@
 [
   {
+    "id": "provider-c00953379e9f662ec9",
+    "company": "OpenAI",
+    "title": "How HSP GRUPPE builds AI capabilities for tax advisory",
+    "url": "https://openai.com/index/hsp-gruppe",
+    "published_at": "2026-08-07T09:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Discover how HSP GRUPPE uses ChatGPT Enterprise to boost productivity, improve work quality, and create more capacity for tax advisory and client service.",
+    "content": "Discover how HSP GRUPPE uses ChatGPT Enterprise to boost productivity, improve work quality, and create more capacity for tax advisory and client service.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-2c25839cdc24e1a6dd",
+    "company": "Amazon AI",
+    "title": "Securing AI agents with temporal policies in Amazon Bedrock AgentCore",
+    "url": "https://aws.amazon.com/blogs/machine-learning/securing-ai-agents-with-temporal-policies-in-amazon-bedrock-agentcore/",
+    "published_at": "2026-08-06T18:57:55.000Z",
+    "source_type": "rss_official",
+    "summary": "Temporal policies in Amazon Bedrock AgentCore let you define stateful rules that evaluate authorization based on an agent's session history. Learn how to enforce workflow sequencing, prevent data fabrication, cap financial exposure, and require human approval for high-value actions.",
+    "content": "Temporal policies in Amazon Bedrock AgentCore let you define stateful rules that evaluate authorization based on an agent's session history. Learn how to enforce workflow sequencing, prevent data fabrication, cap financial exposure, and require human approval for high-value actions.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-7b676373c0d387eed4",
+    "company": "Amazon AI",
+    "title": "Configure rate limits for AI traffic on AgentCore gateway",
+    "url": "https://aws.amazon.com/blogs/machine-learning/configure-rate-limits-for-ai-traffic-on-agentcore-gateway/",
+    "published_at": "2026-08-06T17:50:42.000Z",
+    "source_type": "rss_official",
+    "summary": "Learn how to configure rate limits on Amazon Bedrock AgentCore gateway to enforce per-user and per-target traffic controls. Define request, token, and connection limits scoped by JWT claims or IAM identity to protect downstream models, tools, and agents from traffic spikes.",
+    "content": "Learn how to configure rate limits on Amazon Bedrock AgentCore gateway to enforce per-user and per-target traffic controls. Define request, token, and connection limits scoped by JWT claims or IAM identity to protect downstream models, tools, and agents from traffic spikes.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-31b2735b7d5939a7ac",
+    "company": "Amazon AI",
+    "title": "Control agent behaviors and cost beyond a single action: new capabilities in Amazon Bedrock AgentCore",
+    "url": "https://aws.amazon.com/blogs/machine-learning/control-agent-behaviors-and-cost-beyond-a-single-action-new-capabilities-in-amazon-bedrock-agentcore/",
+    "published_at": "2026-08-06T16:43:19.000Z",
+    "source_type": "rss_official",
+    "summary": "Learn about new capabilities in Amazon Bedrock AgentCore: temporal policies powered by Dogwood, a new open source policy language for AI agents, and rate limiting on the gateway. These features give you deterministic control over sequences of agent actions and cost ceilings that hold regardless of agent behavior.",
+    "content": "Learn about new capabilities in Amazon Bedrock AgentCore: temporal policies powered by Dogwood, a new open source policy language for AI agents, and rate limiting on the gateway. These features give you deterministic control over sequences of agent actions and cost ceilings that hold regardless of agent behavior.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-847ff86b7c894fcf5f",
+    "company": "Amazon AI",
+    "title": "Build visibility for Codex on Amazon Bedrock with OpenTelemetry and Amazon CloudWatch",
+    "url": "https://aws.amazon.com/blogs/machine-learning/build-visibility-for-codex-on-amazon-bedrock-with-opentelemetry-and-amazon-cloudwatch/",
+    "published_at": "2026-08-06T16:30:47.000Z",
+    "source_type": "rss_official",
+    "summary": "As engineering teams adopt coding agents like Codex, leaders need visibility into adoption, consumption, and reliability. This post shows how to route Codex OpenTelemetry metrics through a local collector to Amazon CloudWatch for an AWS native view of usage by user, team, and cost center.",
+    "content": "As engineering teams adopt coding agents like Codex, leaders need visibility into adoption, consumption, and reliability. This post shows how to route Codex OpenTelemetry metrics through a local collector to Amazon CloudWatch for an AWS native view of usage by user, team, and cost center.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-f31cd67f228e66bda5",
+    "company": "Amazon AI",
+    "title": "Enforcing data residency with single-Region Claude Code on Amazon Bedrock",
+    "url": "https://aws.amazon.com/blogs/machine-learning/enforcing-data-residency-with-single-region-claude-code-on-amazon-bedrock/",
+    "published_at": "2026-08-06T16:21:54.000Z",
+    "source_type": "rss_official",
+    "summary": "A regulated customer needed all Claude Code inference processed in a single AWS Region (London), not just in-geography. This post shows two ways to pin Claude Code on Amazon Bedrock to one Region: an application inference profile or the Mantle endpoint, paired with an IAM Region condition, plus how to verify compliance in AWS CloudTrail.",
+    "content": "A regulated customer needed all Claude Code inference processed in a single AWS Region (London), not just in-geography. This post shows two ways to pin Claude Code on Amazon Bedrock to one Region: an application inference profile or the Mantle endpoint, paired with an IAM Region condition, plus how to verify compliance in AWS CloudTrail.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-32f859c39373075e97",
+    "company": "Amazon AI",
+    "title": "Agent Skills for Automated Reasoning policies in Amazon Bedrock",
+    "url": "https://aws.amazon.com/blogs/machine-learning/agent-skills-for-automated-reasoning-policies-in-amazon-bedrock/",
+    "published_at": "2026-08-06T16:12:24.000Z",
+    "source_type": "rss_official",
+    "summary": "Learn how to run the full Amazon Bedrock Automated Reasoning policy lifecycle from your coding agent. A suite of open source Agent Skills builds, reviews, tests, debugs, deploys, and validates a custom policy end to end, turning a specialized console task into a repeatable engineering workflow.",
+    "content": "Learn how to run the full Amazon Bedrock Automated Reasoning policy lifecycle from your coding agent. A suite of open source Agent Skills builds, reviews, tests, debugs, deploys, and validates a custom policy end to end, turning a specialized console task into a repeatable engineering workflow.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-a08497fd4fe84e6910",
+    "company": "Amazon AI",
+    "title": "Building an agentic app deployer with Amazon Bedrock and AWS Lambda",
+    "url": "https://aws.amazon.com/blogs/machine-learning/building-an-agentic-app-deployer-with-amazon-bedrock-and-aws-lambda/",
+    "published_at": "2026-08-06T16:11:13.000Z",
+    "source_type": "rss_official",
+    "summary": "PDI Technologies built PDI Brew, an agentic platform on AWS where non-technical employees describe a tool in plain English and receive a fully provisioned, multi-tenant web application in seconds. See how a pluggable planner and an AWS Lambda provisioning agent turn plain-English intent into governed, multi-tenant apps backed by Amazon Bedrock.",
+    "content": "PDI Technologies built PDI Brew, an agentic platform on AWS where non-technical employees describe a tool in plain English and receive a fully provisioned, multi-tenant web application in seconds. See how a pluggable planner and an AWS Lambda provisioning agent turn plain-English intent into governed, multi-tenant apps backed by Amazon Bedrock.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-ecf47d2084db500153",
+    "company": "Amazon AI",
+    "title": "LLM optimization integration for Amazon SageMaker Python SDK",
+    "url": "https://aws.amazon.com/blogs/machine-learning/llm-optimization-integration-for-amazon-sagemaker-python-sdk/",
+    "published_at": "2026-08-06T16:08:12.000Z",
+    "source_type": "rss_official",
+    "summary": "The Amazon SageMaker Python SDK v3 now exposes generative AI inference recommendations in Amazon SageMaker AI directly in your notebook. Benchmark an endpoint, generate data-driven deployment recommendations, and deploy the recommended configuration without leaving your notebook workflow.",
+    "content": "The Amazon SageMaker Python SDK v3 now exposes generative AI inference recommendations in Amazon SageMaker AI directly in your notebook. Benchmark an endpoint, generate data-driven deployment recommendations, and deploy the recommended configuration without leaving your notebook workflow.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-8974df07a766ae6b09",
+    "company": "Google DeepMind",
+    "title": "WeatherNext: AI model achieves breakthrough in forecasting cyclones",
+    "url": "https://deepmind.google/blog/weathernext-ai-model-achieves-breakthrough-in-forecasting-cyclones/",
+    "published_at": "2026-08-06T15:06:15.000Z",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://deepmind.google/blog/rss.xml"
+  },
+  {
+    "id": "provider-0ebf57c1bd2f2db661",
+    "company": "NVIDIA AI",
+    "title": "GeForce NOW Shakes Up August With 26 New Games",
+    "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-august-2026-games-list/",
+    "published_at": "2026-08-06T13:00:11.000Z",
+    "source_type": "rss_official",
+    "summary": "August is here, bringing 26 new games for GeForce NOW members. Command the seas in World of Warships: Legends and discover what’s next in the GeForce NOW library, starting with the eight newly added games this week. In addition, GeForce NOW is at the QuakeCon gaming conference this week in Grapevine, Texas, with hands-on experiences […]",
+    "content": "August is here, bringing 26 new games for GeForce NOW members. Command the seas in World of Warships: Legends and discover what’s next in the GeForce NOW library, starting with the eight newly added games this week. In addition, GeForce NOW is at the QuakeCon gaming conference this week in Grapevine, Texas, with hands-on experiences […]",
+    "source_url": "https://blogs.nvidia.com/feed/"
+  },
+  {
+    "id": "provider-e2854e059df45610f2",
+    "company": "NVIDIA AI",
+    "title": "Into the Omniverse: How Open World Models Push the Frontier of Physical AI",
+    "url": "https://blogs.nvidia.com/blog/open-world-models-physical-ai/",
+    "published_at": "2026-08-06T13:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "In July, NVIDIA joined more than 200 companies and organizations in signing “Open Weights and American AI Leadership,” an open letter arguing that AI leadership will be measured not by any single frontier model but by whether an open ecosystem reaches every sector.",
+    "content": "In July, NVIDIA joined more than 200 companies and organizations in signing “Open Weights and American AI Leadership,” an open letter arguing that AI leadership will be measured not by any single frontier model but by whether an open ecosystem reaches every sector.",
+    "source_url": "https://blogs.nvidia.com/feed/"
+  },
+  {
+    "id": "provider-1846ccc6f8e3bbc5f9",
+    "company": "OpenAI",
+    "title": "Improving GPT‑5.6 Sol in ChatGPT—and expanding access to GPT-5.6 Luna for free users",
+    "url": "https://openai.com/index/improving-gpt-5-6-sol-in-chatgpt",
+    "published_at": "2026-08-06T10:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "ChatGPT introduces improved GPT-5.6 Sol with better accuracy and consistency, plus expanded access for free users and unlimited everyday chats with GPT-5.6 Luna.",
+    "content": "ChatGPT introduces improved GPT-5.6 Sol with better accuracy and consistency, plus expanded access for free users and unlimited everyday chats with GPT-5.6 Luna.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-6df9ad42f314ba9b87",
+    "company": "OpenAI",
+    "title": "Working with the American Psychological Association on youth mental health and AI",
+    "url": "https://openai.com/index/openai-and-apa-partner-to-advance-responsible-ai",
+    "published_at": "2026-08-06T06:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "OpenAI and the American Psychological Association advance evidence-based guidance, resources, and safeguards for responsible AI use and youth mental health.",
+    "content": "OpenAI and the American Psychological Association advance evidence-based guidance, resources, and safeguards for responsible AI use and youth mental health.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-8904d3dfc847a0611f",
+    "company": "OpenAI",
+    "title": "From asking to doing: How the world is putting ChatGPT to work",
+    "url": "https://openai.com/index/how-the-world-is-putting-chatgpt-to-work",
+    "published_at": "2026-08-06T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "New OpenAI Signals data shows how people use ChatGPT worldwide, with country-level insights on adoption, usage trends, and evolving behavior.",
+    "content": "New OpenAI Signals data shows how people use ChatGPT worldwide, with country-level insights on adoption, usage trends, and evolving behavior.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-b8fbc960ec87adc303",
+    "company": "Hugging Face",
+    "title": "Baseten on Hugging Face Inference Providers 🔥",
+    "url": "https://huggingface.co/blog/baseten",
+    "published_at": "2026-08-06T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://huggingface.co/blog/feed.xml"
+  },
+  {
     "id": "provider-aa78e39ed0b22146e1",
     "company": "Amazon AI",
     "title": "How LendingTree built a multi-agent mortgage assistant on Amazon Bedrock",
@@ -407,39 +583,6 @@
     "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
   },
   {
-    "id": "provider-df2a48ff07f41ba310",
-    "company": "Amazon AI",
-    "title": "Inference meta-monitoring for Amazon SageMaker AI endpoints with Amazon Quick",
-    "url": "https://aws.amazon.com/blogs/machine-learning/inference-meta-monitoring-for-amazon-sagemaker-ai-endpoints-with-amazon-quick/",
-    "published_at": "2026-07-30T16:10:10.000Z",
-    "source_type": "rss_official",
-    "summary": "Learn how to build an inference meta-monitoring system for Amazon SageMaker AI endpoints using Amazon Quick. This governance layer sits above production ML inference pipelines to continuously track prediction and data quality, detect drift, integrate delayed ground truth, and surface automated performance dashboards.",
-    "content": "Learn how to build an inference meta-monitoring system for Amazon SageMaker AI endpoints using Amazon Quick. This governance layer sits above production ML inference pipelines to continuously track prediction and data quality, detect drift, integrate delayed ground truth, and surface automated performance dashboards.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
-    "id": "provider-2fcf2bb1e6b07dfacc",
-    "company": "Amazon AI",
-    "title": "Introducing explicit prompt caching for OpenAI GPT-5.6 models on Amazon Bedrock",
-    "url": "https://aws.amazon.com/blogs/machine-learning/introducing-explicit-prompt-caching-for-openai-gpt-5-6-models-on-amazon-bedrock/",
-    "published_at": "2026-07-30T16:02:32.000Z",
-    "source_type": "rss_official",
-    "summary": "OpenAI GPT-5.6 Sol, Terra, and Luna are now generally available on Amazon Bedrock, along with explicit prompt caching that gives you precise control over which parts of your prompt are cached and reused. Learn how to get started, set up explicit caching, and migrate existing GPT workloads to reduce inference cost.",
-    "content": "OpenAI GPT-5.6 Sol, Terra, and Luna are now generally available on Amazon Bedrock, along with explicit prompt caching that gives you precise control over which parts of your prompt are cached and reused. Learn how to get started, set up explicit caching, and migrate existing GPT workloads to reduce inference cost.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
-    "id": "provider-fc277ad63e806dc3c8",
-    "company": "Amazon AI",
-    "title": "Migrate your prompts to new models and optimize them on Amazon Bedrock",
-    "url": "https://aws.amazon.com/blogs/machine-learning/migrate-your-prompts-to-new-models-and-optimize-them-on-amazon-bedrock/",
-    "published_at": "2026-07-30T15:58:32.000Z",
-    "source_type": "rss_official",
-    "summary": "Amazon Bedrock Advanced Prompt Optimization optimizes your prompts for up to 5 models at once and compares original versus optimized performance across quality, latency, and cost. Migrate to a new model or improve your current one in minutes instead of weeks.",
-    "content": "Amazon Bedrock Advanced Prompt Optimization optimizes your prompts for up to 5 models at once and compares original versus optimized performance across quality, latency, and cost. Migrate to a new model or improve your current one in minutes instead of weeks.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
     "id": "provider-869316b2c6cebc7618",
     "company": "Hugging Face",
     "title": "GPU Management: Why Idle GPUs Are the New Grounded Aircraft",
@@ -517,17 +660,6 @@
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
-    "id": "provider-3625897d70f72e6863",
-    "company": "Amazon AI",
-    "title": "Authenticate with Private Key JWT using Amazon Bedrock AgentCore Identity",
-    "url": "https://aws.amazon.com/blogs/machine-learning/authenticate-with-private-key-jwt-using-amazon-bedrock-agentcore-identity/",
-    "published_at": "2026-07-29T16:20:28.000Z",
-    "source_type": "rss_official",
-    "summary": "This post explains how Private Key JWT client authentication works in AgentCore Identity and reviews the supported grant flows. We then walk through creating an AWS KMS signing key, registering its public key with your identity provider, configuring a credential provider on the AWS Management Console, and reviewing example AWS CloudTrail events that record your agent’s access.",
-    "content": "This post explains how Private Key JWT client authentication works in AgentCore Identity and reviews the supported grant flows. We then walk through creating an AWS KMS signing key, registering its public key with your identity provider, configuring a credential provider on the AWS Management Console, and reviewing example AWS CloudTrail events that record your agent’s access.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
     "id": "provider-04345d5cf5449da86a",
     "company": "Google DeepMind",
     "title": "We’re launching Lyria 3.5 in Google Flow Music, with advances across musicality, lyrics, vocals, and creative control",
@@ -537,28 +669,6 @@
     "summary": "",
     "content": "",
     "source_url": "https://deepmind.google/blog/rss.xml"
-  },
-  {
-    "id": "provider-7264db0db43a78203d",
-    "company": "Amazon AI",
-    "title": "Generate Autonomous Business Insights with AI Agent and MCP Servers",
-    "url": "https://aws.amazon.com/blogs/machine-learning/generate-autonomous-business-insights-with-ai-agent-and-mcp-servers/",
-    "published_at": "2026-07-29T15:34:18.000Z",
-    "source_type": "rss_official",
-    "summary": "Learn how Amazon Bedrock AgentCore delivers autonomous, cross-system business intelligence through configuration rather than custom code. Using pre-built MCP server connectors, fine-grained access control, and persistent memory, enterprises can query multiple data sources with natural language while enforcing role-based boundaries automatically.",
-    "content": "Learn how Amazon Bedrock AgentCore delivers autonomous, cross-system business intelligence through configuration rather than custom code. Using pre-built MCP server connectors, fine-grained access control, and persistent memory, enterprises can query multiple data sources with natural language while enforcing role-based boundaries automatically.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
-    "id": "provider-31720d6e42a3e1d3bb",
-    "company": "Amazon AI",
-    "title": "Automating customer retention workflows in Amazon Quick",
-    "url": "https://aws.amazon.com/blogs/machine-learning/automating-customer-retention-workflows-in-amazon-quick/",
-    "published_at": "2026-07-29T15:24:21.000Z",
-    "source_type": "rss_official",
-    "summary": "Learn how to build a no-code customer retention pipeline in Amazon Quick that detects at-risk customers from call transcripts and CSAT data, scores them by retention priority with a custom MCP Action, and generates personalized retention letters, reducing response time from days to minutes.",
-    "content": "Learn how to build a no-code customer retention pipeline in Amazon Quick that detects at-risk customers from call transcripts and CSAT data, scores them by retention priority with a custom MCP Action, and generates personalized retention letters, reducing response time from days to minutes.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
   },
   {
     "id": "provider-36049d4515559ccc2b",
@@ -614,28 +724,6 @@
     "summary": "Unlike autonomous driving or industrial robotics, healthcare robotics can’t rely on internet-scale data collection or unlimited real-world experimentation....",
     "content": "Unlike autonomous driving or industrial robotics, healthcare robotics can’t rely on internet-scale data collection or unlimited real-world experimentation....",
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
-    "id": "provider-07bd013e8365a9e362",
-    "company": "Amazon AI",
-    "title": "How AgentCore Gateway supports the MCP 2026-07-28 spec",
-    "url": "https://aws.amazon.com/blogs/machine-learning/how-agentcore-gateway-supports-the-mcp-2026-07-28-spec/",
-    "published_at": "2026-07-28T19:07:09.000Z",
-    "source_type": "rss_official",
-    "summary": "The Model Context Protocol (MCP) published its 2026-07-28 specification, the largest revision since launch: MCP is now stateless, with a governed extensions system and hardened authorization. Learn what changed and how to enable the new version on Amazon Bedrock AgentCore Gateway with a single UpdateGateway call.",
-    "content": "The Model Context Protocol (MCP) published its 2026-07-28 specification, the largest revision since launch: MCP is now stateless, with a governed extensions system and hardened authorization. Learn what changed and how to enable the new version on Amazon Bedrock AgentCore Gateway with a single UpdateGateway call.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
-    "id": "provider-e9db2fcc7594e31d67",
-    "company": "Amazon AI",
-    "title": "Market surveillance agent with LangGraph and Strands on AgentCore",
-    "url": "https://aws.amazon.com/blogs/machine-learning/market-surveillance-agent-with-langgraph-and-strands-on-agentcore/",
-    "published_at": "2026-07-28T17:24:54.000Z",
-    "source_type": "rss_official",
-    "summary": "Learn how to architect and deploy a production-ready multi-agent AI system using LangGraph for workflow orchestration and Strands for agent reasoning on Amazon Bedrock AgentCore. This post walks through a market surveillance example with state-driven orchestration, checkpoint-based recovery, and AgentCore memory and observability.",
-    "content": "Learn how to architect and deploy a production-ready multi-agent AI system using LangGraph for workflow orchestration and Strands for agent reasoning on Amazon Bedrock AgentCore. This post walks through a market surveillance example with state-driven orchestration, checkpoint-based recovery, and AgentCore memory and observability.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
   },
   {
     "id": "provider-4aba15630a2ff64154",
@@ -1120,28 +1208,6 @@
     "summary": "The demand for AI continues to accelerate. Workloads are getting larger, models are becoming more complex, and there is mounting pressure to deploy AI compute...",
     "content": "The demand for AI continues to accelerate. Workloads are getting larger, models are becoming more complex, and there is mounting pressure to deploy AI compute...",
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
-    "id": "provider-633e214a1779827d89",
-    "company": "NVIDIA AI",
-    "title": "At SIGGRAPH, NVIDIA Advances Graphics and Simulation With Agentic and Physical AI",
-    "url": "https://blogs.nvidia.com/blog/siggraph-news-2026/",
-    "published_at": "2026-07-20T15:00:53.000Z",
-    "source_type": "rss_official",
-    "summary": "From open models to real-time simulation, AI and graphics breakthroughs are transforming media, content creation and robotics.",
-    "content": "From open models to real-time simulation, AI and graphics breakthroughs are transforming media, content creation and robotics.",
-    "source_url": "https://blogs.nvidia.com/feed/"
-  },
-  {
-    "id": "provider-f4e63ba4051b10486d",
-    "company": "NVIDIA AI",
-    "title": "Bristol Myers Squibb Building Life Science Industry’s Most Advanced AI Factory on NVIDIA Vera Rubin",
-    "url": "https://blogs.nvidia.com/blog/bristol-myers-squibb-building-life-science-industrys-most-advanced-ai-factory-on-nvidia-vera-rubin/",
-    "published_at": "2026-07-20T10:59:23.000Z",
-    "source_type": "rss_official",
-    "summary": "Erin Davis calls it the “SuperDuperPOD.” That’s two things in one name: pharmaceutical giant Bristol Myers Squibb (BMS) already runs one of the largest AI clusters in life sciences, with serious results to show for it. And they’re doubling down. BMS announced today it is deploying its second NVIDIA DGX SuperPOD, this one built on […]",
-    "content": "Erin Davis calls it the “SuperDuperPOD.” That’s two things in one name: pharmaceutical giant Bristol Myers Squibb (BMS) already runs one of the largest AI clusters in life sciences, with serious results to show for it. And they’re doubling down. BMS announced today it is deploying its second NVIDIA DGX SuperPOD, this one built on […]",
-    "source_url": "https://blogs.nvidia.com/feed/"
   },
   {
     "id": "provider-f5e1c66189628ce622",
@@ -2673,17 +2739,6 @@
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
-    "id": "provider-6b45da215c922c7846",
-    "company": "OpenAI",
-    "title": "Supporting Europe’s work in ensuring a trustworthy AI ecosystem",
-    "url": "https://openai.com/index/supporting-eu-trustworthy-ai-ecosystem",
-    "published_at": "2026-06-11T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "OpenAI supports the EU Code of Practice on AI content transparency, advancing provenance standards and tools to help people understand AI-generated content.",
-    "content": "OpenAI supports the EU Code of Practice on AI content transparency, advancing provenance standards and tools to help people understand AI-generated content.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-80ca239ae4364bd767",
     "company": "Hugging Face",
     "title": "Profiling in PyTorch (Part 2): From nn.Linear to a Fused MLP",
@@ -2693,17 +2748,6 @@
     "summary": "",
     "content": "",
     "source_url": "https://huggingface.co/blog/feed.xml"
-  },
-  {
-    "id": "provider-44b0030677d229a701",
-    "company": "OpenAI",
-    "title": "Access OpenAI models and Codex through your Oracle cloud commitment",
-    "url": "https://openai.com/index/openai-on-oracle-cloud",
-    "published_at": "2026-06-10T20:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Access OpenAI models and Codex through Oracle Cloud, using existing commitments to build and deploy AI with enterprise security and governance.",
-    "content": "Access OpenAI models and Codex through Oracle Cloud, using existing commitments to build and deploy AI with enterprise security and governance.",
-    "source_url": "https://openai.com/news/rss.xml"
   },
   {
     "id": "provider-08912ce9db57d99e8c",
@@ -2739,17 +2783,6 @@
     "source_url": "https://www.amazon.science/index.rss"
   },
   {
-    "id": "provider-5cc727651688b6bad6",
-    "company": "OpenAI",
-    "title": "PRC-linked influence operations are targeting AI debates in the US",
-    "url": "https://openai.com/index/prc-linked-influence-operations-ai-debates",
-    "published_at": "2026-06-10T12:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "A new report from OpenAI details PRC-linked influence operations using AI to target U.S. tech debates, data center narratives, tariffs, and false claims about ChatGPT.",
-    "content": "A new report from OpenAI details PRC-linked influence operations using AI to target U.S. tech debates, data center narratives, tariffs, and false claims about ChatGPT.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-e749abfc660db674a6",
     "company": "Google DeepMind",
     "title": "Investing in multi-agent AI safety research",
@@ -2759,17 +2792,6 @@
     "summary": "Google DeepMind and partners announce a $10M funding call for multi-agent safety research.",
     "content": "Google DeepMind and partners announce a $10M funding call for multi-agent safety research.",
     "source_url": "https://deepmind.google/blog/rss.xml"
-  },
-  {
-    "id": "provider-d274354520a55aca22",
-    "company": "OpenAI",
-    "title": "From data to decisions: how LSEG is scaling trusted AI",
-    "url": "https://openai.com/index/lseg",
-    "published_at": "2026-06-10T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "See how LSEG uses OpenAI to scale trusted AI across its global business, accelerating insights, shrinking release cycles, and empowering 4,000 employees.",
-    "content": "See how LSEG uses OpenAI to scale trusted AI across its global business, accelerating insights, shrinking release cycles, and empowering 4,000 employees.",
-    "source_url": "https://openai.com/news/rss.xml"
   },
   {
     "id": "provider-682086c8e651b53340",
@@ -4059,17 +4081,6 @@
     "source_url": "https://huggingface.co/blog/feed.xml"
   },
   {
-    "id": "provider-8cd6d14a94f551a86c",
-    "company": "Hugging Face",
-    "title": "Any Custom Frontend with Gradio's Backend",
-    "url": "https://huggingface.co/blog/introducing-gradio-server",
-    "published_at": "2026-04-01T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "",
-    "content": "",
-    "source_url": "https://huggingface.co/blog/feed.xml"
-  },
-  {
     "id": "provider-760c032e1956d97051",
     "company": "Google DeepMind",
     "title": "Reimagining the mouse pointer for the AI era",
@@ -4474,17 +4485,6 @@
     "source_type": "rss_official",
     "summary": "Introducing SIMA 2, a Gemini-powered AI agent that can think, understand, and take actions in interactive environments.",
     "content": "Introducing SIMA 2, a Gemini-powered AI agent that can think, understand, and take actions in interactive environments.",
-    "source_url": "https://deepmind.google/blog/rss.xml"
-  },
-  {
-    "id": "provider-4fc6ca78549fe1b640",
-    "company": "Google DeepMind",
-    "title": "Teaching AI to see the world more like we do",
-    "url": "https://deepmind.google/blog/teaching-ai-to-see-the-world-more-like-we-do/",
-    "published_at": "2025-11-11T11:49:13.000Z",
-    "source_type": "rss_official",
-    "summary": "Our new paper analyzes the important ways AI systems organize the visual world differently from humans.",
-    "content": "Our new paper analyzes the important ways AI systems organize the visual world differently from humans.",
     "source_url": "https://deepmind.google/blog/rss.xml"
   },
   {
