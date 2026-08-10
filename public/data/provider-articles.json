@@ -1,5 +1,27 @@
 [
   {
+    "id": "provider-c255d08d606743abbd",
+    "company": "Hugging Face",
+    "title": "Making Knowledge Distillation Cheap Enough to Run at Scale",
+    "url": "https://huggingface.co/blog/MultiverseComputingCAI/efficient-knowledge-distillation",
+    "published_at": "2026-08-10T10:05:36.000Z",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://huggingface.co/blog/feed.xml"
+  },
+  {
+    "id": "provider-7943a9ee0cd2ab4f15",
+    "company": "Hugging Face",
+    "title": "Meta is back with Muse Glimmer: local, agentic, multimodal, and open source",
+    "url": "https://huggingface.co/blog/muse-glimmer",
+    "published_at": "2026-08-10T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://huggingface.co/blog/feed.xml"
+  },
+  {
     "id": "provider-fc30dfbf83a1235c1a",
     "company": "NVIDIA AI",
     "title": "Firebird Launches CIS Region’s Largest AI Factory in Armenia",
@@ -4057,28 +4079,6 @@
     "summary": "Gemma 4: Our most intelligent open models to date, purpose-built for advanced reasoning and agentic workflows.",
     "content": "Gemma 4: Our most intelligent open models to date, purpose-built for advanced reasoning and agentic workflows.",
     "source_url": "https://deepmind.google/blog/rss.xml"
-  },
-  {
-    "id": "provider-fd7de8c19456d6d700",
-    "company": "Hugging Face",
-    "title": "Welcome Gemma 4: Frontier multimodal intelligence on device",
-    "url": "https://huggingface.co/blog/gemma4",
-    "published_at": "2026-04-02T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "",
-    "content": "",
-    "source_url": "https://huggingface.co/blog/feed.xml"
-  },
-  {
-    "id": "provider-363abff33901e27e34",
-    "company": "Hugging Face",
-    "title": "Falcon Perception",
-    "url": "https://huggingface.co/blog/tiiuae/falcon-perception",
-    "published_at": "2026-04-01T07:13:20.000Z",
-    "source_type": "rss_official",
-    "summary": "",
-    "content": "",
-    "source_url": "https://huggingface.co/blog/feed.xml"
   },
   {
     "id": "provider-760c032e1956d97051",
