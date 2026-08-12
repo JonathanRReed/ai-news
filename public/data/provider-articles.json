@@ -1,5 +1,192 @@
 [
   {
+    "id": "provider-f36c8fb8964b732671",
+    "company": "NVIDIA AI",
+    "title": "NVIDIA AI Factory Compute Is Becoming an Investable Asset Class",
+    "url": "https://blogs.nvidia.com/blog/nvidia-ai-factory-compute/",
+    "published_at": "2026-08-12T00:38:21.000Z",
+    "source_type": "rss_official",
+    "summary": "We announced partnerships with Apollo, BlackRock, Blackstone, Brookfield, Goldman Sachs and KKR to establish independent financing platforms designed to mobilize over $500 billion of third-party capital to support the buildout of AI infrastructure over time. This is a major milestone for NVIDIA and the AI industry. We have moved from an era in which companies […]",
+    "content": "We announced partnerships with Apollo, BlackRock, Blackstone, Brookfield, Goldman Sachs and KKR to establish independent financing platforms designed to mobilize over $500 billion of third-party capital to support the buildout of AI infrastructure over time. This is a major milestone for NVIDIA and the AI industry. We have moved from an era in which companies […]",
+    "source_url": "https://blogs.nvidia.com/feed/"
+  },
+  {
+    "id": "provider-b753fb555a7451fa9c",
+    "company": "Amazon AI",
+    "title": "Accelerate cyber defense with OpenAI and AWS: Daybreak Red & Daybreak Blue now available to eligible customers on Amazon Bedrock",
+    "url": "https://aws.amazon.com/blogs/machine-learning/accelerate-cyber-defense-with-openai-and-aws-daybreak-red-daybreak-blue-now-available-to-eligible-customers-on-amazon-bedrock/",
+    "published_at": "2026-08-11T21:38:06.000Z",
+    "source_type": "rss_official",
+    "summary": "Daybreak Red and Daybreak Blue from OpenAI, specialized cyber defense models from OpenAI, are now available on Amazon Bedrock to eligible customers. Both models run with zero-operator access enforced at the chip, keeping your code and vulnerability data secure.",
+    "content": "Daybreak Red and Daybreak Blue from OpenAI, specialized cyber defense models from OpenAI, are now available on Amazon Bedrock to eligible customers. Both models run with zero-operator access enforced at the chip, keeping your code and vulnerability data secure.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-57c45a684c9735c55d",
+    "company": "NVIDIA AI",
+    "title": "NVIDIA JetPack 7.2.1 Adds Agentic Video Skills and T3000 Emulation",
+    "url": "https://developer.nvidia.com/blog/nvidia-jetpack-7-2-1-adds-agentic-video-skills-and-t3000-emulation/",
+    "published_at": "2026-08-11T19:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Video is a core data path across NVIDIA Jetson applications, from robotics and intelligent video analytics to industrial automation, healthcare, media...",
+    "content": "Video is a core data path across NVIDIA Jetson applications, from robotics and intelligent video analytics to industrial automation, healthcare, media...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
+  },
+  {
+    "id": "provider-da9ab5aa0b005c60d6",
+    "company": "Amazon AI",
+    "title": "A decade of mathematical certainty: Reflections on the Automated Reasoning Group",
+    "url": "https://www.amazon.science/blog/a-decade-of-mathematical-certainty-reflections-on-the-automated-reasoning-group",
+    "published_at": "2026-08-11T16:22:19.000Z",
+    "source_type": "rss_official",
+    "summary": "Ten years after we founded the Automated Reasoning Group, mathematical logic has moved from academic research into production services that secure millions of customer workloads — demonstrating that systems can be provably correct, not just probably correct.",
+    "content": "Ten years after we founded the Automated Reasoning Group, mathematical logic has moved from academic research into production services that secure millions of customer workloads — demonstrating that systems can be provably correct, not just probably correct.",
+    "source_url": "https://www.amazon.science/index.rss"
+  },
+  {
+    "id": "provider-60e51c09049492ded1",
+    "company": "Amazon AI",
+    "title": "How ONESTRUCTION built the Ishigaki-IDS foundation model with AWS GenAIIC",
+    "url": "https://aws.amazon.com/blogs/machine-learning/how-onestruction-built-the-ishigaki-ids-foundation-model-with-aws-genaiic/",
+    "published_at": "2026-08-11T16:14:33.000Z",
+    "source_type": "rss_official",
+    "summary": "ONESTRUCTION, with technical advisory from the AWS Generative AI Innovation Center, built Ishigaki-IDS, a foundation model specialized for construction and BIM workflows. This architectural case study shows how they combined synthetic data, a three-stage training pipeline, and verifiable rewards on Amazon EC2 to build a domain model in a data-scarce field.",
+    "content": "ONESTRUCTION, with technical advisory from the AWS Generative AI Innovation Center, built Ishigaki-IDS, a foundation model specialized for construction and BIM workflows. This architectural case study shows how they combined synthetic data, a three-stage training pipeline, and verifiable rewards on Amazon EC2 to build a domain model in a data-scarce field.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-44ea9d8c739ccb8d6c",
+    "company": "Amazon AI",
+    "title": "How Pixieset achieved 35% AI feature adoption by solving the right problem with Amazon Bedrock",
+    "url": "https://aws.amazon.com/blogs/machine-learning/how-pixieset-achieved-35-ai-feature-adoption-by-solving-the-right-problem-with-amazon-bedrock/",
+    "published_at": "2026-08-11T16:11:15.000Z",
+    "source_type": "rss_official",
+    "summary": "Photographers are among the most skeptical audiences for generative AI. Learn how Pixieset used Amazon Bedrock to launch an AI-generated alt text feature to millions of users in four months, reaching 35% adoption by automating the tedious image SEO work photographers avoid, without touching the creative craft they take pride in.",
+    "content": "Photographers are among the most skeptical audiences for generative AI. Learn how Pixieset used Amazon Bedrock to launch an AI-generated alt text feature to millions of users in four months, reaching 35% adoption by automating the tedious image SEO work photographers avoid, without touching the creative craft they take pride in.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-94f0787623f6db870e",
+    "company": "Amazon AI",
+    "title": "First Orion accelerates QA automation using Amazon Nova Act",
+    "url": "https://aws.amazon.com/blogs/machine-learning/first-orion-accelerates-qa-automation-using-amazon-nova-act/",
+    "published_at": "2026-08-11T16:09:06.000Z",
+    "source_type": "rss_official",
+    "summary": "Learn how First Orion, a branded communications company, shifted from brittle script-based UI testing to AI-driven QA automation with Amazon Nova Act. By describing tests in plain English instead of maintaining selector-based code, they cut QA cycle times, freed engineering capacity, and caught regressions earlier.",
+    "content": "Learn how First Orion, a branded communications company, shifted from brittle script-based UI testing to AI-driven QA automation with Amazon Nova Act. By describing tests in plain English instead of maintaining selector-based code, they cut QA cycle times, freed engineering capacity, and caught regressions earlier.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-497f7e33d717d54090",
+    "company": "Amazon AI",
+    "title": "Deploying Anthropic Claude apps gateway for AWS for enterprise workloads",
+    "url": "https://aws.amazon.com/blogs/machine-learning/deploying-anthropic-claude-apps-gateway-for-aws-for-enterprise-workloads/",
+    "published_at": "2026-08-11T15:59:22.000Z",
+    "source_type": "rss_official",
+    "summary": "Claude apps gateway is a self-hosted governance layer between Claude Code and Claude Desktop and Amazon Bedrock or Claude Platform on AWS. This post presents a production reference deployment covering end-to-end architecture, enterprise deployment patterns, cost, and implementation resources.",
+    "content": "Claude apps gateway is a self-hosted governance layer between Claude Code and Claude Desktop and Amazon Bedrock or Claude Platform on AWS. This post presents a production reference deployment covering end-to-end architecture, enterprise deployment patterns, cost, and implementation resources.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-0975f39ac7f88f22dc",
+    "company": "NVIDIA AI",
+    "title": "Why Scaling AI Compute Performance Requires a New Power Architecture",
+    "url": "https://blogs.nvidia.com/blog/800-vdc-power-architecture-ai-factory/",
+    "published_at": "2026-08-11T15:00:06.000Z",
+    "source_type": "rss_official",
+    "summary": "Every new generation of accelerated computing demands more from the infrastructure underneath it — more compute performance, higher rack density and more efficient, scalable power distribution. The bottleneck isn’t just wattage. It’s how power gets from the grid to the GPU. In traditional power delivery, electricity travels from the grid as an alternating current (AC) […]",
+    "content": "Every new generation of accelerated computing demands more from the infrastructure underneath it — more compute performance, higher rack density and more efficient, scalable power distribution. The bottleneck isn’t just wattage. It’s how power gets from the grid to the GPU. In traditional power delivery, electricity travels from the grid as an alternating current (AC) […]",
+    "source_url": "https://blogs.nvidia.com/feed/"
+  },
+  {
+    "id": "provider-4291edb317f3843768",
+    "company": "Hugging Face",
+    "title": "Thinking of ACE? We Can Do It with Fewer Tokens",
+    "url": "https://huggingface.co/blog/ibm-research/altk-evolve-sldd",
+    "published_at": "2026-08-11T13:37:10.000Z",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://huggingface.co/blog/feed.xml"
+  },
+  {
+    "id": "provider-c2e400a82ca1d5a40c",
+    "company": "NVIDIA AI",
+    "title": "NVIDIA Nemotron 3.5 Lightning Delivers Fast, Accurate Specialized Task Execution for Long-Running Agents",
+    "url": "https://developer.nvidia.com/blog/nvidia-nemotron-3-5-lightning-delivers-fast-accurate-specialized-task-execution-for-long-running-agents/",
+    "published_at": "2026-08-11T13:01:07.000Z",
+    "source_type": "rss_official",
+    "summary": "Long-running AI agents spend most of their time on high-volume execution: tool calls, result validation, and subagent delegation. Using a frontier reasoning...",
+    "content": "Long-running AI agents spend most of their time on high-volume execution: tool calls, result validation, and subagent delegation. Using a frontier reasoning...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
+  },
+  {
+    "id": "provider-016a924530ace960b1",
+    "company": "IBM Research",
+    "title": "From vision to reality: a unified AI solver for the grid",
+    "url": "https://research.ibm.com/blog/gridfm-neural-solver-power-grid?utm_medium=rss&utm_source=rss",
+    "published_at": "2026-08-11T13:00:40.000Z",
+    "source_type": "rss_official",
+    "summary": "GENCO is a neural solver that, alongside the GridFM Development Framework, unifies three core electrical grid analysis tasks.",
+    "content": "GENCO is a neural solver that, alongside the GridFM Development Framework, unifies three core electrical grid analysis tasks.",
+    "source_url": "https://research.ibm.com/rss"
+  },
+  {
+    "id": "provider-8b130397d4f77f44f6",
+    "company": "NVIDIA AI",
+    "title": "NVIDIA and Local AI Community Fuel Open Source Models and Intelligent Agents",
+    "url": "https://blogs.nvidia.com/blog/local-ai-open-source-models-agents-nemotron/",
+    "published_at": "2026-08-11T13:00:25.000Z",
+    "source_type": "rss_official",
+    "summary": "The open source ecosystem is making it easier for AI enthusiasts and developers to build, customize and run increasingly capable agents locally. Throughout August, NVIDIA is celebrating the partners and open source communities moving local AI forward, along with the models, applications and tools emerging across the ecosystem. That includes NVIDIA’s latest open models, software […]",
+    "content": "The open source ecosystem is making it easier for AI enthusiasts and developers to build, customize and run increasingly capable agents locally. Throughout August, NVIDIA is celebrating the partners and open source communities moving local AI forward, along with the models, applications and tools emerging across the ecosystem. That includes NVIDIA’s latest open models, software […]",
+    "source_url": "https://blogs.nvidia.com/feed/"
+  },
+  {
+    "id": "provider-5e5855df4ad18d9efe",
+    "company": "NVIDIA AI",
+    "title": "NVIDIA Nemotron 3.5 Lightning and NeMo Switchyard Deliver Faster, Smarter, More Efficient Agentic AI",
+    "url": "https://blogs.nvidia.com/blog/nemotron-lightning-switchyard-rtx-dgx/",
+    "published_at": "2026-08-11T13:00:05.000Z",
+    "source_type": "rss_official",
+    "summary": "As AI shifts from chatbots to autonomous agents, open models are serving market demands for full control over where AI runs and how it’s deployed and evolves. Today, NVIDIA is expanding its Nemotron 3 model family with Nemotron 3.5 Lightning, the highest-efficiency model in its class for long-running agentic AI workloads. This release follows Nemotron […]",
+    "content": "As AI shifts from chatbots to autonomous agents, open models are serving market demands for full control over where AI runs and how it’s deployed and evolves. Today, NVIDIA is expanding its Nemotron 3 model family with Nemotron 3.5 Lightning, the highest-efficiency model in its class for long-running agentic AI workloads. This release follows Nemotron […]",
+    "source_url": "https://blogs.nvidia.com/feed/"
+  },
+  {
+    "id": "provider-546ce4205e5c1098c4",
+    "company": "NVIDIA AI",
+    "title": "Route AI Agent Workloads Across Models with NVIDIA NeMo Switchyard",
+    "url": "https://developer.nvidia.com/blog/route-ai-agent-workloads-across-models-with-nvidia-nemo-switchyard/",
+    "published_at": "2026-08-11T13:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Building an AI agent does not end with choosing a single model. Each model has its own strengths, weaknesses, and cost profile, which can shift from one...",
+    "content": "Building an AI agent does not end with choosing a single model. Each model has its own strengths, weaknesses, and cost profile, which can shift from one...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
+  },
+  {
+    "id": "provider-bf1d1d6fe453d247d3",
+    "company": "OpenAI",
+    "title": "Testing ads in ChatGPT",
+    "url": "https://openai.com/index/testing-ads-in-chatgpt",
+    "published_at": "2026-08-11T10:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "OpenAI begins testing ads in ChatGPT to support free access, with clear labeling, answer independence, strong privacy protections, and user control.",
+    "content": "OpenAI begins testing ads in ChatGPT to support free access, with clear labeling, answer independence, strong privacy protections, and user control.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-8bb93631d3159d7549",
+    "company": "OpenAI",
+    "title": "Daybreak models are now available on AWS",
+    "url": "https://openai.com/index/daybreak-models-are-now-available-on-aws",
+    "published_at": "2026-08-11T10:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "OpenAI and AWS are making Daybreak cybersecurity capabilities available through Amazon Bedrock to support enterprise security workflows.",
+    "content": "OpenAI and AWS are making Daybreak cybersecurity capabilities available through Amazon Bedrock to support enterprise security workflows.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
     "id": "provider-fecc3acf3010b57568",
     "company": "Amazon AI",
     "title": "AWS Trainium Frontier competition: Co-design models and kernels on purpose-built AI chips",
@@ -429,17 +616,6 @@
     "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
   },
   {
-    "id": "provider-0ac3b79846f7738702",
-    "company": "Amazon AI",
-    "title": "Run production AI agents in n8n with Amazon Bedrock AgentCore harness",
-    "url": "https://aws.amazon.com/blogs/machine-learning/run-production-ai-agents-in-n8n-with-amazon-bedrock-agentcore-harness/",
-    "published_at": "2026-08-05T18:00:57.000Z",
-    "source_type": "rss_official",
-    "summary": "Amazon Bedrock AgentCore harness is now generally available. Learn how to add it as an agent step in n8n workflows using a new open-source community node, and build agents with persistent memory, real tools, code execution, and VPC isolation — all from the n8n editor with no infrastructure or agent code.",
-    "content": "Amazon Bedrock AgentCore harness is now generally available. Learn how to add it as an agent step in n8n workflows using a new open-source community node, and build agents with persistent memory, real tools, code execution, and VPC isolation — all from the n8n editor with no infrastructure or agent code.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
     "id": "provider-76e8a2f4f6fecda855",
     "company": "Amazon AI",
     "title": "34 Amazon Research Awards Build on Trainium recipients announced",
@@ -471,28 +647,6 @@
     "summary": "OpenAI explains recent third-party cybersecurity evaluation incidents and outlines new safeguards to strengthen AI model testing and evaluation.",
     "content": "OpenAI explains recent third-party cybersecurity evaluation incidents and outlines new safeguards to strengthen AI model testing and evaluation.",
     "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
-    "id": "provider-23377ac17e155e5482",
-    "company": "Amazon AI",
-    "title": "Introducing Web Search on Amazon Bedrock for foundation model grounding",
-    "url": "https://aws.amazon.com/blogs/machine-learning/introducing-web-search-on-amazon-bedrock-for-foundation-model-grounding/",
-    "published_at": "2026-08-04T18:39:14.000Z",
-    "source_type": "rss_official",
-    "summary": "Today, we are introducing the general availability of Web Search on Amazon Bedrock. It is a server-side built-in tool that grounds model responses in current web knowledge. With Web Search, grounding becomes a native capability of Amazon Bedrock, with no third-party vendors to onboard, no external APIs to orchestrate, and no additional third party vendor security reviews to conduct. In this post, we walk through what Web Search on Amazon Bedrock is, why it matters, how to enable it using the Ope",
-    "content": "Today, we are introducing the general availability of Web Search on Amazon Bedrock. It is a server-side built-in tool that grounds model responses in current web knowledge. With Web Search, grounding becomes a native capability of Amazon Bedrock, with no third-party vendors to onboard, no external APIs to orchestrate, and no additional third party vendor security reviews to conduct. In this post, we walk through what Web Search on Amazon Bedrock is, why it matters, how to enable it using the OpenAI Responses API, and how to get started with the tool.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
-    "id": "provider-6fa7337adbfcfb0a8f",
-    "company": "Amazon AI",
-    "title": "Automated web insight extraction with Amazon Bedrock AgentCore",
-    "url": "https://aws.amazon.com/blogs/machine-learning/automated-web-insight-extraction-with-amazon-bedrock-agentcore/",
-    "published_at": "2026-08-04T16:02:21.000Z",
-    "source_type": "rss_official",
-    "summary": "Extracting insights from dozens of websites by hand quickly becomes overwhelming. This post shows how to build an automated web insight extraction solution with Amazon Bedrock AgentCore Browser, Amazon Bedrock, Amazon OpenSearch Serverless, and AWS Lambda that monitors RSS feeds, renders pages reliably, and makes AI-extracted insights searchable.",
-    "content": "Extracting insights from dozens of websites by hand quickly becomes overwhelming. This post shows how to build an automated web insight extraction solution with Amazon Bedrock AgentCore Browser, Amazon Bedrock, Amazon OpenSearch Serverless, and AWS Lambda that monitors RSS feeds, renders pages reliably, and makes AI-extracted insights searchable.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
   },
   {
     "id": "provider-63d82906bf34f42d6a",
@@ -581,28 +735,6 @@
     "summary": "OpenAI addresses Apple’s baseless lawsuit, corrects claims about its employees, and shares messages documenting what happened.",
     "content": "OpenAI addresses Apple’s baseless lawsuit, corrects claims about its employees, and shares messages documenting what happened.",
     "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
-    "id": "provider-d52400f8999495c22e",
-    "company": "Amazon AI",
-    "title": "From weeks to minutes: How Formula 1® uses agentic AI on AWS to accelerate data operations",
-    "url": "https://aws.amazon.com/blogs/machine-learning/from-weeks-to-minutes-how-formula-1-uses-agentic-ai-on-aws-to-accelerate-data-operations/",
-    "published_at": "2026-08-03T17:24:15.000Z",
-    "source_type": "rss_official",
-    "summary": "Formula 1® partnered with AWS to build the Data Accelerator, using agentic AI on Amazon Bedrock AgentCore to transform its MarTech data platform. Learn how F1 cut data source onboarding from up to 8 weeks to about 40 minutes, automated schema evolution, and gained end-to-end observability across its fan-engagement data estate.",
-    "content": "Formula 1® partnered with AWS to build the Data Accelerator, using agentic AI on Amazon Bedrock AgentCore to transform its MarTech data platform. Learn how F1 cut data source onboarding from up to 8 weeks to about 40 minutes, automated schema evolution, and gained end-to-end observability across its fan-engagement data estate.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
-    "id": "provider-46c9b8cf676c8be7af",
-    "company": "Amazon AI",
-    "title": "Automated Reasoning policy refinement in Amazon Bedrock",
-    "url": "https://aws.amazon.com/blogs/machine-learning/automated-reasoning-policy-refinement-in-amazon-bedrock/",
-    "published_at": "2026-08-03T16:30:58.000Z",
-    "source_type": "rss_official",
-    "summary": "Amazon Bedrock now supports automatic Automated Reasoning policy refinement. The refinement engine diagnoses failing tests and proposes formal-logic fixes for rule issues and language issues, and you approve every change before it takes effect. This post walks through both refinement modes with complete API and console workflows.",
-    "content": "Amazon Bedrock now supports automatic Automated Reasoning policy refinement. The refinement engine diagnoses failing tests and proposes formal-logic fixes for rule issues and language issues, and you approve every change before it takes effect. This post walks through both refinement modes with complete API and console workflows.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
   },
   {
     "id": "provider-be889f1599221cfcc7",
@@ -1111,17 +1243,6 @@
     "source_url": "https://research.ibm.com/rss"
   },
   {
-    "id": "provider-0ec6f5ab99fb16654d",
-    "company": "NVIDIA AI",
-    "title": "NVIDIA AI Supercomputer Comes Online at Naval Postgraduate School",
-    "url": "https://blogs.nvidia.com/blog/naval-postgraduate-school-dgx-ai-supercomputer/",
-    "published_at": "2026-07-23T02:00:46.000Z",
-    "source_type": "rss_official",
-    "summary": "NVIDIA founder and CEO Jensen Huang today visited the Naval Postgraduate School in Monterey, California, to commission an NVIDIA DGX GB300 system — bringing one of the world’s most powerful AI platforms fully online for the students, researchers and faculty at the U.S. military’s flagship graduate university. “Our nation depends on our men and women […]",
-    "content": "NVIDIA founder and CEO Jensen Huang today visited the Naval Postgraduate School in Monterey, California, to commission an NVIDIA DGX GB300 system — bringing one of the world’s most powerful AI platforms fully online for the students, researchers and faculty at the U.S. military’s flagship graduate university. “Our nation depends on our men and women […]",
-    "source_url": "https://blogs.nvidia.com/feed/"
-  },
-  {
     "id": "provider-7ad2b2a935021e56af",
     "company": "OpenAI",
     "title": "Launching Health in ChatGPT",
@@ -1175,17 +1296,6 @@
     "summary": "Google commits $40M in AI tokens and credits for the Genesis Mission",
     "content": "Google commits $40M in AI tokens and credits for the Genesis Mission",
     "source_url": "https://deepmind.google/blog/rss.xml"
-  },
-  {
-    "id": "provider-b226b2e0009e0cfd69",
-    "company": "NVIDIA AI",
-    "title": "NVIDIA Open Sources First GPU-Accelerated Medical Physics Simulation Framework",
-    "url": "https://blogs.nvidia.com/blog/medical-physics-simulation-open-source/",
-    "published_at": "2026-07-22T13:00:11.000Z",
-    "source_type": "rss_official",
-    "summary": "Before a healthcare robot can be useful in the real world, it has to learn how the physical world pushes back. Anatomy varies. Instruments bend, press, slip and interact with tissue. Imaging can be noisy or incomplete. And the rare, edge scenarios developers most need to understand don’t appear on schedule. That creates one of […]",
-    "content": "Before a healthcare robot can be useful in the real world, it has to learn how the physical world pushes back. Anatomy varies. Instruments bend, press, slip and interact with tissue. Imaging can be noisy or incomplete. And the rare, edge scenarios developers most need to understand don’t appear on schedule. That creates one of […]",
-    "source_url": "https://blogs.nvidia.com/feed/"
   },
   {
     "id": "provider-fa7b0995fb93190f33",
@@ -1243,17 +1353,6 @@
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
-    "id": "provider-a35393c3554396db98",
-    "company": "NVIDIA AI",
-    "title": "Built in Fort Worth: Wistron Opens Advanced Manufacturing Plant to Produce NVIDIA AI Systems",
-    "url": "https://blogs.nvidia.com/blog/wistron-manufacturing-texas/",
-    "published_at": "2026-07-21T22:35:45.000Z",
-    "source_type": "rss_official",
-    "summary": "The AI era runs on AI infrastructure. Many of these advanced systems are built and tested in Texas. Wistron opened its first U.S. manufacturing facility today in Fort Worth — a 324,000-square-foot greenfield plant producing superchips at the heart of some of the world’s most capable AI systems. In front of an audience of Wistron […]",
-    "content": "The AI era runs on AI infrastructure. Many of these advanced systems are built and tested in Texas. Wistron opened its first U.S. manufacturing facility today in Fort Worth — a 324,000-square-foot greenfield plant producing superchips at the heart of some of the world’s most capable AI systems. In front of an audience of Wistron […]",
-    "source_url": "https://blogs.nvidia.com/feed/"
-  },
-  {
     "id": "provider-9adb547fc29dcebc02",
     "company": "NVIDIA AI",
     "title": "Setting a World Record for MoE Pre-Training on NVIDIA GB300 NVL72",
@@ -1296,17 +1395,6 @@
     "summary": "OpenAI launches the ChatGPT for Small Businesses program, helping entrepreneurs build AI skills, automate work, and grow with ChatGPT Work.",
     "content": "OpenAI launches the ChatGPT for Small Businesses program, helping entrepreneurs build AI skills, automate work, and grow with ChatGPT Work.",
     "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
-    "id": "provider-f57d330952579e06c9",
-    "company": "NVIDIA AI",
-    "title": "NVIDIA Vera Rubin Driving Performance Per Watt, Lowest Token Cost for Partners Worldwide",
-    "url": "https://blogs.nvidia.com/blog/vera-rubin/",
-    "published_at": "2026-07-21T15:36:43.000Z",
-    "source_type": "rss_official",
-    "summary": "NVIDIA Vera Rubin is here, and it’s going gigascale. Vera Rubin NVL72 production is ramping up with racks running at partners CoreWeave, Google Cloud, Microsoft Azure, Oracle Cloud Infrastructure and Nebius. Spanning 350+ factory sites in 30 countries, Vera Rubin has the largest, most mature rack-scale supply chain ever assembled to meet customer compute demand. […]",
-    "content": "NVIDIA Vera Rubin is here, and it’s going gigascale. Vera Rubin NVL72 production is ramping up with racks running at partners CoreWeave, Google Cloud, Microsoft Azure, Oracle Cloud Infrastructure and Nebius. Spanning 350+ factory sites in 30 countries, Vera Rubin has the largest, most mature rack-scale supply chain ever assembled to meet customer compute demand. […]",
-    "source_url": "https://blogs.nvidia.com/feed/"
   },
   {
     "id": "provider-cc43fbe0e1cb4d457b",
@@ -1606,17 +1694,6 @@
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
-    "id": "provider-82a6fc4eef8ad34bc2",
-    "company": "NVIDIA AI",
-    "title": "How to Run an Autoresearch Workflow with RL Agent Skills and NVIDIA NeMo",
-    "url": "https://developer.nvidia.com/blog/how-to-run-an-autoresearch-workflow-with-rl-agent-skills-and-nvidia-nemo/",
-    "published_at": "2026-07-14T16:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Coding AI agents are becoming practical operators for long-running machine learning (ML) workflows. They can inspect repositories, set up runtimes, resolve...",
-    "content": "Coding AI agents are becoming practical operators for long-running machine learning (ML) workflows. They can inspect repositories, set up runtimes, resolve...",
-    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
     "id": "provider-3a98145a3310a1e119",
     "company": "NVIDIA AI",
     "title": "Post-Train NVIDIA Cosmos 3 in One Day Using Agent Skills",
@@ -1625,6 +1702,17 @@
     "source_type": "rss_official",
     "summary": "What if autonomous coding AI agents could push your vision reasoning models above 90% accuracy with almost no manual effort? When adapting vision reasoning...",
     "content": "What if autonomous coding AI agents could push your vision reasoning models above 90% accuracy with almost no manual effort? When adapting vision reasoning...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
+  },
+  {
+    "id": "provider-82a6fc4eef8ad34bc2",
+    "company": "NVIDIA AI",
+    "title": "How to Run an Autoresearch Workflow with RL Agent Skills and NVIDIA NeMo",
+    "url": "https://developer.nvidia.com/blog/how-to-run-an-autoresearch-workflow-with-rl-agent-skills-and-nvidia-nemo/",
+    "published_at": "2026-07-14T16:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Coding AI agents are becoming practical operators for long-running machine learning (ML) workflows. They can inspect repositories, set up runtimes, resolve...",
+    "content": "Coding AI agents are becoming practical operators for long-running machine learning (ML) workflows. They can inspect repositories, set up runtimes, resolve...",
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
@@ -2343,17 +2431,6 @@
     "source_url": "https://research.ibm.com/rss"
   },
   {
-    "id": "provider-2c24a20240bee585e1",
-    "company": "IBM Research",
-    "title": "IBM introduces the smallest computer chip in the world",
-    "url": "https://research.ibm.com/blog/sub-1nm-node-chips?utm_medium=rss&utm_source=rss",
-    "published_at": "2026-06-25T10:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "It’s the world’s first sub-1nm chip technology, powered by IBM’s new nanostack architecture, paving the way for more powerful chips for years to come.",
-    "content": "It’s the world’s first sub-1nm chip technology, powered by IBM’s new nanostack architecture, paving the way for more powerful chips for years to come.",
-    "source_url": "https://research.ibm.com/rss"
-  },
-  {
     "id": "provider-70e543df9f4cd2cd27",
     "company": "OpenAI",
     "title": "How agents are transforming work",
@@ -2604,28 +2681,6 @@
     "source_type": "rss_official",
     "summary": "OpenAI introduces new spend controls and usage analytics for ChatGPT Enterprise, helping organizations manage costs and scale AI with confidence.",
     "content": "OpenAI introduces new spend controls and usage analytics for ChatGPT Enterprise, helping organizations manage costs and scale AI with confidence.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
-    "id": "provider-f7e92e0abe0068751e",
-    "company": "OpenAI",
-    "title": "Improving health intelligence in ChatGPT",
-    "url": "https://openai.com/index/improving-health-intelligence-in-chatgpt",
-    "published_at": "2026-06-18T11:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Learn how GPT-5.5 Instant improves ChatGPT’s health and wellness responses with stronger reasoning, better context, clearer communication, and physician-informed evaluations.",
-    "content": "Learn how GPT-5.5 Instant improves ChatGPT’s health and wellness responses with stronger reasoning, better context, clearer communication, and physician-informed evaluations.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
-    "id": "provider-cdae118f5e2b1b0dde",
-    "company": "OpenAI",
-    "title": "Using AI to help physicians diagnose rare genetic diseases affecting children",
-    "url": "https://openai.com/index/diagnose-rare-childhood-diseases",
-    "published_at": "2026-06-18T08:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Researchers used an OpenAI reasoning model to help diagnose rare diseases, identifying 18 new diagnoses in previously unsolved cases.",
-    "content": "Researchers used an OpenAI reasoning model to help diagnose rare diseases, identifying 18 new diagnoses in previously unsolved cases.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -3696,39 +3751,6 @@
     "source_url": "https://huggingface.co/blog/feed.xml"
   },
   {
-    "id": "provider-cf7b13e4fc7e1f2b70",
-    "company": "NVIDIA AI",
-    "title": "Improving Bash Generation in Small Language Models with Grammar-Constrained Decoding",
-    "url": "https://developer.nvidia.com/blog/improving-bash-generation-in-small-language-models-with-grammar-constrained-decoding/",
-    "published_at": "2026-05-08T17:13:33.000Z",
-    "source_type": "rss_official",
-    "summary": "Bash is one of the most flexible and powerful interfaces exposed to AI agents. In the right system, a model that emits grep, curl, tar, or a shell pipeline is...",
-    "content": "Bash is one of the most flexible and powerful interfaces exposed to AI agents. In the right system, a model that emits grep, curl, tar, or a shell pipeline is...",
-    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
-    "id": "provider-62723f2daba50d0ee4",
-    "company": "NVIDIA AI",
-    "title": "Streaming Tokens and Tools: Multi-Turn Agentic Harness Support in NVIDIA Dynamo",
-    "url": "https://developer.nvidia.com/blog/streaming-tokens-and-tools-multi-turn-agentic-harness-support-in-nvidia-dynamo/",
-    "published_at": "2026-05-08T15:59:16.000Z",
-    "source_type": "rss_official",
-    "summary": "An agentic exchange must preserve a structured interaction: assistant turns interleave reasoning with one or more tool calls, and subsequent user turns return...",
-    "content": "An agentic exchange must preserve a structured interaction: assistant turns interleave reasoning with one or more tool calls, and subsequent user turns return...",
-    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
-    "id": "provider-eb8d4732f2262a8a94",
-    "company": "NVIDIA AI",
-    "title": "Model Quantization: Post-Training Quantization Using NVIDIA Model Optimizer",
-    "url": "https://developer.nvidia.com/blog/model-quantization-post-training-quantization-using-nvidia-model-optimizer/",
-    "published_at": "2026-05-07T21:18:06.000Z",
-    "source_type": "rss_official",
-    "summary": "This post is the second of a three-part series. See also Model Quantization: Concepts, Methods, and Why It Matters and Model Quantization: Turn FP8 Checkpoints...",
-    "content": "This post is the second of a three-part series. See also Model Quantization: Concepts, Methods, and Why It Matters and Model Quantization: Turn FP8 Checkpoints...",
-    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
     "id": "provider-108e63b245774a21e5",
     "company": "Hugging Face",
     "title": "vLLM V0 to V1: Correctness Before Corrections in RL",
@@ -3960,17 +3982,6 @@
     "source_url": "https://huggingface.co/blog/feed.xml"
   },
   {
-    "id": "provider-861439005f13d6a3ba",
-    "company": "Amazon AI",
-    "title": "Isabelle/HOL: The proof assistant behind the Nitro Isolation Engine",
-    "url": "https://www.amazon.science/blog/isabelle-hol-the-proof-assistant-behind-the-nitro-isolation-engine",
-    "published_at": "2026-04-17T13:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Isabelle/HOL's balance of expressiveness, automation, and scalability enabled the world's first formally verified cloud hypervisor.",
-    "content": "Isabelle/HOL's balance of expressiveness, automation, and scalability enabled the world's first formally verified cloud hypervisor.",
-    "source_url": "https://www.amazon.science/index.rss"
-  },
-  {
     "id": "provider-e78573a7b1cc37bc4e",
     "company": "Hugging Face",
     "title": "Ecom-RLVE: Adaptive Verifiable Environments for E-Commerce Conversational Agents",
@@ -4052,17 +4063,6 @@
     "company": "Hugging Face",
     "title": "Waypoint-1.5: Higher-Fidelity Interactive Worlds for Everyday GPUs",
     "url": "https://huggingface.co/blog/waypoint-1-5",
-    "published_at": "2026-04-09T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "",
-    "content": "",
-    "source_url": "https://huggingface.co/blog/feed.xml"
-  },
-  {
-    "id": "provider-4297cfaff65a1b20ab",
-    "company": "Hugging Face",
-    "title": "Multimodal Embedding & Reranker Models with Sentence Transformers",
-    "url": "https://huggingface.co/blog/multimodal-sentence-transformers",
     "published_at": "2026-04-09T00:00:00.000Z",
     "source_type": "rss_official",
     "summary": "",
