@@ -1,5 +1,16 @@
 [
   {
+    "id": "provider-df1a10a8e4097e8edc",
+    "company": "OpenAI",
+    "title": "New policy ideas for the Intelligence Age",
+    "url": "https://openai.com/index/new-policy-ideas-for-the-intelligence-age",
+    "published_at": "2026-08-17T03:15:00.000Z",
+    "source_type": "rss_official",
+    "summary": "OpenAI funds 14 independent projects exploring new AI policy ideas to expand economic opportunity and strengthen societal resilience in the Intelligence Age.",
+    "content": "OpenAI funds 14 independent projects exploring new AI policy ideas to expand economic opportunity and strengthen societal resilience in the Intelligence Age.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
     "id": "provider-e4d9e8bed9785e7d3b",
     "company": "NVIDIA AI",
     "title": "Universitas Gadjah Mada, Indosat and NVIDIA Open Indonesia’s First University AI Center to Develop Local AI Talent",
@@ -2660,17 +2671,6 @@
     "summary": "Telecom operators are adopting AI across network operations, customer care, and back-office workflows, but most are still early in the journey to autonomy. In...",
     "content": "Telecom operators are adopting AI across network operations, customer care, and back-office workflows, but most are still early in the journey to autonomy. In...",
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
-    "id": "provider-9fe615cd07e5aedbb5",
-    "company": "OpenAI",
-    "title": "How Omio is building the future of conversational travel",
-    "url": "https://openai.com/index/omio",
-    "published_at": "2026-06-23T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Discover how Omio uses OpenAI to power conversational travel experiences, accelerate product development, and transform into an AI-native company.",
-    "content": "Discover how Omio uses OpenAI to power conversational travel experiences, accelerate product development, and transform into an AI-native company.",
-    "source_url": "https://openai.com/news/rss.xml"
   },
   {
     "id": "provider-d40ad5031f47bdb01d",
