@@ -1,5 +1,104 @@
 [
   {
+    "id": "provider-18f5b99973b6a87822",
+    "company": "OpenAI",
+    "title": "Partnering with CodeAI to prepare the first AI generation",
+    "url": "https://openai.com/index/partnering-with-codeai",
+    "published_at": "2026-08-18T11:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "OpenAI and CodeAI are partnering to help students build AI literacy, think critically about AI, and develop the skills to use and shape it responsibly.",
+    "content": "OpenAI and CodeAI are partnering to help students build AI literacy, think critically about AI, and develop the skills to use and shape it responsibly.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-ab958c3c4085c8aba8",
+    "company": "OpenAI",
+    "title": "Introducing ChatGPT for Teens: Built for learning, backed by protections",
+    "url": "https://openai.com/index/introducing-chatgpt-for-teens",
+    "published_at": "2026-08-18T11:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "ChatGPT for Teens helps teens learn, think critically, and use AI with confidence, with stronger built-in protections, healthy-use features, and additional controls for parents.",
+    "content": "ChatGPT for Teens helps teens learn, think critically, and use AI with confidence, with stronger built-in protections, healthy-use features, and additional controls for parents.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-d73194deedef7aa4bf",
+    "company": "Hugging Face",
+    "title": "Same Cluster, 33 Points More Utilization: What Changed Was the Order",
+    "url": "https://huggingface.co/blog/Dharma-AI/gpu-management-pt2",
+    "published_at": "2026-08-17T19:46:21.000Z",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://huggingface.co/blog/feed.xml"
+  },
+  {
+    "id": "provider-8fed7b15ff154efa50",
+    "company": "NVIDIA AI",
+    "title": "Developing Nemotron 3.5 Lightning NVFP4 with QAD Using NVIDIA Model Optimizer",
+    "url": "https://developer.nvidia.com/blog/developing-nemotron-3-5-lightning-nvfp4-with-qad-using-nvidia-model-optimizer/",
+    "published_at": "2026-08-17T18:12:48.000Z",
+    "source_type": "rss_official",
+    "summary": "Teams customize their models to hit their targets for latency, speed, memory, and compute. With the open NVIDIA Nemotron family of models, developers can find...",
+    "content": "Teams customize their models to hit their targets for latency, speed, memory, and compute. With the open NVIDIA Nemotron family of models, developers can find...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
+  },
+  {
+    "id": "provider-c3b46adbd75246b447",
+    "company": "Amazon AI",
+    "title": "NVIDIA Nemotron 3.5 Lightning now available in Amazon SageMaker JumpStart",
+    "url": "https://aws.amazon.com/blogs/machine-learning/nvidia-nemotron-3-5-lightning-now-available-in-amazon-sagemaker-jumpstart/",
+    "published_at": "2026-08-17T18:06:33.000Z",
+    "source_type": "rss_official",
+    "summary": "NVIDIA Nemotron 3.5 Lightning, an open model built for high-volume agentic workloads, is now available in Amazon SageMaker JumpStart. This post shows how to deploy the 30B Mixture-of-Experts model (3B active), which delivers up to 4x higher throughput and up to 30% faster task completion for always-on agents.",
+    "content": "NVIDIA Nemotron 3.5 Lightning, an open model built for high-volume agentic workloads, is now available in Amazon SageMaker JumpStart. This post shows how to deploy the 30B Mixture-of-Experts model (3B active), which delivers up to 4x higher throughput and up to 30% faster task completion for always-on agents.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-26a29d0a321200eab5",
+    "company": "Amazon AI",
+    "title": "Build OpenClaw agents that transact with Amazon Bedrock AgentCore payments",
+    "url": "https://aws.amazon.com/blogs/machine-learning/build-openclaw-agents-that-transact-with-amazon-bedrock-agentcore-payments/",
+    "published_at": "2026-08-17T16:19:56.000Z",
+    "source_type": "rss_official",
+    "summary": "Give an autonomous agent a wallet and spending guardrails so it can pay for paywalled APIs, MCP servers, and web content. This post connects OpenClaw to Amazon Bedrock AgentCore payments and the x402 protocol, using the aws-agents-pay plugin to make bounded, human-approved testnet payments.",
+    "content": "Give an autonomous agent a wallet and spending guardrails so it can pay for paywalled APIs, MCP servers, and web content. This post connects OpenClaw to Amazon Bedrock AgentCore payments and the x402 protocol, using the aws-agents-pay plugin to make bounded, human-approved testnet payments.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-8eaf0689424bfa0796",
+    "company": "NVIDIA AI",
+    "title": "Securing the Infrastructure of Intelligence",
+    "url": "https://blogs.nvidia.com/blog/securing-the-infrastructure-of-intelligence/",
+    "published_at": "2026-08-17T12:34:51.000Z",
+    "source_type": "rss_official",
+    "summary": "AI factories are the defining infrastructure of the AI era — where compute transforms energy and data into intelligence that powers every business, industry and country. In the AI economy, compute is revenue. AI factories require a full stack of critical resources: advanced chips, packaging, memory, and networking — as well as land, power and […]",
+    "content": "AI factories are the defining infrastructure of the AI era — where compute transforms energy and data into intelligence that powers every business, industry and country. In the AI economy, compute is revenue. AI factories require a full stack of critical resources: advanced chips, packaging, memory, and networking — as well as land, power and […]",
+    "source_url": "https://blogs.nvidia.com/feed/"
+  },
+  {
+    "id": "provider-6304a034d84c11e282",
+    "company": "OpenAI",
+    "title": "The Defender’s Window",
+    "url": "https://openai.com/index/the-defenders-window",
+    "published_at": "2026-08-17T05:30:00.000Z",
+    "source_type": "rss_official",
+    "summary": "AI is reshaping cybersecurity for attackers and defenders alike. Learn how OpenAI is strengthening its defenses and what security teams can do now.",
+    "content": "AI is reshaping cybersecurity for attackers and defenders alike. Learn how OpenAI is strengthening its defenses and what security teams can do now.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-ffb1fb98513e254c29",
+    "company": "OpenAI",
+    "title": "OpenAI joins PORTS-Pike project",
+    "url": "https://openai.com/index/openai-joins-ports-pike-project",
+    "published_at": "2026-08-17T05:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "OpenAI joins PORTS-Pike project, expanding community investment and supporting thousands of Southern Ohio jobs",
+    "content": "OpenAI joins PORTS-Pike project, expanding community investment and supporting thousands of Southern Ohio jobs",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
     "id": "provider-df1a10a8e4097e8edc",
     "company": "OpenAI",
     "title": "New policy ideas for the Intelligence Age",
@@ -693,28 +792,6 @@
     "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
   },
   {
-    "id": "provider-9ed96412326187328a",
-    "company": "Amazon AI",
-    "title": "How TReNDS automates root-cause analysis with Amazon Bedrock",
-    "url": "https://aws.amazon.com/blogs/machine-learning/how-trends-automates-root-cause-analysis-with-amazon-bedrock/",
-    "published_at": "2026-08-07T16:22:50.000Z",
-    "source_type": "rss_official",
-    "summary": "TReNDS, a research center at Georgia State University, built an agentic AI pipeline on Amazon Bedrock and the open-source Strands Agents SDK that automatically investigates production errors in real time, reducing root-cause analysis from 15 to 30 minutes of manual work to under 60 seconds.",
-    "content": "TReNDS, a research center at Georgia State University, built an agentic AI pipeline on Amazon Bedrock and the open-source Strands Agents SDK that automatically investigates production errors in real time, reducing root-cause analysis from 15 to 30 minutes of manual work to under 60 seconds.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
-    "id": "provider-8a66f2128d98f9c2d3",
-    "company": "Amazon AI",
-    "title": "Determining playoff clinching scenarios in the NHL using constraint programming",
-    "url": "https://aws.amazon.com/blogs/machine-learning/determining-playoff-clinching-scenarios-in-the-nhl-using-constraint-programming/",
-    "published_at": "2026-08-07T16:21:00.000Z",
-    "source_type": "rss_official",
-    "summary": "The AWS Generative AI Innovation Center built an automated system that uses constraint programming and custom tree search to determine, with mathematical certainty, when and how an NHL team clinches a playoff spot. The approach was validated against four full NHL seasons of officially published results.",
-    "content": "The AWS Generative AI Innovation Center built an automated system that uses constraint programming and custom tree search to determine, with mathematical certainty, when and how an NHL team clinches a playoff spot. The approach was validated against four full NHL seasons of officially published results.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
     "id": "provider-5df9deecbad94351a1",
     "company": "OpenAI",
     "title": "Responding to the next frontier of critical cyber capabilities",
@@ -1274,17 +1351,6 @@
     "summary": "",
     "content": "",
     "source_url": "https://huggingface.co/blog/feed.xml"
-  },
-  {
-    "id": "provider-aad1d0a16447fa7a53",
-    "company": "NVIDIA AI",
-    "title": "Industry Leaders Unite in Open Secure AI Alliance for AI Safety and Security",
-    "url": "https://blogs.nvidia.com/blog/open-secure-ai-alliance/",
-    "published_at": "2026-07-27T09:00:07.000Z",
-    "source_type": "rss_official",
-    "summary": "Open source software is a critical pillar of the global economy. It underpins cloud computing, financial services, manufacturing, telecommunications, government and internet services by making technology accessible and observable to communities of experts. Cybersecurity is among the top three beneficiaries of open source software. The Open Secure AI Alliance — building on the leadership of […]",
-    "content": "Open source software is a critical pillar of the global economy. It underpins cloud computing, financial services, manufacturing, telecommunications, government and internet services by making technology accessible and observable to communities of experts. Cybersecurity is among the top three beneficiaries of open source software. The Open Secure AI Alliance — building on the leadership of […]",
-    "source_url": "https://blogs.nvidia.com/feed/"
   },
   {
     "id": "provider-d703c04b0c456e90f3",
@@ -1894,23 +1960,23 @@
   {
     "id": "provider-f86a03a624d31bfca9",
     "company": "OpenAI",
-    "title": "How data science teams use ChatGPT Work",
+    "title": "Data science workflows with ChatGPT Work",
     "url": "https://openai.com/academy/chatgpt-work/how-data-science-teams-use-codex",
     "published_at": "2026-07-14T00:00:00.000Z",
     "source_type": "rss_official",
-    "summary": "See how data science teams can use ChatGPT Work to build root-cause briefs, impact readouts, KPI memos, scoped analyses, and dashboard specs from real work inputs.",
-    "content": "See how data science teams can use ChatGPT Work to build root-cause briefs, impact readouts, KPI memos, scoped analyses, and dashboard specs from real work inputs.",
+    "summary": "Learn practical ChatGPT Work workflows for root-cause briefs, KPI memos, scoped analyses, and dashboard specifications.",
+    "content": "Learn practical ChatGPT Work workflows for root-cause briefs, KPI memos, scoped analyses, and dashboard specifications.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
     "id": "provider-f30dd851f23b74e119",
     "company": "OpenAI",
-    "title": "How sales teams use ChatGPT Work",
+    "title": "Sales workflows with ChatGPT Work",
     "url": "https://openai.com/academy/chatgpt-work/how-sales-teams-use-codex",
     "published_at": "2026-07-14T00:00:00.000Z",
     "source_type": "rss_official",
-    "summary": "See how sales teams can use ChatGPT Work to create pipeline briefs, meeting prep packets, forecast reviews, account plans, and stalled-deal diagnoses from real work inputs.",
-    "content": "See how sales teams can use ChatGPT Work to create pipeline briefs, meeting prep packets, forecast reviews, account plans, and stalled-deal diagnoses from real work inputs.",
+    "summary": "Learn practical ChatGPT Work workflows for pipeline briefs, meeting prep, account plans, forecast reviews, and deal diagnosis.",
+    "content": "Learn practical ChatGPT Work workflows for pipeline briefs, meeting prep, account plans, forecast reviews, and deal diagnosis.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -2563,17 +2629,6 @@
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
-    "id": "provider-70e543df9f4cd2cd27",
-    "company": "OpenAI",
-    "title": "How agents are transforming work",
-    "url": "https://openai.com/index/how-agents-are-transforming-work",
-    "published_at": "2026-06-25T02:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "A new OpenAI research paper shows how AI agents are transforming work, enabling longer, more complex tasks and expanding productivity across roles.",
-    "content": "A new OpenAI research paper shows how AI agents are transforming work, enabling longer, more complex tasks and expanding productivity across roles.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-8f518047eb98c920fc",
     "company": "Amazon AI",
     "title": "The fuel of the future is already here: Why TRISO matters",
@@ -2607,17 +2662,6 @@
     "source_url": "https://huggingface.co/blog/feed.xml"
   },
   {
-    "id": "provider-dd1f718a4b07727aee",
-    "company": "OpenAI",
-    "title": "OpenAI and Broadcom unveil LLM-optimized inference chip",
-    "url": "https://openai.com/index/openai-broadcom-jalapeno-inference-chip",
-    "published_at": "2026-06-24T06:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "OpenAI and Broadcom introduce Jalapeño, a custom AI chip built for LLM inference to improve performance, efficiency, and scale across AI systems.",
-    "content": "OpenAI and Broadcom introduce Jalapeño, a custom AI chip built for LLM inference to improve performance, efficiency, and scale across AI systems.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-6c130060cde8b2c902",
     "company": "Hugging Face",
     "title": "Introducing the FFASR Leaderboard: Benchmarking ASR in the Real World",
@@ -2629,17 +2673,6 @@
     "source_url": "https://huggingface.co/blog/feed.xml"
   },
   {
-    "id": "provider-1205d99a4cc08d3a86",
-    "company": "OpenAI",
-    "title": "How GPT-5 helped immunologist Derya Unutmaz solve a 3-year-old mystery",
-    "url": "https://openai.com/index/gpt-5-immunology-mystery",
-    "published_at": "2026-06-23T17:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "GPT-5 Pro helped solve a 3-year-old immunology mystery, offering insights into T cell behavior. The breakthrough could support cancer and autoimmune research.",
-    "content": "GPT-5 Pro helped solve a 3-year-old immunology mystery, offering insights into T cell behavior. The breakthrough could support cancer and autoimmune research.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-810e9c2a8042e055d0",
     "company": "NVIDIA AI",
     "title": "Boost Inference Performance up to 15x on NVIDIA Blackwell Using DFlash Speculative Decoding",
@@ -2649,17 +2682,6 @@
     "summary": "As AI systems move from single-turn interactions to coordinated multiagent workflows, low-latency inference becomes increasingly important. Autoregressive LLMs...",
     "content": "As AI systems move from single-turn interactions to coordinated multiagent workflows, low-latency inference becomes increasingly important. Autoregressive LLMs...",
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
-    "id": "provider-63cf5bae4883a2b11b",
-    "company": "OpenAI",
-    "title": "Helping build shared standards for advanced AI",
-    "url": "https://openai.com/index/helping-build-shared-standards-for-advanced-ai",
-    "published_at": "2026-06-23T13:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "OpenAI helps build shared standards for advanced AI, supporting evaluation frameworks, safety practices, and global cooperation through the Appia Foundation.",
-    "content": "OpenAI helps build shared standards for advanced AI, supporting evaluation frameworks, safety practices, and global cooperation through the Appia Foundation.",
-    "source_url": "https://openai.com/news/rss.xml"
   },
   {
     "id": "provider-24e053ee840ced0754",
@@ -3762,17 +3784,6 @@
     "source_url": "https://huggingface.co/blog/feed.xml"
   },
   {
-    "id": "provider-a47437d6bb509d0286",
-    "company": "NVIDIA AI",
-    "title": "Transform Video Into Instantly Searchable, Actionable Intelligence with AI Agents and Skills",
-    "url": "https://developer.nvidia.com/blog/transform-video-into-instantly-searchable-actionable-intelligence-with-ai-agents-and-skills/",
-    "published_at": "2026-05-13T18:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "In today’s data-driven world, organizations increasingly rely on video to capture critical information, yet extracting meaningful, real-time insights from...",
-    "content": "In today’s data-driven world, organizations increasingly rely on video to capture critical information, yet extracting meaningful, real-time insights from...",
-    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
     "id": "provider-770210a238ab8ff5ed",
     "company": "DeepSeek",
     "title": "nv_dev_67fc648",
@@ -4052,17 +4063,6 @@
     "company": "Hugging Face",
     "title": "The PR you would have opened yourself",
     "url": "https://huggingface.co/blog/transformers-to-mlx",
-    "published_at": "2026-04-16T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "",
-    "content": "",
-    "source_url": "https://huggingface.co/blog/feed.xml"
-  },
-  {
-    "id": "provider-a9a1cc2d9e503a58f8",
-    "company": "Hugging Face",
-    "title": "Training and Finetuning Multimodal Embedding & Reranker Models with Sentence Transformers",
-    "url": "https://huggingface.co/blog/train-multimodal-sentence-transformers",
     "published_at": "2026-04-16T00:00:00.000Z",
     "source_type": "rss_official",
     "summary": "",
