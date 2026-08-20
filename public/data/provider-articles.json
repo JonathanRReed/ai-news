@@ -1,5 +1,126 @@
 [
   {
+    "id": "provider-624b28e25664b0bbf4",
+    "company": "NVIDIA AI",
+    "title": "Developing NVIDIA Holoscan Applications with CLI, Skills, and AI Coding Agents",
+    "url": "https://developer.nvidia.com/blog/developing-nvidia-holoscan-applications-with-cli-skills-and-ai-coding-agents/",
+    "published_at": "2026-08-19T22:22:37.000Z",
+    "source_type": "rss_official",
+    "summary": "NVIDIA Holoscan is a platform for building real-time AI applications at the edge, from medical imaging to robotics. HoloHub is its companion repository: a...",
+    "content": "NVIDIA Holoscan is a platform for building real-time AI applications at the edge, from medical imaging to robotics. HoloHub is its companion repository: a...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
+  },
+  {
+    "id": "provider-d5f643cfa4a44b09d5",
+    "company": "Amazon AI",
+    "title": "Domain and publish date filters for Web Search on AgentCore",
+    "url": "https://aws.amazon.com/blogs/machine-learning/domain-and-publish-date-filters-for-web-search-on-agentcore/",
+    "published_at": "2026-08-19T22:13:20.000Z",
+    "source_type": "rss_official",
+    "summary": "Web Search on Amazon Bedrock AgentCore now supports runtime domain and published-date filtering. New per-request filters give developers per-call control over which web sources their agents consult and how fresh those sources must be, all enforced server-side. This release also expands Web Search to the Europe (Ireland) and Asia Pacific (Tokyo) Regions.",
+    "content": "Web Search on Amazon Bedrock AgentCore now supports runtime domain and published-date filtering. New per-request filters give developers per-call control over which web sources their agents consult and how fresh those sources must be, all enforced server-side. This release also expands Web Search to the Europe (Ireland) and Asia Pacific (Tokyo) Regions.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-96abf18d808f7b10cd",
+    "company": "Amazon AI",
+    "title": "Automate Document Processing with Quick Automate and the IDP Accelerator",
+    "url": "https://aws.amazon.com/blogs/machine-learning/automate-document-processing-with-quick-automate-and-the-idp-accelerator/",
+    "published_at": "2026-08-19T22:09:56.000Z",
+    "source_type": "rss_official",
+    "summary": "Classifying, extracting, and validating high volumes of documents is a challenge across banking, insurance, healthcare, and the public sector. See how a mid-size mortgage lender automates its entire document intake pipeline, from email to validated data, using the AWS GAIIC IDP Accelerator and Amazon Quick Automate.",
+    "content": "Classifying, extracting, and validating high volumes of documents is a challenge across banking, insurance, healthcare, and the public sector. See how a mid-size mortgage lender automates its entire document intake pipeline, from email to validated data, using the AWS GAIIC IDP Accelerator and Amazon Quick Automate.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-6a5a5a1e04bad4a80d",
+    "company": "Amazon AI",
+    "title": "Asynchronous patterns for calling Amazon Bedrock AgentCore agents in serverless pipelines",
+    "url": "https://aws.amazon.com/blogs/machine-learning/asynchronous-patterns-for-calling-amazon-bedrock-agentcore-agents-in-serverless-pipelines/",
+    "published_at": "2026-08-19T22:06:09.000Z",
+    "source_type": "rss_official",
+    "summary": "In this post, you learn three serverless patterns (task-token callback, direct service integration, and durable functions) for invoking Amazon Bedrock AgentCore agents asynchronously from AWS Step Functions pipelines, eliminating idle compute costs while your AI agent processes requests.",
+    "content": "In this post, you learn three serverless patterns (task-token callback, direct service integration, and durable functions) for invoking Amazon Bedrock AgentCore agents asynchronously from AWS Step Functions pipelines, eliminating idle compute costs while your AI agent processes requests.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-f6bdf1bff160aeebfb",
+    "company": "Amazon AI",
+    "title": "How Fanatics Betting and Gaming built a multi-agent customer support system",
+    "url": "https://aws.amazon.com/blogs/machine-learning/how-fanatics-betting-and-gaming-built-a-multi-agent-customer-support-system/",
+    "published_at": "2026-08-19T20:40:45.000Z",
+    "source_type": "rss_official",
+    "summary": "Fanatics Betting and Gaming built a multi-agent customer support system on AWS to handle the complexity of sports betting: state-specific rules, real-time responsible gaming, and traffic spikes during major sporting events. This post walks through the architecture, the AWS services involved, and the patterns for your own multi-agent support solution.",
+    "content": "Fanatics Betting and Gaming built a multi-agent customer support system on AWS to handle the complexity of sports betting: state-specific rules, real-time responsible gaming, and traffic spikes during major sporting events. This post walks through the architecture, the AWS services involved, and the patterns for your own multi-agent support solution.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-c84a6230fd962a1e86",
+    "company": "Amazon AI",
+    "title": "KnowledgeForge: mining gold from the ITSM ticket graveyard",
+    "url": "https://aws.amazon.com/blogs/machine-learning/knowledgeforge-mining-gold-from-the-itsm-ticket-graveyard/",
+    "published_at": "2026-08-19T20:36:50.000Z",
+    "source_type": "rss_official",
+    "summary": "KnowledgeForge mines resolved ITSM incident tickets into new knowledge base articles and automatically curates the existing library by deduplicating, quality-scoring, and improving content, using Amazon Bedrock, Amazon S3 Vectors, and AWS Step Functions in a multi-tenant, closed-loop pipeline.",
+    "content": "KnowledgeForge mines resolved ITSM incident tickets into new knowledge base articles and automatically curates the existing library by deduplicating, quality-scoring, and improving content, using Amazon Bedrock, Amazon S3 Vectors, and AWS Step Functions in a multi-tenant, closed-loop pipeline.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-1e2a0c2e3dd943a5b0",
+    "company": "OpenAI",
+    "title": "Offering Zero Data Retention for frontier models",
+    "url": "https://openai.com/index/offering-zero-data-retention-for-frontier-models",
+    "published_at": "2026-08-19T19:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "OpenAI reaffirms Zero Data Retention for eligible API customers and previews Private Safety Processing for advanced AI safety without compromising data privacy.",
+    "content": "OpenAI reaffirms Zero Data Retention for eligible API customers and previews Private Safety Processing for advanced AI safety without compromising data privacy.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-ec47a724f50a53e138",
+    "company": "NVIDIA AI",
+    "title": "Building Federated Multimodal AI Workflows with NVIDIA FLARE",
+    "url": "https://developer.nvidia.com/blog/building-federated-multimodal-ai-workflows-with-nvidia-flare/",
+    "published_at": "2026-08-19T17:50:47.000Z",
+    "source_type": "rss_official",
+    "summary": "Modern vision-language models (VLMs) can support tasks such as visual question answering, captioning, and image-text reasoning. In practice, however, the data...",
+    "content": "Modern vision-language models (VLMs) can support tasks such as visual question answering, captioning, and image-text reasoning. In practice, however, the data...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
+  },
+  {
+    "id": "provider-1d7762f101d6f99391",
+    "company": "NVIDIA AI",
+    "title": "Post-Train NVIDIA Cosmos 3 Edge for On-Device Robot Control",
+    "url": "https://developer.nvidia.com/blog/post-train-nvidia-cosmos-3-edge-for-on-device-robot-control/",
+    "published_at": "2026-08-19T16:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Robots need policies that can adapt to their sensors, environments, and tasks while running on onboard computing hardware. World models offer a foundation for...",
+    "content": "Robots need policies that can adapt to their sensors, environments, and tasks while running on onboard computing hardware. World models offer a foundation for...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
+  },
+  {
+    "id": "provider-82297f1fd9657df1a3",
+    "company": "NVIDIA AI",
+    "title": "Evaluating AI Agent Skill Performance with NVIDIA SkillEvaluator",
+    "url": "https://developer.nvidia.com/blog/evaluating-ai-agent-skill-performance-with-nvidia-skillevaluator/",
+    "published_at": "2026-08-19T16:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "AI agents are only as effective as the context they receive. Even with capable models and well-documented NVIDIA libraries, agents can spend extra steps finding...",
+    "content": "AI agents are only as effective as the context they receive. Even with capable models and well-documented NVIDIA libraries, agents can spend extra steps finding...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
+  },
+  {
+    "id": "provider-92239cd69c1abbd7f5",
+    "company": "Hugging Face",
+    "title": "LFM2.5 Q4\\_0 Checkpoints from Quantization-Aware Distillation",
+    "url": "https://huggingface.co/blog/LiquidAI/qad",
+    "published_at": "2026-08-19T13:48:49.000Z",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://huggingface.co/blog/feed.xml"
+  },
+  {
     "id": "provider-557bcdeb2807db3234",
     "company": "IBM Research",
     "title": "IBM’s new modular architecture for cryogenic systems",
@@ -9,6 +130,17 @@
     "summary": "Modular approach to housing and cooling quantum processors clears a path for interconnected, fault-tolerant systems.",
     "content": "Modular approach to housing and cooling quantum processors clears a path for interconnected, fault-tolerant systems.",
     "source_url": "https://research.ibm.com/rss"
+  },
+  {
+    "id": "provider-7311a3121b0d698a75",
+    "company": "OpenAI",
+    "title": "Replit expands access to software creation with GPT-5.6 Luna",
+    "url": "https://openai.com/index/replit",
+    "published_at": "2026-08-19T07:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Replit introduces Free Mode, powered by GPT-5.6 Luna, so anyone can turn ideas into working software without worrying about token costs.",
+    "content": "Replit introduces Free Mode, powered by GPT-5.6 Luna, so anyone can turn ideas into working software without worrying about token costs.",
+    "source_url": "https://openai.com/news/rss.xml"
   },
   {
     "id": "provider-ce2dfc66cdce29e2a8",
@@ -484,17 +616,6 @@
     "source_url": "https://deepmind.google/blog/rss.xml"
   },
   {
-    "id": "provider-3d67275cf0d26aa191",
-    "company": "Hugging Face",
-    "title": "LFM2.5-VL-3B for Better and Faster Vision Capabilities for the Edge",
-    "url": "https://huggingface.co/blog/LiquidAI/lfm2-5-vl-3b",
-    "published_at": "2026-08-12T14:00:51.000Z",
-    "source_type": "rss_official",
-    "summary": "",
-    "content": "",
-    "source_url": "https://huggingface.co/blog/feed.xml"
-  },
-  {
     "id": "provider-ae24c458e1ad59a609",
     "company": "NVIDIA AI",
     "title": "NVIDIA CEO Tops Glassdoor’s 2026 List of Best CEOs",
@@ -504,39 +625,6 @@
     "summary": "NVIDIA founder and CEO Jensen Huang is ranked No. 1 on Glassdoor’s Best CEOs list for 2026. In the just-released ranking, recognition is earned directly from the people who know their leadership the best — employees. Huang topped the list, with 99% of employees approving of the job he does. “As AI and shifting expectations […]",
     "content": "NVIDIA founder and CEO Jensen Huang is ranked No. 1 on Glassdoor’s Best CEOs list for 2026. In the just-released ranking, recognition is earned directly from the people who know their leadership the best — employees. Huang topped the list, with 99% of employees approving of the job he does. “As AI and shifting expectations […]",
     "source_url": "https://blogs.nvidia.com/feed/"
-  },
-  {
-    "id": "provider-bf90df5182593ffa4a",
-    "company": "Amazon AI",
-    "title": "How OneAdvanced deployed over 50 AI agents on UK-sovereign AWS",
-    "url": "https://aws.amazon.com/blogs/machine-learning/how-oneadvanced-deployed-over-50-ai-agents-on-uk-sovereign-aws/",
-    "published_at": "2026-08-12T13:46:28.000Z",
-    "source_type": "rss_official",
-    "summary": "Learn how OneAdvanced, a UK enterprise software provider, built a UK-sovereign AI platform by self-hosting Llama 4 Maverick and Llama Guard 4 on Amazon SageMaker AI, with a RAG pipeline on pgvector and over 50 agents built with Strands Agents SDK on Amazon ECS.",
-    "content": "Learn how OneAdvanced, a UK enterprise software provider, built a UK-sovereign AI platform by self-hosting Llama 4 Maverick and Llama Guard 4 on Amazon SageMaker AI, with a RAG pipeline on pgvector and over 50 agents built with Strands Agents SDK on Amazon ECS.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
-    "id": "provider-eb50d11a60d7fe6b46",
-    "company": "Amazon AI",
-    "title": "Pay with confidence: How Solv Labs built verifiable, auditable agent payments on Amazon Bedrock AgentCore payments",
-    "url": "https://aws.amazon.com/blogs/machine-learning/pay-with-confidence-how-solv-labs-built-verifiable-auditable-agent-payments-on-amazon-bedrock-agentcore-payments/",
-    "published_at": "2026-08-12T13:44:58.000Z",
-    "source_type": "rss_official",
-    "summary": "Solv Labs built a governed agent-payments workflow on Amazon Bedrock AgentCore payments, where every transaction is authorized, attested in an AWS Nitro Enclave, priced for risk, and anchored to a public blockchain before settlement. See how the pattern gives enterprises a verifiable, auditable trail for autonomous agent payments in regulated environments.",
-    "content": "Solv Labs built a governed agent-payments workflow on Amazon Bedrock AgentCore payments, where every transaction is authorized, attested in an AWS Nitro Enclave, priced for risk, and anchored to a public blockchain before settlement. See how the pattern gives enterprises a verifiable, auditable trail for autonomous agent payments in regulated environments.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
-    "id": "provider-ed529d92ad7d77e711",
-    "company": "Amazon AI",
-    "title": "Tiered KV cache for large LLMs on Amazon SageMaker HyperPod with Curvine",
-    "url": "https://aws.amazon.com/blogs/machine-learning/tiered-kv-cache-for-large-llms-on-amazon-sagemaker-hyperpod-with-curvine/",
-    "published_at": "2026-08-12T13:42:48.000Z",
-    "source_type": "rss_official",
-    "summary": "Running large language model inference at scale forces a KV cache trade-off: oversized GPU instances or slow time-to-first-token. This post builds a tiered KV cache on Amazon SageMaker HyperPod that extends the cache into a shared, distributed NVMe pool with Curvine, so replicas reuse cache at near-local-disk speeds on cost-efficient instances.",
-    "content": "Running large language model inference at scale forces a KV cache trade-off: oversized GPU instances or slow time-to-first-token. This post builds a tiered KV cache on Amazon SageMaker HyperPod that extends the cache into a shared, distributed NVMe pool with Curvine, so replicas reuse cache at near-local-disk speeds on cost-efficient instances.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
   },
   {
     "id": "provider-37dc6b1f4e8a328eb7",
@@ -594,17 +682,6 @@
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
-    "id": "provider-b753fb555a7451fa9c",
-    "company": "Amazon AI",
-    "title": "Accelerate cyber defense with OpenAI and AWS: Daybreak Red & Daybreak Blue now available to eligible customers on Amazon Bedrock",
-    "url": "https://aws.amazon.com/blogs/machine-learning/accelerate-cyber-defense-with-openai-and-aws-daybreak-red-daybreak-blue-now-available-to-eligible-customers-on-amazon-bedrock/",
-    "published_at": "2026-08-11T21:38:06.000Z",
-    "source_type": "rss_official",
-    "summary": "Daybreak Red and Daybreak Blue from OpenAI, specialized cyber defense models from OpenAI, are now available on Amazon Bedrock to eligible customers. Both models run with zero-operator access enforced at the chip, keeping your code and vulnerability data secure.",
-    "content": "Daybreak Red and Daybreak Blue from OpenAI, specialized cyber defense models from OpenAI, are now available on Amazon Bedrock to eligible customers. Both models run with zero-operator access enforced at the chip, keeping your code and vulnerability data secure.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
     "id": "provider-57c45a684c9735c55d",
     "company": "NVIDIA AI",
     "title": "NVIDIA JetPack 7.2.1 Adds Agentic Video Skills and T3000 Emulation",
@@ -627,17 +704,6 @@
     "source_url": "https://www.amazon.science/index.rss"
   },
   {
-    "id": "provider-60e51c09049492ded1",
-    "company": "Amazon AI",
-    "title": "How ONESTRUCTION built the Ishigaki-IDS foundation model with AWS GenAIIC",
-    "url": "https://aws.amazon.com/blogs/machine-learning/how-onestruction-built-the-ishigaki-ids-foundation-model-with-aws-genaiic/",
-    "published_at": "2026-08-11T16:14:33.000Z",
-    "source_type": "rss_official",
-    "summary": "ONESTRUCTION, with technical advisory from the AWS Generative AI Innovation Center, built Ishigaki-IDS, a foundation model specialized for construction and BIM workflows. This architectural case study shows how they combined synthetic data, a three-stage training pipeline, and verifiable rewards on Amazon EC2 to build a domain model in a data-scarce field.",
-    "content": "ONESTRUCTION, with technical advisory from the AWS Generative AI Innovation Center, built Ishigaki-IDS, a foundation model specialized for construction and BIM workflows. This architectural case study shows how they combined synthetic data, a three-stage training pipeline, and verifiable rewards on Amazon EC2 to build a domain model in a data-scarce field.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
     "id": "provider-0975f39ac7f88f22dc",
     "company": "NVIDIA AI",
     "title": "Why Scaling AI Compute Performance Requires a New Power Architecture",
@@ -647,6 +713,17 @@
     "summary": "Every new generation of accelerated computing demands more from the infrastructure underneath it — more compute performance, higher rack density and more efficient, scalable power distribution. The bottleneck isn’t just wattage. It’s how power gets from the grid to the GPU. In traditional power delivery, electricity travels from the grid as an alternating current (AC) […]",
     "content": "Every new generation of accelerated computing demands more from the infrastructure underneath it — more compute performance, higher rack density and more efficient, scalable power distribution. The bottleneck isn’t just wattage. It’s how power gets from the grid to the GPU. In traditional power delivery, electricity travels from the grid as an alternating current (AC) […]",
     "source_url": "https://blogs.nvidia.com/feed/"
+  },
+  {
+    "id": "provider-4291edb317f3843768",
+    "company": "Hugging Face",
+    "title": "Thinking of ACE? We Can Do It with Fewer Tokens",
+    "url": "https://huggingface.co/blog/ibm-research/altk-evolve-sldd",
+    "published_at": "2026-08-11T13:37:10.000Z",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://huggingface.co/blog/feed.xml"
   },
   {
     "id": "provider-c2e400a82ca1d5a40c",
@@ -2002,17 +2079,6 @@
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
-    "id": "provider-82a6fc4eef8ad34bc2",
-    "company": "NVIDIA AI",
-    "title": "How to Run an Autoresearch Workflow with RL Agent Skills and NVIDIA NeMo",
-    "url": "https://developer.nvidia.com/blog/how-to-run-an-autoresearch-workflow-with-rl-agent-skills-and-nvidia-nemo/",
-    "published_at": "2026-07-14T16:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Coding AI agents are becoming practical operators for long-running machine learning (ML) workflows. They can inspect repositories, set up runtimes, resolve...",
-    "content": "Coding AI agents are becoming practical operators for long-running machine learning (ML) workflows. They can inspect repositories, set up runtimes, resolve...",
-    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
     "id": "provider-3a98145a3310a1e119",
     "company": "NVIDIA AI",
     "title": "Post-Train NVIDIA Cosmos 3 in One Day Using Agent Skills",
@@ -2021,6 +2087,17 @@
     "source_type": "rss_official",
     "summary": "What if autonomous coding AI agents could push your vision reasoning models above 90% accuracy with almost no manual effort? When adapting vision reasoning...",
     "content": "What if autonomous coding AI agents could push your vision reasoning models above 90% accuracy with almost no manual effort? When adapting vision reasoning...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
+  },
+  {
+    "id": "provider-82a6fc4eef8ad34bc2",
+    "company": "NVIDIA AI",
+    "title": "How to Run an Autoresearch Workflow with RL Agent Skills and NVIDIA NeMo",
+    "url": "https://developer.nvidia.com/blog/how-to-run-an-autoresearch-workflow-with-rl-agent-skills-and-nvidia-nemo/",
+    "published_at": "2026-07-14T16:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Coding AI agents are becoming practical operators for long-running machine learning (ML) workflows. They can inspect repositories, set up runtimes, resolve...",
+    "content": "Coding AI agents are becoming practical operators for long-running machine learning (ML) workflows. They can inspect repositories, set up runtimes, resolve...",
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
@@ -2550,28 +2627,6 @@
     "summary": "",
     "content": "",
     "source_url": "https://huggingface.co/blog/feed.xml"
-  },
-  {
-    "id": "provider-ce15d91b9c8f986bca",
-    "company": "OpenAI",
-    "title": "How ChatGPT adoption has expanded",
-    "url": "https://openai.com/index/how-chatgpt-adoption-has-expanded",
-    "published_at": "2026-06-30T09:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "New OpenAI Signals data shows how ChatGPT adoption is growing globally, with users increasing usage, exploring more capabilities, and driving growth across regions and languages.",
-    "content": "New OpenAI Signals data shows how ChatGPT adoption is growing globally, with users increasing usage, exploring more capabilities, and driving growth across regions and languages.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
-    "id": "provider-413b6224c8f2540224",
-    "company": "OpenAI",
-    "title": "Core dump epidemiology: fixing an 18-year-old bug",
-    "url": "https://openai.com/index/core-dump-epidemiology-data-infrastructure-bug",
-    "published_at": "2026-06-30T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "OpenAI engineers used large-scale core dump analysis to debug rare infrastructure crashes, uncovering both a hardware fault and a long-standing software bug.",
-    "content": "OpenAI engineers used large-scale core dump analysis to debug rare infrastructure crashes, uncovering both a hardware fault and a long-standing software bug.",
-    "source_url": "https://openai.com/news/rss.xml"
   },
   {
     "id": "provider-487ea3ed9fdad12896",
@@ -3520,50 +3575,6 @@
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
-    "id": "provider-cd9f8d8d27486df287",
-    "company": "NVIDIA AI",
-    "title": "Mastering Agentic Techniques: AI Agent Customization",
-    "url": "https://developer.nvidia.com/blog/mastering-agentic-techniques-ai-agent-customization/",
-    "published_at": "2026-05-20T20:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Autonomous AI agents are taking on all types of work for businesses: routing logistics fleets, triaging support tickets, generating code, and orchestrating...",
-    "content": "Autonomous AI agents are taking on all types of work for businesses: routing logistics fleets, triaging support tickets, generating code, and orchestrating...",
-    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
-    "id": "provider-e1cc2632d25835a004",
-    "company": "NVIDIA AI",
-    "title": "Add a Specialized Deep Research Skill to Agent Harnesses",
-    "url": "https://developer.nvidia.com/blog/add-a-specialized-deep-research-skill-to-agent-harnesses/",
-    "published_at": "2026-05-20T16:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Agent harnesses like Claude Code, Codex, and LangChain Deep Agents are excellent orchestrators. They manage sessions, chain tools, execute code, and respond to...",
-    "content": "Agent harnesses like Claude Code, Codex, and LangChain Deep Agents are excellent orchestrators. They manage sessions, chain tools, execute code, and respond to...",
-    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
-    "id": "provider-23e81826c8831c08b2",
-    "company": "NVIDIA AI",
-    "title": "NVIDIA-Verified Agent Skills Provide Capability Governance for AI Agents",
-    "url": "https://developer.nvidia.com/blog/nvidia-verified-agent-skills-provide-capability-governance-for-ai-agents/",
-    "published_at": "2026-05-19T23:40:45.000Z",
-    "source_type": "rss_official",
-    "summary": "Autonomous AI agents are becoming more capable. Open models, Model Context Protocol (MCP)-connected tools, and portable skills are also making agents easier to...",
-    "content": "Autonomous AI agents are becoming more capable. Open models, Model Context Protocol (MCP)-connected tools, and portable skills are also making agents easier to...",
-    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
-    "id": "provider-690b84faafddfc36bb",
-    "company": "NVIDIA AI",
-    "title": "Mastering Agentic Techniques: AI Agent Evaluation",
-    "url": "https://developer.nvidia.com/blog/mastering-agentic-techniques-ai-agent-evaluation/",
-    "published_at": "2026-05-19T20:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Evaluating an AI model and evaluating an AI agent are related—but they answer fundamentally different questions. A model benchmark tests the capability of a...",
-    "content": "Evaluating an AI model and evaluating an AI agent are related—but they answer fundamentally different questions. A model benchmark tests the capability of a...",
-    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
     "id": "provider-389c0be6bc56463eee",
     "company": "Hugging Face",
     "title": "OlmoEarth v1.1: A more efficient family of Earth observation models",
@@ -4053,17 +4064,6 @@
     "title": "AI and the Future of Cybersecurity: Why Openness Matters",
     "url": "https://huggingface.co/blog/cybersecurity-openness",
     "published_at": "2026-04-21T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "",
-    "content": "",
-    "source_url": "https://huggingface.co/blog/feed.xml"
-  },
-  {
-    "id": "provider-e78573a7b1cc37bc4e",
-    "company": "Hugging Face",
-    "title": "Ecom-RLVE: Adaptive Verifiable Environments for E-Commerce Conversational Agents",
-    "url": "https://huggingface.co/blog/ecom-rlve",
-    "published_at": "2026-04-16T00:00:00.000Z",
     "source_type": "rss_official",
     "summary": "",
     "content": "",
