@@ -1,5 +1,159 @@
 [
   {
+    "id": "provider-acf8deea426312562c",
+    "company": "Amazon AI",
+    "title": "Introducing cross-Region inference for OpenAI GPT-5.6 models on Amazon Bedrock",
+    "url": "https://aws.amazon.com/blogs/machine-learning/introducing-cross-region-inference-for-openai-gpt-5-6-models-on-amazon-bedrock/",
+    "published_at": "2026-08-20T21:46:03.000Z",
+    "source_type": "rss_official",
+    "summary": "Amazon Bedrock now offers OpenAI GPT-5.6 models (Sol, Terra, and Luna) in more than 25 AWS Regions with cross-Region inference. Learn how US geographic and global inference profiles route requests for higher throughput, how to call the models with the OpenAI and Converse APIs, and how to configure IAM, quotas, and monitoring.",
+    "content": "Amazon Bedrock now offers OpenAI GPT-5.6 models (Sol, Terra, and Luna) in more than 25 AWS Regions with cross-Region inference. Learn how US geographic and global inference profiles route requests for higher throughput, how to call the models with the OpenAI and Converse APIs, and how to configure IAM, quotas, and monitoring.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-07b39efbb04ca5a9d6",
+    "company": "Amazon AI",
+    "title": "Build a no-code ML workflow with Snowflake, Amazon SageMaker Canvas and Amazon Quick – Part 1: Setting up your Snowflake environment",
+    "url": "https://aws.amazon.com/blogs/machine-learning/build-a-no-code-ml-workflow-with-snowflake-amazon-sagemaker-canvas-and-amazon-quick-part-1-setting-up-your-snowflake-environment/",
+    "published_at": "2026-08-20T21:23:38.000Z",
+    "source_type": "rss_official",
+    "summary": "Healthcare, retail, and life sciences teams store large volumes of operational data in Snowflake, but turning it into predictions is hard. In Part 1 of this series, you set up your AWS account and Snowflake environment for a no-code ML workflow with Amazon SageMaker Canvas, laying the foundation for building a fraud detection model without writing code.",
+    "content": "Healthcare, retail, and life sciences teams store large volumes of operational data in Snowflake, but turning it into predictions is hard. In Part 1 of this series, you set up your AWS account and Snowflake environment for a no-code ML workflow with Amazon SageMaker Canvas, laying the foundation for building a fraud detection model without writing code.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-9e7d17246036d932c2",
+    "company": "Amazon AI",
+    "title": "Build a no-code ML workflow with Snowflake, Amazon SageMaker Canvas and Amazon Quick – Part 2: Data preparation and model building with Amazon SageMaker Canvas",
+    "url": "https://aws.amazon.com/blogs/machine-learning/build-a-no-code-ml-workflow-with-snowflake-amazon-sagemaker-canvas-and-amazon-quick-part-2-data-preparation-and-model-building-with-amazon-sagemaker-canvas/",
+    "published_at": "2026-08-20T21:23:29.000Z",
+    "source_type": "rss_official",
+    "summary": "In Part 2 of this no-code ML series, you connect Amazon SageMaker Canvas to Snowflake, prepare and join transaction data with Data Wrangler visual transformations, and train an XGBoost fraud detection model. All without writing machine learning code, laying the groundwork for interactive dashboards in Part 3.",
+    "content": "In Part 2 of this no-code ML series, you connect Amazon SageMaker Canvas to Snowflake, prepare and join transaction data with Data Wrangler visual transformations, and train an XGBoost fraud detection model. All without writing machine learning code, laying the groundwork for interactive dashboards in Part 3.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-a75f14ef8f6f5dba01",
+    "company": "Amazon AI",
+    "title": "Build a no-code ML workflow with Snowflake, Amazon SageMaker Canvas and Amazon Quick – Part 3: Visualizing insights with Amazon Quick Sight",
+    "url": "https://aws.amazon.com/blogs/machine-learning/build-a-no-code-ml-workflow-with-snowflake-amazon-sagemaker-canvas-and-amazon-quick-part-3-visualizing-insights-with-amazon-quick-sight/",
+    "published_at": "2026-08-20T21:23:23.000Z",
+    "source_type": "rss_official",
+    "summary": "In Part 3 of this no-code ML series, you bring fraud detection predictions to life. Import your Amazon SageMaker Canvas predictions into Amazon Quick Sight, build interactive dashboards, use generative BI to answer questions in natural language, and publish AI-generated executive summaries for stakeholders.",
+    "content": "In Part 3 of this no-code ML series, you bring fraud detection predictions to life. Import your Amazon SageMaker Canvas predictions into Amazon Quick Sight, build interactive dashboards, use generative BI to answer questions in natural language, and publish AI-generated executive summaries for stakeholders.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-36f40212ab2682a3a5",
+    "company": "Hugging Face",
+    "title": "Up to 3.2x Faster Inference with LFM2.5-DSpark",
+    "url": "https://huggingface.co/blog/LiquidAI/lfm25-dspark",
+    "published_at": "2026-08-20T16:52:57.000Z",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://huggingface.co/blog/feed.xml"
+  },
+  {
+    "id": "provider-0f238033252c9491b1",
+    "company": "Amazon AI",
+    "title": "Authoring Dogwood policies from natural language in Amazon Bedrock AgentCore",
+    "url": "https://aws.amazon.com/blogs/machine-learning/authoring-dogwood-policies-from-natural-language-in-amazon-bedrock-agentcore/",
+    "published_at": "2026-08-20T16:31:28.000Z",
+    "source_type": "rss_official",
+    "summary": "AI agents can take actions that do not match your organization's policies. Policy in Amazon Bedrock AgentCore lets teams enforce controls across agents, now including time-based constraints. This post shows how Policy Authoring turns natural-language policy documents into correct Dogwood policies, with worked examples and best practices.",
+    "content": "AI agents can take actions that do not match your organization's policies. Policy in Amazon Bedrock AgentCore lets teams enforce controls across agents, now including time-based constraints. This post shows how Policy Authoring turns natural-language policy documents into correct Dogwood policies, with worked examples and best practices.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-4ae461bc7f92774e80",
+    "company": "Amazon AI",
+    "title": "Scaling agentic AI: Enterprise patterns without vendor lock-in",
+    "url": "https://aws.amazon.com/blogs/machine-learning/scaling-agentic-ai-enterprise-patterns-without-vendor-lock-in/",
+    "published_at": "2026-08-20T16:24:12.000Z",
+    "source_type": "rss_official",
+    "summary": "Scaling agentic AI across an enterprise requires patterns that preserve flexibility while avoiding vendor lock-in. In this second post of our multi-agent series, we examine how ML teams operate many agentic AI systems across a multi-everything environment of frameworks, models, and providers, and the principles that let those systems scale together.",
+    "content": "Scaling agentic AI across an enterprise requires patterns that preserve flexibility while avoiding vendor lock-in. In this second post of our multi-agent series, we examine how ML teams operate many agentic AI systems across a multi-everything environment of frameworks, models, and providers, and the principles that let those systems scale together.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-fc4c23e08ad9edaba7",
+    "company": "Amazon AI",
+    "title": "Scaling cloud migrations with agentic AI on Amazon Bedrock AgentCore",
+    "url": "https://aws.amazon.com/blogs/machine-learning/scaling-cloud-migrations-with-agentic-ai-on-amazon-bedrock-agentcore/",
+    "published_at": "2026-08-20T16:11:18.000Z",
+    "source_type": "rss_official",
+    "summary": "Learn how AWS Professional Services uses a multi-agent framework built on Amazon Bedrock AgentCore to automate enterprise cloud migrations end to end. Purpose-built AI agents handle discovery, infrastructure as code generation, portfolio governance, and post-migration operations, reducing IaC development time from weeks to minutes.",
+    "content": "Learn how AWS Professional Services uses a multi-agent framework built on Amazon Bedrock AgentCore to automate enterprise cloud migrations end to end. Purpose-built AI agents handle discovery, infrastructure as code generation, portfolio governance, and post-migration operations, reducing IaC development time from weeks to minutes.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-1769eef911eb51d334",
+    "company": "Amazon AI",
+    "title": "AWS vector solutions: Build agentic AI where your data lives",
+    "url": "https://aws.amazon.com/blogs/machine-learning/aws-vector-solutions-build-agentic-ai-where-your-data-lives/",
+    "published_at": "2026-08-20T16:06:06.000Z",
+    "source_type": "rss_official",
+    "summary": "AWS offers a broad portfolio of vector search built directly into the databases and storage services you already use, with no standalone vector database or data migration required. This post covers six purpose-built services, a decision framework for choosing the right engine, and customer proof points for each.",
+    "content": "AWS offers a broad portfolio of vector search built directly into the databases and storage services you already use, with no standalone vector database or data migration required. This post covers six purpose-built services, a decision framework for choosing the right engine, and customer proof points for each.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-1c793f13f8c9457ca8",
+    "company": "NVIDIA AI",
+    "title": "How Generative Recommenders Are Redefining RecSys at Scale",
+    "url": "https://developer.nvidia.com/blog/how-generative-recommenders-are-redefining-recsys-at-scale/",
+    "published_at": "2026-08-20T16:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Recommender systems (RecSys) are one of the most ubiquitous machine learning problems in the consumer internet industry yet notoriously difficult to train and...",
+    "content": "Recommender systems (RecSys) are one of the most ubiquitous machine learning problems in the consumer internet industry yet notoriously difficult to train and...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
+  },
+  {
+    "id": "provider-c67fff66f019d8c53c",
+    "company": "Amazon AI",
+    "title": "Build intelligent security for healthcare APIs with Amazon Bedrock",
+    "url": "https://aws.amazon.com/blogs/machine-learning/build-intelligent-security-for-healthcare-apis-with-amazon-bedrock/",
+    "published_at": "2026-08-20T15:20:03.000Z",
+    "source_type": "rss_official",
+    "summary": "Learn how to add context-aware security monitoring to FHIR APIs using Amazon Bedrock. This post shows how to detect anomalous access patterns, classify data sensitivity automatically, and generate compliance reports in natural language, all without adding latency to clinical workflows.",
+    "content": "Learn how to add context-aware security monitoring to FHIR APIs using Amazon Bedrock. This post shows how to detect anomalous access patterns, classify data sensitivity automatically, and generate compliance reports in natural language, all without adding latency to clinical workflows.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-f6b32b7a8ce77a5639",
+    "company": "NVIDIA AI",
+    "title": "Bring the Fire: Play Games on GeForce NOW With New Firefox Browser Support",
+    "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-firefox/",
+    "published_at": "2026-08-20T13:00:24.000Z",
+    "source_type": "rss_official",
+    "summary": "It’s a new way into the cloud. GeForce NOW welcomes Firefox support to the cloud, opening up another way to jump into high-performance PC gaming straight from the browser, starting today. Whether on a school laptop or everyday PC, it’s now even easier to play supported PC games without downloading a dedicated app. Plus, discover […]",
+    "content": "It’s a new way into the cloud. GeForce NOW welcomes Firefox support to the cloud, opening up another way to jump into high-performance PC gaming straight from the browser, starting today. Whether on a school laptop or everyday PC, it’s now even easier to play supported PC games without downloading a dedicated app. Plus, discover […]",
+    "source_url": "https://blogs.nvidia.com/feed/"
+  },
+  {
+    "id": "provider-619630b26b2072a98e",
+    "company": "OpenAI",
+    "title": "Introducing AI Futures",
+    "url": "https://openai.com/index/introducing-ai-futures",
+    "published_at": "2026-08-20T07:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Introducing AI Futures, a new OpenAI blog exploring how transformative AI could reshape power, governance, the economy, and individual freedom.",
+    "content": "Introducing AI Futures, a new OpenAI blog exploring how transformative AI could reshape power, governance, the economy, and individual freedom.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-4f4ab23f1c086cbb9e",
+    "company": "OpenAI",
+    "title": "Stampli cuts launch hours by 68% using ChatGPT Work",
+    "url": "https://openai.com/index/stampli",
+    "published_at": "2026-08-20T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "With a fixed deadline and design resources committed elsewhere, Stampli used Codex and ChatGPT Work to compress weeks of launch production into days.",
+    "content": "With a fixed deadline and design resources committed elsewhere, Stampli used Codex and ChatGPT Work to compress weeks of launch production into days.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
     "id": "provider-624b28e25664b0bbf4",
     "company": "NVIDIA AI",
     "title": "Developing NVIDIA Holoscan Applications with CLI, Skills, and AI Coding Agents",
@@ -108,17 +262,6 @@
     "summary": "AI agents are only as effective as the context they receive. Even with capable models and well-documented NVIDIA libraries, agents can spend extra steps finding...",
     "content": "AI agents are only as effective as the context they receive. Even with capable models and well-documented NVIDIA libraries, agents can spend extra steps finding...",
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
-    "id": "provider-92239cd69c1abbd7f5",
-    "company": "Hugging Face",
-    "title": "LFM2.5 Q4\\_0 Checkpoints from Quantization-Aware Distillation",
-    "url": "https://huggingface.co/blog/LiquidAI/qad",
-    "published_at": "2026-08-19T13:48:49.000Z",
-    "source_type": "rss_official",
-    "summary": "",
-    "content": "",
-    "source_url": "https://huggingface.co/blog/feed.xml"
   },
   {
     "id": "provider-557bcdeb2807db3234",
@@ -341,28 +484,6 @@
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
-    "id": "provider-c3b46adbd75246b447",
-    "company": "Amazon AI",
-    "title": "NVIDIA Nemotron 3.5 Lightning now available in Amazon SageMaker JumpStart",
-    "url": "https://aws.amazon.com/blogs/machine-learning/nvidia-nemotron-3-5-lightning-now-available-in-amazon-sagemaker-jumpstart/",
-    "published_at": "2026-08-17T18:06:33.000Z",
-    "source_type": "rss_official",
-    "summary": "NVIDIA Nemotron 3.5 Lightning, an open model built for high-volume agentic workloads, is now available in Amazon SageMaker JumpStart. This post shows how to deploy the 30B Mixture-of-Experts model (3B active), which delivers up to 4x higher throughput and up to 30% faster task completion for always-on agents.",
-    "content": "NVIDIA Nemotron 3.5 Lightning, an open model built for high-volume agentic workloads, is now available in Amazon SageMaker JumpStart. This post shows how to deploy the 30B Mixture-of-Experts model (3B active), which delivers up to 4x higher throughput and up to 30% faster task completion for always-on agents.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
-    "id": "provider-26a29d0a321200eab5",
-    "company": "Amazon AI",
-    "title": "Build OpenClaw agents that transact with Amazon Bedrock AgentCore payments",
-    "url": "https://aws.amazon.com/blogs/machine-learning/build-openclaw-agents-that-transact-with-amazon-bedrock-agentcore-payments/",
-    "published_at": "2026-08-17T16:19:56.000Z",
-    "source_type": "rss_official",
-    "summary": "Give an autonomous agent a wallet and spending guardrails so it can pay for paywalled APIs, MCP servers, and web content. This post connects OpenClaw to Amazon Bedrock AgentCore payments and the x402 protocol, using the aws-agents-pay plugin to make bounded, human-approved testnet payments.",
-    "content": "Give an autonomous agent a wallet and spending guardrails so it can pay for paywalled APIs, MCP servers, and web content. This post connects OpenClaw to Amazon Bedrock AgentCore payments and the x402 protocol, using the aws-agents-pay plugin to make bounded, human-approved testnet payments.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
     "id": "provider-8eaf0689424bfa0796",
     "company": "NVIDIA AI",
     "title": "Securing the Infrastructure of Intelligence",
@@ -418,28 +539,6 @@
     "source_url": "https://blogs.nvidia.com/feed/"
   },
   {
-    "id": "provider-bf30f7b095456c562b",
-    "company": "Amazon AI",
-    "title": "Custom reward functions for multi-turn reinforcement learning with Amazon Nova Forge",
-    "url": "https://aws.amazon.com/blogs/machine-learning/custom-reward-functions-for-multi-turn-reinforcement-learning-with-amazon-nova-forge/",
-    "published_at": "2026-08-14T16:02:10.000Z",
-    "source_type": "rss_official",
-    "summary": "In multi-turn reinforcement learning, your custom reward function decides what the model actually learns. This post shows how to design a composite multi-turn reward for Amazon Nova Forge, execute model-generated code safely inside it, and instrument each component to catch the pitfalls that quietly collapse a reward.",
-    "content": "In multi-turn reinforcement learning, your custom reward function decides what the model actually learns. This post shows how to design a composite multi-turn reward for Amazon Nova Forge, execute model-generated code safely inside it, and instrument each component to catch the pitfalls that quietly collapse a reward.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
-    "id": "provider-d3c5ea2ce5ad246e4a",
-    "company": "Amazon AI",
-    "title": "Building agentic workflows with SageMaker AI and Bedrock AgentCore",
-    "url": "https://aws.amazon.com/blogs/machine-learning/building-agentic-workflows-with-sagemaker-ai-and-bedrock-agentcore/",
-    "published_at": "2026-08-14T15:58:44.000Z",
-    "source_type": "rss_official",
-    "summary": "Learn how to combine OpenAI-compatible endpoints on Amazon SageMaker AI with Amazon Bedrock AgentCore runtime to build a multi-agent workflow where each specialized agent uses the model best suited to its job. This post also shows how to get token-level observability from SageMaker endpoints that Strands Agents does not instrument by default.",
-    "content": "Learn how to combine OpenAI-compatible endpoints on Amazon SageMaker AI with Amazon Bedrock AgentCore runtime to build a multi-agent workflow where each specialized agent uses the model best suited to its job. This post also shows how to get token-level observability from SageMaker endpoints that Strands Agents does not instrument by default.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
     "id": "provider-2e27645ee2e4408f0c",
     "company": "Hugging Face",
     "title": "State of Open Models: Summer 2026 Observations",
@@ -471,50 +570,6 @@
     "summary": "",
     "content": "",
     "source_url": "https://deepmind.google/blog/rss.xml"
-  },
-  {
-    "id": "provider-ce2fcb2078931d7b86",
-    "company": "Amazon AI",
-    "title": "Monitor on-premises and multi-cloud AI agents with AgentCore Observability",
-    "url": "https://aws.amazon.com/blogs/machine-learning/monitor-on-premises-and-multi-cloud-ai-agents-with-agentcore-observability/",
-    "published_at": "2026-08-13T16:02:10.000Z",
-    "source_type": "rss_official",
-    "summary": "Set up Amazon Bedrock AgentCore Observability for AI agents running outside AWS: on-premises, on GCP, on Azure, or on developer machines. This walkthrough uses the AWS Distro for OpenTelemetry (ADOT) and IAM credentials to route session traces, span metrics, and token usage to the same AgentCore Observability dashboard.",
-    "content": "Set up Amazon Bedrock AgentCore Observability for AI agents running outside AWS: on-premises, on GCP, on Azure, or on developer machines. This walkthrough uses the AWS Distro for OpenTelemetry (ADOT) and IAM credentials to route session traces, span metrics, and token usage to the same AgentCore Observability dashboard.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
-    "id": "provider-b28958fa7e4ec9b3da",
-    "company": "Amazon AI",
-    "title": "Automate legacy web applications with Amazon Bedrock AgentCore Browser Tool",
-    "url": "https://aws.amazon.com/blogs/machine-learning/automate-legacy-web-applications-with-amazon-bedrock-agentcore-browser-tool/",
-    "published_at": "2026-08-13T15:56:07.000Z",
-    "source_type": "rss_official",
-    "summary": "Learn how to automate legacy web applications that need human-like interaction using Amazon Bedrock AgentCore Browser Tool and Strands Agents. This walkthrough covers a reference architecture for an AI-powered digital worker that drives legacy interfaces through secure, isolated browser sessions while preserving human oversight and full audit trails.",
-    "content": "Learn how to automate legacy web applications that need human-like interaction using Amazon Bedrock AgentCore Browser Tool and Strands Agents. This walkthrough covers a reference architecture for an AI-powered digital worker that drives legacy interfaces through secure, isolated browser sessions while preserving human oversight and full audit trails.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
-    "id": "provider-a89005ee78562e1992",
-    "company": "Amazon AI",
-    "title": "Accelerating M&A due diligence with Amazon Bedrock AgentCore",
-    "url": "https://aws.amazon.com/blogs/machine-learning/accelerating-ma-due-diligence-with-amazon-bedrock-agentcore/",
-    "published_at": "2026-08-13T15:52:44.000Z",
-    "source_type": "rss_official",
-    "summary": "Learn how to build a multi-agent M&A due diligence system on Amazon Bedrock AgentCore. This post walks through a reference architecture that combines agent orchestration, knowledge retrieval, and governance controls, then deploys a complete sample you can run in your own AWS account.",
-    "content": "Learn how to build a multi-agent M&A due diligence system on Amazon Bedrock AgentCore. This post walks through a reference architecture that combines agent orchestration, knowledge retrieval, and governance controls, then deploys a complete sample you can run in your own AWS account.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
-    "id": "provider-d7726a6f1058b0e017",
-    "company": "Amazon AI",
-    "title": "Amazon Quick for Microsoft 365: Agentic AI where you work",
-    "url": "https://aws.amazon.com/blogs/machine-learning/amazon-quick-for-microsoft-365-agentic-ai-where-you-work/",
-    "published_at": "2026-08-13T15:48:15.000Z",
-    "source_type": "rss_official",
-    "summary": "Amazon Quick is now available directly inside Microsoft Word, Excel, PowerPoint, and Outlook. These extensions bring connected data access and agentic document editing into the Microsoft 365 apps your teams already use, so you can analyze data, draft content, and reach enterprise knowledge without switching applications.",
-    "content": "Amazon Quick is now available directly inside Microsoft Word, Excel, PowerPoint, and Outlook. These extensions bring connected data access and agentic document editing into the Microsoft 365 apps your teams already use, so you can analyze data, draft content, and reach enterprise knowledge without switching applications.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
   },
   {
     "id": "provider-a7b9be5eb5b6d36dca",
@@ -581,17 +636,6 @@
     "summary": "Alibaba released the open weights for&nbsp;Qwen3.8-2.4T-A95B (Qwen3.8-Max), its largest open-weight model, bringing near-frontier capabilities to the open...",
     "content": "Alibaba released the open weights for&nbsp;Qwen3.8-2.4T-A95B (Qwen3.8-Max), its largest open-weight model, bringing near-frontier capabilities to the open...",
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
-    "id": "provider-2aa8bd9a078c1c5c8b",
-    "company": "Amazon AI",
-    "title": "Part 2: Amazon Bedrock cost attribution with Amazon Athena and CUDOS",
-    "url": "https://aws.amazon.com/blogs/machine-learning/part-2-amazon-bedrock-cost-attribution-with-amazon-athena-and-cudos/",
-    "published_at": "2026-08-12T17:45:20.000Z",
-    "source_type": "rss_official",
-    "summary": "Learn how to visualize and analyze Amazon Bedrock cost attribution using Amazon Athena and CUDOS dashboards. This post shows how to set up CUR 2.0 with IAM principal data, query Bedrock spend by principal, project, and team, and build dashboards to track AI costs across your organization.",
-    "content": "Learn how to visualize and analyze Amazon Bedrock cost attribution using Amazon Athena and CUDOS dashboards. This post shows how to set up CUR 2.0 with IAM principal data, query Bedrock spend by principal, project, and team, and build dashboards to track AI costs across your organization.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
   },
   {
     "id": "provider-883f921206d899e7de",
@@ -1472,17 +1516,6 @@
     "summary": "A new field report shows how scientists use AI coding agents to modernize scientific computing, accelerating software development and discovery in genomics and beyond.",
     "content": "A new field report shows how scientists use AI coding agents to modernize scientific computing, accelerating software development and discovery in genomics and beyond.",
     "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
-    "id": "provider-a98a3d96db108a01bc",
-    "company": "NVIDIA AI",
-    "title": "Powerful Compute So Compact, It’s Clutch — Build AI Anywhere With NVIDIA Jetson",
-    "url": "https://blogs.nvidia.com/blog/build-ai-with-nvidia-jetson/",
-    "published_at": "2026-07-28T15:00:19.000Z",
-    "source_type": "rss_official",
-    "summary": "As a discerning AI investor who values style and substance, Sarah Guo knows this season’s standout accessory isn’t the latest designer purse — but what’s inside it. In a recent video, Guo, founder of AI-native venture capital firm Conviction and co-host of the AI podcast No Priors, highlighted how the NVIDIA Jetson platform for edge […]",
-    "content": "As a discerning AI investor who values style and substance, Sarah Guo knows this season’s standout accessory isn’t the latest designer purse — but what’s inside it. In a recent video, Guo, founder of AI-native venture capital firm Conviction and co-host of the AI podcast No Priors, highlighted how the NVIDIA Jetson platform for edge […]",
-    "source_url": "https://blogs.nvidia.com/feed/"
   },
   {
     "id": "provider-926823309789e9ebc1",
@@ -2451,28 +2484,6 @@
     "summary": "",
     "content": "",
     "source_url": "https://huggingface.co/blog/feed.xml"
-  },
-  {
-    "id": "provider-1933ecbe72f0449e76",
-    "company": "OpenAI",
-    "title": "Australian Payments Plus moves faster with ChatGPT and Codex",
-    "url": "https://openai.com/index/australian-payments-plus",
-    "published_at": "2026-07-07T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "See how Australian Payments Plus uses ChatGPT Enterprise and Codex to move faster through payments complexity. AP+ saves time, improves quality, and keeps human judgment central.",
-    "content": "See how Australian Payments Plus uses ChatGPT Enterprise and Codex to move faster through payments complexity. AP+ saves time, improves quality, and keeps human judgment central.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
-    "id": "provider-7ae6a57d8db0a9364c",
-    "company": "OpenAI",
-    "title": "MUFG aims to become AI-native with OpenAI",
-    "url": "https://openai.com/index/mufg",
-    "published_at": "2026-07-07T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "MUFG uses ChatGPT Enterprise to build an AI-native organization, improve workflows, and deliver new AI-powered financial services at scale.",
-    "content": "MUFG uses ChatGPT Enterprise to build an AI-native organization, improve workflows, and deliver new AI-powered financial services at scale.",
-    "source_url": "https://openai.com/news/rss.xml"
   },
   {
     "id": "provider-a824fb86a8e852098f",
@@ -3561,17 +3572,6 @@
     "source_type": "rss_official",
     "summary": "As AI models grow in scale and complexity, realizing the full performance of modern accelerated infrastructure depends as much on how workloads are placed as on...",
     "content": "As AI models grow in scale and complexity, realizing the full performance of modern accelerated infrastructure depends as much on how workloads are placed as on...",
-    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
-    "id": "provider-6252b2095e36702552",
-    "company": "NVIDIA AI",
-    "title": "Building Token‑Metered AI Services on Telco AI Factories",
-    "url": "https://developer.nvidia.com/blog/building-token-metered-ai-services-on-telco-ai-factories/",
-    "published_at": "2026-05-21T15:30:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Telcos around the world are building sovereign AI factories based on the NVIDIA Cloud Partner (NCP) reference architecture, giving governments, enterprises, and...",
-    "content": "Telcos around the world are building sovereign AI factories based on the NVIDIA Cloud Partner (NCP) reference architecture, giving governments, enterprises, and...",
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
