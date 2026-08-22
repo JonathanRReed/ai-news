@@ -2,7 +2,7 @@
 import HamburgerMenu from "./HamburgerMenu.tsx";
 
 interface Props {
-  currentPage: "home" | "about" | "models" | "digest" | "none";
+  currentPage: "home" | "about" | "models" | "digest" | "stories" | "none";
 }
 const { currentPage } = Astro.props;
 
@@ -10,6 +10,7 @@ const navItems: { href: string; label: string; key: Props["currentPage"] }[] = [
   { href: "/", label: "Home", key: "home" },
   { href: "/digest/", label: "This week", key: "digest" },
   { href: "/models/", label: "Models", key: "models" },
+  { href: "/stories/", label: "Stories", key: "stories" },
   { href: "/about/", label: "About", key: "about" },
 ];
 ---
@@ -26,7 +27,7 @@ const navItems: { href: string; label: string; key: Props["currentPage"] }[] = [
       aria-label="AI News Hub - Home"
     >
       <img
-        src="/ai_news_logo_assets/ai-news-logo-normal-transparent.png"
+        src="/ai_news_logo_assets/ai-news-logo-normal-512w.png"
         alt="AI News Hub"
         width="512"
         height="128"
@@ -44,7 +45,7 @@ const navItems: { href: string; label: string; key: Props["currentPage"] }[] = [
       {navItems.map((item, index) => (
         <a
           href={item.href}
-          class={`micro-label relative inline-flex min-h-[68px] items-center px-6 transition-all duration-200 ${index === navItems.length - 1 ? "" : "border-r border-white/[0.12]"} ${currentPage === item.key ? "bg-brand text-white" : "text-text-2 hover:bg-white/[0.06] hover:text-white"}`}
+          class={`micro-label relative inline-flex min-h-[68px] items-center px-4 transition-all duration-200 lg:px-6 ${index === navItems.length - 1 ? "" : "border-r border-white/[0.12]"} ${currentPage === item.key ? "bg-brand text-white" : "text-text-2 hover:bg-white/[0.06] hover:text-white"}`}
           aria-current={currentPage === item.key ? "page" : undefined}
         >
           {item.label}

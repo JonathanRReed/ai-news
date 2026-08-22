@@ -5,7 +5,7 @@ import reactPlugin from 'eslint-plugin-react';
 import reactHooksPlugin from 'eslint-plugin-react-hooks';
 import reactCompilerPlugin from 'eslint-plugin-react-compiler';
 import astroPlugin from 'eslint-plugin-astro';
-import astroParser from 'astro-eslint-parser';
+import * as astroParser from 'astro-eslint-parser';
 
 export default [
   // Global ignores (replaces .eslintignore)
@@ -17,6 +17,7 @@ export default [
       'build/',
       'out/',
       '.cache/',
+      '.wrangler/',
       'coverage/',
       '.vercel/',
       '.netlify/',
@@ -62,6 +63,7 @@ export default [
         HTMLElement: 'readonly',
         HTMLCanvasElement: 'readonly',
         HTMLButtonElement: 'readonly',
+        HTMLDialogElement: 'readonly',
         HTMLInputElement: 'readonly',
         HTMLFormElement: 'readonly',
         HTMLDivElement: 'readonly',

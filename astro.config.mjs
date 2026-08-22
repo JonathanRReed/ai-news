@@ -1,9 +1,9 @@
 import { readFileSync } from "node:fs";
 import { URL } from "node:url";
 import { defineConfig } from "astro/config";
-import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
+import tailwindcss from "@tailwindcss/vite";
 
 const SITE = "https://ai-news.helloworldfirm.com";
 
@@ -30,7 +30,6 @@ for (const a of providerArticles) {
 
 export default defineConfig({
   integrations: [
-    tailwind(),
     react({
       babel: {
         plugins: [["babel-plugin-react-compiler", {}]]
@@ -51,22 +50,11 @@ export default defineConfig({
     assets: "_astro"
   },
   vite: {
+    plugins: [tailwindcss()],
     build: {
       cssCodeSplit: true,
       minify: "esbuild",
-      cssMinify: true,
-      rollupOptions: {
-        output: {
-          manualChunks: (id) => {
-            if (id.includes("node_modules")) {
-              if (id.includes("react") || id.includes("@tanstack")) {
-                return "vendor-react";
-              }
-              return "vendor";
-            }
-          }
-        }
-      }
+      cssMinify: true
     },
     ssr: {
       noExternal: ["@tanstack/react-query"]

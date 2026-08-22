@@ -22,8 +22,8 @@ This repo powers the AI News site at `ai-news.helloworldfirm.com`.
 
 ## Requirements
 
-- Bun 1.x
-- Node.js 20.3 or newer
+- Bun 1.4 or newer
+- Node.js 22.12 or newer
 - Supabase credentials in your environment
 
 ## Setup
@@ -47,8 +47,11 @@ bun run dev
 
 ```sh
 bun run lint
+bun run check
 bun run build
 bun run preview
+bun run preview:cloudflare
+bun run test:e2e
 bun run lint:fix
 bun run gather:providers
 ```
@@ -65,5 +68,5 @@ bun run gather:providers
 ## Notes
 
 - This repo is designed to be boring in production and easy to maintain.
-- If the app cannot find the Supabase env vars, it fails fast with a clear local setup error.
+- If the app cannot find the Supabase env vars, it uses the checked-in provider cache and prints a clear development warning.
 - The provider article cache can be regenerated with `bun run gather:providers` before a release or demo.

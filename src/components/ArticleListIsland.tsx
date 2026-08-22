@@ -236,8 +236,7 @@ export default function ArticleListIsland({
   const [showHelp, setShowHelp] = useState(false);
   const pollTimer = useRef<number | null>(null);
   const selectedIndexRef = useRef(selectedIndex);
-  const dialogRef = useRef<HTMLDivElement>(null);
-  const restoreFocusRef = useRef<HTMLElement | null>(null);
+  const dialogRef = useRef<HTMLDialogElement>(null);
   const showHelpRef = useRef(showHelp);
 
   // Mirror selection + dialog state into refs so the keyboard handler reads the latest
@@ -414,32 +413,20 @@ export default function ArticleListIsland({
     el?.scrollIntoView({ block: "center", behavior: prefersReducedMotion() ? "auto" : "smooth" });
   }, [selectedId]);
 
-  // Focus management for the shortcuts dialog: move focus in, trap Tab, restore on close.
+  // Native modal semantics provide the focus trap, Escape handling and focus restoration.
+  useEffect(() => {
+    const dialog = dialogRef.current;
+    if (!dialog) return;
+    if (showHelp && !dialog.open) dialog.showModal();
+    if (!showHelp && dialog.open) dialog.close();
+  }, [showHelp]);
+
   useEffect(() => {
     if (!showHelp) return;
-    restoreFocusRef.current = document.activeElement as HTMLElement | null;
-    dialogRef.current?.focus();
-    const trap = (e: KeyboardEvent) => {
-      if (e.key !== "Tab" || !dialogRef.current) return;
-      const f = dialogRef.current.querySelectorAll<HTMLElement>('a[href],button:not([disabled]),[tabindex]:not([tabindex="-1"])');
-      if (!f.length) {
-        e.preventDefault();
-        return;
-      }
-      const first = f[0];
-      const last = f[f.length - 1];
-      if (e.shiftKey && document.activeElement === first) {
-        e.preventDefault();
-        last.focus();
-      } else if (!e.shiftKey && document.activeElement === last) {
-        e.preventDefault();
-        first.focus();
-      }
-    };
-    document.addEventListener("keydown", trap, true);
+    const previousOverflow = document.documentElement.style.overflow;
+    document.documentElement.style.overflow = "hidden";
     return () => {
-      document.removeEventListener("keydown", trap, true);
-      restoreFocusRef.current?.focus();
+      document.documentElement.style.overflow = previousOverflow;
     };
   }, [showHelp]);
 
@@ -592,46 +579,50 @@ export default function ArticleListIsland({
         </button>
       </div>
 
-      <p className="mt-4 hidden text-center font-mono text-xs text-muted md:block">
-        Press{" "}
-        <kbd className="border border-white/20 px-1.5 py-0.5 text-text-2">?</kbd>{" "}
-        for keyboard shortcuts
-      </p>
+      <div className="mt-4 hidden text-center md:block">
+        <button type="button" className="font-mono text-xs text-text-2 transition-colors hover:text-white focus-industrial" onClick={() => setShowHelp(true)}>
+          <kbd className="mr-1.5 border border-white/20 px-1.5 py-0.5 text-text-2">?</kbd>
+          Keyboard shortcuts
+        </button>
+      </div>
 
       {showHelp && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-bg-0/90 p-4"
-          role="dialog"
-          aria-modal="true"
+        <dialog
+          ref={dialogRef}
+          className="shortcuts-dialog border border-white/20 bg-bg-1 p-6"
           aria-label="Keyboard shortcuts"
-          onClick={() => setShowHelp(false)}
+          onCancel={(event) => {
+            event.preventDefault();
+            setShowHelp(false);
+          }}
+          onClick={(event) => {
+            if (event.target === event.currentTarget) setShowHelp(false);
+          }}
         >
-          <div ref={dialogRef} tabIndex={-1} className="w-full max-w-md border border-white/20 bg-bg-1 p-6 focus:outline-none" onClick={(e) => e.stopPropagation()}>
-            <div className="mb-4 flex items-center justify-between border-b border-white/15 pb-3">
-              <p className="micro-label text-white">Keyboard shortcuts</p>
-              <button className="micro-label text-text-2 transition-colors hover:text-white focus-industrial" onClick={() => setShowHelp(false)} aria-label="Close shortcuts">
-                Esc
-              </button>
-            </div>
-            <dl className="grid grid-cols-[auto_1fr] gap-x-5 gap-y-2.5 text-sm text-text-2">
-              {[
-                ["j / ↓", "Next story"],
-                ["k / ↑", "Previous story"],
-                ["o / ↵", "Open the source"],
-                ["s", "Save or unsave"],
-                ["m", "Mark as read"],
-                ["/", "Focus search"],
-                ["?", "Toggle this panel"],
-                ["Esc", "Clear or close"],
-              ].map(([key, label]) => (
-                <React.Fragment key={key}>
-                  <dt><kbd className="border border-white/20 px-2 py-0.5 font-mono text-xs text-white">{key}</kbd></dt>
-                  <dd className="self-center">{label}</dd>
-                </React.Fragment>
-              ))}
-            </dl>
+          <div className="mb-4 flex items-center justify-between border-b border-white/15 pb-3">
+            <p className="micro-label text-white">Keyboard shortcuts</p>
+            <button type="button" autoFocus className="micro-label text-text-2 transition-colors hover:text-white focus-industrial" onClick={() => setShowHelp(false)} aria-label="Close shortcuts">
+              Esc
+            </button>
           </div>
-        </div>
+          <dl className="grid grid-cols-[auto_1fr] gap-x-5 gap-y-2.5 text-sm text-text-2">
+            {[
+              ["j / ↓", "Next story"],
+              ["k / ↑", "Previous story"],
+              ["o / ↵", "Open the source"],
+              ["s", "Save or unsave"],
+              ["m", "Mark as read"],
+              ["/", "Focus search"],
+              ["?", "Toggle this panel"],
+              ["Esc", "Clear or close"],
+            ].map(([key, label]) => (
+              <React.Fragment key={key}>
+                <dt><kbd className="border border-white/20 px-2 py-0.5 font-mono text-xs text-white">{key}</kbd></dt>
+                <dd className="self-center">{label}</dd>
+              </React.Fragment>
+            ))}
+          </dl>
+        </dialog>
       )}
 
       {visibleCount > 20 && (

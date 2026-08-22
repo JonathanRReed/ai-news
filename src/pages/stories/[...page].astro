@@ -1,0 +1,101 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { allArticles, SITE_URL } from "../../lib/feeds.js";
+import type { Article } from "../../types/article.js";
+
+const PAGE_SIZE = 60;
+
+export function getStaticPaths() {
+  const count = Math.max(1, Math.ceil(allArticles().length / 60));
+  return Array.from({ length: count }, (_, index) => ({
+    params: { page: index === 0 ? undefined : String(index + 1) },
+    props: { pageNumber: index + 1 },
+  }));
+}
+
+interface Props {
+  pageNumber: number;
+}
+
+const { pageNumber } = Astro.props;
+const articles = allArticles();
+const pageCount = Math.max(1, Math.ceil(articles.length / PAGE_SIZE));
+const pageArticles = articles.slice((pageNumber - 1) * PAGE_SIZE, pageNumber * PAGE_SIZE);
+const canonicalUrl = pageNumber === 1 ? `${SITE_URL}/stories/` : `${SITE_URL}/stories/${pageNumber}/`;
+const title = pageNumber === 1
+  ? "All Primary-Source AI Stories | AI News Hub"
+  : `AI News Stories, Page ${pageNumber} | AI News Hub`;
+const description = pageNumber === 1
+  ? "Browse every primary-source AI lab, model-provider, research and infrastructure story tracked by AI News Hub, ordered by publication date with direct source links."
+  : `Browse primary-source AI news stories on page ${pageNumber} of ${pageCount}, ordered by publication date with publisher names and links to each original source.`;
+const previousUrl = pageNumber > 1
+  ? pageNumber === 2 ? "/stories/" : `/stories/${pageNumber - 1}/`
+  : undefined;
+const nextUrl = pageNumber < pageCount ? `/stories/${pageNumber + 1}/` : undefined;
+const formatDate = (value: string) => {
+  const date = new Date(value);
+  return Number.isNaN(date.getTime())
+    ? "Undated"
+    : new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" }).format(date);
+};
+const localArticlePath = (article: Article) => `/article/${encodeURIComponent(article.id)}/`;
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: title,
+  description,
+  url: canonicalUrl,
+  isPartOf: { "@type": "WebSite", name: "AI News Hub", url: SITE_URL },
+  mainEntity: {
+    "@type": "ItemList",
+    numberOfItems: pageArticles.length,
+    itemListElement: pageArticles.map((article, index) => ({
+      "@type": "ListItem",
+      position: (pageNumber - 1) * PAGE_SIZE + index + 1,
+      name: article.title,
+      url: `${SITE_URL}${localArticlePath(article)}`,
+    })),
+  },
+};
+---
+
+<Layout title={title} description={description} canonical={canonicalUrl} currentPage="stories" structuredData={structuredData}>
+  <Fragment slot="head">
+    {previousUrl && <link rel="prev" href={previousUrl} />}
+    {nextUrl && <link rel="next" href={nextUrl} />}
+  </Fragment>
+  <main id="main-content" class="industrial-shell flex-1">
+    <section class="industrial-container py-10 md:py-14">
+      <div class="max-w-5xl reveal-stagger">
+        <p class="micro-label mb-5 text-brand-hover">[ Story index ]</p>
+        <h1 class="macro-heading max-w-5xl">All primary-source stories.</h1>
+        <p class="mt-6 max-w-3xl text-lg leading-relaxed text-text-2 md:text-xl">
+          Every tracked story in publication order. Open a local source page for context, then continue to the original publisher.
+        </p>
+        <p class="micro-label mt-5 text-muted">Page {pageNumber} of {pageCount} · {articles.length} stories</p>
+      </div>
+    </section>
+
+    <section class="industrial-container pb-16 md:pb-24">
+      <ol class="border-t border-white/15">
+        {pageArticles.map((article, index) => (
+          <li class="grid gap-2 border-b border-white/15 py-4 sm:grid-cols-[7rem_minmax(0,1fr)] sm:gap-5">
+            <div class="flex items-baseline justify-between gap-3 sm:block">
+              <span class="micro-label text-brand-hover">{article.company}</span>
+              <time class="micro-label tabular-nums text-muted sm:mt-1 sm:block" datetime={article.published_at}>{formatDate(article.published_at)}</time>
+            </div>
+            <a href={localArticlePath(article)} class="font-bold leading-snug text-white decoration-brand decoration-2 underline-offset-4 transition-colors hover:text-brand-hover hover:underline focus-industrial text-pretty">
+              <span class="sr-only">Story {(pageNumber - 1) * PAGE_SIZE + index + 1}: </span>{article.title}
+            </a>
+          </li>
+        ))}
+      </ol>
+
+      <nav class="mt-8 flex items-center justify-between gap-4" aria-label="Story index pagination">
+        {previousUrl ? <a class="ghost-button" href={previousUrl}>Previous</a> : <span aria-hidden="true"></span>}
+        <span class="micro-label text-text-2">{pageNumber} / {pageCount}</span>
+        {nextUrl ? <a class="signal-button" href={nextUrl}>Next</a> : <span aria-hidden="true"></span>}
+      </nav>
+    </section>
+  </main>
+</Layout>

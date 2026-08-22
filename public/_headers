@@ -15,7 +15,7 @@
   Cross-Origin-Resource-Policy: same-origin
   
   # Content Security Policy
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://arejerdupcduqhgdoyht.supabase.co; font-src 'self' https://fonts.helloworldfirm.com; connect-src 'self' https://arejerdupcduqhgdoyht.supabase.co https://static.cloudflareinsights.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://arejerdupcduqhgdoyht.supabase.co; font-src 'self'; connect-src 'self' https://arejerdupcduqhgdoyht.supabase.co https://static.cloudflareinsights.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests
   Cache-Control: public, max-age=300, must-revalidate, stale-while-revalidate=86400
 
 # Cache static assets aggressively
@@ -54,6 +54,9 @@
   Cache-Control: public, max-age=604800
 
 /*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+
+/fonts/*
   Cache-Control: public, max-age=31536000, immutable
 
 https://ai-news-df6.pages.dev/*

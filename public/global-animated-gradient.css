@@ -172,6 +172,34 @@ input:focus-visible {
   display: none;
 }
 
+.mobile-menu-control {
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.mobile-menu-dialog,
+.shortcuts-dialog {
+  margin: auto;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: #eaeaea;
+}
+
+.mobile-menu-dialog {
+  width: min(calc(100% - 2rem), 28rem);
+  max-height: calc(100dvh - 2rem);
+}
+
+.shortcuts-dialog {
+  width: min(calc(100% - 2rem), 28rem);
+}
+
+.mobile-menu-dialog::backdrop,
+.shortcuts-dialog::backdrop {
+  background: rgba(10, 10, 10, 0.92);
+  backdrop-filter: blur(8px);
+}
+
 .article-fade-in {
   animation: fadeInUp 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
 }

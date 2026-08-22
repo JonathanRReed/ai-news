@@ -4,18 +4,18 @@
 
 ## Tech Stack
 
-- **Framework**: Astro 6 (static output)
-- **Runtime**: Bun 1.x
+- **Framework**: Astro 7 (static output)
+- **Runtime**: Bun 1.4+
 - **UI**: React 19 islands with the React Compiler
-- **Styling**: TailwindCSS 3.4 with CSS-variable design tokens
+- **Styling**: Tailwind CSS 4.3 with CSS-variable design tokens
 - **Data**: Supabase (PostgreSQL) for live articles + a static provider cache (`/data/provider-articles.json`)
 - **Fetching**: TanStack React Query 5
-- **Types**: TypeScript 5.9
+- **Types**: TypeScript 6
 
 ## Project Structure
 
 - [Source Code](https://github.com/JonathanRReed/ai-news): Main repository
-- **Pages**: `index.astro` (3-tier feed), `digest/` + `digest/[week].astro` (weekly "This Week in AI"), `models.astro` (release timeline), `article/[id].astro` (per-article pages with NewsArticle JSON-LD), `about.astro`, `contact.astro`, `privacy.astro`
+- **Pages**: `index.astro` (3-tier feed), `stories/[...page].astro` (crawlable story index), `digest/` + `digest/[week].astro` (weekly "This Week in AI"), `models.astro` (release timeline), `article/[id].astro` (per-article pages with NewsArticle JSON-LD), `about.astro`, `contact.astro`, `privacy.astro`
 - **Layout**: `/src/layouts/Layout.astro` (shared head, SEO, header/footer)
 - **Components**: `/src/components/` - ArticlesIslandWrapper, ArticleListIsland, FiltersIsland, CompanySelect, DigestView, Header, Footer, HamburgerMenu, FaqDropdown
 - **Hooks**: `/src/hooks/` - useArticles, fetchArticlesPage, useArticlesContext, useReadState
@@ -37,7 +37,7 @@
 - [JSON - all](/articles.json)
 - Per-company RSS: `/feed/company/{slug}.xml`
 - Per-topic RSS: `/feed/topic/{slug}.xml`
-- [Sitemap](/sitemap.xml)
+- [Sitemap index](/sitemap-index.xml)
 
 ## Development
 
@@ -45,7 +45,10 @@
 - **Dev**: `bun run dev`
 - **Build**: `bun run build`
 - **Preview**: `bun run preview`
+- **Cloudflare preview**: `bun run preview:cloudflare`
+- **Type and content check**: `bun run check`
 - **Lint**: `bun run lint`
+- **Browser tests**: `bun run test:e2e`
 - **Refresh feed cache**: `bun run gather:providers`
 
 ## Deployment

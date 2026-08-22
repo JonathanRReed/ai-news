@@ -1,6 +1,7 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import "../styles/tailwind.css";
 
 export interface Props {
   title: string;
@@ -11,7 +12,7 @@ export interface Props {
   ogImageAlt?: string;
   ogType?: string;
   robots?: string;
-  currentPage?: "home" | "about" | "models" | "digest" | "none";
+  currentPage?: "home" | "about" | "models" | "digest" | "stories" | "none";
   bodyClass?: string;
   structuredData?: Record<string, unknown> | Array<Record<string, unknown>>;
   preloadImage?: string;
@@ -35,9 +36,8 @@ const {
 } = Astro.props;
 
 const jsonLdBlocks = structuredData ? (Array.isArray(structuredData) ? structuredData : [structuredData]) : [];
-const headerLogoImage = "/ai_news_logo_assets/ai-news-logo-normal-transparent.png";
-const footerLogoImage = "/ai_news_logo_assets/ai-news-logo-footer-512w.png";
-const imagePreloads = Array.from(new Set([headerLogoImage, footerLogoImage, preloadImage, ...preloadImages].filter(Boolean)));
+const headerLogoImage = "/ai_news_logo_assets/ai-news-logo-normal-512w.png";
+const imagePreloads = Array.from(new Set([headerLogoImage, preloadImage, ...preloadImages].filter(Boolean)));
 ---
 
 <html lang="en">
@@ -74,8 +74,6 @@ const imagePreloads = Array.from(new Set([headerLogoImage, footerLogoImage, prel
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
-    <link rel="preconnect" href="https://fonts.helloworldfirm.com" />
-    <link rel="preconnect" href="https://fonts.helloworldfirm.com" crossorigin />
     {imagePreloads.map((href) => <link rel="preload" href={href} as="image" />)}
     <link rel="preload" href="/global-font.css" as="style" />
     <link rel="preload" href="/global-animated-gradient.css" as="style" />
@@ -84,17 +82,15 @@ const imagePreloads = Array.from(new Set([headerLogoImage, footerLogoImage, prel
     <noscript set:html={`<style>.reveal-stagger > * { opacity: 1 !important; transform: none !important; }</style>`}></noscript>
     <link
       rel="preload"
-      href="https://fonts.helloworldfirm.com/NebulaSans-Book.woff2"
+      href="/fonts/NebulaSans-Book.woff2"
       as="font"
       type="font/woff2"
-      crossorigin
     />
     <link
       rel="preload"
-      href="https://fonts.helloworldfirm.com/NebulaSans-BoldItalic.woff2"
+      href="/fonts/NebulaSans-BoldItalic.woff2"
       as="font"
       type="font/woff2"
-      crossorigin
     />
     {jsonLdBlocks.map((block) => (
       <script is:inline type="application/ld+json" set:html={JSON.stringify(block).replace(/</g, "\\u003c")} />

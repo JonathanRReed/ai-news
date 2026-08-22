@@ -1,9 +1,9 @@
 # Node modules
 node_modules/
 
-# This repo is bun-first, but Cloudflare Pages does not detect the text-format
-# bun.lock and falls back to a bare `npm install`. package-lock.json is committed
-# so Pages installs from a lockfile; keep it in sync with package.json.
+# Bun is the only package manager for this repository.
+package-lock.json
+npm-shrinkwrap.json
 
 # Local Claude Code tooling (preview launch config, etc.)
 .claude/
@@ -66,6 +66,9 @@ coverage/
 
 # Test output
 *.test-results
+test-results/
+playwright-report/
+.wrangler/
 
 # SvelteKit build output (if ever used)
 .svelte-kit/
@@ -104,4 +107,3 @@ design doc.md
 
 # Ignore all user-uploaded images (uncomment if used)
 # public/uploads/
-
