@@ -26,7 +26,7 @@ const title = pageNumber === 1
   ? "All Primary-Source AI Stories | AI News Hub"
   : `AI News Stories, Page ${pageNumber} | AI News Hub`;
 const description = pageNumber === 1
-  ? "Browse every primary-source AI lab, model-provider, research and infrastructure story tracked by AI News Hub, ordered by publication date with direct source links."
+  ? "Browse every primary-source AI lab, model-provider, research and infrastructure story tracked by AI News Hub, ordered by date with direct source links."
   : `Browse primary-source AI news stories on page ${pageNumber} of ${pageCount}, ordered by publication date with publisher names and links to each original source.`;
 const previousUrl = pageNumber > 1
   ? pageNumber === 2 ? "/stories/" : `/stories/${pageNumber - 1}/`
@@ -92,9 +92,9 @@ const structuredData = {
       </ol>
 
       <nav class="mt-8 flex items-center justify-between gap-4" aria-label="Story index pagination">
-        {previousUrl ? <a class="ghost-button" href={previousUrl}>Previous</a> : <span aria-hidden="true"></span>}
+        {previousUrl ? <a class="ghost-button" href={previousUrl}>Previous stories</a> : <span aria-hidden="true"></span>}
         <span class="micro-label text-text-2">{pageNumber} / {pageCount}</span>
-        {nextUrl ? <a class="signal-button" href={nextUrl}>Next</a> : <span aria-hidden="true"></span>}
+        {nextUrl ? <a class="signal-button" href={nextUrl}>Next stories</a> : <span aria-hidden="true"></span>}
       </nav>
     </section>
   </main>
