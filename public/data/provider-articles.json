@@ -1,5 +1,104 @@
 [
   {
+    "id": "provider-2bd27ff827cc400e8c",
+    "company": "Amazon AI",
+    "title": "Agentic Data Operations Platform (ADOP): Data engineering into hours",
+    "url": "https://aws.amazon.com/blogs/machine-learning/agentic-data-operations-platform-adop-data-engineering-into-hours/",
+    "published_at": "2026-08-21T17:06:17.000Z",
+    "source_type": "rss_official",
+    "summary": "The Agentic Data Operations Platform (ADOP) is a reference architecture on Amazon Bedrock that uses specialized AI agents to automate the full Bronze-to-Silver-to-Gold data pipeline lifecycle, compressing new-source onboarding from weeks to hours while keeping data governance and compliance controls inline.",
+    "content": "The Agentic Data Operations Platform (ADOP) is a reference architecture on Amazon Bedrock that uses specialized AI agents to automate the full Bronze-to-Silver-to-Gold data pipeline lifecycle, compressing new-source onboarding from weeks to hours while keeping data governance and compliance controls inline.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-49612b10705fe039f8",
+    "company": "Amazon AI",
+    "title": "Govern AI agent tool access with Amazon Bedrock AgentCore Gateway",
+    "url": "https://aws.amazon.com/blogs/machine-learning/govern-ai-agent-tool-access-with-amazon-bedrock-agentcore-gateway/",
+    "published_at": "2026-08-21T17:02:35.000Z",
+    "source_type": "rss_official",
+    "summary": "Give your AI agents governed, auditable access to enterprise tools without consolidating infrastructure. This post walks through a four-scope maturity model (Connect, Control, Catalog, and Harden) for building a governed tool gateway with Amazon Bedrock AgentCore, advancing only when real governance pain demands it.",
+    "content": "Give your AI agents governed, auditable access to enterprise tools without consolidating infrastructure. This post walks through a four-scope maturity model (Connect, Control, Catalog, and Harden) for building a governed tool gateway with Amazon Bedrock AgentCore, advancing only when real governance pain demands it.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-e55fd3557b100311ce",
+    "company": "Amazon AI",
+    "title": "Reduce RAG costs on Amazon Bedrock with query-aware compression",
+    "url": "https://aws.amazon.com/blogs/machine-learning/reduce-rag-costs-on-amazon-bedrock-with-query-aware-compression/",
+    "published_at": "2026-08-21T16:59:15.000Z",
+    "source_type": "rss_official",
+    "summary": "Input tokens are often a meaningful part of the cost of running Retrieval Augmented Generation (RAG) at scale. This post describes a query-aware context compression pattern on Amazon Bedrock: after retrieval, a smaller model filters retrieved chunks against the query before the primary model answers, reducing input tokens and cost while preserving answer quality.",
+    "content": "Input tokens are often a meaningful part of the cost of running Retrieval Augmented Generation (RAG) at scale. This post describes a query-aware context compression pattern on Amazon Bedrock: after retrieval, a smaller model filters retrieved chunks against the query before the primary model answers, reducing input tokens and cost while preserving answer quality.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-e9228ab33656e5e10a",
+    "company": "Amazon AI",
+    "title": "Accelerating aircraft IFEC diagnostics with agentic AI on AWS",
+    "url": "https://aws.amazon.com/blogs/machine-learning/accelerating-aircraft-ifec-diagnostics-with-agentic-ai-on-aws/",
+    "published_at": "2026-08-21T16:57:01.000Z",
+    "source_type": "rss_official",
+    "summary": "Panasonic Avionics worked with AWS and the AWS Generative AI Innovation Center to build an agentic AI system on Amazon Bedrock, Amazon SageMaker, and AWS Glue that diagnoses in-flight entertainment and connectivity (IFEC) issues across a global fleet, reducing diagnosis time from hours to minutes while maintaining accuracy.",
+    "content": "Panasonic Avionics worked with AWS and the AWS Generative AI Innovation Center to build an agentic AI system on Amazon Bedrock, Amazon SageMaker, and AWS Glue that diagnoses in-flight entertainment and connectivity (IFEC) issues across a global fleet, reducing diagnosis time from hours to minutes while maintaining accuracy.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-753292b8b46114fb23",
+    "company": "Amazon AI",
+    "title": "SOP-Bench: A new benchmark for evaluating AI agents on real business procedures",
+    "url": "https://www.amazon.science/blog/sop-bench-a-new-benchmark-for-evaluating-ai-agents-on-real-business-procedures",
+    "published_at": "2026-08-21T15:57:17.000Z",
+    "source_type": "rss_official",
+    "summary": "Extendable framework enables testing agents on the full set of capabilities required to successfully complete a procedure, not isolated proxy tasks.",
+    "content": "Extendable framework enables testing agents on the full set of capabilities required to successfully complete a procedure, not isolated proxy tasks.",
+    "source_url": "https://www.amazon.science/index.rss"
+  },
+  {
+    "id": "provider-3bfe7f3c4210352640",
+    "company": "NVIDIA AI",
+    "title": "NVIDIA AVO Reaches 100% on ARC-AGI-3, Demonstrating a Frontier-Level General-Purpose Architecture for Long-Horizon Autonomous Agents",
+    "url": "https://developer.nvidia.com/blog/nvidia-avo-reaches-100-on-arc-agi-3-demonstrating-a-frontier-level-general-purpose-architecture-for-long-horizon-autonomous-agents/",
+    "published_at": "2026-08-21T13:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "A frontier language model is only one component of an AI agent. The surrounding agent system—often called a harness—determines how the model receives...",
+    "content": "A frontier language model is only one component of an AI agent. The surrounding agent system—often called a harness—determines how the model receives...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
+  },
+  {
+    "id": "provider-d965340ab193dfa8b7",
+    "company": "NVIDIA AI",
+    "title": "Where Security Fits in an AI Agent Stack",
+    "url": "https://developer.nvidia.com/blog/where-security-fits-in-an-ai-agent-stack/",
+    "published_at": "2026-08-21T13:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "As AI agents become more capable and operate over longer horizons, building security and trust into the applications they power becomes increasingly important....",
+    "content": "As AI agents become more capable and operate over longer horizons, building security and trust into the applications they power becomes increasingly important....",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
+  },
+  {
+    "id": "provider-82d710fa366383b5bd",
+    "company": "Google DeepMind",
+    "title": "From Atari to EVE Online: Building on 15 Years of AI Research in Games",
+    "url": "https://deepmind.google/blog/from-atari-to-eve-online-building-on-15-years-of-ai-research-in-games/",
+    "published_at": "2026-08-21T11:59:48.000Z",
+    "source_type": "rss_official",
+    "summary": "Google DeepMind partners with game studios to prototype breakthrough AI gameplay.",
+    "content": "Google DeepMind partners with game studios to prototype breakthrough AI gameplay.",
+    "source_url": "https://deepmind.google/blog/rss.xml"
+  },
+  {
+    "id": "provider-28208d464c7c2e2ab0",
+    "company": "Hugging Face",
+    "title": "Measuring benchmark optimization in speech recognition",
+    "url": "https://huggingface.co/blog/asr-benchmark-optimization",
+    "published_at": "2026-08-21T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://huggingface.co/blog/feed.xml"
+  },
+  {
     "id": "provider-acf8deea426312562c",
     "company": "Amazon AI",
     "title": "Introducing cross-Region inference for OpenAI GPT-5.6 models on Amazon Bedrock",
@@ -349,50 +448,6 @@
     "source_type": "rss_official",
     "summary": "Amazon Quick embedded chat brings a conversational AI interface into your web application. This post walks through customizing the embedded chat with container and SDK styling, branding removal, and a custom agent persona so it matches your brand's look, feel, and voice.",
     "content": "Amazon Quick embedded chat brings a conversational AI interface into your web application. This post walks through customizing the embedded chat with container and SDK styling, branding removal, and a custom agent persona so it matches your brand's look, feel, and voice.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
-    "id": "provider-657aea0aee164a15f4",
-    "company": "Amazon AI",
-    "title": "Implement vector-prompt document classification using Amazon Bedrock",
-    "url": "https://aws.amazon.com/blogs/machine-learning/implement-vector-prompt-document-classification-using-amazon-bedrock/",
-    "published_at": "2026-08-18T17:10:37.000Z",
-    "source_type": "rss_official",
-    "summary": "Learn how to build a multi-agent document classification solution on Amazon Bedrock using the Strands Agents SDK. Three specialized agents combine textual analysis with Claude Haiku 4.5 and visual similarity search with Amazon Titan Multimodal Embeddings to accurately classify insurance documents such as policies and affidavits.",
-    "content": "Learn how to build a multi-agent document classification solution on Amazon Bedrock using the Strands Agents SDK. Three specialized agents combine textual analysis with Claude Haiku 4.5 and visual similarity search with Amazon Titan Multimodal Embeddings to accurately classify insurance documents such as policies and affidavits.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
-    "id": "provider-d4b0ab0d0429f817ba",
-    "company": "Amazon AI",
-    "title": "How Jumio built a real-time feature store on AWS",
-    "url": "https://aws.amazon.com/blogs/machine-learning/how-jumio-built-a-real-time-feature-store-on-aws/",
-    "published_at": "2026-08-18T17:05:48.000Z",
-    "source_type": "rss_official",
-    "summary": "Learn how Jumio built a centralized, real-time feature store on AWS with Amazon SageMaker Feature Store, Amazon Managed Service for Apache Flink, and Amazon Kinesis Data Streams. The architecture delivers sub-100ms feature serving for fraud detection and saves approximately $120,000 annually.",
-    "content": "Learn how Jumio built a centralized, real-time feature store on AWS with Amazon SageMaker Feature Store, Amazon Managed Service for Apache Flink, and Amazon Kinesis Data Streams. The architecture delivers sub-100ms feature serving for fraud detection and saves approximately $120,000 annually.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
-    "id": "provider-10c3822bb2c35d6d52",
-    "company": "Amazon AI",
-    "title": "Improve contract search accuracy with auto-generated filters in Amazon Bedrock",
-    "url": "https://aws.amazon.com/blogs/machine-learning/improve-contract-search-accuracy-with-auto-generated-filters-in-amazon-bedrock/",
-    "published_at": "2026-08-18T17:02:52.000Z",
-    "source_type": "rss_official",
-    "summary": "In this post, we describe how AIDA works at a high level and how it helps address these challenges — grounding users in the right contracts, under the right legal context, and within the right access boundaries. Specifically, we explore how AIDA uses implicit and explicit filtering, along with metadata-enriched chunking in Amazon Bedrock Knowledge Bases, to dramatically improve contract search accuracy.",
-    "content": "In this post, we describe how AIDA works at a high level and how it helps address these challenges — grounding users in the right contracts, under the right legal context, and within the right access boundaries. Specifically, we explore how AIDA uses implicit and explicit filtering, along with metadata-enriched chunking in Amazon Bedrock Knowledge Bases, to dramatically improve contract search accuracy.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
-    "id": "provider-6cde8ecec38f6e8f2a",
-    "company": "Amazon AI",
-    "title": "How Axonius built secure multi-tenant AI agents on Bedrock AgentCore",
-    "url": "https://aws.amazon.com/blogs/machine-learning/how-axonius-built-secure-multi-tenant-ai-agents-on-bedrock-agentcore/",
-    "published_at": "2026-08-18T16:27:07.000Z",
-    "source_type": "rss_official",
-    "summary": "Learn how Axonius, a cybersecurity SaaS provider, used Amazon Bedrock AgentCore to deploy fully isolated, multi-tenant AI agents across hundreds of customer environments, without building custom compute isolation, authentication, or observability infrastructure from scratch.",
-    "content": "Learn how Axonius, a cybersecurity SaaS provider, used Amazon Bedrock AgentCore to deploy fully isolated, multi-tenant AI agents across hundreds of customer environments, without building custom compute isolation, authentication, or observability infrastructure from scratch.",
     "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
   },
   {
@@ -3553,28 +3608,6 @@
     "source_url": "https://deepmind.google/blog/rss.xml"
   },
   {
-    "id": "provider-07246156606e32b8ce",
-    "company": "NVIDIA AI",
-    "title": "Automating and Optimizing Financial Signal Discovery with Multi-Agent Systems",
-    "url": "https://developer.nvidia.com/blog/automating-and-optimizing-financial-signal-discovery-with-multi-agent-systems/",
-    "published_at": "2026-05-21T18:31:56.000Z",
-    "source_type": "rss_official",
-    "summary": "In quantitative finance, researchers build algorithms to trade assets, derivatives, and other financial instruments. A key part of that work is finding signals:...",
-    "content": "In quantitative finance, researchers build algorithms to trade assets, derivatives, and other financial instruments. A key part of that work is finding signals:...",
-    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
-    "id": "provider-ed1591016fce314e5e",
-    "company": "NVIDIA AI",
-    "title": "Unlock Exascale Performance on NVIDIA GB200 NVL72 with Slurm Topology-Aware Job Scheduling",
-    "url": "https://developer.nvidia.com/blog/unlock-exascale-performance-on-nvidia-gb200-nvl72-with-slurm-topology-aware-job-scheduling/",
-    "published_at": "2026-05-21T17:32:56.000Z",
-    "source_type": "rss_official",
-    "summary": "As AI models grow in scale and complexity, realizing the full performance of modern accelerated infrastructure depends as much on how workloads are placed as on...",
-    "content": "As AI models grow in scale and complexity, realizing the full performance of modern accelerated infrastructure depends as much on how workloads are placed as on...",
-    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
     "id": "provider-389c0be6bc56463eee",
     "company": "Hugging Face",
     "title": "OlmoEarth v1.1: A more efficient family of Earth observation models",
@@ -3960,17 +3993,6 @@
     "source_url": "https://huggingface.co/blog/feed.xml"
   },
   {
-    "id": "provider-5a6180f6d5b0241833",
-    "company": "Amazon AI",
-    "title": "How catastrophic is your LLM?",
-    "url": "https://www.amazon.science/blog/how-catastrophic-is-your-llm",
-    "published_at": "2026-04-27T19:01:26.000Z",
-    "source_type": "rss_official",
-    "summary": "A new framework provides a statistical method for estimating the likelihood of catastrophic failures in large language models in adversarial conversations.",
-    "content": "A new framework provides a statistical method for estimating the likelihood of catastrophic failures in large language models in adversarial conversations.",
-    "source_url": "https://www.amazon.science/index.rss"
-  },
-  {
     "id": "provider-49de6acb637b533b02",
     "company": "Google DeepMind",
     "title": "Announcing our partnership with the Republic of Korea",
@@ -4053,17 +4075,6 @@
     "title": "QIMMA قِمّة ⛰: A Quality-First Arabic LLM Leaderboard",
     "url": "https://huggingface.co/blog/tiiuae/qimma-arabic-leaderboard",
     "published_at": "2026-04-21T10:09:58.000Z",
-    "source_type": "rss_official",
-    "summary": "",
-    "content": "",
-    "source_url": "https://huggingface.co/blog/feed.xml"
-  },
-  {
-    "id": "provider-9eacb96c3e0e833edb",
-    "company": "Hugging Face",
-    "title": "AI and the Future of Cybersecurity: Why Openness Matters",
-    "url": "https://huggingface.co/blog/cybersecurity-openness",
-    "published_at": "2026-04-21T00:00:00.000Z",
     "source_type": "rss_official",
     "summary": "",
     "content": "",
@@ -4471,17 +4482,6 @@
     "title": "A new era of intelligence with Gemini 3",
     "url": "https://deepmind.google/blog/a-new-era-of-intelligence-with-gemini-3/",
     "published_at": "2025-11-18T16:06:41.000Z",
-    "source_type": "rss_official",
-    "summary": "",
-    "content": "",
-    "source_url": "https://deepmind.google/blog/rss.xml"
-  },
-  {
-    "id": "provider-8b83a4af9ef40e8304",
-    "company": "Google DeepMind",
-    "title": "Introducing Google Antigravity",
-    "url": "https://deepmind.google/blog/introducing-google-antigravity/",
-    "published_at": "2025-11-18T16:06:32.000Z",
     "source_type": "rss_official",
     "summary": "",
     "content": "",
