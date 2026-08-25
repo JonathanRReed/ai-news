@@ -1,5 +1,170 @@
 [
   {
+    "id": "provider-e805f4a7e9eb08c99b",
+    "company": "OpenAI",
+    "title": "Disrupting a new covert influence campaign from Russia",
+    "url": "https://openai.com/index/disrupting-malicious-uses-of-ai-influence-campaign-russia",
+    "published_at": "2026-08-25T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "OpenAI banned Russia-origin accounts using AI to promote a fake Israel-based think tank and a “sovereignty” index praising Russia and criticizing the West.",
+    "content": "OpenAI banned Russia-origin accounts using AI to promote a fake Israel-based think tank and a “sovereignty” index praising Russia and criticizing the West.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-20f19e4335a5731a30",
+    "company": "Hugging Face",
+    "title": "Wire It, Run It, Deploy It: AI Workflows in Gradio",
+    "url": "https://huggingface.co/blog/gradio-workflow-guide",
+    "published_at": "2026-08-25T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://huggingface.co/blog/feed.xml"
+  },
+  {
+    "id": "provider-c166df3553f831dad5",
+    "company": "Amazon AI",
+    "title": "Introducing new Ray capabilities on SageMaker HyperPod",
+    "url": "https://aws.amazon.com/blogs/machine-learning/introducing-new-ray-capabilities-on-sagemaker-hyperpod/",
+    "published_at": "2026-08-24T19:32:14.000Z",
+    "source_type": "rss_official",
+    "summary": "Amazon SageMaker HyperPod now offers managed Ray support on Amazon EKS. Create and monitor Ray clusters, connect JupyterLab and Code Editor notebooks to live clusters, get out-of-the-box observability, and run resilient distributed training and accelerated inference from SageMaker Studio, all with open-source KubeRay and standard Ray APIs.",
+    "content": "Amazon SageMaker HyperPod now offers managed Ray support on Amazon EKS. Create and monitor Ray clusters, connect JupyterLab and Code Editor notebooks to live clusters, get out-of-the-box observability, and run resilient distributed training and accelerated inference from SageMaker Studio, all with open-source KubeRay and standard Ray APIs.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-7f0d946f82c882ca66",
+    "company": "Amazon AI",
+    "title": "Democratizing institutional knowledge: Building an AI-powered knowledge management system with AWS",
+    "url": "https://aws.amazon.com/blogs/machine-learning/democratizing-institutional-knowledge-building-an-ai-powered-knowledge-management-system-with-aws/",
+    "published_at": "2026-08-24T18:59:15.000Z",
+    "source_type": "rss_official",
+    "summary": "Learn how to build a customizable, smart-caching knowledge management system on AWS that captures and delivers institutional (tribal) knowledge through a voice-first AI avatar. The accelerator uses Amazon Bedrock Knowledge Bases for retrieval-augmented generation and deploys in hours with AWS CloudFormation.",
+    "content": "Learn how to build a customizable, smart-caching knowledge management system on AWS that captures and delivers institutional (tribal) knowledge through a voice-first AI avatar. The accelerator uses Amazon Bedrock Knowledge Bases for retrieval-augmented generation and deploys in hours with AWS CloudFormation.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-54f6abc26924d5448a",
+    "company": "Amazon AI",
+    "title": "Agentic Resource Discovery (ARD): An open specification for agent discovery",
+    "url": "https://aws.amazon.com/blogs/machine-learning/agentic-resource-discovery-ard-an-open-specification-for-agent-discovery/",
+    "published_at": "2026-08-24T16:22:03.000Z",
+    "source_type": "rss_official",
+    "summary": "AWS Agent Registry gives your organization a centralized, searchable catalog for agents, tools, and skills. It works with the open Agentic Resource Discovery (ARD) standard to enable cross-environment discovery and governance at scale.",
+    "content": "AWS Agent Registry gives your organization a centralized, searchable catalog for agents, tools, and skills. It works with the open Agentic Resource Discovery (ARD) standard to enable cross-environment discovery and governance at scale.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-162f0cb9b57776a2f5",
+    "company": "Amazon AI",
+    "title": "Building a restaurant telephony AI host with Amazon Connect",
+    "url": "https://aws.amazon.com/blogs/machine-learning/building-a-restaurant-telephony-ai-host-with-amazon-connect/",
+    "published_at": "2026-08-24T16:13:09.000Z",
+    "source_type": "rss_official",
+    "summary": "Learn how to build a voice ordering system for restaurants that answers a phone call and takes an order end to end, with no app, no website, and no sign-in. It uses Amazon Connect for telephony, Amazon Connect Agentic Voice for real-time speech, an Amazon Connect AI agent for reasoning, and Amazon Bedrock AgentCore Gateway to reach backend tools through MCP.",
+    "content": "Learn how to build a voice ordering system for restaurants that answers a phone call and takes an order end to end, with no app, no website, and no sign-in. It uses Amazon Connect for telephony, Amazon Connect Agentic Voice for real-time speech, an Amazon Connect AI agent for reasoning, and Amazon Bedrock AgentCore Gateway to reach backend tools through MCP.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-b994fd604cd0589941",
+    "company": "Amazon AI",
+    "title": "AI-powered metadata correction and harmonization",
+    "url": "https://aws.amazon.com/blogs/machine-learning/ai-powered-metadata-correction-and-harmonization/",
+    "published_at": "2026-08-24T15:53:03.000Z",
+    "source_type": "rss_official",
+    "summary": "Metadata harmonization (standardizing labels, identifiers, and formats so datasets can work together) is still largely manual. This post shows how AI-powered metadata correction works in practice, covering two approaches, human-in-the-loop validation and autonomous agent-driven workflows, plus governance considerations for production deployment.",
+    "content": "Metadata harmonization (standardizing labels, identifiers, and formats so datasets can work together) is still largely manual. This post shows how AI-powered metadata correction works in practice, covering two approaches, human-in-the-loop validation and autonomous agent-driven workflows, plus governance considerations for production deployment.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-b38e345f5a243f5ef7",
+    "company": "NVIDIA AI",
+    "title": "How XPUs Meet a World-Class AI Factory",
+    "url": "https://blogs.nvidia.com/blog/nvlink-fusion-xpu-ai-factory/",
+    "published_at": "2026-08-24T15:00:54.000Z",
+    "source_type": "rss_official",
+    "summary": "To generate intelligence at scale, AI factories run continuously, and their economics are defined by delivered output: tokens per second, tokens per watt, cost per token, utilization and uptime. That requires AI infrastructure designed and built as a full factory, not a collection of individual accelerators. Hyperscalers and AI-native companies building custom XPUs must consider […]",
+    "content": "To generate intelligence at scale, AI factories run continuously, and their economics are defined by delivered output: tokens per second, tokens per watt, cost per token, utilization and uptime. That requires AI infrastructure designed and built as a full factory, not a collection of individual accelerators. Hyperscalers and AI-native companies building custom XPUs must consider […]",
+    "source_url": "https://blogs.nvidia.com/feed/"
+  },
+  {
+    "id": "provider-b63e057324106ccdce",
+    "company": "NVIDIA AI",
+    "title": "With Groq 3 LPX in Full Production, NVIDIA Extends Vera Rubin Inference for Agents",
+    "url": "https://blogs.nvidia.com/blog/vera-rubin-lpx-spectrum-x-nvlink-fusion/",
+    "published_at": "2026-08-24T15:00:41.000Z",
+    "source_type": "rss_official",
+    "summary": "The next era of AI inference won’t be defined by a single breakthrough chip, network or system. It’ll be defined by how every layer of the AI factory works together. That’s why NVIDIA is extending Vera Rubin NVL72 with fast token generation for agentic systems. Announced today, the NVIDIA Vera Rubin rack-scale system NVIDIA Groq […]",
+    "content": "The next era of AI inference won’t be defined by a single breakthrough chip, network or system. It’ll be defined by how every layer of the AI factory works together. That’s why NVIDIA is extending Vera Rubin NVL72 with fast token generation for agentic systems. Announced today, the NVIDIA Vera Rubin rack-scale system NVIDIA Groq […]",
+    "source_url": "https://blogs.nvidia.com/feed/"
+  },
+  {
+    "id": "provider-1f40eb9313564a345a",
+    "company": "NVIDIA AI",
+    "title": "Up to 30x More Work Per Watt: NVIDIA Vera Rubin NVL72 Sets a New Efficiency Standard for AI Agents",
+    "url": "https://blogs.nvidia.com/blog/vera-rubin-nvl72-efficiency-ai-agents/",
+    "published_at": "2026-08-24T15:00:19.000Z",
+    "source_type": "rss_official",
+    "summary": "According to OpenRouter data, agentic AI workloads consume 15x more tokens than a simple chat request. Why? Consider what happens when an AI agent researches a company for an investment decision. The agent queries financial databases, searches news and filings, invokes a sub-agent to run peer comparisons and model valuations, then synthesizes everything into a […]",
+    "content": "According to OpenRouter data, agentic AI workloads consume 15x more tokens than a simple chat request. Why? Consider what happens when an AI agent researches a company for an investment decision. The agent queries financial databases, searches news and filings, invokes a sub-agent to run peer comparisons and model valuations, then synthesizes everything into a […]",
+    "source_url": "https://blogs.nvidia.com/feed/"
+  },
+  {
+    "id": "provider-6d2d38c8b501104fb9",
+    "company": "NVIDIA AI",
+    "title": "NVIDIA Vera Rubin and Blackwell Set a New Standard for Agentic AI Performance per Watt",
+    "url": "https://developer.nvidia.com/blog/nvidia-vera-rubin-and-blackwell-set-a-new-standard-for-agentic-ai-performance-per-watt/",
+    "published_at": "2026-08-24T15:00:05.000Z",
+    "source_type": "rss_official",
+    "summary": "AI agents have expanded inference from single-turn interactions into multi-step workflows that reason, invoke tools, coordinate subagents, and carry growing...",
+    "content": "AI agents have expanded inference from single-turn interactions into multi-step workflows that reason, invoke tools, coordinate subagents, and carry growing...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
+  },
+  {
+    "id": "provider-e68677b07c6bda766f",
+    "company": "NVIDIA AI",
+    "title": "Solving Agentic AI Fleet Challenges with NVIDIA Vera CPU",
+    "url": "https://developer.nvidia.com/blog/solving-agentic-ai-fleet-challenges-with-nvidia-vera-cpu/",
+    "published_at": "2026-08-24T15:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "AI factories are interconnected systems where fleet economics depend on how efficiently the entire stack converts power and capital into completed agent tasks....",
+    "content": "AI factories are interconnected systems where fleet economics depend on how efficiently the entire stack converts power and capital into completed agent tasks....",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
+  },
+  {
+    "id": "provider-f85ea7d47c40ce2cb8",
+    "company": "NVIDIA AI",
+    "title": "How NVIDIA Groq 3 LPX Unlocks Ultrafast Interactivity at Long Context on NVIDIA Vera Rubin",
+    "url": "https://developer.nvidia.com/blog/how-nvidia-groq-3-lpx-unlocks-ultrafast-interactivity-at-long-context-on-nvidia-vera-rubin/",
+    "published_at": "2026-08-24T15:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "NVIDIA Groq 3 LPX is the interactive AI inference accelerator for the NVIDIA Vera Rubin platform. At the core of the platform is NVIDIA Vera Rubin NVL72, the...",
+    "content": "NVIDIA Groq 3 LPX is the interactive AI inference accelerator for the NVIDIA Vera Rubin platform. At the core of the platform is NVIDIA Vera Rubin NVL72, the...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
+  },
+  {
+    "id": "provider-8ac7c9de4c67989beb",
+    "company": "IBM Research",
+    "title": "Qiskit Fermions: a modular toolbox for fermionic systems",
+    "url": "https://research.ibm.com/blog/qiskit-fermions?utm_medium=rss&utm_source=rss",
+    "published_at": "2026-08-24T14:30:00.000Z",
+    "source_type": "rss_official",
+    "summary": "A new research tool for expressing fermionic operators, circuits, and mappings—and for building efficient fermionic algorithms.",
+    "content": "A new research tool for expressing fermionic operators, circuits, and mappings—and for building efficient fermionic algorithms.",
+    "source_url": "https://research.ibm.com/rss"
+  },
+  {
+    "id": "provider-8117b6f6ca8f35a4b7",
+    "company": "OpenAI",
+    "title": "Advancing price-performance for developers with GPT‑5.6 in Kiro",
+    "url": "https://openai.com/index/gpt-5-6-in-kiro",
+    "published_at": "2026-08-24T12:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "GPT‑5.6 is now available in Kiro, helping developers plan, build, review, and test software with better price-performance.",
+    "content": "GPT‑5.6 is now available in Kiro, helping developers plan, build, review, and test software with better price-performance.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
     "id": "provider-2bd27ff827cc400e8c",
     "company": "Amazon AI",
     "title": "Agentic Data Operations Platform (ADOP): Data engineering into hours",
@@ -55,17 +220,6 @@
     "source_url": "https://www.amazon.science/index.rss"
   },
   {
-    "id": "provider-3bfe7f3c4210352640",
-    "company": "NVIDIA AI",
-    "title": "NVIDIA AVO Reaches 100% on ARC-AGI-3, Demonstrating a Frontier-Level General-Purpose Architecture for Long-Horizon Autonomous Agents",
-    "url": "https://developer.nvidia.com/blog/nvidia-avo-reaches-100-on-arc-agi-3-demonstrating-a-frontier-level-general-purpose-architecture-for-long-horizon-autonomous-agents/",
-    "published_at": "2026-08-21T13:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "A frontier language model is only one component of an AI agent. The surrounding agent system—often called a harness—determines how the model receives...",
-    "content": "A frontier language model is only one component of an AI agent. The surrounding agent system—often called a harness—determines how the model receives...",
-    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
     "id": "provider-d965340ab193dfa8b7",
     "company": "NVIDIA AI",
     "title": "Where Security Fits in an AI Agent Stack",
@@ -74,6 +228,17 @@
     "source_type": "rss_official",
     "summary": "As AI agents become more capable and operate over longer horizons, building security and trust into the applications they power becomes increasingly important....",
     "content": "As AI agents become more capable and operate over longer horizons, building security and trust into the applications they power becomes increasingly important....",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
+  },
+  {
+    "id": "provider-3bfe7f3c4210352640",
+    "company": "NVIDIA AI",
+    "title": "NVIDIA AVO Reaches 100% on ARC-AGI-3, Demonstrating a Frontier-Level General-Purpose Architecture for Long-Horizon Autonomous Agents",
+    "url": "https://developer.nvidia.com/blog/nvidia-avo-reaches-100-on-arc-agi-3-demonstrating-a-frontier-level-general-purpose-architecture-for-long-horizon-autonomous-agents/",
+    "published_at": "2026-08-21T13:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "A frontier language model is only one component of an AI agent. The surrounding agent system—often called a harness—determines how the model receives...",
+    "content": "A frontier language model is only one component of an AI agent. The surrounding agent system—often called a harness—determines how the model receives...",
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
@@ -286,39 +451,6 @@
     "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
   },
   {
-    "id": "provider-6a5a5a1e04bad4a80d",
-    "company": "Amazon AI",
-    "title": "Asynchronous patterns for calling Amazon Bedrock AgentCore agents in serverless pipelines",
-    "url": "https://aws.amazon.com/blogs/machine-learning/asynchronous-patterns-for-calling-amazon-bedrock-agentcore-agents-in-serverless-pipelines/",
-    "published_at": "2026-08-19T22:06:09.000Z",
-    "source_type": "rss_official",
-    "summary": "In this post, you learn three serverless patterns (task-token callback, direct service integration, and durable functions) for invoking Amazon Bedrock AgentCore agents asynchronously from AWS Step Functions pipelines, eliminating idle compute costs while your AI agent processes requests.",
-    "content": "In this post, you learn three serverless patterns (task-token callback, direct service integration, and durable functions) for invoking Amazon Bedrock AgentCore agents asynchronously from AWS Step Functions pipelines, eliminating idle compute costs while your AI agent processes requests.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
-    "id": "provider-f6bdf1bff160aeebfb",
-    "company": "Amazon AI",
-    "title": "How Fanatics Betting and Gaming built a multi-agent customer support system",
-    "url": "https://aws.amazon.com/blogs/machine-learning/how-fanatics-betting-and-gaming-built-a-multi-agent-customer-support-system/",
-    "published_at": "2026-08-19T20:40:45.000Z",
-    "source_type": "rss_official",
-    "summary": "Fanatics Betting and Gaming built a multi-agent customer support system on AWS to handle the complexity of sports betting: state-specific rules, real-time responsible gaming, and traffic spikes during major sporting events. This post walks through the architecture, the AWS services involved, and the patterns for your own multi-agent support solution.",
-    "content": "Fanatics Betting and Gaming built a multi-agent customer support system on AWS to handle the complexity of sports betting: state-specific rules, real-time responsible gaming, and traffic spikes during major sporting events. This post walks through the architecture, the AWS services involved, and the patterns for your own multi-agent support solution.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
-    "id": "provider-c84a6230fd962a1e86",
-    "company": "Amazon AI",
-    "title": "KnowledgeForge: mining gold from the ITSM ticket graveyard",
-    "url": "https://aws.amazon.com/blogs/machine-learning/knowledgeforge-mining-gold-from-the-itsm-ticket-graveyard/",
-    "published_at": "2026-08-19T20:36:50.000Z",
-    "source_type": "rss_official",
-    "summary": "KnowledgeForge mines resolved ITSM incident tickets into new knowledge base articles and automatically curates the existing library by deduplicating, quality-scoring, and improving content, using Amazon Bedrock, Amazon S3 Vectors, and AWS Step Functions in a multi-tenant, closed-loop pipeline.",
-    "content": "KnowledgeForge mines resolved ITSM incident tickets into new knowledge base articles and automatically curates the existing library by deduplicating, quality-scoring, and improving content, using Amazon Bedrock, Amazon S3 Vectors, and AWS Step Functions in a multi-tenant, closed-loop pipeline.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
     "id": "provider-1e2a0c2e3dd943a5b0",
     "company": "OpenAI",
     "title": "Offering Zero Data Retention for frontier models",
@@ -407,17 +539,6 @@
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
-    "id": "provider-d327c5d8bad020a8ee",
-    "company": "Amazon AI",
-    "title": "Amazon Bedrock AgentCore payments is now generally available: Enabling agents to transact safely and autonomously at scale",
-    "url": "https://aws.amazon.com/blogs/machine-learning/amazon-bedrock-agentcore-payments-is-now-generally-available-enabling-agents-to-transact-safely-and-autonomously-at-scale/",
-    "published_at": "2026-08-18T18:56:14.000Z",
-    "source_type": "rss_official",
-    "summary": "Amazon Bedrock AgentCore payments is now generally available, enabling AI agents to autonomously transact at scale with built-in spending guardrails, protocol-agnostic payment orchestration, and production-ready observability.",
-    "content": "Amazon Bedrock AgentCore payments is now generally available, enabling AI agents to autonomously transact at scale with built-in spending guardrails, protocol-agnostic payment orchestration, and production-ready observability.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
     "id": "provider-d8884032371e5dd826",
     "company": "Hugging Face",
     "title": "How Much Memory Does Your Agent Actually Need?",
@@ -438,17 +559,6 @@
     "summary": "Atomistic simulation requires three things: knowledge of the science, compute-efficient implementation of simulations, and accessible interfaces to the...",
     "content": "Atomistic simulation requires three things: knowledge of the science, compute-efficient implementation of simulations, and accessible interfaces to the...",
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
-    "id": "provider-55466a1fcb7750b91c",
-    "company": "Amazon AI",
-    "title": "Customize Amazon Quick embedded chat into your application",
-    "url": "https://aws.amazon.com/blogs/machine-learning/customize-amazon-quick-embedded-chat-into-your-application/",
-    "published_at": "2026-08-18T17:13:13.000Z",
-    "source_type": "rss_official",
-    "summary": "Amazon Quick embedded chat brings a conversational AI interface into your web application. This post walks through customizing the embedded chat with container and SDK styling, branding removal, and a custom agent persona so it matches your brand's look, feel, and voice.",
-    "content": "Amazon Quick embedded chat brings a conversational AI interface into your web application. This post walks through customizing the embedded chat with container and SDK styling, branding removal, and a custom agent persona so it matches your brand's look, feel, and voice.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
   },
   {
     "id": "provider-18f5b99973b6a87822",
@@ -1221,28 +1331,6 @@
     "source_url": "https://blogs.nvidia.com/feed/"
   },
   {
-    "id": "provider-6a0237bb9483eb0342",
-    "company": "NVIDIA AI",
-    "title": "As AI Increases Demands on Memory, Storage Steps Up",
-    "url": "https://blogs.nvidia.com/blog/ai-storage-fms/",
-    "published_at": "2026-08-04T15:00:47.000Z",
-    "source_type": "rss_official",
-    "summary": "Surging AI demands are driving the need for massive datasets and context windows that burst past the confines of system memory. But rising needs aren’t met by simply adding more storage capacity. What’s needed is useful, grounded insights from AI factories and efficient, secure storage architectures that enable those insights. At this week’s Future of […]",
-    "content": "Surging AI demands are driving the need for massive datasets and context windows that burst past the confines of system memory. But rising needs aren’t met by simply adding more storage capacity. What’s needed is useful, grounded insights from AI factories and efficient, secure storage architectures that enable those insights. At this week’s Future of […]",
-    "source_url": "https://blogs.nvidia.com/feed/"
-  },
-  {
-    "id": "provider-00fdd6427576802fc9",
-    "company": "NVIDIA AI",
-    "title": "AI Leaders Propose SAFE Guidelines for Cybersecurity Transparency",
-    "url": "https://blogs.nvidia.com/blog/open-secure-ai-alliance-contributions/",
-    "published_at": "2026-08-04T13:00:47.000Z",
-    "source_type": "rss_official",
-    "summary": "Members of the Open Secure AI Alliance — now more than 120 organizations strong — are developing new guidelines to strengthen agentic AI cybersecurity as the annual Black Hat conference begins in Las Vegas today. The Linux Foundation today shared a Request for Comments on Shared AI Findings Exchange (SAFE), a proposed set of guidelines […]",
-    "content": "Members of the Open Secure AI Alliance — now more than 120 organizations strong — are developing new guidelines to strengthen agentic AI cybersecurity as the annual Black Hat conference begins in Las Vegas today. The Linux Foundation today shared a Request for Comments on Shared AI Findings Exchange (SAFE), a proposed set of guidelines […]",
-    "source_url": "https://blogs.nvidia.com/feed/"
-  },
-  {
     "id": "provider-95fd855a276dfc15c0",
     "company": "OpenAI",
     "title": "New ways to learn and teach with ChatGPT Work and Codex",
@@ -1439,17 +1527,6 @@
     "summary": "Gemini Robotics ER 2 helps robots reason, collaborate, and solve real-world tasks. It represents a step change in video understanding, tool orchestration, and multi-robot collaboration for robotic applications.",
     "content": "Gemini Robotics ER 2 helps robots reason, collaborate, and solve real-world tasks. It represents a step change in video understanding, tool orchestration, and multi-robot collaboration for robotic applications.",
     "source_url": "https://deepmind.google/blog/rss.xml"
-  },
-  {
-    "id": "provider-08d0747e110873778f",
-    "company": "NVIDIA AI",
-    "title": "Best in Class: Stream PC Games and Study on the Same Laptop With GeForce NOW",
-    "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-back-to-school-2026/",
-    "published_at": "2026-07-30T13:00:20.000Z",
-    "source_type": "rss_official",
-    "summary": "Back to school means balancing assignments, deadlines and downtime. GeForce NOW makes it easy to have it all. With cloud gaming, everyday laptops used for class can also become GeForce RTX-powered gaming setups. When it’s time to switch from studying to gaming, members can jump into Halo: Campaign Evolved, as GeForce NOW is bringing one […]",
-    "content": "Back to school means balancing assignments, deadlines and downtime. GeForce NOW makes it easy to have it all. With cloud gaming, everyday laptops used for class can also become GeForce RTX-powered gaming setups. When it’s time to switch from studying to gaming, members can jump into Halo: Campaign Evolved, as GeForce NOW is bringing one […]",
-    "source_url": "https://blogs.nvidia.com/feed/"
   },
   {
     "id": "provider-c48c8e53fba7c7763e",
@@ -2167,17 +2244,6 @@
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
-    "id": "provider-3a98145a3310a1e119",
-    "company": "NVIDIA AI",
-    "title": "Post-Train NVIDIA Cosmos 3 in One Day Using Agent Skills",
-    "url": "https://developer.nvidia.com/blog/post-train-nvidia-cosmos-3-in-one-day-using-agent-skills/",
-    "published_at": "2026-07-14T16:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "What if autonomous coding AI agents could push your vision reasoning models above 90% accuracy with almost no manual effort? When adapting vision reasoning...",
-    "content": "What if autonomous coding AI agents could push your vision reasoning models above 90% accuracy with almost no manual effort? When adapting vision reasoning...",
-    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
     "id": "provider-82a6fc4eef8ad34bc2",
     "company": "NVIDIA AI",
     "title": "How to Run an Autoresearch Workflow with RL Agent Skills and NVIDIA NeMo",
@@ -2186,6 +2252,17 @@
     "source_type": "rss_official",
     "summary": "Coding AI agents are becoming practical operators for long-running machine learning (ML) workflows. They can inspect repositories, set up runtimes, resolve...",
     "content": "Coding AI agents are becoming practical operators for long-running machine learning (ML) workflows. They can inspect repositories, set up runtimes, resolve...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
+  },
+  {
+    "id": "provider-3a98145a3310a1e119",
+    "company": "NVIDIA AI",
+    "title": "Post-Train NVIDIA Cosmos 3 in One Day Using Agent Skills",
+    "url": "https://developer.nvidia.com/blog/post-train-nvidia-cosmos-3-in-one-day-using-agent-skills/",
+    "published_at": "2026-07-14T16:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "What if autonomous coding AI agents could push your vision reasoning models above 90% accuracy with almost no manual effort? When adapting vision reasoning...",
+    "content": "What if autonomous coding AI agents could push your vision reasoning models above 90% accuracy with almost no manual effort? When adapting vision reasoning...",
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
@@ -2453,17 +2530,6 @@
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
-    "id": "provider-2b0a2f1542b412af91",
-    "company": "OpenAI",
-    "title": "Helping K–12 educators build practical AI skills",
-    "url": "https://openai.com/index/k-12-educators-practical-skills",
-    "published_at": "2026-07-08T10:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "OpenAI Academy and the Walton Family Foundation are bringing hands-on AI Skills Jams to help K–12 educators build practical AI skills for the classroom.",
-    "content": "OpenAI Academy and the Walton Family Foundation are bringing hands-on AI Skills Jams to help K–12 educators build practical AI skills for the classroom.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-e3661ea4b1e8cfeb7f",
     "company": "IBM Research",
     "title": "What's new at IBM Quantum Q2 2026",
@@ -2473,17 +2539,6 @@
     "summary": "Explore the latest updates, releases, and resources from IBM Quantum and the Qiskit community.",
     "content": "Explore the latest updates, releases, and resources from IBM Quantum and the Qiskit community.",
     "source_url": "https://research.ibm.com/rss"
-  },
-  {
-    "id": "provider-733bbcde12a2a37579",
-    "company": "OpenAI",
-    "title": "Introducing GPT-Live",
-    "url": "https://openai.com/index/introducing-gpt-live",
-    "published_at": "2026-07-08T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "A new generation of voice models for natural human-AI interaction, now powering ChatGPT Voice.",
-    "content": "A new generation of voice models for natural human-AI interaction, now powering ChatGPT Voice.",
-    "source_url": "https://openai.com/news/rss.xml"
   },
   {
     "id": "provider-00cb2b17ac5c3f1a40",
@@ -2638,17 +2693,6 @@
     "summary": "Amazon is developing precise, sector-specific approaches to measuring decarbonization progress — starting with emissions per unit shipped.",
     "content": "Amazon is developing precise, sector-specific approaches to measuring decarbonization progress — starting with emissions per unit shipped.",
     "source_url": "https://www.amazon.science/index.rss"
-  },
-  {
-    "id": "provider-d35984f92bdeae83f8",
-    "company": "IBM Research",
-    "title": "Ponder This Challenge - July 2026 - Return of the Superheroes",
-    "url": "https://research.ibm.com/blog/ponder-this-july-2026?utm_medium=rss&utm_source=rss",
-    "published_at": "2026-07-01T15:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "",
-    "content": "",
-    "source_url": "https://research.ibm.com/rss"
   },
   {
     "id": "provider-af1ed631797e0a7511",
@@ -3509,28 +3553,6 @@
     "source_url": "https://www.amazon.science/index.rss"
   },
   {
-    "id": "provider-d2303627a7701c4383",
-    "company": "NVIDIA AI",
-    "title": "NVIDIA Dynamo Snapshot: Fast Startup for Inference Workloads on Kubernetes",
-    "url": "https://developer.nvidia.com/blog/nvidia-dynamo-snapshot-fast-startup-for-inference-workloads-on-kubernetes/",
-    "published_at": "2026-05-27T23:09:52.000Z",
-    "source_type": "rss_official",
-    "summary": "The cold-start problem In production inference deployments, demand fluctuates over time, requiring inference replicas to scale elastically. However,...",
-    "content": "The cold-start problem In production inference deployments, demand fluctuates over time, requiring inference replicas to scale elastically. However,...",
-    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
-    "id": "provider-d1f6f770a087c69ce1",
-    "company": "NVIDIA AI",
-    "title": "NVIDIA Blackwell Sets STAC-AI Record for LLM Inference in Finance",
-    "url": "https://developer.nvidia.com/blog/nvidia-blackwell-sets-stac-ai-record-for-llm-inference-in-finance/",
-    "published_at": "2026-05-27T20:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Large language models (LLMs) are revolutionizing the financial trading landscape by enabling sophisticated analysis of vast amounts of unstructured data to...",
-    "content": "Large language models (LLMs) are revolutionizing the financial trading landscape by enabling sophisticated analysis of vast amounts of unstructured data to...",
-    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
     "id": "provider-5336e2435d728667b3",
     "company": "Amazon AI",
     "title": "Amazon Research Awards recipients announced",
@@ -3584,17 +3606,6 @@
     "summary": "",
     "content": "",
     "source_url": "https://huggingface.co/blog/feed.xml"
-  },
-  {
-    "id": "provider-790eeb487020bfae23",
-    "company": "NVIDIA AI",
-    "title": "Synthesize Realistic 3D Medical Images at Scale to Ship Pre‑Trained Models",
-    "url": "https://developer.nvidia.com/blog/synthesize-realistic-3d-medical-images-at-scale-to-ship-pre-trained-models/",
-    "published_at": "2026-05-22T16:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "High‑quality 3D medical imaging data is the foundation of modern radiology AI, but access to it is often constrained by data scarcity, privacy restrictions,...",
-    "content": "High‑quality 3D medical imaging data is the foundation of modern radiology AI, but access to it is often constrained by data scarcity, privacy restrictions,...",
-    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
     "id": "provider-b7ad383aaa6a50f036",
@@ -4068,17 +4079,6 @@
     "summary": "Google DeepMind partners with global consultancies to bring the power of frontier AI to organizations around the world.",
     "content": "Google DeepMind partners with global consultancies to bring the power of frontier AI to organizations around the world.",
     "source_url": "https://deepmind.google/blog/rss.xml"
-  },
-  {
-    "id": "provider-ed5c6ccbeadc96a394",
-    "company": "Hugging Face",
-    "title": "QIMMA قِمّة ⛰: A Quality-First Arabic LLM Leaderboard",
-    "url": "https://huggingface.co/blog/tiiuae/qimma-arabic-leaderboard",
-    "published_at": "2026-04-21T10:09:58.000Z",
-    "source_type": "rss_official",
-    "summary": "",
-    "content": "",
-    "source_url": "https://huggingface.co/blog/feed.xml"
   },
   {
     "id": "provider-f50299eca7aa40d551",
