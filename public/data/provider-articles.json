@@ -1,5 +1,115 @@
 [
   {
+    "id": "provider-f04bac795f13c8d472",
+    "company": "OpenAI",
+    "title": "How loveholidays is making everyone a builder with Codex",
+    "url": "https://openai.com/index/loveholidays",
+    "published_at": "2026-08-26T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Discover how loveholidays uses OpenAI Codex to make software development accessible across the business, helping teams turn ideas into products faster.",
+    "content": "Discover how loveholidays uses OpenAI Codex to make software development accessible across the business, helping teams turn ideas into products faster.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-39e7299c41cf3dc001",
+    "company": "NVIDIA AI",
+    "title": "Restore LLM Inference Capacity in Seconds with Shadow Engine Recovery in NVIDIA Dynamo",
+    "url": "https://developer.nvidia.com/blog/restore-llm-inference-capacity-in-seconds-with-shadow-engine-recovery-in-nvidia-dynamo/",
+    "published_at": "2026-08-25T20:57:54.000Z",
+    "source_type": "rss_official",
+    "summary": "When an LLM engine process fails, the standard recovery path involves a cold restart. This requires loading weights into HBM from storage, compiling kernels,...",
+    "content": "When an LLM engine process fails, the standard recovery path involves a cold restart. This requires loading weights into HBM from storage, compiling kernels,...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
+  },
+  {
+    "id": "provider-f7d4911decc2b05cc7",
+    "company": "Amazon AI",
+    "title": "Agentic observability with Amazon OpenSearch Service MCP Apps",
+    "url": "https://aws.amazon.com/blogs/machine-learning/agentic-observability-with-amazon-opensearch-service-mcp-apps/",
+    "published_at": "2026-08-25T19:00:09.000Z",
+    "source_type": "rss_official",
+    "summary": "Amazon OpenSearch Service now supports MCP Apps, which return interactive visualizations alongside your AI agent's text responses. Learn how a single, locally run MCP server lets your agent move from alert to trace to logs to root cause in one conversation, and how you can verify every step inline without leaving your IDE.",
+    "content": "Amazon OpenSearch Service now supports MCP Apps, which return interactive visualizations alongside your AI agent's text responses. Learn how a single, locally run MCP server lets your agent move from alert to trace to logs to root cause in one conversation, and how you can verify every step inline without leaving your IDE.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-7558d2776b6cff9939",
+    "company": "Amazon AI",
+    "title": "Governed reports with Amazon Quick Desktop and Amazon FSx for NetApp ONTAP",
+    "url": "https://aws.amazon.com/blogs/machine-learning/governed-reports-with-amazon-quick-desktop-and-amazon-fsx-for-netapp-ontap/",
+    "published_at": "2026-08-25T16:35:01.000Z",
+    "source_type": "rss_official",
+    "summary": "Build a governed weekly reporting workflow with Amazon Quick Desktop and Amazon FSx for NetApp ONTAP. An Amazon S3 access point exposes an approved folder to a Quick knowledge base, and a custom skill drafts cited weekly reports and Slack summaries with human review before anything is shared.",
+    "content": "Build a governed weekly reporting workflow with Amazon Quick Desktop and Amazon FSx for NetApp ONTAP. An Amazon S3 access point exposes an approved folder to a Quick knowledge base, and a custom skill drafts cited weekly reports and Slack summaries with human review before anything is shared.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-e668c787602d26fc92",
+    "company": "NVIDIA AI",
+    "title": "Leading Publishers Bring Blockbuster PC Games and Technology to NVIDIA RTX Spark",
+    "url": "https://blogs.nvidia.com/blog/gamescom-rtx-spark-pc-games-technology/",
+    "published_at": "2026-08-25T15:30:48.000Z",
+    "source_type": "rss_official",
+    "summary": "NVIDIA is bringing the next wave of RTX gaming to the Gamescom conference running this week in Cologne, Germany, with support for new games, anti-cheat technologies and increased visual quality. Electronic Arts, Embark and Ubisoft are among the latest game publishers and developers bringing their blockbuster titles to NVIDIA RTX Spark ahead of its launch […]",
+    "content": "NVIDIA is bringing the next wave of RTX gaming to the Gamescom conference running this week in Cologne, Germany, with support for new games, anti-cheat technologies and increased visual quality. Electronic Arts, Embark and Ubisoft are among the latest game publishers and developers bringing their blockbuster titles to NVIDIA RTX Spark ahead of its launch […]",
+    "source_url": "https://blogs.nvidia.com/feed/"
+  },
+  {
+    "id": "provider-99a2c7231569969a48",
+    "company": "Hugging Face",
+    "title": "Granite 4.2 LLMs: How They're Built",
+    "url": "https://huggingface.co/blog/ibm-granite/granite-4-2",
+    "published_at": "2026-08-25T15:14:14.000Z",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://huggingface.co/blog/feed.xml"
+  },
+  {
+    "id": "provider-c5e6c2f03e8039e7d1",
+    "company": "IBM Research",
+    "title": "Granite 4.2 brings native reasoning to enterprise agents",
+    "url": "https://research.ibm.com/blog/introducing-granite-4-2?utm_medium=rss&utm_source=rss",
+    "published_at": "2026-08-25T15:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "IBM’s new open Granite models are designed for agentic AI, combining reasoning, tool use, coding, instruction following, and speech capabilities.",
+    "content": "IBM’s new open Granite models are designed for agentic AI, combining reasoning, tool use, coding, instruction following, and speech capabilities.",
+    "source_url": "https://research.ibm.com/rss"
+  },
+  {
+    "id": "provider-632cf7d68b51531646",
+    "company": "Hugging Face",
+    "title": "Quantization-Aware Healing: a compressed, 4-bit model that outperforms its full-precision original",
+    "url": "https://huggingface.co/blog/MultiverseComputingCAI/quantization-aware-healing",
+    "published_at": "2026-08-25T11:39:24.000Z",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://huggingface.co/blog/feed.xml"
+  },
+  {
+    "id": "provider-5e68924bf116eb9f76",
+    "company": "OpenAI",
+    "title": "The full stack behind abundant intelligence",
+    "url": "https://openai.com/index/the-full-stack-behind-abundant-intelligence",
+    "published_at": "2026-08-25T07:05:00.000Z",
+    "source_type": "rss_official",
+    "summary": "OpenAI CFO Sarah Friar explains how advances across chips, compute, models, and products compound to deliver more useful intelligence at greater scale and lower cost.",
+    "content": "OpenAI CFO Sarah Friar explains how advances across chips, compute, models, and products compound to deliver more useful intelligence at greater scale and lower cost.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-b784c8538a1907b176",
+    "company": "OpenAI",
+    "title": "Jalapeño’s first results show industry-leading speed and efficiency in AI inference",
+    "url": "https://openai.com/index/jalapeno-first-results",
+    "published_at": "2026-08-25T07:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Jalapeño is a custom inference chip from OpenAI that delivers faster, more power-efficient AI inference, with higher throughput and lower latency for modern models.",
+    "content": "Jalapeño is a custom inference chip from OpenAI that delivers faster, more power-efficient AI inference, with higher throughput and lower latency for modern models.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
     "id": "provider-e805f4a7e9eb08c99b",
     "company": "OpenAI",
     "title": "Disrupting a new covert influence campaign from Russia",
@@ -8,6 +118,17 @@
     "source_type": "rss_official",
     "summary": "OpenAI banned Russia-origin accounts using AI to promote a fake Israel-based think tank and a “sovereignty” index praising Russia and criticizing the West.",
     "content": "OpenAI banned Russia-origin accounts using AI to promote a fake Israel-based think tank and a “sovereignty” index praising Russia and criticizing the West.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-92e6b7bb5a7de7a7f3",
+    "company": "OpenAI",
+    "title": "Introducing the Admin plugin for ChatGPT Work and Codex",
+    "url": "https://openai.com/index/introducing-admin-plugin",
+    "published_at": "2026-08-25T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Use the Admin plugin for ChatGPT Work and Codex to analyze workspace usage, manage members and permissions, adjust limits, and act on admin requests.",
+    "content": "Use the Admin plugin for ChatGPT Work and Codex to analyze workspace usage, manage members and permissions, adjust limits, and act on admin requests.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -220,17 +341,6 @@
     "source_url": "https://www.amazon.science/index.rss"
   },
   {
-    "id": "provider-d965340ab193dfa8b7",
-    "company": "NVIDIA AI",
-    "title": "Where Security Fits in an AI Agent Stack",
-    "url": "https://developer.nvidia.com/blog/where-security-fits-in-an-ai-agent-stack/",
-    "published_at": "2026-08-21T13:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "As AI agents become more capable and operate over longer horizons, building security and trust into the applications they power becomes increasingly important....",
-    "content": "As AI agents become more capable and operate over longer horizons, building security and trust into the applications they power becomes increasingly important....",
-    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
     "id": "provider-3bfe7f3c4210352640",
     "company": "NVIDIA AI",
     "title": "NVIDIA AVO Reaches 100% on ARC-AGI-3, Demonstrating a Frontier-Level General-Purpose Architecture for Long-Horizon Autonomous Agents",
@@ -239,6 +349,17 @@
     "source_type": "rss_official",
     "summary": "A frontier language model is only one component of an AI agent. The surrounding agent system—often called a harness—determines how the model receives...",
     "content": "A frontier language model is only one component of an AI agent. The surrounding agent system—often called a harness—determines how the model receives...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
+  },
+  {
+    "id": "provider-d965340ab193dfa8b7",
+    "company": "NVIDIA AI",
+    "title": "Where Security Fits in an AI Agent Stack",
+    "url": "https://developer.nvidia.com/blog/where-security-fits-in-an-ai-agent-stack/",
+    "published_at": "2026-08-21T13:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "As AI agents become more capable and operate over longer horizons, building security and trust into the applications they power becomes increasingly important....",
+    "content": "As AI agents become more capable and operate over longer horizons, building security and trust into the applications they power becomes increasingly important....",
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
@@ -251,6 +372,17 @@
     "summary": "Google DeepMind partners with game studios to prototype breakthrough AI gameplay.",
     "content": "Google DeepMind partners with game studios to prototype breakthrough AI gameplay.",
     "source_url": "https://deepmind.google/blog/rss.xml"
+  },
+  {
+    "id": "provider-bbd8f7921596e3a2eb",
+    "company": "Hugging Face",
+    "title": "How Hugging Face Inference Endpoints, Jobs, and Buckets Power Search on Papers with Code",
+    "url": "https://huggingface.co/blog/pwc-search",
+    "published_at": "2026-08-21T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://huggingface.co/blog/feed.xml"
   },
   {
     "id": "provider-28208d464c7c2e2ab0",
@@ -427,28 +559,6 @@
     "summary": "NVIDIA Holoscan is a platform for building real-time AI applications at the edge, from medical imaging to robotics. HoloHub is its companion repository: a...",
     "content": "NVIDIA Holoscan is a platform for building real-time AI applications at the edge, from medical imaging to robotics. HoloHub is its companion repository: a...",
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
-    "id": "provider-d5f643cfa4a44b09d5",
-    "company": "Amazon AI",
-    "title": "Domain and publish date filters for Web Search on AgentCore",
-    "url": "https://aws.amazon.com/blogs/machine-learning/domain-and-publish-date-filters-for-web-search-on-agentcore/",
-    "published_at": "2026-08-19T22:13:20.000Z",
-    "source_type": "rss_official",
-    "summary": "Web Search on Amazon Bedrock AgentCore now supports runtime domain and published-date filtering. New per-request filters give developers per-call control over which web sources their agents consult and how fresh those sources must be, all enforced server-side. This release also expands Web Search to the Europe (Ireland) and Asia Pacific (Tokyo) Regions.",
-    "content": "Web Search on Amazon Bedrock AgentCore now supports runtime domain and published-date filtering. New per-request filters give developers per-call control over which web sources their agents consult and how fresh those sources must be, all enforced server-side. This release also expands Web Search to the Europe (Ireland) and Asia Pacific (Tokyo) Regions.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
-  },
-  {
-    "id": "provider-96abf18d808f7b10cd",
-    "company": "Amazon AI",
-    "title": "Automate Document Processing with Quick Automate and the IDP Accelerator",
-    "url": "https://aws.amazon.com/blogs/machine-learning/automate-document-processing-with-quick-automate-and-the-idp-accelerator/",
-    "published_at": "2026-08-19T22:09:56.000Z",
-    "source_type": "rss_official",
-    "summary": "Classifying, extracting, and validating high volumes of documents is a challenge across banking, insurance, healthcare, and the public sector. See how a mid-size mortgage lender automates its entire document intake pipeline, from email to validated data, using the AWS GAIIC IDP Accelerator and Amazon Quick Automate.",
-    "content": "Classifying, extracting, and validating high volumes of documents is a challenge across banking, insurance, healthcare, and the public sector. See how a mid-size mortgage lender automates its entire document intake pipeline, from email to validated data, using the AWS GAIIC IDP Accelerator and Amazon Quick Automate.",
-    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
   },
   {
     "id": "provider-1e2a0c2e3dd943a5b0",
@@ -1117,8 +1227,8 @@
     "url": "https://openai.com/index/premium-seats-chatgpt-business",
     "published_at": "2026-08-10T00:00:00.000Z",
     "source_type": "rss_official",
-    "summary": "Premium seats are coming to ChatGPT Business. Sign up by August 20 to get $100 in workspace credits and unlock higher usage for your team's most demanding work.",
-    "content": "Premium seats are coming to ChatGPT Business. Sign up by August 20 to get $100 in workspace credits and unlock higher usage for your team's most demanding work.",
+    "summary": "Premium seats are now available on ChatGPT Business, with 5x more usage, no five-hour usage limit, and flexible seat options for every teammate.",
+    "content": "Premium seats are now available on ChatGPT Business, with 5x more usage, no five-hour usage limit, and flexible seat options for every teammate.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -1318,17 +1428,6 @@
     "summary": "A central challenge in robotics is building policies that generalize beyond the demonstrations they’re trained on. A policy that succeeds in a training scene...",
     "content": "A central challenge in robotics is building policies that generalize beyond the demonstrations they’re trained on. A policy that succeeds in a training scene...",
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
-    "id": "provider-dabecf00d0eae5cdb9",
-    "company": "NVIDIA AI",
-    "title": "NVIDIA Alpamayo 2 Super, the Frontier Open Model for Robotaxis and Autonomous Vehicles, Now Available for Commercial Use",
-    "url": "https://blogs.nvidia.com/blog/alpamayo-2-super-open-model-now-available/",
-    "published_at": "2026-08-04T15:00:49.000Z",
-    "source_type": "rss_official",
-    "summary": "For robotaxis and other autonomous vehicles (AVs), the hardest problems aren’t the everyday scenarios. They’re the rare, complex situations that are difficult to anticipate and train for. Handling these long‑tail events takes more than just object detection and motion prediction. AVs must understand the situation, reason about cause and effect, choose the right action and […]",
-    "content": "For robotaxis and other autonomous vehicles (AVs), the hardest problems aren’t the everyday scenarios. They’re the rare, complex situations that are difficult to anticipate and train for. Handling these long‑tail events takes more than just object detection and motion prediction. AVs must understand the situation, reason about cause and effect, choose the right action and […]",
-    "source_url": "https://blogs.nvidia.com/feed/"
   },
   {
     "id": "provider-95fd855a276dfc15c0",
@@ -2244,17 +2343,6 @@
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
-    "id": "provider-82a6fc4eef8ad34bc2",
-    "company": "NVIDIA AI",
-    "title": "How to Run an Autoresearch Workflow with RL Agent Skills and NVIDIA NeMo",
-    "url": "https://developer.nvidia.com/blog/how-to-run-an-autoresearch-workflow-with-rl-agent-skills-and-nvidia-nemo/",
-    "published_at": "2026-07-14T16:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Coding AI agents are becoming practical operators for long-running machine learning (ML) workflows. They can inspect repositories, set up runtimes, resolve...",
-    "content": "Coding AI agents are becoming practical operators for long-running machine learning (ML) workflows. They can inspect repositories, set up runtimes, resolve...",
-    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
     "id": "provider-3a98145a3310a1e119",
     "company": "NVIDIA AI",
     "title": "Post-Train NVIDIA Cosmos 3 in One Day Using Agent Skills",
@@ -2263,6 +2351,17 @@
     "source_type": "rss_official",
     "summary": "What if autonomous coding AI agents could push your vision reasoning models above 90% accuracy with almost no manual effort? When adapting vision reasoning...",
     "content": "What if autonomous coding AI agents could push your vision reasoning models above 90% accuracy with almost no manual effort? When adapting vision reasoning...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
+  },
+  {
+    "id": "provider-82a6fc4eef8ad34bc2",
+    "company": "NVIDIA AI",
+    "title": "How to Run an Autoresearch Workflow with RL Agent Skills and NVIDIA NeMo",
+    "url": "https://developer.nvidia.com/blog/how-to-run-an-autoresearch-workflow-with-rl-agent-skills-and-nvidia-nemo/",
+    "published_at": "2026-07-14T16:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Coding AI agents are becoming practical operators for long-running machine learning (ML) workflows. They can inspect repositories, set up runtimes, resolve...",
+    "content": "Coding AI agents are becoming practical operators for long-running machine learning (ML) workflows. They can inspect repositories, set up runtimes, resolve...",
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
@@ -2475,28 +2574,6 @@
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
-    "id": "provider-f4c384923355e0e070",
-    "company": "OpenAI",
-    "title": "GPT-5.6: Frontier intelligence that scales with your ambition",
-    "url": "https://openai.com/index/gpt-5-6",
-    "published_at": "2026-07-09T10:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "More intelligence from every token, stronger performance per dollar, and more capability on demand for your hardest work.",
-    "content": "More intelligence from every token, stronger performance per dollar, and more capability on demand for your hardest work.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
-    "id": "provider-9ebac2fe7079e530f0",
-    "company": "OpenAI",
-    "title": "GPT-5.5 Bio Bug Bounty",
-    "url": "https://openai.com/index/bio-bug-bounty",
-    "published_at": "2026-07-09T10:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Details about the OpenAI Bio Bounty program",
-    "content": "Details about the OpenAI Bio Bounty program",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-e12a140c23bfe1a7e6",
     "company": "NVIDIA AI",
     "title": "Create a LangChain Deep Agents Harness Profile for NVIDIA Nemotron 3 Ultra to Improve Performance",
@@ -2506,28 +2583,6 @@
     "summary": "Agentic systems often face a trade-off between accuracy and cost. The highest-performing proprietary frontier models and harnesses provide top accuracy but are...",
     "content": "Agentic systems often face a trade-off between accuracy and cost. The highest-performing proprietary frontier models and harnesses provide top accuracy but are...",
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
-    "id": "provider-2af0f9bb5af6ee2be9",
-    "company": "OpenAI",
-    "title": "Our approach to government and national security partnerships",
-    "url": "https://openai.com/index/government-national-security-partnerships",
-    "published_at": "2026-07-08T13:30:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Learn how OpenAI approaches government and national security partnerships, with principles for responsible AI use, democratic accountability, and public safety.",
-    "content": "Learn how OpenAI approaches government and national security partnerships, with principles for responsible AI use, democratic accountability, and public safety.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
-    "id": "provider-b2746357569c06395f",
-    "company": "OpenAI",
-    "title": "Separating signal from noise in coding evaluations",
-    "url": "https://openai.com/index/separating-signal-from-noise-coding-evaluations",
-    "published_at": "2026-07-08T13:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "A new analysis from OpenAI reveals issues in SWE-Bench Pro, a popular coding benchmark, raising concerns about reliability and accuracy in evaluating AI models.",
-    "content": "A new analysis from OpenAI reveals issues in SWE-Bench Pro, a popular coding benchmark, raising concerns about reliability and accuracy in evaluating AI models.",
-    "source_url": "https://openai.com/news/rss.xml"
   },
   {
     "id": "provider-e3661ea4b1e8cfeb7f",
@@ -2627,17 +2682,6 @@
     "summary": "",
     "content": "",
     "source_url": "https://huggingface.co/blog/feed.xml"
-  },
-  {
-    "id": "provider-1851b96d9b03fe755e",
-    "company": "IBM Research",
-    "title": "Modeling the chemistry of fusion reactor material",
-    "url": "https://research.ibm.com/blog/molten-salts-fusion-quantum?utm_medium=rss&utm_source=rss",
-    "published_at": "2026-07-06T11:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Researchers used quantum-centric supercomputing to simulate molten salts, in an early step toward solving a key problem in fusion power.",
-    "content": "Researchers used quantum-centric supercomputing to simulate molten salts, in an early step toward solving a key problem in fusion power.",
-    "source_url": "https://research.ibm.com/rss"
   },
   {
     "id": "provider-8bd46cb2b3d94e0a96",
@@ -3520,17 +3564,6 @@
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
-    "id": "provider-bace89891f76326d03",
-    "company": "NVIDIA AI",
-    "title": "Run Step 3.7 Flash on NVIDIA GPUs with Enterprise-Ready Multimodal AI",
-    "url": "https://developer.nvidia.com/blog/run-step-3-7-flash-on-nvidia-gpus-with-enterprise-ready-multimodal-ai/",
-    "published_at": "2026-05-29T00:07:11.000Z",
-    "source_type": "rss_official",
-    "summary": "AI applications are moving beyond text generation to multimodal systems that can perceive, search, and reason across images, documents, video, and...",
-    "content": "AI applications are moving beyond text generation to multimodal systems that can perceive, search, and reason across images, documents, video, and...",
-    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
     "id": "provider-e9ad0aa7ccdbcf6f92",
     "company": "Hugging Face",
     "title": "Profiling in PyTorch (Part 1): A Beginner's Guide to torch.profiler",
@@ -4013,39 +4046,6 @@
     "summary": "Google DeepMind and Korea partner to accelerate scientific breakthroughs using frontier AI models",
     "content": "Google DeepMind and Korea partner to accelerate scientific breakthroughs using frontier AI models",
     "source_url": "https://deepmind.google/blog/rss.xml"
-  },
-  {
-    "id": "provider-e6bfb57f418ac07cba",
-    "company": "Hugging Face",
-    "title": "How to build scalable web apps with OpenAI's Privacy Filter",
-    "url": "https://huggingface.co/blog/openai-privacy-filter-web-apps",
-    "published_at": "2026-04-27T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "",
-    "content": "",
-    "source_url": "https://huggingface.co/blog/feed.xml"
-  },
-  {
-    "id": "provider-2629dba74e71e99aa1",
-    "company": "Hugging Face",
-    "title": "DeepSeek-V4: a million-token context that agents can actually use",
-    "url": "https://huggingface.co/blog/deepseekv4",
-    "published_at": "2026-04-24T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "",
-    "content": "",
-    "source_url": "https://huggingface.co/blog/feed.xml"
-  },
-  {
-    "id": "provider-de0c870e1b11c4c07e",
-    "company": "Hugging Face",
-    "title": "How to Use Transformers.js in a Chrome Extension",
-    "url": "https://huggingface.co/blog/transformersjs-chrome-extension",
-    "published_at": "2026-04-23T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "",
-    "content": "",
-    "source_url": "https://huggingface.co/blog/feed.xml"
   },
   {
     "id": "provider-3e8995928429dc6319",
