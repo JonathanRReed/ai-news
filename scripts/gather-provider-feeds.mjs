@@ -3,6 +3,7 @@ import { createHash } from 'node:crypto';
 import { mkdir, writeFile, readFile } from 'node:fs/promises';
 import process from 'node:process';
 import { URL } from 'node:url';
+import { mergeProviderArticles } from './merge-provider-articles.mjs';
 
 const feeds = [
   {
@@ -217,20 +218,6 @@ async function fetchFeed(feed) {
   return feed.kind === 'atom' ? parseAtom(feed, xml) : parseRss(feed, xml);
 }
 
-function dedupeArticles(articles) {
-  const seen = new Set();
-  return articles.filter((article) => {
-    const key = `${article.company}:${article.url}`;
-    if (seen.has(key)) return false;
-    seen.add(key);
-    return true;
-  });
-}
-
-function compareNewest(a, b) {
-  return new Date(b.published_at).getTime() - new Date(a.published_at).getTime();
-}
-
 const gathered = [];
 const failures = [];
 
@@ -261,9 +248,7 @@ try {
 } catch {
   existing = [];
 }
-const failedUrls = new Set(failures.map((failure) => failure.url));
-const recovered = existing.filter((article) => failedUrls.has(article.source_url));
-let articles = dedupeArticles([...gathered, ...recovered]).sort(compareNewest);
+let articles = mergeProviderArticles(gathered, existing);
 // Never replace a non-empty cache with nothing (e.g. every feed silently returned empty).
 if (articles.length === 0 && existing.length > 0) {
   console.error('No articles gathered this run; keeping the existing cache unchanged.');
