@@ -1,5 +1,82 @@
 [
   {
+    "id": "provider-d4cedf99918ac569c6",
+    "company": "IBM Research",
+    "title": "What happens when information theory accounts for reasoning?",
+    "url": "https://research.ibm.com/blog/information-theory-meaning?utm_medium=rss&utm_source=rss",
+    "published_at": "2026-08-28T12:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://research.ibm.com/rss"
+  },
+  {
+    "id": "provider-91e1345a170174ebb1",
+    "company": "OpenAI",
+    "title": "Supporting Thailand’s next generation of AI startups",
+    "url": "https://openai.com/index/supporting-next-generation-ai-startups-thailand",
+    "published_at": "2026-08-28T02:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "OpenAI and Thailand’s MHESI launch an eight-week accelerator helping 10 health, wellness, and education startups turn AI prototypes into trusted products.",
+    "content": "OpenAI and Thailand’s MHESI launch an eight-week accelerator helping 10 health, wellness, and education startups turn AI prototypes into trusted products.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-eb8a4ec4e66ed69a52",
+    "company": "Amazon AI",
+    "title": "Build agentic creative workflows with Amazon Quick and fal",
+    "url": "https://aws.amazon.com/blogs/machine-learning/build-agentic-creative-workflows-with-amazon-quick-and-fal/",
+    "published_at": "2026-08-27T23:04:22.000Z",
+    "source_type": "rss_official",
+    "summary": "Creative teams produce more assets than ever, but fragmented tools and manual context transfer slow production. This post shows how to build a reusable agent harness with Amazon Quick and fal, connected through the Model Context Protocol (MCP), using two hands-on workflows: an eight-panel storyboard and a music-video concept prototype.",
+    "content": "Creative teams produce more assets than ever, but fragmented tools and manual context transfer slow production. This post shows how to build a reusable agent harness with Amazon Quick and fal, connected through the Model Context Protocol (MCP), using two hands-on workflows: an eight-panel storyboard and a music-video concept prototype.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-5749dfc5a442bb8820",
+    "company": "Amazon AI",
+    "title": "Introducing OpenAI models on Amazon Bedrock for in-country inferencing in India",
+    "url": "https://aws.amazon.com/blogs/machine-learning/introducing-openai-models-on-amazon-bedrock-for-in-country-inferencing-in-india/",
+    "published_at": "2026-08-27T18:36:08.000Z",
+    "source_type": "rss_official",
+    "summary": "Amazon Bedrock now supports the OpenAI GPT-5.6 models, Terra and Luna, in India with India geographic cross-Region inference. If you have local data processing requirements, you can now use these models at scale while Amazon Bedrock keeps inference requests and data within India.",
+    "content": "Amazon Bedrock now supports the OpenAI GPT-5.6 models, Terra and Luna, in India with India geographic cross-Region inference. If you have local data processing requirements, you can now use these models at scale while Amazon Bedrock keeps inference requests and data within India.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-3be3dec6d5e80f7271",
+    "company": "Google DeepMind",
+    "title": "Gemini Omni 1.1 Flash lets you build with more control",
+    "url": "https://deepmind.google/blog/gemini-omni-1-1-flash-lets-you-build-with-more-control/",
+    "published_at": "2026-08-27T16:11:32.000Z",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://deepmind.google/blog/rss.xml"
+  },
+  {
+    "id": "provider-44cd8a41d900ef6f95",
+    "company": "Amazon AI",
+    "title": "Deepgram deepens Amazon SageMaker AI observability with Enhanced Metrics",
+    "url": "https://aws.amazon.com/blogs/machine-learning/deepgram-deepens-amazon-sagemaker-ai-observability-with-enhanced-metrics/",
+    "published_at": "2026-08-27T16:11:27.000Z",
+    "source_type": "rss_official",
+    "summary": "Self-hosted speech AI carries an observability trade-off: the numbers that drive capacity planning and cost management stay locked inside the vendor container. Deepgram closes that gap on Amazon SageMaker AI with two capabilities that land billing, usage, and per-GPU metrics directly in your own Amazon CloudWatch account.",
+    "content": "Self-hosted speech AI carries an observability trade-off: the numbers that drive capacity planning and cost management stay locked inside the vendor container. Deepgram closes that gap on Amazon SageMaker AI with two capabilities that land billing, usage, and per-GPU metrics directly in your own Amazon CloudWatch account.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-d42ff4d858fcda1eb7",
+    "company": "Amazon AI",
+    "title": "Reduce ASR inference costs by 75% with NVIDIA MPS on Amazon EC2",
+    "url": "https://aws.amazon.com/blogs/machine-learning/reduce-asr-inference-costs-by-75-with-nvidia-mps-on-amazon-ec2/",
+    "published_at": "2026-08-27T16:05:10.000Z",
+    "source_type": "rss_official",
+    "summary": "Serving automatic speech recognition (ASR) models at scale is costly when each request uses only a fraction of a GPU. Learn how NVIDIA CUDA Multi-Process Service (MPS) with NVIDIA Triton Inference Server on Amazon EC2 GPU instances cuts GPU infrastructure by 75% while holding sub-second latency at 92.1 requests per second per GPU.",
+    "content": "Serving automatic speech recognition (ASR) models at scale is costly when each request uses only a fraction of a GPU. Learn how NVIDIA CUDA Multi-Process Service (MPS) with NVIDIA Triton Inference Server on Amazon EC2 GPU instances cuts GPU infrastructure by 75% while holding sub-second latency at 92.1 requests per second per GPU.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
     "id": "provider-41da3a5e7627fe0dc0",
     "company": "NVIDIA AI",
     "title": "GeForce NOW Gives Gamers More Ways to Play at Gamescom 2026",
@@ -31,6 +108,17 @@
     "summary": "Piloting the world's first double-blind AI evaluations",
     "content": "Piloting the world's first double-blind AI evaluations",
     "source_url": "https://deepmind.google/blog/rss.xml"
+  },
+  {
+    "id": "provider-1d05d6a86aee5ccf90",
+    "company": "OpenAI",
+    "title": "Better answers, broader thinking: What students gain from ChatGPT and critical-thinking training",
+    "url": "https://openai.com/index/what-students-gain-from-chatgpt-critical-thinking-training",
+    "published_at": "2026-08-27T09:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "A randomized study of more than 1,000 students examines ChatGPT, critical thinking, originality, and student performance on a real-world university assignment.",
+    "content": "A randomized study of more than 1,000 students examines ChatGPT, critical thinking, originality, and student performance on a real-world university assignment.",
+    "source_url": "https://openai.com/news/rss.xml"
   },
   {
     "id": "provider-2eb4c0fad7b7e16fac",
@@ -737,17 +825,6 @@
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
-    "id": "provider-1d7762f101d6f99391",
-    "company": "NVIDIA AI",
-    "title": "Post-Train NVIDIA Cosmos 3 Edge for On-Device Robot Control",
-    "url": "https://developer.nvidia.com/blog/post-train-nvidia-cosmos-3-edge-for-on-device-robot-control/",
-    "published_at": "2026-08-19T16:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Robots need policies that can adapt to their sensors, environments, and tasks while running on onboard computing hardware. World models offer a foundation for...",
-    "content": "Robots need policies that can adapt to their sensors, environments, and tasks while running on onboard computing hardware. World models offer a foundation for...",
-    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
     "id": "provider-82297f1fd9657df1a3",
     "company": "NVIDIA AI",
     "title": "Evaluating AI Agent Skill Performance with NVIDIA SkillEvaluator",
@@ -756,6 +833,17 @@
     "source_type": "rss_official",
     "summary": "AI agents are only as effective as the context they receive. Even with capable models and well-documented NVIDIA libraries, agents can spend extra steps finding...",
     "content": "AI agents are only as effective as the context they receive. Even with capable models and well-documented NVIDIA libraries, agents can spend extra steps finding...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
+  },
+  {
+    "id": "provider-1d7762f101d6f99391",
+    "company": "NVIDIA AI",
+    "title": "Post-Train NVIDIA Cosmos 3 Edge for On-Device Robot Control",
+    "url": "https://developer.nvidia.com/blog/post-train-nvidia-cosmos-3-edge-for-on-device-robot-control/",
+    "published_at": "2026-08-19T16:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Robots need policies that can adapt to their sensors, environments, and tasks while running on onboard computing hardware. World models offer a foundation for...",
+    "content": "Robots need policies that can adapt to their sensors, environments, and tasks while running on onboard computing hardware. World models offer a foundation for...",
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
