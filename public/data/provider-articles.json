@@ -1,5 +1,38 @@
 [
   {
+    "id": "provider-158ec1e1fd55c3ada4",
+    "company": "Amazon AI",
+    "title": "Batch write and discover records in Amazon SageMaker Feature Store",
+    "url": "https://aws.amazon.com/blogs/machine-learning/batch-write-and-discover-records-in-amazon-sagemaker-feature-store/",
+    "published_at": "2026-08-28T19:31:05.000Z",
+    "source_type": "rss_official",
+    "summary": "Amazon SageMaker Feature Store now supports two new APIs: BatchWriteRecord writes up to 25 records across multiple feature groups in a single call, and ListRecords enumerates record identifiers within a feature group. In this post, we walk through each API with code examples you can use to get started.",
+    "content": "Amazon SageMaker Feature Store now supports two new APIs: BatchWriteRecord writes up to 25 records across multiple feature groups in a single call, and ListRecords enumerates record identifiers within a feature group. In this post, we walk through each API with code examples you can use to get started.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-5f57bc594608fd8de2",
+    "company": "Amazon AI",
+    "title": "How Decathlon runs demand forecasting at scale with Chronos-2",
+    "url": "https://aws.amazon.com/blogs/machine-learning/how-decathlon-runs-demand-forecasting-at-scale-with-chronos-2/",
+    "published_at": "2026-08-28T16:22:30.000Z",
+    "source_type": "rss_official",
+    "summary": "Decathlon, one of the world's largest sporting goods retailers, forecasts weekly demand for tens of thousands of products across multiple continents. Learn how they deployed Chronos-2 on AWS to improve forecast accuracy by 11-15 points while cutting operational complexity and running weekly inference for about $0.03 on CPU-only instances.",
+    "content": "Decathlon, one of the world's largest sporting goods retailers, forecasts weekly demand for tens of thousands of products across multiple continents. Learn how they deployed Chronos-2 on AWS to improve forecast accuracy by 11-15 points while cutting operational complexity and running weekly inference for about $0.03 on CPU-only instances.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-9aaaf34a11e7e2b6c7",
+    "company": "Amazon AI",
+    "title": "Spreading the load: How Salesforce met Multi-AZ HA with SageMaker Inference Components",
+    "url": "https://aws.amazon.com/blogs/machine-learning/spreading-the-load-how-salesforce-met-multi-az-ha-with-sagemaker-inference-components/",
+    "published_at": "2026-08-28T16:20:40.000Z",
+    "source_type": "rss_official",
+    "summary": "Learn how Salesforce used Amazon SageMaker AI Inference Component placement (the SchedulingConfig parameter) to distribute model copies across multiple Availability Zones, meeting their Multi-AZ high availability compliance requirements without sacrificing the cost efficiency of multi-model co-hosting.",
+    "content": "Learn how Salesforce used Amazon SageMaker AI Inference Component placement (the SchedulingConfig parameter) to distribute model copies across multiple Availability Zones, meeting their Multi-AZ high availability compliance requirements without sacrificing the cost efficiency of multi-model co-hosting.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
     "id": "provider-d4cedf99918ac569c6",
     "company": "IBM Research",
     "title": "What happens when information theory accounts for reasoning?",
@@ -11,6 +44,17 @@
     "source_url": "https://research.ibm.com/rss"
   },
   {
+    "id": "provider-071f180bd8e524dd5d",
+    "company": "OpenAI",
+    "title": "Our decision on Cursor following its acquisition by SpaceX",
+    "url": "https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex",
+    "published_at": "2026-08-28T06:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Our decision to wind down our contract providing OpenAI models to Cursor following its acquisition by SpaceX.",
+    "content": "Our decision to wind down our contract providing OpenAI models to Cursor following its acquisition by SpaceX.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
     "id": "provider-91e1345a170174ebb1",
     "company": "OpenAI",
     "title": "Supporting Thailand’s next generation of AI startups",
@@ -20,6 +64,17 @@
     "summary": "OpenAI and Thailand’s MHESI launch an eight-week accelerator helping 10 health, wellness, and education startups turn AI prototypes into trusted products.",
     "content": "OpenAI and Thailand’s MHESI launch an eight-week accelerator helping 10 health, wellness, and education startups turn AI prototypes into trusted products.",
     "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-c9bba806173a8084aa",
+    "company": "Hugging Face",
+    "title": "The Open ASR Leaderboard Adds Its First Global South Language",
+    "url": "https://huggingface.co/blog/open-asr-leaderboard-global-south",
+    "published_at": "2026-08-28T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://huggingface.co/blog/feed.xml"
   },
   {
     "id": "provider-eb8a4ec4e66ed69a52",
@@ -264,17 +319,6 @@
     "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
   },
   {
-    "id": "provider-02d6a48578fe228016",
-    "company": "OpenAI",
-    "title": "Bringing ChatGPT for Teachers to more U.S. school districts",
-    "url": "https://openai.com/index/bringing-chatgpt-for-teachers-to-more-us-school-districts",
-    "published_at": "2026-08-26T10:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "ChatGPT for Teachers is expanding to 55 U.S. school systems, bringing secure AI tools, training, and support to over 100,000 more educators and staff.",
-    "content": "ChatGPT for Teachers is expanding to 55 U.S. school systems, bringing secure AI tools, training, and support to over 100,000 more educators and staff.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-c940c8db1609841676",
     "company": "OpenAI",
     "title": "Learning never stops: How AI makes learning continuous",
@@ -283,6 +327,17 @@
     "source_type": "rss_official",
     "summary": "OpenAI’s new report explores how students and educators use ChatGPT to make learning more continuous, with support that extends beyond the classroom.",
     "content": "OpenAI’s new report explores how students and educators use ChatGPT to make learning more continuous, with support that extends beyond the classroom.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-02d6a48578fe228016",
+    "company": "OpenAI",
+    "title": "Bringing ChatGPT for Teachers to more U.S. school districts",
+    "url": "https://openai.com/index/bringing-chatgpt-for-teachers-to-more-us-school-districts",
+    "published_at": "2026-08-26T10:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "ChatGPT for Teachers is expanding to 55 U.S. school systems, bringing secure AI tools, training, and support to over 100,000 more educators and staff.",
+    "content": "ChatGPT for Teachers is expanding to 55 U.S. school systems, bringing secure AI tools, training, and support to over 100,000 more educators and staff.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -649,17 +704,6 @@
     "source_url": "https://www.amazon.science/index.rss"
   },
   {
-    "id": "provider-3bfe7f3c4210352640",
-    "company": "NVIDIA AI",
-    "title": "NVIDIA AVO Reaches 100% on ARC-AGI-3, Demonstrating a Frontier-Level General-Purpose Architecture for Long-Horizon Autonomous Agents",
-    "url": "https://developer.nvidia.com/blog/nvidia-avo-reaches-100-on-arc-agi-3-demonstrating-a-frontier-level-general-purpose-architecture-for-long-horizon-autonomous-agents/",
-    "published_at": "2026-08-21T13:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "A frontier language model is only one component of an AI agent. The surrounding agent system—often called a harness—determines how the model receives...",
-    "content": "A frontier language model is only one component of an AI agent. The surrounding agent system—often called a harness—determines how the model receives...",
-    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
     "id": "provider-d965340ab193dfa8b7",
     "company": "NVIDIA AI",
     "title": "Where Security Fits in an AI Agent Stack",
@@ -668,6 +712,17 @@
     "source_type": "rss_official",
     "summary": "As AI agents become more capable and operate over longer horizons, building security and trust into the applications they power becomes increasingly important....",
     "content": "As AI agents become more capable and operate over longer horizons, building security and trust into the applications they power becomes increasingly important....",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
+  },
+  {
+    "id": "provider-3bfe7f3c4210352640",
+    "company": "NVIDIA AI",
+    "title": "NVIDIA AVO Reaches 100% on ARC-AGI-3, Demonstrating a Frontier-Level General-Purpose Architecture for Long-Horizon Autonomous Agents",
+    "url": "https://developer.nvidia.com/blog/nvidia-avo-reaches-100-on-arc-agi-3-demonstrating-a-frontier-level-general-purpose-architecture-for-long-horizon-autonomous-agents/",
+    "published_at": "2026-08-21T13:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "A frontier language model is only one component of an AI agent. The surrounding agent system—often called a harness—determines how the model receives...",
+    "content": "A frontier language model is only one component of an AI agent. The surrounding agent system—often called a harness—determines how the model receives...",
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
@@ -759,10 +814,10 @@
     "source_url": "https://blogs.nvidia.com/feed/"
   },
   {
-    "id": "provider-619630b26b2072a98e",
+    "id": "provider-ad4eff35aae128a5ba",
     "company": "OpenAI",
     "title": "Introducing Intelligence Age",
-    "url": "https://openai.com/index/introducing-ai-futures",
+    "url": "https://openai.com/index/introducing-intelligence-age",
     "published_at": "2026-08-20T07:00:00.000Z",
     "source_type": "rss_official",
     "summary": "Introducing Intelligence Age, a new OpenAI blog exploring how transformative AI could reshape power, governance, the economy, and individual freedom.",
@@ -770,10 +825,10 @@
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
-    "id": "provider-ad4eff35aae128a5ba",
+    "id": "provider-619630b26b2072a98e",
     "company": "OpenAI",
     "title": "Introducing Intelligence Age",
-    "url": "https://openai.com/index/introducing-intelligence-age",
+    "url": "https://openai.com/index/introducing-ai-futures",
     "published_at": "2026-08-20T07:00:00.000Z",
     "source_type": "rss_official",
     "summary": "Introducing Intelligence Age, a new OpenAI blog exploring how transformative AI could reshape power, governance, the economy, and individual freedom.",
@@ -825,17 +880,6 @@
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
-    "id": "provider-82297f1fd9657df1a3",
-    "company": "NVIDIA AI",
-    "title": "Evaluating AI Agent Skill Performance with NVIDIA SkillEvaluator",
-    "url": "https://developer.nvidia.com/blog/evaluating-ai-agent-skill-performance-with-nvidia-skillevaluator/",
-    "published_at": "2026-08-19T16:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "AI agents are only as effective as the context they receive. Even with capable models and well-documented NVIDIA libraries, agents can spend extra steps finding...",
-    "content": "AI agents are only as effective as the context they receive. Even with capable models and well-documented NVIDIA libraries, agents can spend extra steps finding...",
-    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
     "id": "provider-1d7762f101d6f99391",
     "company": "NVIDIA AI",
     "title": "Post-Train NVIDIA Cosmos 3 Edge for On-Device Robot Control",
@@ -844,6 +888,17 @@
     "source_type": "rss_official",
     "summary": "Robots need policies that can adapt to their sensors, environments, and tasks while running on onboard computing hardware. World models offer a foundation for...",
     "content": "Robots need policies that can adapt to their sensors, environments, and tasks while running on onboard computing hardware. World models offer a foundation for...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
+  },
+  {
+    "id": "provider-82297f1fd9657df1a3",
+    "company": "NVIDIA AI",
+    "title": "Evaluating AI Agent Skill Performance with NVIDIA SkillEvaluator",
+    "url": "https://developer.nvidia.com/blog/evaluating-ai-agent-skill-performance-with-nvidia-skillevaluator/",
+    "published_at": "2026-08-19T16:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "AI agents are only as effective as the context they receive. Even with capable models and well-documented NVIDIA libraries, agents can spend extra steps finding...",
+    "content": "AI agents are only as effective as the context they receive. Even with capable models and well-documented NVIDIA libraries, agents can spend extra steps finding...",
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
@@ -1342,17 +1397,6 @@
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
-    "id": "provider-bf1d1d6fe453d247d3",
-    "company": "OpenAI",
-    "title": "Testing ads in ChatGPT",
-    "url": "https://openai.com/index/testing-ads-in-chatgpt",
-    "published_at": "2026-08-11T10:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "OpenAI begins testing ads in ChatGPT to support free access, with clear labeling, answer independence, strong privacy protections, and user control.",
-    "content": "OpenAI begins testing ads in ChatGPT to support free access, with clear labeling, answer independence, strong privacy protections, and user control.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-8bb93631d3159d7549",
     "company": "OpenAI",
     "title": "Daybreak models are now available on AWS",
@@ -1361,6 +1405,17 @@
     "source_type": "rss_official",
     "summary": "OpenAI and AWS are making Daybreak cybersecurity capabilities available through Amazon Bedrock to support enterprise security workflows.",
     "content": "OpenAI and AWS are making Daybreak cybersecurity capabilities available through Amazon Bedrock to support enterprise security workflows.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-bf1d1d6fe453d247d3",
+    "company": "OpenAI",
+    "title": "Testing ads in ChatGPT",
+    "url": "https://openai.com/index/testing-ads-in-chatgpt",
+    "published_at": "2026-08-11T10:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "OpenAI begins testing ads in ChatGPT to support free access, with clear labeling, answer independence, strong privacy protections, and user control.",
+    "content": "OpenAI begins testing ads in ChatGPT to support free access, with clear labeling, answer independence, strong privacy protections, and user control.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -1441,17 +1496,6 @@
     "source_url": "https://huggingface.co/blog/feed.xml"
   },
   {
-    "id": "provider-4139380e4f35ee2acb",
-    "company": "OpenAI",
-    "title": "Putting frontier cyber models in more trusted hands",
-    "url": "https://openai.com/index/putting-frontier-cyber-models-in-more-trusted-hands",
-    "published_at": "2026-08-10T10:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Approved Daybreak partners can use OpenAI’s frontier cyber models to deliver authorized, governed cybersecurity services to customers.",
-    "content": "Approved Daybreak partners can use OpenAI’s frontier cyber models to deliver authorized, governed cybersecurity services to customers.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-6414d13d42084403f5",
     "company": "OpenAI",
     "title": "Expanding Daybreak as the Cyber Defense Window Narrows",
@@ -1463,14 +1507,14 @@
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
-    "id": "provider-21b9ef80e75898f43e",
+    "id": "provider-4139380e4f35ee2acb",
     "company": "OpenAI",
-    "title": "Premium seats are coming to ChatGPT Business",
-    "url": "https://openai.com/index/premium-seats-chatgpt-business",
-    "published_at": "2026-08-10T00:00:00.000Z",
+    "title": "Putting frontier cyber models in more trusted hands",
+    "url": "https://openai.com/index/putting-frontier-cyber-models-in-more-trusted-hands",
+    "published_at": "2026-08-10T10:00:00.000Z",
     "source_type": "rss_official",
-    "summary": "Premium seats are now available on ChatGPT Business, with 5x more usage, no five-hour usage limit, and flexible seat options for every teammate.",
-    "content": "Premium seats are now available on ChatGPT Business, with 5x more usage, no five-hour usage limit, and flexible seat options for every teammate.",
+    "summary": "Approved Daybreak partners can use OpenAI’s frontier cyber models to deliver authorized, governed cybersecurity services to customers.",
+    "content": "Approved Daybreak partners can use OpenAI’s frontier cyber models to deliver authorized, governed cybersecurity services to customers.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -1493,6 +1537,17 @@
     "source_type": "rss_official",
     "summary": "The enterprise marketing team at Zapier uses ChatGPT Work to reduce the number of drop-offs in its lead funnel, build campaign assets, and automate reporting.",
     "content": "The enterprise marketing team at Zapier uses ChatGPT Work to reduce the number of drop-offs in its lead funnel, build campaign assets, and automate reporting.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-21b9ef80e75898f43e",
+    "company": "OpenAI",
+    "title": "Premium seats are coming to ChatGPT Business",
+    "url": "https://openai.com/index/premium-seats-chatgpt-business",
+    "published_at": "2026-08-10T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Premium seats are now available on ChatGPT Business, with 5x more usage, no five-hour usage limit, and flexible seat options for every teammate.",
+    "content": "Premium seats are now available on ChatGPT Business, with 5x more usage, no five-hour usage limit, and flexible seat options for every teammate.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -2552,17 +2607,6 @@
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
-    "id": "provider-3a98145a3310a1e119",
-    "company": "NVIDIA AI",
-    "title": "Post-Train NVIDIA Cosmos 3 in One Day Using Agent Skills",
-    "url": "https://developer.nvidia.com/blog/post-train-nvidia-cosmos-3-in-one-day-using-agent-skills/",
-    "published_at": "2026-07-14T16:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "What if autonomous coding AI agents could push your vision reasoning models above 90% accuracy with almost no manual effort? When adapting vision reasoning...",
-    "content": "What if autonomous coding AI agents could push your vision reasoning models above 90% accuracy with almost no manual effort? When adapting vision reasoning...",
-    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
     "id": "provider-82a6fc4eef8ad34bc2",
     "company": "NVIDIA AI",
     "title": "How to Run an Autoresearch Workflow with RL Agent Skills and NVIDIA NeMo",
@@ -2571,6 +2615,17 @@
     "source_type": "rss_official",
     "summary": "Coding AI agents are becoming practical operators for long-running machine learning (ML) workflows. They can inspect repositories, set up runtimes, resolve...",
     "content": "Coding AI agents are becoming practical operators for long-running machine learning (ML) workflows. They can inspect repositories, set up runtimes, resolve...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
+  },
+  {
+    "id": "provider-3a98145a3310a1e119",
+    "company": "NVIDIA AI",
+    "title": "Post-Train NVIDIA Cosmos 3 in One Day Using Agent Skills",
+    "url": "https://developer.nvidia.com/blog/post-train-nvidia-cosmos-3-in-one-day-using-agent-skills/",
+    "published_at": "2026-07-14T16:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "What if autonomous coding AI agents could push your vision reasoning models above 90% accuracy with almost no manual effort? When adapting vision reasoning...",
+    "content": "What if autonomous coding AI agents could push your vision reasoning models above 90% accuracy with almost no manual effort? When adapting vision reasoning...",
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
