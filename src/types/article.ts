@@ -8,6 +8,14 @@ export interface Article {
   summary?: string;
   content?: string;
   source_url?: string;
+  source_key?: string;
 }
 
-export type PageData = { data: Article[]; next?: number };
+import type { DataState, FeedCursor } from './intelligence.js';
+
+export type PageData = {
+  data: Article[];
+  next?: FeedCursor;
+  state: DataState;
+  cacheFreshness: string | null;
+};

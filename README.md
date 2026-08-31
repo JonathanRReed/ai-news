@@ -1,30 +1,29 @@
 # AI News
 
-AI News is an Astro app for tracking updates from a fixed list of AI companies and labs. It combines official source feeds, Supabase-backed article data and a static Astro front end.
+AI News is a free, primary-source intelligence index for AI labs, model providers, research organizations, and agent harnesses. It preserves publisher titles, dates, URLs, and provenance, then makes the record available through chronological pages, explainable Major Updates, permanent digests, RSS, and JSON.
 
-This repo powers the AI News site at `ai-news.helloworldfirm.com`.
+The public site is [ai-news.helloworldfirm.com](https://ai-news.helloworldfirm.com).
 
-## What it does
+## Product surfaces
 
-- Aggregates articles from official RSS and Atom feeds
-- Normalizes company names and logos
-- Pulls in Supabase-backed article data
-- Generates supplemental provider articles into `public/data/provider-articles.json`
-- Ships as a fast front end built with Astro and React
+- Latest: reverse-chronological first-party updates with shareable filters
+- Major Updates: conservative headline rules with a visible promotion reason
+- Labs and providers: registry and source-ledger pages for Z.AI, Moonshot AI, OpenAI, Anthropic, DeepMind, and more
+- Harnesses: Hermes Agent, OpenClaw, OpenHands, Aider, Cline, Roo Code, model-provider CLIs, and related tools
+- Entity intelligence: permanent pages, source health, local watch controls, RSS, and JSON
+- Digests: permanent UTC daily archives plus weekly digests
+- Watchlists: browser-local only, with no account or server profile
+- Degraded mode: the last verified static cache remains usable when Supabase is unavailable
+
+The source admission policy is in [docs/operations/source-admission.md](docs/operations/source-admission.md). Product rules are in [PRODUCT.md](PRODUCT.md).
 
 ## Stack
 
-- [Astro](https://astro.build)
-- [React](https://react.dev)
-- [Bun](https://bun.sh)
-- [Tailwind CSS](https://tailwindcss.com)
-- [Supabase](https://supabase.com)
-
-## Requirements
-
-- Bun 1.4 or newer
-- Node.js 22.12 or newer
-- Supabase credentials in your environment
+- Astro 7 static output and React 19 islands
+- Bun 1.4 for package management, scripts, and tests
+- Tailwind CSS 4 with the existing black, white, and red industrial design system
+- Supabase Postgres with RLS, browser-safe read views, and service-role ingestion functions
+- Cloudflare Pages for the static site
 
 ## Setup
 
@@ -33,40 +32,41 @@ git clone https://github.com/JonathanRReed/ai-news.git
 cd ai-news
 bun install
 cp .env.example .env
-```
-
-Configure your local environment for Supabase before running the app. Use `.env.example` as the expected shape for local credentials. Do not commit real Supabase credentials.
-
-## Run locally
-
-```sh
 bun run dev
 ```
 
-## Common scripts
+Use only the public Supabase URL and anonymous key in `PUBLIC_*` variables. The service-role key is server and workflow only. Never commit credentials.
+
+## Commands
 
 ```sh
 bun run lint
 bun run check
+bun test
 bun run build
-bun run preview
-bun run preview:cloudflare
 bun run test:e2e
-bun run lint:fix
-bun run gather:providers
+bun run sources:validate
+bun run sources:seed
+bun run ingest
+bun run cache:export
+bun run verify:routes
+bun run test:db
 ```
 
-`bun run gather:providers` refreshes the provider article cache from the official feeds listed in `src/lib/providerSources.ts`.
+Database tests require a running local Supabase stack. The complete backup-first production procedure is in [docs/operations/supabase-migration-runbook.md](docs/operations/supabase-migration-runbook.md).
 
-## Project structure
+## Data model
 
-- `src/pages/index.astro` - main homepage and metadata
-- `src/lib/` - feed sources, company logos, and Supabase client setup
-- `src/components/` - UI components
-- `scripts/gather-provider-feeds.mjs` - feed fetcher that writes the cached provider article data
+The generated catalog in `src/data/intelligence-catalog.json` and `supabase/seed.sql` comes from one authority, `config/intelligence-sources.mjs`. The normalized database stores entities, sources, immutable content items, conservative one-record events, relationships, route aliases, and private ingestion receipts.
 
-## Notes
+Refreshes are additive. A source failure cannot delete history. Existing `/article/:id/` routes remain valid through aliases, and the checked-in cache provides static fallback reads.
 
-- This repo is designed to be boring in production and easy to maintain.
-- If the app cannot find the Supabase env vars, it uses the checked-in provider cache and prints a clear development warning.
-- The provider article cache can be regenerated with `bun run gather:providers` before a release or demo.
+## Feeds
+
+- `/feed.xml` and `/articles.json` for the complete public cache
+- `/feed/major.xml` for explainable Major Updates
+- `/feed/labs.xml` and `/feed/harnesses.xml` for section feeds
+- `/feed/entity/{slug}.xml` and `/feed/entity/{slug}.json` for every admitted entity
+- `/feed/topic/{slug}.xml` for topic feeds
+
+All feeds are public and keyless.

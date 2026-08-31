@@ -2,16 +2,17 @@
 import HamburgerMenu from "./HamburgerMenu.tsx";
 
 interface Props {
-  currentPage: "home" | "about" | "models" | "digest" | "stories" | "none";
+  currentPage: "home" | "about" | "major" | "labs" | "harnesses" | "digest" | "feeds" | "stories" | "none";
 }
 const { currentPage } = Astro.props;
 
 const navItems: { href: string; label: string; key: Props["currentPage"] }[] = [
-  { href: "/", label: "Home", key: "home" },
-  { href: "/digest/", label: "This week", key: "digest" },
-  { href: "/models/", label: "Models", key: "models" },
-  { href: "/stories/", label: "Stories", key: "stories" },
-  { href: "/about/", label: "About", key: "about" },
+  { href: "/", label: "Latest", key: "home" },
+  { href: "/major-updates/", label: "Major", key: "major" },
+  { href: "/labs/", label: "Labs", key: "labs" },
+  { href: "/harnesses/", label: "Harnesses", key: "harnesses" },
+  { href: "/digest/daily/", label: "Digests", key: "digest" },
+  { href: "/feeds/", label: "Feeds", key: "feeds" },
 ];
 ---
 
@@ -45,7 +46,7 @@ const navItems: { href: string; label: string; key: Props["currentPage"] }[] = [
       {navItems.map((item, index) => (
         <a
           href={item.href}
-          class={`micro-label relative inline-flex min-h-[68px] items-center px-4 transition-all duration-200 lg:px-6 ${index === navItems.length - 1 ? "" : "border-r border-white/[0.12]"} ${currentPage === item.key ? "bg-brand text-white" : "text-text-2 hover:bg-white/[0.06] hover:text-white"}`}
+          class={`micro-label relative inline-flex min-h-[68px] items-center px-3 transition-all duration-200 xl:px-5 ${index === navItems.length - 1 ? "" : "border-r border-white/[0.12]"} ${currentPage === item.key ? "bg-brand text-white" : "text-text-2 hover:bg-white/[0.06] hover:text-white"}`}
           aria-current={currentPage === item.key ? "page" : undefined}
         >
           {item.label}
@@ -59,7 +60,7 @@ const navItems: { href: string; label: string; key: Props["currentPage"] }[] = [
     <div
       class="hidden justify-self-end text-right font-mono text-[0.68rem] uppercase leading-tight tracking-[0.08em] text-text-2 md:block"
     >
-      <span class="block text-white">Primary sources only</span>
+      <span class="block text-white">Free. No account.</span>
     </div>
 
     <div class="flex justify-end md:hidden">

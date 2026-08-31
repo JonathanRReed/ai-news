@@ -3,22 +3,28 @@ import Layout from "../layouts/Layout.astro";
 import ArticlesIslandWrapper from "../components/ArticlesIslandWrapper.tsx";
 import providerArticles from "../../public/data/provider-articles.json";
 import { digestWeeks } from "../lib/digest.js";
+import { admittedArticles } from "../lib/articleAdmission.js";
 import { resolveCompanyLogo } from "../lib/companyCatalog.js";
+import { activeEntities, intelligenceSources } from "../lib/intelligenceCatalog.js";
+import { majorUpdates } from "../lib/majorUpdates.js";
 import type { Article } from "../types/article.js";
 
 const latestDigest = digestWeeks()[0];
 
 const siteUrl = "https://ai-news.helloworldfirm.com";
 const canonicalUrl = `${siteUrl}/`;
-const title = "AI News Hub | Primary-Source AI News Feed";
+const title = "AI News Hub | Free AI Intelligence Index";
 const description =
-  "AI News Hub tracks official AI lab, model-provider, and infrastructure posts in one searchable feed. Every card links straight to the original post.";
+  "A free primary-source intelligence index for AI labs, model providers, research organizations, and agent harnesses. Latest news, major updates, watchlists, digests, RSS, and JSON.";
 const keywords =
   "AI news, artificial intelligence news, AI research updates, OpenAI news, Anthropic updates, Google DeepMind announcements, Mistral AI, Hugging Face, Meta AI, xAI, DeepSeek, IBM Research, Amazon AI, NVIDIA AI, Alibaba Qwen";
 const socialImage = `${siteUrl}/ai-news-favicon-512x512.png`;
-const providerRows = providerArticles as Array<{ company: string; published_at: string; source_type?: string }>;
-const cachedArticleCount = providerRows.length;
-const cachedCompanyCount = new Set(providerRows.map((article) => article.company)).size;
+const articles = admittedArticles(providerArticles as Article[]);
+const providerRows = articles;
+const activeSourceCount = intelligenceSources.filter((source) => source.active).length;
+const trackedEntityCount = activeEntities.length;
+const harnessCount = activeEntities.filter((entity) => entity.entityType === "harness").length;
+const majorUpdateCount = majorUpdates(articles).length;
 const nowMs = Date.now();
 const latestCacheDate = providerRows
   .map((article) => new Date(article.published_at).getTime())
@@ -30,16 +36,9 @@ const latestCacheIso = latestCacheDate ? new Date(latestCacheDate).toISOString()
 const newestLabel = latestCacheDate
   ? new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", year: "numeric" }).format(new Date(latestCacheDate))
   : "No date";
-// Anchor "this week" to the newest story (data-derived), not the build clock, so the
-// count stays correct between rebuilds and never drifts on code-only deploys.
-const weekAnchor = latestCacheDate ?? nowMs;
-const storiesThisWeek = providerRows.filter((article) => {
-  const time = new Date(article.published_at).getTime();
-  return Number.isFinite(time) && time > weekAnchor - 7 * 86400000;
-}).length;
 // Seed the first 20 (content stripped to keep the HTML lean) so the island renders
 // server-side for crawlers and first paint, then refetches full data on the client.
-const initialArticles: Article[] = (providerArticles as Article[])
+const initialArticles: Article[] = articles
   .slice()
   .sort((a, b) => new Date(b.published_at).getTime() - new Date(a.published_at).getTime())
   .slice(0, 20)
@@ -117,44 +116,52 @@ const collectionStructuredData = {
       <div class="grid gap-6 lg:grid-cols-[minmax(0,1fr)_420px] lg:items-end reveal-stagger">
         <div class="max-w-5xl">
           <h1 class="macro-heading max-w-5xl">
-            Primary-source AI news, releases and research in one feed.
+            The free intelligence index for the AI ecosystem.
           </h1>
           <p class="mt-6 max-w-3xl text-lg leading-relaxed text-text-2 md:text-xl">
-            Official posts from every major AI lab, model provider and research team.
+            First-party news and releases from labs, providers, research teams, and the harnesses turning models into tools. No account and no paid AI dependency.
           </p>
         </div>
         <aside class="industrial-border p-5">
           <p class="micro-label mb-4 text-text-2">At a glance</p>
           <dl class="grid grid-cols-2 gap-px bg-white/15">
             <div class="bg-bg-0 p-4">
-              <dt class="micro-label text-text-2">Labs tracked</dt>
-              <dd class="mt-2 font-mono text-2xl font-black tabular-nums text-white">{cachedCompanyCount}</dd>
+              <dt class="micro-label text-text-2">Entities</dt>
+              <dd class="mt-2 font-mono text-2xl font-black tabular-nums text-white">{trackedEntityCount}</dd>
             </div>
             <div class="bg-bg-0 p-4">
-              <dt class="micro-label text-text-2">Stories</dt>
-              <dd class="mt-2 font-mono text-2xl font-black tabular-nums text-white">{cachedArticleCount}</dd>
+              <dt class="micro-label text-text-2">Active sources</dt>
+              <dd class="mt-2 font-mono text-2xl font-black tabular-nums text-white">{activeSourceCount}</dd>
             </div>
             <div class="bg-bg-0 p-4">
-              <dt class="micro-label text-text-2">New this week</dt>
-              <dd class="mt-2 font-mono text-2xl font-black tabular-nums text-white">{storiesThisWeek}</dd>
+              <dt class="micro-label text-text-2">Harnesses</dt>
+              <dd class="mt-2 font-mono text-2xl font-black tabular-nums text-white">{harnessCount}</dd>
             </div>
             <div class="bg-bg-0 p-4">
-              <dt class="micro-label text-text-2">Newest story</dt>
-              <dd class="mt-2 font-mono text-lg font-black tabular-nums text-white">{newestLabel}</dd>
+              <dt class="micro-label text-text-2">Major updates</dt>
+              <dd class="mt-2 font-mono text-2xl font-black tabular-nums text-white">{majorUpdateCount}</dd>
             </div>
           </dl>
           <div class="mt-4 flex flex-wrap items-center justify-between gap-3">
-            <p class="micro-label text-muted">Sources checked daily</p>
-            <a href="/stories/" class="micro-label text-white underline decoration-brand decoration-2 underline-offset-4 hover:text-brand-hover focus-industrial">Browse all stories</a>
+            <p class="micro-label text-muted">Cache through {newestLabel}</p>
+            <a href="/watchlist/" class="micro-label text-white underline decoration-brand decoration-2 underline-offset-4 hover:text-brand-hover focus-industrial">Open my watchlist</a>
           </div>
         </aside>
       </div>
+    </section>
+    <section class="industrial-container pb-8">
+      <nav class="industrial-grid reveal-stagger" aria-label="Intelligence sections">
+        <a href="/major-updates/" class="col-span-12 p-5 text-white hover:text-brand-hover focus-industrial sm:col-span-6 lg:col-span-3"><span class="micro-label text-brand-hover">01 · Signal</span><strong class="mt-2 block text-xl">Major Updates</strong><span class="mt-2 block text-sm leading-relaxed text-text-2">Explainable model and harness releases.</span></a>
+        <a href="/labs/" class="col-span-12 p-5 text-white hover:text-brand-hover focus-industrial sm:col-span-6 lg:col-span-3"><span class="micro-label text-brand-hover">02 · Makers</span><strong class="mt-2 block text-xl">Labs & providers</strong><span class="mt-2 block text-sm leading-relaxed text-text-2">Z.AI, Kimi, OpenAI, Anthropic, and more.</span></a>
+        <a href="/harnesses/" class="col-span-12 p-5 text-white hover:text-brand-hover focus-industrial sm:col-span-6 lg:col-span-3"><span class="micro-label text-brand-hover">03 · Tools</span><strong class="mt-2 block text-xl">Harnesses</strong><span class="mt-2 block text-sm leading-relaxed text-text-2">Hermes, OpenClaw, OpenHands, and the agent stack.</span></a>
+        <a href="/digest/daily/" class="col-span-12 p-5 text-white hover:text-brand-hover focus-industrial sm:col-span-6 lg:col-span-3"><span class="micro-label text-brand-hover">04 · Archive</span><strong class="mt-2 block text-xl">Daily digests</strong><span class="mt-2 block text-sm leading-relaxed text-text-2">Permanent date pages, newest first.</span></a>
+      </nav>
     </section>
     {latestDigest && (
       <section class="industrial-container pb-2">
         <div class="industrial-border reveal-stagger p-6 md:p-8">
           <div class="flex flex-wrap items-baseline justify-between gap-3 border-b border-white/15 pb-4">
-            <h2 class="micro-label text-brand-hover">This week in AI</h2>
+            <h2 class="micro-label text-brand-hover">Weekly intelligence</h2>
             <a
               href="/digest/"
               class="micro-label text-text-2 underline decoration-brand decoration-2 underline-offset-4 transition-colors hover:text-white focus-industrial"

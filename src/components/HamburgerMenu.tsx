@@ -1,10 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 
 const NAV_ITEMS = [
-  { href: "/", label: "Home" },
-  { href: "/digest/", label: "This week" },
-  { href: "/models/", label: "Models" },
-  { href: "/stories/", label: "Stories" },
+  { href: "/", label: "Latest" },
+  { href: "/major-updates/", label: "Major updates" },
+  { href: "/labs/", label: "Labs and providers" },
+  { href: "/harnesses/", label: "Harnesses" },
+  { href: "/digest/daily/", label: "Daily digests" },
+  { href: "/watchlist/", label: "My watchlist" },
+  { href: "/feeds/", label: "Feeds" },
   { href: "/about/", label: "About" },
 ];
 
@@ -62,7 +65,7 @@ export default function HamburgerMenu() {
           if (event.target === event.currentTarget) setOpen(false);
         }}
       >
-        <div className="relative flex max-h-[calc(100dvh-2rem)] min-h-[26rem] w-full flex-col items-center overflow-y-auto border border-white/25 bg-bg-1 px-8 py-12 shadow-2xl">
+        <div className="relative flex max-h-[calc(100dvh-2rem)] min-h-[26rem] w-full flex-col items-center overflow-y-auto border border-white/25 bg-bg-1 px-8 py-10 shadow-2xl">
           <button
             type="button"
             autoFocus
@@ -75,12 +78,12 @@ export default function HamburgerMenu() {
               <line x1="16" y1="6" x2="6" y2="16" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
             </svg>
           </button>
-          <nav className="z-10 flex w-full flex-1 flex-col items-stretch justify-center gap-3 px-2 py-8" aria-label="Mobile primary navigation">
+          <nav className="z-10 flex w-full flex-1 flex-col items-stretch justify-center gap-2 px-2 py-8" aria-label="Mobile primary navigation">
             {NAV_ITEMS.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="menu-gradient-link w-full border border-white/20 px-6 py-4 text-left text-2xl transition-all focus-industrial md:text-3xl"
+                className="menu-gradient-link w-full border border-white/20 px-5 py-3 text-left text-xl transition-all focus-industrial md:text-2xl"
                 onClick={() => setOpen(false)}
               >
                 {item.label}

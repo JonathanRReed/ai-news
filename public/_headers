@@ -50,6 +50,19 @@
   ! Cache-Control
   Cache-Control: public, max-age=300, stale-while-revalidate=86400
 
+# Preserve feed media types when Pages serves statically generated files.
+/feed.xml
+  Content-Type: application/rss+xml; charset=utf-8
+
+/feed/*.xml
+  Content-Type: application/rss+xml; charset=utf-8
+
+/feed/*.json
+  Content-Type: application/feed+json; charset=utf-8
+
+/articles.json
+  Content-Type: application/json; charset=utf-8
+
 /*.webp
   ! Cache-Control
   Cache-Control: public, max-age=604800

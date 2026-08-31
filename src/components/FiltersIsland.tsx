@@ -3,6 +3,7 @@ import CompanySelect from "./CompanySelect.js";
 import { TOPICS } from "../lib/articleTags.js";
 import type { ArticleFilters } from "../hooks/fetchArticlesPage.js";
 import type { FeedView } from "./ArticlesIslandWrapper.js";
+import { MAX_SEARCH_QUERY_LENGTH, normalizeSearchQuery } from "../lib/intelligenceClient.js";
 
 interface FiltersIslandProps {
   filters: ArticleFilters;
@@ -54,7 +55,8 @@ export default function FiltersIsland({ filters, setFilters, density, setDensity
             placeholder="Search across every tracked source"
             className="h-full min-h-[60px] w-full border-none bg-transparent py-4 pl-12 pr-12 text-base text-white placeholder:text-text-2 focus:outline-none focus:ring-0"
             value={filters.q || ""}
-            onChange={(e) => setFilters((f) => ({ ...f, q: e.target.value }))}
+            maxLength={MAX_SEARCH_QUERY_LENGTH}
+            onChange={(e) => setFilters((f) => ({ ...f, q: normalizeSearchQuery(e.target.value) }))}
             aria-label="Search articles"
           />
           {filters.q && (

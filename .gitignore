@@ -79,6 +79,10 @@ playwright-report/
 # Supabase local emulator
 .supabase/
 
+# Production database exports and migration receipts may contain private data.
+docs/operations/receipts/*
+!docs/operations/receipts/README.md
+
 # Astro SSR output (if SSR is enabled)
 .server/
 

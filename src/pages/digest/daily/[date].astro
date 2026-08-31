@@ -1,0 +1,21 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import DailyDigestView from "../../../components/DailyDigestView.astro";
+import { dailyDigests } from "../../../lib/dailyDigest.js";
+import { SITE_URL } from "../../../lib/feeds.js";
+import type { DailyDigest } from "../../../lib/dailyDigest.js";
+
+export function getStaticPaths() {
+  const digests = dailyDigests();
+  return digests.map((digest) => ({ params: { date: digest.day }, props: { digest, allDigests: digests } }));
+}
+
+const { digest, allDigests } = Astro.props as { digest: DailyDigest; allDigests: DailyDigest[] };
+const isLatest = digest.day === allDigests[0]?.day;
+const canonical = isLatest ? `${SITE_URL}/digest/daily/` : `${SITE_URL}/digest/daily/${digest.day}/`;
+const description = `${digest.count} primary-source AI updates from ${digest.entities} entities on ${digest.label}, ordered by publication time.`;
+---
+
+<Layout title={`${digest.label} AI Digest | AI News Hub`} description={description} canonical={canonical} currentPage="digest">
+  <main id="main-content" class="industrial-shell flex-1"><DailyDigestView digest={digest} allDigests={allDigests} /></main>
+</Layout>

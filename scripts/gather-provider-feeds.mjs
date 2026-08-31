@@ -1,9 +1,13 @@
-/* global console */
 import { createHash } from 'node:crypto';
 import { mkdir, writeFile, readFile } from 'node:fs/promises';
 import process from 'node:process';
 import { URL } from 'node:url';
 import { mergeProviderArticles } from './merge-provider-articles.mjs';
+import {
+  admittedHttpsUrl,
+  fetchAdmittedResponse,
+  readBoundedText,
+} from './intelligence/source-policy.mjs';
 
 const feeds = [
   {
@@ -76,6 +80,7 @@ const feeds = [
 
 const outputPath = new URL('../public/data/provider-articles.json', import.meta.url);
 const maxItemsPerFeed = 80;
+const maxFeedBytes = 2 * 1024 * 1024;
 const fetchApi = globalThis.fetch;
 
 if (typeof fetchApi !== 'function') {
@@ -143,11 +148,18 @@ function normalizeDate(value) {
   return Number.isNaN(date.getTime()) ? new Date().toISOString() : date.toISOString();
 }
 
-function normalizeUrl(value) {
+function sourcePolicy(feed) {
+  return {
+    sourceKey: `${feed.company}-legacy-feed`,
+    officialUrl: feed.url,
+    endpointUrl: feed.url,
+    allowedHosts: feed.allowedHosts ?? [],
+  };
+}
+
+function normalizeUrl(feed, value) {
   try {
-    const url = new URL(stripMarkup(value));
-    if (url.protocol !== 'http:' && url.protocol !== 'https:') return '';
-    return url.toString();
+    return admittedHttpsUrl(sourcePolicy(feed), stripMarkup(value)).toString();
   } catch {
     return '';
   }
@@ -156,7 +168,7 @@ function normalizeUrl(value) {
 function parseRss(feed, xml) {
   return blocks(xml, 'item').slice(0, maxItemsPerFeed).map((item) => {
     const rawUrl = tagValue(item, 'link') || tagValue(item, 'guid');
-    const url = normalizeUrl(rawUrl);
+    const url = normalizeUrl(feed, rawUrl);
     const title = stripMarkup(tagValue(item, 'title'));
     const content = stripMarkup(
       tagValue(item, 'description') ||
@@ -182,7 +194,7 @@ function parseRss(feed, xml) {
 
 function parseAtom(feed, xml) {
   return blocks(xml, 'entry').slice(0, maxItemsPerFeed).map((entry) => {
-    const url = normalizeUrl(atomLink(entry) || tagValue(entry, 'id'));
+    const url = normalizeUrl(feed, atomLink(entry) || tagValue(entry, 'id'));
     const title = stripMarkup(tagValue(entry, 'title'));
     const content = stripMarkup(tagValue(entry, 'summary') || tagValue(entry, 'content'));
 
@@ -203,7 +215,8 @@ function parseAtom(feed, xml) {
 }
 
 async function fetchFeed(feed) {
-  const response = await fetchApi(feed.url, {
+  const response = await fetchAdmittedResponse(sourcePolicy(feed), feed.url, {
+    fetchImpl: fetchApi,
     headers: {
       accept: 'application/rss+xml, application/atom+xml, application/xml, text/xml, */*',
       'user-agent': 'ai-news-local-gatherer/1.0',
@@ -214,7 +227,7 @@ async function fetchFeed(feed) {
     throw new Error(`${response.status} ${response.statusText}`);
   }
 
-  const xml = await response.text();
+  const xml = await readBoundedText(response, maxFeedBytes);
   return feed.kind === 'atom' ? parseAtom(feed, xml) : parseRss(feed, xml);
 }
 
@@ -248,11 +261,20 @@ try {
 } catch {
   existing = [];
 }
-let articles = mergeProviderArticles(gathered, existing);
-// Never replace a non-empty cache with nothing (e.g. every feed silently returned empty).
-if (articles.length === 0 && existing.length > 0) {
-  console.error('No articles gathered this run; keeping the existing cache unchanged.');
-  articles = existing;
+const feedByUrl = new Map(feeds.map((feed) => [feed.url, feed]));
+const admitArticle = (article) => {
+  const feed = feedByUrl.get(article.source_url);
+  if (!feed) return false;
+  try {
+    admittedHttpsUrl(sourcePolicy(feed), article.url);
+    return true;
+  } catch {
+    return false;
+  }
+};
+const articles = mergeProviderArticles(gathered, existing, { admitArticle });
+if (articles.length === 0) {
+  throw new Error('Refusing to publish an empty admitted cache.');
 }
 
 await mkdir(new URL('../public/data/', import.meta.url), { recursive: true });

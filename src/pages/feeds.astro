@@ -1,0 +1,33 @@
+---
+import Layout from "../layouts/Layout.astro";
+import FeedBuilderIsland from "../components/FeedBuilderIsland.tsx";
+import { activeEntities } from "../lib/intelligenceCatalog.js";
+import { SITE_URL } from "../lib/feeds.js";
+
+const description = "Free RSS and JSON feeds for AI news, individual labs and harnesses, topics, and explainable major updates. No API key or account required.";
+---
+
+<Layout title="Free AI News RSS and JSON Feeds | AI News Hub" description={description} canonical={`${SITE_URL}/feeds/`} currentPage="feeds">
+  <main id="main-content" class="industrial-shell flex-1">
+    <section class="industrial-container py-10 md:py-14">
+      <div class="max-w-5xl reveal-stagger">
+        <p class="micro-label mb-5 text-brand-hover">[ Feeds and exports ]</p>
+        <h1 class="macro-heading">Take the index with you.</h1>
+        <p class="mt-6 max-w-3xl text-lg leading-relaxed text-text-2">Every feed is public, keyless, and built from the same immutable source records as the site.</p>
+      </div>
+    </section>
+    <section class="industrial-container pb-10">
+      <div class="industrial-grid">
+        <a href="/feed.xml" class="col-span-12 p-5 text-xl font-bold text-white underline decoration-brand decoration-2 underline-offset-4 hover:text-brand-hover md:col-span-4">Everything · RSS</a>
+        <a href="/articles.json" class="col-span-12 p-5 text-xl font-bold text-white underline decoration-brand decoration-2 underline-offset-4 hover:text-brand-hover md:col-span-4">Everything · JSON</a>
+        <a href="/feed/major.xml" class="col-span-12 p-5 text-xl font-bold text-white underline decoration-brand decoration-2 underline-offset-4 hover:text-brand-hover md:col-span-4">Major updates · RSS</a>
+        <a href="/feed/labs.xml" class="col-span-12 p-5 text-xl font-bold text-white underline decoration-brand decoration-2 underline-offset-4 hover:text-brand-hover md:col-span-6">Labs and providers · RSS</a>
+        <a href="/feed/harnesses.xml" class="col-span-12 p-5 text-xl font-bold text-white underline decoration-brand decoration-2 underline-offset-4 hover:text-brand-hover md:col-span-6">Harnesses · RSS</a>
+      </div>
+    </section>
+    <section class="industrial-container pb-16 md:pb-24">
+      <div class="mb-4 border-b border-white/15 pb-3"><h2 class="text-2xl font-bold text-white">Build a focused feed</h2><p class="mt-2 text-text-2">Combined filter pages are shareable. Stable machine feeds are generated per entity or topic so URLs remain predictable.</p></div>
+      <FeedBuilderIsland client:load entities={activeEntities} />
+    </section>
+  </main>
+</Layout>

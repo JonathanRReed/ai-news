@@ -1,4 +1,5 @@
 import providerArticles from "../../public/data/provider-articles.json";
+import { admittedArticles } from "./articleAdmission.js";
 import type { Article } from "../types/article.js";
 
 export const SITE_URL = "https://ai-news.helloworldfirm.com";
@@ -17,7 +18,7 @@ function escapeXml(value: string): string {
 }
 
 export function allArticles(): Article[] {
-  return (providerArticles as Article[])
+  return admittedArticles(providerArticles as Article[])
     .slice()
     .sort((a, b) => new Date(b.published_at).getTime() - new Date(a.published_at).getTime());
 }
@@ -61,6 +62,28 @@ ${entries}
   </channel>
 </rss>
 `;
+}
+
+export function buildJsonFeed({ title, description, feedPath, items, buildDate, limit = 50 }: RssOptions): string {
+  return JSON.stringify({
+    version: "https://jsonfeed.org/version/1.1",
+    title,
+    home_page_url: SITE_URL,
+    feed_url: `${SITE_URL}${feedPath}`,
+    description,
+    date_modified: new Date(buildDate).toISOString(),
+    items: items.slice(0, limit).map((article) => ({
+      id: article.id,
+      url: article.url,
+      external_url: article.url,
+      title: article.title,
+      summary: article.summary ?? "",
+      date_published: article.published_at,
+      authors: [{ name: article.company }],
+      tags: [article.company],
+      _ai_news_permalink: `${SITE_URL}/article/${article.id}/`,
+    })),
+  }, null, 2);
 }
 
 export const RSS_HEADERS = { "Content-Type": "application/rss+xml; charset=utf-8" };

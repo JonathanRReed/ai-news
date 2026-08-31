@@ -1,0 +1,40 @@
+---
+import StoryRows from "./StoryRows.astro";
+import type { DailyDigest } from "../lib/dailyDigest.js";
+
+const { digest, allDigests } = Astro.props as { digest: DailyDigest; allDigests: DailyDigest[] };
+const rows = digest.stories.map((article) => ({ article }));
+---
+
+<section class="industrial-container py-10 md:py-14">
+  <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-end">
+    <div class="reveal-stagger">
+      <p class="micro-label mb-5 text-brand-hover">[ Daily intelligence digest ]</p>
+      <h1 class="macro-heading">{digest.label}</h1>
+      <p class="mt-6 max-w-3xl text-lg leading-relaxed text-text-2">Every cached primary-source update published on this UTC date, ordered by publication time.</p>
+    </div>
+    <dl class="grid grid-cols-3 gap-px bg-white/15 industrial-border">
+      <div class="bg-bg-0 p-4"><dt class="micro-label text-muted">Updates</dt><dd class="mt-2 font-mono text-2xl text-white">{digest.count}</dd></div>
+      <div class="bg-bg-0 p-4"><dt class="micro-label text-muted">Entities</dt><dd class="mt-2 font-mono text-2xl text-white">{digest.entities}</dd></div>
+      <div class="bg-bg-0 p-4"><dt class="micro-label text-muted">Major</dt><dd class="mt-2 font-mono text-2xl text-white">{digest.majorCount}</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="industrial-container pb-12">
+  <StoryRows rows={rows} />
+</section>
+
+<section class="industrial-container pb-16 md:pb-24">
+  <div class="border-t border-white/15 pt-8">
+    <div class="mb-4 flex flex-wrap items-baseline justify-between gap-3">
+      <h2 class="text-2xl font-bold text-white">Digest archive</h2>
+      <a href="/digest/" class="micro-label text-text-2 underline decoration-brand decoration-2 underline-offset-4 hover:text-white focus-industrial">Weekly view</a>
+    </div>
+    <ul class="flex flex-wrap gap-2">
+      {allDigests.slice(0, 60).map((item) => (
+        <li><a href={`/digest/daily/${item.day}/`} aria-current={item.day === digest.day ? "page" : undefined} class={`inline-flex min-h-9 items-center border px-3 font-mono text-xs uppercase tracking-[0.06em] focus-industrial ${item.day === digest.day ? "border-brand bg-brand text-white" : "border-white/20 text-text-2 hover:border-white/40 hover:text-white"}`}>{item.day}</a></li>
+      ))}
+    </ul>
+  </div>
+</section>

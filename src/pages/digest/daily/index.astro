@@ -1,0 +1,16 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import DailyDigestView from "../../../components/DailyDigestView.astro";
+import { dailyDigests } from "../../../lib/dailyDigest.js";
+import { SITE_URL } from "../../../lib/feeds.js";
+
+const digests = dailyDigests();
+const latest = digests[0];
+const description = "A date-stable daily archive of primary-source AI updates, ordered chronologically with publisher and permanent story links.";
+---
+
+<Layout title="Daily AI Intelligence Digest | AI News Hub" description={description} canonical={`${SITE_URL}/digest/daily/`} currentPage="digest">
+  <main id="main-content" class="industrial-shell flex-1">
+    {latest ? <DailyDigestView digest={latest} allDigests={digests} /> : <section class="industrial-container py-24"><h1 class="macro-heading">No digest yet.</h1></section>}
+  </main>
+</Layout>

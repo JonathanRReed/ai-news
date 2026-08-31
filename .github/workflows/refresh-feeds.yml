@@ -1,43 +1,57 @@
-name: Refresh provider feeds
+name: Refresh intelligence sources
 
-# Keeps the freshness contract true: re-gathers official RSS/Atom feeds once a day and
-# commits the updated cache. The push triggers the normal Cloudflare Pages deploy.
 on:
   schedule:
-    - cron: "0 11 * * *" # daily, ~11:00 UTC
+    - cron: "17 */6 * * *"
   workflow_dispatch: {}
 
 permissions:
   contents: write
 
 concurrency:
-  group: refresh-feeds
+  group: refresh-intelligence-sources
   cancel-in-progress: false
 
 jobs:
   refresh:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
-      - uses: actions/setup-node@v4
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
         with:
-          node-version: "22"
+          bun-version: "1.4.0"
 
-      - name: Gather provider feeds
-        # The script exits non-zero on a partial failure but still writes a merged,
-        # cache-preserving result — don't let that abort the commit step below.
-        continue-on-error: true
-        run: node scripts/gather-provider-feeds.mjs
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Validate admitted sources
+        run: bun run sources:validate
+
+      - name: Ingest official sources
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: bun run ingest
+
+      - name: Export canonical cache and aliases
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: bun run cache:export
+
+      - name: Verify permanent routes
+        run: bun run verify:routes
 
       - name: Commit refreshed cache
         run: |
-          if [[ -n "$(git status --porcelain public/data/provider-articles.json)" ]]; then
+          if [[ -n "$(git status --porcelain public/data/provider-articles.json public/data/route-aliases.json)" ]]; then
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
-            git add public/data/provider-articles.json
-            git commit -m "chore: refresh provider feed cache"
+            git add public/data/provider-articles.json public/data/route-aliases.json
+            git commit -m "chore: refresh intelligence cache"
             git push
           else
-            echo "No feed changes today."
+            echo "No intelligence cache changes."
           fi

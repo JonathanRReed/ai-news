@@ -1,58 +1,42 @@
 # AI News Hub
 
-> AI News Hub is a primary-source feed for AI news: official RSS and Atom posts from major labs, deduplicated, ranked into an editorial feed, and linked straight to the source. Titles and excerpts stay the publisher's own. Live coverage: OpenAI, Google DeepMind, Hugging Face, NVIDIA AI, Amazon AI, Alibaba Qwen, IBM Research, and DeepSeek.
+> AI News is a free primary-source intelligence index for AI labs, model providers, research organizations, and agent harnesses. It preserves official titles, dates, URLs, and provenance. The core uses no paid AI API.
 
-## Tech Stack
+## Core pages
 
-- **Framework**: Astro 7 (static output)
-- **Runtime**: Bun 1.4+
-- **UI**: React 19 islands with the React Compiler
-- **Styling**: Tailwind CSS 4.3 with CSS-variable design tokens
-- **Data**: Supabase (PostgreSQL) for live articles + a static provider cache (`/data/provider-articles.json`)
-- **Fetching**: TanStack React Query 5
-- **Types**: TypeScript 6
+- [Latest](/): reverse-chronological feed with shareable entity, topic, and text filters
+- [Major Updates](/major-updates/): named model releases and major harness versions promoted by a public headline rule
+- [Labs and providers](/labs/): registry and coverage ledger
+- [Agent harnesses](/harnesses/): official release coverage for Hermes Agent, OpenClaw, OpenHands, coding agents, and provider CLIs
+- [Daily digests](/digest/daily/): permanent UTC date archives
+- [Weekly digests](/digest/): weekly archive
+- [Feeds](/feeds/): public feed builder and machine-readable exports
+- [Watchlist](/watchlist/): browser-local entity watchlist, no account
+- Entity pages: `/entities/{slug}/`
+- Permanent article pages: `/article/{id}/`
 
-## Project Structure
+## Machine feeds
 
-- [Source Code](https://github.com/JonathanRReed/ai-news): Main repository
-- **Pages**: `index.astro` (3-tier feed), `stories/[...page].astro` (crawlable story index), `digest/` + `digest/[week].astro` (weekly "This Week in AI"), `models.astro` (release timeline), `article/[id].astro` (per-article pages with NewsArticle JSON-LD), `about.astro`, `contact.astro`, `privacy.astro`
-- **Layout**: `/src/layouts/Layout.astro` (shared head, SEO, header/footer)
-- **Components**: `/src/components/` - ArticlesIslandWrapper, ArticleListIsland, FiltersIsland, CompanySelect, DigestView, Header, Footer, HamburgerMenu, FaqDropdown
-- **Hooks**: `/src/hooks/` - useArticles, fetchArticlesPage, useArticlesContext, useReadState
-- **Lib**: `/src/lib/` - companyCatalog, providerSources, articleTags (topic/entity tagging), digest, feeds
-- **Feed builder**: `scripts/gather-provider-feeds.mjs` (refreshed daily by `.github/workflows/refresh-feeds.yml`)
-
-## Key Features
-
-- **Editorial feed**: a lead story + top stories + a time-bucketed river, ranked by a transparent recency/provider/release score
-- **Topic facets**: data-derived chips (Releases, Agents, Infra & hardware, Multimodal, Tooling, Research); multi-select and URL-encoded for shareable views
-- **Read state**: localStorage seen/saved with All / Unread / Saved views
-- **Keyboard navigation**: j/k move, o open, s save, m mark read, / search, ? help
-- **Weekly digest** and a **model release timeline**
-- **Primary-source links**: every card and article page links to the original publisher
-
-## Feeds and data
-
-- [RSS - all](/feed.xml)
-- [JSON - all](/articles.json)
-- Per-company RSS: `/feed/company/{slug}.xml`
-- Per-topic RSS: `/feed/topic/{slug}.xml`
+- [RSS, all updates](/feed.xml)
+- [JSON, all updates](/articles.json)
+- [RSS, Major Updates](/feed/major.xml)
+- [RSS, labs and providers](/feed/labs.xml)
+- [RSS, harnesses](/feed/harnesses.xml)
+- Entity RSS: `/feed/entity/{slug}.xml`
+- Entity JSON Feed 1.1: `/feed/entity/{slug}.json`
+- Topic RSS: `/feed/topic/{slug}.xml`
 - [Sitemap index](/sitemap-index.xml)
 
-## Development
+## Provenance and behavior
 
-- **Install**: `bun install`
-- **Dev**: `bun run dev`
-- **Build**: `bun run build`
-- **Preview**: `bun run preview`
-- **Cloudflare preview**: `bun run preview:cloudflare`
-- **Type and content check**: `bun run check`
-- **Lint**: `bun run lint`
-- **Browser tests**: `bun run test:e2e`
-- **Refresh feed cache**: `bun run gather:providers`
+- First-party sources are canonical.
+- Latest is chronological.
+- Major Updates has no prestige, engagement, or hidden model score.
+- Source records are immutable and existing public routes are preserved.
+- Supabase is the live read path. The checked-in verified cache is the degraded fallback.
 
-## Deployment
+## Project
 
-- **Production URL**: https://ai-news.helloworldfirm.com
-- **Publisher**: Hello.World Consulting (https://helloworldfirm.com)
-- **Hosting**: Cloudflare Pages (static)
+- [Source repository](https://github.com/JonathanRReed/ai-news)
+- [Production site](https://ai-news.helloworldfirm.com)
+- Publisher: [Hello.World Consulting](https://helloworldfirm.com)

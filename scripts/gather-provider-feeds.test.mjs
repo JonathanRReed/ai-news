@@ -1,5 +1,9 @@
 import { describe, expect, test } from 'bun:test';
+import { readFile } from 'node:fs/promises';
+import { URL } from 'node:url';
 import { mergeProviderArticles } from './merge-provider-articles.mjs';
+
+const gatherSource = await readFile(new URL('./gather-provider-feeds.mjs', import.meta.url), 'utf8');
 
 const cachedArticle = {
   id: 'cached-history',
@@ -22,6 +26,8 @@ const gatheredArticle = {
   published_at: '2026-08-27T00:00:00.000Z',
 };
 
+const admitExampleArticle = (article) => new URL(article.url).hostname === 'example.com';
+
 describe('mergeProviderArticles', () => {
   test('retains valid cached records missing from a successful feed window', () => {
     const currentArticle = {
@@ -32,7 +38,11 @@ describe('mergeProviderArticles', () => {
       published_at: '2026-08-26T00:00:00.000Z',
     };
 
-    const merged = mergeProviderArticles([currentArticle], [cachedArticle]);
+    const merged = mergeProviderArticles(
+      [currentArticle],
+      [cachedArticle],
+      { admitArticle: admitExampleArticle },
+    );
 
     expect(merged.map((article) => article.url)).toEqual([
       currentArticle.url,
@@ -40,9 +50,37 @@ describe('mergeProviderArticles', () => {
     ]);
   });
 
-  test('prefers newly gathered metadata for duplicate company and URL keys', () => {
-    const merged = mergeProviderArticles([gatheredArticle], [cachedArticle]);
+  test('refreshes mutable metadata without changing a published route or date', () => {
+    const merged = mergeProviderArticles(
+      [gatheredArticle],
+      [cachedArticle],
+      { admitArticle: admitExampleArticle },
+    );
 
-    expect(merged).toEqual([gatheredArticle]);
+    expect(merged).toEqual([{
+      ...gatheredArticle,
+      id: cachedArticle.id,
+      published_at: cachedArticle.published_at,
+    }]);
+  });
+
+  test('drops a cached record that no longer satisfies source admission', () => {
+    const poisoned = { ...cachedArticle, id: 'poisoned', url: 'https://attacker.example/payload' };
+    expect(mergeProviderArticles([], [poisoned], { admitArticle: admitExampleArticle })).toEqual([]);
+  });
+});
+
+describe('legacy provider gatherer security boundary', () => {
+  test('reuses the admitted redirect, body-size, and item-host policy', () => {
+    expect(gatherSource).toContain("from './intelligence/source-policy.mjs'");
+    expect(gatherSource).toContain('fetchAdmittedResponse');
+    expect(gatherSource).toContain('readBoundedText');
+    expect(gatherSource).toContain('admittedHttpsUrl');
+    expect(gatherSource).not.toContain("redirect: 'follow'");
+  });
+
+  test('never restores an unfiltered cache after admission removes every row', () => {
+    expect(gatherSource).not.toContain('articles = existing;');
+    expect(gatherSource).toContain('Refusing to publish an empty admitted cache');
   });
 });

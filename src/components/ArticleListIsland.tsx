@@ -7,6 +7,7 @@ import { deriveTopics, topicLabel, readingMinutes, importanceScore } from "../li
 import type { Article, PageData } from "../types/article.js";
 import type { ReadState } from "../hooks/useReadState.js";
 import type { FeedView } from "./ArticlesIslandWrapper.js";
+import { boundedSearchTerms } from "../lib/intelligenceClient.js";
 
 function getDomain(url: string): string {
   try {
@@ -223,6 +224,18 @@ export default function ArticleListIsland({
     return deduped.sort((a, b) => new Date(b.published_at).getTime() - new Date(a.published_at).getTime());
   }, [data?.pages]);
 
+  const dataState = useMemo(() => {
+    const pages = data?.pages ?? [];
+    if (pages.some((page) => page.state === "degraded")) return "degraded";
+    return pages.at(-1)?.state ?? "static";
+  }, [data?.pages]);
+  const cacheFreshness = useMemo(() => (
+    (data?.pages ?? []).find((page) => page.cacheFreshness)?.cacheFreshness ?? null
+  ), [data?.pages]);
+  const cacheFreshnessLabel = cacheFreshness
+    ? new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", year: "numeric" }).format(new Date(cacheFreshness))
+    : "the latest successful export";
+
   const articles = useMemo<Article[]>(() => {
     if (view === "unread") return allArticles.filter((a) => !seen.has(a.id));
     if (view === "saved") return allArticles.filter((a) => saved.has(a.id));
@@ -303,7 +316,7 @@ export default function ArticleListIsland({
   // item), so Unread/Saved views don't over-count things already in the list.
   const latestLoadedTs = allArticles.length > 0 ? new Date(allArticles[0].published_at).getTime() : 0;
   const loadedLabel = hasNextPage ? `${visibleArticles.length} loaded` : `${visibleArticles.length} total`;
-  const searchTerms = (filters.q?.trim().toLowerCase().split(/\s+/).filter(Boolean)) ?? [];
+  const searchTerms = boundedSearchTerms(filters.q);
 
   // Poll for newer items with a cheap server-side COUNT (no rows transferred); pauses when hidden.
   useEffect(() => {
@@ -497,6 +510,12 @@ export default function ArticleListIsland({
 
   return (
     <>
+      {(dataState === "degraded" || dataState === "unconfigured") && (
+        <div role="status" className="mb-5 border border-brand/60 bg-brand/10 p-4 text-sm leading-relaxed text-white">
+          <span className="micro-label mr-2 text-brand-hover">Cache mode</span>
+          Live updates are temporarily unavailable. Showing the verified cache from {cacheFreshnessLabel}.
+        </div>
+      )}
       <div className="mb-5 grid gap-px bg-white/15 md:grid-cols-[1fr_auto_auto]">
         <div className="bg-bg-1 p-4">
           <p className="micro-label text-text-2">Scope</p>

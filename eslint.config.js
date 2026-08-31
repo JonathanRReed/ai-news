@@ -30,12 +30,11 @@ export default [
 
   // TypeScript and React files
   {
-    files: ['**/*.{js,jsx,ts,tsx}'],
+    files: ['**/*.{js,mjs,cjs,jsx,ts,tsx}'],
     plugins: {
       '@typescript-eslint': tseslint,
       'react': reactPlugin,
-      'react-hooks': reactHooksPlugin,
-      'react-compiler': reactCompilerPlugin
+      'react-hooks': reactHooksPlugin
     },
     languageOptions: {
       parser: tsparser,
@@ -56,6 +55,8 @@ export default [
         sessionStorage: 'readonly',
         fetch: 'readonly',
         Request: 'readonly',
+        RequestInfo: 'readonly',
+        RequestInit: 'readonly',
         Response: 'readonly',
         Headers: 'readonly',
         URL: 'readonly',
@@ -67,6 +68,7 @@ export default [
         HTMLInputElement: 'readonly',
         HTMLFormElement: 'readonly',
         HTMLDivElement: 'readonly',
+        CustomEvent: 'readonly',
         requestAnimationFrame: 'readonly',
         cancelAnimationFrame: 'readonly',
         setTimeout: 'readonly',
@@ -93,8 +95,6 @@ export default [
       ...tseslint.configs.recommended.rules,
       ...reactPlugin.configs.recommended.rules,
       ...reactHooksPlugin.configs.recommended.rules,
-      // Enable React Compiler constraints as warnings
-      'react-compiler/react-compiler': 'warn',
       // Common React-in-Vite/Astro rule
       'react/react-in-jsx-scope': 'off',
       // Allow unused vars/args when prefixed with underscore
@@ -106,6 +106,18 @@ export default [
       'react-hooks/exhaustive-deps': 'warn',
       'react-hooks/set-state-in-effect': 'warn',
       'react-hooks/preserve-manual-memoization': 'off'
+    }
+  },
+
+  // React Compiler analysis is meaningful only for React components. Applying
+  // it to Node ingestion scripts makes the repository-wide lint gate stall.
+  {
+    files: ['src/**/*.{jsx,tsx}'],
+    plugins: {
+      'react-compiler': reactCompilerPlugin
+    },
+    rules: {
+      'react-compiler/react-compiler': 'warn'
     }
   },
 

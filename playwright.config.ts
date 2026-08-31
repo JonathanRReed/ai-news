@@ -2,6 +2,7 @@ import { defineConfig, devices } from "@playwright/test";
 
 export default defineConfig({
   testDir: "./tests/e2e",
+  testMatch: "**/*.e2e.ts",
   fullyParallel: true,
   forbidOnly: Boolean(process.env.CI),
   retries: process.env.CI ? 2 : 0,
@@ -17,7 +18,12 @@ export default defineConfig({
   webServer: {
     command: "bun run build && bun run preview:cloudflare",
     url: "http://127.0.0.1:4377",
-    reuseExistingServer: false,
-    env: { ASTRO_DEV_BACKGROUND: "0" },
+    timeout: 240_000,
+    reuseExistingServer: !process.env.CI,
+    env: {
+      ASTRO_DEV_BACKGROUND: "0",
+      PUBLIC_SUPABASE_URL: "https://arejerdupcduqhgdoyht.supabase.co",
+      PUBLIC_SUPABASE_ANON_KEY: "playwright-public-key",
+    },
   },
 });

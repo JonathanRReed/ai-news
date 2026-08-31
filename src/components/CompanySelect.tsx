@@ -12,7 +12,7 @@ export default function CompanySelect({ activeCompany, onCompanyChange }: Compan
       <div className="mx-auto max-w-7xl border border-white/20 bg-bg-1">
         <div
           role="group"
-          aria-label="Filter by lab"
+          aria-label="Filter by lab or provider"
           className="hide-scrollbar mx-auto flex w-full max-w-full snap-x snap-mandatory gap-px overflow-x-auto bg-white/15"
           style={{
             maskImage: 'linear-gradient(to right, transparent, black 10px, black calc(100% - 10px), transparent)',

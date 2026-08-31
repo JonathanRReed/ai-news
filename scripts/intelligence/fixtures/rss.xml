@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Example News</title>
+    <item>
+      <guid>release-1</guid>
+      <title><![CDATA[Model &amp; Tool Release]]></title>
+      <link>https://example.com/news/release-1?utm_source=rss</link>
+      <pubDate>Wed, 20 Aug 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[<p>A concise publisher summary.</p>]]></description>
+      <content:encoded><![CDATA[<p>A longer publisher body.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Missing URL</title>
+      <pubDate>Wed, 20 Aug 2026 12:00:00 GMT</pubDate>
+    </item>
+  </channel>
+</rss>

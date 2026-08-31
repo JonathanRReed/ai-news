@@ -1,0 +1,50 @@
+---
+import { entitySources, entityTypeLabel, isEntityCovered } from "../lib/intelligenceCatalog.js";
+import { resolveCompanyLogo, companyLogoAlt } from "../lib/companyCatalog.js";
+import type { IntelligenceEntity } from "../lib/intelligenceCatalog.js";
+
+interface Props {
+  entities: IntelligenceEntity[];
+  articleCounts?: Record<string, number>;
+}
+
+const { entities, articleCounts = {} } = Astro.props as Props;
+---
+
+<div class="industrial-grid reveal-stagger">
+  {entities.map((entity, index) => {
+    const sources = entitySources(entity.slug);
+    const activeSources = sources.filter((source) => source.active);
+    const covered = isEntityCovered(entity.slug);
+    const logo = resolveCompanyLogo(entity.name);
+    return (
+      <article class="col-span-12 flex min-h-64 flex-col p-5 sm:col-span-6 lg:col-span-4 xl:col-span-3">
+        <div class="mb-5 flex items-center gap-3 border-b border-white/15 pb-4">
+          <span class="flex h-10 w-10 shrink-0 items-center justify-center border border-white/20 bg-white">
+            <img src={logo} alt={companyLogoAlt(entity.name)} width="28" height="28" class="h-7 w-7 object-contain" loading={index < 8 ? "eager" : "lazy"} decoding="async" />
+          </span>
+          <div class="min-w-0">
+            <h2 class="truncate text-lg font-bold text-white">{entity.name}</h2>
+            <p class="micro-label text-text-2">{entityTypeLabel(entity.entityType)}</p>
+          </div>
+        </div>
+        <dl class="grid grid-cols-2 gap-px bg-white/15 font-mono text-xs uppercase tracking-[0.06em]">
+          <div class="bg-bg-0 p-3">
+            <dt class="text-muted">Sources</dt>
+            <dd class="mt-1 text-white">{activeSources.length}/{sources.length}</dd>
+          </div>
+          <div class="bg-bg-0 p-3">
+            <dt class="text-muted">Cached</dt>
+            <dd class="mt-1 text-white">{articleCounts[entity.slug] ?? 0}</dd>
+          </div>
+        </dl>
+        <p class={`micro-label mt-4 ${covered ? "text-brand-hover" : "text-text-2"}`}>
+          {covered ? "Active first-party coverage" : "Source watchlist"}
+        </p>
+        <a href={`/entities/${entity.slug}/`} class="mt-auto pt-5 font-mono text-xs uppercase tracking-[0.08em] text-white underline decoration-brand decoration-2 underline-offset-4 hover:text-brand-hover focus-industrial">
+          Open intelligence page
+        </a>
+      </article>
+    );
+  })}
+</div>

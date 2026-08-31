@@ -3,22 +3,9 @@ export interface CompanyEntry {
   logo: string;
 }
 
-export const FALLBACK_COMPANY_LOGO = '/logos/Globe Icon.svg';
+import { activeEntities } from './intelligenceCatalog.js';
 
-// Labs with live, wired feeds (see scripts/gather-provider-feeds.mjs). Meta, Anthropic,
-// Mistral and xAI are intentionally omitted until their official feeds are wired so the
-// filter bar never offers a lab that returns an empty feed.
-export const companies: CompanyEntry[] = [
-  { name: 'All', logo: FALLBACK_COMPANY_LOGO },
-  { name: 'OpenAI', logo: '/logos/OpenAI_logo.svg' },
-  { name: 'Google DeepMind', logo: '/logos/DeepMind_logo.svg' },
-  { name: 'Hugging Face', logo: '/logos/Hugging_Face_logo.svg' },
-  { name: 'NVIDIA AI', logo: '/logos/NVIDIA_logo.svg' },
-  { name: 'Amazon AI', logo: '/logos/AWS_logo.svg' },
-  { name: 'Alibaba Qwen', logo: '/logos/Qwen_logo.svg' },
-  { name: 'IBM Research', logo: '/logos/IBM_logo.svg' },
-  { name: 'DeepSeek', logo: '/logos/DeepSeek_logo.svg' },
-];
+export const FALLBACK_COMPANY_LOGO = '/logos/Globe Icon.svg';
 
 const COMPANY_LOGO_MATCHERS = [
   { keys: ['openai'], logo: '/logos/OpenAI_logo.svg' },
@@ -40,6 +27,15 @@ export function resolveCompanyLogo(company: string): string {
   const match = COMPANY_LOGO_MATCHERS.find(({ keys }) => keys.some((key) => normalizedName.includes(key)));
   return match?.logo ?? FALLBACK_COMPANY_LOGO;
 }
+
+// The filter is generated from the admitted registry, so a provider appears here only
+// when at least one active first-party source is wired. Harnesses have their own index.
+export const companies: CompanyEntry[] = [
+  { name: 'All', logo: FALLBACK_COMPANY_LOGO },
+  ...activeEntities
+    .filter((entity) => entity.entityType !== 'harness')
+    .map((entity) => ({ name: entity.name, logo: resolveCompanyLogo(entity.name) })),
+];
 
 export function companyLogoAlt(company: string): string {
   const name = (company || '').trim();

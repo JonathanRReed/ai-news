@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Example Releases</title>
+  <entry>
+    <id>tag:github.com,2008:Repository/1/v1.2.3</id>
+    <title>Release v1.2.3</title>
+    <link rel="self" href="https://example.com/releases.atom" />
+    <link rel="alternate" href="https://example.com/releases/v1.2.3" />
+    <updated>2026-08-21T08:30:00Z</updated>
+    <content type="html">&lt;p&gt;Release notes.&lt;/p&gt;</content>
+  </entry>
+</feed>

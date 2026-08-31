@@ -1,3 +1,5 @@
+import { mergeCanonicalItems } from './intelligence/normalize.mjs';
+
 function articleKey(article) {
   return `${article.company}:${article.url}`;
 }
@@ -14,18 +16,24 @@ function isValidArticle(article) {
   );
 }
 
-function compareNewest(a, b) {
-  return new Date(b.published_at).getTime() - new Date(a.published_at).getTime();
-}
-
-export function mergeProviderArticles(gathered, existing) {
-  const merged = new Map();
-
-  for (const article of [...gathered, ...existing]) {
-    if (!isValidArticle(article)) continue;
-    const key = articleKey(article);
-    if (!merged.has(key)) merged.set(key, article);
+export function mergeProviderArticles(gathered, existing, options = {}) {
+  if (typeof options.admitArticle !== 'function') {
+    throw new Error('mergeProviderArticles requires an article admission policy');
   }
+  const toCanonical = (article) => ({
+    ...article,
+    legacy_id: article.id,
+    canonical_url: articleKey(article),
+  });
+  const toArticle = (item) => {
+    const article = { ...item };
+    const legacyId = article.legacy_id;
+    delete article.canonical_url;
+    delete article.legacy_id;
+    return { ...article, id: legacyId || article.id };
+  };
 
-  return [...merged.values()].sort(compareNewest);
+  const validGathered = gathered.filter(isValidArticle).filter(options.admitArticle).map(toCanonical);
+  const validExisting = existing.filter(isValidArticle).filter(options.admitArticle).map(toCanonical);
+  return mergeCanonicalItems(validGathered, validExisting).map(toArticle);
 }

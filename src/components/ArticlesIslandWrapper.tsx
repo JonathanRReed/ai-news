@@ -8,6 +8,8 @@ import FiltersIsland from "./FiltersIsland.js";
 import { useReadState } from "../hooks/useReadState.js";
 import type { ArticleFilters } from "../hooks/fetchArticlesPage.js";
 import type { Article, PageData } from "../types/article.js";
+import type { FeedCursor } from "../types/intelligence.js";
+import { normalizeSearchQuery } from "../lib/intelligenceClient.js";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -32,7 +34,7 @@ function urlFilters(): ArticleFilters | null {
   return {
     company: company || "All",
     topics: (topic || "").split(",").map((s) => s.trim()).filter(Boolean),
-    q: q || "",
+    q: normalizeSearchQuery(q || ""),
   };
 }
 
@@ -69,7 +71,7 @@ export default function ArticlesIslandWrapper({ initialArticles = [], now = 0 }:
     const params = new URLSearchParams();
     if (filters.company && filters.company !== "All") params.set("company", filters.company);
     if (filters.topics && filters.topics.length) params.set("topic", filters.topics.join(","));
-    if (filters.q && filters.q.trim()) params.set("q", filters.q.trim());
+    if (filters.q && filters.q.trim()) params.set("q", normalizeSearchQuery(filters.q));
     const qs = params.toString();
     window.history.replaceState(null, "", qs ? `${window.location.pathname}?${qs}` : window.location.pathname);
   }, [filters]);
@@ -78,9 +80,20 @@ export default function ArticlesIslandWrapper({ initialArticles = [], now = 0 }:
   const stableFilters = useMemo<ArticleFilters>(() => ({ company, topics, q }), [company, topics, q]);
   const isDefault = company === "All" && !(topics && topics.length) && !(q && q.trim());
 
-  const initialData: InfiniteData<PageData, number> | undefined =
+  const lastInitialArticle = initialArticles.at(-1);
+  const initialData: InfiniteData<PageData, FeedCursor | null> | undefined =
     isDefault && initialArticles.length
-      ? { pages: [{ data: initialArticles, next: initialArticles.length >= PAGE_SIZE ? PAGE_SIZE : undefined }], pageParams: [0] }
+      ? {
+        pages: [{
+          data: initialArticles,
+          next: initialArticles.length >= PAGE_SIZE && lastInitialArticle
+            ? { publishedAt: lastInitialArticle.published_at, id: lastInitialArticle.id }
+            : undefined,
+          state: "static",
+          cacheFreshness: initialArticles[0]?.published_at ?? null,
+        }],
+        pageParams: [null],
+      }
       : undefined;
 
   return (

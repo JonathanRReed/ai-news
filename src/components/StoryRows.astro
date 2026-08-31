@@ -1,0 +1,54 @@
+---
+import { companyLogoAlt, resolveCompanyLogo } from "../lib/companyCatalog.js";
+import { deriveTopics, topicLabel } from "../lib/articleTags.js";
+import type { Article } from "../types/article.js";
+
+interface StoryRow {
+  article: Article;
+  reason?: string;
+}
+
+interface Props {
+  rows: StoryRow[];
+  emptyMessage?: string;
+}
+
+const { rows, emptyMessage = "No cached stories yet." } = Astro.props as Props;
+const dateLabel = (iso: string) => new Intl.DateTimeFormat("en-US", {
+  month: "short", day: "numeric", year: "numeric", timeZone: "UTC",
+}).format(new Date(iso));
+---
+
+{rows.length ? (
+  <ol class="reveal-stagger border-t border-white/15">
+    {rows.map(({ article, reason }, index) => {
+      const logo = resolveCompanyLogo(article.company);
+      const topics = deriveTopics(article).slice(0, 3);
+      return (
+        <li class="grid grid-cols-[minmax(0,1fr)] gap-4 border-b border-white/15 py-5 md:grid-cols-[8rem_minmax(0,1fr)] md:gap-6">
+          <div>
+            <time class="micro-label tabular-nums text-muted" datetime={article.published_at}>{dateLabel(article.published_at)}</time>
+            {reason && <p class="micro-label mt-2 text-brand-hover">{reason}</p>}
+          </div>
+          <div>
+            <div class="mb-2 flex items-center gap-2">
+              <span class="flex h-7 w-7 items-center justify-center border border-white/20 bg-white">
+                <img src={logo} alt={companyLogoAlt(article.company)} width="18" height="18" class="h-[18px] w-[18px] object-contain" loading={index < 6 ? "eager" : "lazy"} decoding="async" />
+              </span>
+              <span class="micro-label text-white">{article.company}</span>
+              {topics.map((topic) => <span class="micro-label hidden text-text-2 sm:inline">· {topicLabel(topic)}</span>)}
+            </div>
+            <h2 class="text-lg font-bold leading-tight text-white md:text-xl text-pretty">
+              <a href={`/article/${article.id}/`} class="decoration-brand decoration-2 underline-offset-4 hover:text-brand-hover hover:underline focus-industrial">{article.title}</a>
+            </h2>
+            {(article.summary || article.content) && <p class="mt-2 max-w-3xl leading-relaxed text-text-2 line-clamp-2">{article.summary || article.content}</p>}
+          </div>
+        </li>
+      );
+    })}
+  </ol>
+) : (
+  <div class="industrial-border p-8">
+    <p class="font-mono text-sm uppercase tracking-[0.06em] text-text-2">{emptyMessage}</p>
+  </div>
+)}
