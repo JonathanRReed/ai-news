@@ -17,7 +17,11 @@ export const useArticles = (filters: ArticleFilters, initialData?: InfiniteData<
   return useInfiniteQuery<PageData, Error, InfiniteData<PageData>, [string, string], FeedCursor | null>({
     queryKey,
     initialPageParam: null,
-    queryFn: ({ pageParam = null }) => fetchArticlesPage(filters, pageParam),
+    queryFn: ({ pageParam = null }) => fetchArticlesPage(
+      filters,
+      pageParam,
+      pageParam === null ? (initialData?.pages[0]?.data ?? []) : [],
+    ),
     getNextPageParam: (last) => last.next,
     maxPages: 10,
     initialData,

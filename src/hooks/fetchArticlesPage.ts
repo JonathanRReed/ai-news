@@ -68,15 +68,29 @@ export async function countNewerThan(filters: ArticleFilters, sinceMs: number): 
 export async function fetchArticlesPage(
   filters: ArticleFilters,
   pageParam: FeedCursor | null = null,
+  seededArticles: Article[] = [],
 ): Promise<PageData> {
-  const staticArticles = await fetchSupplementalArticles();
-  const page = await fetchIntelligencePage(filters, pageParam, {
+  const firstPageSeed = pageParam === null ? seededArticles : [];
+  let page = await fetchIntelligencePage(filters, pageParam, {
     supabaseUrl: SUPABASE_URL,
     anonKey: SUPABASE_REST_HEADERS.apikey,
-    staticArticles,
+    staticArticles: firstPageSeed,
     pageSize: PAGE_SIZE,
     timeoutMs: SUPABASE_TIMEOUT_MS,
   });
+  // The verified export is intentionally a fallback, not a prerequisite for every
+  // healthy request. This keeps the common live path from downloading a multi-MB
+  // cache after SSR already supplied the first page.
+  if ((page.state === 'degraded' || page.state === 'static' || page.state === 'unconfigured') && page.data.length === 0) {
+    const staticArticles = await fetchSupplementalArticles();
+    page = await fetchIntelligencePage(filters, pageParam, {
+      supabaseUrl: SUPABASE_URL,
+      anonKey: SUPABASE_REST_HEADERS.apikey,
+      staticArticles,
+      pageSize: PAGE_SIZE,
+      timeoutMs: SUPABASE_TIMEOUT_MS,
+    });
+  }
   if (page.state === 'degraded' && page.data.length === 0) {
     throw new Error('The live feed and verified cache are unavailable');
   }

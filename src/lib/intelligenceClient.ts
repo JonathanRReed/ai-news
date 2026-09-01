@@ -116,7 +116,7 @@ function staticFeedItem(article: Article): FeedItem {
     title: article.title,
     excerpt: article.summary ?? null,
     content: article.content ?? null,
-    item_type: 'other',
+    item_type: article.item_type ?? 'other',
     published_at: article.published_at,
     source_key: article.source_key
       ?? sourceKeyForArticle(article)
@@ -133,6 +133,59 @@ function staticFeedItem(article: Article): FeedItem {
     event_title: null,
     event_significance: null,
     significance_reason: null,
+  };
+}
+
+function mergeKey(item: FeedItem): string {
+  return item.canonical_url || item.id;
+}
+
+function mergeFirstPage(
+  live: FeedPage,
+  dependencies: IntelligenceDependencies,
+  filters: IntelligenceFilters,
+): FeedPage {
+  const pageSize = dependencies.pageSize ?? PAGE_SIZE;
+  const staticRows = dependencies.staticArticles
+    .map(staticFeedItem)
+    .filter((item) => matchesFilters(item, filters));
+  const liveKeys = new Set<string>();
+  const liveIds = new Set<string>();
+  for (const item of live.data) {
+    liveKeys.add(mergeKey(item));
+    liveIds.add(item.id);
+    if (item.legacy_id) liveIds.add(item.legacy_id);
+  }
+  const seen = new Set<string>();
+  const merged = [...live.data];
+  for (const item of live.data) {
+    const key = mergeKey(item);
+    seen.add(key);
+    seen.add(item.id);
+    if (item.legacy_id) seen.add(item.legacy_id);
+  }
+  for (const item of staticRows) {
+    const key = mergeKey(item);
+    const duplicateLive = liveKeys.has(key) || liveIds.has(item.id) || Boolean(item.legacy_id && liveIds.has(item.legacy_id));
+    if (duplicateLive || seen.has(key) || seen.has(item.id) || (item.legacy_id && seen.has(item.legacy_id))) continue;
+    merged.push(item);
+    seen.add(key);
+    seen.add(item.id);
+    if (item.legacy_id) seen.add(item.legacy_id);
+  }
+  merged.sort((left, right) => (
+    Date.parse(right.published_at) - Date.parse(left.published_at) || right.id.localeCompare(left.id)
+  ));
+  const data = merged.slice(0, pageSize);
+  const lastVisible = data.at(-1);
+  const hasMore = merged.length > pageSize || live.nextCursor !== null;
+  return {
+    ...live,
+    data,
+    nextCursor: hasMore && lastVisible
+      ? { publishedAt: lastVisible.published_at, id: lastVisible.id }
+      : null,
+    cacheFreshness: cacheFreshness(dependencies.staticArticles.map(staticFeedItem)),
   };
 }
 
@@ -271,7 +324,8 @@ export async function fetchIntelligencePage(
     return staticPage(filters, cursor, dependencies, 'unconfigured');
   }
   try {
-    return await livePage(filters, cursor, dependencies);
+    const live = await livePage(filters, cursor, dependencies);
+    return cursor ? live : mergeFirstPage(live, dependencies, filters);
   } catch {
     return staticPage(filters, cursor, dependencies, 'degraded');
   }

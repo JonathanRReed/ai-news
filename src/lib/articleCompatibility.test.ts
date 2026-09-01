@@ -13,6 +13,7 @@ describe('toArticle', () => {
       published_at: '2026-08-30T00:00:00.000Z',
       excerpt: 'Summary',
       content: 'Content',
+      item_type: 'release',
       source_type: 'rss_official',
       source_url: 'https://example.com/feed.xml',
     } as FeedItem;
@@ -23,6 +24,7 @@ describe('toArticle', () => {
       title: 'Release',
       url: 'https://example.com/release',
       published_at: '2026-08-30T00:00:00.000Z',
+      item_type: 'release',
       source_type: 'rss_official',
       summary: 'Summary',
       content: 'Content',

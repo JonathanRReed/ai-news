@@ -114,6 +114,84 @@ describe('fetchIntelligencePage', () => {
     expect(result.cacheFreshness).toBe('2026-08-29T00:00:00.000Z');
   });
 
+  test('merges a newer verified cache row ahead of an older live first page', async () => {
+    const newerStatic = [{
+      id: 'cached-newer',
+      company: 'Example Lab',
+      title: 'Newest verified update',
+      url: 'https://example.com/newest-verified',
+      published_at: '2026-09-01T12:00:00.000Z',
+      source_type: 'rss_official',
+    }];
+    const olderLive = feedItem(0);
+    olderLive.published_at = '2026-08-31T12:00:00.000Z';
+
+    const result = await fetchIntelligencePage({}, null, {
+      supabaseUrl: 'https://project.supabase.co',
+      anonKey: 'public-key',
+      staticArticles: newerStatic,
+      fetchImpl: async () => Response.json([olderLive]),
+    });
+
+    expect(result.state).toBe('live');
+    expect(result.data.map(item => item.title)).toEqual([
+      'Newest verified update',
+      olderLive.title,
+    ]);
+    expect(result.cacheFreshness).toBe('2026-09-01T12:00:00.000Z');
+  });
+
+  test('prefers live content when cache and live rows share a canonical URL', async () => {
+    const live = feedItem(0);
+    const cached = {
+      id: 'cached-copy',
+      company: 'Example Lab',
+      title: 'Stale cached title',
+      url: live.canonical_url,
+      published_at: live.published_at,
+      source_type: 'rss_official',
+      item_type: 'research',
+    };
+    const result = await fetchIntelligencePage({}, null, {
+      supabaseUrl: 'https://project.supabase.co',
+      anonKey: 'public-key',
+      staticArticles: [cached],
+      fetchImpl: async () => Response.json([live]),
+    });
+
+    expect(result.data).toHaveLength(1);
+    expect(result.data[0]?.title).toBe(live.title);
+    expect(result.data[0]?.item_type).toBe('announcement');
+  });
+
+  test('uses the last displayed merged row as the next-page cursor', async () => {
+    const liveRows = [feedItem(0), feedItem(1), feedItem(2)];
+    const newerStatic = [{
+      id: 'cached-newer',
+      company: 'Example Lab',
+      title: 'Newest verified update',
+      url: 'https://example.com/newest-verified',
+      published_at: '2026-09-01T12:00:00.000Z',
+      source_type: 'rss_official',
+    }];
+    const result = await fetchIntelligencePage({}, null, {
+      supabaseUrl: 'https://project.supabase.co',
+      anonKey: 'public-key',
+      staticArticles: newerStatic,
+      pageSize: 2,
+      fetchImpl: async () => Response.json(liveRows),
+    });
+
+    expect(result.data.map(item => item.title)).toEqual([
+      'Newest verified update',
+      liveRows[0].title,
+    ]);
+    expect(result.nextCursor).toEqual({
+      publishedAt: liveRows[0].published_at,
+      id: liveRows[0].id,
+    });
+  });
+
   test('preserves admitted source identity through the degraded-cache conversion path', async () => {
     const admittedCache = [{
       id: 'cached-openai',

@@ -3,12 +3,14 @@ import React, { useState, useEffect, useRef, useMemo } from "react";
 import { useArticlesContext } from "../hooks/useArticlesContext.js";
 import { countNewerThan } from "../hooks/fetchArticlesPage.js";
 import { companyLogoAlt, resolveCompanyLogo } from "../lib/companyCatalog.js";
-import { deriveTopics, topicLabel, readingMinutes, importanceScore } from "../lib/articleTags.js";
+import { deriveTopics, topicLabel, readingMinutes } from "../lib/articleTags.js";
 import type { Article, PageData } from "../types/article.js";
 import type { ReadState } from "../hooks/useReadState.js";
 import type { FeedView } from "./ArticlesIslandWrapper.js";
 import { boundedSearchTerms } from "../lib/intelligenceClient.js";
-import { articleExcerpt } from "../lib/articleExcerpt.js";
+import { articleExcerpt, truncateArticleExcerpt } from "../lib/articleExcerpt.js";
+
+const EXPANDED_PREVIEW_MAX_LENGTH = 1_600;
 
 function getDomain(url: string): string {
   try {
@@ -74,6 +76,18 @@ function sourceTypeLabel(sourceType?: string): string {
   }
 }
 
+function itemTypeLabel(itemType?: string): string | null {
+  switch (itemType) {
+    case "announcement": return "Announcement";
+    case "release": return "Release";
+    case "research": return "Research";
+    case "benchmark": return "Benchmark";
+    case "documentation": return "Docs";
+    case "funding": return "Funding";
+    default: return null;
+  }
+}
+
 function highlightText(text: string, terms: string[]): React.ReactNode {
   if (!terms.length) return text;
   const escaped = terms.map((t) => t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
@@ -93,7 +107,7 @@ function SavedButton({ saved, onToggle, title }: { saved: boolean; onToggle: () 
       onClick={onToggle}
       aria-pressed={saved}
       aria-label={saved ? `Remove “${title}” from saved` : `Save “${title}” for later`}
-      className={`flex h-9 w-9 shrink-0 items-center justify-center border transition-colors focus-industrial ${
+      className={`flex h-11 w-11 shrink-0 items-center justify-center border transition-colors focus-industrial ${
         saved ? "border-brand text-brand" : "border-white/20 text-text-2 hover:border-white/40 hover:text-white"
       }`}
     >
@@ -127,6 +141,7 @@ function ArticleCard({
   onOpen: (id: string) => void;
   onToggleSaved: (id: string) => void;
 }) {
+  const [expanded, setExpanded] = useState(false);
   const logoPath = resolveCompanyLogo(article.company);
   const safeUrl = getSafeArticleUrl(article.url);
   const domain = getDomain(article.url);
@@ -135,6 +150,13 @@ function ArticleCard({
   const isLead = tier === "lead";
   const showExcerpt = isLead || (tier === "top" && density === "comfortable") || (tier === "river" && density === "comfortable");
   const excerpt = articleExcerpt(article);
+  const expandedExcerpt = truncateArticleExcerpt(
+    article.content || article.summary || "",
+    EXPANDED_PREVIEW_MAX_LENGTH,
+  );
+  const hasMoreExcerpt = expandedExcerpt.length > excerpt.length;
+  const previewId = `article-preview-${article.id.replace(/[^a-zA-Z0-9_-]/g, "-")}`;
+  const typeLabel = itemTypeLabel(article.item_type);
   const pad = isLead ? "p-6 md:p-8" : tier === "top" ? "p-5" : density === "compact" ? "p-3.5" : "p-4 md:p-5";
   const titleSize = isLead ? "text-2xl md:text-4xl" : tier === "top" ? "text-xl" : density === "compact" ? "text-base" : "text-lg";
   const Heading = isLead ? "h2" : "h3";
@@ -148,7 +170,7 @@ function ArticleCard({
           </span>
         )}
         <span className="micro-label text-white">{article.company}</span>
-        {isLead && <span className="micro-label border border-brand px-2 py-0.5 text-brand-hover">Top story</span>}
+        {isLead && <span className="micro-label border border-brand px-2 py-0.5 text-brand-hover">Newest update</span>}
         <time className="micro-label tabular-nums ml-auto text-text-2" dateTime={article.published_at} title={new Date(article.published_at).toLocaleString()}>
           {relativeTime(article.published_at, nowMs)}
         </time>
@@ -174,16 +196,30 @@ function ArticleCard({
       <div className="mb-2 flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[0.68rem] uppercase tracking-[0.06em] text-text-2">
         {domain && <span className="border border-white/15 px-2 py-0.5 text-white">{domain}</span>}
         <span>{sourceTypeLabel(article.source_type)}</span>
+        {typeLabel && <span className="border border-white/15 px-2 py-0.5 text-white">{typeLabel}</span>}
         {topics.map((key) => (
           <span key={key} className="text-text-2">· {topicLabel(key)}</span>
         ))}
-        {minutes > 0 && <span className="tabular-nums">· {minutes} min read</span>}
+        {minutes > 0 && <span className="tabular-nums">· Estimated source length: {minutes} min</span>}
       </div>
 
       {showExcerpt && excerpt && (
-        <p className={`${isLead ? "text-base md:text-lg line-clamp-4" : "text-sm line-clamp-2"} max-w-3xl leading-relaxed text-text-2 text-pretty`}>
-          {excerpt}
-        </p>
+        <div>
+          <p id={previewId} className={`${expanded ? "" : isLead ? "line-clamp-4" : "line-clamp-2"} ${isLead ? "text-base md:text-lg" : "text-sm"} max-w-3xl leading-relaxed text-text-2 text-pretty`}>
+            {expanded ? expandedExcerpt : excerpt}
+          </p>
+          {hasMoreExcerpt && (
+            <button
+              type="button"
+              className="mt-2 font-mono text-[0.68rem] uppercase tracking-[0.08em] text-brand-hover underline decoration-brand/60 underline-offset-4 transition-colors hover:text-white focus-industrial"
+              aria-expanded={expanded}
+              aria-controls={previewId}
+              onClick={() => setExpanded((value) => !value)}
+            >
+              {expanded ? "Collapse preview" : "Expand preview"}
+            </button>
+          )}
+        </div>
       )}
     </article>
   );
@@ -223,7 +259,10 @@ export default function ArticleListIsland({
         seenIds.add(art.id);
       }
     }
-    return deduped.sort((a, b) => new Date(b.published_at).getTime() - new Date(a.published_at).getTime());
+    return deduped.sort((a, b) => (
+      new Date(b.published_at).getTime() - new Date(a.published_at).getTime()
+      || b.id.localeCompare(a.id)
+    ));
   }, [data?.pages]);
 
   const dataState = useMemo(() => {
@@ -274,17 +313,15 @@ export default function ArticleListIsland({
 
   const visibleArticles = articles.slice(0, visibleCount);
 
-  // Build editorial tiers from the visible set: a lead + a small top row pulled from
-  // the most recent window by a transparent score, then the chronological river.
+  // Preserve the feed contract in every visual tier. The lead and next-up cards are
+  // layout treatments for the newest rows, not a recommendation or importance score.
   const { lead, topPicks, riverGroups } = useMemo(() => {
     const enoughForTiers = view === "all" && visibleArticles.length >= 8;
     if (!enoughForTiers) {
       return { lead: null as Article | null, topPicks: [] as Article[], riverGroups: groupByBucket(visibleArticles, nowMs) };
     }
-    const window = visibleArticles.slice(0, 15);
-    const ranked = [...window].sort((a, b) => importanceScore(b, nowMs) - importanceScore(a, nowMs));
-    const leadArticle = ranked[0] ?? null;
-    const tops = ranked.slice(1, 5);
+    const leadArticle = visibleArticles[0] ?? null;
+    const tops = visibleArticles.slice(1, 5);
     const promoted = new Set([leadArticle, ...tops].filter(Boolean).map((a) => (a as Article).id));
     const river = visibleArticles.filter((a) => !promoted.has(a.id));
     return { lead: leadArticle, topPicks: tops, riverGroups: groupByBucket(river, nowMs) };
@@ -547,7 +584,7 @@ export default function ArticleListIsland({
 
           {topPicks.length > 0 && (
             <div>
-              <h2 className="micro-label mb-3 text-text-2">Top stories</h2>
+              <h2 className="micro-label mb-3 text-text-2">Next updates</h2>
               <div className="grid gap-4 md:grid-cols-2">
                 {topPicks.map((article) => (
                   <ArticleCard key={article.id} {...cardProps(article, "top")} />

@@ -49,7 +49,10 @@ const initialArticles: Article[] = articles
     title: a.title,
     url: a.url,
     published_at: a.published_at,
+    item_type: a.item_type,
     source_type: a.source_type,
+    source_url: a.source_url,
+    source_key: a.source_key,
     summary: articleExcerpt(a),
   }));
 const leadArticleLogo = initialArticles[0] ? resolveCompanyLogo(initialArticles[0].company) : "";

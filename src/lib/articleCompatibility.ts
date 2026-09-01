@@ -3,7 +3,7 @@ import type { FeedItem } from '../types/intelligence.js';
 import { truncateArticleExcerpt } from './articleExcerpt.js';
 
 export function toArticle(item: FeedItem): Article {
-  return {
+  const article: Article = {
     id: item.legacy_id || item.id,
     company: item.entity_name,
     title: item.title,
@@ -15,4 +15,6 @@ export function toArticle(item: FeedItem): Article {
     source_url: item.source_url,
     source_key: item.source_key,
   };
+  if (item.item_type) article.item_type = item.item_type;
+  return article;
 }
