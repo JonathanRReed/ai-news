@@ -1,6 +1,7 @@
 import { getEntity, intelligenceSources } from "./intelligenceCatalog.js";
 import type { IntelligenceSource } from "./intelligenceCatalog.js";
 import type { Article } from "../types/article.js";
+import { isSafeArticleRouteId } from "./articleRoutes.js";
 
 const sourceByKey = new Map(
   intelligenceSources.map((source) => [source.sourceKey, source]),
@@ -52,6 +53,7 @@ function admittedCanonicalUrl(source: IntelligenceSource, value: string): boolea
 }
 
 export function isArticleAdmitted(article: Article): boolean {
+  if (!isSafeArticleRouteId(article.id)) return false;
   const source = sourceForArticle(article);
   return source !== undefined && admittedCanonicalUrl(source, article.url);
 }

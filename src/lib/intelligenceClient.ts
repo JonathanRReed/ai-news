@@ -2,6 +2,7 @@
 import { deriveTopics } from './articleTags.js';
 import { sourceKeyForArticle } from './articleAdmission.js';
 import { intelligenceEntities } from './intelligenceCatalog.js';
+import { isSafeArticleRouteId } from './articleRoutes.js';
 import type { Article } from '../types/article.js';
 import type { FeedCursor, FeedItem, FeedPage } from '../types/intelligence.js';
 
@@ -90,8 +91,8 @@ function isFeedItem(value: unknown): value is FeedItem {
   if (!value || typeof value !== 'object') return false;
   const item = value as Record<string, unknown>;
   return (
-    typeof item.id === 'string'
-    && (typeof item.legacy_id === 'string' || item.legacy_id === null)
+    isSafeArticleRouteId(item.id)
+    && (item.legacy_id === null || isSafeArticleRouteId(item.legacy_id))
     && typeof item.canonical_url === 'string'
     && typeof item.title === 'string'
     && (typeof item.excerpt === 'string' || item.excerpt === null)

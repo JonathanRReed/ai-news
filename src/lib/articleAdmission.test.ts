@@ -20,6 +20,7 @@ describe("article cache admission", () => {
     expect(isArticleAdmitted({ ...admitted, source_url: "https://attacker.example/feed" })).toBeFalse();
     expect(isArticleAdmitted({ ...admitted, company: "Anthropic" })).toBeFalse();
     expect(isArticleAdmitted({ ...admitted, source_key: "missing-source" })).toBeFalse();
+    expect(isArticleAdmitted({ ...admitted, id: "../about" })).toBeFalse();
   });
 
   test("filters poisoned cache rows before rendering or feed generation", () => {

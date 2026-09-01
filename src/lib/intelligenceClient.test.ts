@@ -169,6 +169,21 @@ describe('fetchIntelligencePage', () => {
     expect(result.data[0]?.id).toBe('cached-a');
   });
 
+  test.each(['../about', 'foo/bar', '%2fadmin', 'item?preview=1', 'item#fragment'])('rejects unsafe live route id %s and falls back safely', async (legacyId) => {
+    const result = await fetchIntelligencePage({}, null, {
+      supabaseUrl: 'https://project.supabase.co',
+      anonKey: 'public-key',
+      staticArticles,
+      fetchImpl: async () => Response.json([{
+        ...feedItem(0),
+        legacy_id: legacyId,
+      }]),
+    });
+
+    expect(result.state).toBe('degraded');
+    expect(result.data[0]?.id).toBe('cached-a');
+  });
+
   test('does not send unknown company names to PostgREST', async () => {
     let fetchCalls = 0;
     const result = await fetchIntelligencePage({ company: 'Unknown Company' }, null, {

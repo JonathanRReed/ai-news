@@ -170,5 +170,39 @@ select lives_ok(
   'database accepts an admitted canonical host'
 );
 
+select throws_ok(
+  $$
+    update public.content_items
+    set legacy_id = '../about'
+    where id = '10000000-0000-5000-8000-000000000002'::uuid
+  $$,
+  '23514',
+  null,
+  'database rejects an unsafe legacy article route id'
+);
+
+select lives_ok(
+  $$
+    update public.content_items
+    set legacy_id = 'legacy-openai-release'
+    where id = '10000000-0000-5000-8000-000000000002'::uuid
+  $$,
+  'database accepts a compatible legacy article route id'
+);
+
+select throws_ok(
+  $$
+    insert into public.route_aliases (legacy_id, content_item_id, destination_path)
+    values (
+      '%2fadmin',
+      '10000000-0000-5000-8000-000000000002'::uuid,
+      '/article/legacy-openai-release'
+    )
+  $$,
+  '23514',
+  null,
+  'database rejects an encoded separator in a route alias'
+);
+
 select * from finish();
 rollback;

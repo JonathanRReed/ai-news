@@ -10,16 +10,22 @@ const COMPATIBILITY_URL = new URL(
   '../../supabase/migrations/20260830000200_legacy_compatibility.sql',
   import.meta.url,
 );
+const ROUTE_SAFETY_URL = new URL(
+  '../../supabase/migrations/20260901000100_safe_article_route_ids.sql',
+  import.meta.url,
+);
 
 async function readMigrations() {
-  const [foundation, compatibility] = await Promise.all([
+  const [foundation, compatibility, routeSafety] = await Promise.all([
     readFile(fileURLToPath(FOUNDATION_URL), 'utf8'),
     readFile(fileURLToPath(COMPATIBILITY_URL), 'utf8'),
+    readFile(fileURLToPath(ROUTE_SAFETY_URL), 'utf8'),
   ]);
   return {
     foundation: foundation.toLowerCase(),
     compatibility: compatibility.toLowerCase(),
-    combined: `${foundation}\n${compatibility}`.toLowerCase(),
+    routeSafety: routeSafety.toLowerCase(),
+    combined: `${foundation}\n${compatibility}\n${routeSafety}`.toLowerCase(),
   };
 }
 
@@ -114,6 +120,17 @@ describe('Supabase intelligence migrations', () => {
     );
     expect(foundation).not.toContain("'rss_official'::text as source_type");
     expect(compatibility).not.toContain("'rss_official'::public.news_source_type as source_type");
+  });
+
+  test('constrains legacy IDs and destinations to safe article route segments', async () => {
+    const { routeSafety } = await readMigrations();
+
+    expect(routeSafety).toContain('content_items_legacy_id_safe');
+    expect(routeSafety).toContain('route_aliases_legacy_id_safe');
+    expect(routeSafety).toContain('route_aliases_destination_path_safe');
+    expect(routeSafety).toContain("legacy_id !~ '^[a-za-z0-9._~-]+$'");
+    expect(routeSafety).toContain("destination_path !~ '^/article/[a-za-z0-9._~-]+/?$'");
+    expect(routeSafety).toContain("legacy_id in ('.', '..')");
   });
 
   test('keeps the raw legacy table private while exposing its admitted projection', async () => {

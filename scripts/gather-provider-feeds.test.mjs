@@ -68,6 +68,14 @@ describe('mergeProviderArticles', () => {
     const poisoned = { ...cachedArticle, id: 'poisoned', url: 'https://attacker.example/payload' };
     expect(mergeProviderArticles([], [poisoned], { admitArticle: admitExampleArticle })).toEqual([]);
   });
+
+  test.each(['../about', 'foo/bar', '%2fadmin', 'item?preview=1', 'item#fragment'])('rejects unsafe article route id %s', (id) => {
+    expect(() => mergeProviderArticles(
+      [{ ...gatheredArticle, id }],
+      [],
+      { admitArticle: admitExampleArticle },
+    )).toThrow('article id must be a safe single URL path segment');
+  });
 });
 
 describe('legacy provider gatherer security boundary', () => {

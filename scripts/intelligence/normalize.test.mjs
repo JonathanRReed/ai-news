@@ -84,6 +84,29 @@ describe('normalizeItem', () => {
       { ...source, allowedHosts: ['releases.openai.example'] },
     ).canonical_url).toBe('https://releases.openai.example/model-release');
   });
+
+  test.each([
+    '../about',
+    'foo/bar',
+    '%2fadmin',
+    'item?preview=1',
+    'item#fragment',
+    '.',
+    '..',
+    'item\u0000',
+  ])('rejects unsafe legacy route id %s', (id) => {
+    expect(() => normalizeItem(rawItem({ id }), source)).toThrow(
+      'legacy_id must be a safe single URL path segment',
+    );
+  });
+
+  test.each([
+    'legacy-openai-release',
+    'provider-a6fd4eef859d02922e',
+    'efab8582-cf78-4471-84d6-3ae73b991b5d',
+  ])('accepts compatible legacy route id %s', (id) => {
+    expect(normalizeItem(rawItem({ id }), source).legacy_id).toBe(id);
+  });
 });
 
 describe('mergeCanonicalItems', () => {

@@ -4,6 +4,10 @@ import Layout from "../../layouts/Layout.astro";
 import providerArticles from "../../../public/data/provider-articles.json";
 import routeAliases from "../../../public/data/route-aliases.json";
 import { admittedArticles } from "../../lib/articleAdmission.js";
+import {
+  articlePath as safeArticlePath,
+  isSafeArticleRouteId,
+} from "../../lib/articleRoutes.js";
 import { companyLogoAlt, resolveCompanyLogo } from "../../lib/companyCatalog.js";
 import { deriveTopics, topicLabel, deriveEntities, readingMinutes } from "../../lib/articleTags.js";
 import type { Article } from "../../types/article.js";
@@ -18,8 +22,9 @@ export function getStaticPaths() {
     ]),
   );
   for (const alias of routeAliases as Array<{ legacy_id: string; destination_path: string }>) {
+    if (!isSafeArticleRouteId(alias.legacy_id)) continue;
     const match = alias.destination_path.match(/^\/article\/([^/]+)\/?$/);
-    const targetId = match ? decodeURIComponent(match[1]) : null;
+    const targetId = match && isSafeArticleRouteId(match[1]) ? match[1] : null;
     const article = targetId ? articleById.get(targetId) : null;
     if (article && !paths.has(alias.legacy_id)) {
       paths.set(alias.legacy_id, { params: { id: alias.legacy_id }, props: { article } });
@@ -31,7 +36,7 @@ export function getStaticPaths() {
 const { article } = Astro.props as { article: Article };
 const allArticles = admittedArticles(providerArticles as Article[]);
 const siteUrl = "https://ai-news.helloworldfirm.com";
-const canonicalUrl = `${siteUrl}/article/${article.id}/`;
+const canonicalUrl = `${siteUrl}${safeArticlePath(article.id)}`;
 const socialImage = `${siteUrl}/ai-news-favicon-512x512.png`;
 
 function safeUrl(url: string): string {
@@ -88,7 +93,7 @@ function articleMetaDescription(currentArticle: Article, currentExcerpt: string,
 }
 
 function articlePath(currentArticle: Article): string {
-  return `/article/${currentArticle.id}/`;
+  return safeArticlePath(currentArticle.id);
 }
 
 function absoluteArticleUrl(currentArticle: Article): string {

@@ -1,5 +1,6 @@
 import { createHash } from 'node:crypto';
 import { URL } from 'node:url';
+import { normalizeArticleRouteId } from '../../src/lib/articleRoutes.ts';
 import { admittedHttpsUrl } from './source-policy.mjs';
 
 const TRACKING_PARAMETERS = new Set([
@@ -110,7 +111,10 @@ export function normalizeItem(input, source, options = {}) {
   const now = normalizeDate(options.now ?? new Date().toISOString(), 'now');
   const summary = cleanText(input.summary ?? input.excerpt);
   const content = cleanText(input.content);
-  const legacyId = cleanText(input.legacy_id ?? input.id) || null;
+  const legacyIdText = cleanText(input.legacy_id ?? input.id);
+  const legacyId = legacyIdText
+    ? normalizeArticleRouteId(legacyIdText, 'legacy_id')
+    : null;
   const sourceUrl = normalizeUrl(
     admittedHttpsUrl(source, input.source_url ?? source.endpointUrl ?? source.officialUrl).toString(),
   );

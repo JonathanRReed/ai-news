@@ -1,4 +1,5 @@
 import { mergeCanonicalItems } from './intelligence/normalize.mjs';
+import { normalizeArticleRouteId } from '../src/lib/articleRoutes.ts';
 
 function articleKey(article) {
   return `${article.company}:${article.url}`;
@@ -22,7 +23,7 @@ export function mergeProviderArticles(gathered, existing, options = {}) {
   }
   const toCanonical = (article) => ({
     ...article,
-    legacy_id: article.id,
+    legacy_id: normalizeArticleRouteId(article.id, 'article id'),
     canonical_url: articleKey(article),
   });
   const toArticle = (item) => {

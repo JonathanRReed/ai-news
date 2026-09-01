@@ -7,7 +7,13 @@ describe('verifyRouteAliases', () => {
       [{ id: 'canonical-a' }],
       [{ legacy_id: 'legacy-a', destination_path: '/article/canonical-a' }],
     );
-    expect(result).toEqual({ ok: true, duplicateArticleIds: [], missingTargets: [], invalidAliases: [] });
+    expect(result).toEqual({
+      ok: true,
+      duplicateArticleIds: [],
+      invalidArticleIds: [],
+      missingTargets: [],
+      invalidAliases: [],
+    });
   });
 
   test('rejects missing destinations and malformed alias paths', () => {
@@ -31,5 +37,35 @@ describe('verifyRouteAliases', () => {
 
     expect(result.ok).toBeFalse();
     expect(result.invalidAliases).toEqual(['canonical-a']);
+  });
+
+  test.each([
+    '../about',
+    'foo/bar',
+    '%2fadmin',
+    'item?preview=1',
+    'item#fragment',
+    '.',
+    '..',
+    'item\u0000',
+  ])('rejects unsafe legacy alias id %s', (legacyId) => {
+    const result = verifyRouteAliases(
+      [{ id: 'canonical-a' }],
+      [{ legacy_id: legacyId, destination_path: '/article/canonical-a' }],
+    );
+
+    expect(result.ok).toBeFalse();
+    expect(result.invalidAliases).toEqual([legacyId]);
+  });
+
+  test('rejects unsafe canonical article IDs and encoded destination targets', () => {
+    const result = verifyRouteAliases(
+      [{ id: '../about' }, { id: 'canonical-a' }],
+      [{ legacy_id: 'legacy-a', destination_path: '/article/%2fadmin' }],
+    );
+
+    expect(result.ok).toBeFalse();
+    expect(result.invalidArticleIds).toEqual(['../about']);
+    expect(result.invalidAliases).toEqual(['legacy-a']);
   });
 });

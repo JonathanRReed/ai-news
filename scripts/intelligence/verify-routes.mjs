@@ -1,4 +1,5 @@
 import { readFile } from 'node:fs/promises';
+import { isSafeArticleRouteId } from '../../src/lib/articleRoutes.ts';
 
 function duplicates(values) {
   const seen = new Set();
@@ -13,18 +14,14 @@ function duplicates(values) {
 function targetId(path) {
   if (typeof path !== 'string') return null;
   const match = path.match(/^\/article\/([^/]+)\/?$/);
-  if (!match) return null;
-  try {
-    return decodeURIComponent(match[1]);
-  } catch {
-    return null;
-  }
+  return match && isSafeArticleRouteId(match[1]) ? match[1] : null;
 }
 
 export function verifyRouteAliases(articles, aliases) {
   const articleIds = articles.map(({ id }) => id).filter((id) => typeof id === 'string');
   const articleIdSet = new Set(articleIds);
   const duplicateArticleIds = duplicates(articleIds);
+  const invalidArticleIds = articleIds.filter((id) => !isSafeArticleRouteId(id)).sort();
   const missingTargets = [];
   const invalidAliases = [];
   const aliasIds = new Set();
@@ -32,8 +29,7 @@ export function verifyRouteAliases(articles, aliases) {
   for (const alias of aliases) {
     if (
       !alias
-      || typeof alias.legacy_id !== 'string'
-      || !alias.legacy_id
+      || !isSafeArticleRouteId(alias.legacy_id)
       || aliasIds.has(alias.legacy_id)
     ) {
       invalidAliases.push(alias?.legacy_id ?? '<missing>');
@@ -53,8 +49,12 @@ export function verifyRouteAliases(articles, aliases) {
   }
 
   return {
-    ok: duplicateArticleIds.length === 0 && missingTargets.length === 0 && invalidAliases.length === 0,
+    ok: duplicateArticleIds.length === 0
+      && invalidArticleIds.length === 0
+      && missingTargets.length === 0
+      && invalidAliases.length === 0,
     duplicateArticleIds,
+    invalidArticleIds,
     missingTargets: missingTargets.sort(),
     invalidAliases: invalidAliases.sort(),
   };
