@@ -8,6 +8,7 @@ import type { Article, PageData } from "../types/article.js";
 import type { ReadState } from "../hooks/useReadState.js";
 import type { FeedView } from "./ArticlesIslandWrapper.js";
 import { boundedSearchTerms } from "../lib/intelligenceClient.js";
+import { articleExcerpt } from "../lib/articleExcerpt.js";
 
 function getDomain(url: string): string {
   try {
@@ -133,6 +134,7 @@ function ArticleCard({
   const minutes = readingMinutes(article);
   const isLead = tier === "lead";
   const showExcerpt = isLead || (tier === "top" && density === "comfortable") || (tier === "river" && density === "comfortable");
+  const excerpt = articleExcerpt(article);
   const pad = isLead ? "p-6 md:p-8" : tier === "top" ? "p-5" : density === "compact" ? "p-3.5" : "p-4 md:p-5";
   const titleSize = isLead ? "text-2xl md:text-4xl" : tier === "top" ? "text-xl" : density === "compact" ? "text-base" : "text-lg";
   const Heading = isLead ? "h2" : "h3";
@@ -178,9 +180,9 @@ function ArticleCard({
         {minutes > 0 && <span className="tabular-nums">· {minutes} min read</span>}
       </div>
 
-      {showExcerpt && (article.summary || article.content) && (
-        <p className={`${isLead ? "text-base md:text-lg" : "text-sm"} max-w-3xl leading-relaxed text-text-2 text-pretty ${isLead ? "" : "line-clamp-2"}`}>
-          {article.summary || article.content}
+      {showExcerpt && excerpt && (
+        <p className={`${isLead ? "text-base md:text-lg line-clamp-4" : "text-sm line-clamp-2"} max-w-3xl leading-relaxed text-text-2 text-pretty`}>
+          {excerpt}
         </p>
       )}
     </article>

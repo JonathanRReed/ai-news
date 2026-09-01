@@ -188,6 +188,23 @@ select lives_ok(
   'database accepts an admitted canonical host'
 );
 
+update public.content_items
+set
+  excerpt = repeat('oversized preview ', 50),
+  content = repeat('full source content ', 100)
+where id = '10000000-0000-5000-8000-000000000002'::uuid;
+
+select ok(
+  (
+    select char_length(excerpt) <= 500
+      and right(excerpt, 3) = '...'
+      and content = repeat('full source content ', 100)
+    from public.content_items
+    where id = '10000000-0000-5000-8000-000000000002'::uuid
+  ),
+  'database caps public excerpts without discarding full source content'
+);
+
 select throws_ok(
   $$
     update public.content_items
@@ -241,8 +258,8 @@ select lives_ok(
       entity.name,
       'Legacy event graph database test',
       'https://openai.com/index/legacy-event-graph-database-test/',
-      'Legacy event graph content.',
-      'Legacy event graph summary.',
+      repeat('Legacy event graph content. ', 100),
+      repeat('Legacy event graph summary. ', 50),
       '2026-08-30T01:00:00Z'::timestamptz,
       'rss_official'::public.news_source_type,
       source.endpoint_url,
@@ -278,6 +295,17 @@ select ok(
       and alias.legacy_id = item.legacy_id
   ),
   'legacy import creates a complete content, route, and event graph'
+);
+
+select ok(
+  (
+    select char_length(item.excerpt) <= 500
+      and right(item.excerpt, 3) = '...'
+      and item.content = repeat('Legacy event graph content. ', 100)
+    from public.content_items as item
+    where item.legacy_id = '20000000-0000-5000-8000-000000000001'
+  ),
+  'legacy imports retain full content while enforcing the excerpt limit'
 );
 
 select * from finish();

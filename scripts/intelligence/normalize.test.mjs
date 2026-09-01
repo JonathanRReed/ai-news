@@ -74,6 +74,38 @@ describe('normalizeItem', () => {
     );
   });
 
+  test('caps publisher summaries at a readable word boundary while retaining full content', () => {
+    const longRelease = `${'release detail '.repeat(80)}final note`;
+
+    const item = normalizeItem(
+      rawItem({ summary: longRelease, content: longRelease }),
+      source,
+      { now: '2026-08-30T00:00:00.000Z' },
+    );
+
+    expect(item.summary.length).toBeLessThanOrEqual(500);
+    expect(item.summary.endsWith('...')).toBe(true);
+    expect(item.summary.endsWith(' ...')).toBe(false);
+    expect(item.content).toBe(longRelease.trim());
+  });
+
+  test('detects source changes beyond the public excerpt boundary', () => {
+    const sharedPrefix = 'release detail '.repeat(45);
+    const first = normalizeItem(
+      rawItem({ summary: `${sharedPrefix}first ending`, content: '' }),
+      source,
+      { now: '2026-08-30T00:00:00.000Z' },
+    );
+    const second = normalizeItem(
+      rawItem({ summary: `${sharedPrefix}second ending`, content: '' }),
+      source,
+      { now: '2026-08-30T00:00:00.000Z' },
+    );
+
+    expect(first.summary).toBe(second.summary);
+    expect(first.content_hash).not.toBe(second.content_hash);
+  });
+
   test('requires canonical URLs to use a source-admitted HTTPS host', () => {
     expect(() => normalizeItem(rawItem({ url: 'https://attacker.example/payload' }), source))
       .toThrow('source URL is outside declared HTTPS hosts');

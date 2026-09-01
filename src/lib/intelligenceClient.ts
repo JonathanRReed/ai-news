@@ -17,7 +17,6 @@ const LIVE_SELECT = [
   'canonical_url',
   'title',
   'excerpt',
-  'content',
   'item_type',
   'published_at',
   'source_key',
@@ -96,7 +95,7 @@ function isFeedItem(value: unknown): value is FeedItem {
     && typeof item.canonical_url === 'string'
     && typeof item.title === 'string'
     && (typeof item.excerpt === 'string' || item.excerpt === null)
-    && (typeof item.content === 'string' || item.content === null)
+    && (item.content === undefined || typeof item.content === 'string' || item.content === null)
     && typeof item.item_type === 'string'
     && typeof item.published_at === 'string'
     && typeof item.entity_name === 'string'

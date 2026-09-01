@@ -4,6 +4,7 @@ import ArticlesIslandWrapper from "../components/ArticlesIslandWrapper.tsx";
 import providerArticles from "../../public/data/provider-articles.json";
 import { digestWeeks } from "../lib/digest.js";
 import { admittedArticles } from "../lib/articleAdmission.js";
+import { articleExcerpt } from "../lib/articleExcerpt.js";
 import { resolveCompanyLogo } from "../lib/companyCatalog.js";
 import { activeEntities, intelligenceSources } from "../lib/intelligenceCatalog.js";
 import { majorUpdates } from "../lib/majorUpdates.js";
@@ -49,7 +50,7 @@ const initialArticles: Article[] = articles
     url: a.url,
     published_at: a.published_at,
     source_type: a.source_type,
-    summary: a.summary ?? "",
+    summary: articleExcerpt(a),
   }));
 const leadArticleLogo = initialArticles[0] ? resolveCompanyLogo(initialArticles[0].company) : "";
 const structuredData = {

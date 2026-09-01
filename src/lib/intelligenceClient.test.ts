@@ -77,6 +77,7 @@ describe('fetchIntelligencePage', () => {
     expect(url.searchParams.get('entity_name')).toBe('eq.Example Lab');
     expect(url.searchParams.get('and')).toContain('title.ilike.*model*');
     expect(url.searchParams.get('limit')).toBe('21');
+    expect(url.searchParams.get('select')?.split(',')).not.toContain('content');
   });
 
   test('adds a strict tuple filter for the next live page', async () => {

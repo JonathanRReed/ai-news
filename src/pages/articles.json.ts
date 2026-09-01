@@ -1,6 +1,7 @@
 import type { APIRoute } from "astro";
 import { allArticles, JSON_HEADERS, SITE_URL } from "../lib/feeds.js";
 import { deriveTopics } from "../lib/articleTags.js";
+import { articleExcerpt } from "../lib/articleExcerpt.js";
 
 export const GET: APIRoute = () => {
   const articles = allArticles()
@@ -12,7 +13,7 @@ export const GET: APIRoute = () => {
       url: a.url,
       published_at: a.published_at,
       source_type: a.source_type,
-      summary: a.summary ?? "",
+      summary: articleExcerpt(a),
       topics: deriveTopics(a),
       permalink: `${SITE_URL}/article/${a.id}/`,
     }));

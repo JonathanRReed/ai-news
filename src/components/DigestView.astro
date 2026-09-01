@@ -1,6 +1,7 @@
 ---
 import { companyLogoAlt, resolveCompanyLogo } from "../lib/companyCatalog.js";
 import { deriveTopics, topicLabel } from "../lib/articleTags.js";
+import { articleExcerpt } from "../lib/articleExcerpt.js";
 import type { DigestWeek } from "../lib/digest.js";
 import type { Article } from "../types/article.js";
 
@@ -30,6 +31,7 @@ function dateLabel(iso: string): string {
     {digest.topStories.map((article: Article, index: number) => {
       const logo = resolveCompanyLogo(article.company);
       const topics = deriveTopics(article).slice(0, 3);
+      const excerpt = articleExcerpt(article);
       return (
         <li class="grid grid-cols-[auto_minmax(0,1fr)] gap-4 border-b border-white/15 py-6 md:gap-6">
           <span class="font-mono text-2xl font-black tabular-nums text-muted md:text-3xl">{String(index + 1).padStart(2, "0")}</span>
@@ -48,8 +50,8 @@ function dateLabel(iso: string): string {
                 {article.title}
               </a>
             </h2>
-            {(article.summary || article.content) && (
-              <p class="mt-2 max-w-3xl leading-relaxed text-text-2 text-pretty line-clamp-2">{article.summary || article.content}</p>
+            {excerpt && (
+              <p class="mt-2 max-w-3xl leading-relaxed text-text-2 text-pretty line-clamp-2">{excerpt}</p>
             )}
             {topics.length > 0 && (
               <div class="mt-2 flex flex-wrap gap-2 font-mono text-[0.68rem] uppercase tracking-[0.06em] text-text-2">

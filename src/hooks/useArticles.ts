@@ -22,7 +22,7 @@ export const useArticles = (filters: ArticleFilters, initialData?: InfiniteData<
     maxPages: 10,
     initialData,
     // Treat seeded data as stale so the client refetches in the background to merge
-    // live Supabase rows and full content over the SSR-seeded first page.
+    // live Supabase rows over the SSR-seeded first page.
     initialDataUpdatedAt: initialData ? 0 : undefined,
   });
 };

@@ -1,5 +1,6 @@
 import providerArticles from "../../public/data/provider-articles.json";
 import { admittedArticles } from "./articleAdmission.js";
+import { articleExcerpt } from "./articleExcerpt.js";
 import type { Article } from "../types/article.js";
 
 export const SITE_URL = "https://ai-news.helloworldfirm.com";
@@ -44,7 +45,7 @@ export function buildRss({ title, description, feedPath, items, buildDate, limit
       <guid isPermaLink="false">${escapeXml(article.id)}</guid>
       <dc:creator>${escapeXml(article.company)}</dc:creator>
       <pubDate>${pubDate}</pubDate>
-      <description>${escapeXml(article.summary || "")}</description>
+      <description>${escapeXml(articleExcerpt(article))}</description>
     </item>`;
     })
     .join("\n");
@@ -77,7 +78,7 @@ export function buildJsonFeed({ title, description, feedPath, items, buildDate, 
       url: article.url,
       external_url: article.url,
       title: article.title,
-      summary: article.summary ?? "",
+      summary: articleExcerpt(article),
       date_published: article.published_at,
       authors: [{ name: article.company }],
       tags: [article.company],

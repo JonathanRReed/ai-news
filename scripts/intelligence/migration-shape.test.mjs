@@ -26,15 +26,20 @@ const MIGRATION_HISTORY_URL = new URL(
   '../../supabase/migrations/20260901000400_register_migration_history.sql',
   import.meta.url,
 );
+const EXCERPT_LIMIT_URL = new URL(
+  '../../supabase/migrations/20260901000500_limit_article_excerpts.sql',
+  import.meta.url,
+);
 
 async function readMigrations() {
-  const [foundation, compatibility, routeSafety, legacyEventHardening, legacyIndexCleanup, migrationHistory] = await Promise.all([
+  const [foundation, compatibility, routeSafety, legacyEventHardening, legacyIndexCleanup, migrationHistory, excerptLimit] = await Promise.all([
     readFile(fileURLToPath(FOUNDATION_URL), 'utf8'),
     readFile(fileURLToPath(COMPATIBILITY_URL), 'utf8'),
     readFile(fileURLToPath(ROUTE_SAFETY_URL), 'utf8'),
     readFile(fileURLToPath(LEGACY_EVENT_HARDENING_URL), 'utf8'),
     readFile(fileURLToPath(LEGACY_INDEX_CLEANUP_URL), 'utf8'),
     readFile(fileURLToPath(MIGRATION_HISTORY_URL), 'utf8'),
+    readFile(fileURLToPath(EXCERPT_LIMIT_URL), 'utf8'),
   ]);
   return {
     foundation: foundation.toLowerCase(),
@@ -43,8 +48,9 @@ async function readMigrations() {
     legacyEventHardening: legacyEventHardening.toLowerCase(),
     legacyIndexCleanup: legacyIndexCleanup.toLowerCase(),
     migrationHistory: migrationHistory.toLowerCase(),
+    excerptLimit: excerptLimit.toLowerCase(),
     preservationCombined: `${foundation}\n${compatibility}\n${routeSafety}\n${legacyEventHardening}`.toLowerCase(),
-    combined: `${foundation}\n${compatibility}\n${routeSafety}\n${legacyEventHardening}\n${legacyIndexCleanup}\n${migrationHistory}`.toLowerCase(),
+    combined: `${foundation}\n${compatibility}\n${routeSafety}\n${legacyEventHardening}\n${legacyIndexCleanup}\n${migrationHistory}\n${excerptLimit}`.toLowerCase(),
   };
 }
 
@@ -238,6 +244,19 @@ describe('Supabase intelligence migrations', () => {
     expect(migrationHistory).not.toContain('created_by');
     expect(migrationHistory).not.toContain('idempotency_key');
     expect(migrationHistory).not.toContain('rollback text[]');
+  });
+
+  test('caps public excerpts at write time while retaining full source content', async () => {
+    const { excerptLimit } = await readMigrations();
+
+    expect(excerptLimit).toContain('create or replace function private.ai_news_excerpt');
+    expect(excerptLimit).toContain('new.excerpt := private.ai_news_excerpt(new.excerpt)');
+    expect(excerptLimit).toContain('new.summary := private.ai_news_excerpt(new.summary)');
+    expect(excerptLimit).toContain('create trigger content_items_limit_excerpt');
+    expect(excerptLimit).toContain('create trigger ai_company_news_limit_summary');
+    expect(excerptLimit).toContain('update public.content_items');
+    expect(excerptLimit).toContain('update public.ai_company_news');
+    expect(excerptLimit).not.toMatch(/set\s+content\s*=/);
   });
 
   test('limits ingestion receipt RPCs to the service role', async () => {

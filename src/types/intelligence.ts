@@ -11,7 +11,7 @@ export interface FeedItem {
   canonical_url: string;
   title: string;
   excerpt: string | null;
-  content: string | null;
+  content?: string | null;
   item_type: string;
   published_at: string;
   source_key: string;

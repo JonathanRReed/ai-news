@@ -1,6 +1,7 @@
 ---
 import { companyLogoAlt, resolveCompanyLogo } from "../lib/companyCatalog.js";
 import { deriveTopics, topicLabel } from "../lib/articleTags.js";
+import { articleExcerpt } from "../lib/articleExcerpt.js";
 import type { Article } from "../types/article.js";
 
 interface StoryRow {
@@ -24,6 +25,7 @@ const dateLabel = (iso: string) => new Intl.DateTimeFormat("en-US", {
     {rows.map(({ article, reason }, index) => {
       const logo = resolveCompanyLogo(article.company);
       const topics = deriveTopics(article).slice(0, 3);
+      const excerpt = articleExcerpt(article);
       return (
         <li class="grid grid-cols-[minmax(0,1fr)] gap-4 border-b border-white/15 py-5 md:grid-cols-[8rem_minmax(0,1fr)] md:gap-6">
           <div>
@@ -41,7 +43,7 @@ const dateLabel = (iso: string) => new Intl.DateTimeFormat("en-US", {
             <h2 class="text-lg font-bold leading-tight text-white md:text-xl text-pretty">
               <a href={`/article/${article.id}/`} class="decoration-brand decoration-2 underline-offset-4 hover:text-brand-hover hover:underline focus-industrial">{article.title}</a>
             </h2>
-            {(article.summary || article.content) && <p class="mt-2 max-w-3xl leading-relaxed text-text-2 line-clamp-2">{article.summary || article.content}</p>}
+            {excerpt && <p class="mt-2 max-w-3xl leading-relaxed text-text-2 line-clamp-2">{excerpt}</p>}
           </div>
         </li>
       );

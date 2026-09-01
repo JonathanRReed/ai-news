@@ -8,7 +8,7 @@ import type { Article, PageData } from '../types/article.js';
 import type { FeedCursor } from '../types/intelligence.js';
 
 export const PAGE_SIZE = 20;
-const SUPPLEMENTAL_ARTICLES_PATH = '/data/provider-articles.json';
+const SUPPLEMENTAL_ARTICLES_PATH = '/data/provider-feed.json';
 const SUPABASE_TIMEOUT_MS = 2_500;
 const REST_VIEW = 'intelligence_feed_v1';
 let supplementalArticlesPromise: Promise<Article[]> | null = null;

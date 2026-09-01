@@ -4,6 +4,7 @@ import Layout from "../../layouts/Layout.astro";
 import providerArticles from "../../../public/data/provider-articles.json";
 import routeAliases from "../../../public/data/route-aliases.json";
 import { admittedArticles } from "../../lib/articleAdmission.js";
+import { articleExcerpt } from "../../lib/articleExcerpt.js";
 import {
   articlePath as safeArticlePath,
   isSafeArticleRouteId,
@@ -110,7 +111,7 @@ function shortDate(value: string): string {
   return Number.isNaN(date.getTime()) ? "Undated" : shortDateFormatter.format(date);
 }
 
-const excerpt = cleanText(article.summary || article.content || "");
+const excerpt = articleExcerpt(article);
 const defaultTitleCounts = new Map<string, number>();
 for (const currentArticle of allArticles) {
   const defaultTitle = articlePageTitle(currentArticle, "", false);

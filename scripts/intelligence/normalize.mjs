@@ -1,6 +1,7 @@
 import { createHash } from 'node:crypto';
 import { URL } from 'node:url';
 import { normalizeArticleRouteId } from '../../src/lib/articleRoutes.ts';
+import { truncateArticleExcerpt } from '../../src/lib/articleExcerpt.ts';
 import { admittedHttpsUrl } from './source-policy.mjs';
 
 const TRACKING_PARAMETERS = new Set([
@@ -109,7 +110,8 @@ export function normalizeItem(input, source, options = {}) {
     'published_at',
   );
   const now = normalizeDate(options.now ?? new Date().toISOString(), 'now');
-  const summary = cleanText(input.summary ?? input.excerpt);
+  const publisherSummary = cleanText(input.summary ?? input.excerpt);
+  const summary = truncateArticleExcerpt(publisherSummary);
   const content = cleanText(input.content);
   const legacyIdText = cleanText(input.legacy_id ?? input.id);
   const legacyId = legacyIdText
@@ -147,7 +149,7 @@ export function normalizeItem(input, source, options = {}) {
     source_updated_at: sourceUpdatedAt,
     first_seen_at: firstSeenAt,
     last_seen_at: lastSeenAt,
-    content_hash: sha256(`${title}\n${summary}\n${content}`),
+    content_hash: sha256(`${title}\n${publisherSummary}\n${content}`),
     source_type: sourceType,
     source_url: sourceUrl,
     metadata,

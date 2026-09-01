@@ -68,6 +68,13 @@ test("keeps entity watchlists local and exposes stable machine feeds", async ({ 
   const json = await request.get("/feed/entity/z-ai.json");
   expect(json.status()).toBe(200);
   expect((await json.json()).version).toBe("https://jsonfeed.org/version/1.1");
+
+  const fallback = await request.get("/data/provider-feed.json");
+  expect(fallback.status()).toBe(200);
+  const fallbackArticles = await fallback.json() as Array<{ summary?: string; content?: string }>;
+  expect(fallbackArticles.length).toBeGreaterThan(300);
+  expect(fallbackArticles.every((article) => !("content" in article))).toBe(true);
+  expect(Math.max(...fallbackArticles.map((article) => article.summary?.length ?? 0))).toBeLessThanOrEqual(500);
 });
 
 test("keeps legacy article routes and feed-builder share links stable", async ({ page }) => {
@@ -87,6 +94,18 @@ test("keeps legacy article routes and feed-builder share links stable", async ({
 
   await entitySelect.selectOption("z-ai");
   await expect(shareLink).toHaveAttribute("href", "/?company=Z.AI");
+});
+
+test("keeps oversized publisher posts to a concise source preview", async ({ page }) => {
+  await page.goto("/article/efe208e3-4851-5d75-9d87-6ceabaf36672/");
+
+  const preview = page.locator("main article p").filter({ hasText: "Hermes Agent v0.21.0" });
+  await expect(preview).toBeVisible();
+  const previewText = (await preview.textContent())?.trim() ?? "";
+
+  expect(previewText.length).toBeLessThanOrEqual(500);
+  expect(previewText.endsWith("...")).toBe(true);
+  await expect(page.getByRole("link", { name: /Read the original on github\.com/i })).toBeVisible();
 });
 
 test("publishes crawlable story indexes and a real 404", async ({ page }) => {
