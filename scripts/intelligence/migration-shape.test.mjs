@@ -14,24 +14,43 @@ const ROUTE_SAFETY_URL = new URL(
   '../../supabase/migrations/20260901000100_safe_article_route_ids.sql',
   import.meta.url,
 );
+const LEGACY_EVENT_HARDENING_URL = new URL(
+  '../../supabase/migrations/20260901000200_legacy_event_hardening.sql',
+  import.meta.url,
+);
+const LEGACY_INDEX_CLEANUP_URL = new URL(
+  '../../supabase/migrations/20260901000300_remove_duplicate_legacy_constraint.sql',
+  import.meta.url,
+);
+const MIGRATION_HISTORY_URL = new URL(
+  '../../supabase/migrations/20260901000400_register_migration_history.sql',
+  import.meta.url,
+);
 
 async function readMigrations() {
-  const [foundation, compatibility, routeSafety] = await Promise.all([
+  const [foundation, compatibility, routeSafety, legacyEventHardening, legacyIndexCleanup, migrationHistory] = await Promise.all([
     readFile(fileURLToPath(FOUNDATION_URL), 'utf8'),
     readFile(fileURLToPath(COMPATIBILITY_URL), 'utf8'),
     readFile(fileURLToPath(ROUTE_SAFETY_URL), 'utf8'),
+    readFile(fileURLToPath(LEGACY_EVENT_HARDENING_URL), 'utf8'),
+    readFile(fileURLToPath(LEGACY_INDEX_CLEANUP_URL), 'utf8'),
+    readFile(fileURLToPath(MIGRATION_HISTORY_URL), 'utf8'),
   ]);
   return {
     foundation: foundation.toLowerCase(),
     compatibility: compatibility.toLowerCase(),
     routeSafety: routeSafety.toLowerCase(),
-    combined: `${foundation}\n${compatibility}\n${routeSafety}`.toLowerCase(),
+    legacyEventHardening: legacyEventHardening.toLowerCase(),
+    legacyIndexCleanup: legacyIndexCleanup.toLowerCase(),
+    migrationHistory: migrationHistory.toLowerCase(),
+    preservationCombined: `${foundation}\n${compatibility}\n${routeSafety}\n${legacyEventHardening}`.toLowerCase(),
+    combined: `${foundation}\n${compatibility}\n${routeSafety}\n${legacyEventHardening}\n${legacyIndexCleanup}\n${migrationHistory}`.toLowerCase(),
   };
 }
 
 describe('Supabase intelligence migrations', () => {
   test('remain additive and preserve the legacy table', async () => {
-    const { combined } = await readMigrations();
+    const { preservationCombined: combined } = await readMigrations();
 
     expect(combined).not.toMatch(/\bdrop\s+(table|schema|type|view|function)\b/);
     expect(combined).not.toMatch(/\btruncate\b/);
@@ -160,6 +179,61 @@ describe('Supabase intelligence migrations', () => {
       .filter((statement) => /private\.(ingestion_runs|ingestion_source_runs)/.test(statement))
       .filter((statement) => /\bto\s+(anon|authenticated)\b/.test(statement));
     expect(privateBrowserGrants).toEqual([]);
+  });
+
+  test('completes legacy imports as routable event graphs and indexes foreign keys', async () => {
+    const { legacyEventHardening } = await readMigrations();
+
+    expect(legacyEventHardening).toContain(
+      'create or replace function private.import_legacy_ai_company_news()',
+    );
+    expect(legacyEventHardening).toContain('insert into public.events');
+    expect(legacyEventHardening).toContain('insert into public.event_items');
+    expect(legacyEventHardening).toContain('insert into public.event_entities');
+    expect(legacyEventHardening).toContain(
+      'legacy intelligence import left an incomplete content, route, or event graph',
+    );
+    for (const indexName of [
+      'entity_relationships_child_entity_idx',
+      'sources_entity_id_idx',
+      'events_anchor_item_id_idx',
+      'event_items_content_item_id_idx',
+    ]) {
+      expect(legacyEventHardening).toContain(`create index if not exists ${indexName}`);
+    }
+    expect(legacyEventHardening).toContain(
+      "alter function public.cleanup_old_news() set search_path = pg_catalog, public",
+    );
+    expect(legacyEventHardening).toContain(
+      "alter function public.delete_old_news() set search_path = pg_catalog, public",
+    );
+  });
+
+  test('removes only the dependency-free duplicate legacy uniqueness constraint', async () => {
+    const { legacyIndexCleanup } = await readMigrations();
+
+    expect(legacyIndexCleanup).toContain('drop constraint unique_article');
+    expect(legacyIndexCleanup).toContain("conname = 'ai_company_news_company_url_key'");
+    expect(legacyIndexCleanup).toContain("confrelid = 'public.ai_company_news'::regclass");
+    expect(legacyIndexCleanup).toContain(
+      'ai_company_news must retain exactly one unique company and url constraint',
+    );
+    expect(legacyIndexCleanup).not.toContain('drop constraint ai_company_news_company_url_key');
+  });
+
+  test('registers the verified dashboard baseline in Supabase migration history', async () => {
+    const { migrationHistory } = await readMigrations();
+
+    expect(migrationHistory).toContain(
+      'create table if not exists supabase_migrations.schema_migrations',
+    );
+    expect(migrationHistory).toContain('version text primary key');
+    expect(migrationHistory).toContain("'20260830000100'");
+    expect(migrationHistory).toContain("'20260901000400'");
+    expect(migrationHistory).toContain(
+      'revoke all on schema supabase_migrations from public, anon, authenticated',
+    );
+    expect(migrationHistory).toContain('on conflict (version) do update set');
   });
 
   test('limits ingestion receipt RPCs to the service role', async () => {

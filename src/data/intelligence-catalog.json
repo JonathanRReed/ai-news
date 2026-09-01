@@ -174,7 +174,7 @@
       "name": "Hermes Agent",
       "entityType": "harness",
       "status": "active",
-      "homepageUrl": "https://github.com/hermes-agent-org/hermes",
+      "homepageUrl": "https://github.com/NousResearch/hermes-agent",
       "summary": ""
     },
     {
@@ -865,8 +865,8 @@
       "sourceKey": "hermes-agent-releases",
       "entitySlug": "hermes-agent",
       "name": "Hermes Agent Releases",
-      "officialUrl": "https://github.com/hermes-agent-org/hermes",
-      "endpointUrl": "https://github.com/hermes-agent-org/hermes/releases.atom",
+      "officialUrl": "https://github.com/NousResearch/hermes-agent",
+      "endpointUrl": "https://github.com/NousResearch/hermes-agent/releases.atom",
       "transportType": "atom",
       "sourceRole": "releases",
       "parserKey": "atom",

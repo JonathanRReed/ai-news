@@ -89,7 +89,7 @@ Gate requirements:
 - `full.contents.txt` lists both schema and data objects for the full archive.
 - `legacy-row-count.txt` contains exactly the expected legacy row count before migration.
 - `legacy-ai-company-news.sql` is non-empty and can be inspected without unpacking the complete data archive.
-- The public 2,674-row export and the authenticated legacy table export reconcile by legacy ID.
+- The public 2,677-row export and the authenticated legacy table export reconcile by legacy ID.
 
 If any item fails, stop. Do not migrate.
 
@@ -114,6 +114,10 @@ Review the printed migration list. It must contain only:
 
 1. `20260830000100_intelligence_foundation.sql`
 2. `20260830000200_legacy_compatibility.sql`
+3. `20260901000100_safe_article_route_ids.sql`
+4. `20260901000200_legacy_event_hardening.sql`
+5. `20260901000300_remove_duplicate_legacy_constraint.sql`
+6. `20260901000400_register_migration_history.sql`
 
 The dry run must not show a destructive legacy table alteration or deletion.
 
@@ -156,3 +160,14 @@ The foundation migration is additive and the legacy table remains intact. If the
 5. Restore legacy rows from `legacy-ai-company-news.sql`, or from `data.dump` after selecting the exact table, only when a row-level reconciliation proves loss.
 
 Dropping the new schema or restoring a full dump is a separate destructive action and requires a new explicit confirmation.
+
+## 8. Verified production receipt, 2026-09-01
+
+- Production project: `ai-news`, reference `arejerdupcduqhgdoyht`.
+- Applied migration history: `20260830000100`, `20260830000200`, `20260901000100`, `20260901000200`, `20260901000300`, and `20260901000400`.
+- Legacy preservation: 2,677 legacy rows; zero missing normalized content items, route aliases, events, event items, or event entities.
+- Normalized totals after the authoritative Hermes refresh: 3,185 content items, 3,148 route aliases, 3,185 content-item entities, 3,185 events, 3,185 event items, and 3,185 event entities.
+- Hermes Agent now uses the authoritative `NousResearch/hermes-agent` repository and release feed. Production contains 10 current Hermes items and zero items from the stale mirror source.
+- The duplicate legacy index and redundant legacy constraint were removed. Missing foreign-key indexes and mutable function search paths were repaired.
+- Security and performance advisors report no application-owned warning after the migration set. The remaining performance warning is the Supabase-managed PostgreSQL patch level.
+- Legacy route verification joins `public.content_items.legacy_id` to `public.ai_company_news.id::text`; imported normalized UUIDs are deterministic derived identifiers and are not expected to equal legacy IDs.

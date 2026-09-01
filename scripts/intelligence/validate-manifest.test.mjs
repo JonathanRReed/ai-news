@@ -55,6 +55,16 @@ describe('intelligence source manifest', () => {
   });
 
   test('resolves entities by stable slug', () => {
+    expect(entityBySlug('hermes-agent')).toMatchObject({
+      name: 'Hermes Agent',
+      entityType: 'harness',
+      homepageUrl: 'https://github.com/NousResearch/hermes-agent',
+      status: 'active',
+    });
+    expect(sources.find(({ sourceKey }) => sourceKey === 'hermes-agent-releases')).toMatchObject({
+      officialUrl: 'https://github.com/NousResearch/hermes-agent',
+      endpointUrl: 'https://github.com/NousResearch/hermes-agent/releases.atom',
+    });
     expect(entityBySlug('openclaw')).toMatchObject({
       name: 'OpenClaw',
       entityType: 'harness',

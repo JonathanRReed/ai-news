@@ -63,7 +63,7 @@ export const entities = [
   entity('microsoft-ai', 'Microsoft AI', 'provider', 'https://www.microsoft.ai', 'watchlist'),
   entity('ai21-labs', 'AI21 Labs', 'provider', 'https://www.ai21.com'),
   entity('stability-ai', 'Stability AI', 'provider', 'https://stability.ai'),
-  entity('hermes-agent', 'Hermes Agent', 'harness', 'https://github.com/hermes-agent-org/hermes'),
+  entity('hermes-agent', 'Hermes Agent', 'harness', 'https://github.com/NousResearch/hermes-agent'),
   entity('openclaw', 'OpenClaw', 'harness', 'https://github.com/openclaw/openclaw'),
   entity('openhands', 'OpenHands', 'harness', 'https://github.com/OpenHands/OpenHands'),
   entity('aider', 'Aider', 'harness', 'https://github.com/Aider-AI/aider'),
@@ -420,7 +420,7 @@ export const sources = [
     archiveOnly: true,
   }),
   ...[
-    ['hermes-agent-releases', 'hermes-agent', 'Hermes Agent Releases', 'https://github.com/hermes-agent-org/hermes', 'https://github.com/hermes-agent-org/hermes/releases.atom'],
+    ['hermes-agent-releases', 'hermes-agent', 'Hermes Agent Releases', 'https://github.com/NousResearch/hermes-agent', 'https://github.com/NousResearch/hermes-agent/releases.atom'],
     ['openclaw-releases', 'openclaw', 'OpenClaw Releases', 'https://github.com/openclaw/openclaw', 'https://github.com/openclaw/openclaw/releases.atom'],
     ['openhands-releases', 'openhands', 'OpenHands Releases', 'https://github.com/OpenHands/OpenHands', 'https://github.com/OpenHands/OpenHands/releases.atom'],
     ['aider-releases', 'aider', 'Aider Releases', 'https://github.com/Aider-AI/aider', 'https://github.com/Aider-AI/aider/releases.atom'],
