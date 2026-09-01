@@ -21,8 +21,7 @@ values
   ('20260830000200', '{}'::text[], 'legacy_compatibility'),
   ('20260901000100', '{}'::text[], 'safe_article_route_ids'),
   ('20260901000200', '{}'::text[], 'legacy_event_hardening'),
-  ('20260901000300', '{}'::text[], 'remove_duplicate_legacy_constraint'),
-  ('20260901000400', '{}'::text[], 'register_migration_history')
+  ('20260901000300', '{}'::text[], 'remove_duplicate_legacy_constraint')
 on conflict (version) do update set
   name = excluded.name;
 

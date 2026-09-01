@@ -229,7 +229,8 @@ describe('Supabase intelligence migrations', () => {
     );
     expect(migrationHistory).toContain('version text primary key');
     expect(migrationHistory).toContain("'20260830000100'");
-    expect(migrationHistory).toContain("'20260901000400'");
+    expect(migrationHistory).toContain("'20260901000300'");
+    expect(migrationHistory).not.toContain("'20260901000400'");
     expect(migrationHistory).toContain(
       'revoke all on schema supabase_migrations from public, anon, authenticated',
     );
