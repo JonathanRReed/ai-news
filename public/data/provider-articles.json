@@ -1,5 +1,126 @@
 [
   {
+    "id": "provider-a6fd4eef859d02922e",
+    "company": "IBM Research",
+    "title": "Ponder This Challenge - September 2026 - Loeschian Arithmetic Progressions",
+    "url": "https://research.ibm.com/blog/ponder-this-september-2026?utm_medium=rss&utm_source=rss",
+    "published_at": "2026-09-01T05:30:00.000Z",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://research.ibm.com/rss"
+  },
+  {
+    "id": "provider-5ebcb508bc956b7290",
+    "company": "Amazon AI",
+    "title": "Connect an AgentCore Runtime hosted MCP server to Amazon Quick",
+    "url": "https://aws.amazon.com/blogs/machine-learning/connect-an-agentcore-runtime-hosted-mcp-server-to-amazon-quick/",
+    "published_at": "2026-08-31T22:47:53.000Z",
+    "source_type": "rss_official",
+    "summary": "In this post, you will learn how to deploy and host your MCP server in AgentCore Runtime and integrate it with Amazon Quick, along with the prerequisites. With this pattern, you promote reusability and avoid duplication of AI tools, so clients can reuse commonly used tools and agents exposed through an MCP server instead of authoring them from scratch again. Your customers get a way to use your product inside Amazon Quick (chat agents and workflows) without building custom connectors for every u",
+    "content": "In this post, you will learn how to deploy and host your MCP server in AgentCore Runtime and integrate it with Amazon Quick, along with the prerequisites. With this pattern, you promote reusability and avoid duplication of AI tools, so clients can reuse commonly used tools and agents exposed through an MCP server instead of authoring them from scratch again. Your customers get a way to use your product inside Amazon Quick (chat agents and workflows) without building custom connectors for every use case.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-02cc600aaf2b18ebf0",
+    "company": "Amazon AI",
+    "title": "AWS recognized as a Leader in The Forrester Wave: AI Infrastructure Solutions, Q4 2025",
+    "url": "https://aws.amazon.com/blogs/machine-learning/aws-recognized-as-a-leader-in-the-forrester-wave-ai-infrastructure-solutions-q4-2025/",
+    "published_at": "2026-08-31T19:50:12.000Z",
+    "source_type": "rss_official",
+    "summary": "We're excited to share that AWS has been recognized as a Leader in The Forrester Wave: AI Infrastructure Solutions, Q4 2025. In this evaluation of 13 providers, AWS received the highest score in the Strategy category.",
+    "content": "We're excited to share that AWS has been recognized as a Leader in The Forrester Wave: AI Infrastructure Solutions, Q4 2025. In this evaluation of 13 providers, AWS received the highest score in the Strategy category.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-e66cb61dbe902b1bec",
+    "company": "Amazon AI",
+    "title": "Manage agents, tools and skills at scale with AWS Agent Registry",
+    "url": "https://aws.amazon.com/blogs/machine-learning/manage-agents-tools-and-skills-at-scale-with-aws-agent-registry/",
+    "published_at": "2026-08-31T19:18:09.000Z",
+    "source_type": "rss_official",
+    "summary": "AWS Agent Registry is now generally available: a single, searchable, governed catalog for the agents, tools, skills, and custom resources across your organization. This post explains what Registry is and walks through its publishing, curation, and discovery workflows, plus enterprise considerations and what's next.",
+    "content": "AWS Agent Registry is now generally available: a single, searchable, governed catalog for the agents, tools, skills, and custom resources across your organization. This post explains what Registry is and walks through its publishing, curation, and discovery workflows, plus enterprise considerations and what's next.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-423a14fda4666bfb62",
+    "company": "Amazon AI",
+    "title": "Build observable enterprise agentic retrieval using Managed Amazon Bedrock Knowledge Base with AWS CloudFormation",
+    "url": "https://aws.amazon.com/blogs/machine-learning/build-observable-enterprise-agentic-retrieval-using-managed-amazon-bedrock-knowledge-base-with-aws-cloudformation/",
+    "published_at": "2026-08-31T19:08:45.000Z",
+    "source_type": "rss_official",
+    "summary": "This post builds an enterprise agentic retrieval solution on the Amazon Bedrock Managed Knowledge Base and Amazon Bedrock AgentCore. An agent reasons, routes across multiple knowledge bases, and returns cited answers, with seven layers of observability and both on-demand and continuous evaluation, all deployed with a single AWS CloudFormation chain.",
+    "content": "This post builds an enterprise agentic retrieval solution on the Amazon Bedrock Managed Knowledge Base and Amazon Bedrock AgentCore. An agent reasons, routes across multiple knowledge bases, and returns cited answers, with seven layers of observability and both on-demand and continuous evaluation, all deployed with a single AWS CloudFormation chain.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-8bf1159f57c609d9f2",
+    "company": "Amazon AI",
+    "title": "Build multi-tenant agentic chat applications on enterprise data with Amazon Bedrock Managed Knowledge Base",
+    "url": "https://aws.amazon.com/blogs/machine-learning/build-multi-tenant-agentic-chat-applications-on-enterprise-data-with-amazon-bedrock-managed-knowledge-base/",
+    "published_at": "2026-08-31T18:56:12.000Z",
+    "source_type": "rss_official",
+    "summary": "Learn how to build a multi-tenant agentic document chat application on Amazon Bedrock Managed Knowledge Base, where users upload documents and immediately ask grounded questions. This post covers the ingestion and retrieval flows, the asynchronous indexing lifecycle, per-user data isolation, and best practices for operating the solution at scale.",
+    "content": "Learn how to build a multi-tenant agentic document chat application on Amazon Bedrock Managed Knowledge Base, where users upload documents and immediately ask grounded questions. This post covers the ingestion and retrieval flows, the asynchronous indexing lifecycle, per-user data isolation, and best practices for operating the solution at scale.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-1178de48ffffa40365",
+    "company": "NVIDIA AI",
+    "title": "Run NVIDIA BioNeMo NIM Microservices for Protein Structure Prediction in Claude Science",
+    "url": "https://developer.nvidia.com/blog/run-nvidia-bionemo-nim-microservices-for-protein-structure-prediction-in-claude-science/",
+    "published_at": "2026-08-31T16:30:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Agentic AI is changing how research is done. AI scientists can read papers, propose hypotheses, call models, and determine which experiments to prioritize next....",
+    "content": "Agentic AI is changing how research is done. AI scientists can read papers, propose hypotheses, call models, and determine which experiments to prioritize next....",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
+  },
+  {
+    "id": "provider-ce7cfef9c2fa7bf935",
+    "company": "Amazon AI",
+    "title": "Developing provably correct Rust code with Verus",
+    "url": "https://www.amazon.science/blog/developing-provably-correct-rust-code-with-verus",
+    "published_at": "2026-08-31T15:35:33.000Z",
+    "source_type": "rss_official",
+    "summary": "How the Verus \"program verifier\", which automatically checks code against a mathematical specification of its functionality, helps increase security assurance in software projects.",
+    "content": "How the Verus \"program verifier\", which automatically checks code against a mathematical specification of its functionality, helps increase security assurance in software projects.",
+    "source_url": "https://www.amazon.science/index.rss"
+  },
+  {
+    "id": "provider-37c7e34e69f50d2eec",
+    "company": "OpenAI",
+    "title": "OpenAI supports California’s bill to advance youth AI safety",
+    "url": "https://openai.com/index/supporting-california-bill-advance-ai-youth-safety",
+    "published_at": "2026-08-31T07:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "OpenAI supports California SB 1119, advancing strong, age-appropriate AI safeguards for teens while preserving opportunities to learn, create, and explore.",
+    "content": "OpenAI supports California SB 1119, advancing strong, age-appropriate AI safeguards for teens while preserving opportunities to learn, create, and explore.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-625f90f3f78785918b",
+    "company": "OpenAI",
+    "title": "Polimill builds Japan's next-generation public AI infrastructure",
+    "url": "https://openai.com/index/polimill",
+    "published_at": "2026-08-31T07:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Polimill uses OpenAI GPT models and Codex to help municipalities search and use administrative knowledge while accelerating development.",
+    "content": "Polimill uses OpenAI GPT models and Codex to help municipalities search and use administrative knowledge while accelerating development.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-cde541c2e44d9930bf",
+    "company": "OpenAI",
+    "title": "A milestone in expanding access to AI",
+    "url": "https://openai.com/index/expanding-access-to-ai-with-chatgpt-ads",
+    "published_at": "2026-08-31T04:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "ChatGPT Ads reaches $1 billion in annualized revenue run rate and expands globally, supporting broader access to AI through free and affordable options.",
+    "content": "ChatGPT Ads reaches $1 billion in annualized revenue run rate and expands globally, supporting broader access to AI through free and affordable options.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
     "id": "provider-158ec1e1fd55c3ada4",
     "company": "Amazon AI",
     "title": "Batch write and discover records in Amazon SageMaker Feature Store",
@@ -319,17 +440,6 @@
     "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
   },
   {
-    "id": "provider-c940c8db1609841676",
-    "company": "OpenAI",
-    "title": "Learning never stops: How AI makes learning continuous",
-    "url": "https://openai.com/index/learning-never-stops",
-    "published_at": "2026-08-26T10:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "OpenAI’s new report explores how students and educators use ChatGPT to make learning more continuous, with support that extends beyond the classroom.",
-    "content": "OpenAI’s new report explores how students and educators use ChatGPT to make learning more continuous, with support that extends beyond the classroom.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-02d6a48578fe228016",
     "company": "OpenAI",
     "title": "Bringing ChatGPT for Teachers to more U.S. school districts",
@@ -338,6 +448,17 @@
     "source_type": "rss_official",
     "summary": "ChatGPT for Teachers is expanding to 55 U.S. school systems, bringing secure AI tools, training, and support to over 100,000 more educators and staff.",
     "content": "ChatGPT for Teachers is expanding to 55 U.S. school systems, bringing secure AI tools, training, and support to over 100,000 more educators and staff.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-c940c8db1609841676",
+    "company": "OpenAI",
+    "title": "Learning never stops: How AI makes learning continuous",
+    "url": "https://openai.com/index/learning-never-stops",
+    "published_at": "2026-08-26T10:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "OpenAI’s new report explores how students and educators use ChatGPT to make learning more continuous, with support that extends beyond the classroom.",
+    "content": "OpenAI’s new report explores how students and educators use ChatGPT to make learning more continuous, with support that extends beyond the classroom.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -704,17 +825,6 @@
     "source_url": "https://www.amazon.science/index.rss"
   },
   {
-    "id": "provider-d965340ab193dfa8b7",
-    "company": "NVIDIA AI",
-    "title": "Where Security Fits in an AI Agent Stack",
-    "url": "https://developer.nvidia.com/blog/where-security-fits-in-an-ai-agent-stack/",
-    "published_at": "2026-08-21T13:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "As AI agents become more capable and operate over longer horizons, building security and trust into the applications they power becomes increasingly important....",
-    "content": "As AI agents become more capable and operate over longer horizons, building security and trust into the applications they power becomes increasingly important....",
-    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
     "id": "provider-3bfe7f3c4210352640",
     "company": "NVIDIA AI",
     "title": "NVIDIA AVO Reaches 100% on ARC-AGI-3, Demonstrating a Frontier-Level General-Purpose Architecture for Long-Horizon Autonomous Agents",
@@ -723,6 +833,17 @@
     "source_type": "rss_official",
     "summary": "A frontier language model is only one component of an AI agent. The surrounding agent system—often called a harness—determines how the model receives...",
     "content": "A frontier language model is only one component of an AI agent. The surrounding agent system—often called a harness—determines how the model receives...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
+  },
+  {
+    "id": "provider-d965340ab193dfa8b7",
+    "company": "NVIDIA AI",
+    "title": "Where Security Fits in an AI Agent Stack",
+    "url": "https://developer.nvidia.com/blog/where-security-fits-in-an-ai-agent-stack/",
+    "published_at": "2026-08-21T13:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "As AI agents become more capable and operate over longer horizons, building security and trust into the applications they power becomes increasingly important....",
+    "content": "As AI agents become more capable and operate over longer horizons, building security and trust into the applications they power becomes increasingly important....",
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
@@ -1496,6 +1617,17 @@
     "source_url": "https://huggingface.co/blog/feed.xml"
   },
   {
+    "id": "provider-4139380e4f35ee2acb",
+    "company": "OpenAI",
+    "title": "Putting frontier cyber models in more trusted hands",
+    "url": "https://openai.com/index/putting-frontier-cyber-models-in-more-trusted-hands",
+    "published_at": "2026-08-10T10:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Approved Daybreak partners can use OpenAI’s frontier cyber models to deliver authorized, governed cybersecurity services to customers.",
+    "content": "Approved Daybreak partners can use OpenAI’s frontier cyber models to deliver authorized, governed cybersecurity services to customers.",
+    "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
     "id": "provider-6414d13d42084403f5",
     "company": "OpenAI",
     "title": "Expanding Daybreak as the Cyber Defense Window Narrows",
@@ -1507,14 +1639,14 @@
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
-    "id": "provider-4139380e4f35ee2acb",
+    "id": "provider-21b9ef80e75898f43e",
     "company": "OpenAI",
-    "title": "Putting frontier cyber models in more trusted hands",
-    "url": "https://openai.com/index/putting-frontier-cyber-models-in-more-trusted-hands",
-    "published_at": "2026-08-10T10:00:00.000Z",
+    "title": "Premium seats are coming to ChatGPT Business",
+    "url": "https://openai.com/index/premium-seats-chatgpt-business",
+    "published_at": "2026-08-10T00:00:00.000Z",
     "source_type": "rss_official",
-    "summary": "Approved Daybreak partners can use OpenAI’s frontier cyber models to deliver authorized, governed cybersecurity services to customers.",
-    "content": "Approved Daybreak partners can use OpenAI’s frontier cyber models to deliver authorized, governed cybersecurity services to customers.",
+    "summary": "Premium seats are now available on ChatGPT Business, with 5x more usage, no five-hour usage limit, and flexible seat options for every teammate.",
+    "content": "Premium seats are now available on ChatGPT Business, with 5x more usage, no five-hour usage limit, and flexible seat options for every teammate.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -1537,17 +1669,6 @@
     "source_type": "rss_official",
     "summary": "Virgin Atlantic is accelerating research, product planning, and decision-making with ChatGPT Work, helping teams connect signals across the customer journey.",
     "content": "Virgin Atlantic is accelerating research, product planning, and decision-making with ChatGPT Work, helping teams connect signals across the customer journey.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
-    "id": "provider-21b9ef80e75898f43e",
-    "company": "OpenAI",
-    "title": "Premium seats are coming to ChatGPT Business",
-    "url": "https://openai.com/index/premium-seats-chatgpt-business",
-    "published_at": "2026-08-10T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Premium seats are now available on ChatGPT Business, with 5x more usage, no five-hour usage limit, and flexible seat options for every teammate.",
-    "content": "Premium seats are now available on ChatGPT Business, with 5x more usage, no five-hour usage limit, and flexible seat options for every teammate.",
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
@@ -2508,17 +2629,6 @@
     "source_url": "https://research.ibm.com/rss"
   },
   {
-    "id": "provider-8daf074a9d4c488ea1",
-    "company": "OpenAI",
-    "title": "How Cars24 scales conversations and builds faster with OpenAI",
-    "url": "https://openai.com/index/cars24",
-    "published_at": "2026-07-16T00:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Cars24 uses OpenAI-powered voice and chat agents to handle 1M+ monthly conversation minutes, recover 12% of lost leads, and bring agentic workflows to teams across the company.",
-    "content": "Cars24 uses OpenAI-powered voice and chat agents to handle 1M+ monthly conversation minutes, recover 12% of lost leads, and bring agentic workflows to teams across the company.",
-    "source_url": "https://openai.com/news/rss.xml"
-  },
-  {
     "id": "provider-8edaec13b207581939",
     "company": "Hugging Face",
     "title": "Security incident disclosure — July 2026",
@@ -2528,6 +2638,17 @@
     "summary": "",
     "content": "",
     "source_url": "https://huggingface.co/blog/feed.xml"
+  },
+  {
+    "id": "provider-8daf074a9d4c488ea1",
+    "company": "OpenAI",
+    "title": "How Cars24 scales conversations and builds faster with OpenAI",
+    "url": "https://openai.com/index/cars24",
+    "published_at": "2026-07-16T00:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Cars24 uses OpenAI-powered voice and chat agents to handle 1M+ monthly conversation minutes, recover 12% of lost leads, and bring agentic workflows to teams across the company.",
+    "content": "Cars24 uses OpenAI-powered voice and chat agents to handle 1M+ monthly conversation minutes, recover 12% of lost leads, and bring agentic workflows to teams across the company.",
+    "source_url": "https://openai.com/news/rss.xml"
   },
   {
     "id": "provider-c79289a403fd719ab9",
@@ -2607,17 +2728,6 @@
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
-    "id": "provider-82a6fc4eef8ad34bc2",
-    "company": "NVIDIA AI",
-    "title": "How to Run an Autoresearch Workflow with RL Agent Skills and NVIDIA NeMo",
-    "url": "https://developer.nvidia.com/blog/how-to-run-an-autoresearch-workflow-with-rl-agent-skills-and-nvidia-nemo/",
-    "published_at": "2026-07-14T16:00:00.000Z",
-    "source_type": "rss_official",
-    "summary": "Coding AI agents are becoming practical operators for long-running machine learning (ML) workflows. They can inspect repositories, set up runtimes, resolve...",
-    "content": "Coding AI agents are becoming practical operators for long-running machine learning (ML) workflows. They can inspect repositories, set up runtimes, resolve...",
-    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
-  },
-  {
     "id": "provider-3a98145a3310a1e119",
     "company": "NVIDIA AI",
     "title": "Post-Train NVIDIA Cosmos 3 in One Day Using Agent Skills",
@@ -2626,6 +2736,17 @@
     "source_type": "rss_official",
     "summary": "What if autonomous coding AI agents could push your vision reasoning models above 90% accuracy with almost no manual effort? When adapting vision reasoning...",
     "content": "What if autonomous coding AI agents could push your vision reasoning models above 90% accuracy with almost no manual effort? When adapting vision reasoning...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
+  },
+  {
+    "id": "provider-82a6fc4eef8ad34bc2",
+    "company": "NVIDIA AI",
+    "title": "How to Run an Autoresearch Workflow with RL Agent Skills and NVIDIA NeMo",
+    "url": "https://developer.nvidia.com/blog/how-to-run-an-autoresearch-workflow-with-rl-agent-skills-and-nvidia-nemo/",
+    "published_at": "2026-07-14T16:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Coding AI agents are becoming practical operators for long-running machine learning (ML) workflows. They can inspect repositories, set up runtimes, resolve...",
+    "content": "Coding AI agents are becoming practical operators for long-running machine learning (ML) workflows. They can inspect repositories, set up runtimes, resolve...",
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
