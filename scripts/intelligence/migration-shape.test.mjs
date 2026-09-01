@@ -234,6 +234,9 @@ describe('Supabase intelligence migrations', () => {
       'revoke all on schema supabase_migrations from public, anon, authenticated',
     );
     expect(migrationHistory).toContain('on conflict (version) do update set');
+    expect(migrationHistory).not.toContain('created_by');
+    expect(migrationHistory).not.toContain('idempotency_key');
+    expect(migrationHistory).not.toContain('rollback text[]');
   });
 
   test('limits ingestion receipt RPCs to the service role', async () => {
