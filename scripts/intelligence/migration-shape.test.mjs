@@ -277,4 +277,14 @@ describe('Supabase intelligence migrations', () => {
     expect(foundation).toContain('security definer');
     expect(foundation).toContain('set search_path = pg_catalog, private, public');
   });
+
+  test('lets the ingestion role execute the private excerpt formatter', async () => {
+    const repair = await readFile(new URL(
+      '../../supabase/migrations/20260902000100_restore_ingestion_excerpt_execution.sql',
+      import.meta.url,
+    ), 'utf8');
+    expect(repair).toContain('grant execute on function private.ai_news_excerpt(text, integer) to service_role');
+    expect(repair).not.toMatch(/grant[^;]+to\s+(public|anon|authenticated)\b/i);
+    expect(repair).not.toMatch(/security\s+definer/i);
+  });
 });

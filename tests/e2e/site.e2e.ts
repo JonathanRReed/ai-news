@@ -17,13 +17,13 @@ test.beforeEach(async ({ page }) => {
 });
 
 test("keeps the verified cache usable when the live feed is degraded", async ({ page }) => {
-  const status = page.getByRole("status").filter({ hasText: "Live updates are temporarily unavailable" });
-  await expect(status).toContainText("Showing the verified cache from");
+  const status = page.getByRole("status").filter({ hasText: "Current updates are temporarily unavailable" });
+  await expect(status).toContainText("The newest story in this published snapshot is dated");
   await expect(page.locator("article a[href^='http']").first()).toBeVisible();
 });
 
 test("renders the primary-source feed and searchable filters", async ({ page }) => {
-  await expect(page.getByRole("heading", { level: 1 })).toContainText("free intelligence index");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("See what changed in AI today.");
   await expect(page.getByRole("searchbox", { name: "Search articles" })).toBeVisible();
   await page.getByRole("searchbox", { name: "Search articles" }).fill("OpenAI");
   await expect(page).toHaveURL(/\?q=OpenAI$/);
@@ -32,21 +32,21 @@ test("renders the primary-source feed and searchable filters", async ({ page }) 
 
 test("separates labs, harnesses, major updates, and daily digests", async ({ page }) => {
   await page.goto("/labs/");
-  await expect(page.getByRole("heading", { level: 1 })).toContainText("moving the field");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("AI labs and providers.");
   await expect(page.getByText("Z.AI", { exact: true })).toBeVisible();
 
   await page.goto("/harnesses/");
-  await expect(page.getByRole("heading", { level: 1 })).toContainText("models become tools");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Agent tools and coding assistants.");
   await expect(page.getByText("Hermes Agent", { exact: true })).toBeVisible();
   await expect(page.getByText("OpenClaw", { exact: true })).toBeVisible();
 
   await page.goto("/major-updates/");
-  await expect(page.getByText("Promotion rule", { exact: true })).toBeVisible();
+  await expect(page.getByText("What counts as major", { exact: true })).toBeVisible();
   await expect(page.getByText("Named model version announced or released").first()).toBeVisible();
 
   await page.goto("/digest/daily/");
-  await expect(page.getByText(/Daily intelligence digest/i)).toBeVisible();
-  await expect(page.getByText("Every cached primary-source update published on this UTC date")).toBeVisible();
+  await expect(page.getByRole("heading", { level: 1 })).toContainText(/\w+, \w+ \d+, \d{4}/);
+  await expect(page.getByText("Every update collected from official sources on this UTC date, ordered by publication time.")).toBeVisible();
 });
 
 test("keeps entity watchlists local and exposes stable machine feeds", async ({ page, request }) => {
@@ -110,7 +110,7 @@ test("keeps oversized publisher posts to a concise source preview", async ({ pag
 
 test("publishes crawlable story indexes and a real 404", async ({ page }) => {
   await page.goto("/stories/");
-  await expect(page.getByRole("heading", { level: 1, name: /All primary-source stories/i })).toBeVisible();
+  await expect(page.getByRole("heading", { level: 1, name: "All stories from official sources." })).toBeVisible();
   await expect(page.locator('a[href^="/article/"]')).not.toHaveCount(0);
 
   const response = await page.goto("/codex-release-check-not-found");

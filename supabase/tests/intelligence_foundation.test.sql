@@ -308,5 +308,31 @@ select ok(
   'legacy imports retain full content while enforcing the excerpt limit'
 );
 
+select ok(
+  has_function_privilege('service_role', 'private.ai_news_excerpt(text, integer)', 'EXECUTE')
+    and not has_function_privilege('anon', 'private.ai_news_excerpt(text, integer)', 'EXECUTE')
+    and not has_function_privilege('authenticated', 'private.ai_news_excerpt(text, integer)', 'EXECUTE'),
+  'only the ingestion role can call the private excerpt formatter'
+);
+
+-- Exercise the real caller of both triggers, not the postgres test owner.
+set local role service_role;
+update public.ai_company_news
+set summary = repeat('Service role summary. ', 100)
+where id = '20000000-0000-5000-8000-000000000001';
+update public.content_items
+set excerpt = repeat('Service role excerpt. ', 100)
+where legacy_id = '20000000-0000-5000-8000-000000000001';
+reset role;
+
+select ok(
+  (select char_length(summary) <= 500 and right(summary, 3) = '...'
+   from public.ai_company_news where id = '20000000-0000-5000-8000-000000000001')
+  and
+  (select char_length(excerpt) <= 500 and right(excerpt, 3) = '...'
+   from public.content_items where legacy_id = '20000000-0000-5000-8000-000000000001'),
+  'service-role ingestion truncates both public summaries without losing write access'
+);
+
 select * from finish();
 rollback;

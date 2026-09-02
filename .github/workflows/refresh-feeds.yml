@@ -29,6 +29,14 @@ jobs:
       - name: Validate admitted sources
         run: bun run sources:validate
 
+      - name: Check ingestion configuration
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: |
+          test -n "$SUPABASE_URL" || { echo "::error::Missing SUPABASE_URL repository secret"; exit 1; }
+          test -n "$SUPABASE_SERVICE_ROLE_KEY" || { echo "::error::Missing SUPABASE_SERVICE_ROLE_KEY repository secret"; exit 1; }
+
       - name: Ingest official sources
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
