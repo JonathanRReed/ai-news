@@ -1,5 +1,6 @@
 /* global AbortController */
 import React, { useEffect, useMemo, useState } from "react";
+import { displayedSourceHealth } from "../lib/source-health.js";
 import {
   SUPABASE_REST_HEADERS,
   SUPABASE_URL,
@@ -104,7 +105,7 @@ export default function SourceHealthReceipt({
           setState("fallback");
           return;
         }
-        setRows(payload);
+        setRows(payload.map(source => ({ ...source, health: displayedSourceHealth(source.health, source.last_success_at) })));
         setState("live");
       })
       .catch(() => {
