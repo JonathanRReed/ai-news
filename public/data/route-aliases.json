@@ -3640,6 +3640,10 @@
     "destination_path": "/article/565cabce-fc46-495d-9106-62d60acb15d1"
   },
   {
+    "legacy_id": "5666ddb7-5d5a-54cd-b454-6c01a40cf9bc",
+    "destination_path": "/article/efab8582-cf78-4471-84d6-3ae73b991b5d"
+  },
+  {
     "legacy_id": "567ab79d-0e3c-4a5e-8596-01c096d42bcd",
     "destination_path": "/article/567ab79d-0e3c-4a5e-8596-01c096d42bcd"
   },
@@ -4844,6 +4848,10 @@
     "destination_path": "/article/748a506e-40db-45f1-8b67-c2ccd5b8c366"
   },
   {
+    "legacy_id": "748ed6b8-8d57-5cf7-870c-b30af38394c1",
+    "destination_path": "/article/7fe052ee-1065-4834-ac49-ac2da86f726e"
+  },
+  {
     "legacy_id": "74bc5c09-f081-40cd-914c-7201cb437007",
     "destination_path": "/article/74bc5c09-f081-40cd-914c-7201cb437007"
   },
@@ -5294,6 +5302,10 @@
   {
     "legacy_id": "7fd568c0-abcf-4fb6-97b7-79225d0869a7",
     "destination_path": "/article/7fd568c0-abcf-4fb6-97b7-79225d0869a7"
+  },
+  {
+    "legacy_id": "7fe052ee-1065-4834-ac49-ac2da86f726e",
+    "destination_path": "/article/7fe052ee-1065-4834-ac49-ac2da86f726e"
   },
   {
     "legacy_id": "7ffa6d84-dea5-4c87-8078-a6f6ae18c9ad",
@@ -9980,6 +9992,10 @@
     "destination_path": "/article/efa4f3e0-b0e9-420c-995f-65604b214812"
   },
   {
+    "legacy_id": "efab8582-cf78-4471-84d6-3ae73b991b5d",
+    "destination_path": "/article/efab8582-cf78-4471-84d6-3ae73b991b5d"
+  },
+  {
     "legacy_id": "efad9ba1-2845-41fe-be75-02f3e33025db",
     "destination_path": "/article/efad9ba1-2845-41fe-be75-02f3e33025db"
   },
@@ -10720,10 +10736,6 @@
     "destination_path": "/article/provider-019ac0354cf9fc389f"
   },
   {
-    "legacy_id": "provider-02cc600aaf2b18ebf0",
-    "destination_path": "/article/db87f90e-29fe-507c-96f4-3c1fd132e484"
-  },
-  {
     "legacy_id": "provider-02d6a48578fe228016",
     "destination_path": "/article/14496c0f-f1f0-4034-89ff-c06c780be295"
   },
@@ -10838,10 +10850,6 @@
   {
     "legacy_id": "provider-113890241eec45a1eb",
     "destination_path": "/article/provider-113890241eec45a1eb"
-  },
-  {
-    "legacy_id": "provider-1178de48ffffa40365",
-    "destination_path": "/article/2bea55d6-1431-5976-adb2-751a5fb0dd29"
   },
   {
     "legacy_id": "provider-11a75002ddd1de2dba",
@@ -11108,10 +11116,6 @@
     "destination_path": "/article/provider-3797a4695d878c20d8"
   },
   {
-    "legacy_id": "provider-37c7e34e69f50d2eec",
-    "destination_path": "/article/748ed6b8-8d57-5cf7-870c-b30af38394c1"
-  },
-  {
     "legacy_id": "provider-37dc6b1f4e8a328eb7",
     "destination_path": "/article/provider-37dc6b1f4e8a328eb7"
   },
@@ -11186,10 +11190,6 @@
   {
     "legacy_id": "provider-41da3a5e7627fe0dc0",
     "destination_path": "/article/provider-41da3a5e7627fe0dc0"
-  },
-  {
-    "legacy_id": "provider-423a14fda4666bfb62",
-    "destination_path": "/article/3e2270ff-c43f-5529-93f4-d52c5c9e766e"
   },
   {
     "legacy_id": "provider-428c6316678ace9083",
@@ -11424,10 +11424,6 @@
     "destination_path": "/article/5af8ea35-e01e-44c4-aec4-fe23209992e9"
   },
   {
-    "legacy_id": "provider-5ebcb508bc956b7290",
-    "destination_path": "/article/0918b99f-1763-5fa1-90ce-d384797b2404"
-  },
-  {
     "legacy_id": "provider-5f57bc594608fd8de2",
     "destination_path": "/article/provider-5f57bc594608fd8de2"
   },
@@ -11458,10 +11454,6 @@
   {
     "legacy_id": "provider-624b28e25664b0bbf4",
     "destination_path": "/article/provider-624b28e25664b0bbf4"
-  },
-  {
-    "legacy_id": "provider-625f90f3f78785918b",
-    "destination_path": "/article/5666ddb7-5d5a-54cd-b454-6c01a40cf9bc"
   },
   {
     "legacy_id": "provider-6304a034d84c11e282",
@@ -11732,10 +11724,6 @@
     "destination_path": "/article/959811e6-8d53-41e2-823e-dd9138f11018"
   },
   {
-    "legacy_id": "provider-8bf1159f57c609d9f2",
-    "destination_path": "/article/87e86a85-f0e9-5947-945a-e24dbe36f9e3"
-  },
-  {
     "legacy_id": "provider-8c377856776966a7ff",
     "destination_path": "/article/provider-8c377856776966a7ff"
   },
@@ -11938,10 +11926,6 @@
   {
     "legacy_id": "provider-a5a240c6732ea0b397",
     "destination_path": "/article/provider-a5a240c6732ea0b397"
-  },
-  {
-    "legacy_id": "provider-a6fd4eef859d02922e",
-    "destination_path": "/article/c07f103e-b84e-5b41-bdee-d4e5bd71358c"
   },
   {
     "legacy_id": "provider-a7b9be5eb5b6d36dca",
@@ -12256,20 +12240,12 @@
     "destination_path": "/article/0709ae0e-399d-4c5b-8ac1-79b63c74f054"
   },
   {
-    "legacy_id": "provider-cde541c2e44d9930bf",
-    "destination_path": "/article/0ba607a0-f1ac-434a-a626-f37675170a53"
-  },
-  {
     "legacy_id": "provider-ce2dfc66cdce29e2a8",
     "destination_path": "/article/d05d5ff6-46f5-4191-a517-23629072b2de"
   },
   {
     "legacy_id": "provider-ce5a393b9c7d3e5ed2",
     "destination_path": "/article/provider-ce5a393b9c7d3e5ed2"
-  },
-  {
-    "legacy_id": "provider-ce7cfef9c2fa7bf935",
-    "destination_path": "/article/15432d04-7030-546b-81ed-fe800d4c1d4a"
   },
   {
     "legacy_id": "provider-cfe5f508af4b9aee97",
@@ -12434,10 +12410,6 @@
   {
     "legacy_id": "provider-e668c787602d26fc92",
     "destination_path": "/article/provider-e668c787602d26fc92"
-  },
-  {
-    "legacy_id": "provider-e66cb61dbe902b1bec",
-    "destination_path": "/article/67fa54e7-90dc-5b4d-9177-ae0885a8e83c"
   },
   {
     "legacy_id": "provider-e68677b07c6bda766f",
