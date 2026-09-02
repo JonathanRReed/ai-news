@@ -3,8 +3,8 @@ import { allArticles, buildRss, RSS_HEADERS } from "../../lib/feeds.js";
 import { entityForArticle } from "../../lib/intelligenceCatalog.js";
 
 export const GET: APIRoute = () => new Response(buildRss({
-  title: "AI News Hub - Agent Harnesses",
-  description: "Official releases from AI agent harnesses, coding agents, and model-provider CLIs.",
+  title: "AI News Hub - Agent Tools",
+  description: "Official releases from AI agent tools, coding agents, and model-provider CLIs.",
   feedPath: "/feed/harnesses.xml",
   items: allArticles().filter((article) => entityForArticle(article)?.entityType === "harness"),
   buildDate: new Date().toUTCString(),

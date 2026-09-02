@@ -4,7 +4,7 @@ import { majorUpdates } from "../../lib/majorUpdates.js";
 
 export const GET: APIRoute = () => new Response(buildRss({
   title: "AI News Hub - Major Updates",
-  description: "Explainable named model releases and major harness versions from primary sources.",
+  description: "Named model releases and major agent-tool versions from official sources.",
   feedPath: "/feed/major.xml",
   items: majorUpdates(allArticles()).map(({ article }) => article),
   buildDate: new Date().toUTCString(),

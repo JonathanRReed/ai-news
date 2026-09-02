@@ -34,7 +34,7 @@ export default function WatchlistIsland({ entities, articles }: { entities: Inte
     return (
       <div className="industrial-border p-8">
         <p className="text-lg text-white">Your watchlist is empty.</p>
-        <p className="mt-2 max-w-2xl text-text-2">Open any lab or harness intelligence page and choose Watch. It stays in this browser. No account or server profile is created.</p>
+        <p className="mt-2 max-w-2xl text-text-2">Open any lab, provider, or agent-tool page and choose Watch. Your selections stay in this browser. No account or server profile is created.</p>
         <a href="/labs/" className="signal-button mt-6">Browse labs</a>
       </div>
     );
@@ -51,7 +51,7 @@ export default function WatchlistIsland({ entities, articles }: { entities: Inte
       <section>
         <div className="mb-4 flex items-baseline justify-between gap-4 border-b border-white/15 pb-3">
           <h2 className="text-2xl font-bold text-white">Latest watched updates</h2>
-          <span className="micro-label text-text-2">{stories.length} cached</span>
+          <span className="micro-label text-text-2">{stories.length} updates</span>
         </div>
         {stories.length ? (
           <ol>
@@ -63,7 +63,7 @@ export default function WatchlistIsland({ entities, articles }: { entities: Inte
             ))}
           </ol>
         ) : (
-          <p className="industrial-border p-6 text-text-2">No cached stories have arrived for these entities yet. Their source status remains visible on each intelligence page.</p>
+          <p className="industrial-border p-6 text-text-2">No stories are available for these sources yet. Open a source page to see its current status.</p>
         )}
       </section>
     </div>

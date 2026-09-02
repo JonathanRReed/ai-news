@@ -34,7 +34,6 @@ export default function FaqDropdown() {
 
   return (
     <section className="my-12 mx-auto max-w-4xl">
-      <p className="micro-label mb-4 text-brand-hover">[ FAQ ]</p>
       <h2 className="mb-8 text-4xl font-black uppercase leading-none text-white">Details</h2>
       <div className="space-y-px bg-white/20">
         {faqs.map((faq, idx) => (

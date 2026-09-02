@@ -5,7 +5,7 @@ import { allArticles, SITE_URL } from "../../lib/feeds.js";
 import { majorUpdates } from "../../lib/majorUpdates.js";
 
 const updates = majorUpdates(allArticles());
-const description = "A conservative, explainable timeline of named model releases and major harness versions from first-party sources. Every promotion includes its reason.";
+const description = "Named model releases and major agent-tool versions from official sources. Every included headline has to match the published rule.";
 ---
 
 <Layout title="Major AI Updates | AI News Hub" description={description} canonical={`${SITE_URL}/major-updates/`} currentPage="major">
@@ -13,19 +13,18 @@ const description = "A conservative, explainable timeline of named model release
     <section class="industrial-container py-10 md:py-14">
       <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_24rem] lg:items-end">
         <div class="reveal-stagger">
-          <p class="micro-label mb-5 text-brand-hover">[ Major updates ]</p>
-          <h1 class="macro-heading">The releases that change the map.</h1>
+          <h1 class="macro-heading">Major AI updates.</h1>
           <p class="mt-6 max-w-3xl text-lg leading-relaxed text-text-2">{description}</p>
         </div>
         <aside class="industrial-border p-5">
-          <p class="micro-label text-text-2">Promotion rule</p>
-          <p class="mt-3 leading-relaxed text-white">A headline must contain release language plus either a named model version or a major harness version. No provider prestige score. No hidden model judgment.</p>
-          <p class="micro-label mt-4 text-brand-hover">{updates.length} qualifying cached updates</p>
+          <p class="micro-label text-text-2">What counts as major</p>
+          <p class="mt-3 leading-relaxed text-white">The publisher’s headline must use release language and name a model version or a major agent-tool version. No provider ranking or hidden editorial score is used.</p>
+          <p class="micro-label mt-4 text-brand-hover">{updates.length} matching updates</p>
         </aside>
       </div>
     </section>
     <section class="industrial-container pb-16 md:pb-24">
-      <StoryRows rows={updates.slice(0, 120)} emptyMessage="No cached headlines meet the conservative Major Updates rule yet." />
+      <StoryRows rows={updates.slice(0, 120)} emptyMessage="No headlines currently match the Major Updates rule." />
     </section>
   </main>
 </Layout>

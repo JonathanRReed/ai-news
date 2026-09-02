@@ -67,10 +67,9 @@ const structuredData = {
   <main id="main-content" class="industrial-shell flex-1">
     <section class="industrial-container py-10 md:py-14">
       <div class="max-w-5xl reveal-stagger">
-        <p class="micro-label mb-5 text-brand-hover">[ Story index ]</p>
-        <h1 class="macro-heading max-w-5xl">All primary-source stories.</h1>
+        <h1 class="macro-heading max-w-5xl">All stories from official sources.</h1>
         <p class="mt-6 max-w-3xl text-lg leading-relaxed text-text-2 md:text-xl">
-          Every tracked story in publication order. Open a local source page for context, then continue to the original publisher.
+          Every collected story in publication order. Open its story page for source details, then continue to the original publisher.
         </p>
         <p class="micro-label mt-5 text-muted">Page {pageNumber} of {pageCount} · {articles.length} stories</p>
       </div>
@@ -91,10 +90,10 @@ const structuredData = {
         ))}
       </ol>
 
-      <nav class="mt-8 flex items-center justify-between gap-4" aria-label="Story index pagination">
-        {previousUrl ? <a class="ghost-button" href={previousUrl}>Previous stories</a> : <span aria-hidden="true"></span>}
-        <span class="micro-label text-text-2">{pageNumber} / {pageCount}</span>
-        {nextUrl ? <a class="signal-button" href={nextUrl}>Next stories</a> : <span aria-hidden="true"></span>}
+      <nav class="mt-8 grid grid-cols-2 gap-3 sm:flex sm:items-center sm:justify-between sm:gap-4" aria-label="Story index pagination">
+        <div>{previousUrl ? <a class="ghost-button w-full justify-center sm:w-auto" href={previousUrl}>Previous stories</a> : null}</div>
+        <span class="micro-label col-span-2 row-start-1 text-center text-text-2 sm:col-auto sm:row-auto">{pageNumber} / {pageCount}</span>
+        <div class="text-right">{nextUrl ? <a class="signal-button w-full justify-center sm:w-auto" href={nextUrl}>Next stories</a> : null}</div>
       </nav>
     </section>
   </main>

@@ -41,6 +41,13 @@ async function fetchSupplementalArticles(): Promise<Article[]> {
   return supplementalArticlesPromise;
 }
 
+export async function fetchSavedArticles(ids: string[]): Promise<Article[]> {
+  const wanted = new Set(ids.filter(Boolean));
+  if (wanted.size === 0) return [];
+  const articles = await fetchSupplementalArticles();
+  return articles.filter((article) => wanted.has(article.id));
+}
+
 export async function countNewerThan(filters: ArticleFilters, sinceMs: number): Promise<number> {
   if (!supabaseConfigured || !sinceMs) return 0;
   if (!isKnownCompanyName(filters.company)) return 0;

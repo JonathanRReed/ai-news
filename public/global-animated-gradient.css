@@ -350,4 +350,9 @@ input:focus-visible {
   .glassmorphic-article-card {
     transition: none !important;
   }
+
+  .animate-pulse,
+  .animate-spin {
+    animation: none !important;
+  }
 }

@@ -12,24 +12,23 @@ for (const article of articles) {
   if (slug) articleCounts[slug] = (articleCounts[slug] ?? 0) + 1;
 }
 const coveredCount = entitiesBySection.labs.filter((entity) => isEntityCovered(entity.slug)).length;
-const description = "A source-backed directory of AI labs, model providers, and research organizations, including Z.AI, Moonshot AI, Anthropic, OpenAI, DeepMind, and more.";
+const description = "Tracked news and releases from AI labs, model providers, and research organizations, including Z.AI, Moonshot AI, Anthropic, OpenAI, DeepMind, and more.";
 ---
 
 <Layout title="AI Labs and Model Providers | AI News Hub" description={description} canonical={`${siteUrl}/labs/`} currentPage="labs">
   <main id="main-content" class="industrial-shell flex-1">
     <section class="industrial-container py-10 md:py-14">
       <div class="max-w-5xl reveal-stagger">
-        <p class="micro-label mb-5 text-brand-hover">[ Labs and providers ]</p>
-        <h1 class="macro-heading">Who is moving the field.</h1>
+        <h1 class="macro-heading">AI labs and providers.</h1>
         <p class="mt-6 max-w-3xl text-lg leading-relaxed text-text-2">
-          {entitiesBySection.labs.length} admitted labs, providers, and research organizations, with {coveredCount} under active coverage. Coverage starts with a verifiable first-party feed, release stream, changelog, or sitemap.
+          Browse {entitiesBySection.labs.length} labs, providers, and research organizations. {coveredCount} currently have an active official feed, release page, changelog, or sitemap.
         </p>
       </div>
     </section>
     <section class="industrial-container pb-16 md:pb-24">
       <div class="mb-5 flex flex-wrap items-center justify-between gap-3 border-b border-white/15 pb-4">
-        <p class="micro-label text-text-2">Registry status and cached coverage</p>
-        <a href="/harnesses/" class="micro-label text-white underline decoration-brand decoration-2 underline-offset-4 hover:text-brand-hover focus-industrial">Explore harnesses</a>
+        <p class="micro-label text-text-2">Official sources and available updates</p>
+        <a href="/harnesses/" class="micro-label text-white underline decoration-brand decoration-2 underline-offset-4 hover:text-brand-hover focus-industrial">Explore agent tools</a>
       </div>
       <EntityDirectory entities={entitiesBySection.labs} articleCounts={articleCounts} />
     </section>

@@ -21,7 +21,10 @@ function escapeXml(value: string): string {
 export function allArticles(): Article[] {
   return admittedArticles(providerArticles as Article[])
     .slice()
-    .sort((a, b) => new Date(b.published_at).getTime() - new Date(a.published_at).getTime());
+    .sort((a, b) => (
+      new Date(b.published_at).getTime() - new Date(a.published_at).getTime()
+      || b.id.localeCompare(a.id)
+    ));
 }
 
 interface RssOptions {

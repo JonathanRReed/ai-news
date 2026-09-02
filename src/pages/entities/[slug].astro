@@ -35,8 +35,21 @@ export function getStaticPaths() {
 const { entity, sources, articles } = Astro.props as Props;
 const covered = isEntityCovered(entity.slug);
 const activeSources = sources.filter((source) => source.active);
-const description = `Primary-source ${entity.name} intelligence: official news, releases, research, source status, RSS, JSON, and a free local watchlist.`;
+const publicType = entity.entityType === "harness" ? "Agent tool" : entityTypeLabel(entity.entityType);
+const description = `Tracked ${entity.name} news, releases, research, source status, RSS, JSON, and a free local watchlist.`;
 const rows = articles.map((article) => ({ article }));
+
+function sourceRoleLabel(value: string): string {
+  return value.replaceAll("_", " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
+}
+
+function transportLabel(value: string): string {
+  const normalized = value.toLowerCase();
+  if (normalized === "rss" || normalized === "atom") return `${normalized.toUpperCase()} feed`;
+  if (normalized === "json") return "JSON feed";
+  if (normalized === "html") return "Web page";
+  return sourceRoleLabel(value);
+}
 ---
 
 <Layout title={`${entity.name} News and Releases | AI News Hub`} description={description} canonical={`${SITE_URL}/entities/${entity.slug}/`} currentPage={entity.entityType === "harness" ? "harnesses" : "labs"}>
@@ -44,10 +57,9 @@ const rows = articles.map((article) => ({ article }));
     <section class="industrial-container py-10 md:py-14">
       <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-end">
         <div class="reveal-stagger">
-          <p class="micro-label mb-5 text-brand-hover">[ {entityTypeLabel(entity.entityType)} intelligence ]</p>
           <h1 class="macro-heading">{entity.name}</h1>
           <p class="mt-6 max-w-3xl text-lg leading-relaxed text-text-2">
-            {covered ? `${activeSources.length} active first-party source${activeSources.length === 1 ? "" : "s"}, monitored without a paid model dependency.` : "Admitted to the registry, but not labeled active until a reliable first-party source can be fetched."}
+            {covered ? `${activeSources.length} official source${activeSources.length === 1 ? "" : "s"} tracked for ${publicType.toLowerCase()} news and releases.` : "No reliable official feed is active yet. You can still open the official site or add this page to your watchlist."}
           </p>
           <div class="mt-6 flex flex-wrap gap-3">
             <EntityWatchButton client:load slug={entity.slug} name={entity.name} />
@@ -57,10 +69,10 @@ const rows = articles.map((article) => ({ article }));
           </div>
         </div>
         <aside class="industrial-border p-5">
-          <p class="micro-label mb-4 text-text-2">Coverage receipt</p>
+          <p class="micro-label mb-4 text-text-2">Available here</p>
           <dl class="grid grid-cols-2 gap-px bg-white/15">
             <div class="bg-bg-0 p-4"><dt class="micro-label text-muted">Status</dt><dd class="mt-2 font-mono text-sm uppercase text-white">{covered ? "Active" : "Watchlist"}</dd></div>
-            <div class="bg-bg-0 p-4"><dt class="micro-label text-muted">Cached</dt><dd class="mt-2 font-mono text-sm text-white">{articles.length} items</dd></div>
+            <div class="bg-bg-0 p-4"><dt class="micro-label text-muted">Updates</dt><dd class="mt-2 font-mono text-sm text-white">{articles.length} items</dd></div>
           </dl>
         </aside>
       </div>
@@ -68,8 +80,8 @@ const rows = articles.map((article) => ({ article }));
 
     <section class="industrial-container pb-12">
       <div class="mb-4 flex items-baseline justify-between gap-4 border-b border-white/15 pb-3">
-        <h2 class="text-2xl font-bold text-white">Source ledger</h2>
-        <span class="micro-label text-text-2">Verified dates are registry admission checks</span>
+        <h2 class="text-2xl font-bold text-white">Official sources</h2>
+        <span class="micro-label text-text-2">Status and last checks</span>
       </div>
       <SourceHealthReceipt
         client:load
@@ -88,7 +100,7 @@ const rows = articles.map((article) => ({ article }));
               <h3 class="font-bold text-white">{source.name}</h3>
               <span class={`micro-label ${source.active ? "text-brand-hover" : "text-text-2"}`}>{source.active ? "Active" : "Inactive"}</span>
             </div>
-            <p class="micro-label mt-3 text-text-2">{source.sourceRole} · {source.transportType} · verified {source.verifiedAt}</p>
+            <p class="micro-label mt-3 text-text-2">{sourceRoleLabel(source.sourceRole)} · {transportLabel(source.transportType)} · added {source.verifiedAt}</p>
             <a href={source.officialUrl} target="_blank" rel="noopener noreferrer" class="micro-label mt-5 inline-block text-white underline decoration-brand decoration-2 underline-offset-4 hover:text-brand-hover focus-industrial">Open official source</a>
           </article>
         ))}
@@ -97,10 +109,10 @@ const rows = articles.map((article) => ({ article }));
 
     <section class="industrial-container pb-16 md:pb-24">
       <div class="mb-4 flex items-baseline justify-between gap-4 border-b border-white/15 pb-3">
-        <h2 class="text-2xl font-bold text-white">Latest cached updates</h2>
+        <h2 class="text-2xl font-bold text-white">Latest updates</h2>
         <span class="micro-label text-text-2">Newest first</span>
       </div>
-      <StoryRows rows={rows.slice(0, 80)} emptyMessage="No cached stories have arrived from this source yet. The source ledger above is the current coverage truth." />
+      <StoryRows rows={rows.slice(0, 80)} emptyMessage="No updates are available from these sources yet. Check the source status above or open the official site." />
     </section>
   </main>
 </Layout>

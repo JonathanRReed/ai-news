@@ -1,7 +1,7 @@
 /* global KeyboardEvent */
 import React, { useState, useEffect, useRef, useMemo } from "react";
 import { useArticlesContext } from "../hooks/useArticlesContext.js";
-import { countNewerThan } from "../hooks/fetchArticlesPage.js";
+import { countNewerThan, fetchSavedArticles } from "../hooks/fetchArticlesPage.js";
 import { companyLogoAlt, resolveCompanyLogo } from "../lib/companyCatalog.js";
 import { deriveTopics, topicLabel, readingMinutes } from "../lib/articleTags.js";
 import type { Article, PageData } from "../types/article.js";
@@ -82,7 +82,7 @@ function itemTypeLabel(itemType?: string): string | null {
     case "announcement": return "Announcement";
     case "release": return "Release";
     case "model_release": return "Model release";
-    case "harness_release": return "Harness release";
+    case "harness_release": return "Agent tool release";
     case "api_change": return "API change";
     case "security": return "Security";
     case "deprecation": return "Deprecation";
@@ -246,14 +246,17 @@ export default function ArticleListIsland({
   view = "all",
   readState,
   now = 0,
+  onClearFilters,
 }: {
   density?: "comfortable" | "compact";
   view?: FeedView;
   readState: ReadState;
   now?: number;
+  onClearFilters: () => void;
 }) {
   const { data, isFetching, error, fetchNextPage, hasNextPage, filters } = useArticlesContext();
   const { seen, saved, markSeen, toggleSaved } = readState;
+  const [savedArchiveArticles, setSavedArchiveArticles] = useState<Article[]>([]);
   // Seed "now" from a build-time timestamp (prop) so the SSR/crawler render shows real
   // relative times instead of "Just now"; the effect then refreshes to the live clock.
   const [nowMs, setNowMs] = useState(now);
@@ -266,7 +269,8 @@ export default function ArticleListIsland({
 
   const allArticles = useMemo<Article[]>(() => {
     if (!Array.isArray(data?.pages)) return [];
-    const merged = data.pages.reduce((acc: Article[], page: PageData) => (Array.isArray(page?.data) ? acc.concat(page.data) : acc), [] as Article[]);
+    const merged = data.pages.reduce((acc: Article[], page: PageData) => (Array.isArray(page?.data) ? acc.concat(page.data) : acc), [] as Article[])
+      .concat(view === "saved" ? savedArchiveArticles : []);
     const seenIds = new Set<string>();
     const deduped: Article[] = [];
     for (const art of merged) {
@@ -279,7 +283,18 @@ export default function ArticleListIsland({
       new Date(b.published_at).getTime() - new Date(a.published_at).getTime()
       || b.id.localeCompare(a.id)
     ));
-  }, [data?.pages]);
+  }, [data?.pages, savedArchiveArticles, view]);
+
+  useEffect(() => {
+    if (view !== "saved" || saved.size === 0) return;
+    let cancelled = false;
+    fetchSavedArticles([...saved]).then((articles) => {
+      if (!cancelled) setSavedArchiveArticles(articles);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [saved, view]);
 
   const dataState = useMemo(() => {
     const pages = data?.pages ?? [];
@@ -289,7 +304,7 @@ export default function ArticleListIsland({
   const cacheFreshness = useMemo(() => (
     (data?.pages ?? []).find((page) => page.cacheFreshness)?.cacheFreshness ?? null
   ), [data?.pages]);
-  const cacheFreshnessLabel = cacheFreshness
+  const newestPublishedLabel = cacheFreshness
     ? new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", year: "numeric" }).format(new Date(cacheFreshness))
     : "the latest successful export";
 
@@ -503,7 +518,7 @@ export default function ArticleListIsland({
       <div className="mt-8 border border-brand bg-bg-1 p-6">
         <p className="micro-label mb-3 text-brand-hover">Couldn&apos;t load the live feed</p>
         <p className="max-w-2xl text-base leading-relaxed text-text-2">
-          The live connection dropped. Cached stories will load again as soon as it recovers. Try refreshing in a moment.
+          The current feed could not be loaded. Refresh in a moment, or browse <a className="text-white underline decoration-brand decoration-2 underline-offset-4 hover:text-brand-hover focus-industrial" href="/digest/daily/">News by date</a> for stories included in the latest published snapshot.
         </p>
       </div>
     );
@@ -520,6 +535,11 @@ export default function ArticleListIsland({
       <div className="mt-8 border border-white/20 bg-bg-1 p-8">
         <p className="micro-label mb-3 text-white">Nothing to show here</p>
         <p className="max-w-2xl text-base leading-relaxed text-text-2">{reason}</p>
+        {(activeFilters.length > 0 || view !== "all") && (
+          <button type="button" className="ghost-button mt-6" onClick={onClearFilters}>
+            Clear filters
+          </button>
+        )}
         {hasNextPage && (
           <button
             className="signal-button mt-6 disabled:cursor-not-allowed disabled:opacity-40"
@@ -567,8 +587,8 @@ export default function ArticleListIsland({
     <>
       {(dataState === "degraded" || dataState === "unconfigured") && (
         <div role="status" className="mb-5 border border-brand/60 bg-brand/10 p-4 text-sm leading-relaxed text-white">
-          <span className="micro-label mr-2 text-brand-hover">Cache mode</span>
-          Live updates are temporarily unavailable. Showing the verified cache from {cacheFreshnessLabel}.
+          <span className="micro-label mr-2 text-brand-hover">Published snapshot</span>
+          Current updates are temporarily unavailable. The newest story in this published snapshot is dated {newestPublishedLabel}.
         </div>
       )}
       <div className="mb-5 grid gap-px bg-white/15 md:grid-cols-[1fr_auto_auto]">
@@ -683,7 +703,7 @@ export default function ArticleListIsland({
             {[
               ["j / ↓", "Next story"],
               ["k / ↑", "Previous story"],
-              ["o / ↵", "Open the source receipt"],
+              ["o / ↵", "Open the story page"],
               ["s", "Save or unsave"],
               ["m", "Mark as read"],
               ["/", "Focus search"],

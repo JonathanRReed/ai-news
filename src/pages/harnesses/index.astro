@@ -10,17 +10,16 @@ for (const article of allArticles()) {
   const slug = entityForArticle(article)?.slug;
   if (slug) articleCounts[slug] = (articleCounts[slug] ?? 0) + 1;
 }
-const description = "First-party release intelligence for agent harnesses and coding agents, including Hermes Agent, OpenClaw, OpenHands, Aider, Cline, Roo Code, Goose, and major model-provider CLIs.";
+const description = "Official release news for agent tools and coding agents, including Hermes Agent, OpenClaw, OpenHands, Aider, Cline, Roo Code, Goose, and major model-provider CLIs.";
 ---
 
-<Layout title="AI Agent Harness News | AI News Hub" description={description} canonical={`${siteUrl}/harnesses/`} currentPage="harnesses">
+<Layout title="AI Agent Tool News | AI News Hub" description={description} canonical={`${siteUrl}/harnesses/`} currentPage="harnesses">
   <main id="main-content" class="industrial-shell flex-1">
     <section class="industrial-container py-10 md:py-14">
       <div class="max-w-5xl reveal-stagger">
-        <p class="micro-label mb-5 text-brand-hover">[ Agent harnesses ]</p>
-        <h1 class="macro-heading">The layer where models become tools.</h1>
+        <h1 class="macro-heading">Agent tools and coding assistants.</h1>
         <p class="mt-6 max-w-3xl text-lg leading-relaxed text-text-2">
-          Official releases from autonomous-agent runtimes, coding harnesses, and model-provider CLIs. Hermes Agent and OpenClaw sit beside OpenHands, Aider, Cline, Codex CLI, Claude Code, Gemini CLI, Kimi CLI, and the rest of the working stack.
+          Follow official releases from autonomous-agent runtimes, coding assistants, and model-provider command-line tools. This includes Hermes Agent, OpenClaw, OpenHands, Aider, Cline, Codex CLI, Claude Code, Gemini CLI, and Kimi CLI.
         </p>
       </div>
     </section>

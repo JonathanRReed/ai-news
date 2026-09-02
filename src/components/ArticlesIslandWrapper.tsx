@@ -79,6 +79,10 @@ export default function ArticlesIslandWrapper({ initialArticles = [], now = 0 }:
   const { company, topics, q } = filters;
   const stableFilters = useMemo<ArticleFilters>(() => ({ company, topics, q }), [company, topics, q]);
   const isDefault = company === "All" && !(topics && topics.length) && !(q && q.trim());
+  const clearFeedFilters = () => {
+    setFilters({ company: "All", topics: [], q: "" });
+    setView("all");
+  };
 
   const lastInitialArticle = initialArticles.at(-1);
   const initialData: InfiniteData<PageData, FeedCursor | null> | undefined =
@@ -110,7 +114,13 @@ export default function ArticlesIslandWrapper({ initialArticles = [], now = 0 }:
             savedCount={readState.saved.size}
           />
         </div>
-        <ArticleListIsland density={density} view={view} readState={readState} now={now} />
+        <ArticleListIsland
+          density={density}
+          view={view}
+          readState={readState}
+          now={now}
+          onClearFilters={clearFeedFilters}
+        />
       </ArticlesProvider>
     </QueryClientProvider>
   );

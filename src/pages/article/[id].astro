@@ -113,6 +113,10 @@ function shortDate(value: string): string {
   return Number.isNaN(date.getTime()) ? "Undated" : shortDateFormatter.format(date);
 }
 
+function readableType(value: string): string {
+  return value.replaceAll("_", " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
+}
+
 const excerpt = articleExcerpt(article);
 const source = intelligenceSources.find((candidate) => candidate.sourceKey === article.source_key);
 const previewWasTruncated = cleanText(article.content || article.summary || "").length > excerpt.length;
@@ -219,27 +223,33 @@ const structuredData = {
         </div>
       )}
 
-      <section class="mt-10 border border-white/15 bg-bg-1 p-5" aria-labelledby="source-receipt-heading">
-        <p class="micro-label text-brand-hover">Primary evidence</p>
-        <h2 id="source-receipt-heading" class="mt-2 text-xl font-bold text-white">Source receipt</h2>
+      <section class="mt-10 border border-white/15 bg-bg-1 p-5" aria-labelledby="source-details-heading">
+        <h2 id="source-details-heading" class="text-xl font-bold text-white">Where this came from</h2>
         <p class="mt-3 max-w-2xl text-sm leading-relaxed text-text-2">
-          The title and excerpt are the publisher&apos;s own. AI News records the source, publication time, and permanent local route without generating a replacement summary.
+          The title and excerpt come from the publisher. AI News records the source and publication time without generating a replacement summary.
         </p>
         <dl class="mt-5 grid gap-px bg-white/15 sm:grid-cols-2">
           <div class="bg-bg-0 p-4"><dt class="micro-label text-muted">Publisher</dt><dd class="mt-2 text-sm text-white">{article.company}</dd></div>
           <div class="bg-bg-0 p-4"><dt class="micro-label text-muted">Published</dt><dd class="mt-2 font-mono text-sm text-white">{dateLabel}</dd></div>
-          <div class="bg-bg-0 p-4"><dt class="micro-label text-muted">Record type</dt><dd class="mt-2 font-mono text-sm uppercase text-white">{article.item_type || source?.itemType || "Other"}</dd></div>
-          <div class="bg-bg-0 p-4"><dt class="micro-label text-muted">Source role</dt><dd class="mt-2 font-mono text-sm uppercase text-white">{source?.sourceRole || "Publisher feed"}</dd></div>
-          <div class="bg-bg-0 p-4"><dt class="micro-label text-muted">Source key</dt><dd class="mt-2 break-all font-mono text-sm text-white">{article.source_key || source?.sourceKey || "Legacy cache record"}</dd></div>
-          <div class="bg-bg-0 p-4"><dt class="micro-label text-muted">Registry verified</dt><dd class="mt-2 font-mono text-sm text-white">{source?.verifiedAt || "Legacy cache admission"}</dd></div>
+          <div class="bg-bg-0 p-4"><dt class="micro-label text-muted">Update type</dt><dd class="mt-2 text-sm text-white">{readableType(article.item_type || source?.itemType || "Other")}</dd></div>
+          <div class="bg-bg-0 p-4"><dt class="micro-label text-muted">Source added</dt><dd class="mt-2 font-mono text-sm text-white">{source?.verifiedAt || "Older imported record"}</dd></div>
         </dl>
+        {(article.source_key || source?.sourceKey) && (
+          <details class="mt-4 border-t border-white/15 pt-4">
+            <summary class="micro-label cursor-pointer text-text-2 hover:text-white focus-industrial">Technical source details</summary>
+            <dl class="mt-3 grid gap-3 text-xs sm:grid-cols-2">
+              <div><dt class="micro-label text-muted">Source type</dt><dd class="mt-1 text-text-2">{readableType(source?.sourceRole || "Publisher feed")}</dd></div>
+              <div><dt class="micro-label text-muted">Source ID</dt><dd class="mt-1 break-all font-mono text-text-2">{article.source_key || source?.sourceKey}</dd></div>
+            </dl>
+          </details>
+        )}
       </section>
 
       {source && (
         <section class="mt-6" aria-labelledby="source-health-heading">
           <div class="mb-3 flex flex-wrap items-baseline justify-between gap-3">
-            <h2 id="source-health-heading" class="text-lg font-bold text-white">Current fetch health</h2>
-            <span class="micro-label text-text-2">Live receipt, separate from registry verification</span>
+            <h2 id="source-health-heading" class="text-lg font-bold text-white">Current source status</h2>
+            <span class="micro-label text-text-2">Checked independently from the published date</span>
           </div>
           <SourceHealthReceipt
             client:load

@@ -9,13 +9,12 @@ const rows = digest.stories.map((article) => ({ article }));
 <section class="industrial-container py-10 md:py-14">
   <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-end">
     <div class="reveal-stagger">
-      <p class="micro-label mb-5 text-brand-hover">[ Daily intelligence digest ]</p>
       <h1 class="macro-heading">{digest.label}</h1>
-      <p class="mt-6 max-w-3xl text-lg leading-relaxed text-text-2">Every cached primary-source update published on this UTC date, ordered by publication time.</p>
+      <p class="mt-6 max-w-3xl text-lg leading-relaxed text-text-2">Every update collected from official sources on this UTC date, ordered by publication time.</p>
     </div>
     <dl class="grid grid-cols-3 gap-px bg-white/15 industrial-border">
       <div class="bg-bg-0 p-4"><dt class="micro-label text-muted">Updates</dt><dd class="mt-2 font-mono text-2xl text-white">{digest.count}</dd></div>
-      <div class="bg-bg-0 p-4"><dt class="micro-label text-muted">Entities</dt><dd class="mt-2 font-mono text-2xl text-white">{digest.entities}</dd></div>
+      <div class="bg-bg-0 p-4"><dt class="micro-label text-muted">Publishers</dt><dd class="mt-2 font-mono text-2xl text-white">{digest.entities}</dd></div>
       <div class="bg-bg-0 p-4"><dt class="micro-label text-muted">Major</dt><dd class="mt-2 font-mono text-2xl text-white">{digest.majorCount}</dd></div>
     </dl>
   </div>

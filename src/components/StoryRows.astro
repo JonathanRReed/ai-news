@@ -14,7 +14,7 @@ interface Props {
   emptyMessage?: string;
 }
 
-const { rows, emptyMessage = "No cached stories yet." } = Astro.props as Props;
+const { rows, emptyMessage = "No stories are available yet." } = Astro.props as Props;
 const dateLabel = (iso: string) => new Intl.DateTimeFormat("en-US", {
   month: "short", day: "numeric", year: "numeric", timeZone: "UTC",
 }).format(new Date(iso));

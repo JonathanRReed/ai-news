@@ -24,8 +24,8 @@ const { entities, articleCounts = {} } = Astro.props as Props;
             <img src={logo} alt={companyLogoAlt(entity.name)} width="28" height="28" class="h-7 w-7 object-contain" loading={index < 8 ? "eager" : "lazy"} decoding="async" />
           </span>
           <div class="min-w-0">
-            <h2 class="truncate text-lg font-bold text-white">{entity.name}</h2>
-            <p class="micro-label text-text-2">{entityTypeLabel(entity.entityType)}</p>
+            <h2 class="text-pretty break-words text-lg font-bold text-white">{entity.name}</h2>
+            <p class="micro-label text-text-2">{entity.entityType === "harness" ? "Agent tool" : entityTypeLabel(entity.entityType)}</p>
           </div>
         </div>
         <dl class="grid grid-cols-2 gap-px bg-white/15 font-mono text-xs uppercase tracking-[0.06em]">
@@ -34,7 +34,7 @@ const { entities, articleCounts = {} } = Astro.props as Props;
             <dd class="mt-1 text-white">{activeSources.length}/{sources.length}</dd>
           </div>
           <div class="bg-bg-0 p-3">
-            <dt class="text-muted">Cached</dt>
+            <dt class="text-muted">Updates</dt>
             <dd class="mt-1 text-white">{articleCounts[entity.slug] ?? 0}</dd>
           </div>
         </dl>
@@ -42,7 +42,7 @@ const { entities, articleCounts = {} } = Astro.props as Props;
           {covered ? "Active first-party coverage" : "Source watchlist"}
         </p>
         <a href={`/entities/${entity.slug}/`} class="mt-auto pt-5 font-mono text-xs uppercase tracking-[0.08em] text-white underline decoration-brand decoration-2 underline-offset-4 hover:text-brand-hover focus-industrial">
-          Open intelligence page
+          View news and sources
         </a>
       </article>
     );

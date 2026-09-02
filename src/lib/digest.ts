@@ -1,5 +1,4 @@
 import { allArticles } from "./feeds.js";
-import { importanceScore } from "./articleTags.js";
 import type { Article } from "../types/article.js";
 
 // ISO-ish week key = the Monday (UTC) of the week the article was published.
@@ -24,9 +23,9 @@ export interface DigestWeek {
   topStories: Article[];
 }
 
-export function digestWeeks(maxWeeks = 8, minArticles = 5): DigestWeek[] {
+export function digestWeeks(maxWeeks = 8, minArticles = 5, articles: Article[] = allArticles()): DigestWeek[] {
   const byWeek = new Map<string, Article[]>();
-  for (const article of allArticles()) {
+  for (const article of articles) {
     const key = weekKeyOf(article.published_at);
     if (!key) continue;
     const list = byWeek.get(key) ?? [];
@@ -38,15 +37,18 @@ export function digestWeeks(maxWeeks = 8, minArticles = 5): DigestWeek[] {
     .sort((a, b) => b[0].localeCompare(a[0]))
     .slice(0, maxWeeks)
     .map(([week, items]) => {
-      // Score recency relative to the end of that week so within-week recency is meaningful.
-      const weekEnd = new Date(`${week}T00:00:00Z`).getTime() + 6 * 86400000;
-      const ranked = [...items].sort((a, b) => importanceScore(b, weekEnd) - importanceScore(a, weekEnd));
+      const latest = [...items].sort(
+        (a, b) => (
+          new Date(b.published_at).getTime() - new Date(a.published_at).getTime()
+          || b.id.localeCompare(a.id)
+        ),
+      );
       return {
         week,
         label: weekLabel(week),
         count: items.length,
         labs: new Set(items.map((i) => i.company)).size,
-        topStories: ranked.slice(0, 8),
+        topStories: latest.slice(0, 8),
       };
     });
 }

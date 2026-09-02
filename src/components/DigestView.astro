@@ -18,10 +18,9 @@ function dateLabel(iso: string): string {
 
 <section class="industrial-container py-10 md:py-14">
   <div class="max-w-5xl reveal-stagger">
-    <p class="micro-label mb-5 text-brand-hover">[ This week in AI ]</p>
     <h1 class="macro-heading max-w-4xl">{digest.label}</h1>
     <p class="mt-6 max-w-2xl text-lg leading-relaxed text-text-2">
-      The week's top stories, ranked out of {digest.count} posts from {digest.labs} labs.
+      The {digest.topStories.length} latest {digest.topStories.length === 1 ? "story" : "stories"} from {digest.count} updates published by {digest.labs} sources this week.
     </p>
   </div>
 </section>
@@ -34,7 +33,7 @@ function dateLabel(iso: string): string {
       const excerpt = articleExcerpt(article);
       return (
         <li class="grid grid-cols-[auto_minmax(0,1fr)] gap-4 border-b border-white/15 py-6 md:gap-6">
-          <span class="font-mono text-2xl font-black tabular-nums text-muted md:text-3xl">{String(index + 1).padStart(2, "0")}</span>
+          <span class="font-mono text-sm tabular-nums text-muted md:text-base">{String(index + 1).padStart(2, "0")}</span>
           <div>
             <div class="mb-2 flex items-center gap-3">
               {logo && (

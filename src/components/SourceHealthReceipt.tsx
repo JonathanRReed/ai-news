@@ -24,6 +24,30 @@ type FallbackSource = {
   verifiedAt: string;
 };
 
+const HEALTH_STATES = new Set<SourceHealth["health"]>(["healthy", "stale", "failing", "pending", "inactive"]);
+
+function validDate(value: unknown): value is string | null {
+  return value === null || (typeof value === "string" && Number.isFinite(Date.parse(value)));
+}
+
+function isSourceHealth(value: unknown): value is SourceHealth {
+  if (!value || typeof value !== "object") return false;
+  const source = value as Record<string, unknown>;
+  return (
+    typeof source.source_key === "string"
+    && typeof source.name === "string"
+    && typeof source.active === "boolean"
+    && validDate(source.last_checked_at)
+    && validDate(source.last_success_at)
+    && validDate(source.last_item_at)
+    && typeof source.consecutive_failures === "number"
+    && Number.isInteger(source.consecutive_failures)
+    && source.consecutive_failures >= 0
+    && typeof source.health === "string"
+    && HEALTH_STATES.has(source.health as SourceHealth["health"])
+  );
+}
+
 function dateTime(value: string | null): string {
   if (!value) return "Not recorded";
   const date = new Date(value);
@@ -75,8 +99,12 @@ export default function SourceHealthReceipt({
       .then(async (response) => {
         if (!response.ok) throw new Error(`source health responded ${response.status}`);
         const payload: unknown = await response.json();
-        if (!Array.isArray(payload)) throw new Error("source health returned an invalid payload");
-        setRows(payload as SourceHealth[]);
+        if (!Array.isArray(payload) || !payload.every(isSourceHealth)) throw new Error("source health returned an invalid payload");
+        if (payload.length === 0) {
+          setState("fallback");
+          return;
+        }
+        setRows(payload);
         setState("live");
       })
       .catch(() => {
@@ -93,11 +121,11 @@ export default function SourceHealthReceipt({
             <div className="flex flex-wrap items-center justify-between gap-2">
               <strong className="text-sm text-white">{source.name}</strong>
               <span className="micro-label border border-white/20 px-2 py-1 text-text-2">
-                {state === "loading" ? "Checking" : source.active ? "Registry active" : "Registry inactive"}
+                {state === "loading" ? "Checking" : source.active ? "Tracked" : "Not active"}
               </span>
             </div>
             <p className="micro-label mt-3 text-text-2">
-              Registry admission verified {source.verifiedAt}. Live fetch health is {state === "loading" ? "loading" : "unavailable"}.
+              Source added {source.verifiedAt}. Current fetch status is {state === "loading" ? "loading" : "unavailable"}.
             </p>
           </article>
         ))}

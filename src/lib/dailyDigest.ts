@@ -40,6 +40,7 @@ export function dailyDigests(articles: Article[] = allArticles()): DailyDigest[]
     .map(([day, stories]) => {
       const ordered = stories.slice().sort((a, b) => (
         new Date(b.published_at).getTime() - new Date(a.published_at).getTime()
+        || b.id.localeCompare(a.id)
       ));
       return {
         day,
