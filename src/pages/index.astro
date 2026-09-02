@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ArticlesIslandWrapper from "../components/ArticlesIslandWrapper.tsx";
+import SourceHealthOverview from "../components/SourceHealthOverview.tsx";
 import providerArticles from "../../public/data/provider-articles.json";
 import { digestWeeks } from "../lib/digest.js";
 import { admittedArticles } from "../lib/articleAdmission.js";
@@ -160,6 +161,9 @@ const collectionStructuredData = {
         <a href="/harnesses/" class="col-span-12 p-5 text-white hover:text-brand-hover focus-industrial sm:col-span-6 lg:col-span-3"><span class="micro-label text-brand-hover">03 · Tools</span><strong class="mt-2 block text-xl">Harnesses</strong><span class="mt-2 block text-sm leading-relaxed text-text-2">Hermes, OpenClaw, OpenHands, and the agent stack.</span></a>
         <a href="/digest/daily/" class="col-span-12 p-5 text-white hover:text-brand-hover focus-industrial sm:col-span-6 lg:col-span-3"><span class="micro-label text-brand-hover">04 · Archive</span><strong class="mt-2 block text-xl">Daily digests</strong><span class="mt-2 block text-sm leading-relaxed text-text-2">Permanent date pages, newest first.</span></a>
       </nav>
+    </section>
+    <section class="industrial-container pb-8">
+      <SourceHealthOverview client:load registryActive={activeSourceCount} />
     </section>
     {latestDigest && (
       <section class="industrial-container pb-2">

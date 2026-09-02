@@ -9,6 +9,7 @@ import type { ReadState } from "../hooks/useReadState.js";
 import type { FeedView } from "./ArticlesIslandWrapper.js";
 import { boundedSearchTerms } from "../lib/intelligenceClient.js";
 import { articleExcerpt, truncateArticleExcerpt } from "../lib/articleExcerpt.js";
+import { articlePath } from "../lib/articleRoutes.js";
 
 const EXPANDED_PREVIEW_MAX_LENGTH = 1_600;
 
@@ -80,6 +81,11 @@ function itemTypeLabel(itemType?: string): string | null {
   switch (itemType) {
     case "announcement": return "Announcement";
     case "release": return "Release";
+    case "model_release": return "Model release";
+    case "harness_release": return "Harness release";
+    case "api_change": return "API change";
+    case "security": return "Security";
+    case "deprecation": return "Deprecation";
     case "research": return "Research";
     case "benchmark": return "Benchmark";
     case "documentation": return "Docs";
@@ -144,6 +150,7 @@ function ArticleCard({
   const [expanded, setExpanded] = useState(false);
   const logoPath = resolveCompanyLogo(article.company);
   const safeUrl = getSafeArticleUrl(article.url);
+  const localUrl = articlePath(article.id);
   const domain = getDomain(article.url);
   const topics = deriveTopics(article).slice(0, 3);
   const minutes = readingMinutes(article);
@@ -178,11 +185,9 @@ function ArticleCard({
       </div>
 
       <Heading className={`${titleSize} mb-2 font-bold leading-tight text-white text-pretty`}>
-        {safeUrl ? (
+        {localUrl ? (
           <a
-            href={safeUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={localUrl}
             onClick={() => onOpen(article.id)}
             className="decoration-brand decoration-2 underline-offset-4 transition-colors hover:text-brand-hover hover:underline focus-industrial"
           >
@@ -201,6 +206,17 @@ function ArticleCard({
           <span key={key} className="text-text-2">· {topicLabel(key)}</span>
         ))}
         {minutes > 0 && <span className="tabular-nums">· Estimated source length: {minutes} min</span>}
+        {safeUrl && (
+          <a
+            href={safeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => onOpen(article.id)}
+            className="text-white underline decoration-brand/70 underline-offset-4 hover:text-brand-hover focus-industrial"
+          >
+            Original source
+          </a>
+        )}
       </div>
 
       {showExcerpt && excerpt && (
@@ -422,10 +438,10 @@ export default function ArticleListIsland({
         case "o":
         case "Enter": {
           const a = orderedArticles[selectedIndexRef.current];
-          const url = a ? getSafeArticleUrl(a.url) : "";
+          const url = a ? articlePath(a.id) : "";
           if (a && url) {
             markSeen(a.id);
-            window.open(url, "_blank", "noopener");
+            window.location.assign(url);
           }
           break;
         }
@@ -667,7 +683,7 @@ export default function ArticleListIsland({
             {[
               ["j / ↓", "Next story"],
               ["k / ↑", "Previous story"],
-              ["o / ↵", "Open the source"],
+              ["o / ↵", "Open the source receipt"],
               ["s", "Save or unsave"],
               ["m", "Mark as read"],
               ["/", "Focus search"],

@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import StoryRows from "../../components/StoryRows.astro";
 import EntityWatchButton from "../../components/EntityWatchButton.tsx";
+import SourceHealthReceipt from "../../components/SourceHealthReceipt.tsx";
 import { allArticles, SITE_URL } from "../../lib/feeds.js";
 import {
   entityForArticle,
@@ -70,7 +71,17 @@ const rows = articles.map((article) => ({ article }));
         <h2 class="text-2xl font-bold text-white">Source ledger</h2>
         <span class="micro-label text-text-2">Verified dates are registry admission checks</span>
       </div>
-      <div class="industrial-grid">
+      <SourceHealthReceipt
+        client:load
+        sourceKeys={sources.map((source) => source.sourceKey)}
+        fallbacks={sources.map((source) => ({
+          sourceKey: source.sourceKey,
+          name: source.name,
+          active: source.active,
+          verifiedAt: source.verifiedAt,
+        }))}
+      />
+      <div class="industrial-grid mt-4">
         {sources.map((source) => (
           <article class="col-span-12 p-5 md:col-span-6 lg:col-span-4">
             <div class="flex items-start justify-between gap-4">
