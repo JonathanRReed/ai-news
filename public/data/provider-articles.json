@@ -1,5 +1,29 @@
 [
   {
+    "id": "ebbce561-e18e-54a1-a109-d8b425a74049",
+    "company": "NVIDIA AI",
+    "title": "NVIDIA to Acquire Hugging Face",
+    "url": "https://blogs.nvidia.com/blog/nvidia-to-acquire-hugging-face/",
+    "published_at": "2026-09-03T11:59:49+00:00",
+    "source_type": "rss_official",
+    "summary": "I’m excited to announce that NVIDIA has agreed to acquire Hugging Face for $12,930,300,000. Together, we will scale Hugging Face’s platform, strengthen its infrastructure and expand access to AI for developers and institutions worldwide. Over the past decade, Clem, Julien, Thomas and the team at Hugging Face have built something remarkable: a vibrant home for […]",
+    "content": "I’m excited to announce that NVIDIA has agreed to acquire Hugging Face for $12,930,300,000. Together, we will scale Hugging Face’s platform, strengthen its infrastructure and expand access to AI for developers and institutions worldwide. Over the past decade, Clem, Julien, Thomas and the team at Hugging Face have built something remarkable: a vibrant home for the open model developer community. More than 18 million developers, researchers and creators use Hugging Face to share more than 3 million models, 500,000 datasets and 1 million applications. More than 200,000 companies use the platform to discover, evaluate, customize and deploy AI. Hugging Face will remain an open platform for the entire AI ecosystem. Developers will choose the models they want, the frameworks they want, the clouds and inference service providers they want and the computing platforms they want. NVIDIA compute will not be required to build on or deploy through Hugging Face. Hugging Face will continue to support open source and open weight models from across the ecosystem, from every model builder. It will continue to support multi-cloud and multi-accelerator development and deployment, so builders can use the hardware and infrastructure that best fit their work. Recently, I coauthored an open letter on the importance of open weights to the AI economy. Joined by leaders from across the industry, we made a simple point: open weights broaden access to AI and help ensure that AI leadership is distributed across companies, institutions and communities. Open models let startups, businesses, universities and public institutions build on advanced capabilities without training every model from scratch. They enable organizations to match the right model to the right job. That is how AI can advance safely, strengthen cybersecurity and sovereignty, accelerate innovation, and reach factories, hospitals, farms, classrooms and Main Street businesses around the world. AI advances faster when people can build together. NVIDIA has been committed to open weight models for years, demonstrated by multiyear investments and major contributions to open source platforms, including Hugging Face. NVIDIA has said that open models, data and tools broaden access to AI, and it has contributed hundreds of open models and datasets to Hugging Face as part of that effort. NVIDIA is the largest contributor of open models and data to Hugging Face, and our contributions continue to grow. NVIDIA has released more than 500 models on Hugging Face and more than 250 open datasets. We build our own models, libraries and tools in the open so developers everywhere can use them, modify them and build on top of them. As the opportunity for open models accelerates, Hugging Face can serve the global AI community at unprecedented scale. NVIDIA’s infrastructure, engineering and global reach can help improve platform reliability, safety, model evaluation, inference and deployment capabilities, while preserving the open ecosystem that made Hugging Face foundational. I am honored that Clem came to me as he considered the next chapter of Hugging Face and believed NVIDIA would be a great home for the company, its community and the future of open models. We share this vision, and the Hugging Face team will now bring their passion and expertise to a much larger canvas, with their same iconic brand. To the millions of builders on Hugging Face: thank you for pushing the boundaries of what is possible. We can’t wait to build the future together with you. Together, we will make AI more open, more capable and more accessible to people and institutions around the world.",
+    "source_url": "https://blogs.nvidia.com/feed/",
+    "source_key": "nvidia-blog"
+  },
+  {
+    "id": "43e6a604-f7c4-53c2-933c-c8b4a059fb70",
+    "company": "Codex CLI",
+    "title": "0.154.0-alpha.1",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.154.0-alpha.1",
+    "published_at": "2026-09-03T09:33:04+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.154.0-alpha.1",
+    "content": "Release 0.154.0-alpha.1",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
     "id": "9b000db6-be74-5a35-9fbb-f455f584dcc6",
     "company": "Cline",
     "title": "Desktop v0.0.23-beta.1",
@@ -34,6 +58,42 @@
     "content": "Release 0.153.0-alpha.5.1",
     "source_url": "https://github.com/openai/codex/releases.atom",
     "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "875bc641-3bcc-5fba-9e8f-c9400a3b61d6",
+    "company": "Hugging Face",
+    "title": "Give Your Coding Agents a Memory You Own",
+    "url": "https://huggingface.co/blog/funes",
+    "published_at": "2026-09-03T00:00:00+00:00",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://huggingface.co/blog/feed.xml",
+    "source_key": "hugging-face-blog"
+  },
+  {
+    "id": "3a944d91-8071-5566-8b5d-a654e9b548c3",
+    "company": "Hugging Face",
+    "title": "Fine-tuning a 350M Model for Better Structured Outputs in 100 GRPO Steps",
+    "url": "https://huggingface.co/blog/grpo-with-trl-ifstruct",
+    "published_at": "2026-09-03T00:00:00+00:00",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://huggingface.co/blog/feed.xml",
+    "source_key": "hugging-face-blog"
+  },
+  {
+    "id": "354f9b3e-a54e-5d33-93e6-3d618506bac7",
+    "company": "Hugging Face",
+    "title": "Training a coding model to paint watercolours with TRL and OpenEnv",
+    "url": "https://huggingface.co/blog/train-to-paint-with-code",
+    "published_at": "2026-09-03T00:00:00+00:00",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://huggingface.co/blog/feed.xml",
+    "source_key": "hugging-face-blog"
   },
   {
     "id": "b2477253-048d-5e3c-a319-5ed0b60a3a00",
