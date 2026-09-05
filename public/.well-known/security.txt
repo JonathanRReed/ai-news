@@ -1,6 +1,6 @@
 # Security contact for ai-news.helloworldfirm.com
 Contact: https://ai-news.helloworldfirm.com/contact/
-Contact: https://jonathanrreed.com/
+Contact: https://jonathanrreed.com/contact/
 Expires: 2027-09-01T00:00:00.000Z
 Preferred-Languages: en
 Canonical: https://ai-news.helloworldfirm.com/.well-known/security.txt
