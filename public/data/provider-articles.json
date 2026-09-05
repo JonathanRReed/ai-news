@@ -1,5 +1,41 @@
 [
   {
+    "id": "d6b97c3f-2c02-56b1-99d0-d3858552966c",
+    "company": "OpenClaw",
+    "title": "release-publish/d0c0a2c229b0-1788632460",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/release-publish%2Fd0c0a2c229b0-1788632460",
+    "published_at": "2026-09-05T18:20:11+00:00",
+    "source_type": "rss_official",
+    "summary": "fix(ci): unblock releases with different tooling package managers ( #1 …",
+    "content": "fix(ci): unblock releases with different tooling package managers ( #1 …",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
+  },
+  {
+    "id": "75550331-9f76-54a3-9ccd-459c0b56d61e",
+    "company": "OpenClaw",
+    "title": "v2026.9.2",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.9.2",
+    "published_at": "2026-09-05T17:28:24+00:00",
+    "source_type": "rss_official",
+    "summary": "OpenClaw 2026.9.2",
+    "content": "OpenClaw 2026.9.2",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
+  },
+  {
+    "id": "6587d8b3-25ad-5ec3-98aa-f1515cb6df75",
+    "company": "OpenClaw",
+    "title": "release-publish/bcecb3d1d19a-1788627709: fix(ci): unblock Docker smoke tests on current runtimes (#139111)",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/release-publish%2Fbcecb3d1d19a-1788627709",
+    "published_at": "2026-09-05T14:31:51+00:00",
+    "source_type": "rss_official",
+    "summary": "Resolve the Claude Agent SDK through the ACPX-owned adapter so Docker setup retains the SDK-declared CLI version without requiring a root dependency. Exercise matching, missing and stale CLI installs through the real Bash setup. Move the packaged MCP smoke to runtime lease acquisition and dispose its materialized tools before global teardown. Preserve MCP App and tool-policy assertions and remove the obsolete install-command source assertion. Validated with 24 bootstrap and sibling tests,...",
+    "content": "Resolve the Claude Agent SDK through the ACPX-owned adapter so Docker setup retains the SDK-declared CLI version without requiring a root dependency. Exercise matching, missing and stale CLI installs through the real Bash setup. Move the packaged MCP smoke to runtime lease acquisition and dispose its materialized tools before global teardown. Preserve MCP App and tool-policy assertions and remove the obsolete install-command source assertion. Validated with 24 bootstrap and sibling tests, the complete changed-file gate, independent review, and successful exact-head CI. Full authenticated provider qualification remains part of release validation. Co-authored-by: Vincent Koc vincentkoc@ieee.org",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
+  },
+  {
     "id": "a8d6cb7e-a436-53f6-8dbf-8db5c2da7a00",
     "company": "Gemini CLI",
     "title": "Release v0.60.0-nightly.20260905.g85aca163f",
