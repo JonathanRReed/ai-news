@@ -85,9 +85,9 @@ export default function FiltersIsland({ filters, setFilters, density, setDensity
                   type="button"
                   aria-pressed={active}
                   onClick={() => toggleTopic(topic.key)}
-                  className={`min-h-9 border px-3 py-1.5 font-mono text-xs uppercase tracking-[0.06em] transition-colors focus-industrial ${
+                  className={`min-h-9 border px-3 py-1.5 text-xs font-medium transition-colors focus-industrial ${
                     active
-                      ? "border-brand bg-brand text-white"
+                      ? "border-brand bg-brand text-[var(--signal-ink)]"
                       : "border-white/20 text-text-2 hover:border-white/40 hover:text-white"
                   }`}
                 >
@@ -99,7 +99,7 @@ export default function FiltersIsland({ filters, setFilters, density, setDensity
               <button
                 type="button"
                 onClick={() => setFilters((f) => ({ ...f, topics: [] }))}
-                className="min-h-9 px-2 font-mono text-xs uppercase tracking-[0.06em] text-text-2 underline decoration-brand decoration-2 underline-offset-4 hover:text-white focus-industrial"
+                className="min-h-9 px-2 text-xs font-medium text-text-2 underline decoration-brand decoration-2 underline-offset-4 hover:text-white focus-industrial"
               >
                 Clear
               </button>
@@ -114,7 +114,7 @@ export default function FiltersIsland({ filters, setFilters, density, setDensity
                   type="button"
                   aria-pressed={view === v.value}
                   onClick={() => setView(v.value)}
-                  className={`min-h-9 px-3 font-mono text-xs uppercase tracking-[0.06em] transition-colors focus-industrial ${
+                  className={`min-h-9 px-3 text-xs font-medium transition-colors focus-industrial ${
                     i === VIEWS.length - 1 ? "" : "border-r border-white/20"
                   } ${view === v.value ? "bg-white text-bg-0" : "text-text-2 hover:bg-white/10 hover:text-white"}`}
                 >
@@ -128,7 +128,7 @@ export default function FiltersIsland({ filters, setFilters, density, setDensity
               <button
                 type="button"
                 aria-pressed={density === "comfortable"}
-                className={`min-h-9 border-r border-white/20 px-3 font-mono text-xs uppercase tracking-[0.06em] transition-colors focus-industrial ${density === "comfortable" ? "bg-white text-bg-0" : "text-text-2 hover:bg-white/10 hover:text-white"}`}
+                className={`min-h-9 border-r border-white/20 px-3 text-xs font-medium transition-colors focus-industrial ${density === "comfortable" ? "bg-white text-bg-0" : "text-text-2 hover:bg-white/10 hover:text-white"}`}
                 onClick={() => setDensity && setDensity("comfortable")}
               >
                 Comfortable
@@ -136,7 +136,7 @@ export default function FiltersIsland({ filters, setFilters, density, setDensity
               <button
                 type="button"
                 aria-pressed={density === "compact"}
-                className={`min-h-9 px-3 font-mono text-xs uppercase tracking-[0.06em] transition-colors focus-industrial ${density === "compact" ? "bg-white text-bg-0" : "text-text-2 hover:bg-white/10 hover:text-white"}`}
+                className={`min-h-9 px-3 text-xs font-medium transition-colors focus-industrial ${density === "compact" ? "bg-white text-bg-0" : "text-text-2 hover:bg-white/10 hover:text-white"}`}
                 onClick={() => setDensity && setDensity("compact")}
               >
                 Compact

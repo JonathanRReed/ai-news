@@ -77,12 +77,12 @@ export default function SourceHealthOverview({ registryActive }: { registryActiv
         <span className="micro-label text-text-2">Last check {lastCheckedLabel}</span>
       </div>
       <dl className="mt-4 grid grid-cols-2 gap-px bg-white/15 md:grid-cols-4">
-        <div className="bg-bg-0 p-4"><dt className="micro-label text-muted">Checked recently</dt><dd className="mt-2 font-mono text-2xl font-black tabular-nums text-emerald-300">{rows ? counts.healthy : "..."}</dd></div>
-        <div className="bg-bg-0 p-4"><dt className="micro-label text-muted">Delayed</dt><dd className="mt-2 font-mono text-2xl font-black tabular-nums text-amber-200">{rows ? counts.stale : "..."}</dd></div>
-        <div className="bg-bg-0 p-4"><dt className="micro-label text-muted">Unavailable</dt><dd className="mt-2 font-mono text-2xl font-black tabular-nums text-brand-hover">{rows ? counts.failing + counts.pending : "..."}</dd></div>
-        <div className="bg-bg-0 p-4"><dt className="micro-label text-muted">Sources tracked</dt><dd className="mt-2 font-mono text-2xl font-black tabular-nums text-white">{registryActive}</dd></div>
+        <div className="bg-bg-0 p-4"><dt className="micro-label text-muted">Checked recently</dt><dd className="mt-2 font-mono text-2xl font-medium tabular-nums text-ok">{rows ? counts.healthy : "..."}</dd></div>
+        <div className="bg-bg-0 p-4"><dt className="micro-label text-muted">Delayed</dt><dd className="mt-2 font-mono text-2xl font-medium tabular-nums text-warn">{rows ? counts.stale : "..."}</dd></div>
+        <div className="bg-bg-0 p-4"><dt className="micro-label text-muted">Unavailable</dt><dd className="mt-2 font-mono text-2xl font-medium tabular-nums text-brand-hover">{rows ? counts.failing + counts.pending : "..."}</dd></div>
+        <div className="bg-bg-0 p-4"><dt className="micro-label text-muted">Sources tracked</dt><dd className="mt-2 font-mono text-2xl font-medium tabular-nums text-white">{registryActive}</dd></div>
       </dl>
-      {rows && counts.stale > 0 && <p className="mt-4 text-sm leading-relaxed text-amber-200">Some source checks are overdue. Collected stories remain available, but newer updates may be missing.</p>}
+      {rows && counts.stale > 0 && <p className="mt-4 text-sm leading-relaxed text-warn">Some source checks are overdue. Collected stories remain available, but newer updates may be missing.</p>}
       {!rows && !unavailable && <p className="micro-label mt-4 text-text-2">Checking current source status...</p>}
       {!rows && unavailable && <p className="mt-4 text-sm leading-relaxed text-text-2">Current source checks are unavailable. The tracked-source count comes from the latest published site build.</p>}
     </section>

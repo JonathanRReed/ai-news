@@ -172,7 +172,7 @@ function ArticleCard({
     <article data-article-id={article.id} className={`article-card-hoverable group relative border border-white/[0.14] bg-bg-0/90 ${pad} ${selected ? "outline outline-2 outline-brand outline-offset-2" : ""} ${seen ? "opacity-60 hover:opacity-100" : ""}`}>
       <div className="mb-3 flex items-center gap-3 border-b border-white/[0.1] pb-3">
         {logoPath && (
-          <span className={`flex shrink-0 items-center justify-center border border-white/20 bg-white ${isLead ? "h-11 w-11" : "h-9 w-9"}`}>
+          <span className={`flex shrink-0 items-center justify-center border border-white/20 bg-tile ${isLead ? "h-11 w-11" : "h-9 w-9"}`}>
             <img src={logoPath} alt={companyLogoAlt(article.company)} className={isLead ? "h-8 w-8 object-contain" : "h-6 w-6 object-contain"} loading={isLead || tier === "top" ? "eager" : "lazy"} decoding="async" fetchPriority={isLead ? "high" : undefined} width={isLead ? 32 : 24} height={isLead ? 32 : 24} />
           </span>
         )}
@@ -198,7 +198,7 @@ function ArticleCard({
         )}
       </Heading>
 
-      <div className="mb-2 flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[0.68rem] uppercase tracking-[0.06em] text-text-2">
+      <div className="mb-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-text-2">
         {domain && <span className="border border-white/15 px-2 py-0.5 text-white">{domain}</span>}
         <span>{sourceTypeLabel(article.source_type)}</span>
         {typeLabel && <span className="border border-white/15 px-2 py-0.5 text-white">{typeLabel}</span>}
@@ -227,7 +227,7 @@ function ArticleCard({
           {hasMoreExcerpt && (
             <button
               type="button"
-              className="mt-2 font-mono text-[0.68rem] uppercase tracking-[0.08em] text-brand-hover underline decoration-brand/60 underline-offset-4 transition-colors hover:text-white focus-industrial"
+              className="mt-2 text-xs font-medium text-brand-hover underline decoration-brand/60 underline-offset-4 transition-colors hover:text-white focus-industrial"
               aria-expanded={expanded}
               aria-controls={previewId}
               onClick={() => setExpanded((value) => !value)}

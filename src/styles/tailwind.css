@@ -1,2 +1,42 @@
 @config "../../tailwind.config.mjs";
 @import "tailwindcss";
+@import "./ecosystem.css";
+@import "./industrial.css";
+
+/*
+  Channel tokens for Tailwind's slash-opacity syntax. They mirror the
+  ecosystem contract in both themes. "paper" is what the existing markup
+  calls white: full-strength ink, so it flips in light mode.
+*/
+:root {
+  --bg-0: 10 10 10;
+  --bg-1: 18 18 18;
+  --bg-2: 26 26 26;
+  --bg-3: 36 36 36;
+  --text-1: 234 234 234;
+  --text-2: 168 168 168;
+  --muted: 138 138 138;
+  --brand: 230 25 25;
+  --brand-hover: 255 42 42;
+  --line: 234 234 234;
+  --paper: 234 234 234;
+  --ok-ch: 127 209 168;
+  --warn-ch: 224 178 90;
+}
+
+:root[data-theme="light"],
+html.light {
+  --bg-0: 244 242 238;
+  --bg-1: 255 255 255;
+  --bg-2: 235 232 226;
+  --bg-3: 224 220 212;
+  --text-1: 17 17 17;
+  --text-2: 61 61 61;
+  --muted: 92 92 92;
+  --brand: 196 20 20;
+  --brand-hover: 168 15 15;
+  --line: 17 17 17;
+  --paper: 17 17 17;
+  --ok-ch: 31 107 79;
+  --warn-ch: 138 100 32;
+}

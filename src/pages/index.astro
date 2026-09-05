@@ -121,48 +121,52 @@ const collectionStructuredData = {
 >
   <main id="main-content" class="industrial-shell">
     <section class="industrial-container py-10 md:py-14">
-      <div class="grid gap-6 lg:grid-cols-[minmax(0,1fr)_420px] lg:items-end reveal-stagger">
+      <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_400px] lg:items-end reveal-stagger">
         <div class="max-w-5xl">
           <h1 class="macro-heading max-w-5xl">
             See what changed in AI today.
           </h1>
-          <p class="mt-6 max-w-3xl text-lg leading-relaxed text-text-2 md:text-xl">
-            Updates tracked from AI labs, model makers, research teams, and the tools built around them. Each story includes its publisher and original source. No account required.
+          <p class="mt-6 max-w-2xl text-lg leading-relaxed text-text-2 md:text-xl">
+            Updates tracked from AI labs, model makers, research teams, and the tools built around them. Each story keeps its publisher and links to the original source. No account required.
           </p>
+          <div class="mt-6 flex flex-wrap gap-2">
+            <a href="#articles" class="signal-button">Read the latest</a>
+            <a href="/major-updates/" class="ghost-button">Major updates only</a>
+          </div>
         </div>
-        <aside class="industrial-border p-5">
-          <p class="micro-label mb-4 text-text-2">At a glance</p>
+        <aside class="industrial-border p-5" aria-labelledby="at-a-glance-heading">
+          <h2 id="at-a-glance-heading" class="micro-label mb-4 text-text-2">This index right now</h2>
           <dl class="grid grid-cols-2 gap-px bg-white/15">
             <div class="bg-bg-0 p-4">
               <dt class="micro-label text-text-2">Companies and projects</dt>
-              <dd class="mt-2 font-mono text-2xl font-black tabular-nums text-white">{trackedEntityCount}</dd>
+              <dd class="mt-2 font-mono text-2xl font-medium tabular-nums text-white">{trackedEntityCount}</dd>
             </div>
             <div class="bg-bg-0 p-4">
               <dt class="micro-label text-text-2">Active sources</dt>
-              <dd class="mt-2 font-mono text-2xl font-black tabular-nums text-white">{activeSourceCount}</dd>
+              <dd class="mt-2 font-mono text-2xl font-medium tabular-nums text-white">{activeSourceCount}</dd>
             </div>
             <div class="bg-bg-0 p-4">
               <dt class="micro-label text-text-2">Agent tools</dt>
-              <dd class="mt-2 font-mono text-2xl font-black tabular-nums text-white">{harnessCount}</dd>
+              <dd class="mt-2 font-mono text-2xl font-medium tabular-nums text-white">{harnessCount}</dd>
             </div>
             <div class="bg-bg-0 p-4">
               <dt class="micro-label text-text-2">Major updates</dt>
-              <dd class="mt-2 font-mono text-2xl font-black tabular-nums text-white">{majorUpdateCount}</dd>
+              <dd class="mt-2 font-mono text-2xl font-medium tabular-nums text-white">{majorUpdateCount}</dd>
             </div>
           </dl>
           <div class="mt-4 flex flex-wrap items-center justify-between gap-3">
-            <p class="micro-label text-muted">Stories through {newestLabel}</p>
-            <a href="/watchlist/" class="micro-label text-white underline decoration-brand decoration-2 underline-offset-4 hover:text-brand-hover focus-industrial">Open my watchlist</a>
+            <p class="text-xs text-muted">Stories through <span class="font-mono text-text-2">{newestLabel}</span></p>
+            <a href="/watchlist/" class="text-xs font-medium text-white underline decoration-brand decoration-2 underline-offset-4 hover:text-brand-hover focus-industrial">Open my watchlist</a>
           </div>
         </aside>
       </div>
     </section>
     <section class="industrial-container pb-8">
       <nav class="industrial-grid reveal-stagger" aria-label="Browse AI news">
-        <a href="/major-updates/" class="col-span-12 p-5 text-white hover:text-brand-hover focus-industrial sm:col-span-6 lg:col-span-3"><strong class="block text-xl">Major updates</strong><span class="mt-2 block text-sm leading-relaxed text-text-2">Model launches, releases, and other notable changes.</span></a>
-        <a href="/labs/" class="col-span-12 p-5 text-white hover:text-brand-hover focus-industrial sm:col-span-6 lg:col-span-3"><strong class="block text-xl">Labs and providers</strong><span class="mt-2 block text-sm leading-relaxed text-text-2">Z.AI, Kimi, OpenAI, Anthropic, and more.</span></a>
-        <a href="/harnesses/" class="col-span-12 p-5 text-white hover:text-brand-hover focus-industrial sm:col-span-6 lg:col-span-3"><strong class="block text-xl">Agent tools</strong><span class="mt-2 block text-sm leading-relaxed text-text-2">Hermes, OpenClaw, OpenHands, coding agents, and CLIs.</span></a>
-        <a href="/digest/daily/" class="col-span-12 p-5 text-white hover:text-brand-hover focus-industrial sm:col-span-6 lg:col-span-3"><strong class="block text-xl">News by date</strong><span class="mt-2 block text-sm leading-relaxed text-text-2">Browse all collected updates, newest first.</span></a>
+        <a href="/major-updates/" class="col-span-12 p-5 text-white hover:bg-bg-1 focus-industrial sm:col-span-6 lg:col-span-3"><strong class="block text-lg font-semibold">Major updates</strong><span class="mt-2 block text-sm leading-relaxed text-text-2">Model launches, releases, and other notable changes.</span></a>
+        <a href="/labs/" class="col-span-12 p-5 text-white hover:bg-bg-1 focus-industrial sm:col-span-6 lg:col-span-3"><strong class="block text-lg font-semibold">Labs and providers</strong><span class="mt-2 block text-sm leading-relaxed text-text-2">Z.AI, Kimi, OpenAI, Anthropic, and more.</span></a>
+        <a href="/harnesses/" class="col-span-12 p-5 text-white hover:bg-bg-1 focus-industrial sm:col-span-6 lg:col-span-3"><strong class="block text-lg font-semibold">Agent tools</strong><span class="mt-2 block text-sm leading-relaxed text-text-2">Hermes, OpenClaw, OpenHands, coding agents, and CLIs.</span></a>
+        <a href="/digest/daily/" class="col-span-12 p-5 text-white hover:bg-bg-1 focus-industrial sm:col-span-6 lg:col-span-3"><strong class="block text-lg font-semibold">News by date</strong><span class="mt-2 block text-sm leading-relaxed text-text-2">Browse all collected updates, newest first.</span></a>
       </nav>
     </section>
     <section class="industrial-container pb-8">
@@ -172,12 +176,12 @@ const collectionStructuredData = {
       <section class="industrial-container pb-2">
         <div class="industrial-border reveal-stagger p-6 md:p-8">
           <div class="flex flex-wrap items-baseline justify-between gap-3 border-b border-white/15 pb-4">
-            <h2 class="text-xl font-bold text-white">Latest this week</h2>
+            <h2 class="text-xl font-semibold text-white">Latest this week</h2>
             <a
               href="/digest/"
-              class="micro-label text-text-2 underline decoration-brand decoration-2 underline-offset-4 transition-colors hover:text-white focus-industrial"
+              class="text-sm font-medium text-text-2 underline decoration-brand decoration-2 underline-offset-4 transition-colors hover:text-white focus-industrial"
             >
-              See the full digest →
+              See the full digest
             </a>
           </div>
           <ol class="mt-4 space-y-3">

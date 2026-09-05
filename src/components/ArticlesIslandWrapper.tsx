@@ -29,7 +29,8 @@ function urlFilters(): ArticleFilters | null {
   const params = new URLSearchParams(window.location.search);
   const company = params.get("company");
   const topic = params.get("topic");
-  const q = params.get("q");
+  // Sibling sites (AI Stats model passport) link here with ?model=; treat it as a search.
+  const q = params.get("q") || params.get("model");
   if (!company && !topic && !q) return null;
   return {
     company: company || "All",

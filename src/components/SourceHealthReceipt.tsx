@@ -64,9 +64,9 @@ function dateTime(value: string | null): string {
 }
 
 function statusClass(health: SourceHealth["health"]): string {
-  if (health === "healthy") return "border-emerald-400/45 text-emerald-300";
+  if (health === "healthy") return "border-ok/45 text-ok";
   if (health === "failing") return "border-brand/70 text-brand-hover";
-  return "border-amber-300/45 text-amber-200";
+  return "border-warn/45 text-warn";
 }
 
 export default function SourceHealthReceipt({

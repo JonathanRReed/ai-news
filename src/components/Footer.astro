@@ -1,105 +1,84 @@
-<footer class="relative z-10 border-t border-white/20 bg-bg-0">
-  <div class="industrial-container py-8">
-    <div class="flex flex-col items-center gap-5">
-      <a href="/" class="focus-glow transition-opacity duration-200 hover:opacity-80" aria-label="AI News Hub - Home">
-        <img
-          src="/ai_news_logo_assets/ai-news-logo-footer-512w.png"
-          alt="AI News Hub"
-          width="512"
-          height="121"
-          class="h-8 w-auto opacity-70 transition-opacity duration-200 hover:opacity-100"
-          loading="lazy"
-          decoding="async"
-        />
-      </a>
-    </div>
-    <div class="mt-5 flex flex-col gap-6 font-mono text-xs uppercase tracking-[0.08em] text-text-2 md:flex-row md:items-center md:justify-between">
-      <p>{new Date().getFullYear()} &copy; Hello.World Consulting</p>
+---
+const year = new Date().getFullYear();
+const related = [
+  {
+    href: "https://aistats.jonathanrreed.com/",
+    name: "AI Stats",
+    purpose: "How models compare on price, speed, context, and named benchmarks.",
+  },
+  {
+    href: "https://prompt-info.helloworldfirm.com/",
+    name: "Prompt Info",
+    purpose: "What a prompt or recurring workload costs.",
+  },
+  {
+    href: "https://ai-dragrace.jonathanrreed.com/",
+    name: "AI Drag Racing",
+    purpose: "How fast a model responds from your own connection.",
+  },
+  {
+    href: "https://polibench.jonathanrreed.com/",
+    name: "PoliBench",
+    purpose: "Where models land on political questions, and how stable that is.",
+  },
+];
+---
 
-      <nav aria-label="Footer navigation">
-        <ul class="flex flex-wrap gap-5">
-          <li>
-            <a class="link-underline-grow text-white/70 transition-colors duration-200 hover:text-white focus-glow" href="/">
-              Latest
-            </a>
-          </li>
-          <li>
-            <a class="link-underline-grow text-white/70 transition-colors duration-200 hover:text-white focus-glow" href="/major-updates/">
-              Major updates
-            </a>
-          </li>
-          <li>
-            <a class="link-underline-grow text-white/70 transition-colors duration-200 hover:text-white focus-glow" href="/labs/">
-              Labs
-            </a>
-          </li>
-          <li>
-            <a class="link-underline-grow text-white/70 transition-colors duration-200 hover:text-white focus-glow" href="/harnesses/">
-              Agent tools
-            </a>
-          </li>
-          <li>
-            <a class="link-underline-grow text-white/70 transition-colors duration-200 hover:text-white focus-glow" href="/digest/daily/">
-              By date
-            </a>
-          </li>
-          <li>
-            <a class="link-underline-grow text-white/70 transition-colors duration-200 hover:text-white focus-glow" href="/feeds/">
-              Feeds
-            </a>
-          </li>
-          <li>
-            <a class="link-underline-grow text-white/70 transition-colors duration-200 hover:text-white focus-glow" href="/about/">
-              About
-            </a>
-          </li>
-          <li>
-            <a class="link-underline-grow text-white/70 transition-colors duration-200 hover:text-white focus-glow" href="/contact/">
-              Contact
-            </a>
-          </li>
-          <li>
-            <a class="link-underline-grow text-white/70 transition-colors duration-200 hover:text-white focus-glow" href="/privacy/">
-              Privacy
-            </a>
-          </li>
-          <li>
-            <a class="link-underline-grow text-white/70 transition-colors duration-200 hover:text-white focus-glow" href="/subprocessors/">
-              Sub-processors
-            </a>
-          </li>
-          <li>
-            <a class="link-underline-grow text-white/70 transition-colors duration-200 hover:text-white focus-glow" href="/feed.xml">
-              RSS
-            </a>
-          </li>
-          <li>
-            <a class="link-underline-grow text-white/70 transition-colors duration-200 hover:text-white focus-glow" href="https://github.com/JonathanRReed/ai-news" target="_blank" rel="noopener noreferrer">
-              GitHub
-            </a>
-          </li>
-          <li>
-            <a class="link-underline-grow text-white/70 transition-colors duration-200 hover:text-white focus-glow" href="https://JonathanRReed.com/" target="_blank" rel="noopener noreferrer">
-              JonathanRReed.com
-            </a>
-          </li>
-          <li>
-            <a class="link-underline-grow text-white/70 transition-colors duration-200 hover:text-white focus-glow" href="https://aistats.jonathanrreed.com/" target="_blank" rel="noopener noreferrer">
-              AI Stats
-            </a>
-          </li>
-          <li>
-            <a class="link-underline-grow text-white/70 transition-colors duration-200 hover:text-white focus-glow" href="https://ai-dragrace.jonathanrreed.com/" target="_blank" rel="noopener noreferrer">
-              AI Drag Racing
-            </a>
-          </li>
-          <li>
-            <a class="link-underline-grow text-white/70 transition-colors duration-200 hover:text-white focus-glow" href="https://prompt-info.helloworldfirm.com/" target="_blank" rel="noopener noreferrer">
-              Prompt Info
-            </a>
-          </li>
+<footer class="eco-footer">
+  <div class="eco-container">
+    <section class="eco-related" aria-labelledby="related-tools-heading">
+      <h2 id="related-tools-heading" class="eco-related-heading">Related tools by the same author</h2>
+      <div class="eco-related-grid">
+        <div class="eco-related-link" aria-current="true">
+          <strong>AI News</strong>
+          <span>What changed in AI, from the original announcements.</span>
+        </div>
+        {related.map((site) => (
+          <a href={site.href} class="eco-related-link" rel="noopener">
+            <strong>{site.name}</strong>
+            <span>{site.purpose}</span>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <div class="eco-footer-groups">
+      <nav class="eco-footer-group" aria-labelledby="footer-browse-heading">
+        <h2 id="footer-browse-heading">Browse</h2>
+        <ul>
+          <li><a href="/">Latest</a></li>
+          <li><a href="/major-updates/">Major updates</a></li>
+          <li><a href="/labs/">Labs and providers</a></li>
+          <li><a href="/harnesses/">Agent tools</a></li>
+          <li><a href="/digest/daily/">By date</a></li>
+          <li><a href="/stories/">All stories</a></li>
+          <li><a href="/watchlist/">My watchlist</a></li>
         </ul>
       </nav>
+      <nav class="eco-footer-group" aria-labelledby="footer-feeds-heading">
+        <h2 id="footer-feeds-heading">Feeds and data</h2>
+        <ul>
+          <li><a href="/feeds/">Feed builder</a></li>
+          <li><a href="/feed.xml">RSS</a></li>
+          <li><a href="/articles.json">Articles JSON</a></li>
+          <li><a href="/data/provider-feed.json">Provider feed JSON</a></li>
+          <li><a href="https://github.com/JonathanRReed/ai-news" target="_blank" rel="noopener noreferrer">Source on GitHub</a></li>
+        </ul>
+      </nav>
+      <nav class="eco-footer-group" aria-labelledby="footer-site-heading">
+        <h2 id="footer-site-heading">Site</h2>
+        <ul>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="/subprocessors/">Sub-processors</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="eco-footer-meta">
+      <p>By <a href="https://jonathanrreed.com/" rel="author">Jonathan R. Reed</a>. Published by <a href="https://helloworldfirm.com/" rel="noopener">Hello.World Consulting</a>. Every story links to its original source.</p>
+      <p>ai-news.helloworldfirm.com &middot; {year}</p>
     </div>
   </div>
 </footer>

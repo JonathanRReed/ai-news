@@ -9,17 +9,22 @@ export default {
         'text-1': 'rgb(var(--text-1) / <alpha-value>)',
         'text-2': 'rgb(var(--text-2) / <alpha-value>)',
         muted: 'rgb(var(--muted) / <alpha-value>)',
-
         brand: 'rgb(var(--brand) / <alpha-value>)',
         'brand-hover': 'rgb(var(--brand-hover) / <alpha-value>)',
-        focus: 'rgb(var(--text-1) / <alpha-value>)'
+        focus: 'rgb(var(--text-1) / <alpha-value>)',
+        // "white" in this codebase means full-strength ink. It flips with the theme.
+        white: 'rgb(var(--paper) / <alpha-value>)',
+        // Logo tiles stay paper-white in both themes because provider marks are drawn for white.
+        tile: '#ffffff',
+        ok: 'rgb(var(--ok-ch) / <alpha-value>)',
+        warn: 'rgb(var(--warn-ch) / <alpha-value>)',
       },
       backdropBlur: {
         glass: '16px',
       },
       fontFamily: {
-        sans: ['"NebulaSans-Book"', '"Arial Narrow"', 'Arial', 'sans-serif'],
-        mono: ['"IBM Plex Mono"', '"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
+        sans: ['var(--font-sans)'],
+        mono: ['var(--font-mono)'],
       }
     }
   },

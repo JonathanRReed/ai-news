@@ -16,55 +16,55 @@ const navItems: { href: string; label: string; key: Props["currentPage"] }[] = [
 ];
 ---
 
-<header
-  class="sticky top-0 z-50 w-full border-b border-white/[0.12] bg-bg-0/85 backdrop-blur-xl transition-colors duration-300"
->
-  <div
-    class="industrial-container grid min-h-[68px] grid-cols-[1fr_auto] items-center gap-4 md:grid-cols-[1fr_auto_1fr]"
-  >
-    <a
-      href="/"
-      class="group inline-flex min-h-11 items-center gap-3 focus-glow"
-      aria-label="AI News Hub - Home"
-    >
-      <img
-        src="/ai_news_logo_assets/ai-news-logo-normal-512w.png"
-        alt="AI News Hub"
-        width="512"
-        height="128"
-        class="h-9 w-auto transition-all duration-200 group-hover:drop-shadow-[0_0_8px_rgba(230,25,25,0.45)] group-active:scale-95"
-        loading="eager"
-        decoding="async"
-        fetchpriority="high"
-      />
+<header class="eco-header">
+  <div class="eco-container eco-header-inner">
+    <a href="/" class="eco-lockup focus-industrial" aria-label="AI News Hub, home">
+      <svg class="eco-mark" viewBox="0 0 24 24" aria-hidden="true">
+        <rect x="2" y="8" width="2.4" height="8" fill="var(--ink-2)" />
+        <rect x="6" y="5" width="2.4" height="14" fill="var(--ink-1)" />
+        <rect x="10" y="2" width="2.6" height="20" fill="var(--signal)" />
+        <rect x="14.6" y="5" width="2.4" height="14" fill="var(--ink-1)" />
+        <circle cx="20.5" cy="12" r="2.2" fill="var(--signal)" />
+      </svg>
+      <span class="eco-wordmark">AI News</span>
     </a>
 
-    <nav
-      class="hidden items-center border-x border-white/[0.12] md:flex"
-      aria-label="Primary navigation"
-    >
-      {navItems.map((item, index) => (
+    <nav class="eco-nav hidden md:flex" aria-label="Primary navigation">
+      {navItems.map((item) => (
         <a
           href={item.href}
-          class={`micro-label relative inline-flex min-h-[68px] items-center px-3 transition-all duration-200 xl:px-5 ${index === navItems.length - 1 ? "" : "border-r border-white/[0.12]"} ${currentPage === item.key ? "bg-brand text-white" : "text-text-2 hover:bg-white/[0.06] hover:text-white"}`}
+          class="eco-nav-link"
           aria-current={currentPage === item.key ? "page" : undefined}
         >
           {item.label}
-          {currentPage === item.key && (
-            <span class="absolute bottom-0 left-0 h-[2px] w-full bg-white/40" aria-hidden="true" />
-          )}
         </a>
       ))}
     </nav>
 
-    <div
-      class="hidden justify-self-end text-right font-mono text-[0.68rem] uppercase leading-tight tracking-[0.08em] text-text-2 md:block"
-    >
-      <span class="block text-white">Free. No account.</span>
-    </div>
-
-    <div class="flex justify-end md:hidden">
-      <HamburgerMenu client:media="(max-width: 767px)" />
+    <div class="flex items-center gap-2">
+      <span class="hidden text-xs text-text-2 lg:block">Free. No account.</span>
+      <button id="theme-toggle" class="eco-icon-btn eco-theme-toggle" type="button" aria-label="Toggle light and dark theme" title="Toggle light and dark theme">
+        <svg class="eco-icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>
+        </svg>
+        <svg class="eco-icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+        </svg>
+      </button>
+      <div class="flex md:hidden">
+        <HamburgerMenu client:media="(max-width: 767px)" />
+      </div>
     </div>
   </div>
 </header>
+
+<script is:inline>
+  (function () {
+    var button = document.getElementById("theme-toggle");
+    if (!button || button.dataset.bound) return;
+    button.dataset.bound = "1";
+    button.addEventListener("click", function () {
+      if (window.__ecoTheme) window.__ecoTheme.toggle();
+    });
+  })();
+</script>

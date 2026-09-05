@@ -34,7 +34,7 @@ export default function FaqDropdown() {
 
   return (
     <section className="my-12 mx-auto max-w-4xl">
-      <h2 className="mb-8 text-4xl font-black uppercase leading-none text-white">Details</h2>
+      <h2 className="mb-8 text-2xl font-semibold leading-tight text-white">Details</h2>
       <div className="space-y-px bg-white/20">
         {faqs.map((faq, idx) => (
           <div

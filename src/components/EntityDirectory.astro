@@ -20,7 +20,7 @@ const { entities, articleCounts = {} } = Astro.props as Props;
     return (
       <article class="col-span-12 flex min-h-64 flex-col p-5 sm:col-span-6 lg:col-span-4 xl:col-span-3">
         <div class="mb-5 flex items-center gap-3 border-b border-white/15 pb-4">
-          <span class="flex h-10 w-10 shrink-0 items-center justify-center border border-white/20 bg-white">
+          <span class="flex h-10 w-10 shrink-0 items-center justify-center border border-white/20 bg-tile">
             <img src={logo} alt={companyLogoAlt(entity.name)} width="28" height="28" class="h-7 w-7 object-contain" loading={index < 8 ? "eager" : "lazy"} decoding="async" />
           </span>
           <div class="min-w-0">
@@ -28,7 +28,7 @@ const { entities, articleCounts = {} } = Astro.props as Props;
             <p class="micro-label text-text-2">{entity.entityType === "harness" ? "Agent tool" : entityTypeLabel(entity.entityType)}</p>
           </div>
         </div>
-        <dl class="grid grid-cols-2 gap-px bg-white/15 font-mono text-xs uppercase tracking-[0.06em]">
+        <dl class="grid grid-cols-2 gap-px bg-white/15 text-xs font-medium">
           <div class="bg-bg-0 p-3">
             <dt class="text-muted">Sources</dt>
             <dd class="mt-1 text-white">{activeSources.length}/{sources.length}</dd>
@@ -41,7 +41,7 @@ const { entities, articleCounts = {} } = Astro.props as Props;
         <p class={`micro-label mt-4 ${covered ? "text-brand-hover" : "text-text-2"}`}>
           {covered ? "Active first-party coverage" : "Source watchlist"}
         </p>
-        <a href={`/entities/${entity.slug}/`} class="mt-auto pt-5 font-mono text-xs uppercase tracking-[0.08em] text-white underline decoration-brand decoration-2 underline-offset-4 hover:text-brand-hover focus-industrial">
+        <a href={`/entities/${entity.slug}/`} class="mt-auto pt-5 text-xs text-white underline decoration-brand decoration-2 underline-offset-4 hover:text-brand-hover focus-industrial">
           View news and sources
         </a>
       </article>

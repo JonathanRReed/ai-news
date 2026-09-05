@@ -37,7 +37,7 @@ function dateLabel(iso: string): string {
           <div>
             <div class="mb-2 flex items-center gap-3">
               {logo && (
-                <span class="flex h-8 w-8 items-center justify-center border border-white/20 bg-white">
+                <span class="flex h-8 w-8 items-center justify-center border border-white/20 bg-tile">
                   <img src={logo} alt={companyLogoAlt(article.company)} width="22" height="22" class="h-[22px] w-[22px] object-contain" loading={index < 3 ? "eager" : "lazy"} decoding="async" fetchpriority={index === 0 ? "high" : undefined} />
                 </span>
               )}
@@ -53,7 +53,7 @@ function dateLabel(iso: string): string {
               <p class="mt-2 max-w-3xl leading-relaxed text-text-2 text-pretty line-clamp-2">{excerpt}</p>
             )}
             {topics.length > 0 && (
-              <div class="mt-2 flex flex-wrap gap-2 font-mono text-[0.68rem] uppercase tracking-[0.06em] text-text-2">
+              <div class="mt-2 flex flex-wrap gap-2 text-xs text-text-2">
                 {topics.map((key) => <span>· {topicLabel(key)}</span>)}
               </div>
             )}
@@ -75,7 +75,7 @@ function dateLabel(iso: string): string {
           <li>
             <a
               href={`/digest/${w.week}/`}
-              class={`inline-flex min-h-9 items-center border px-3 font-mono text-xs uppercase tracking-[0.06em] transition-colors focus-industrial ${w.week === digest.week ? "border-brand bg-brand text-white" : "border-white/20 text-text-2 hover:border-white/40 hover:text-white"}`}
+              class={`inline-flex min-h-9 items-center border px-3 text-xs font-medium transition-colors focus-industrial ${w.week === digest.week ? "border-brand bg-brand text-[var(--signal-ink)]" : "border-white/20 text-text-2 hover:border-white/40 hover:text-white"}`}
             >
               {w.label.replace("Week of ", "")}
             </a>

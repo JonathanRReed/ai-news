@@ -28,7 +28,7 @@ export default function CompanySelect({ activeCompany, onCompanyChange }: Compan
                 className={`
                 group relative flex h-[84px] w-[96px] shrink-0 snap-center flex-col items-center justify-center bg-bg-0 p-2 transition-all duration-300 sm:w-[120px]
                 ${isActive
-                    ? 'bg-brand text-white'
+                    ? 'bg-brand text-[var(--signal-ink)]'
                     : 'text-text-2 hover:bg-white/10 hover:text-white'
                   }
               `}
@@ -38,7 +38,7 @@ export default function CompanySelect({ activeCompany, onCompanyChange }: Compan
                 onClick={() => onCompanyChange && onCompanyChange(company.name)}
               >
                 <div className={`
-                relative mb-2 flex h-8 w-8 items-center justify-center border border-white/20 bg-white transition-transform duration-300
+                relative mb-2 flex h-8 w-8 items-center justify-center border border-white/20 bg-tile transition-transform duration-300
                 ${isActive ? 'scale-105' : 'group-hover:scale-105'}
               `}>
                   {company.logo ? (
@@ -59,13 +59,13 @@ export default function CompanySelect({ activeCompany, onCompanyChange }: Compan
 
                 <span className={`
                 micro-label max-w-full truncate transition-colors duration-300
-                ${isActive ? 'text-white' : 'text-text-2'}
+                ${isActive ? 'text-[var(--signal-ink)]' : 'text-text-2'}
               `}>
                   {company.name}
                 </span>
 
                 {isActive && (
-                  <span className="absolute bottom-0 left-0 h-1 w-full bg-white" aria-hidden="true"></span>
+                  <span className="absolute bottom-0 left-0 h-1 w-full bg-tile" aria-hidden="true"></span>
                 )}
               </button>
             );

@@ -32,7 +32,7 @@ const rows = digest.stories.map((article) => ({ article }));
     </div>
     <ul class="flex flex-wrap gap-2">
       {allDigests.slice(0, 60).map((item) => (
-        <li><a href={`/digest/daily/${item.day}/`} aria-current={item.day === digest.day ? "page" : undefined} class={`inline-flex min-h-9 items-center border px-3 font-mono text-xs uppercase tracking-[0.06em] focus-industrial ${item.day === digest.day ? "border-brand bg-brand text-white" : "border-white/20 text-text-2 hover:border-white/40 hover:text-white"}`}>{item.day}</a></li>
+        <li><a href={`/digest/daily/${item.day}/`} aria-current={item.day === digest.day ? "page" : undefined} class={`inline-flex min-h-9 items-center border px-3 text-xs font-medium focus-industrial ${item.day === digest.day ? "border-brand bg-brand text-[var(--signal-ink)]" : "border-white/20 text-text-2 hover:border-white/40 hover:text-white"}`}>{item.day}</a></li>
       ))}
     </ul>
   </div>
