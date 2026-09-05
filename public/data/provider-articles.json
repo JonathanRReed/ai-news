@@ -1,5 +1,29 @@
 [
   {
+    "id": "a8d6cb7e-a436-53f6-8dbf-8db5c2da7a00",
+    "company": "Gemini CLI",
+    "title": "Release v0.60.0-nightly.20260905.g85aca163f",
+    "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.60.0-nightly.20260905.g85aca163f",
+    "published_at": "2026-09-05T01:26:55+00:00",
+    "source_type": "rss_official",
+    "summary": "What's Changed fix(extensions): prompt for consent on environment changes and sanitize runtime-altering environment variables by @amelidev in #28863 fix(core): enhance workspace path boundary checks and symlink resolution in command safety and file discovery by @jesussamuel-byte in #29170 fix(config): enforce strict permission and ownership checks on system-wide configuration paths by @jesussamuel-byte in #29115 New Contributors @jesussamuel-byte made their first contribution in #29170 Full...",
+    "content": "What's Changed fix(extensions): prompt for consent on environment changes and sanitize runtime-altering environment variables by @amelidev in #28863 fix(core): enhance workspace path boundary checks and symlink resolution in command safety and file discovery by @jesussamuel-byte in #29170 fix(config): enforce strict permission and ownership checks on system-wide configuration paths by @jesussamuel-byte in #29115 New Contributors @jesussamuel-byte made their first contribution in #29170 Full Changelog : v0.60.0-nightly.20260904.g87a9c71d5...v0.60.0-nightly.20260905.g85aca163f",
+    "source_url": "https://github.com/google-gemini/gemini-cli/releases.atom",
+    "source_key": "gemini-cli-releases"
+  },
+  {
+    "id": "aee9dbd4-1e92-5126-a7ee-068a414c5507",
+    "company": "Codex CLI",
+    "title": "rust-v0.154.0-alpha.4",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.154.0-alpha.4",
+    "published_at": "2026-09-05T00:59:27+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.154.0-alpha.4",
+    "content": "Release 0.154.0-alpha.4",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
     "id": "cf38d168-fad4-5362-8e70-585f4071653e",
     "company": "Codex CLI",
     "title": "0.153.4",
@@ -562,6 +586,18 @@
     "content": "I’m excited to announce that NVIDIA has agreed to acquire Hugging Face for $12,930,300,000. Together, we will scale Hugging Face’s platform, strengthen its infrastructure and expand access to AI for developers and institutions worldwide. Over the past decade, Clem, Julien, Thomas and the team at Hugging Face have built something remarkable: a vibrant home for the open model developer community. More than 18 million developers, researchers and creators use Hugging Face to share more than 3 million models, 500,000 datasets and 1 million applications. More than 200,000 companies use the platform to discover, evaluate, customize and deploy AI. Hugging Face will remain an open platform for the entire AI ecosystem. Developers will choose the models they want, the frameworks they want, the clouds and inference service providers they want and the computing platforms they want. NVIDIA compute will not be required to build on or deploy through Hugging Face. Hugging Face will continue to support open source and open weight models from across the ecosystem, from every model builder. It will continue to support multi-cloud and multi-accelerator development and deployment, so builders can use the hardware and infrastructure that best fit their work. Recently, I coauthored an open letter on the importance of open weights to the AI economy. Joined by leaders from across the industry, we made a simple point: open weights broaden access to AI and help ensure that AI leadership is distributed across companies, institutions and communities. Open models let startups, businesses, universities and public institutions build on advanced capabilities without training every model from scratch. They enable organizations to match the right model to the right job. That is how AI can advance safely, strengthen cybersecurity and sovereignty, accelerate innovation, and reach factories, hospitals, farms, classrooms and Main Street businesses around the world. AI advances faster when people can build together. NVIDIA has been committed to open weight models for years, demonstrated by multiyear investments and major contributions to open source platforms, including Hugging Face. NVIDIA has said that open models, data and tools broaden access to AI, and it has contributed hundreds of open models and datasets to Hugging Face as part of that effort. NVIDIA is the largest contributor of open models and data to Hugging Face, and our contributions continue to grow. NVIDIA has released more than 500 models on Hugging Face and more than 250 open datasets. We build our own models, libraries and tools in the open so developers everywhere can use them, modify them and build on top of them. As the opportunity for open models accelerates, Hugging Face can serve the global AI community at unprecedented scale. NVIDIA’s infrastructure, engineering and global reach can help improve platform reliability, safety, model evaluation, inference and deployment capabilities, while preserving the open ecosystem that made Hugging Face foundational. I am honored that Clem came to me as he considered the next chapter of Hugging Face and believed NVIDIA would be a great home for the company, its community and the future of open models. We share this vision, and the Hugging Face team will now bring their passion and expertise to a much larger canvas, with their same iconic brand. To the millions of builders on Hugging Face: thank you for pushing the boundaries of what is possible. We can’t wait to build the future together with you. Together, we will make AI more open, more capable and more accessible to people and institutions around the world.",
     "source_url": "https://blogs.nvidia.com/feed/",
     "source_key": "nvidia-blog"
+  },
+  {
+    "id": "3a6dc0ba-fc0e-58eb-9507-2ed324fe37c2",
+    "company": "OpenAI",
+    "title": "GPT-6 Astra: A new generation of intelligence",
+    "url": "https://openai.com/index/gpt-6-astra",
+    "published_at": "2026-09-03T11:00:00+00:00",
+    "source_type": "rss_official",
+    "summary": "Introducing GPT-6 Astra, our most intelligent and aligned model yet, with state-of-the-art capabilities across computer use, coding, cybersecurity, and science.",
+    "content": "Introducing GPT-6 Astra, our most intelligent and aligned model yet, with state-of-the-art capabilities across computer use, coding, cybersecurity, and science.",
+    "source_url": "https://openai.com/news/rss.xml",
+    "source_key": "openai-news"
   },
   {
     "id": "43e6a604-f7c4-53c2-933c-c8b4a059fb70",
