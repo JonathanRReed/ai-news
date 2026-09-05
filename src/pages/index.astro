@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { AUTHOR_REF } from "../lib/author.js";
 import ArticlesIslandWrapper from "../components/ArticlesIslandWrapper.tsx";
 import SourceHealthOverview from "../components/SourceHealthOverview.tsx";
 import providerArticles from "../../public/data/provider-articles.json";
@@ -66,14 +67,7 @@ const structuredData = {
   name: "AI News Hub",
   url: siteUrl,
   description,
-  creator: {
-    "@type": "Person",
-    name: "Jonathan R. Reed",
-    url: "https://jonathanrreed.com",
-    sameAs: [
-      "https://github.com/JonathanRReed",
-    ],
-  },
+  creator: AUTHOR_REF,
   publisher: {
     "@type": "Organization",
     name: "Hello.World Consulting",
@@ -91,14 +85,7 @@ const collectionStructuredData = {
   name: title,
   description,
   url: siteUrl,
-  author: {
-    "@type": "Person",
-    name: "Jonathan R. Reed",
-    url: "https://jonathanrreed.com",
-    sameAs: [
-      "https://github.com/JonathanRReed",
-    ],
-  },
+  author: AUTHOR_REF,
   datePublished: "2026-04-21",
   dateModified: latestCacheIso.slice(0, 10),
   isPartOf: {

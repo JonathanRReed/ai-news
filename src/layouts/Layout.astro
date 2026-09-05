@@ -2,6 +2,7 @@
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/tailwind.css";
+import { AUTHOR_PERSON } from "../lib/author.js";
 
 export interface Props {
   title: string;
@@ -24,8 +25,8 @@ const {
   description,
   canonical,
   keywords,
-  ogImage = "https://ai-news.helloworldfirm.com/ai-news-favicon-512x512.png",
-  ogImageAlt = "AI News Hub logo",
+  ogImage = "https://ai-news.helloworldfirm.com/social-card.png",
+  ogImageAlt = "AI News: what changed in AI, from official announcements, dated and linked to the source",
   ogType = "website",
   robots = "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
   currentPage = "none",
@@ -35,7 +36,13 @@ const {
   preloadImages = [],
 } = Astro.props;
 
-const jsonLdBlocks = structuredData ? (Array.isArray(structuredData) ? structuredData : [structuredData]) : [];
+// The author entity rides on every page under the same @id the sibling sites
+// use, so page-level author references merge into one Person.
+const authorBlock = { "@context": "https://schema.org", ...AUTHOR_PERSON };
+const jsonLdBlocks = [
+  authorBlock,
+  ...(structuredData ? (Array.isArray(structuredData) ? structuredData : [structuredData]) : []),
+];
 const imagePreloads = Array.from(new Set([preloadImage, ...preloadImages].filter(Boolean)));
 ---
 

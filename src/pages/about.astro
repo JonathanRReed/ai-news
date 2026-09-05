@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { AUTHOR_PERSON } from "../lib/author.js";
 import FaqDropdown from '../components/FaqDropdown.tsx';
 import { companies } from '../lib/companyCatalog.js';
 import type { CompanyEntry } from '../lib/companyCatalog.js';
@@ -13,15 +14,7 @@ const socialImage = `${siteUrl}/ai-news-favicon-512x512.png`;
 const socialImageAlt = "AI News Hub galaxy-inspired logo";
 const creatorImage = `${siteUrl}/jonathan.avif`;
 const sourceCompanies: CompanyEntry[] = companies.filter((company: CompanyEntry) => company.name !== 'All');
-const creator = {
-  "@type": "Person",
-  name: "Jonathan R. Reed",
-  url: "https://jonathanrreed.com",
-  image: creatorImage,
-  sameAs: [
-    "https://github.com/JonathanRReed",
-  ],
-};
+const creator = { ...AUTHOR_PERSON, image: creatorImage };
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "AboutPage",

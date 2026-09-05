@@ -26,6 +26,7 @@
 - Entity JSON Feed 1.1: `/feed/entity/{slug}.json`
 - Topic RSS: `/feed/topic/{slug}.xml`
 - [Sitemap index](/sitemap-index.xml)
+- [Full listing for assistants](/llms-full.txt): tracked entities, latest major updates, daily digests, and the latest 400 records with official titles, dates, source URLs, and excerpts, generated at build
 
 ## Provenance and behavior
 

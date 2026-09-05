@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { AUTHOR_REF } from "../lib/author.js";
 
 const siteUrl = "https://ai-news.helloworldfirm.com";
 const canonicalUrl = `${siteUrl}/contact/`;
@@ -12,11 +13,7 @@ const structuredData = {
   name: title,
   url: canonicalUrl,
   description,
-  author: {
-    "@type": "Person",
-    name: "Jonathan R Reed",
-    url: "https://jonathanrreed.com",
-  },
+  author: AUTHOR_REF,
   datePublished: "2026-04-21",
   dateModified: "2026-04-21",
   isPartOf: {
