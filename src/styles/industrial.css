@@ -52,6 +52,13 @@
   text-transform: none;
 }
 
+/*
+  .signal-button / .ghost-button are kept alongside .eco-btn-primary / .eco-btn-secondary:
+  these live outside @layer, so they beat any Tailwind utility on the same element, while the
+  eco-* versions sit in @layer components and lose to one (for example `ghost-button bg-bg-1`
+  on the back-to-top button renders transparent today and would render opaque as an eco-btn).
+  The industrial pair wins wherever both could apply; the eco-* pair is the ecosystem contract.
+*/
 .signal-button {
   display: inline-flex;
   min-height: var(--control-h);
@@ -100,30 +107,9 @@
   background: var(--surface-2);
 }
 
-.focus-industrial:focus-visible,
-.focus-glow:focus-visible {
+.focus-industrial:focus-visible {
   outline: 2px solid var(--focus);
   outline-offset: 3px;
-}
-
-.skip-link {
-  position: fixed;
-  left: 1rem;
-  top: 1rem;
-  z-index: 10000;
-  transform: translateY(-140%);
-  background: var(--signal);
-  color: var(--signal-ink);
-  padding: 0.75rem 1rem;
-  font-size: var(--text-sm);
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.skip-link:focus {
-  transform: translateY(0);
-  outline: 2px solid var(--ink-0);
-  outline-offset: 2px;
 }
 
 .hide-scrollbar {
@@ -173,6 +159,12 @@
   color: var(--signal-hover);
 }
 
+.menu-link[aria-current="page"] {
+  color: var(--ink-0);
+  box-shadow: inset 2px 0 0 var(--signal);
+  padding-left: var(--space-3);
+}
+
 /* Cards */
 .article-card-hoverable {
   border-radius: 0;
@@ -200,21 +192,6 @@ html.motion-ready .reveal-stagger.is-visible > * {
 html.motion-ready .reveal-stagger.is-visible > *:nth-child(2) { transition-delay: 40ms; }
 html.motion-ready .reveal-stagger.is-visible > *:nth-child(3) { transition-delay: 80ms; }
 html.motion-ready .reveal-stagger.is-visible > *:nth-child(4) { transition-delay: 120ms; }
-
-.link-underline-grow {
-  text-decoration: none;
-}
-
-.link-underline-grow:hover,
-.link-underline-grow:focus-visible {
-  text-decoration: underline;
-  text-underline-offset: 0.2em;
-}
-
-.cv-auto {
-  contain-intrinsic-size: 1200px;
-  overflow: visible;
-}
 
 @media (prefers-reduced-motion: reduce) {
   html.motion-ready .reveal-stagger > * {

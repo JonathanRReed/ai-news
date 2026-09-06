@@ -1,18 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
+import { PRIMARY_NAV, type NavKey } from "../lib/navigation.js";
 
-const NAV_ITEMS = [
-  { href: "/", label: "Latest" },
-  { href: "/major-updates/", label: "Major updates" },
-  { href: "/labs/", label: "Labs and providers" },
-  { href: "/harnesses/", label: "Agent tools" },
-  { href: "/digest/daily/", label: "News by date" },
-  { href: "/stories/", label: "All stories" },
-  { href: "/watchlist/", label: "My watchlist" },
-  { href: "/feeds/", label: "Feeds" },
-  { href: "/about/", label: "About" },
-];
-
-export default function HamburgerMenu() {
+export default function HamburgerMenu({ currentPage = "none" }: { currentPage?: NavKey }) {
   const [open, setOpen] = useState(false);
   const dialogRef = useRef<HTMLDialogElement>(null);
 
@@ -74,11 +63,12 @@ export default function HamburgerMenu() {
             </svg>
           </button>
           <nav className="flex w-full flex-col divide-y divide-white/10" aria-label="Mobile primary navigation">
-            {NAV_ITEMS.map((item) => (
+            {PRIMARY_NAV.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
                 className="menu-link focus-industrial"
+                aria-current={currentPage === item.key ? "page" : undefined}
                 onClick={() => setOpen(false)}
               >
                 {item.label}

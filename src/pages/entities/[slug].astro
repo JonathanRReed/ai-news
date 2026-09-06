@@ -12,6 +12,7 @@ import {
   isEntityCovered,
 } from "../../lib/intelligenceCatalog.js";
 import type { IntelligenceEntity, IntelligenceSource } from "../../lib/intelligenceCatalog.js";
+import { sourceRoleLabel, transportTypeLabel } from "../../lib/itemTypes.js";
 import type { Article } from "../../types/article.js";
 
 interface Props {
@@ -39,20 +40,9 @@ const publicType = entity.entityType === "harness" ? "Agent tool" : entityTypeLa
 const description = `Tracked ${entity.name} news, releases, research, source status, RSS, JSON, and a free local watchlist.`;
 const rows = articles.map((article) => ({ article }));
 
-function sourceRoleLabel(value: string): string {
-  return value.replaceAll("_", " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
-}
-
-function transportLabel(value: string): string {
-  const normalized = value.toLowerCase();
-  if (normalized === "rss" || normalized === "atom") return `${normalized.toUpperCase()} feed`;
-  if (normalized === "json") return "JSON feed";
-  if (normalized === "html") return "Web page";
-  return sourceRoleLabel(value);
-}
 ---
 
-<Layout title={`${entity.name} News and Releases | AI News Hub`} description={description} canonical={`${SITE_URL}/entities/${entity.slug}/`} currentPage={entity.entityType === "harness" ? "harnesses" : "labs"}>
+<Layout title={`${entity.name} News and Releases | AI News Hub`} description={description} canonical={`${SITE_URL}/entities/${entity.slug}/`} currentPage="none">
   <main id="main-content" class="industrial-shell flex-1">
     <section class="industrial-container py-10 md:py-14">
       <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-end">
@@ -100,7 +90,7 @@ function transportLabel(value: string): string {
               <h3 class="font-bold text-white">{source.name}</h3>
               <span class={`micro-label ${source.active ? "text-brand-hover" : "text-text-2"}`}>{source.active ? "Active" : "Inactive"}</span>
             </div>
-            <p class="micro-label mt-3 text-text-2">{sourceRoleLabel(source.sourceRole)} · {transportLabel(source.transportType)} · added {source.verifiedAt}</p>
+            <p class="micro-label mt-3 text-text-2">{sourceRoleLabel(source.sourceRole)} · {transportTypeLabel(source.transportType)} · added {source.verifiedAt}</p>
             <a href={source.officialUrl} target="_blank" rel="noopener noreferrer" class="micro-label mt-5 inline-block text-white underline decoration-brand decoration-2 underline-offset-4 hover:text-brand-hover focus-industrial">Open official source</a>
           </article>
         ))}

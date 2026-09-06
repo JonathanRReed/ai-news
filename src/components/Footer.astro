@@ -1,5 +1,8 @@
 ---
+import { PRIMARY_NAV } from "../lib/navigation.js";
+
 const year = new Date().getFullYear();
+const browseNav = PRIMARY_NAV.filter((item) => item.key !== "feeds" && item.key !== "about");
 const related = [
   {
     href: "https://aistats.jonathanrreed.com/",
@@ -46,13 +49,9 @@ const related = [
       <nav class="eco-footer-group" aria-labelledby="footer-browse-heading">
         <h2 id="footer-browse-heading">Browse</h2>
         <ul>
-          <li><a href="/">Latest</a></li>
-          <li><a href="/major-updates/">Major updates</a></li>
-          <li><a href="/labs/">Labs and providers</a></li>
-          <li><a href="/harnesses/">Agent tools</a></li>
-          <li><a href="/digest/daily/">By date</a></li>
-          <li><a href="/stories/">All stories</a></li>
-          <li><a href="/watchlist/">My watchlist</a></li>
+          {browseNav.map((item) => (
+            <li><a href={item.href}>{item.label}</a></li>
+          ))}
         </ul>
       </nav>
       <nav class="eco-footer-group" aria-labelledby="footer-feeds-heading">

@@ -1,19 +1,11 @@
 ---
 import HamburgerMenu from "./HamburgerMenu.tsx";
+import { HEADER_NAV, type NavKey } from "../lib/navigation.js";
 
 interface Props {
-  currentPage: "home" | "about" | "major" | "labs" | "harnesses" | "digest" | "feeds" | "stories" | "none";
+  currentPage: NavKey;
 }
 const { currentPage } = Astro.props;
-
-const navItems: { href: string; label: string; key: Props["currentPage"] }[] = [
-  { href: "/", label: "Latest", key: "home" },
-  { href: "/major-updates/", label: "Major", key: "major" },
-  { href: "/labs/", label: "Labs", key: "labs" },
-  { href: "/harnesses/", label: "Agent tools", key: "harnesses" },
-  { href: "/digest/daily/", label: "By date", key: "digest" },
-  { href: "/feeds/", label: "Feeds", key: "feeds" },
-];
 ---
 
 <header class="eco-header">
@@ -29,11 +21,11 @@ const navItems: { href: string; label: string; key: Props["currentPage"] }[] = [
       <span class="eco-wordmark">AI News</span>
     </a>
 
-    <nav class="eco-nav hidden md:flex" aria-label="Primary navigation">
-      {navItems.map((item) => (
+    <nav class="eco-nav hidden lg:flex" aria-label="Primary navigation">
+      {HEADER_NAV.map((item) => (
         <a
           href={item.href}
-          class="eco-nav-link"
+          class="eco-nav-link whitespace-nowrap"
           aria-current={currentPage === item.key ? "page" : undefined}
         >
           {item.label}
@@ -42,7 +34,7 @@ const navItems: { href: string; label: string; key: Props["currentPage"] }[] = [
     </nav>
 
     <div class="flex items-center gap-2">
-      <span class="hidden text-xs text-text-2 lg:block">Free. No account.</span>
+      <span class="hidden text-xs text-text-2 xl:block">Free. No account.</span>
       <button id="theme-toggle" class="eco-icon-btn eco-theme-toggle" type="button" aria-label="Toggle light and dark theme" title="Toggle light and dark theme">
         <svg class="eco-icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>
@@ -51,8 +43,8 @@ const navItems: { href: string; label: string; key: Props["currentPage"] }[] = [
           <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
         </svg>
       </button>
-      <div class="flex md:hidden">
-        <HamburgerMenu client:media="(max-width: 767px)" />
+      <div class="flex lg:hidden">
+        <HamburgerMenu client:media="(max-width: 1023px)" currentPage={currentPage} />
       </div>
     </div>
   </div>

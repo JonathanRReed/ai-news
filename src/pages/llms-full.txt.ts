@@ -33,7 +33,7 @@ export const GET: APIRoute = () => {
     "How to read this file:",
     "- Every item is a first-party source. The title is the publisher's title. The URL is the original post. The excerpt is quoted from the source, not rewritten.",
     "- Dates are the publisher's publication date in UTC.",
-    "- Major Updates are promoted by a published headline rule (named model releases and major harness versions), not by an editorial score.",
+    "- Major updates are promoted by a published headline rule (named model releases and major harness versions), not by an editorial score.",
     "- Each item has a permanent page on this site; cite that page or the original URL.",
     "- Entity pages collect one organization or harness. Search with ?q= on the home page. ?model=<name> preselects a model name.",
     "",

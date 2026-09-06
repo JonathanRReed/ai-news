@@ -7,6 +7,7 @@ import providerArticles from "../../public/data/provider-articles.json";
 import { digestWeeks } from "../lib/digest.js";
 import { admittedArticles } from "../lib/articleAdmission.js";
 import { articleExcerpt } from "../lib/articleExcerpt.js";
+import { articlePath } from "../lib/articleRoutes.js";
 import { resolveCompanyLogo } from "../lib/companyCatalog.js";
 import { activeEntities, intelligenceSources } from "../lib/intelligenceCatalog.js";
 import { majorUpdates } from "../lib/majorUpdates.js";
@@ -176,8 +177,8 @@ const collectionStructuredData = {
               <li class="grid grid-cols-[auto_minmax(0,1fr)] gap-3">
                 <span class="font-mono text-sm tabular-nums text-muted">{String(index + 1).padStart(2, "0")}</span>
                 <a
-                  href={`/article/${article.id}/`}
-                  class="leading-snug text-white decoration-brand decoration-2 underline-offset-4 transition-colors hover:text-brand-hover hover:underline focus-industrial text-pretty"
+                  href={articlePath(article.id)}
+                  class="leading-snug text-white decoration-brand decoration-2 underline-offset-4 transition-colors hover:text-brand-hover hover:underline focus-industrial text-pretty break-words"
                 >
                   <span class="micro-label mr-2 text-text-2">{article.company}</span>{article.title}
                 </a>

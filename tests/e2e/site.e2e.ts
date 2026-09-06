@@ -42,7 +42,7 @@ test("separates labs, harnesses, major updates, and daily digests", async ({ pag
 
   await page.goto("/major-updates/");
   await expect(page.getByText("What counts as major", { exact: true })).toBeVisible();
-  await expect(page.getByText("Named model version announced or released").first()).toBeVisible();
+  await expect(page.getByText("must use release language and name a model version").first()).toBeVisible();
 
   await page.goto("/digest/daily/");
   await expect(page.getByRole("heading", { level: 1 })).toContainText(/\w+, \w+ \d+, \d{4}/);
@@ -87,7 +87,7 @@ test("keeps legacy article routes and feed-builder share links stable", async ({
   await expect.poll(async () => feedBuilder.evaluate((element) => !element.hasAttribute("ssr"))).toBe(true);
   const entitySelect = page.getByLabel("Entity feed");
   const entityPanel = entitySelect.locator("xpath=ancestor::section[1]");
-  const shareLink = entityPanel.getByRole("link", { name: "Share filtered view" });
+  const shareLink = entityPanel.getByRole("link", { name: "Share this entity view" });
 
   await entitySelect.selectOption("hermes-agent");
   await expect(shareLink).toHaveAttribute("href", "/entities/hermes-agent/");

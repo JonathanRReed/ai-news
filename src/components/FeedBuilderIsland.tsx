@@ -16,9 +16,9 @@ export default function FeedBuilderIsland({ entities }: { entities: Intelligence
           {entities.map((item) => <option key={item.slug} value={item.slug}>{item.name}</option>)}
         </select>
         <div className="mt-4 flex flex-wrap gap-3">
-          <a className="signal-button" href={`/feed/entity/${entity}.xml`}>RSS</a>
-          <a className="ghost-button" href={`/feed/entity/${entity}.json`}>JSON</a>
-          <a className="ghost-button" href={shareUrl}>Share filtered view</a>
+          <a className="signal-button" href={`/feed/entity/${entity}.xml`}>Entity RSS</a>
+          <a className="ghost-button" href={`/feed/entity/${entity}.json`}>Entity JSON</a>
+          <a className="ghost-button" href={shareUrl}>Share this entity view</a>
         </div>
       </section>
       <section className="col-span-12 p-5 md:col-span-6">
@@ -27,8 +27,8 @@ export default function FeedBuilderIsland({ entities }: { entities: Intelligence
           {TOPICS.map((item) => <option key={item.key} value={item.key}>{item.label}</option>)}
         </select>
         <div className="mt-4 flex flex-wrap gap-3">
-          <a className="signal-button" href={`/feed/topic/${topic}.xml`}>RSS</a>
-          <a className="ghost-button" href={`/?topic=${encodeURIComponent(topic)}`}>Share filtered view</a>
+          <a className="signal-button" href={`/feed/topic/${topic}.xml`}>Topic RSS</a>
+          <a className="ghost-button" href={`/?topic=${encodeURIComponent(topic)}`}>Share this topic view</a>
         </div>
       </section>
     </div>

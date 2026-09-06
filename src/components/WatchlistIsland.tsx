@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import EntityWatchButton, { WATCHLIST_EVENT, WATCHLIST_KEY } from "./EntityWatchButton.js";
 import type { IntelligenceEntity } from "../lib/intelligenceCatalog.js";
+import { articlePath } from "../lib/articleRoutes.js";
 import type { Article } from "../types/article.js";
 
 function watchedSlugs(): string[] {
@@ -58,7 +59,7 @@ export default function WatchlistIsland({ entities, articles }: { entities: Inte
             {stories.map((article) => (
               <li key={article.id} className="border-b border-white/15 py-4">
                 <p className="micro-label mb-2 text-text-2">{article.company} · {new Date(article.published_at).toLocaleDateString()}</p>
-                <a href={`/article/${article.id}/`} className="text-lg font-bold text-white underline decoration-brand decoration-2 underline-offset-4 hover:text-brand-hover focus-industrial">{article.title}</a>
+                <a href={articlePath(article.id)} className="text-lg font-bold text-white underline decoration-brand decoration-2 underline-offset-4 hover:text-brand-hover focus-industrial break-words">{article.title}</a>
               </li>
             ))}
           </ol>

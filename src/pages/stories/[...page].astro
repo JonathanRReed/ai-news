@@ -1,7 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import { articlePath } from "../../lib/articleRoutes.js";
 import { allArticles, SITE_URL } from "../../lib/feeds.js";
-import type { Article } from "../../types/article.js";
 
 const PAGE_SIZE = 60;
 
@@ -38,7 +38,6 @@ const formatDate = (value: string) => {
     ? "Undated"
     : new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" }).format(date);
 };
-const localArticlePath = (article: Article) => `/article/${encodeURIComponent(article.id)}/`;
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
@@ -53,7 +52,7 @@ const structuredData = {
       "@type": "ListItem",
       position: (pageNumber - 1) * PAGE_SIZE + index + 1,
       name: article.title,
-      url: `${SITE_URL}${localArticlePath(article)}`,
+      url: `${SITE_URL}${articlePath(article.id)}`,
     })),
   },
 };
@@ -83,7 +82,7 @@ const structuredData = {
               <span class="micro-label text-brand-hover">{article.company}</span>
               <time class="micro-label tabular-nums text-muted sm:mt-1 sm:block" datetime={article.published_at}>{formatDate(article.published_at)}</time>
             </div>
-            <a href={localArticlePath(article)} class="font-bold leading-snug text-white decoration-brand decoration-2 underline-offset-4 transition-colors hover:text-brand-hover hover:underline focus-industrial text-pretty">
+            <a href={articlePath(article.id)} class="font-bold leading-snug text-white decoration-brand decoration-2 underline-offset-4 transition-colors hover:text-brand-hover hover:underline focus-industrial text-pretty break-words">
               <span class="sr-only">Story {(pageNumber - 1) * PAGE_SIZE + index + 1}: </span>{article.title}
             </a>
           </li>

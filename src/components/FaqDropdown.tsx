@@ -42,7 +42,7 @@ export default function FaqDropdown() {
             className={
               `group relative overflow-hidden border border-white/20 bg-bg-1 transition-all ` +
               `hover:z-10 hover:bg-white/10 ` +
-              `transform-gpu duration-200 ease-[cubic-bezier(.4,0,.2,1)]`
+              `transform-gpu duration-[var(--dur-base)] ease-[var(--ease-standard)]`
             }
           >
             <button
@@ -58,13 +58,17 @@ export default function FaqDropdown() {
             </button>
             <div
               id={`faq-panel-${idx}`}
-              className={`overflow-hidden px-6 transition-all duration-300 ease-in-out ${
-                openIndex === idx ? "max-h-40 py-2 opacity-100" : "max-h-0 py-0 opacity-0"
-              }`}
-              style={{ pointerEvents: openIndex === idx ? "auto" : "none" }}
-              hidden={openIndex !== idx}
+              className="grid overflow-hidden px-6"
+              style={{
+                gridTemplateRows: openIndex === idx ? "1fr" : "0fr",
+                opacity: openIndex === idx ? 1 : 0,
+                transition: "grid-template-rows var(--dur-base) var(--ease-standard), opacity var(--dur-base) var(--ease-standard)",
+              }}
+              inert={openIndex !== idx}
             >
-              <div className="max-w-2xl pb-4 text-base leading-relaxed text-text-2">{faq.answer}</div>
+              <div className="min-h-0 overflow-hidden">
+                <div className="max-w-2xl py-2 pb-4 text-base leading-relaxed text-text-2">{faq.answer}</div>
+              </div>
             </div>
           </div>
         ))}

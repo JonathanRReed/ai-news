@@ -11,6 +11,9 @@ import type { Article, PageData } from "../types/article.js";
 import type { FeedCursor } from "../types/intelligence.js";
 import { normalizeSearchQuery } from "../lib/intelligenceClient.js";
 
+// One request per pause in typing, not one per keystroke.
+const SEARCH_DEBOUNCE_MS = 250;
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -78,8 +81,18 @@ export default function ArticlesIslandWrapper({ initialArticles = [], now = 0 }:
   }, [filters]);
 
   const { company, topics, q } = filters;
-  const stableFilters = useMemo<ArticleFilters>(() => ({ company, topics, q }), [company, topics, q]);
-  const isDefault = company === "All" && !(topics && topics.length) && !(q && q.trim());
+  // The input stays instant; only the term the query key is built from waits for a pause.
+  const [debouncedQ, setDebouncedQ] = useState(filters.q ?? "");
+  useEffect(() => {
+    const next = q ?? "";
+    const timer = window.setTimeout(() => setDebouncedQ(next), SEARCH_DEBOUNCE_MS);
+    return () => window.clearTimeout(timer);
+  }, [q]);
+  const stableFilters = useMemo<ArticleFilters>(
+    () => ({ company, topics, q: debouncedQ }),
+    [company, topics, debouncedQ],
+  );
+  const isDefault = company === "All" && !(topics && topics.length) && !(debouncedQ && debouncedQ.trim());
   const clearFeedFilters = () => {
     setFilters({ company: "All", topics: [], q: "" });
     setView("all");

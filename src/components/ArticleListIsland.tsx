@@ -10,6 +10,7 @@ import type { FeedView } from "./ArticlesIslandWrapper.js";
 import { boundedSearchTerms } from "../lib/intelligenceClient.js";
 import { articleExcerpt, truncateArticleExcerpt } from "../lib/articleExcerpt.js";
 import { articlePath } from "../lib/articleRoutes.js";
+import { itemTypeLabel } from "../lib/itemTypes.js";
 
 const EXPANDED_PREVIEW_MAX_LENGTH = 1_600;
 
@@ -74,23 +75,6 @@ function sourceTypeLabel(sourceType?: string): string {
       return "Indexed page";
     default:
       return "Source feed";
-  }
-}
-
-function itemTypeLabel(itemType?: string): string | null {
-  switch (itemType) {
-    case "announcement": return "Announcement";
-    case "release": return "Release";
-    case "model_release": return "Model release";
-    case "harness_release": return "Agent tool release";
-    case "api_change": return "API change";
-    case "security": return "Security";
-    case "deprecation": return "Deprecation";
-    case "research": return "Research";
-    case "benchmark": return "Benchmark";
-    case "documentation": return "Docs";
-    case "funding": return "Funding";
-    default: return null;
   }
 }
 
@@ -184,7 +168,7 @@ function ArticleCard({
         <SavedButton saved={saved} onToggle={() => onToggleSaved(article.id)} title={article.title} />
       </div>
 
-      <Heading className={`${titleSize} mb-2 font-bold leading-tight text-white text-pretty`}>
+      <Heading className={`${titleSize} mb-2 font-bold leading-tight text-white text-pretty break-words`}>
         {localUrl ? (
           <a
             href={localUrl}
@@ -254,7 +238,7 @@ export default function ArticleListIsland({
   now?: number;
   onClearFilters: () => void;
 }) {
-  const { data, isFetching, error, fetchNextPage, hasNextPage, filters } = useArticlesContext();
+  const { data, isFetching, error, fetchNextPage, hasNextPage, refetch, filters } = useArticlesContext();
   const { seen, saved, markSeen, toggleSaved } = readState;
   const [savedArchiveArticles, setSavedArchiveArticles] = useState<Article[]>([]);
   // Seed "now" from a build-time timestamp (prop) so the SSR/crawler render shows real
@@ -316,7 +300,10 @@ export default function ArticleListIsland({
 
   const [visibleCount, setVisibleCount] = useState(20);
   const [pendingIncrease, setPendingIncrease] = useState(false);
+  const [loadMoreError, setLoadMoreError] = useState(false);
   const [newCount, setNewCount] = useState(0);
+  const [pendingNewStories, setPendingNewStories] = useState(false);
+  const [newStoriesDismissed, setNewStoriesDismissed] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const [showHelp, setShowHelp] = useState(false);
   const pollTimer = useRef<number | null>(null);
@@ -387,6 +374,45 @@ export default function ArticleListIsland({
   const latestLoadedTs = allArticles.length > 0 ? new Date(allArticles[0].published_at).getTime() : 0;
   const loadedLabel = hasNextPage ? `${visibleArticles.length} loaded` : `${visibleArticles.length} total`;
   const searchTerms = boundedSearchTerms(filters.q);
+
+  // A rejected page fetch must never leave the button stuck on its loading label, so the
+  // pending flag is cleared in a finally and the failure gets a visible line of its own.
+  const loadMoreStories = async () => {
+    const needsFetch = hasNextPage && visibleCount + 20 > articles.length;
+    if (!needsFetch) {
+      setVisibleCount((c) => c + 20);
+      return;
+    }
+    setLoadMoreError(false);
+    setPendingIncrease(true);
+    try {
+      await fetchNextPage({ throwOnError: true });
+      setVisibleCount((c) => c + 20);
+    } catch {
+      setLoadMoreError(true);
+    } finally {
+      setPendingIncrease(false);
+    }
+  };
+
+  const loadNewStories = async () => {
+    setLoadMoreError(false);
+    setPendingNewStories(true);
+    try {
+      await refetch({ throwOnError: true });
+      setNewCount(0);
+    } catch {
+      setLoadMoreError(true);
+    } finally {
+      setPendingNewStories(false);
+    }
+  };
+
+  /* eslint-disable react-hooks/set-state-in-effect */
+  useEffect(() => {
+    setNewStoriesDismissed(false);
+  }, [newCount]);
+  /* eslint-enable react-hooks/set-state-in-effect */
 
   // Poll for newer items with a cheap server-side COUNT (no rows transferred); pauses when hidden.
   useEffect(() => {
@@ -481,6 +507,7 @@ export default function ArticleListIsland({
         case "Escape":
           setShowHelp(false);
           setSelectedIndex(-1);
+          setNewStoriesDismissed(true);
           break;
       }
     };
@@ -541,18 +568,20 @@ export default function ArticleListIsland({
           </button>
         )}
         {hasNextPage && (
-          <button
-            className="signal-button mt-6 disabled:cursor-not-allowed disabled:opacity-40"
-            disabled={pendingIncrease}
-            onClick={async () => {
-              setPendingIncrease(true);
-              await fetchNextPage();
-              setPendingIncrease(false);
-              setVisibleCount((c) => c + 20);
-            }}
-          >
-            {pendingIncrease ? "Loading…" : "Load more to keep looking"}
-          </button>
+          <>
+            <button
+              className="signal-button mt-6 disabled:cursor-not-allowed disabled:opacity-40"
+              disabled={pendingIncrease}
+              onClick={loadMoreStories}
+            >
+              {pendingIncrease ? "Loading…" : "Load more to keep looking"}
+            </button>
+            {loadMoreError && (
+              <p role="alert" className="mt-3 text-sm leading-relaxed text-brand-hover">
+                More stories could not be loaded. Try again in a moment.
+              </p>
+            )}
+          </>
         )}
       </div>
     );
@@ -646,31 +675,46 @@ export default function ArticleListIsland({
         </div>
       )}
 
-      {newCount > 0 && (
-        <div role="status" aria-live="polite" className="fixed left-1/2 top-[84px] z-40 flex -translate-x-1/2 items-center gap-2 rounded-full border border-brand/40 bg-bg-1/85 px-4 py-2 shadow-lg backdrop-blur-glass">
-          <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-brand" aria-hidden="true"></span>
-          <span className="micro-label tabular-nums text-white">{newCount} new {newCount === 1 ? "story" : "stories"} available</span>
+      {newCount > 0 && !newStoriesDismissed && (
+        <div role="status" aria-live="polite" className="fixed left-1/2 z-40 -translate-x-1/2" style={{ top: "calc(var(--header-h) + var(--space-4))" }}>
+          <button
+            type="button"
+            onClick={loadNewStories}
+            onKeyDown={(event) => {
+              // The global handler ignores Escape while a button holds focus, so dismiss here too.
+              if (event.key === "Escape") setNewStoriesDismissed(true);
+            }}
+            disabled={pendingNewStories}
+            className="focus-industrial flex min-h-[var(--control-h)] items-center gap-2 border border-brand/40 bg-bg-1/85 px-4 py-2 backdrop-blur-glass transition-colors hover:border-brand disabled:cursor-not-allowed disabled:opacity-60"
+            style={{ boxShadow: "var(--shadow-1)" }}
+          >
+            <span className="h-1.5 w-1.5 animate-pulse bg-brand" aria-hidden="true"></span>
+            <span className="micro-label tabular-nums text-white">
+              {pendingNewStories
+                ? "Loading new stories…"
+                : `Load ${newCount} new ${newCount === 1 ? "story" : "stories"}`}
+            </span>
+          </button>
+          <p className="micro-label mt-1 text-center text-text-2">Press Esc to dismiss</p>
         </div>
       )}
 
-      <div className="mt-8 flex justify-center">
+      <div className="mt-8 flex flex-col items-center">
         <button
-          className={`signal-button transition-all duration-200 disabled:cursor-not-allowed disabled:opacity-30 ${pendingIncrease ? "opacity-80" : ""}`}
-          onClick={async () => {
-            if (visibleCount + 20 > articles.length && hasNextPage) {
-              setPendingIncrease(true);
-              await fetchNextPage();
-              setPendingIncrease(false);
-            }
-            setVisibleCount((c) => c + 20);
-          }}
+          className={`signal-button transition-all duration-[var(--dur-base)] ease-[var(--ease-standard)] disabled:cursor-not-allowed disabled:opacity-30 ${pendingIncrease ? "opacity-80" : ""}`}
+          onClick={loadMoreStories}
           disabled={pendingIncrease || (!hasNextPage && visibleCount >= articles.length)}
         >
           {pendingIncrease ? (
-            <span className="mr-2 inline-block h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white align-middle"></span>
+            <span className="mr-2 inline-block h-4 w-4 animate-spin border-2 border-white/30 border-t-white align-middle"></span>
           ) : null}
           {pendingIncrease ? "Loading…" : !hasNextPage && visibleCount >= articles.length ? "All caught up" : "Load 20 more"}
         </button>
+        {loadMoreError && (
+          <p role="alert" className="mt-3 text-sm leading-relaxed text-brand-hover">
+            More stories could not be loaded. Try again in a moment.
+          </p>
+        )}
       </div>
 
       <div className="mt-4 hidden text-center md:block">
@@ -680,44 +724,42 @@ export default function ArticleListIsland({
         </button>
       </div>
 
-      {showHelp && (
-        <dialog
-          ref={dialogRef}
-          className="shortcuts-dialog border border-white/20 bg-bg-1 p-6"
-          aria-label="Keyboard shortcuts"
-          onCancel={(event) => {
-            event.preventDefault();
-            setShowHelp(false);
-          }}
-          onClick={(event) => {
-            if (event.target === event.currentTarget) setShowHelp(false);
-          }}
-        >
-          <div className="mb-4 flex items-center justify-between border-b border-white/15 pb-3">
-            <p className="micro-label text-white">Keyboard shortcuts</p>
-            <button type="button" autoFocus className="micro-label text-text-2 transition-colors hover:text-white focus-industrial" onClick={() => setShowHelp(false)} aria-label="Close shortcuts">
-              Esc
-            </button>
-          </div>
-          <dl className="grid grid-cols-[auto_1fr] gap-x-5 gap-y-2.5 text-sm text-text-2">
-            {[
-              ["j / ↓", "Next story"],
-              ["k / ↑", "Previous story"],
-              ["o / ↵", "Open the story page"],
-              ["s", "Save or unsave"],
-              ["m", "Mark as read"],
-              ["/", "Focus search"],
-              ["?", "Toggle this panel"],
-              ["Esc", "Clear or close"],
-            ].map(([key, label]) => (
-              <React.Fragment key={key}>
-                <dt><kbd className="border border-white/20 px-2 py-0.5 font-mono text-xs text-white">{key}</kbd></dt>
-                <dd className="self-center">{label}</dd>
-              </React.Fragment>
-            ))}
-          </dl>
-        </dialog>
-      )}
+      <dialog
+        ref={dialogRef}
+        className="shortcuts-dialog border border-white/20 bg-bg-1 p-6"
+        aria-label="Keyboard shortcuts"
+        onCancel={(event) => {
+          event.preventDefault();
+          setShowHelp(false);
+        }}
+        onClick={(event) => {
+          if (event.target === event.currentTarget) setShowHelp(false);
+        }}
+      >
+        <div className="mb-4 flex items-center justify-between border-b border-white/15 pb-3">
+          <p className="micro-label text-white">Keyboard shortcuts</p>
+          <button type="button" className="micro-label text-text-2 transition-colors hover:text-white focus-industrial" onClick={() => setShowHelp(false)} aria-label="Close shortcuts">
+            Esc
+          </button>
+        </div>
+        <dl className="grid grid-cols-[auto_1fr] gap-x-5 gap-y-2.5 text-sm text-text-2">
+          {[
+            ["j / ↓", "Next story"],
+            ["k / ↑", "Previous story"],
+            ["o / ↵", "Open the story page"],
+            ["s", "Save or unsave"],
+            ["m", "Mark as read"],
+            ["/", "Focus search"],
+            ["?", "Toggle this panel"],
+            ["Esc", "Clear or close"],
+          ].map(([key, label]) => (
+            <React.Fragment key={key}>
+              <dt><kbd className="border border-white/20 px-2 py-0.5 font-mono text-xs text-white">{key}</kbd></dt>
+              <dd className="self-center">{label}</dd>
+            </React.Fragment>
+          ))}
+        </dl>
+      </dialog>
 
       {visibleCount > 20 && (
         <button

@@ -2,6 +2,7 @@
 import { companyLogoAlt, resolveCompanyLogo } from "../lib/companyCatalog.js";
 import { deriveTopics, topicLabel } from "../lib/articleTags.js";
 import { articleExcerpt } from "../lib/articleExcerpt.js";
+import { articlePath } from "../lib/articleRoutes.js";
 import type { Article } from "../types/article.js";
 
 interface StoryRow {
@@ -40,8 +41,8 @@ const dateLabel = (iso: string) => new Intl.DateTimeFormat("en-US", {
               <span class="micro-label text-white">{article.company}</span>
               {topics.map((topic) => <span class="micro-label hidden text-text-2 sm:inline">· {topicLabel(topic)}</span>)}
             </div>
-            <h2 class="text-lg font-bold leading-tight text-white md:text-xl text-pretty">
-              <a href={`/article/${article.id}/`} class="decoration-brand decoration-2 underline-offset-4 hover:text-brand-hover hover:underline focus-industrial">{article.title}</a>
+            <h2 class="text-lg font-bold leading-tight text-white md:text-xl text-pretty break-words">
+              <a href={articlePath(article.id)} class="decoration-brand decoration-2 underline-offset-4 hover:text-brand-hover hover:underline focus-industrial">{article.title}</a>
             </h2>
             {excerpt && <p class="mt-2 max-w-3xl leading-relaxed text-text-2 line-clamp-2">{excerpt}</p>}
           </div>

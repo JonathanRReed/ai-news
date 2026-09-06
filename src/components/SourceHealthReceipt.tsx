@@ -63,6 +63,17 @@ function dateTime(value: string | null): string {
   }).format(date);
 }
 
+// The same written labels the overview panel uses, so one source never reads
+// "healthy" here and "Checked recently" there.
+function statusLabel(health: SourceHealth["health"]): string {
+  switch (health) {
+    case "healthy": return "Checked recently";
+    case "stale": return "Delayed";
+    case "inactive": return "Not active";
+    default: return "Unavailable";
+  }
+}
+
 function statusClass(health: SourceHealth["health"]): string {
   if (health === "healthy") return "border-ok/45 text-ok";
   if (health === "failing") return "border-brand/70 text-brand-hover";
@@ -141,7 +152,7 @@ export default function SourceHealthReceipt({
           <div className="flex flex-wrap items-center justify-between gap-2">
             <strong className="text-sm text-white">{source.name}</strong>
             <span className={`micro-label border px-2 py-1 ${statusClass(source.health)}`}>
-              {source.health}
+              {statusLabel(source.health)}
             </span>
           </div>
           <dl className="mt-4 grid gap-3 text-xs sm:grid-cols-2">
