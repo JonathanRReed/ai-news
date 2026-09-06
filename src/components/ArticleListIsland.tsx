@@ -11,6 +11,7 @@ import { boundedSearchTerms } from "../lib/intelligenceClient.js";
 import { articleExcerpt, truncateArticleExcerpt } from "../lib/articleExcerpt.js";
 import { articlePath } from "../lib/articleRoutes.js";
 import { itemTypeLabel } from "../lib/itemTypes.js";
+import { cn } from "../lib/utils.js";
 
 const EXPANDED_PREVIEW_MAX_LENGTH = 1_600;
 
@@ -97,9 +98,10 @@ function SavedButton({ saved, onToggle, title }: { saved: boolean; onToggle: () 
       onClick={onToggle}
       aria-pressed={saved}
       aria-label={saved ? `Remove “${title}” from saved` : `Save “${title}” for later`}
-      className={`flex h-11 w-11 shrink-0 items-center justify-center border transition-colors focus-industrial ${
-        saved ? "border-brand text-brand" : "border-white/20 text-text-2 hover:border-white/40 hover:text-white"
-      }`}
+      className={cn(
+        "flex h-11 w-11 shrink-0 items-center justify-center border transition-colors focus-industrial",
+        saved ? "border-brand text-brand" : "border-white/20 text-text-2 hover:border-white/40 hover:text-white",
+      )}
     >
       <svg width="16" height="16" viewBox="0 0 24 24" fill={saved ? "currentColor" : "none"} stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <path d="M5 3h14a1 1 0 0 1 1 1v17l-8-5-8 5V4a1 1 0 0 1 1-1z" />
@@ -153,10 +155,18 @@ function ArticleCard({
   const Heading = isLead ? "h2" : "h3";
 
   return (
-    <article data-article-id={article.id} className={`article-card-hoverable group relative border border-white/[0.14] bg-bg-0/90 ${pad} ${selected ? "outline outline-2 outline-brand outline-offset-2" : ""} ${seen ? "opacity-60 hover:opacity-100" : ""}`}>
+    <article
+      data-article-id={article.id}
+      className={cn(
+        "article-card-hoverable group relative border border-white/[0.14] bg-bg-0/90",
+        pad,
+        selected && "outline-2 outline-brand outline-offset-2",
+        seen && "opacity-60 hover:opacity-100",
+      )}
+    >
       <div className="mb-3 flex items-center gap-3 border-b border-white/[0.1] pb-3">
         {logoPath && (
-          <span className={`flex shrink-0 items-center justify-center border border-white/20 bg-tile ${isLead ? "h-11 w-11" : "h-9 w-9"}`}>
+          <span className={cn("flex shrink-0 items-center justify-center border border-white/20 bg-tile", isLead ? "h-11 w-11" : "h-9 w-9")}>
             <img src={logoPath} alt={companyLogoAlt(article.company)} className={isLead ? "h-8 w-8 object-contain" : "h-6 w-6 object-contain"} loading={isLead || tier === "top" ? "eager" : "lazy"} decoding="async" fetchPriority={isLead ? "high" : undefined} width={isLead ? 32 : 24} height={isLead ? 32 : 24} />
           </span>
         )}
@@ -168,7 +178,7 @@ function ArticleCard({
         <SavedButton saved={saved} onToggle={() => onToggleSaved(article.id)} title={article.title} />
       </div>
 
-      <Heading className={`${titleSize} mb-2 font-bold leading-tight text-white text-pretty break-words`}>
+      <Heading className={cn(titleSize, "mb-2 font-bold leading-tight text-white text-pretty break-words")}>
         {localUrl ? (
           <a
             href={localUrl}
@@ -205,7 +215,14 @@ function ArticleCard({
 
       {showExcerpt && excerpt && (
         <div>
-          <p id={previewId} className={`${expanded ? "" : isLead ? "line-clamp-4" : "line-clamp-2"} ${isLead ? "text-base md:text-lg" : "text-sm"} max-w-3xl leading-relaxed text-text-2 text-pretty`}>
+          <p
+            id={previewId}
+            className={cn(
+              !expanded && (isLead ? "line-clamp-4" : "line-clamp-2"),
+              isLead ? "text-base md:text-lg" : "text-sm",
+              "max-w-3xl leading-relaxed text-text-2 text-pretty",
+            )}
+          >
             {expanded ? expandedExcerpt : excerpt}
           </p>
           {hasMoreExcerpt && (
@@ -701,7 +718,10 @@ export default function ArticleListIsland({
 
       <div className="mt-8 flex flex-col items-center">
         <button
-          className={`signal-button transition-all duration-[var(--dur-base)] ease-[var(--ease-standard)] disabled:cursor-not-allowed disabled:opacity-30 ${pendingIncrease ? "opacity-80" : ""}`}
+          className={cn(
+            "signal-button transition-all duration-[var(--dur-base)] ease-[var(--ease-standard)] disabled:cursor-not-allowed disabled:opacity-30",
+            pendingIncrease && "opacity-80",
+          )}
           onClick={loadMoreStories}
           disabled={pendingIncrease || (!hasNextPage && visibleCount >= articles.length)}
         >

@@ -1,0 +1,151 @@
+/*
+  Starwind UI, expressed in the ecosystem contract.
+
+  This file started as the stylesheet `starwind init` writes. What changed and why:
+
+  - `@import "tailwindcss"` was removed. This file is imported from tailwind.css,
+    which already imports Tailwind, and a second import would build Tailwind twice
+    (duplicate preflight and duplicate utilities in the bundle).
+  - `@plugin "@tailwindcss/forms"` was removed. Nothing here needs it, and it adds
+    base styles for every input, select and textarea on the site, which fights the
+    .eco-control anatomy in ecosystem.css.
+  - The dark variant was retargeted. Starwind ships `.dark`; this site is dark by
+    default and switches to light with html[data-theme="light"] or html.light.
+  - Starwind's own palette and its `.dark` block were replaced by contract tokens.
+    The contract already redefines those per theme, so one set of values covers
+    both themes and there is no second palette to keep in sync.
+  - The radius block was dropped so `rounded-*` keeps reading the contract's
+    --radius-* tokens, which are 0 on this site.
+  - Starwind's `@layer base` block was scoped. Upstream applies a border colour and
+    an outline colour to `*`, and sets body background, text and colour-scheme;
+    that would reach every element on the site, not just Starwind's.
+*/
+
+@import "tw-animate-css";
+
+@custom-variant dark (&:where(:root:not([data-theme="light"]):not(.light) *));
+
+@theme {
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--starwind-accordion-content-height);
+    }
+  }
+
+  @keyframes accordion-up {
+    from {
+      height: var(--starwind-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}
+
+/*
+  Two names from Starwind's palette are already spoken for on this site and are
+  deliberately absent below:
+
+  - `--muted` is a channel token in tailwind.css (an ink colour, "138 138 138").
+    Starwind means a surface by it. Redefining it would break text-muted, so
+    --color-muted stays the site's and Starwind's --color-muted is not declared.
+  - `--info` is part of the ecosystem contract already, so only --color-info is
+    mapped here and the value keeps coming from ecosystem.css.
+*/
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-accent: var(--primary-accent);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary-accent: var(--secondary-accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-error: var(--error);
+  --color-error-foreground: var(--error-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-outline: var(--outline);
+
+  --color-sidebar: var(--sidebar-background);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-outline: var(--sidebar-outline);
+}
+
+/*
+  Starwind's semantic palette, expressed in ecosystem contract tokens. The
+  contract flips its own values per theme, so there is no .dark block here.
+*/
+:root {
+  --background: var(--surface-0);
+  --foreground: var(--ink-0);
+  --card: var(--surface-1);
+  --card-foreground: var(--ink-0);
+  --popover: var(--surface-2);
+  --popover-foreground: var(--ink-0);
+  --primary: var(--signal);
+  --primary-foreground: var(--signal-ink);
+  --primary-accent: var(--signal-hover);
+  --secondary: var(--surface-2);
+  --secondary-foreground: var(--ink-0);
+  --secondary-accent: var(--ink-0);
+  --muted-foreground: var(--ink-2);
+  --accent: var(--surface-3);
+  --accent-foreground: var(--ink-0);
+  --info-foreground: var(--surface-0);
+  --success: var(--ok);
+  --success-foreground: var(--surface-0);
+  --warning: var(--warn);
+  --warning-foreground: var(--surface-0);
+  --error: var(--bad);
+  --error-foreground: var(--surface-0);
+  --border: var(--line-0);
+  --input: var(--line-1);
+  --outline: var(--focus);
+  --radius: var(--radius-md);
+
+  --sidebar-background: var(--surface-1);
+  --sidebar-foreground: var(--ink-0);
+  --sidebar-primary: var(--signal);
+  --sidebar-primary-foreground: var(--signal-ink);
+  --sidebar-accent: var(--surface-2);
+  --sidebar-accent-foreground: var(--ink-0);
+  --sidebar-border: var(--line-0);
+  --sidebar-outline: var(--focus);
+}
+
+@layer base {
+  /*
+    Upstream applies this to `*`. Scoped to Starwind's own markup instead, so a
+    bare border-b inside a vendored component still picks up the contract hairline
+    without changing the border colour of every element on the site.
+  */
+  [data-slot^="accordion"],
+  [data-slot^="accordion"] * {
+    border-color: var(--color-border);
+  }
+}

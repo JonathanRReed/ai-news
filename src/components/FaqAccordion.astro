@@ -1,0 +1,62 @@
+---
+/*
+  Was FaqDropdown.tsx, a hand-built disclosure shipped as a React island on a page
+  whose FAQ copy is static. Starwind's Accordion gives the panel real disclosure
+  semantics (role="region" and aria-labelledby back to its trigger, and the hidden
+  attribute when closed rather than a 0fr grid row), keeps single/multiple and
+  collapsible behaviour in one place, and takes the about page off React.
+
+  Measured, not assumed: the Starwind 2.x runtime accordion has no arrow-key or
+  Home/End roving between triggers. Tab and Enter/Space are the only keyboard
+  path, same as before.
+
+  Styling is passed in rather than baked into the vendored component so the panel
+  keeps the industrial look: square corners, hairline rules, mono +/- glyph.
+*/
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./starwind/accordion/index.js";
+
+const triggerClass =
+  "focus-industrial group px-6 py-5 text-lg font-semibold text-white hover:text-brand-hover";
+const itemClass =
+  "relative overflow-hidden border border-white/20 bg-bg-1 transition-colors hover:bg-white/10";
+---
+
+<section class="my-12 mx-auto max-w-4xl">
+  <h2 class="mb-8 text-2xl font-semibold leading-tight text-white">Details</h2>
+  <Accordion type="single" class="space-y-px bg-white/20">
+    <AccordionItem value="more-sources" class={itemClass}>
+      <AccordionTrigger class={triggerClass}>
+        Will other sources be added?
+        <span slot="icon" class="ml-3 font-mono" aria-hidden="true">
+          <span class="group-data-[state=open]:hidden">+</span>
+          <span class="hidden group-data-[state=open]:inline">-</span>
+        </span>
+      </AccordionTrigger>
+      <AccordionContent class="px-6">
+        <div class="max-w-2xl text-base leading-relaxed text-text-2">
+          New sources can be added when they have a stable RSS or Atom feed.
+        </div>
+      </AccordionContent>
+    </AccordionItem>
+
+    <AccordionItem value="open-source" class={itemClass}>
+      <AccordionTrigger class={triggerClass}>
+        Is the project open source?
+        <span slot="icon" class="ml-3 font-mono" aria-hidden="true">
+          <span class="group-data-[state=open]:hidden">+</span>
+          <span class="hidden group-data-[state=open]:inline">-</span>
+        </span>
+      </AccordionTrigger>
+      <AccordionContent class="px-6">
+        <div class="max-w-2xl text-base leading-relaxed text-text-2">
+          Yes. The repository is available on <a
+            href="https://github.com/JonathanRReed/ai-news.git"
+            class="underline decoration-brand decoration-2 underline-offset-4 transition-colors hover:text-brand-hover"
+            target="_blank"
+            rel="noopener noreferrer">the AI News Hub source repository</a
+          >.
+        </div>
+      </AccordionContent>
+    </AccordionItem>
+  </Accordion>
+</section>

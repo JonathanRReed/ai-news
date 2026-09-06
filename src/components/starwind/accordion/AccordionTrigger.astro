@@ -1,0 +1,38 @@
+---
+/*
+  Changed from the Starwind default: the fallback icon was
+  `import ChevronDown from "@tabler/icons/outline/chevron-down.svg"`. That pulls a
+  49 MB icon package in for one glyph, so the same chevron is inlined here and the
+  dependency is not installed. Callers can still replace it through the icon slot.
+*/
+import AccordionPrimitive from "@starwind-ui/astro/accordion";
+import type { HTMLAttributes } from "astro/types";
+import { accordionTrigger } from "./variants.js";
+
+type Props = HTMLAttributes<"button">;
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<AccordionPrimitive.Trigger
+  class={accordionTrigger({ class: className })}
+  {...rest}
+  data-slot="accordion-trigger"
+>
+  <slot />
+
+  <slot name="icon">
+    <svg
+      class="size-5 shrink-0 transition-transform duration-200"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M6 9l6 6 6-6" />
+    </svg>
+  </slot>
+</AccordionPrimitive.Trigger>

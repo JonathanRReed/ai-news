@@ -1,5 +1,6 @@
 import React from 'react';
 import { companies, companyLogoAlt } from '../lib/companyCatalog.js';
+import { cn } from '../lib/utils.js';
 
 interface CompanySelectProps {
   activeCompany: string;
@@ -25,22 +26,21 @@ export default function CompanySelect({ activeCompany, onCompanyChange }: Compan
               <button
                 type="button"
                 key={company.name}
-                className={`
-                group relative flex h-[84px] w-[96px] shrink-0 snap-center flex-col items-center justify-center bg-bg-0 p-2 transition-all duration-[var(--dur-base)] ease-[var(--ease-standard)] sm:w-[120px]
-                ${isActive
-                    ? 'bg-brand text-[var(--signal-ink)]'
-                    : 'text-text-2 hover:bg-white/10 hover:text-white'
-                  }
-              `}
+                className={cn(
+                  "group relative flex h-[84px] w-[96px] shrink-0 snap-center flex-col items-center justify-center bg-bg-0 p-2 transition-all duration-[var(--dur-base)] ease-[var(--ease-standard)] sm:w-[120px]",
+                  isActive
+                    ? "bg-brand text-[var(--signal-ink)]"
+                    : "text-text-2 hover:bg-white/10 hover:text-white",
+                )}
                 aria-pressed={isActive}
                 aria-label={company.name}
                 title={company.name}
                 onClick={() => onCompanyChange && onCompanyChange(company.name)}
               >
-                <div className={`
-                relative mb-2 flex h-8 w-8 items-center justify-center border border-white/20 bg-tile transition-transform duration-[var(--dur-base)] ease-[var(--ease-standard)]
-                ${isActive ? 'scale-105' : 'group-hover:scale-105'}
-              `}>
+                <div className={cn(
+                  "relative mb-2 flex h-8 w-8 items-center justify-center border border-white/20 bg-tile transition-transform duration-[var(--dur-base)] ease-[var(--ease-standard)]",
+                  isActive ? "scale-105" : "group-hover:scale-105",
+                )}>
                   {company.logo ? (
                     <img
                       src={company.logo}
@@ -57,10 +57,10 @@ export default function CompanySelect({ activeCompany, onCompanyChange }: Compan
                   )}
                 </div>
 
-                <span className={`
-                micro-label max-w-full truncate transition-colors duration-[var(--dur-base)] ease-[var(--ease-standard)]
-                ${isActive ? 'text-[var(--signal-ink)]' : 'text-text-2'}
-              `}>
+                <span className={cn(
+                  "micro-label max-w-full truncate transition-colors duration-[var(--dur-base)] ease-[var(--ease-standard)]",
+                  isActive ? "text-[var(--signal-ink)]" : "text-text-2",
+                )}>
                   {company.name}
                 </span>
 

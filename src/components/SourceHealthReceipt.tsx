@@ -1,6 +1,7 @@
 /* global AbortController */
 import React, { useEffect, useMemo, useState } from "react";
 import { displayedSourceHealth } from "../lib/source-health.js";
+import { cn } from "../lib/utils.js";
 import {
   SUPABASE_REST_HEADERS,
   SUPABASE_URL,
@@ -151,7 +152,7 @@ export default function SourceHealthReceipt({
         <article key={source.source_key} className="bg-bg-0 p-4">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <strong className="text-sm text-white">{source.name}</strong>
-            <span className={`micro-label border px-2 py-1 ${statusClass(source.health)}`}>
+            <span className={cn("micro-label border px-2 py-1", statusClass(source.health))}>
               {statusLabel(source.health)}
             </span>
           </div>

@@ -160,6 +160,15 @@ html.light {
     scroll-behavior: smooth;
   }
 
+  /*
+    Clipping only body leaves the viewport itself scrollable, which let this
+    site drag 13px sideways on a phone. clip, not hidden, so position: sticky
+    keeps working. PoliBench already does this.
+  */
+  html {
+    overflow-x: clip;
+  }
+
   body {
     margin: 0;
     min-height: 100vh;

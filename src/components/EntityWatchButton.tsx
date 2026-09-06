@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { cn } from "../lib/utils.js";
 
 export const WATCHLIST_KEY = "ai-news-entity-watchlist-v1";
 export const WATCHLIST_EVENT = "ai-news-watchlist-change";
@@ -45,7 +46,7 @@ export default function EntityWatchButton({ slug, name }: { slug: string; name: 
       disabled={!hydrated}
       data-watch-ready={hydrated ? "true" : "false"}
       onClick={toggle}
-      className={`${watched ? "signal-button" : "ghost-button"} disabled:cursor-wait disabled:opacity-60`}
+      className={cn(watched ? "signal-button" : "ghost-button", "disabled:cursor-wait disabled:opacity-60")}
     >
       {watched ? `Watching ${name}` : `Watch ${name}`}
     </button>

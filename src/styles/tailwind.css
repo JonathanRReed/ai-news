@@ -1,7 +1,7 @@
-@config "../../tailwind.config.mjs";
 @import "tailwindcss";
 @import "./ecosystem.css";
 @import "./industrial.css";
+@import "./starwind.css";
 
 /*
   Channel tokens for Tailwind's slash-opacity syntax. They mirror the
@@ -39,4 +39,52 @@ html.light {
   --paper: 17 17 17;
   --ok-ch: 31 107 79;
   --warn-ch: 138 100 32;
+}
+
+/*
+  The ecosystem contract owns --font-sans and --font-mono at :root. Tailwind's
+  own theme keys carry those exact names, so pointing them straight at the
+  contract would be self-referential. These private aliases exist only to be
+  read by the @theme inline block below; nothing else may use them.
+*/
+:root {
+  --app-font-sans: var(--font-sans);
+  --app-font-mono: var(--font-mono);
+}
+
+/*
+  Fonts are declared inline so Tailwind writes the alias into the utility
+  (font-family: var(--app-font-sans)) instead of re-declaring --font-sans in
+  its own theme layer, which is what would have created the cycle.
+*/
+@theme inline {
+  --font-sans: var(--app-font-sans);
+  --font-mono: var(--app-font-mono);
+}
+
+/*
+  Palette. Tailwind 4 implements opacity modifiers with color-mix, so
+  bg-bg-0/50 and border-white/20 keep working without the v3-only
+  <alpha-value> placeholder.
+*/
+@theme {
+  --color-bg-0: rgb(var(--bg-0));
+  --color-bg-1: rgb(var(--bg-1));
+  --color-bg-2: rgb(var(--bg-2));
+  --color-bg-3: rgb(var(--bg-3));
+  --color-text-1: rgb(var(--text-1));
+  --color-text-2: rgb(var(--text-2));
+  --color-muted: rgb(var(--muted));
+  --color-brand: rgb(var(--brand));
+  --color-brand-hover: rgb(var(--brand-hover));
+  --color-focus: rgb(var(--text-1));
+  /* "white" in this codebase means full-strength ink. It flips with the theme. */
+  --color-white: rgb(var(--paper));
+  /* Logo tiles stay paper-white in both themes because provider marks are drawn for white. */
+  --color-tile: #ffffff;
+  --color-ok: rgb(var(--ok-ch));
+  --color-warn: rgb(var(--warn-ch));
+
+  /* v4 folds blur and backdropBlur into one --blur-* namespace. */
+  --blur-glass: 16px;
 }

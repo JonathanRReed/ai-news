@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { AUTHOR_PERSON } from "../lib/author.js";
-import FaqDropdown from '../components/FaqDropdown.tsx';
+import FaqAccordion from '../components/FaqAccordion.astro';
 import { companies } from '../lib/companyCatalog.js';
 import type { CompanyEntry } from '../lib/companyCatalog.js';
 
@@ -146,7 +146,7 @@ const structuredData = {
       <a href="/" class="signal-button mt-8">Back to the feed</a>
     </section>
     <div class="industrial-container pb-16">
-      <FaqDropdown client:idle />
+      <FaqAccordion />
     </div>
   </main>
 </Layout>
