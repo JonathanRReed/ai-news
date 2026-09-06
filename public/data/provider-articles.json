@@ -1,5 +1,29 @@
 [
   {
+    "id": "34669c60-fd5c-5dc2-b039-4e5bb70c6e08",
+    "company": "OpenAI",
+    "title": "An Alien Mind",
+    "url": "https://openai.com/index/an-alien-mind",
+    "published_at": "2026-09-06T09:00:00+00:00",
+    "source_type": "rss_official",
+    "summary": "Jakub Pachocki reflects on increasingly capable AI and the challenge of keeping it aligned. He calls for stronger safeguards and international coordination.",
+    "content": "Jakub Pachocki reflects on increasingly capable AI and the challenge of keeping it aligned. He calls for stronger safeguards and international coordination.",
+    "source_url": "https://openai.com/news/rss.xml",
+    "source_key": "openai-news"
+  },
+  {
+    "id": "879484e4-1ede-57aa-bbf4-1d0ec3cf6e42",
+    "company": "OpenAI",
+    "title": "Research acceleration: The view inside OpenAI",
+    "url": "https://openai.com/index/research-acceleration-view-inside-openai",
+    "published_at": "2026-09-06T08:00:00+00:00",
+    "source_type": "rss_official",
+    "summary": "Inside OpenAI, coding agents are reshaping AI research. Explore early data on agent usage, experiment velocity, task complexity, and research acceleration.",
+    "content": "Inside OpenAI, coding agents are reshaping AI research. Explore early data on agent usage, experiment velocity, task complexity, and research acceleration.",
+    "source_url": "https://openai.com/news/rss.xml",
+    "source_key": "openai-news"
+  },
+  {
     "id": "6820e079-8bc0-583e-af3e-540dde117ec7",
     "company": "Claude Code",
     "title": "v2.1.263",
