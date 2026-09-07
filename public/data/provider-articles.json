@@ -12,6 +12,18 @@
     "source_key": "gemini-cli-releases"
   },
   {
+    "id": "b4de6edb-ae5f-5ecb-8674-c941bdd8a72b",
+    "company": "OpenAI",
+    "title": "Supporting independent journalism in Ukraine",
+    "url": "https://openai.com/index/supporting-independent-journalism-in-ukraine",
+    "published_at": "2026-09-07T00:00:00+00:00",
+    "source_type": "rss_official",
+    "summary": "OpenAI, AIRPPU and WAN-IFRA launch an AI program to help Ukrainian news organizations strengthen innovation, resilience, and independent journalism.",
+    "content": "OpenAI, AIRPPU and WAN-IFRA launch an AI program to help Ukrainian news organizations strengthen innovation, resilience, and independent journalism.",
+    "source_url": "https://openai.com/news/rss.xml",
+    "source_key": "openai-news"
+  },
+  {
     "id": "34669c60-fd5c-5dc2-b039-4e5bb70c6e08",
     "company": "OpenAI",
     "title": "An Alien Mind",
