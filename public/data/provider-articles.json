@@ -1,5 +1,17 @@
 [
   {
+    "id": "799d7fb1-0187-5c71-9b10-46a87665c6f4",
+    "company": "Gemini CLI",
+    "title": "Release v0.60.0-nightly.20260907.g85aca163f",
+    "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.60.0-nightly.20260907.g85aca163f",
+    "published_at": "2026-09-07T01:27:17+00:00",
+    "source_type": "rss_official",
+    "summary": "Full Changelog : v0.60.0-nightly.20260906.g85aca163f...v0.60.0-nightly.20260907.g85aca163f",
+    "content": "Full Changelog : v0.60.0-nightly.20260906.g85aca163f...v0.60.0-nightly.20260907.g85aca163f",
+    "source_url": "https://github.com/google-gemini/gemini-cli/releases.atom",
+    "source_key": "gemini-cli-releases"
+  },
+  {
     "id": "34669c60-fd5c-5dc2-b039-4e5bb70c6e08",
     "company": "OpenAI",
     "title": "An Alien Mind",
