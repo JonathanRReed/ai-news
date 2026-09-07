@@ -1,5 +1,29 @@
 [
   {
+    "id": "c01e4167-9c15-50ee-b0cf-01d89e2c9e89",
+    "company": "Codex CLI",
+    "title": "0.154.0-alpha.6",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.154.0-alpha.6",
+    "published_at": "2026-09-07T18:06:27+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.154.0-alpha.6",
+    "content": "Release 0.154.0-alpha.6",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "ca858d68-53ff-5653-bebc-7effe2a02d12",
+    "company": "Codex CLI",
+    "title": "rust-v0.154.0-alpha.5",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.154.0-alpha.5",
+    "published_at": "2026-09-07T15:59:21+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.154.0-alpha.5",
+    "content": "Release 0.154.0-alpha.5",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
     "id": "799d7fb1-0187-5c71-9b10-46a87665c6f4",
     "company": "Gemini CLI",
     "title": "Release v0.60.0-nightly.20260907.g85aca163f",
