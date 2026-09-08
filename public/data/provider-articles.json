@@ -1,5 +1,65 @@
 [
   {
+    "id": "05936441-066f-532c-a9f8-c9fde2aa3842",
+    "company": "IBM Research",
+    "title": "How llm-d makes the most of the hardware you already have",
+    "url": "https://research.ibm.com/blog/running-open-models-on-h100-gpus-with-llmd",
+    "published_at": "2026-09-08T12:00:00+00:00",
+    "source_type": "rss_official",
+    "summary": "IBM Research and Red Hat deployed a 753B open model on H100 GPUs, serving thousands of concurrent coding agents at 5-10x lower cost than commercial APIs.",
+    "content": "IBM Research and Red Hat deployed a 753B open model on H100 GPUs, serving thousands of concurrent coding agents at 5-10x lower cost than commercial APIs.",
+    "source_url": "https://research.ibm.com/rss",
+    "source_key": "ibm-research"
+  },
+  {
+    "id": "e951ec61-42e1-505d-8235-e6e51881e07d",
+    "company": "OpenClaw",
+    "title": "release-publish/014031692483-1788866744",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/release-publish%2F014031692483-1788866744",
+    "published_at": "2026-09-08T11:21:28+00:00",
+    "source_type": "rss_official",
+    "summary": "fix(release): resolve nested bundled optional dependencies ( #142126 )",
+    "content": "fix(release): resolve nested bundled optional dependencies ( #142126 )",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
+  },
+  {
+    "id": "53d73f85-5e1d-5b5b-9362-cae75ff16da6",
+    "company": "OpenClaw",
+    "title": "release-publish/1a4d9a0340da-1788864350",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/release-publish%2F1a4d9a0340da-1788864350",
+    "published_at": "2026-09-08T10:45:09+00:00",
+    "source_type": "rss_official",
+    "summary": "fix(release): plugin previews fail with missing tooling dependencies …",
+    "content": "fix(release): plugin previews fail with missing tooling dependencies …",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
+  },
+  {
+    "id": "9aa43c1c-0299-5f9d-8cc1-261c0a37f367",
+    "company": "OpenClaw",
+    "title": "v2026.9.3",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.9.3",
+    "published_at": "2026-09-08T09:26:04+00:00",
+    "source_type": "rss_official",
+    "summary": "OpenClaw 2026.9.3",
+    "content": "OpenClaw 2026.9.3",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
+  },
+  {
+    "id": "4d67258b-5472-5308-841b-24f3003b8acf",
+    "company": "OpenClaw",
+    "title": "release-publish/830c2eed4302-1788853324",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/release-publish%2F830c2eed4302-1788853324",
+    "published_at": "2026-09-08T07:34:02+00:00",
+    "source_type": "rss_official",
+    "summary": "fix(release): route Gateway load and preserve assertion ownership ( #1 …",
+    "content": "fix(release): route Gateway load and preserve assertion ownership ( #1 …",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
+  },
+  {
     "id": "333c2360-3077-5086-b6b6-9fec9d0f017b",
     "company": "Mistral AI",
     "title": "Making sovereign, open-weight AI the technology frontier | Mistral",
