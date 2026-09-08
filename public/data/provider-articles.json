@@ -1,5 +1,53 @@
 [
   {
+    "id": "333c2360-3077-5086-b6b6-9fec9d0f017b",
+    "company": "Mistral AI",
+    "title": "Making sovereign, open-weight AI the technology frontier | Mistral",
+    "url": "https://mistral.ai/news/mistral-makes-sovereign-open-weight-ai-to-frontier/",
+    "published_at": "2026-09-08T05:38:54.179+00:00",
+    "source_type": "scraped",
+    "summary": "Mistral today announced that it has raised €3 billion in a Series D funding round at a post-money valuation of more than €21 billion.",
+    "content": "Mistral today announced that it has raised €3 billion in a Series D funding round at a post-money valuation of more than €21 billion.",
+    "source_url": "https://mistral.ai/sitemap-index.xml",
+    "source_key": "mistral-sitemap"
+  },
+  {
+    "id": "2785ddda-5594-5dcd-8a13-38cba26aa585",
+    "company": "OpenClaw",
+    "title": "release-publish/009f929485ce-1788834848",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/release-publish%2F009f929485ce-1788834848",
+    "published_at": "2026-09-08T02:28:55+00:00",
+    "source_type": "rss_official",
+    "summary": "fix(release): bind source admission and retain first-hop coverage ( #1 …",
+    "content": "fix(release): bind source admission and retain first-hop coverage ( #1 …",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
+  },
+  {
+    "id": "e2850a0f-73c0-5cea-b1e2-741ce2d49397",
+    "company": "Gemini CLI",
+    "title": "Release v0.60.0-nightly.20260908.g85aca163f",
+    "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.60.0-nightly.20260908.g85aca163f",
+    "published_at": "2026-09-08T01:26:09+00:00",
+    "source_type": "rss_official",
+    "summary": "Full Changelog : v0.60.0-nightly.20260907.g85aca163f...v0.60.0-nightly.20260908.g85aca163f",
+    "content": "Full Changelog : v0.60.0-nightly.20260907.g85aca163f...v0.60.0-nightly.20260908.g85aca163f",
+    "source_url": "https://github.com/google-gemini/gemini-cli/releases.atom",
+    "source_key": "gemini-cli-releases"
+  },
+  {
+    "id": "3ce333bd-28c6-51ad-8307-e89b10eaf420",
+    "company": "OpenClaw",
+    "title": "release-publish/135d2700e7b6-1788829835: test(release): require completed managed survivor evidence (#141663)",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/release-publish%2F135d2700e7b6-1788829835",
+    "published_at": "2026-09-08T00:34:45+00:00",
+    "source_type": "rss_official",
+    "summary": "test(update): require completed managed survivor proof Propagate guarded survival failures, verify a real authenticated serving turn and persisted reply, and distinguish preserved migration metadata from refreshed runtime skills caches. Preserve strict pre-serving migration checks and companion fixture coverage. test(update): keep waiting for nonterminal serving observations test(release): model serving calls in survivor bootstrap fixture test(release): keep serving probe failures free of...",
+    "content": "test(update): require completed managed survivor proof Propagate guarded survival failures, verify a real authenticated serving turn and persisted reply, and distinguish preserved migration metadata from refreshed runtime skills caches. Preserve strict pre-serving migration checks and companion fixture coverage. test(update): keep waiting for nonterminal serving observations test(release): model serving calls in survivor bootstrap fixture test(release): keep serving probe failures free of credentials test(release): preserve serving stage through volume idempotence",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
+  },
+  {
     "id": "7425d655-c142-54ac-adcc-d18ae27556ad",
     "company": "Hermes Agent",
     "title": "Hermes Agent v0.21.1 (v2026.9.7)",
