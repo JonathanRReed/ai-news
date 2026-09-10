@@ -1,5 +1,65 @@
 [
   {
+    "id": "b47afbca-32e1-5a96-a91a-e1ef20de77af",
+    "company": "IBM Research",
+    "title": "Introducing IBM and NASA's new foundation model for the Moon",
+    "url": "https://research.ibm.com/blog/nasa-ibm-lunar-foundation-model",
+    "published_at": "2026-09-10T12:30:00+00:00",
+    "source_type": "rss_official",
+    "summary": "The multi-modal model could help astronauts navigate craters, investigate ancient lava, and search for ice, as the US plans for a long-term lunar presence.",
+    "content": "The multi-modal model could help astronauts navigate craters, investigate ancient lava, and search for ice, as the US plans for a long-term lunar presence.",
+    "source_url": "https://research.ibm.com/rss",
+    "source_key": "ibm-research"
+  },
+  {
+    "id": "33b48c52-c8e4-50af-914b-a772e3954b8c",
+    "company": "Codex CLI",
+    "title": "0.155.0-alpha.1",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.155.0-alpha.1",
+    "published_at": "2026-09-10T11:56:10+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.155.0-alpha.1",
+    "content": "Release 0.155.0-alpha.1",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "133cd2f4-530f-55ce-9af1-82e21a8cad34",
+    "company": "Mistral AI",
+    "title": "Cloudera and Mistral Partner for Sovereign Enterprise AI",
+    "url": "https://mistral.ai/news/mistral-x-cloudera/",
+    "published_at": "2026-09-10T10:54:52.58+00:00",
+    "source_type": "scraped",
+    "summary": "Cloudera and Mistral join forces to bring specialized, sovereign AI intelligence to enterprise data, helping regulated industries innovate on their own terms.",
+    "content": "Cloudera and Mistral join forces to bring specialized, sovereign AI intelligence to enterprise data, helping regulated industries innovate on their own terms.",
+    "source_url": "https://mistral.ai/sitemap-index.xml",
+    "source_key": "mistral-sitemap"
+  },
+  {
+    "id": "7c15bcbf-f9af-5d65-859a-c04e5b0c021c",
+    "company": "NVIDIA AI",
+    "title": "From Wafer-Out to First Token: Codifying Supply Chain Expertise with Nemotron and Palantir Foundry",
+    "url": "https://developer.nvidia.com/blog/from-wafer-out-to-first-token-codifying-supply-chain-expertise-with-nemotron-and-palantir-foundry/",
+    "published_at": "2026-09-10T09:00:00+00:00",
+    "source_type": "rss_official",
+    "summary": "NVIDIA has one of the largest and most complex supply chains in the world, and its performance is measured from wafer-out to first token. The interval is in two...",
+    "content": "NVIDIA has one of the largest and most complex supply chains in the world, and its performance is measured from wafer-out to first token. The interval is in two...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/",
+    "source_key": "nvidia-generative-ai"
+  },
+  {
+    "id": "5d57bb74-b773-59af-b7d4-ac9fd786883c",
+    "company": "IBM Research",
+    "title": "Switzerland's first IBM Quantum System Two",
+    "url": "https://research.ibm.com/blog/swiss-innovation-hub",
+    "published_at": "2026-09-10T07:00:00+00:00",
+    "source_type": "rss_official",
+    "summary": "Lockheed Martin and IBM are launching a Swiss quantum innovation hub at ETH Zurich to advance research, industry collaboration, and workforce development.",
+    "content": "Lockheed Martin and IBM are launching a Swiss quantum innovation hub at ETH Zurich to advance research, industry collaboration, and workforce development.",
+    "source_url": "https://research.ibm.com/rss",
+    "source_key": "ibm-research"
+  },
+  {
     "id": "3eec1948-bf50-5d99-8562-6f2e288f35fa",
     "company": "Cline",
     "title": "Desktop v0.0.25",
@@ -46,6 +106,18 @@
     "content": "OpenClaw 2026.6.35 extended-stable release",
     "source_url": "https://github.com/openclaw/openclaw/releases.atom",
     "source_key": "openclaw-releases"
+  },
+  {
+    "id": "7a5d691c-a393-585b-90e2-623d24e3ec9e",
+    "company": "Hugging Face",
+    "title": "Rebuilding AUTOMATIC1111 with Gradio Workflow",
+    "url": "https://huggingface.co/blog/gradio-workflow-1111",
+    "published_at": "2026-09-10T00:00:00+00:00",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://huggingface.co/blog/feed.xml",
+    "source_key": "hugging-face-blog"
   },
   {
     "id": "3b43be1e-08f1-5e46-810e-407d82833d8f",
