@@ -12,6 +12,30 @@
     "source_key": "openai-news"
   },
   {
+    "id": "916c4df5-6a42-5e75-8723-19009778d11b",
+    "company": "Gemini CLI",
+    "title": "Release v0.61.0-nightly.20260913.g9c1b0a610",
+    "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.61.0-nightly.20260913.g9c1b0a610",
+    "published_at": "2026-09-13T01:29:27+00:00",
+    "source_type": "rss_official",
+    "summary": "Full Changelog : v0.61.0-nightly.20260912.g9c1b0a610...v0.61.0-nightly.20260913.g9c1b0a610",
+    "content": "Full Changelog : v0.61.0-nightly.20260912.g9c1b0a610...v0.61.0-nightly.20260913.g9c1b0a610",
+    "source_url": "https://github.com/google-gemini/gemini-cli/releases.atom",
+    "source_key": "gemini-cli-releases"
+  },
+  {
+    "id": "b9bd5bb1-5cf9-57ef-b09f-5fb4fb8a9b3a",
+    "company": "Claude Code",
+    "title": "v2.1.270",
+    "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.270",
+    "published_at": "2026-09-12T19:45:44+00:00",
+    "source_type": "rss_official",
+    "summary": "What's changed Fixed read-only git commands in Bash unexpectedly asking for permission after a session had been running for a while (regression in 2.1.269)",
+    "content": "What's changed Fixed read-only git commands in Bash unexpectedly asking for permission after a session had been running for a while (regression in 2.1.269)",
+    "source_url": "https://github.com/anthropics/claude-code/releases.atom",
+    "source_key": "claude-code-releases"
+  },
+  {
     "id": "05638025-6b33-5f06-97e0-28afc5a53a11",
     "company": "Gemini CLI",
     "title": "Release v0.61.0-nightly.20260912.g9c1b0a610",
