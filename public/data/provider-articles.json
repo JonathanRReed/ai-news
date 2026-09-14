@@ -1,5 +1,41 @@
 [
   {
+    "id": "fbfc730d-3b97-5aa2-b61a-d743ab631d8c",
+    "company": "Moonshot AI",
+    "title": "@moonshot-ai/kimi-code@0.43.0",
+    "url": "https://github.com/MoonshotAI/kimi-code/releases/tag/%40moonshot-ai%2Fkimi-code%400.43.0",
+    "published_at": "2026-09-14T12:14:33+00:00",
+    "source_type": "rss_official",
+    "summary": "Minor Changes #3749 6126472 Thanks @liruifengv ! - web: AI session titles are now always on — a title is generated after the first turn and can be regenerated from the rename field, with no experimental flag required. #3670 a9efbe0 Thanks @Grapedge ! - Delete sessions from the session picker: press Ctrl+X on a session, then y to confirm. Patch Changes #3763 dd6a411 Thanks @liruifengv ! - web: add user agreement and privacy policy entries to the Settings → About page. #3750 775a6c3 Thanks...",
+    "content": "Minor Changes #3749 6126472 Thanks @liruifengv ! - web: AI session titles are now always on — a title is generated after the first turn and can be regenerated from the rename field, with no experimental flag required. #3670 a9efbe0 Thanks @Grapedge ! - Delete sessions from the session picker: press Ctrl+X on a session, then y to confirm. Patch Changes #3763 dd6a411 Thanks @liruifengv ! - web: add user agreement and privacy policy entries to the Settings → About page. #3750 775a6c3 Thanks @7Sageer ! - Add the loop_control.compaction_max_attempts config option to set the maximum total attempts for a failing compaction request (default 5). #3667 9296e68 Thanks @sailist ! - Add the dynamically_loaded_tools capability to official Kimi Code models when the service declares support for message-level tool declarations. #3763 dd6a411 Thanks @liruifengv ! - web: fix sessions containing many brackets or backslashes getting stuck while loading. #3734 ee2cac1 Thanks @kimi-agent-bot ! - Fix a crash that killed the process when a retried LLM request had streamed a partial tool call before disconnecting. #3763 dd6a411 Thanks @liruifengv ! - web: fix persistent UI stuttering while streaming in long sessions. #3763 dd6a411 Thanks @liruifengv ! - web: fix certain formulas, links, tool results, and log contents causing the UI to stutter or become unresponsive. #3763 dd6a411 Thanks @liruifengv ! - web: fix the send button staying disabled when starting a new session. #3763 dd6a411 Thanks @liruifengv ! - web: fix previous sessions being wrongly marked as unread and triggering \"turn complete\" notifications after starting a new conversation. #3763 dd6a411 Thanks @liruifengv ! - web: render Markdown frontmatter metadata as key-value cards and tag lists. #3688 9f7e68e Thanks @RealKai42 ! - Preserve MCP attachments that cannot be delivered directly to the model. #3667 9296e68 Thanks @sailist ! - Add a per-server deferred field to MCP server configuration: when the model supports dynamic tool loading (experimental tool-select flag), set deferred: true to keep a server's tools out of the top-level tool list and load them on demand via select_tools ; servers are exposed inline by default. #3763 dd6a411 Thanks @liruifengv ! - web: drop the Changes entry from the panel new-tab menu while a diff tab is open. #3657 5b3b5b6 Thanks @chengluyu ! - Exclude time spent with the session closed from goal time budgets. #3728 b180725 Thanks @kimi-agent-bot ! - Add the KIMI_CODE_PERMISSION_MODE_REMINDER environment variable: set it to 0 to stop injecting the auto permission-mode reminders into the model context. #3696 d3dc594 Thanks @sailist ! - Include the server token in the Remote Control Local UI link so it opens already signed in. #3709 306f6f6 Thanks @sailist ! - Fix Remote Control uploads larger than ~3.5MB always failing with a 400 error. #3718 ab9e688 Thanks @sailist ! - Reuse unchanged Remote Control assets across page loads instead of retransferring them. #3657 5b3b5b6 Thanks @chengluyu ! - Remove the 24-hour limit on goal time budgets. #3714 565093f Thanks @sailist ! - Skip the confirmation prompt for rm -rf commands that target only /tmp or /temp paths. #3667 9296e68 Thanks @sailist ! - Fix the select_tools tool never being registered because agent profiles do not list it in their tool allowlists. #3763 dd6a411 Thanks @liruifengv ! - web: restructure the Settings pages — Account moves right after General, Agent is renamed to Agents & Sessions and now includes message folding, Advanced is renamed to About, and data & privacy settings move into General. #3763 dd6a411 Thanks @liruifengv ! - web: fix the selected segment background flashing and shifting while the Settings segmented control loads. #3697 5e452fc Thanks @RealKai42 ! - Allow steering messages to interrupt waits for background tasks. #3763 dd6a411 Thanks @liruifengv ! - web: fix the switch thumb deforming at both ends when stretched on hover. #3763 dd6a411 Thanks @liruifengv ! - web: fix tooltips popping up even when the mouse has not moved. #3648 2da4aa2 Thanks @tpoisonooo ! - Tower mode reliability fixes across messaging, worktrees, and the review-to-merge gate. #3707 e409bc8 Thanks @sailist ! - Compress Remote Control tunnel responses with gzip. #3702 42998cf Thanks @sailist ! - Add -y, --yes to kimi upgrade (alias kimi update ) to skip the confirmation prompt and install the update directly. #3681 1306a9a Thanks @7Sageer ! - Warn at startup when a [models] entry in config.toml is missing the model field and cannot be used.",
+    "source_url": "https://github.com/MoonshotAI/kimi-code/releases.atom",
+    "source_key": "moonshot-kimi-code-releases"
+  },
+  {
+    "id": "c0c34726-54af-5f33-92c5-a6c7eac20096",
+    "company": "Codex CLI",
+    "title": "0.155.0-alpha.4",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.155.0-alpha.4",
+    "published_at": "2026-09-14T11:49:25+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.155.0-alpha.4",
+    "content": "Release 0.155.0-alpha.4",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "3a4cd6d2-02f2-5c44-9563-e2e2861848ee",
+    "company": "Gemini CLI",
+    "title": "Release v0.61.0-nightly.20260914.g9c1b0a610",
+    "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.61.0-nightly.20260914.g9c1b0a610",
+    "published_at": "2026-09-14T01:45:58+00:00",
+    "source_type": "rss_official",
+    "summary": "Full Changelog : v0.61.0-nightly.20260913.g9c1b0a610...v0.61.0-nightly.20260914.g9c1b0a610",
+    "content": "Full Changelog : v0.61.0-nightly.20260913.g9c1b0a610...v0.61.0-nightly.20260914.g9c1b0a610",
+    "source_url": "https://github.com/google-gemini/gemini-cli/releases.atom",
+    "source_key": "gemini-cli-releases"
+  },
+  {
     "id": "0d3acee8-7965-5739-b530-b02cca22e0f8",
     "company": "OpenAI",
     "title": "Perplexity trusts GPT-6 Astra with end-to-end systems",
@@ -10,6 +46,18 @@
     "content": "Perplexity uses Astra to write communications, change software, and monitor production systems, and checks in much less frequently than with earlier models.",
     "source_url": "https://openai.com/news/rss.xml",
     "source_key": "openai-news"
+  },
+  {
+    "id": "0eefb748-d8ef-5f2b-8360-ddccf3f21eb1",
+    "company": "Cline",
+    "title": "Desktop v0.0.27",
+    "url": "https://github.com/cline/cline/releases/tag/desktop-v0.0.27",
+    "published_at": "2026-09-13T22:28:20+00:00",
+    "source_type": "rss_official",
+    "summary": "An expired Cline sign-in now produces one actionable error instead of two dead ends. A turn that fails before the runtime takes the prompt was reported twice — the hub's detail-less run.failed appended a bubble, then the send RPC resolved with the real error and overwrote the error banner underneath it — so you got a vague bubble stacked on a detailed banner. The failure now renders exactly once, upgrading in place when the detailed report arrives. Credential failures also carry a fix...",
+    "content": "An expired Cline sign-in now produces one actionable error instead of two dead ends. A turn that fails before the runtime takes the prompt was reported twice — the hub's detail-less run.failed appended a bubble, then the send RPC resolved with the real error and overwrote the error banner underneath it — so you got a vague bubble stacked on a detailed banner. The failure now renders exactly once, upgrading in place when the detailed report arrives. Credential failures also carry a fix button: Sign in to Cline for the Cline provider (Settings → API Providers reads a stale token as \"Signed in via browser\", so there is nothing to fix there), Open model settings for others, and local-CLI providers keep pointing at their CLI. Sessions that fail to start over credentials get the same hint and action The Account page now offers a sign-in prompt when your Cline refresh token is rejected, instead of an error card whose Retry failed the same way. A rejected refresh was falling back to the persisted access token, which is dead too, so the account request 401'd; a rejected refresh now reports as signed out. Transient refresh failures still fall back Signing out of Cline and Cline Pass now sticks. Sign-out removes the provider entry, but the runtime re-imports missing providers from the classic extension's stored credentials on every command, so you appeared signed straight back in — the same root cause as the ChatGPT/Codex fix in 0.0.26, which only cleared Codex secrets. Cline Pass sign-out did nothing at all, because its credentials live under the Cline provider entry rather than its own The settings sidebar's Models section is now API Providers , with an icon to match — it is where you configure providers and their credentials, not where you pick a model A failed voice input now shows a \"Speech input failed\" toast in chat with the actual error, instead of dropping you into Settings → Voice. Any error that wasn't a browser exception was treated as a configuration problem, even though the microphone is already gated on a configured transcription model — so a connection or transcription failure interrupted the chat and hid the real reason. Your draft and the microphone button stay put so you can retry; microphone-permission guidance is unchanged OpenCode Go models work again. Requests were missing the x-opencode-session header Go requires to route a conversation (\"Request is missing x-opencode-session and cannot be routed efficiently\"), and every model was sent to /chat/completions because catalog normalization discarded the per-model adapter declaration — so Muse Spark, GPT, and Grok models that expect /responses , and MiniMax/Qwen models that expect /messages , failed with internal server errors. Model-level protocol routing is now preserved end to end, retries reuse the same session identity, and Go Qwen entries that omit the declaration fall back to Messages Added Crusoe as an OpenAI-compatible provider Settings switches are lighter in light mode and are now a shared native control — real keyboard, label, and form behavior, a guaranteed 24px hit area, and support for reduced-motion and forced-colors The welcome screen's eye color matches the dark theme, and its animation no longer triggers layout work each frame Full Changelog : desktop-v0.0.26...desktop-v0.0.27",
+    "source_url": "https://github.com/cline/cline/releases.atom",
+    "source_key": "cline-releases"
   },
   {
     "id": "916c4df5-6a42-5e75-8723-19009778d11b",
@@ -1492,6 +1540,18 @@
     "company": "Hugging Face",
     "title": "Rebuilding AUTOMATIC1111 with Gradio Workflow",
     "url": "https://huggingface.co/blog/gradio-workflow-1111",
+    "published_at": "2026-09-10T00:00:00+00:00",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://huggingface.co/blog/feed.xml",
+    "source_key": "hugging-face-blog"
+  },
+  {
+    "id": "3832629c-9946-5c56-924a-41f582533fa2",
+    "company": "Hugging Face",
+    "title": "Async GRPO with LoRA across HF Jobs: a bucket, a proxy, and no NCCL",
+    "url": "https://huggingface.co/blog/asyncgrpo-lora-hfjobs",
     "published_at": "2026-09-10T00:00:00+00:00",
     "source_type": "rss_official",
     "summary": "",
@@ -7366,6 +7426,18 @@
     "content": "GeForce NOW is giving cloud gaming an extra-credit upgrade just in time for back-to-school season. The native Linux app for GeForce NOW is officially out of beta. GeForce NOW is also delivering new cloud optimizations that make Frame Generation feel even more responsive while streaming. On top of that, Performance members will see higher frame rates in demanding games thanks to a CPU performance adjustment. Plus, learn how GeForce NOW can add high-performance GeForce RTX gaming to the Chromebooks students already rely on for school – and how eligible new owners can take advantage of Chromebook Fast Pass. It all adds up to more ways to move from assignments to adventures across nearly any device. The only homework left is to decide what to play. This week, nine new games join the GeForce NOW library . The Cloud Gets Extra Credit GeForce NOW keeps getting better. The native Linux app for GeForce NOW has officially graduated from beta . Built on months of community feedback, the release focuses on performance, stability and polish while continuing to support Ubuntu 24.04 and later. A new Flatpack repository makes getting started and receiving future updates even easier. Visit the download page for more information and instructions. The cloud handles the rendering, so Linux gamers can tap into the latest GeForce RTX performance while staying on their preferred setup — without local hardware upgrades, compatibility headaches or complicated workarounds. Smooth gameplay makes the grade. GeForce NOW has also optimized DLSS Frame Generation in the cloud, reducing latency and making games feel more responsive. The improvements are especially noticeable when streaming at 60 or 120 frames per second in 1440p and 4K, helping every mouse movement and camera pan feel more immediate. Performance members will also enjoy additional server software optimizations to improve frame rates in select CPU-intensive games, helping demanding titles run more smoothly while delivering an even better gameplay experience. The cloud-side upgrade happens automatically, with nothing for members to install or configure, and at no additional cost. From Class Mode to Game Mode Class dismissed. Game on. Chromebooks already in backpacks can double as a PC gaming powerhouse, with GeForce NOW giving everyday school setups extra credit. Chromebooks handling lectures, group projects and browser tabs can transform into high-performance GeForce RTX gaming PCs in just a few clicks. When class is out, open a supported browser or app and stream more than 2,000 supported PC games from existing libraries, with the cloud handling the heavy lifting. The same flexibility extends to Macs, Surface devices, everyday laptops, Steam Deck and mobile devices. Plus, eligible new Chromebook and Chromebook+ owners can claim a year of GeForce NOW at no cost with Chromebook Fast Pass, with priority access and no ads. Study. Stream PC games. Same device. Ready for the Weekend Follow the chain of command, streaming from the cloud. In addition, members can look for the following new games streaming this week: Car Wash Simulator (New release on Steam , Aug. 10) Pax Autocratica (New release on Steam , Aug. 10) Clawed (New release on Steam , Aug. 13) Hell Let Loose: Vietnam (New release on Steam , Aug. 13) Sandustry (New release on Steam and Xbox , Aug. 13) Cat Mail Co. ( Steam ) Misery ( Steam ) Monster Hunter Wilds Prologue Demo ( Steam ) Pratfall ( Steam ) To cap things off, a creator known as “Madelyn” recently shared how GeForce now makes cloud gaming affordable and accessible across nearly all her devices, calling it “a game changer” in her video: What are you planning to play this weekend? Let us know on X or in the comments below.",
     "source_url": "https://blogs.nvidia.com/feed/",
     "source_key": "nvidia-blog"
+  },
+  {
+    "id": "dbd5699c-431c-5b1a-8363-ff5939bd8b2a",
+    "company": "OpenAI",
+    "title": "How Fyxer built an AI executive assistant people trust",
+    "url": "https://openai.com/index/fyxer",
+    "published_at": "2026-08-13T12:00:00+00:00",
+    "source_type": "rss_official",
+    "summary": "Fyxer uses OpenAI models, fine-tuning, memory, and real user feedback to organize inboxes and draft emails in each user’s voice.",
+    "content": "Fyxer uses OpenAI models, fine-tuning, memory, and real user feedback to organize inboxes and draft emails in each user’s voice.",
+    "source_url": "https://openai.com/news/rss.xml",
+    "source_key": "openai-news"
   },
   {
     "id": "671e867b-cdd8-4fa7-9b77-3e0e051bc4cc",
