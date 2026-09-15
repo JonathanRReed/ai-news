@@ -1,5 +1,53 @@
 [
   {
+    "id": "0c2e2476-b03a-5f02-9310-854305c03716",
+    "company": "NVIDIA AI",
+    "title": "Heart of the Matter: How a Major Children’s Hospital Uses Open Source NVIDIA AI for Cardiac Care",
+    "url": "https://blogs.nvidia.com/blog/childrens-hospital-open-source-ai-cardiac-care/",
+    "published_at": "2026-09-15T09:00:42+00:00",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://blogs.nvidia.com/feed/",
+    "source_key": "nvidia-blog"
+  },
+  {
+    "id": "7b2d61fe-d451-5521-9315-0db466c232b7",
+    "company": "Cline",
+    "title": "Desktop v0.0.28",
+    "url": "https://github.com/cline/cline/releases/tag/desktop-v0.0.28",
+    "published_at": "2026-09-15T07:55:52+00:00",
+    "source_type": "rss_official",
+    "summary": "The app no longer gets stuck on \"Desktop backend unavailable\" when the backend is slow to start. The window asked for the backend's address exactly once and the shell stops waiting after about 15 seconds, so on a slower machine — where starting the hub pushed past that — you were left on the error screen until you relaunched, and the relaunch could lose the same race. Connection attempts now keep retrying and re-resolve the address each time, so a backend that has since restarted is reached...",
+    "content": "The app no longer gets stuck on \"Desktop backend unavailable\" when the backend is slow to start. The window asked for the backend's address exactly once and the shell stops waiting after about 15 seconds, so on a slower machine — where starting the hub pushed past that — you were left on the error screen until you relaunched, and the relaunch could lose the same race. Connection attempts now keep retrying and re-resolve the address each time, so a backend that has since restarted is reached at its current one Confirming text with a Chinese or Japanese IME no longer sends the message. The Enter that commits an in-progress composition also reached the composer, so choosing a candidate fired off a half-typed message; Enter and the arrow keys now belong to the IME while you are composing The model picker refreshes its list every time you open it, instead of staying frozen until you restart the app. The Recommended and Free groupings come from a live feed, so a newly promoted free model would otherwise not show up for the rest of the session Signing in with Cline now explains what the plan includes. The sign-in card lists the regular free model promotions, ClinePass for generous usage across open-weight models like DeepSeek, Kimi, and GLM, and that no API key is needed; the last onboarding step then shows the current free models alongside a ClinePass summary. This only appears when you sign in with Cline, not when you bring your own API key Cline Pass now starts you on a model from your subscription. Its model list carries both subscription and free models and the default was simply the most recently published entry, so a subscriber who never picked a model was left on a free model instead of the tier they pay for A turn that fails partway through with a temporary provider error is now retried up to three times instead of failing the task. A single rate-limit response passed along by a provider gateway previously ended the turn outright. A turn that has already produced output is never retried, so nothing is duplicated Long responses stream faster. Every chunk of a streaming reply was being handed to client-side hooks as a round trip carrying a full copy of the session, with the agent waiting on each one before continuing The command-running tool now tells the model which PowerShell edition it is talking to — Windows PowerShell (powershell.exe) versus PowerShell (pwsh.exe) — and to write commands directly rather than wrapping them in a second shell invocation, which was corrupting pipelines that use $_ Refreshed the model catalog. Adds three providers (Infer by Flow7, Melious, and Wallaby) and takes the catalog from 5,923 to 6,079 models. The resolved default model changes for 33 providers, most of them landing on DeepSeek V4.1 Flash — among them Hugging Face, Fireworks, Requesty, Cortecs, CrossModel, DigitalOcean, Eden AI, and OpenCode Go — while NVIDIA moves to GLM 5.3 Flash and NanoGPT to GPT Astra. If you use a provider without pinning a model, expect a different default Full Changelog : desktop-v0.0.27...desktop-v0.0.28",
+    "source_url": "https://github.com/cline/cline/releases.atom",
+    "source_key": "cline-releases"
+  },
+  {
+    "id": "11dfb9e1-30b3-5777-86bd-f6fd36dab39d",
+    "company": "Moonshot AI",
+    "title": "@moonshot-ai/kimi-code@0.43.1",
+    "url": "https://github.com/MoonshotAI/kimi-code/releases/tag/%40moonshot-ai%2Fkimi-code%400.43.1",
+    "published_at": "2026-09-15T07:03:40+00:00",
+    "source_type": "rss_official",
+    "summary": "Patch Changes #3780 486dcd2 Thanks @Grapedge ! - Update the terminal UI engine, fixing link colors in wrapped markdown tables and @ file-completion ordering, and adding native clipboard support on Linux X11. #3776 48fad6e Thanks @huangzheng2016 ! - Fix memory not being released when subagent scopes are disposed. #3777 dc76b0c Thanks @huangzheng2016 ! - Fix progressively slower rendering on each round of large agent swarm runs. #3631 1336be3 Thanks @wbxl2000 ! - Stop returning deleted...",
+    "content": "Patch Changes #3780 486dcd2 Thanks @Grapedge ! - Update the terminal UI engine, fixing link colors in wrapped markdown tables and @ file-completion ordering, and adding native clipboard support on Linux X11. #3776 48fad6e Thanks @huangzheng2016 ! - Fix memory not being released when subagent scopes are disposed. #3777 dc76b0c Thanks @huangzheng2016 ! - Fix progressively slower rendering on each round of large agent swarm runs. #3631 1336be3 Thanks @wbxl2000 ! - Stop returning deleted sessions from global search before the search index catches up. #3775 f248624 Thanks @huangzheng2016 ! - Reduce event-loop stalls and GC churn in sessions with many concurrent subagents. #3779 82ec469 Thanks @huangzheng2016 ! - Fix pressing Ctrl+C while subagents are running exiting the whole CLI instead of just interrupting the subagents. #3752 0725ef1 Thanks @tpoisonooo ! - Fix tower mode mistaking newly spawned agents for previous sessions' roster entries.",
+    "source_url": "https://github.com/MoonshotAI/kimi-code/releases.atom",
+    "source_key": "moonshot-kimi-code-releases"
+  },
+  {
+    "id": "0f3707d6-c86f-5631-a2be-fd125d41dde7",
+    "company": "Cline",
+    "title": "v4.1.18: docs(skills): rewrite publish-extension for the completed SDK cutover",
+    "url": "https://github.com/cline/cline/releases/tag/v4.1.18",
+    "published_at": "2026-09-15T06:56:07+00:00",
+    "source_type": "rss_official",
+    "summary": "The ext-sdk-bundle-rollout flag reached 100%, so stable releases now ship a standalone build of main through ext-vscode-publish-stable.yml rather than the combined legacy+next A/B VSIX. Rewrite the skill around that path and record what is left to retire. Also corrects two things the old text got wrong: nightly is manual-dispatch only (the cron was removed because PublishNightly gained required reviewers, so unattended runs sat waiting and starved their successors), and the stable workflow...",
+    "content": "The ext-sdk-bundle-rollout flag reached 100%, so stable releases now ship a standalone build of main through ext-vscode-publish-stable.yml rather than the combined legacy+next A/B VSIX. Rewrite the skill around that path and record what is left to retire. Also corrects two things the old text got wrong: nightly is manual-dispatch only (the cron was removed because PublishNightly gained required reviewers, so unattended runs sat waiting and starved their successors), and the stable workflow tags before it builds, so a tag-push failure fails early rather than leaving a published-but-untagged release.",
+    "source_url": "https://github.com/cline/cline/releases.atom",
+    "source_key": "cline-releases"
+  },
+  {
     "id": "45ac09c3-26b6-539a-a250-b3dd0dd340ff",
     "company": "Cline",
     "title": "CLI v3.0.62",
