@@ -1,8 +1,44 @@
 [
   {
+    "id": "d6fac366-2656-5daf-b9a7-6b423a38c4a8",
+    "company": "NVIDIA AI",
+    "title": "University of Manchester Uses NVIDIA Earth-2 to Forecast Air Pollution Across the UK",
+    "url": "https://blogs.nvidia.com/blog/uk-air-pollution-research-earth-2/",
+    "published_at": "2026-09-16T05:00:42+00:00",
+    "source_type": "rss_official",
+    "summary": "Air pollution is a serious public health risk, contributing to an estimated 30,000 deaths in the U.K. alone last year. Data-driven insights can help — but computing air quality with traditional chemistry-based models is expensive, which limits how detailed they can be and how regularly they can be run. David Topping, a professor in the […]",
+    "content": "Air pollution is a serious public health risk, contributing to an estimated 30,000 deaths in the U.K. alone last year. Data-driven insights can help — but computing air quality with traditional chemistry-based models is expensive, which limits how detailed they can be and how regularly they can be run. David Topping, a professor in the University of Manchester’s department of Earth and environmental science, saw that the NVIDIA Earth-2 family of open AI models and tools had cracked a related problem for weather forecasting — and asked whether the same generative frameworks could work for pollution fields. “The biggest challenge is the compute required to forecast air quality,” said Topping. “Once you put chemistry into weather models, they get really, really slow. So I said, why don’t we try using the generative frameworks that NVIDIA develops for climate and weather for pollution fields?” Working with the NVIDIA Earth-2 team, Topping and colleagues generated training data from existing chemistry-climate simulations, then trained Earth-2 CorrDiff — a generative downscaling model — on Isambard-AI, the U.K.’s national AI supercomputer in Bristol. The model worked on the first attempt. The team has since added Earth-2 StormCast, a model that enables time-dependent forecasts that directly use air quality observations, and showed the test-training and inference workflows running on the NVIDIA DGX Spark personal AI supercomputer. “To improve human health, it’s essential that we understand the impact of environmental stressors in the air we breathe,” said Topping. “Our U.K.-wide pollution model allows us to model potential future scenarios, such as predicting what would happen if different pollution-related government policy changes went into effect. https://blogs.nvidia.com/wp-content/uploads/2026/09/Adobe-Express-UKairpollution-4.mp4 Video credit: Bristol Centre for Supercomputing (BriCS) @ University of Bristol Another potential application is proactive air quality insights for healthcare organizations. Topping envisions a scenario where regional and national healthcare services could reach out to patients with conditions like asthma to let them know that air pollution is going to be high in their area tomorrow, or next week. The team is also exploring how the air pollution model could pair with data from edge AI devices to ingest real-time air quality data and drive real-time decision making, such as in the event of a wildfire. “The fact that this model trained in two days on Isambard-AI — and can now run on a DGX Spark sitting on a desk — changes who can do this science and how quickly,” said Niall Robinson, developer relations manager for weather and climate at NVIDIA. “We’re just at the beginning of what these open workflows can do globally.” “The ability to switch from one NVIDIA framework to another was really impressive,” said Hao Zhang, a doctoral student at the University of Manchester who trained StormCast on Isambard-AI. “We’re only just starting to explore how to use these frameworks in different ways to model complex pollution fields.” From National Supercomputer to the Desktop To retrain the Earth-2 model for air pollution, Topping and the team used a year’s worth of U.K. pollution data simulated at hourly intervals to generate a detailed, U.K.-wide pollution model at a resolution of 2-3 square kilometers. Running on a single, eight-GPU node on Isambard-AI — the U.K.’s most powerful AI supercomputer, packed with 5,448 NVIDIA GH200 Grace Hopper Superchips delivering 21 exaflops of AI performance — the process took just two days. “Earth-2 CorrDiff has shown an incredibly efficient use of the world-class NVIDIA hardware inside Isambard-AI,” said Simon McIntosh-Smith, director of the Bristol Centre for Supercomputing at University of Bristol and cofounder of Isambard-AI. “It’s fitting that, for a climate-based project, the GPU hours used were relatively low, requiring less power from the supercomputer to run the workloads.” In addition to providing a look back at air pollution over the past year, the model can help predict future air pollution scenarios for the U.K. The team plans to further increase the resolution of its model by incorporating additional open data, enabling researchers to understand air pollution at street scale. The same generative pollution workflow also runs on the NVIDIA GB10 Grace Blackwell superchip-powered DGX Spark desktop AI system for inference and smaller training runs. Topping now has an DGX Spark system in his office retraining models. “You can now invest a few thousand dollars to get started developing powerful AI models,” Topping said. Open Science, Agentic Future The team plans to release open source training data and workflows for the pollution models will be released so that similar models can be trained for other countries and regions. “Our aim is to offer this workflow to the entire world,” he said. “We hope that every global country and every major city with a small burst of supercomputer AI time will be able to produce their own detailed pollution models with their own local data.” Looking five years out, Topping sees the endpoint as something simpler still: an agentic interface where a clinician or government agency asks the question and the chain of models handles everything else. “With better open access to air quality observations, someone could ask our pollution model running on DGX Spark: what’s the pollution going to be like in this neighborhood tomorrow?” he said. “And a whole chain of interactions will deliver an answer, grounded on the science these frameworks represent.” Learn more about NVIDIA Earth-2 climate and weather AI.",
+    "source_url": "https://blogs.nvidia.com/feed/",
+    "source_key": "nvidia-blog"
+  },
+  {
+    "id": "8e7827b9-41af-51c4-bd2c-e5724833163a",
+    "company": "Codex CLI",
+    "title": "0.155.0-alpha.10",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.155.0-alpha.10",
+    "published_at": "2026-09-16T04:23:12+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.155.0-alpha.10",
+    "content": "Release 0.155.0-alpha.10",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "39059b2b-4dce-5d7a-876e-d83eb8635dab",
+    "company": "Gemini CLI",
+    "title": "Release v0.62.0-nightly.20260916.g6a466a7e2",
+    "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.62.0-nightly.20260916.g6a466a7e2",
+    "published_at": "2026-09-16T01:28:53+00:00",
+    "source_type": "rss_official",
+    "summary": "What's Changed fix(core): ensure AgentLoopContext properties are preserved across object spread by @diegogodinezr in #29335 fix(a2a-server): add early return on unsupported store in tasks metadata endpoint by @jesussamuel-byte in #29334 Changelog for v0.61.0-preview.0 by @gemini-cli-robot in #29344 Changelog for v0.60.0 by @gemini-cli-robot in #29345 fix(core,acp): format MCP tool call titles as structured signatures and segregate explanations by @jvargassanchez-dot in #29341 chore(release):...",
+    "content": "What's Changed fix(core): ensure AgentLoopContext properties are preserved across object spread by @diegogodinezr in #29335 fix(a2a-server): add early return on unsupported store in tasks metadata endpoint by @jesussamuel-byte in #29334 Changelog for v0.61.0-preview.0 by @gemini-cli-robot in #29344 Changelog for v0.60.0 by @gemini-cli-robot in #29345 fix(core,acp): format MCP tool call titles as structured signatures and segregate explanations by @jvargassanchez-dot in #29341 chore(release): bump version to 0.62.0-nightly.20260915.gae28844fb by @gemini-cli-robot in #29346 Full Changelog : v0.61.0-nightly.20260915.g9c1b0a610...v0.62.0-nightly.20260916.g6a466a7e2",
+    "source_url": "https://github.com/google-gemini/gemini-cli/releases.atom",
+    "source_key": "gemini-cli-releases"
+  },
+  {
     "id": "51eeeecc-2d21-5cc4-9cc5-83734141e10a",
     "company": "Codex CLI",
-    "title": "rust-v0.155.0-alpha.9",
+    "title": "0.155.0-alpha.9",
     "url": "https://github.com/openai/codex/releases/tag/rust-v0.155.0-alpha.9",
     "published_at": "2026-09-16T00:37:44+00:00",
     "source_type": "rss_official",
