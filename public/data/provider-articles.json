@@ -1,5 +1,29 @@
 [
   {
+    "id": "b5c1f378-5752-5554-af3e-057a109028aa",
+    "company": "Codex CLI",
+    "title": "rusty-v8-v152.2.0",
+    "url": "https://github.com/openai/codex/releases/tag/rusty-v8-v152.2.0",
+    "published_at": "2026-09-16T10:13:25+00:00",
+    "source_type": "rss_official",
+    "summary": "Codex rusty_v8 152.2.0",
+    "content": "Codex rusty_v8 152.2.0",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "5f23d86a-9915-5183-a702-3d006cac5320",
+    "company": "Codex CLI",
+    "title": "rust-v0.155.0-alpha.2.5",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.155.0-alpha.2.5",
+    "published_at": "2026-09-16T07:04:30+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.155.0-alpha.2.5",
+    "content": "Release 0.155.0-alpha.2.5",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
     "id": "d6fac366-2656-5daf-b9a7-6b423a38c4a8",
     "company": "NVIDIA AI",
     "title": "University of Manchester Uses NVIDIA Earth-2 to Forecast Air Pollution Across the UK",
