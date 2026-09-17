@@ -1,8 +1,56 @@
 [
   {
+    "id": "36f8016a-001c-58cf-8910-6bb0de054797",
+    "company": "Moonshot AI",
+    "title": "@moonshot-ai/kimi-code@2.0.0",
+    "url": "https://github.com/MoonshotAI/kimi-code/releases/tag/%40moonshot-ai%2Fkimi-code%402.0.0",
+    "published_at": "2026-09-17T05:33:07+00:00",
+    "source_type": "rss_official",
+    "summary": "Major Changes #3849 34ec5d2 Thanks @wbxl2000 ! - Add the /desktop slash command (alias /install-desktop) and the kimi install-app subcommand to open the Kimi Code desktop app page in the browser. Minor Changes #3851 faec32c Thanks @Grapedge ! - Render mermaid code blocks as diagrams in the terminal; turn it off under /settings → Mermaid diagrams, or set mermaid = \"off\" in the [markdown] section of tui.toml. Patch Changes #3838 f4e5822 Thanks @sailist ! - Fix an occasional crash when a...",
+    "content": "Major Changes #3849 34ec5d2 Thanks @wbxl2000 ! - Add the /desktop slash command (alias /install-desktop) and the kimi install-app subcommand to open the Kimi Code desktop app page in the browser. Minor Changes #3851 faec32c Thanks @Grapedge ! - Render mermaid code blocks as diagrams in the terminal; turn it off under /settings → Mermaid diagrams, or set mermaid = \"off\" in the [markdown] section of tui.toml. Patch Changes #3838 f4e5822 Thanks @sailist ! - Fix an occasional crash when a running turn is canceled. #3802 c72a202 Thanks @Grapedge ! - Highlight diff code blocks. #3844 0cf413f Thanks @Grapedge ! - Fix a steered message appearing twice after interrupting the turn. #3848 b4d0b8a Thanks @Grapedge ! - Fix @ file mentions duplicating or dropping the path when accepting a suggestion while still typing. #3828 2bb6e12 Thanks @wbxl2000 ! - Fix duplicate user messages when steering an ongoing conversation. #3832 1c7e996 Thanks @chengluyu ! - Fix files attached while steering an ongoing conversation appearing only after a reload. #3853 bd06178 Thanks @wbxl2000 ! - Keep the original prompt visible when steering a running turn, instead of replacing it with the steered text. #3832 1c7e996 Thanks @chengluyu ! - Fix slash commands sent while steering an ongoing conversation missing from the transcript. #3837 cafd9b5 Thanks @wbxl2000 ! - Fix missing and reappearing chat messages after undoing a steered message. #3818 19ce4b3 Thanks @liruifengv ! - Fix /usage showing a wrong error message when no session has been created yet. #3784 5653c73 Thanks @7Sageer ! - Images sent to Kimi models are uploaded as file references instead of inline data, and a warning is shown when media are dropped from a retried request. #3778 7d174ac Thanks @huangzheng2016 ! - Limit memory growth from finished subagents. #3778 7d174ac Thanks @huangzheng2016 ! - Report background subagents that time out or are stopped as cancelled instead of failed. #3846 31f1b68 Thanks @7Sageer ! - Fix OAuth login never triggering for MCP servers that allow anonymous tool discovery but reject tool calls with 401. #3784 5653c73 Thanks @7Sageer ! - When accumulated images and videos exceed the request size budget, the oldest media are omitted from requests with a warning instead of failing. #3778 7d174ac Thanks @huangzheng2016 ! - Report tools and subagents interrupted by the user as cancelled instead of aborted or failed. #3803 39a7455 Thanks @kimi-agent-bot ! - The built-in browser plugin now appears as \"Kimi Browser Extension\" in the plugins panel, marketplace catalog, and docs, matching the product rename. #3858 95d4a9d Thanks @liruifengv ! - Sign the Windows CLI executable with a trusted publisher certificate. #3795 a7bdabb Thanks @Grapedge ! - Feedback surveys now appear at better times in long conversations. #3833 8660a07 Thanks @tpoisonooo ! - Fix tower worker cards wrongly showing \"completed\" during rework. #3840 9c5e9b4 Thanks @chengluyu ! - Fix a Windows crash when a project or config folder is opened through a short 8.3 path.",
+    "source_url": "https://github.com/MoonshotAI/kimi-code/releases.atom",
+    "source_key": "moonshot-kimi-code-releases"
+  },
+  {
+    "id": "e85a3241-4d52-5f4c-bf89-1534028f3d37",
+    "company": "Codex CLI",
+    "title": "0.155.0-alpha.16",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.155.0-alpha.16",
+    "published_at": "2026-09-17T04:37:58+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.155.0-alpha.16",
+    "content": "Release 0.155.0-alpha.16",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "993b86b1-00e4-56f7-88d7-4c774cfa5832",
+    "company": "Cline",
+    "title": "Desktop v0.0.30",
+    "url": "https://github.com/cline/cline/releases/tag/desktop-v0.0.30",
+    "published_at": "2026-09-17T03:35:26+00:00",
+    "source_type": "rss_official",
+    "summary": "Windows updates no longer fail with \"Error opening file for writing\". The installer hook meant to stop the running backend never terminated anything: Tauri ships a 32-bit NSIS installer, so its PowerShell ran under WOW64, where Get-Process reports an empty path for every 64-bit process — the filter matched no sidecar on any x64 machine. The installer then wrote over an executable the detached Hub daemon still held open, which is why updating from 0.0.25 through 0.0.28 failed exactly as...",
+    "content": "Windows updates no longer fail with \"Error opening file for writing\". The installer hook meant to stop the running backend never terminated anything: Tauri ships a 32-bit NSIS installer, so its PowerShell ran under WOW64, where Get-Process reports an empty path for every 64-bit process — the filter matched no sidecar on any x64 machine. The installer then wrote over an executable the detached Hub daemon still held open, which is why updating from 0.0.25 through 0.0.28 failed exactly as 0.0.24 did. The installer now asks the Windows Restart Manager which processes hold this install's files and shuts those down; that is bitness-independent, covers the connector processes the Hub spawns, and leaves a side-by-side Cline Beta alone. If Restart Manager itself fails you get a Retry/Cancel prompt rather than a half-replaced install On Windows, Cline no longer runs a program out of your workspace when it means to run the system one. Windows resolves a bare program name through the child process's working directory before it searches PATH, and Cline runs rg , git , and powershell with your workspace as that directory — so a repository that happened to contain its own rg.exe would have that copy executed as soon as the workspace was indexed. Cline now opts out of current-directory executable search at startup, and every process it spawns inherits the setting Long sessions now compact when they actually need to rather than running out of room. The trigger compared a character-based estimate of the transcript (~3 characters per token) against the model's context limit, so content that tokenizes far denser than that — disassembly, image dumps, minified sources — could fill the real context window while the estimate stayed under the threshold and compaction never fired; the turn was then squeezed down to a handful of output tokens. The trigger now also uses the token count the provider itself reports, and how much history is kept is scaled by how far off the estimate turned out to be. The summarizer's output budget also doubled, so a model that reasons before answering can no longer spend the whole budget thinking and return no summary at all A tool that streams its output no longer keeps spinning after it has finished. When a tool streamed everything as it went, its completion event carried no final output, which chat read as \"still running\" — so the tool kept its running presentation, spinner included, for the rest of the turn Refreshed Cline's logo and app icons throughout the app, the Dock and taskbar, and the installer The CoreWeave provider's branding and setup links now match CoreWeave's current documentation, and Weights & Biases gained a direct link to its API key page from provider setup Full Changelog : desktop-v0.0.29...desktop-v0.0.30",
+    "source_url": "https://github.com/cline/cline/releases.atom",
+    "source_key": "cline-releases"
+  },
+  {
+    "id": "30039bf8-16d8-5412-bf91-751d5d0936d5",
+    "company": "Gemini CLI",
+    "title": "Release v0.62.0-nightly.20260917.g6a466a7e2",
+    "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.62.0-nightly.20260917.g6a466a7e2",
+    "published_at": "2026-09-17T01:25:44+00:00",
+    "source_type": "rss_official",
+    "summary": "Full Changelog : v0.62.0-nightly.20260916.g6a466a7e2...v0.62.0-nightly.20260917.g6a466a7e2",
+    "content": "Full Changelog : v0.62.0-nightly.20260916.g6a466a7e2...v0.62.0-nightly.20260917.g6a466a7e2",
+    "source_url": "https://github.com/google-gemini/gemini-cli/releases.atom",
+    "source_key": "gemini-cli-releases"
+  },
+  {
     "id": "307616b5-f6c0-5493-8e47-f6d3a94ed465",
     "company": "Codex CLI",
-    "title": "rust-v0.155.0-alpha.15",
+    "title": "0.155.0-alpha.15",
     "url": "https://github.com/openai/codex/releases/tag/rust-v0.155.0-alpha.15",
     "published_at": "2026-09-17T00:33:44+00:00",
     "source_type": "rss_official",
