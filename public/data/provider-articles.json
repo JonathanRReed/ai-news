@@ -1,5 +1,65 @@
 [
   {
+    "id": "c326194f-14c7-5a4d-aee1-d8e87d12b24e",
+    "company": "Codex CLI",
+    "title": "0.156.0-alpha.2",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.156.0-alpha.2",
+    "published_at": "2026-09-18T05:04:39+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.156.0-alpha.2",
+    "content": "Release 0.156.0-alpha.2",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "920cbb12-e116-5b28-be73-607fcbbf94be",
+    "company": "Codex CLI",
+    "title": "0.155.0-alpha.9.2",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.155.0-alpha.9.2",
+    "published_at": "2026-09-18T03:13:47+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.155.0-alpha.9.2",
+    "content": "Release 0.155.0-alpha.9.2",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "eda3debc-48fa-5a9a-a52a-f4d05803012f",
+    "company": "Claude Code",
+    "title": "v2.1.276",
+    "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.276",
+    "published_at": "2026-09-18T02:12:26+00:00",
+    "source_type": "rss_official",
+    "summary": "What's changed Fixed every request failing with 400 … Input tag 'advisor_20260301' when ANTHROPIC_BASE_URL points at a proxy or gateway (2.1.275 regression)",
+    "content": "What's changed Fixed every request failing with 400 … Input tag 'advisor_20260301' when ANTHROPIC_BASE_URL points at a proxy or gateway (2.1.275 regression)",
+    "source_url": "https://github.com/anthropics/claude-code/releases.atom",
+    "source_key": "claude-code-releases"
+  },
+  {
+    "id": "435f03f5-222e-5e69-8426-71a17401f336",
+    "company": "Cline",
+    "title": "Desktop v0.0.32",
+    "url": "https://github.com/cline/cline/releases/tag/desktop-v0.0.32",
+    "published_at": "2026-09-18T01:43:09+00:00",
+    "source_type": "rss_official",
+    "summary": "Cline starts again after updating. In 0.0.31 the app could fail at launch with \"desktop backend exited before publishing its endpoint\" and never reach the workspace picker. Cline runs its own copy of the Cline Hub in the background, and the two halves had been built from different copies of the same code — so the Hub announced one build identity while the app expected another, the app shut down the very Hub it had just started, and startup timed out reporting \"No compatible hub runtime is...",
+    "content": "Cline starts again after updating. In 0.0.31 the app could fail at launch with \"desktop backend exited before publishing its endpoint\" and never reach the workspace picker. Cline runs its own copy of the Cline Hub in the background, and the two halves had been built from different copies of the same code — so the Hub announced one build identity while the app expected another, the app shut down the very Hub it had just started, and startup timed out reporting \"No compatible hub runtime is available\". Both halves now load the same copy of that code, and the real compiled backend is now booted end-to-end in CI on every change so the two cannot drift apart again Full Changelog : desktop-v0.0.31...desktop-v0.0.32",
+    "source_url": "https://github.com/cline/cline/releases.atom",
+    "source_key": "cline-releases"
+  },
+  {
+    "id": "f1b3109a-f157-552a-b7d5-b2134a044ef5",
+    "company": "Gemini CLI",
+    "title": "Release v0.62.0-nightly.20260918.g9450ade79",
+    "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.62.0-nightly.20260918.g9450ade79",
+    "published_at": "2026-09-18T01:23:37+00:00",
+    "source_type": "rss_official",
+    "summary": "What's Changed fix(core): retain oauth refresh token on refresh and make credential deletion idempotent by @villahernandez-coder in #29339 fix(ui): guard against negative layout dimensions in border rendering by @diegogodinezr in #29347 test(integration): deflake run_shell_command and file-system-interactive tests by @DavidAPierce in #29185 fix(core): improve PTY file descriptor cleanup and execution lifecycle management by @jesussamuel-byte in #29340 Full Changelog :...",
+    "content": "What's Changed fix(core): retain oauth refresh token on refresh and make credential deletion idempotent by @villahernandez-coder in #29339 fix(ui): guard against negative layout dimensions in border rendering by @diegogodinezr in #29347 test(integration): deflake run_shell_command and file-system-interactive tests by @DavidAPierce in #29185 fix(core): improve PTY file descriptor cleanup and execution lifecycle management by @jesussamuel-byte in #29340 Full Changelog : v0.62.0-nightly.20260917.g6a466a7e2...v0.62.0-nightly.20260918.g9450ade79",
+    "source_url": "https://github.com/google-gemini/gemini-cli/releases.atom",
+    "source_key": "gemini-cli-releases"
+  },
+  {
     "id": "b7b664fc-3acf-57db-bfd6-d6b2ccd728c3",
     "company": "Codex CLI",
     "title": "0.156.0-alpha.1",
