@@ -1,5 +1,17 @@
 [
   {
+    "id": "3b664b92-dfb0-5c0a-a1f5-a5e4771d43ae",
+    "company": "Moonshot AI",
+    "title": "@moonshot-ai/kimi-code@2.0.2",
+    "url": "https://github.com/MoonshotAI/kimi-code/releases/tag/%40moonshot-ai%2Fkimi-code%402.0.2",
+    "published_at": "2026-09-19T12:32:48+00:00",
+    "source_type": "rss_official",
+    "summary": "Patch Changes #3922 9df7a9c Thanks @sailist ! - Fix new messages occasionally landing at an old position in the conversation after resuming a session. #3911 88a7d93 Thanks @Grapedge ! - Fix compaction failing after switching to a model with a smaller context window. #3929 6ffdf0d Thanks @7Hanrui ! - The agent no longer assumes the current working directory is the project root. #3933 9721259 Thanks @liruifengv ! - Fix a message sent while the agent was running sometimes appearing twice in the...",
+    "content": "Patch Changes #3922 9df7a9c Thanks @sailist ! - Fix new messages occasionally landing at an old position in the conversation after resuming a session. #3911 88a7d93 Thanks @Grapedge ! - Fix compaction failing after switching to a model with a smaller context window. #3929 6ffdf0d Thanks @7Hanrui ! - The agent no longer assumes the current working directory is the project root. #3933 9721259 Thanks @liruifengv ! - Fix a message sent while the agent was running sometimes appearing twice in the chat. #3934 2e605b1 Thanks @liruifengv ! - web: Improved interactions and fixed known bugs.",
+    "source_url": "https://github.com/MoonshotAI/kimi-code/releases.atom",
+    "source_key": "moonshot-kimi-code-releases"
+  },
+  {
     "id": "3edf4cd6-ee39-5af3-96c9-211ab4400a54",
     "company": "OpenClaw",
     "title": "OpenClaw Linux update channel",
