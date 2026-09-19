@@ -1,5 +1,17 @@
 [
   {
+    "id": "402dcffd-d239-502a-bfb9-c91aee32524c",
+    "company": "Codex CLI",
+    "title": "0.156.0-alpha.8",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.156.0-alpha.8",
+    "published_at": "2026-09-19T17:31:09+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.156.0-alpha.8",
+    "content": "Release 0.156.0-alpha.8",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
     "id": "3b664b92-dfb0-5c0a-a1f5-a5e4771d43ae",
     "company": "Moonshot AI",
     "title": "@moonshot-ai/kimi-code@2.0.2",
