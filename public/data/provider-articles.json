@@ -1,5 +1,17 @@
 [
   {
+    "id": "499c8834-eb78-579d-9e6f-33d9c38f986d",
+    "company": "Gemini CLI",
+    "title": "Release v0.62.0-nightly.20260920.gcfbcaa8df",
+    "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.62.0-nightly.20260920.gcfbcaa8df",
+    "published_at": "2026-09-20T01:25:39+00:00",
+    "source_type": "rss_official",
+    "summary": "Full Changelog : v0.62.0-nightly.20260919.gcfbcaa8df...v0.62.0-nightly.20260920.gcfbcaa8df",
+    "content": "Full Changelog : v0.62.0-nightly.20260919.gcfbcaa8df...v0.62.0-nightly.20260920.gcfbcaa8df",
+    "source_url": "https://github.com/google-gemini/gemini-cli/releases.atom",
+    "source_key": "gemini-cli-releases"
+  },
+  {
     "id": "e4f51c86-91bf-5a32-8762-aa2cfe39de2d",
     "company": "Codex CLI",
     "title": "0.156.0-alpha.9",
@@ -10,6 +22,30 @@
     "content": "Release 0.156.0-alpha.9",
     "source_url": "https://github.com/openai/codex/releases.atom",
     "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "6132bfba-d64f-5e09-9e42-0f1446a5a036",
+    "company": "OpenClaw",
+    "title": "release-publish/91926f9b61a5-1789871489",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/release-publish%2F91926f9b61a5-1789871489",
+    "published_at": "2026-09-19T22:26:30+00:00",
+    "source_type": "rss_official",
+    "summary": "fix(release): repair 7.34 validation gates ( #153190 )",
+    "content": "fix(release): repair 7.34 validation gates ( #153190 )",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
+  },
+  {
+    "id": "50db6938-ca07-52f1-b434-3173b3cf059e",
+    "company": "OpenClaw",
+    "title": "v2026.7.34",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.7.34",
+    "published_at": "2026-09-19T22:00:18+00:00",
+    "source_type": "rss_official",
+    "summary": "test(release): use entitled Gemini live model ( #153189 )",
+    "content": "test(release): use entitled Gemini live model ( #153189 )",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
   },
   {
     "id": "402dcffd-d239-502a-bfb9-c91aee32524c",
