@@ -1,5 +1,65 @@
 [
   {
+    "id": "6818c0e1-f71a-57e8-943a-e4944cf674dc",
+    "company": "Codex CLI",
+    "title": "rust-v0.156.0-alpha.13",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.156.0-alpha.13",
+    "published_at": "2026-09-21T00:29:09+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.156.0-alpha.13",
+    "content": "Release 0.156.0-alpha.13",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "351689a6-b583-50ec-890b-311a216d909a",
+    "company": "Codex CLI",
+    "title": "0.156.0-alpha.12",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.156.0-alpha.12",
+    "published_at": "2026-09-21T00:17:19+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.156.0-alpha.12",
+    "content": "Release 0.156.0-alpha.12",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "2f117f85-d857-5e1a-8f06-8a002fc0e11d",
+    "company": "Codex CLI",
+    "title": "0.156.0-alpha.11",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.156.0-alpha.11",
+    "published_at": "2026-09-20T22:58:38+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.156.0-alpha.11",
+    "content": "Release 0.156.0-alpha.11",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "fe9a9049-3ca8-5f68-b1b0-09e3e8e798ff",
+    "company": "Codex CLI",
+    "title": "0.156.0-alpha.10",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.156.0-alpha.10",
+    "published_at": "2026-09-20T21:29:54+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.156.0-alpha.10",
+    "content": "Release 0.156.0-alpha.10",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "b26a0752-9a58-5e56-b1ff-d6821a0f2f94",
+    "company": "OpenClaw",
+    "title": "v2026.7.35: chore: prepare extended-stable 2026.7.35 (#153901)",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.7.35",
+    "published_at": "2026-09-20T19:37:10+00:00",
+    "source_type": "rss_official",
+    "summary": "fix(doctor): preserve complete plugin inventory Backport the plugin inventory repair from #136045 without the unrelated LINE and Mattermost setup changes. chore: prepare extended-stable 2026.7.35",
+    "content": "fix(doctor): preserve complete plugin inventory Backport the plugin inventory repair from #136045 without the unrelated LINE and Mattermost setup changes. chore: prepare extended-stable 2026.7.35",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
+  },
+  {
     "id": "499c8834-eb78-579d-9e6f-33d9c38f986d",
     "company": "Gemini CLI",
     "title": "Release v0.62.0-nightly.20260920.gcfbcaa8df",
