@@ -1,8 +1,32 @@
 [
   {
+    "id": "fd74fe6e-e703-54e2-af07-3c9380efc4ff",
+    "company": "Codex CLI",
+    "title": "0.156.0-alpha.14",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.156.0-alpha.14",
+    "published_at": "2026-09-21T04:20:14+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.156.0-alpha.14",
+    "content": "Release 0.156.0-alpha.14",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "4ddf1607-8a62-5f23-a084-ac594313be7f",
+    "company": "Gemini CLI",
+    "title": "Release v0.62.0-nightly.20260921.gcfbcaa8df",
+    "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.62.0-nightly.20260921.gcfbcaa8df",
+    "published_at": "2026-09-21T01:32:58+00:00",
+    "source_type": "rss_official",
+    "summary": "Full Changelog : v0.62.0-nightly.20260920.gcfbcaa8df...v0.62.0-nightly.20260921.gcfbcaa8df",
+    "content": "Full Changelog : v0.62.0-nightly.20260920.gcfbcaa8df...v0.62.0-nightly.20260921.gcfbcaa8df",
+    "source_url": "https://github.com/google-gemini/gemini-cli/releases.atom",
+    "source_key": "gemini-cli-releases"
+  },
+  {
     "id": "6818c0e1-f71a-57e8-943a-e4944cf674dc",
     "company": "Codex CLI",
-    "title": "rust-v0.156.0-alpha.13",
+    "title": "0.156.0-alpha.13",
     "url": "https://github.com/openai/codex/releases/tag/rust-v0.156.0-alpha.13",
     "published_at": "2026-09-21T00:29:09+00:00",
     "source_type": "rss_official",
