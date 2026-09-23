@@ -21,7 +21,8 @@ export default [
       'coverage/',
       '.vercel/',
       '.netlify/',
-      'public/build/'
+      'public/build/',
+      'public/site-theme.js'
     ]
   },
 

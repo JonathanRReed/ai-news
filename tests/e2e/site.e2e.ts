@@ -22,6 +22,20 @@ test("keeps the verified cache usable when the live feed is degraded", async ({ 
   await expect(page.locator("article a[href^='http']").first()).toBeVisible();
 });
 
+test("applies a saved theme before the page renders and keeps the toggle choice", async ({ page }) => {
+  await page.addInitScript(() => {
+    if (localStorage.getItem("theme") === null) localStorage.setItem("theme", "light");
+  });
+  await page.goto("/");
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
+  await expect(page.locator('meta[name="theme-color"]')).toHaveAttribute("content", "#f4f2ee");
+
+  await page.getByRole("button", { name: "Toggle light and dark theme" }).click();
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+  await page.reload();
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+});
+
 test("renders the primary-source feed and searchable filters", async ({ page }) => {
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("See what changed in AI today.");
   await expect(page.getByRole("searchbox", { name: "Search articles" })).toBeVisible();

@@ -33,7 +33,8 @@
   "scripts": {
     "dev": "astro dev",
     "gather:providers": "bun scripts/gather-provider-feeds.mjs",
-    "build": "astro build",
+    "build": "bun run build:theme && astro build",
+    "build:theme": "bun build scripts/site-theme.source.js --target browser --format iife --minify --outfile public/site-theme.js",
     "preview": "astro preview",
     "preview:cloudflare": "wrangler pages dev dist --ip 127.0.0.1 --port 4377 --compatibility-date 2026-08-20",
     "check": "astro check",
