@@ -310,8 +310,9 @@
       "verifiedAt": "2026-08-30",
       "includePaths": [],
       "allowedHosts": [
-        "983f2f5-dot-gdm-deepmind-com-prod.appspot.com",
-        "d1f9a8b-dot-gdm-deepmind-com-prod.appspot.com"
+        "blog.google",
+        "developers.googleblog.com",
+        "research.google"
       ]
     },
     {

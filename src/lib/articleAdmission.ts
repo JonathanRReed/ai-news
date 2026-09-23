@@ -2,6 +2,18 @@ import { getEntity, intelligenceSources } from "./intelligenceCatalog.js";
 import type { IntelligenceSource } from "./intelligenceCatalog.js";
 import type { Article } from "../types/article.js";
 import { isSafeArticleRouteId } from "./articleRoutes.js";
+import deepMindSourceUrls from "../data/deepmind-source-urls.json";
+
+const deepMindSourceById = new Map(
+  deepMindSourceUrls.map(({ id, from, to }) => [id, { from, to }]),
+);
+
+function currentPublisherUrl(article: Article): Article {
+  const verified = deepMindSourceById.get(article.id);
+  return article.source_key === "deepmind-blog" && verified?.from === article.url
+    ? { ...article, url: verified.to }
+    : article;
+}
 
 const sourceByKey = new Map(
   intelligenceSources.map((source) => [source.sourceKey, source]),
@@ -54,8 +66,9 @@ function admittedCanonicalUrl(source: IntelligenceSource, value: string): boolea
 
 export function isArticleAdmitted(article: Article): boolean {
   if (!isSafeArticleRouteId(article.id)) return false;
-  const source = sourceForArticle(article);
-  return source !== undefined && admittedCanonicalUrl(source, article.url);
+  const current = currentPublisherUrl(article);
+  const source = sourceForArticle(current);
+  return source !== undefined && admittedCanonicalUrl(source, current.url);
 }
 
 export function sourceKeyForArticle(article: Article): string | null {
@@ -63,5 +76,5 @@ export function sourceKeyForArticle(article: Article): string | null {
 }
 
 export function admittedArticles(articles: Article[]): Article[] {
-  return articles.filter(isArticleAdmitted);
+  return articles.map(currentPublisherUrl).filter(isArticleAdmitted);
 }

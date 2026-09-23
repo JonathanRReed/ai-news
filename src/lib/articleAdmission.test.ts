@@ -1,6 +1,8 @@
 import { describe, expect, test } from "bun:test";
 import { admittedArticles, isArticleAdmitted } from "./articleAdmission.js";
 import type { Article } from "../types/article.js";
+import providerArticles from "../../public/data/provider-articles.json";
+import deepMindSourceUrls from "../data/deepmind-source-urls.json";
 
 const admitted: Article = {
   id: "admitted",
@@ -28,5 +30,17 @@ describe("article cache admission", () => {
       admitted,
       { ...admitted, id: "poisoned", url: "https://attacker.example/story" },
     ])).toEqual([admitted]);
+  });
+
+  test("uses verified publisher URLs and rejects unknown staging hosts", () => {
+    const records = new Map((providerArticles as Article[]).map((article) => [article.id, article]));
+    for (const mapping of deepMindSourceUrls) {
+      const record = records.get(mapping.id);
+      expect(record?.url).toBe(mapping.from);
+      expect(record && isArticleAdmitted(record)).toBeTrue();
+      expect(admittedArticles([record!])[0]?.url).toBe(mapping.to);
+    }
+    const record = records.get(deepMindSourceUrls[0].id)!;
+    expect(isArticleAdmitted({ ...record, url: "https://unknown.appspot.com/blog/story" })).toBeFalse();
   });
 });
