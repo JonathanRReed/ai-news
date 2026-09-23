@@ -1,0 +1,17 @@
+---
+interface Props {
+  text: string;
+}
+
+const { text } = Astro.props;
+// A word break keeps package versions copyable while preventing Cloudflare
+// from treating names such as kimi-code@0.43.1 as email addresses.
+const parts = text.split(/(?<=@)(?=\d+(?:\.\d+)+)/g);
+---
+
+{parts.map((part, index) => (
+  <Fragment>
+    {index > 0 && <wbr />}
+    {part}
+  </Fragment>
+))}

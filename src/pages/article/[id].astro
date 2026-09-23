@@ -2,6 +2,7 @@
 import { URL } from "node:url";
 import Layout from "../../layouts/Layout.astro";
 import SourceHealthReceipt from "../../components/SourceHealthReceipt.tsx";
+import PublisherText from "../../components/PublisherText.astro";
 import providerArticles from "../../../public/data/provider-articles.json";
 import routeAliases from "../../../public/data/route-aliases.json";
 import legacyArticles from "../../data/legacy-article-records.json";
@@ -195,7 +196,7 @@ const structuredData = {
         </div>
       </div>
 
-      <h1 class="mt-8 text-3xl font-bold leading-tight text-white md:text-5xl text-pretty break-words">{article.title}</h1>
+      <h1 class="mt-8 text-3xl font-bold leading-tight text-white md:text-5xl text-pretty break-words"><PublisherText text={article.title} /></h1>
 
       {archived && (
         <p class="mt-5 border-l-2 border-brand pl-4 text-sm leading-relaxed text-text-2">
@@ -215,7 +216,7 @@ const structuredData = {
       </div>
 
       {excerpt && (
-        <p class="mt-8 max-w-2xl text-lg leading-relaxed text-text-2 text-pretty break-words">{excerpt}</p>
+        <p class="mt-8 max-w-2xl text-lg leading-relaxed text-text-2 text-pretty break-words"><PublisherText text={excerpt} /></p>
       )}
 
       {previewWasTruncated && (

@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import { AUTHOR_REF } from "../lib/author.js";
 import ArticlesIslandWrapper from "../components/ArticlesIslandWrapper.tsx";
 import SourceHealthOverview from "../components/SourceHealthOverview.tsx";
+import PublisherText from "../components/PublisherText.astro";
 import providerArticles from "../../public/data/provider-articles.json";
 import { digestWeeks } from "../lib/digest.js";
 import { admittedArticles } from "../lib/articleAdmission.js";
@@ -180,7 +181,7 @@ const collectionStructuredData = {
                   href={articlePath(article.id)}
                   class="leading-snug text-white decoration-brand decoration-2 underline-offset-4 transition-colors hover:text-brand-hover hover:underline focus-industrial text-pretty break-words"
                 >
-                  <span class="micro-label mr-2 text-text-2">{article.company}</span>{article.title}
+                  <span class="micro-label mr-2 text-text-2">{article.company}</span><PublisherText text={article.title} />
                 </a>
               </li>
             ))}
