@@ -99,8 +99,11 @@ export const sources = [
     sourceRole: 'newsroom',
     required: true,
     allowedHosts: [
-      '983f2f5-dot-gdm-deepmind-com-prod.appspot.com',
-      'd1f9a8b-dot-gdm-deepmind-com-prod.appspot.com',
+      'antigravity.google',
+      'blog.google',
+      'cloud.google.com',
+      'developers.googleblog.com',
+      'research.google',
     ],
   }),
   source({
