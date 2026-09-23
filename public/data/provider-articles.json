@@ -1,5 +1,65 @@
 [
   {
+    "id": "d6aa6334-7425-522e-a8f4-5c5fcce8f01c",
+    "company": "OpenAI",
+    "title": "OpenAI extends cyber access to Ukraine for civilian defense",
+    "url": "https://openai.com/index/openai-extends-cyber-access-to-ukraine-for-civilian-defense",
+    "published_at": "2026-09-23T13:00:00+00:00",
+    "source_type": "rss_official",
+    "summary": "OpenAI is extending access to its Daybreak program to the Government of Ukraine to support the cyber defense of civilian infrastructure.",
+    "content": "OpenAI is extending access to its Daybreak program to the Government of Ukraine to support the cyber defense of civilian infrastructure.",
+    "source_url": "https://openai.com/news/rss.xml",
+    "source_key": "openai-news"
+  },
+  {
+    "id": "67f2dc2e-dcc1-5e41-b917-4916e421f114",
+    "company": "Moonshot AI",
+    "title": "@moonshot-ai/kimi-code@2.1.0",
+    "url": "https://github.com/MoonshotAI/kimi-code/releases/tag/%40moonshot-ai%2Fkimi-code%402.1.0",
+    "published_at": "2026-09-23T12:31:44+00:00",
+    "source_type": "rss_official",
+    "summary": "Minor Changes #3990 32000d0 Thanks @Grapedge ! - In fullscreen, click a folded block to open or close it. #4004 e17ff67 Thanks @Grapedge ! - Add a TUI mode setting to /settings with an experimental fullscreen layout; switching modes takes effect after restarting Kimi Code. You can also set tui_mode in ~/.kimi-code/tui.toml directly: \"regular\" renders into the terminal scrollback, while \"fullscreen\" makes parts of the UI mouse-interactive for a smoother experience. Patch Changes #3964 6451f1e...",
+    "content": "Minor Changes #3990 32000d0 Thanks @Grapedge ! - In fullscreen, click a folded block to open or close it. #4004 e17ff67 Thanks @Grapedge ! - Add a TUI mode setting to /settings with an experimental fullscreen layout; switching modes takes effect after restarting Kimi Code. You can also set tui_mode in ~/.kimi-code/tui.toml directly: \"regular\" renders into the terminal scrollback, while \"fullscreen\" makes parts of the UI mouse-interactive for a smoother experience. Patch Changes #3964 6451f1e Thanks @7Sageer ! - Block file tools from accessing files outside the working directory through symlinks. #3975 bb96d80 Thanks @RealKai42 ! - Reduce the CLI's startup time and memory usage. #3957 6a214b8 Thanks @huangzheng2016 ! - Fix a \"Maximum call stack size exceeded\" error when opening large sessions. #3974 994287a Thanks @liruifengv ! - Fix forked sessions getting their titles overwritten by auto-generated titles. #3964 6451f1e Thanks @7Sageer ! - Apply project-local configuration only after the workspace is trusted. #3964 6451f1e Thanks @7Sageer ! - Block repository git configuration from executing commands during background git operations. #3969 b3212fd Thanks @sailist ! - Skip cloud telemetry on the global login until its collector is live, and keep shutdown from aborting TUI exit. #3979 e796bb5 Thanks @sailist ! - Fix MCP OAuth not requesting the offline_access scope, which caused hourly browser re-authorization with providers like Vercel. #3969 b3212fd Thanks @sailist ! - Fix Remote Control failing to start after kimi login --region global . #3964 6451f1e Thanks @7Sageer ! - Reject additional directories that resolve to the home directory or filesystem root. #3995 a54e6f6 Thanks @7Sageer ! - Turn off repeat reminders and forced stops with KIMI_CODE_REPEAT_BREAKER=0 . #3970 895e9d9 Thanks @chengluyu ! - Fix missing Swarm members after reopening an interrupted conversation. #3989 a268ad7 Thanks @Grapedge ! - Show a Thinking… spinner and keep the status row height steady during streaming. #3989 a268ad7 Thanks @Grapedge ! - Add a clickable \"Jump to bottom\" indicator to the fullscreen TUI. #3976 f7012aa Thanks @tpoisonooo ! - Tower mode: smaller missions, stricter completion and review checks, and review history in rework briefings. #3847 65ae3e3 Thanks @tpoisonooo ! - Tower mode: mission titles must be ASCII, and task cards show the mission id. #3931 f17a22e Thanks @sailist ! - Turn off filesystem watchers for config and workspace files by default. Set [watch] enabled to true or KIMI_CODE_WATCH=1 to turn them back on. #4005 ba41d07 Thanks @liruifengv ! - web: Improved interactions and fixed known bugs.",
+    "source_url": "https://github.com/MoonshotAI/kimi-code/releases.atom",
+    "source_key": "moonshot-kimi-code-releases"
+  },
+  {
+    "id": "334748b8-3b58-5094-95ee-b88ab7dbcf17",
+    "company": "Codex CLI",
+    "title": "rust-v0.158.0-alpha.2",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.158.0-alpha.2",
+    "published_at": "2026-09-23T12:13:53+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.158.0-alpha.2",
+    "content": "Release 0.158.0-alpha.2",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "bd42acfa-e1a6-5503-b3a7-2f99731b9576",
+    "company": "Codex CLI",
+    "title": "rust-v0.158.0-alpha.1",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.158.0-alpha.1",
+    "published_at": "2026-09-23T10:48:51+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.158.0-alpha.1",
+    "content": "Release 0.158.0-alpha.1",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "fd1d0a9e-9d0b-5e51-b6f0-b05e9a2fd514",
+    "company": "OpenClaw",
+    "title": "release-publish/1d55e74cc6b8-1790157268",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/release-publish%2F1d55e74cc6b8-1790157268",
+    "published_at": "2026-09-23T09:43:13+00:00",
+    "source_type": "rss_official",
+    "summary": "fix(release): give the first-hop compat Docker lane a five-hop budget…",
+    "content": "fix(release): give the first-hop compat Docker lane a five-hop budget…",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
+  },
+  {
     "id": "b40e3770-4d91-51b9-bbed-855a7cab3f68",
     "company": "Codex CLI",
     "title": "0.157.0-alpha.11",
@@ -70,6 +130,18 @@
     "content": "New Features Choose GPT-6 Sol or GPT-6 Luna from the model picker. The rate-limit switch prompt now recommends GPT-6 Luna. ( #47405 ) Changelog Full Changelog: rust-v0.156.0...rust-v0.156.1 #47405 [hotfix 0.156.0] Add GPT-6 Sol and Luna to the model catalog ( #47332 ) @imac-oai",
     "source_url": "https://github.com/openai/codex/releases.atom",
     "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "242820a9-4495-5b23-ba23-6c13517fa3a1",
+    "company": "OpenAI",
+    "title": "Grab and OpenAI bring practical AI skills to Southeast Asia",
+    "url": "https://openai.com/index/grab-openai-ai-skills-southeast-asia",
+    "published_at": "2026-09-23T00:00:00+00:00",
+    "source_type": "rss_official",
+    "summary": "OpenAI and Grab launch GO Forward with AI, a regional programme helping 30,000 partners build practical AI skills across Southeast Asia.",
+    "content": "OpenAI and Grab launch GO Forward with AI, a regional programme helping 30,000 partners build practical AI skills across Southeast Asia.",
+    "source_url": "https://openai.com/news/rss.xml",
+    "source_key": "openai-news"
   },
   {
     "id": "70bcf0fc-2873-56a8-8015-5738f39c909f",
