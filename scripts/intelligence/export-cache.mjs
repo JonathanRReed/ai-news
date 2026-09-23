@@ -4,13 +4,19 @@ import { createAdminClient } from './supabase-rest.mjs';
 import { verifyRouteAliases } from './verify-routes.mjs';
 import { sources as defaultSources } from '../../config/intelligence-sources.mjs';
 import { admittedHttpsUrl } from './source-policy.mjs';
+import deepMindSourceUrls from '../../src/data/deepmind-source-urls.json';
+
+const verifiedDeepMindUrls = new Map(deepMindSourceUrls.map(({ id, from, to }) => [id, { from, to }]));
 
 function toLegacyArticle(row, sourceByKey) {
   const source = sourceByKey.get(row.source_key);
   if (!source) throw new Error(`export row references unknown source ${row.source_key}`);
-  const canonicalUrl = admittedHttpsUrl(source, row.canonical_url).toString();
+  const routeId = row.legacy_id || row.id;
+  const verified = row.source_key === 'deepmind-blog' ? verifiedDeepMindUrls.get(routeId) : null;
+  const url = verified?.from === row.canonical_url ? verified.to : row.canonical_url;
+  const canonicalUrl = admittedHttpsUrl(source, url).toString();
   return {
-    id: row.legacy_id || row.id,
+    id: routeId,
     company: row.entity_name,
     title: row.title,
     url: canonicalUrl,

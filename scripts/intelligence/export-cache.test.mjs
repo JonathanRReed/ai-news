@@ -5,6 +5,8 @@ import {
   exportLegacyArticles,
   serializeLegacyArticles,
 } from './export-cache.mjs';
+import deepMindSourceUrls from '../../src/data/deepmind-source-urls.json';
+import { sources } from '../../config/intelligence-sources.mjs';
 
 const rows = [
   {
@@ -93,6 +95,25 @@ describe('exportLegacyArticles', () => {
     };
     await expect(collectLegacyArticles({ client, pageSize: 10, manifestSources }))
       .rejects.toThrow('source URL is outside declared HTTPS hosts');
+  });
+
+  test('exports only exact verified DeepMind replacements for retired hosts', async () => {
+    const verified = deepMindSourceUrls.find(({ from }) => from.includes('appspot.com'));
+    const manifestSources = [sources.find(({ sourceKey }) => sourceKey === 'deepmind-blog')];
+    const row = {
+      ...rows[0],
+      legacy_id: verified.id,
+      source_key: 'deepmind-blog',
+      canonical_url: verified.from,
+    };
+    const client = { async selectRows() { return [row]; } };
+    const articles = await collectLegacyArticles({ client, manifestSources });
+    expect(articles[0].url).toBe(verified.to);
+    const unknown = { ...row, canonical_url: `${verified.from}unverified` };
+    await expect(collectLegacyArticles({
+      client: { async selectRows() { return [unknown]; } },
+      manifestSources,
+    })).rejects.toThrow('source URL is outside declared HTTPS hosts');
   });
 
   test('exports route aliases with keyset pagination', async () => {
