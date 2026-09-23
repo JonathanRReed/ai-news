@@ -84,5 +84,17 @@ describe("article cache admission", () => {
     expect(admittedRouteArticles(pair)).toHaveLength(2);
     expect(admittedArticles(pair).map((article) => article.id))
       .toEqual(["74f18a33-9ad5-47ba-aa9c-561802c31834"]);
+
+    for (const [canonicalId, aliasId] of [
+      ["3d741c8f-4d82-4a85-967f-7562c68ad796", "5e656241-ff8f-43b7-a8a4-c6f520a311b1"],
+      ["f10cc9d5-ea3f-4fa3-baf2-1b722bf9aace", "1bfec398-1782-4a06-92eb-454f48568f9b"],
+      ["f8c50092-ca62-4718-8455-4f40092113d5", "65c6057f-d7cd-4654-8e34-5999104c77ae"],
+      ["d3a7c0ab-14b9-4d2e-8f02-51cfbcc89e8c", "9d7eb3db-a50d-4cef-b68f-c5fce6f668b2"],
+      ["6a7da9d1-29cb-49cc-b7e7-a0e0ff958b19", "9f42fb80-3333-4377-8f12-002bb78dad30"],
+    ]) {
+      const routes = [records.get(canonicalId)!, records.get(aliasId)!];
+      expect(admittedRouteArticles(routes)).toHaveLength(2);
+      expect(admittedArticles(routes).map((article) => article.id)).toEqual([canonicalId]);
+    }
   });
 });

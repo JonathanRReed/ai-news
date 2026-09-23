@@ -12,6 +12,18 @@
     "to": "https://openai.com/index/introducing-gpt-5-2-codex/"
   },
   {
+    "id": "1bfec398-1782-4a06-92eb-454f48568f9b",
+    "sourceKey": "mistral-techcrunch-archive",
+    "from": "https://techcrunch.com/2025/09/09/what-is-mistral-ai-everything-to-know-about-the-openai-competitor/",
+    "to": "https://techcrunch.com/2026/07/04/what-is-mistral-ai-everything-to-know-about-the-openai-competitor/"
+  },
+  {
+    "id": "3d741c8f-4d82-4a85-967f-7562c68ad796",
+    "sourceKey": "xai-techcrunch-archive",
+    "from": "https://techcrunch.com/2025/09/03/xais-cfo-is-the-latest-executive-to-leave-elon-musks-ai-firm/",
+    "to": "https://techcrunch.com/2025/09/03/xais-cfo-is-the-latest-executive-to-leave-elon-musks-ai-firm/"
+  },
+  {
     "id": "445dad65-2a66-40c5-9861-d363ee4f98a4",
     "sourceKey": "xai-techcrunch-archive",
     "from": "https://techcrunch.com/2026/02/10/nearly-half-of-xais-founding-team-has-now-left-the-company/",
@@ -24,10 +36,28 @@
     "to": "https://openai.com/index/ai-for-self-empowerment/"
   },
   {
+    "id": "5e656241-ff8f-43b7-a8a4-c6f520a311b1",
+    "sourceKey": "xai-techcrunch-archive",
+    "from": "https://techcrunch.com/2025/09/03/xais-cfo-is-the-latest-executive-to-leave-the-elon-musks-ai-firm/",
+    "to": "https://techcrunch.com/2025/09/03/xais-cfo-is-the-latest-executive-to-leave-elon-musks-ai-firm/"
+  },
+  {
     "id": "5fb0666f-7c20-457e-9197-3546da28e8c3",
     "sourceKey": "openai-news",
     "from": "https://openai.com/index/cyberagent",
     "to": "https://openai.com/index/cyberagent/"
+  },
+  {
+    "id": "65c6057f-d7cd-4654-8e34-5999104c77ae",
+    "sourceKey": "xai-techcrunch-archive",
+    "from": "https://techcrunch.com/2026/05/21/forget-technoking-elon-musk-will-really-be-king-at-spacex/",
+    "to": "https://techcrunch.com/2026/05/21/how-elon-musk-will-increase-his-power-through-the-spacex-ipo/"
+  },
+  {
+    "id": "6a7da9d1-29cb-49cc-b7e7-a0e0ff958b19",
+    "sourceKey": "xai-techcrunch-archive",
+    "from": "https://techcrunch.com/2026/01/29/elon-musk-spacex-tesla-xai-merger-talks-ipo-reuters/",
+    "to": "https://techcrunch.com/2026/01/29/elon-musk-spacex-tesla-xai-merger-talks-ipo-reuters/"
   },
   {
     "id": "74f18a33-9ad5-47ba-aa9c-561802c31834",
@@ -54,10 +84,22 @@
     "to": "https://openai.com/index/introducing-gpt-5-2-codex/"
   },
   {
+    "id": "9d7eb3db-a50d-4cef-b68f-c5fce6f668b2",
+    "sourceKey": "xai-techcrunch-archive",
+    "from": "https://techcrunch.com/2026/02/11/senior-engineers-including-co-founders-exit-xai-amid-controversy/",
+    "to": "https://techcrunch.com/2026/02/13/elon-musk-suggests-spate-of-xai-exits-have-been-push-not-pull/"
+  },
+  {
     "id": "9e43f13e-fdd5-4e9c-a226-69dbf542615e",
     "sourceKey": "openai-news",
     "from": "https://openai.com/index/introducing-ai-futures",
     "to": "https://openai.com/index/introducing-intelligence-age/"
+  },
+  {
+    "id": "9f42fb80-3333-4377-8f12-002bb78dad30",
+    "sourceKey": "xai-techcrunch-archive",
+    "from": "https://techcrunch.com/2026/01/29/elon-musk-spacex-xai-merger-talks-ipo-reuters/",
+    "to": "https://techcrunch.com/2026/01/29/elon-musk-spacex-tesla-xai-merger-talks-ipo-reuters/"
   },
   {
     "id": "d24ac66a-8eff-47d0-a495-20c1e06d6e3e",
@@ -82,5 +124,17 @@
     "sourceKey": "xai-techcrunch-archive",
     "from": "https://techcrunch.com/2026/02/13/senior-engineers-including-co-founders-exit-xai-amid-controversy/",
     "to": "https://techcrunch.com/2026/02/13/elon-musk-suggests-spate-of-xai-exits-have-been-push-not-pull/"
+  },
+  {
+    "id": "f10cc9d5-ea3f-4fa3-baf2-1b722bf9aace",
+    "sourceKey": "mistral-techcrunch-archive",
+    "from": "https://techcrunch.com/2026/07/04/what-is-mistral-ai-everything-to-know-about-the-openai-competitor/",
+    "to": "https://techcrunch.com/2026/07/04/what-is-mistral-ai-everything-to-know-about-the-openai-competitor/"
+  },
+  {
+    "id": "f8c50092-ca62-4718-8455-4f40092113d5",
+    "sourceKey": "xai-techcrunch-archive",
+    "from": "https://techcrunch.com/2026/05/21/how-elon-musk-will-increase-his-power-through-the-spacex-ipo/",
+    "to": "https://techcrunch.com/2026/05/21/how-elon-musk-will-increase-his-power-through-the-spacex-ipo/"
   }
 ]
