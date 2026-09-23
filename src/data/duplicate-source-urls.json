@@ -1,0 +1,86 @@
+[
+  {
+    "id": "08b55c6d-c48e-49c7-8414-e3063d9dd4d5",
+    "sourceKey": "openai-news",
+    "from": "https://openai.com/index/cyber-agent",
+    "to": "https://openai.com/index/cyberagent/"
+  },
+  {
+    "id": "0ec21f07-1a7c-4d08-98ae-b7e9e8d8a74e",
+    "sourceKey": "openai-news",
+    "from": "https://openai.com/index/introducing-gpt-5-2-codex",
+    "to": "https://openai.com/index/introducing-gpt-5-2-codex/"
+  },
+  {
+    "id": "445dad65-2a66-40c5-9861-d363ee4f98a4",
+    "sourceKey": "xai-techcrunch-archive",
+    "from": "https://techcrunch.com/2026/02/10/nearly-half-of-xais-founding-team-has-now-left-the-company/",
+    "to": "https://techcrunch.com/2026/02/10/okay-now-exactly-half-of-xais-founding-team-has-left-the-company/"
+  },
+  {
+    "id": "47868365-afbd-4091-aa2e-aa74eb7218cd",
+    "sourceKey": "openai-news",
+    "from": "https://openai.com/index/ai-for-human-agency",
+    "to": "https://openai.com/index/ai-for-self-empowerment/"
+  },
+  {
+    "id": "5fb0666f-7c20-457e-9197-3546da28e8c3",
+    "sourceKey": "openai-news",
+    "from": "https://openai.com/index/cyberagent",
+    "to": "https://openai.com/index/cyberagent/"
+  },
+  {
+    "id": "74f18a33-9ad5-47ba-aa9c-561802c31834",
+    "sourceKey": "openai-news",
+    "from": "https://openai.com/index/introducing-intelligence-age",
+    "to": "https://openai.com/index/introducing-intelligence-age/"
+  },
+  {
+    "id": "86b8872d-6501-4485-a8c3-6fbc88ffbfba",
+    "sourceKey": "xai-techcrunch-archive",
+    "from": "https://techcrunch.com/2026/02/10/okay-now-exactly-half-of-xais-founding-team-has-left-the-company/",
+    "to": "https://techcrunch.com/2026/02/10/okay-now-exactly-half-of-xais-founding-team-has-left-the-company/"
+  },
+  {
+    "id": "8d854388-26bc-4340-8444-c312f2f8c01a",
+    "sourceKey": "openai-news",
+    "from": "https://openai.com/index/ai-for-self-empowerment",
+    "to": "https://openai.com/index/ai-for-self-empowerment/"
+  },
+  {
+    "id": "92e1e8a4-000e-462f-b5ae-b3fb2b26ad03",
+    "sourceKey": "openai-news",
+    "from": "https://openai.com/index/gpt-5-2-codex",
+    "to": "https://openai.com/index/introducing-gpt-5-2-codex/"
+  },
+  {
+    "id": "9e43f13e-fdd5-4e9c-a226-69dbf542615e",
+    "sourceKey": "openai-news",
+    "from": "https://openai.com/index/introducing-ai-futures",
+    "to": "https://openai.com/index/introducing-intelligence-age/"
+  },
+  {
+    "id": "d24ac66a-8eff-47d0-a495-20c1e06d6e3e",
+    "sourceKey": "openai-news",
+    "from": "https://openai.com/index/economic-research-exchange",
+    "to": "https://openai.com/index/introducing-the-openai-economic-research-exchange/"
+  },
+  {
+    "id": "d3a7c0ab-14b9-4d2e-8f02-51cfbcc89e8c",
+    "sourceKey": "xai-techcrunch-archive",
+    "from": "https://techcrunch.com/2026/02/13/elon-musk-suggests-spate-of-xai-exits-have-been-push-not-pull/",
+    "to": "https://techcrunch.com/2026/02/13/elon-musk-suggests-spate-of-xai-exits-have-been-push-not-pull/"
+  },
+  {
+    "id": "df44bc20-bbea-4001-a042-89e02110e632",
+    "sourceKey": "openai-news",
+    "from": "https://openai.com/index/introducing-the-openai-economic-research-exchange",
+    "to": "https://openai.com/index/introducing-the-openai-economic-research-exchange/"
+  },
+  {
+    "id": "f087584e-faf4-4408-beac-b375e011cf59",
+    "sourceKey": "xai-techcrunch-archive",
+    "from": "https://techcrunch.com/2026/02/13/senior-engineers-including-co-founders-exit-xai-amid-controversy/",
+    "to": "https://techcrunch.com/2026/02/13/elon-musk-suggests-spate-of-xai-exits-have-been-push-not-pull/"
+  }
+]

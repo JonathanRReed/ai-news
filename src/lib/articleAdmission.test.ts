@@ -3,6 +3,7 @@ import { admittedArticles, admittedRouteArticles, isArticleAdmitted } from "./ar
 import type { Article } from "../types/article.js";
 import providerArticles from "../../public/data/provider-articles.json";
 import deepMindSourceUrls from "../data/deepmind-source-urls.json";
+import duplicateSourceUrls from "../data/duplicate-source-urls.json";
 
 const admitted: Article = {
   id: "admitted",
@@ -57,5 +58,21 @@ describe("article cache admission", () => {
     ].includes(article.id));
     expect(admittedArticles(pair).map((article) => article.id))
       .toEqual(["38e1ee58-f110-4626-9ea9-ccd723019442"]);
+  });
+
+  test("keeps renamed publisher routes while listing the verified source once", () => {
+    const records = new Map((providerArticles as Article[]).map((article) => [article.id, article]));
+    for (const mapping of duplicateSourceUrls) {
+      const record = records.get(mapping.id)!;
+      expect(record.url).toBe(mapping.from);
+      expect(admittedRouteArticles([record])[0].url).toBe(mapping.to);
+    }
+    const pair = [
+      records.get("74f18a33-9ad5-47ba-aa9c-561802c31834")!,
+      records.get("9e43f13e-fdd5-4e9c-a226-69dbf542615e")!,
+    ];
+    expect(admittedRouteArticles(pair)).toHaveLength(2);
+    expect(admittedArticles(pair).map((article) => article.id))
+      .toEqual(["74f18a33-9ad5-47ba-aa9c-561802c31834"]);
   });
 });

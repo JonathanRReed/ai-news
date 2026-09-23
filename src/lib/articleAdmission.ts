@@ -4,14 +4,19 @@ import type { Article } from "../types/article.js";
 import { isSafeArticleRouteId } from "./articleRoutes.js";
 import { articleSourceIdentity } from "./articleSourceIdentity.mjs";
 import deepMindSourceUrls from "../data/deepmind-source-urls.json";
+import duplicateSourceUrls from "../data/duplicate-source-urls.json";
 
-const deepMindSourceById = new Map(
-  deepMindSourceUrls.map(({ id, from, to }) => [id, { from, to }]),
+const verifiedSourceById = new Map(
+  [
+    ...deepMindSourceUrls.map(({ id, from, to }) => ({ id, from, to, sourceKey: "deepmind-blog" })),
+    ...duplicateSourceUrls,
+  ].map(({ id, from, to, sourceKey }) => [id, { from, to, sourceKey }]),
 );
+const duplicateSourceIds = new Set(duplicateSourceUrls.map(({ id }) => id));
 
 function currentPublisherUrl(article: Article): Article {
-  const verified = deepMindSourceById.get(article.id);
-  return article.source_key === "deepmind-blog" && verified?.from === article.url
+  const verified = verifiedSourceById.get(article.id);
+  return verified && article.source_key === verified.sourceKey && verified.from === article.url
     ? { ...article, url: verified.to }
     : article;
 }
@@ -80,30 +85,36 @@ export function admittedRouteArticles(articles: Article[]): Article[] {
   return articles.map(currentPublisherUrl).filter(isArticleAdmitted);
 }
 
-function deepMindPreference(article: Article): number {
-  const original = deepMindSourceById.get(article.id)?.from ?? article.url;
+function sourcePreference(article: Article): number {
+  const original = verifiedSourceById.get(article.id)?.from ?? article.url;
+  if (articleSourceIdentity(original) === articleSourceIdentity(article.url)) return 3;
   const url = exactHttpsUrl(original);
-  if (url?.hostname !== "deepmind.google") return 0;
+  if (article.source_key !== "deepmind-blog" || url?.hostname !== "deepmind.google") return 0;
   return url.pathname.startsWith("/blog/") ? 2 : 1;
+}
+
+function dedupKey(article: Article): string | null {
+  if (article.source_key !== "deepmind-blog" && !duplicateSourceIds.has(article.id)) return null;
+  return `${article.source_key}:${articleSourceIdentity(article.url)}`;
 }
 
 export function admittedArticles(articles: Article[]): Article[] {
   const routes = admittedRouteArticles(articles);
   const preferred = new Map<string, Article>();
   for (const article of routes) {
-    if (article.source_key !== "deepmind-blog") continue;
-    const source = articleSourceIdentity(article.url);
+    const source = dedupKey(article);
+    if (!source) continue;
     const previous = preferred.get(source);
     if (
       !previous
-      || deepMindPreference(article) > deepMindPreference(previous)
-      || (deepMindPreference(article) === deepMindPreference(previous) && article.id < previous.id)
+      || sourcePreference(article) > sourcePreference(previous)
+      || (sourcePreference(article) === sourcePreference(previous) && article.id < previous.id)
     ) {
       preferred.set(source, article);
     }
   }
-  return routes.filter((article) =>
-    article.source_key !== "deepmind-blog"
-    || preferred.get(articleSourceIdentity(article.url))?.id === article.id,
-  );
+  return routes.filter((article) => {
+    const source = dedupKey(article);
+    return !source || preferred.get(source)?.id === article.id;
+  });
 }
