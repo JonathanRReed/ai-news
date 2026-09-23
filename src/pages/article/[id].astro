@@ -4,8 +4,10 @@ import Layout from "../../layouts/Layout.astro";
 import SourceHealthReceipt from "../../components/SourceHealthReceipt.tsx";
 import providerArticles from "../../../public/data/provider-articles.json";
 import routeAliases from "../../../public/data/route-aliases.json";
+import legacyArticles from "../../data/legacy-article-records.json";
 import { admittedArticles } from "../../lib/articleAdmission.js";
 import { articleExcerpt } from "../../lib/articleExcerpt.js";
+import { articleSourceIdentity } from "../../lib/articleSourceIdentity.mjs";
 import {
   articlePath as safeArticlePath,
   isSafeArticleRouteId,
@@ -19,7 +21,8 @@ import type { Article } from "../../types/article.js";
 export function getStaticPaths() {
   const articles = admittedArticles(providerArticles as Article[]);
   const articleById = new Map(articles.map((article) => [article.id, article]));
-  const paths = new Map(
+  const articleBySource = new Map(articles.map((article) => [articleSourceIdentity(article.url), article]));
+  const paths = new Map<string, { params: { id: string }; props: { article: Article; archived?: boolean } }>(
     articles.map((article) => [
       article.id,
       { params: { id: article.id }, props: { article } },
@@ -34,10 +37,20 @@ export function getStaticPaths() {
       paths.set(alias.legacy_id, { params: { id: alias.legacy_id }, props: { article } });
     }
   }
+  // These source records once had public routes but left the refreshed cache.
+  // Keep the old URL working; use the current article when the source URL matches.
+  for (const legacyArticle of admittedArticles(legacyArticles as Article[])) {
+    if (paths.has(legacyArticle.id)) continue;
+    const currentArticle = articleBySource.get(articleSourceIdentity(legacyArticle.url));
+    paths.set(legacyArticle.id, {
+      params: { id: legacyArticle.id },
+      props: { article: currentArticle ?? legacyArticle, archived: !currentArticle },
+    });
+  }
   return [...paths.values()];
 }
 
-const { article } = Astro.props as { article: Article };
+const { article, archived = false } = Astro.props as { article: Article; archived?: boolean };
 const allArticles = admittedArticles(providerArticles as Article[]);
 const siteUrl = "https://ai-news.helloworldfirm.com";
 const canonicalUrl = `${siteUrl}${safeArticlePath(article.id)}`;
@@ -188,6 +201,12 @@ const structuredData = {
       </div>
 
       <h1 class="mt-8 text-3xl font-bold leading-tight text-white md:text-5xl text-pretty break-words">{article.title}</h1>
+
+      {archived && (
+        <p class="mt-5 border-l-2 border-brand pl-4 text-sm leading-relaxed text-text-2">
+          This older source record is preserved at its original AI News URL. It no longer appears in the current feed. Check the publisher's page for updates.
+        </p>
+      )}
 
       <div class="mt-5 flex flex-wrap items-center gap-x-2 gap-y-2 text-xs font-medium text-text-2">
         {domain && <span class="border border-white/20 px-2 py-1 text-white">{domain}</span>}

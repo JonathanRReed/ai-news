@@ -1,5 +1,6 @@
 import { readFile } from 'node:fs/promises';
 import { isSafeArticleRouteId } from '../../src/lib/articleRoutes.ts';
+import { isArticleAdmitted } from '../../src/lib/articleAdmission.ts';
 
 function duplicates(values) {
   const seen = new Set();
@@ -60,10 +61,21 @@ export function verifyRouteAliases(articles, aliases) {
   };
 }
 
+export function verifyLegacyArticleRecords(records) {
+  const ids = records.map((record) => record?.id).filter((id) => typeof id === 'string');
+  const duplicateIds = duplicates(ids);
+  const invalidRecords = records
+    .filter((record) => !record || !isSafeArticleRouteId(record.id) || !isArticleAdmitted(record))
+    .map((record) => record?.id ?? '<missing>');
+  return { ok: duplicateIds.length === 0 && invalidRecords.length === 0, duplicateIds, invalidRecords };
+}
+
 if (import.meta.main) {
   const articles = JSON.parse(await readFile('public/data/provider-articles.json', 'utf8'));
   const aliases = JSON.parse(await readFile('public/data/route-aliases.json', 'utf8'));
-  const result = verifyRouteAliases(articles, aliases);
-  globalThis.console.log(JSON.stringify(result));
-  if (!result.ok) globalThis.process.exitCode = 1;
+  const legacyRecords = JSON.parse(await readFile('src/data/legacy-article-records.json', 'utf8'));
+  const routes = verifyRouteAliases(articles, aliases);
+  const legacy = verifyLegacyArticleRecords(legacyRecords);
+  globalThis.console.log(JSON.stringify({ routes, legacy }));
+  if (!routes.ok || !legacy.ok) globalThis.process.exitCode = 1;
 }

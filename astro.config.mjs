@@ -4,6 +4,7 @@ import { defineConfig } from "astro/config";
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
+import { articleSourceIdentity } from "./src/lib/articleSourceIdentity.mjs";
 
 const SITE = "https://ai-news.helloworldfirm.com";
 
@@ -12,8 +13,12 @@ const SITE = "https://ai-news.helloworldfirm.com";
 const providerArticles = JSON.parse(
   readFileSync(new URL("./public/data/provider-articles.json", import.meta.url), "utf8")
 );
+const legacyArticles = JSON.parse(
+  readFileSync(new URL("./src/data/legacy-article-records.json", import.meta.url), "utf8")
+);
 const articleLastmod = new Map();
 const weekLastmod = new Map();
+const currentSourceIds = new Set(providerArticles.map((article) => articleSourceIdentity(article.url)));
 for (const a of providerArticles) {
   const d = new Date(a.published_at);
   if (Number.isNaN(d.getTime())) continue;
@@ -27,6 +32,13 @@ for (const a of providerArticles) {
   const prev = weekLastmod.get(weekUrl);
   if (!prev || iso > prev) weekLastmod.set(weekUrl, iso);
 }
+for (const article of legacyArticles) {
+  if (currentSourceIds.has(articleSourceIdentity(article.url))) continue;
+  const date = new Date(article.published_at);
+  if (!Number.isNaN(date.getTime())) {
+    articleLastmod.set(`${SITE}/article/${article.id}/`, date.toISOString());
+  }
+}
 
 export default defineConfig({
   integrations: [
@@ -36,6 +48,7 @@ export default defineConfig({
       }
     }),
     sitemap({
+      filter: (page) => !page.startsWith(`${SITE}/article/`) || articleLastmod.has(page),
       serialize(item) {
         const lastmod = articleLastmod.get(item.url) ?? weekLastmod.get(item.url);
         if (lastmod) item.lastmod = lastmod;

@@ -6,7 +6,8 @@ import { resolveCompanyLogo } from "../../lib/companyCatalog.js";
 import type { DigestWeek } from "../../lib/digest.js";
 
 export function getStaticPaths() {
-  const weeks = digestWeeks();
+  // Keep previously published weekly URLs available as newer weeks arrive.
+  const weeks = digestWeeks(Infinity).filter((digest) => digest.week >= "2026-04-27");
   return weeks.map((digest) => ({ params: { week: digest.week }, props: { digest, allWeeks: weeks } }));
 }
 

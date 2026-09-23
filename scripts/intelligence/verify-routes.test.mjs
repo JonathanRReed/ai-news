@@ -1,5 +1,6 @@
 import { describe, expect, test } from 'bun:test';
-import { verifyRouteAliases } from './verify-routes.mjs';
+import { verifyLegacyArticleRecords, verifyRouteAliases } from './verify-routes.mjs';
+import legacyRecords from '../../src/data/legacy-article-records.json';
 
 describe('verifyRouteAliases', () => {
   test('accepts aliases whose destinations exist in the canonical cache', () => {
@@ -67,5 +68,26 @@ describe('verifyRouteAliases', () => {
     expect(result.ok).toBeFalse();
     expect(result.invalidArticleIds).toEqual(['../about']);
     expect(result.invalidAliases).toEqual(['legacy-a']);
+  });
+});
+
+describe('verifyLegacyArticleRecords', () => {
+  test('keeps the archived public routes admissible and unique', () => {
+    expect(verifyLegacyArticleRecords(legacyRecords)).toEqual({
+      ok: true,
+      duplicateIds: [],
+      invalidRecords: [],
+    });
+  });
+
+  test('rejects duplicate or unadmitted archived routes', () => {
+    const result = verifyLegacyArticleRecords([
+      legacyRecords[0],
+      legacyRecords[0],
+      { ...legacyRecords[1], url: 'https://unrelated.example/article' },
+    ]);
+    expect(result.ok).toBeFalse();
+    expect(result.duplicateIds).toEqual([legacyRecords[0].id]);
+    expect(result.invalidRecords).toEqual([legacyRecords[1].id]);
   });
 });
