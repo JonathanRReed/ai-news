@@ -43,7 +43,7 @@ export const GET: APIRoute = () => {
     `RSS: ${SITE_URL}/feed.xml`,
     `Sitemap index: ${SITE_URL}/sitemap-index.xml`,
     "",
-    "Usage policy: search indexing allowed, AI answers with a link back allowed, AI training not allowed. Matches the content signals in /robots.txt.",
+    "Usage policy: search indexing and AI answers with a link back allowed. Google-Extended may use content for Gemini Apps and Vertex AI grounding and Gemini training. Other AI training is not allowed. See /robots.txt.",
     "",
     `## Tracked entities (${activeEntities.length})`,
     "",

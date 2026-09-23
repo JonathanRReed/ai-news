@@ -36,6 +36,11 @@
 - Source records are immutable and existing public routes are preserved.
 - Supabase is the live read path. The checked-in verified cache is the degraded fallback.
 
+## Use policy
+
+- Search indexing and AI answers with a link back are allowed.
+- Google-Extended may use content for Gemini Apps and Vertex AI grounding and Gemini training. Other AI training is not allowed. See [robots.txt](/robots.txt).
+
 ## Project
 
 - [Source repository](https://github.com/JonathanRReed/ai-news)

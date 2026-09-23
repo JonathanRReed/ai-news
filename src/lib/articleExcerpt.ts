@@ -6,7 +6,11 @@ export function truncateArticleExcerpt(
   value: unknown,
   maxLength = ARTICLE_EXCERPT_MAX_LENGTH,
 ): string {
-  const clean = typeof value === "string" ? value.replace(/\s+/g, " ").trim() : "";
+  // Publisher changelogs can include contributor addresses. Cloudflare turns
+  // those into crawlable /cdn-cgi/l/email-protection links in public excerpts.
+  const clean = typeof value === "string"
+    ? value.replace(/<?[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}>?/gi, "").replace(/\s+/g, " ").trim()
+    : "";
   if (!clean || clean.length <= maxLength) return clean;
   if (!Number.isInteger(maxLength) || maxLength < 4) return "";
 

@@ -100,10 +100,6 @@ function articlePath(currentArticle: Article): string {
   return safeArticlePath(currentArticle.id);
 }
 
-function absoluteArticleUrl(currentArticle: Article): string {
-  return `${siteUrl}${articlePath(currentArticle)}`;
-}
-
 function articleTimestamp(currentArticle: Article): number {
   const time = new Date(currentArticle.published_at).getTime();
   return Number.isNaN(time) ? 0 : time;
@@ -156,7 +152,6 @@ const structuredData = {
   description,
   ...(topics.length ? { keywords: topics.map(topicLabel).join(", ") } : {}),
   author: { "@type": "Organization", name: article.company },
-  ...(nearbyArticles.length ? { relatedLink: nearbyArticles.map(absoluteArticleUrl) } : {}),
   publisher: {
     "@type": "Organization",
     name: "AI News Hub",
