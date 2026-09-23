@@ -160,23 +160,21 @@ const nearbyArticles = [-2, -1, 1, 2]
 
 const structuredData = {
   "@context": "https://schema.org",
-  "@type": "NewsArticle",
-  headline: article.title,
-  datePublished: article.published_at,
-  dateModified: article.published_at,
+  "@type": "WebPage",
+  "@id": `${canonicalUrl}#webpage`,
+  name: title,
   url: canonicalUrl,
   image: [socialImage],
   ...(originalUrl ? { isBasedOn: originalUrl } : {}),
   description,
   ...(topics.length ? { keywords: topics.map(topicLabel).join(", ") } : {}),
-  author: { "@type": "Organization", name: article.company },
+  about: { "@type": "Thing", name: article.company },
   publisher: {
     "@type": "Organization",
     name: "AI News Hub",
     url: siteUrl,
     logo: { "@type": "ImageObject", url: socialImage },
   },
-  mainEntityOfPage: canonicalUrl,
   isPartOf: { "@type": "WebSite", name: "AI News Hub", url: siteUrl },
 };
 ---
@@ -185,7 +183,7 @@ const structuredData = {
   title={title}
   description={description}
   canonical={canonicalUrl}
-  ogType="article"
+  authorMeta=""
   structuredData={structuredData}
   preloadImages={logo ? [logo] : []}
 >
@@ -246,7 +244,7 @@ const structuredData = {
           The title and excerpt come from the publisher. AI News records the source and publication time without generating a replacement summary.
         </p>
         <dl class="mt-5 grid gap-px bg-white/15 sm:grid-cols-2">
-          <div class="bg-bg-0 p-4"><dt class="micro-label text-muted">Publisher</dt><dd class="mt-2 text-sm text-white">{article.company}</dd></div>
+          <div class="bg-bg-0 p-4"><dt class="micro-label text-muted">Original source</dt><dd class="mt-2 text-sm text-white">{domain || "Not recorded"}</dd></div>
           <div class="bg-bg-0 p-4"><dt class="micro-label text-muted">Published</dt><dd class="mt-2 font-mono text-sm text-white">{dateLabel}</dd></div>
           <div class="bg-bg-0 p-4"><dt class="micro-label text-muted">Update type</dt><dd class="mt-2 text-sm text-white">{itemTypeLabel(article.item_type || source?.itemType) || "Other"}</dd></div>
           <div class="bg-bg-0 p-4"><dt class="micro-label text-muted">Source added</dt><dd class="mt-2 font-mono text-sm text-white">{source?.verifiedAt || "Older imported record"}</dd></div>

@@ -13,6 +13,7 @@ export interface Props {
   ogImage?: string;
   ogImageAlt?: string;
   ogType?: string;
+  authorMeta?: string;
   robots?: string;
   currentPage?: NavKey;
   bodyClass?: string;
@@ -29,6 +30,7 @@ const {
   ogImage = "https://ai-news.helloworldfirm.com/social-card.png",
   ogImageAlt = "AI News: what changed in AI, from official announcements, dated and linked to the source",
   ogType = "website",
+  authorMeta = "Jonathan R. Reed",
   robots = "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
   currentPage = "none",
   bodyClass = "bg-bg-0 text-text-1 font-sans min-h-screen flex flex-col",
@@ -55,7 +57,7 @@ const imagePreloads = Array.from(new Set([preloadImage, ...preloadImages].filter
     <meta name="description" content={description} />
     {keywords && <meta name="keywords" content={keywords} />}
     <meta name="robots" content={robots} />
-    <meta name="author" content="Jonathan R. Reed" />
+    {authorMeta && <meta name="author" content={authorMeta} />}
     <meta name="application-name" content="AI News Hub" />
     <meta name="apple-mobile-web-app-title" content="AI News Hub" />
     <meta name="theme-color" content="#0a0a0a" />
