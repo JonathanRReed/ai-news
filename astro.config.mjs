@@ -5,6 +5,7 @@ import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 import { articleSourceIdentity } from "./src/lib/articleSourceIdentity.mjs";
+import { admittedArticles } from "./src/lib/articleAdmission.ts";
 
 const SITE = "https://ai-news.helloworldfirm.com";
 
@@ -13,13 +14,14 @@ const SITE = "https://ai-news.helloworldfirm.com";
 const providerArticles = JSON.parse(
   readFileSync(new URL("./public/data/provider-articles.json", import.meta.url), "utf8")
 );
+const canonicalArticles = admittedArticles(providerArticles);
 const legacyArticles = JSON.parse(
   readFileSync(new URL("./src/data/legacy-article-records.json", import.meta.url), "utf8")
 );
 const articleLastmod = new Map();
 const weekLastmod = new Map();
-const currentSourceIds = new Set(providerArticles.map((article) => articleSourceIdentity(article.url)));
-for (const a of providerArticles) {
+const currentSourceIds = new Set(canonicalArticles.map((article) => articleSourceIdentity(article.url)));
+for (const a of canonicalArticles) {
   const d = new Date(a.published_at);
   if (Number.isNaN(d.getTime())) continue;
   const iso = d.toISOString();

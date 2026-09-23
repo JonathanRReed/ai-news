@@ -6,7 +6,7 @@ import PublisherText from "../../components/PublisherText.astro";
 import providerArticles from "../../../public/data/provider-articles.json";
 import routeAliases from "../../../public/data/route-aliases.json";
 import legacyArticles from "../../data/legacy-article-records.json";
-import { admittedArticles } from "../../lib/articleAdmission.js";
+import { admittedArticles, admittedRouteArticles } from "../../lib/articleAdmission.js";
 import { articleExcerpt } from "../../lib/articleExcerpt.js";
 import { articleSourceIdentity } from "../../lib/articleSourceIdentity.mjs";
 import {
@@ -21,14 +21,23 @@ import type { Article } from "../../types/article.js";
 
 export function getStaticPaths() {
   const articles = admittedArticles(providerArticles as Article[]);
-  const articleById = new Map(articles.map((article) => [article.id, article]));
+  const routeArticles = admittedRouteArticles(providerArticles as Article[]);
   const articleBySource = new Map(articles.map((article) => [articleSourceIdentity(article.url), article]));
+  const articleById = new Map(routeArticles.map((article) => [
+    article.id,
+    articleBySource.get(articleSourceIdentity(article.url)) ?? article,
+  ]));
   const paths = new Map<string, { params: { id: string }; props: { article: Article; archived?: boolean } }>(
     articles.map((article) => [
       article.id,
       { params: { id: article.id }, props: { article } },
     ]),
   );
+  for (const article of routeArticles) {
+    if (paths.has(article.id)) continue;
+    const canonical = articleBySource.get(articleSourceIdentity(article.url));
+    if (canonical) paths.set(article.id, { params: { id: article.id }, props: { article: canonical } });
+  }
   for (const alias of routeAliases as Array<{ legacy_id: string; destination_path: string }>) {
     if (!isSafeArticleRouteId(alias.legacy_id)) continue;
     const match = alias.destination_path.match(/^\/article\/([^/]+)\/?$/);

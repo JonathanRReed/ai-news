@@ -310,7 +310,9 @@
       "verifiedAt": "2026-08-30",
       "includePaths": [],
       "allowedHosts": [
+        "antigravity.google",
         "blog.google",
+        "cloud.google.com",
         "developers.googleblog.com",
         "research.google"
       ]

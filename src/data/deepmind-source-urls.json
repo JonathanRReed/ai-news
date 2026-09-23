@@ -5,9 +5,19 @@
     "to": "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-open-models/"
   },
   {
+    "id": "02d97f58-6c66-4d1d-9679-8afb359c4291",
+    "from": "https://deepmind.google/blog/exploring-the-context-of-online-images-with-backstory/",
+    "to": "https://deepmind.google/blog/exploring-the-context-of-online-images-with-backstory/"
+  },
+  {
     "id": "02ef340b-9d70-4dbf-86d0-c88207be258c",
     "from": "https://d1f9a8b-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/a-catalogue-of-genetic-mutations-to-help-pinpoint-the-cause-of-diseases/",
     "to": "https://deepmind.google/blog/a-catalogue-of-genetic-mutations-to-help-pinpoint-the-cause-of-diseases/"
+  },
+  {
+    "id": "03ac6fdb-c6ef-4b7d-ac59-fa0d012d68a9",
+    "from": "https://deepmind.google/blog/introducing-gemini-3-7-flash/",
+    "to": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-3-7-flash/"
   },
   {
     "id": "048f9bd8-99c0-461c-90ae-ca721d5545ec",
@@ -25,9 +35,24 @@
     "to": "https://deepmind.google/blog/exploring-the-context-of-online-images-with-backstory/"
   },
   {
+    "id": "052ae360-2f56-4309-b579-149e12738ca1",
+    "from": "https://deepmind.google/blog/finding-the-molecular-switches-behind-new-infectious-diseases/",
+    "to": "https://deepmind.google/blog/finding-the-molecular-switches-behind-new-infectious-diseases/"
+  },
+  {
     "id": "054cdfdf-5538-43ce-81b2-f03e976059f4",
     "from": "https://d1f9a8b-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/discovering-new-solutions-to-century-old-problems-in-fluid-dynamics/",
     "to": "https://deepmind.google/blog/discovering-new-solutions-to-century-old-problems-in-fluid-dynamics/"
+  },
+  {
+    "id": "05b8dd3b-a347-4c0d-9387-2bb499bb4fa8",
+    "from": "https://deepmind.google/blog/generating-audio-for-video/",
+    "to": "https://deepmind.google/blog/generating-audio-for-video/"
+  },
+  {
+    "id": "065b7bd4-c03e-4a3c-a53c-ab069065b460",
+    "from": "https://deepmind.google/blog/weathernext-ai-model-achieves-breakthrough-in-forecasting-cyclones/",
+    "to": "https://deepmind.google/blog/weathernext-ai-model-achieves-breakthrough-in-forecasting-cyclones/"
   },
   {
     "id": "07105e7e-3741-4150-a778-7266179d3f43",
@@ -40,9 +65,29 @@
     "to": "https://deepmind.google/blog/demis-hassabis-john-jumper-awarded-nobel-prize-in-chemistry/"
   },
   {
+    "id": "078d2984-3258-4229-8957-7e19bb6e736f",
+    "from": "https://deepmind.google/blog/opening-new-paths-in-aging-research/",
+    "to": "https://deepmind.google/blog/opening-new-paths-in-aging-research/"
+  },
+  {
+    "id": "083308c4-dff4-4c45-a8a2-a1ba05ce3b3b",
+    "from": "https://deepmind.google/blog/introducing-gemma-4-12b-a-unified-encoder-free-multimodal-model/",
+    "to": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemma-4-12b/?utm_source=deepmind.google&utm_medium=referral&utm_campaign=gdm&utm_content="
+  },
+  {
     "id": "08e40d1b-4385-4e4e-b5a0-f4369fee2aa2",
     "from": "https://983f2f5-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/how-ai-is-helping-advance-the-science-of-bioacoustics-to-save-endangered-species/",
     "to": "https://deepmind.google/blog/how-ai-is-helping-advance-the-science-of-bioacoustics-to-save-endangered-species/"
+  },
+  {
+    "id": "0980061a-38e5-4b88-bb87-9ec6279c8ab6",
+    "from": "https://deepmind.google/blog/gemini-3-flash-frontier-intelligence-built-for-speed/",
+    "to": "https://blog.google/products-and-platforms/products/gemini/gemini-3-flash/"
+  },
+  {
+    "id": "09b6fc7c-7b32-492e-86be-af7e722519b5",
+    "from": "https://deepmind.google/blog/empowering-youtube-creators-with-generative-ai/",
+    "to": "https://deepmind.google/blog/empowering-youtube-creators-with-generative-ai/"
   },
   {
     "id": "0aeb77ba-8877-43d5-a739-2404d2fa5db7",
@@ -70,9 +115,44 @@
     "to": "https://deepmind.google/blog/mapping-the-misuse-of-generative-ai/"
   },
   {
+    "id": "0db6e55f-3467-4508-aac8-2861359ad9b2",
+    "from": "https://deepmind.google/blog/discovering-new-solutions-to-century-old-problems-in-fluid-dynamics/",
+    "to": "https://deepmind.google/blog/discovering-new-solutions-to-century-old-problems-in-fluid-dynamics/"
+  },
+  {
+    "id": "0e8b4e80-8a6a-4681-9947-209d163f471a",
+    "from": "https://deepmind.google/blog/build-rich-interactive-web-apps-with-an-updated-gemini-25-pro/",
+    "to": "https://blog.google/products-and-platforms/products/gemini/gemini-2-5-pro-updates/"
+  },
+  {
+    "id": "0f01e8d8-9c99-41c2-be79-8ec071fb1d0c",
+    "from": "https://deepmind.google/blog/dolphingemma-how-google-ai-is-helping-decode-dolphin-communication/",
+    "to": "https://blog.google/innovation-and-ai/products/dolphingemma/"
+  },
+  {
+    "id": "0f6419c1-af2c-4fe8-8907-2da255ffe246",
+    "from": "https://deepmind.google/blog/synthid-detector--a-new-portal-to-help-identify-ai-generated-content/",
+    "to": "https://blog.google/innovation-and-ai/products/google-synthid-ai-content-detector/"
+  },
+  {
     "id": "116e0549-4c13-492b-a191-977d73ad07bf",
     "from": "https://d1f9a8b-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/evaluating-social-and-ethical-risks-from-generative-ai/",
     "to": "https://deepmind.google/blog/evaluating-social-and-ethical-risks-from-generative-ai/"
+  },
+  {
+    "id": "1306807b-312c-471e-84b2-d4d800f9db85",
+    "from": "https://deepmind.google/blog/protecting-people-from-harmful-manipulation/",
+    "to": "https://deepmind.google/blog/protecting-people-from-harmful-manipulation/"
+  },
+  {
+    "id": "1389c9ab-5534-5de4-b978-34268731b4f7",
+    "from": "https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome/",
+    "to": "https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome/"
+  },
+  {
+    "id": "14f16699-eaeb-4d1f-b605-fb33226074ae",
+    "from": "https://deepmind.google/blog/gemini-25-our-world-leading-model-is-getting-even-better/",
+    "to": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/google-gemini-updates-io-2025/"
   },
   {
     "id": "15f225c0-c66c-4c2e-9e9e-2c8677da58ea",
@@ -85,9 +165,19 @@
     "to": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/google-gemini-updates-io-2025/"
   },
   {
+    "id": "1634e814-2cb1-4009-a41d-5dc9a986bfd1",
+    "from": "https://deepmind.google/blog/introducing-gemini-2-5-flash/",
+    "to": "https://developers.googleblog.com/en/start-building-with-gemini-25-flash/?utm_source=deepmind.google&utm_medium=referral&utm_campaign=gdm&utm_content="
+  },
+  {
     "id": "16b9d6b6-d85e-4411-812d-bc37a27f1e4d",
     "from": "https://d1f9a8b-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/empowering-the-next-generation-for-an-ai-enabled-world/",
     "to": "https://deepmind.google/blog/empowering-the-next-generation-for-an-ai-enabled-world/"
+  },
+  {
+    "id": "1711eddc-d13a-49c4-b934-5c63a63adf4f",
+    "from": "https://deepmind.google/blog/advancing-geminis-security-safeguards/",
+    "to": "https://deepmind.google/blog/advancing-geminis-security-safeguards/"
   },
   {
     "id": "174faa3b-6c6d-4d2f-ab94-56679db3d31a",
@@ -120,6 +210,11 @@
     "to": "https://deepmind.google/blog/pushing-the-frontiers-of-audio-generation/"
   },
   {
+    "id": "1c305457-0595-45fd-aeed-0df0535a7485",
+    "from": "https://deepmind.google/blog/introducing-gemini-omni/",
+    "to": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni/"
+  },
+  {
     "id": "1d566958-851b-46f1-803a-0405abbab867",
     "from": "https://983f2f5-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/how-alphachip-transformed-computer-chip-design/",
     "to": "https://deepmind.google/blog/how-alphachip-transformed-computer-chip-design/"
@@ -130,9 +225,29 @@
     "to": "https://research.google/blog/vaultgemma-the-worlds-most-capable-differentially-private-llm/"
   },
   {
+    "id": "1e5cd4a1-bb8e-54c2-b19c-a5b601a3cf7b",
+    "from": "https://deepmind.google/blog/introducing-gemini-3-8-flash-and-38-flash-cyber/",
+    "to": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/"
+  },
+  {
+    "id": "1e7d5b0f-8bc5-4437-b804-89a67eceb120",
+    "from": "https://deepmind.google/blog/intelligent-transcription-with-gemini-3-5-transcribe/",
+    "to": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5-transcribe/"
+  },
+  {
     "id": "205ba344-b9e5-4b5c-a23a-510307aa3b4a",
     "from": "https://983f2f5-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/gemini-breaks-new-ground-a-faster-model-longer-context-and-ai-agents/",
     "to": "https://blog.google/innovation-and-ai/products/google-gemini-update-flash-ai-assistant-io-2024/"
+  },
+  {
+    "id": "2084949d-bfea-4e0d-bf2e-58386c09c61d",
+    "from": "https://deepmind.google/blog/tacticai-ai-assistant-for-football-tactics/",
+    "to": "https://deepmind.google/blog/tacticai-ai-assistant-for-football-tactics/"
+  },
+  {
+    "id": "208e5335-cd13-4c0f-9c84-52264a13e5a0",
+    "from": "https://deepmind.google/blog/new-generative-ai-tools-open-the-doors-of-music-creation/",
+    "to": "https://deepmind.google/blog/new-generative-ai-tools-open-the-doors-of-music-creation/"
   },
   {
     "id": "212c1f2d-f358-4b31-be96-a162462fc678",
@@ -145,9 +260,29 @@
     "to": "https://blog.google/products-and-platforms/products/gemini/gemini-2-5-model-family-expands/"
   },
   {
+    "id": "218f2e70-b3ed-4b6a-a058-42728cb64b3d",
+    "from": "https://deepmind.google/blog/introducing-gemini-3-5-flash-cyber/",
+    "to": "https://deepmind.google/blog/introducing-gemini-3-5-flash-cyber/"
+  },
+  {
+    "id": "21cfa903-bb95-4dbf-b4e5-b1bd9b2d37d6",
+    "from": "https://deepmind.google/blog/gemini-3-1-flash-live-making-audio-ai-more-natural-and-reliable/",
+    "to": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-live/"
+  },
+  {
+    "id": "226a6f0c-482f-5126-a5f9-95c9399984ec",
+    "from": "https://deepmind.google/blog/proactive-cyber-defense-for-governments-and-enterprises/",
+    "to": "https://blog.google/innovation-and-ai/technology/safety-security/fairwind-program/"
+  },
+  {
     "id": "22ea7fee-7e76-434e-8461-7764da52111d",
     "from": "https://d1f9a8b-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/introducing-gemini-2-5-flash/",
     "to": "https://developers.googleblog.com/en/start-building-with-gemini-25-flash/?utm_source=deepmind.google&utm_medium=referral&utm_campaign=gdm&utm_content="
+  },
+  {
+    "id": "23863d7d-7657-4039-80da-58c90a16a81a",
+    "from": "https://deepmind.google/blog/a-new-way-to-express-yourself-gemini-can-now-create-music/",
+    "to": "https://blog.google/innovation-and-ai/products/gemini-app/lyria-3/"
   },
   {
     "id": "239831fa-5176-4a1a-a700-77494942e9b4",
@@ -155,9 +290,19 @@
     "to": "https://deepmind.google/blog/watermarking-ai-generated-text-and-video-with-synthid/"
   },
   {
+    "id": "23ab076b-2bb7-4556-b043-dd5f29b366f7",
+    "from": "https://deepmind.google/blog/a-new-era-of-intelligence-with-gemini-3/",
+    "to": "https://blog.google/products-and-platforms/products/gemini/gemini-3/"
+  },
+  {
     "id": "23dc6589-2fb8-4aa1-8b63-ec7ec73fbfbd",
     "from": "https://d1f9a8b-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/announcing-gemma-3n-preview-powerful-efficient-mobile-first-ai/",
     "to": "https://developers.googleblog.com/en/introducing-gemma-3n/"
+  },
+  {
+    "id": "24b1cbfe-b198-4618-b7a4-531612a74a4d",
+    "from": "https://deepmind.google/blog/start-building-with-nano-banana-2-lite-and-gemini-omni-flash/",
+    "to": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-flash-nano-banana-2-lite/"
   },
   {
     "id": "24cc54f5-2a0c-473f-8ed8-34d8597951f2",
@@ -165,14 +310,39 @@
     "to": "https://deepmind.google/blog/gemini-robotics-15-brings-ai-agents-into-the-physical-world/"
   },
   {
+    "id": "25c08174-9666-492d-88a7-86fb0e8cbfb5",
+    "from": "https://deepmind.google/blog/strengthening-our-partnership-with-the-uk-government-to-support-prosperity-and-security-in-the-ai-era/",
+    "to": "https://deepmind.google/blog/strengthening-our-partnership-with-the-uk-government-to-support-prosperity-and-security-in-the-ai-era/"
+  },
+  {
+    "id": "26428786-1174-426e-a67d-3a2c37965938",
+    "from": "https://deepmind.google/blog/unlocking-uk-house-building-with-ai-accelerated-planning/",
+    "to": "https://deepmind.google/blog/unlocking-uk-house-building-with-ai-accelerated-planning/"
+  },
+  {
     "id": "270641a8-c6fe-4ba2-9c49-a17d1d2d3fa9",
     "from": "https://d1f9a8b-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/identifying-ai-generated-images-with-synthid/",
     "to": "https://deepmind.google/blog/identifying-ai-generated-images-with-synthid/"
   },
   {
+    "id": "27196761-3fae-4404-bc41-2aba05547aa5",
+    "from": "https://deepmind.google/blog/strengthening-singapores-ai-future-a-new-national-partnership/",
+    "to": "https://deepmind.google/blog/strengthening-singapores-ai-future-a-new-national-partnership/"
+  },
+  {
+    "id": "27508384-9b99-4f94-8b37-5dd9aa22966a",
+    "from": "https://deepmind.google/blog/accelerating-discovery-of-liver-disease-mechanisms/",
+    "to": "https://deepmind.google/blog/accelerating-discovery-of-liver-disease-mechanisms/"
+  },
+  {
     "id": "277a6353-edfb-412a-a044-e39ec5693169",
     "from": "https://d1f9a8b-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/our-vision-for-building-a-universal-ai-assistant/",
     "to": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/gemini-universal-ai-assistant/"
+  },
+  {
+    "id": "2820232c-98b8-477e-aee1-c8d89184f3f8",
+    "from": "https://deepmind.google/blog/introducing-gemini-20-our-new-ai-model-for-the-agentic-era/",
+    "to": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/google-gemini-ai-update-december-2024/"
   },
   {
     "id": "2830d10d-2b38-491a-9f1b-4c0ef86e2234",
@@ -183,6 +353,11 @@
     "id": "2a7e8b4b-f9cb-4b07-95ff-5deaf3775084",
     "from": "https://983f2f5-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/ferminet-quantum-physics-and-chemistry-from-first-principles/",
     "to": "https://deepmind.google/blog/ferminet-quantum-physics-and-chemistry-from-first-principles/"
+  },
+  {
+    "id": "2ac36b04-3b37-431c-bdf3-ad91443d0639",
+    "from": "https://deepmind.google/blog/gemini-3-1-flash-tts-the-next-generation-of-expressive-ai-speech/",
+    "to": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-tts/"
   },
   {
     "id": "2d4088b5-7968-4ace-b0b9-f39f3fcc8ebe",
@@ -220,9 +395,59 @@
     "to": "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-3/"
   },
   {
+    "id": "31b46a30-3db1-4690-a103-8bb8b9a5ab64",
+    "from": "https://deepmind.google/blog/genie-2-a-large-scale-foundation-world-model/",
+    "to": "https://deepmind.google/blog/genie-2-a-large-scale-foundation-world-model/"
+  },
+  {
+    "id": "31f4295a-f290-418b-9179-1618ca8b30f8",
+    "from": "https://deepmind.google/blog/genie-3-a-new-frontier-for-world-models/",
+    "to": "https://deepmind.google/blog/genie-3-a-new-frontier-for-world-models/"
+  },
+  {
     "id": "32c79323-c1a8-454f-ab34-98fcea967232",
     "from": "https://983f2f5-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/rt-2-new-model-translates-vision-and-language-into-action/",
     "to": "https://deepmind.google/blog/rt-2-new-model-translates-vision-and-language-into-action/"
+  },
+  {
+    "id": "34481a07-ed17-495a-b383-4d67e587498a",
+    "from": "https://deepmind.google/blog/how-ai-is-giving-northern-ireland-teachers-time-back/",
+    "to": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/ai-classroom-northern-ireland/"
+  },
+  {
+    "id": "3570973d-5515-4ea3-ba7b-020acd559980",
+    "from": "https://deepmind.google/blog/gemini-3-1-flash-lite-built-for-intelligence-at-scale/",
+    "to": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-lite/"
+  },
+  {
+    "id": "3637b3e4-e18d-41a3-8fbc-5b5155a8dc23",
+    "from": "https://deepmind.google/blog/introducing-nano-banana-pro/",
+    "to": "https://blog.google/innovation-and-ai/products/nano-banana-pro/"
+  },
+  {
+    "id": "3711c249-9649-422b-b759-076ab5fef35a",
+    "from": "https://deepmind.google/blog/build-with-nano-banana-pro-our-gemini-3-pro-image-model/",
+    "to": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-3-pro-image-developers/"
+  },
+  {
+    "id": "374a8a8f-1863-444f-a5ea-fb0489ae85ab",
+    "from": "https://deepmind.google/discover/blog/introducing-codemender-an-ai-agent-for-code-security/",
+    "to": "https://deepmind.google/blog/introducing-codemender-an-ai-agent-for-code-security/"
+  },
+  {
+    "id": "38e1ee58-f110-4626-9ea9-ccd723019442",
+    "from": "https://deepmind.google/discover/blog/gemini-robotics-15-brings-ai-agents-into-the-physical-world/",
+    "to": "https://deepmind.google/blog/gemini-robotics-15-brings-ai-agents-into-the-physical-world/"
+  },
+  {
+    "id": "38f7a6b2-0dd4-443d-8533-fcd80954b62f",
+    "from": "https://deepmind.google/blog/were-launching-lyria-35-in-google-flow-music-with-advances-across-musicality-lyrics-vocals-and-creative-control/",
+    "to": "https://blog.google/innovation-and-ai/models-and-research/google-labs/lyria-3-5/?utm_source=deepmind.google&utm_medium=referral&utm_campaign=gdm&utm_content="
+  },
+  {
+    "id": "3916526e-3852-4f75-8505-59c0e2a52dca",
+    "from": "https://deepmind.google/blog/revealing-a-key-protein-behind-heart-disease/",
+    "to": "https://deepmind.google/blog/revealing-a-key-protein-behind-heart-disease/"
   },
   {
     "id": "39748498-d2fb-42ee-8015-3ed617943901",
@@ -245,6 +470,16 @@
     "to": "https://deepmind.google/blog/gemini-robotics-brings-ai-into-the-physical-world/"
   },
   {
+    "id": "3ba54038-6a59-4b36-9ef8-a5804d82903d",
+    "from": "https://deepmind.google/blog/introducing-gemini-36-flash-35-flash-lite-and-35-flash-cyber/",
+    "to": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-6-flash-3-5-flash-lite-3-5-flash-cyber/?utm_source=deepmind.google&utm_medium=referral&utm_campaign=gdm&utm_content="
+  },
+  {
+    "id": "3c4c4362-5d7e-43ee-b9b7-784d32ba81d4",
+    "from": "https://deepmind.google/blog/were-launching-the-google-deepmind-accelerator-program-in-asia-pacific-to-tackle-environmental-risks/",
+    "to": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/accelerator-ai-for-the-planet/?utm_source=deepmind.google&utm_medium=referral&utm_campaign=gdm&utm_content="
+  },
+  {
     "id": "3c6b24d4-08a9-4f08-baad-8105df5a381d",
     "from": "https://d1f9a8b-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/genie-2-a-large-scale-foundation-world-model/",
     "to": "https://deepmind.google/blog/genie-2-a-large-scale-foundation-world-model/"
@@ -253,6 +488,11 @@
     "id": "3cb5f589-6fe6-428d-a6e1-6c5b8b33c52b",
     "from": "https://983f2f5-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/graphcast-ai-model-for-faster-and-more-accurate-global-weather-forecasting/",
     "to": "https://deepmind.google/blog/graphcast-ai-model-for-faster-and-more-accurate-global-weather-forecasting/"
+  },
+  {
+    "id": "3da6f445-e18b-4cf2-b847-7156c5934091",
+    "from": "https://deepmind.google/blog/gemma-scope-2-helping-the-ai-safety-community-deepen-understanding-of-complex-language-model-behavior/",
+    "to": "https://deepmind.google/blog/gemma-scope-2-helping-the-ai-safety-community-deepen-understanding-of-complex-language-model-behavior/"
   },
   {
     "id": "3dd5eba2-19dd-4129-a4f2-63b5f1ae7bac",
@@ -270,6 +510,26 @@
     "to": "https://developers.googleblog.com/en/introducing-gemma-3-270m/"
   },
   {
+    "id": "3e261b39-53e4-4ad9-8b09-b2e1b0a29229",
+    "from": "https://deepmind.google/blog/vaultgemma-the-worlds-most-capable-differentially-private-llm/",
+    "to": "https://research.google/blog/vaultgemma-the-worlds-most-capable-differentially-private-llm/"
+  },
+  {
+    "id": "3f2dd325-4feb-403d-b86c-d3579e140e8e",
+    "from": "https://deepmind.google/blog/gemini-3-deep-think-advancing-science-research-and-engineering/",
+    "to": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-deep-think/"
+  },
+  {
+    "id": "40781446-4cac-42ba-ba78-0cff19a5a197",
+    "from": "https://deepmind.google/blog/our-vision-for-building-a-universal-ai-assistant/",
+    "to": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/gemini-universal-ai-assistant/"
+  },
+  {
+    "id": "44717c4f-f93f-4bf4-b114-9c77294d34c2",
+    "from": "https://deepmind.google/blog/demis-hassabis-john-jumper-awarded-nobel-prize-in-chemistry/",
+    "to": "https://deepmind.google/blog/demis-hassabis-john-jumper-awarded-nobel-prize-in-chemistry/"
+  },
+  {
     "id": "44fa87e4-a784-4241-8784-53d488ead10a",
     "from": "https://983f2f5-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/the-ethics-of-advanced-ai-assistants/",
     "to": "https://deepmind.google/blog/the-ethics-of-advanced-ai-assistants/"
@@ -278,6 +538,21 @@
     "id": "4551e608-b551-476a-a966-9afb9d5a047d",
     "from": "https://d1f9a8b-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/robocat-a-self-improving-robotic-agent/",
     "to": "https://deepmind.google/blog/robocat-a-self-improving-robotic-agent/"
+  },
+  {
+    "id": "46728e39-119a-4723-9b44-6a457460f3d0",
+    "from": "https://deepmind.google/blog/partnering-with-industry-leaders-to-accelerate-ai-transformation/",
+    "to": "https://deepmind.google/blog/partnering-with-industry-leaders-to-accelerate-ai-transformation/"
+  },
+  {
+    "id": "4685400a-f462-412b-b1f4-335e4c8c4839",
+    "from": "https://deepmind.google/blog/gemini-robotics-15-brings-ai-agents-into-the-physical-world/",
+    "to": "https://deepmind.google/blog/gemini-robotics-15-brings-ai-agents-into-the-physical-world/"
+  },
+  {
+    "id": "46d74002-beaf-4f5d-bbc2-a24e4ad6ccec",
+    "from": "https://deepmind.google/blog/gemini-achieves-gold-medal-level-at-the-international-collegiate-programming-contest-world-finals/",
+    "to": "https://deepmind.google/blog/gemini-achieves-gold-medal-level-at-the-international-collegiate-programming-contest-world-finals/"
   },
   {
     "id": "48638b7b-dd61-46e6-9392-9d1e2ce34482",
@@ -300,6 +575,16 @@
     "to": "https://deepmind.google/blog/a-glimpse-of-the-next-generation-of-alphafold/"
   },
   {
+    "id": "4a45ffcc-8aa6-421f-8b33-038fd2b1de1a",
+    "from": "https://deepmind.google/blog/d4rt-teaching-ai-to-see-the-world-in-four-dimensions/",
+    "to": "https://deepmind.google/blog/d4rt-teaching-ai-to-see-the-world-in-four-dimensions/"
+  },
+  {
+    "id": "4b361c29-431e-4c95-8824-9b84ee720222",
+    "from": "https://deepmind.google/blog/gemini-omni-1-1-flash-lets-you-build-with-more-control/",
+    "to": "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-omni-1-1-flash/"
+  },
+  {
     "id": "4bd12600-91ef-4605-8f4c-ffefff339fd3",
     "from": "https://983f2f5-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/experiment-with-gemini-20-flash-native-image-generation/",
     "to": "https://developers.googleblog.com/en/experiment-with-gemini-20-flash-native-image-generation/"
@@ -315,14 +600,39 @@
     "to": "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-3/"
   },
   {
+    "id": "4ce01cb7-9173-4533-98c3-5bce605f5b1b",
+    "from": "https://deepmind.google/blog/project-genie-experimenting-with-infinite-interactive-worlds/",
+    "to": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/project-genie/"
+  },
+  {
     "id": "4cf87a69-cf46-4c85-9bb6-5daeafb32885",
     "from": "https://983f2f5-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/our-vision-for-building-a-universal-ai-assistant/",
     "to": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/gemini-universal-ai-assistant/"
   },
   {
+    "id": "4f3b3426-0ec1-4872-a776-dec2a0edc278",
+    "from": "https://deepmind.google/discover/blog/vaultgemma-the-worlds-most-capable-differentially-private-llm/",
+    "to": "https://research.google/blog/vaultgemma-the-worlds-most-capable-differentially-private-llm/"
+  },
+  {
     "id": "50d35fc9-654c-4913-9064-62ce3e88495f",
     "from": "https://d1f9a8b-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/alphagenome-ai-for-better-understanding-the-genome/",
     "to": "https://deepmind.google/blog/alphagenome-ai-for-better-understanding-the-genome/"
+  },
+  {
+    "id": "51aad13b-10bf-419e-89f7-7bdc0d7e48ea",
+    "from": "https://deepmind.google/blog/fuel-your-creativity-with-new-generative-media-models-and-tools/",
+    "to": "https://blog.google/innovation-and-ai/products/generative-media-models-io-2025/"
+  },
+  {
+    "id": "52686448-1c60-44db-af34-e35f98f668d3",
+    "from": "https://deepmind.google/blog/decoupled-diloco/",
+    "to": "https://deepmind.google/blog/decoupled-diloco/"
+  },
+  {
+    "id": "533c983e-a006-58aa-9748-501285251f6d",
+    "from": "https://deepmind.google/blog/introducing-gemini-3-8-live-and-3-8-live-extended-thinking/",
+    "to": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/"
   },
   {
     "id": "53f1e50d-03c9-461e-8952-cf9ec26be920",
@@ -333,6 +643,16 @@
     "id": "551fd044-a667-44a4-8f2f-bea1bc46e0d7",
     "from": "https://983f2f5-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/rethinking-how-we-measure-ai-intelligence/",
     "to": "https://blog.google/innovation-and-ai/products/kaggle-game-arena/"
+  },
+  {
+    "id": "55efb680-22e7-43c3-a674-501b75b76e15",
+    "from": "https://deepmind.google/blog/gemini-robotics-er-2-powering-robotics-with-video-understanding-task-orchestration-and-multi-robot-collaboration/",
+    "to": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/gemini-robotics-er-2/?utm_source=deepmind.google&utm_medium=referral&utm_campaign=gdm&utm_content="
+  },
+  {
+    "id": "57e04a22-2314-4044-9486-0ea5f6c6f63c",
+    "from": "https://deepmind.google/blog/behind-ancestra-combining-veo-with-live-action-filmmaking/",
+    "to": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/ancestra-behind-the-scenes/"
   },
   {
     "id": "5a1c01b5-fe93-4e90-902f-e375e9592309",
@@ -355,9 +675,24 @@
     "to": "https://blog.google/innovation-and-ai/products/google-deepmind-isomorphic-alphafold-3-ai-model/"
   },
   {
+    "id": "5b016e5b-c261-48c3-8667-bc974cd323f5",
+    "from": "https://deepmind.google/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/",
+    "to": "https://deepmind.google/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/"
+  },
+  {
     "id": "5b53d37a-ea49-4ac1-9e89-c5b798419421",
     "from": "https://d1f9a8b-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/gemma-introducing-new-state-of-the-art-open-models/",
     "to": "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-open-models/"
+  },
+  {
+    "id": "5b74f5b8-89e9-4ac1-8d1e-44e510e16ecb",
+    "from": "https://deepmind.google/blog/introducing-codemender-an-ai-agent-for-code-security/",
+    "to": "https://deepmind.google/blog/introducing-codemender-an-ai-agent-for-code-security/"
+  },
+  {
+    "id": "5bed8393-df24-48fd-a55d-08d3d22a147a",
+    "from": "https://deepmind.google/blog/facts-benchmark-suite-systematically-evaluating-the-factuality-of-large-language-models/",
+    "to": "https://deepmind.google/blog/facts-benchmark-suite-systematically-evaluating-the-factuality-of-large-language-models/"
   },
   {
     "id": "5c4385a6-0195-4373-9aae-f2731de9ceff",
@@ -365,14 +700,74 @@
     "to": "https://blog.google/innovation-and-ai/products/google-gemini-next-generation-model-february-2024/"
   },
   {
+    "id": "5da42ede-cc1e-4fa0-a40e-8fcf5971ca0e",
+    "from": "https://deepmind.google/blog/alphaqubit-tackles-one-of-quantum-computings-biggest-challenges/",
+    "to": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/alphaqubit-quantum-error-correction/"
+  },
+  {
+    "id": "5f580e33-ce22-424b-918d-d0c46fe6df7d",
+    "from": "https://deepmind.google/blog/uncovering-repurposed-medicines-to-fight-liver-fibrosis/",
+    "to": "https://deepmind.google/blog/uncovering-repurposed-medicines-to-fight-liver-fibrosis/"
+  },
+  {
     "id": "62bfa07d-01ec-4c24-bb55-53284cf3a745",
     "from": "https://d1f9a8b-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/genie-3-a-new-frontier-for-world-models/",
     "to": "https://deepmind.google/blog/genie-3-a-new-frontier-for-world-models/"
   },
   {
+    "id": "63981db0-d6f4-46d0-84c9-10c9929649bf",
+    "from": "https://deepmind.google/blog/gemini-2-5-our-most-intelligent-ai-model/",
+    "to": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/gemini-model-thinking-updates-march-2025/"
+  },
+  {
+    "id": "642252fc-2d13-4726-b09e-31f34e3925b8",
+    "from": "https://deepmind.google/discover/blog/bringing-ai-to-the-next-generation-of-fusion-energy/",
+    "to": "https://deepmind.google/blog/bringing-ai-to-the-next-generation-of-fusion-energy/"
+  },
+  {
+    "id": "64d1c69b-4ebb-4ac0-ab7c-6a91b69ddf8b",
+    "from": "https://deepmind.google/blog/googles-year-in-review-8-areas-with-research-breakthroughs-in-2025/",
+    "to": "https://blog.google/innovation-and-ai/products/2025-research-breakthroughs/"
+  },
+  {
     "id": "653038ec-ff87-4e45-869c-f373a5c070cf",
     "from": "https://983f2f5-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/updating-the-frontier-safety-framework/",
     "to": "https://deepmind.google/blog/updating-the-frontier-safety-framework/"
+  },
+  {
+    "id": "673f21c6-e662-4cac-b4bb-eac575d38a63",
+    "from": "https://deepmind.google/blog/updating-the-frontier-safety-framework/",
+    "to": "https://deepmind.google/blog/updating-the-frontier-safety-framework/"
+  },
+  {
+    "id": "676b9f8b-f94b-491f-92fa-a4b6db48185d",
+    "from": "https://deepmind.google/blog/mapping-modeling-and-understanding-nature-with-ai/",
+    "to": "https://deepmind.google/blog/mapping-modeling-and-understanding-nature-with-ai/"
+  },
+  {
+    "id": "678fb2fe-fae0-4f27-9e24-cb8b623bebcd",
+    "from": "https://deepmind.google/blog/gemini-breaks-new-ground-a-faster-model-longer-context-and-ai-agents/",
+    "to": "https://blog.google/innovation-and-ai/products/google-gemini-update-flash-ai-assistant-io-2024/"
+  },
+  {
+    "id": "68a19e66-6a83-48ea-8b2f-9576c4f0dfa5",
+    "from": "https://deepmind.google/blog/google-deepmind-at-icml-2024/",
+    "to": "https://deepmind.google/blog/google-deepmind-at-icml-2024/"
+  },
+  {
+    "id": "68d1f762-cc97-4669-8f43-b70c1ab426a3",
+    "from": "https://deepmind.google/blog/10-years-of-alphago/",
+    "to": "https://deepmind.google/blog/10-years-of-alphago/"
+  },
+  {
+    "id": "68f696f1-b4ca-49b8-9d73-6bd23387e114",
+    "from": "https://deepmind.google/blog/our-approach-to-bioresilience/",
+    "to": "https://deepmind.google/blog/our-approach-to-bioresilience/"
+  },
+  {
+    "id": "6926b98c-9a48-4774-ae30-0341fa898898",
+    "from": "https://deepmind.google/blog/introducing-gemma-3/",
+    "to": "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-3/"
   },
   {
     "id": "6b6e109c-b370-43fc-9640-28e51667e751",
@@ -390,14 +785,49 @@
     "to": "https://deepmind.google/blog/pushing-the-frontiers-of-audio-generation/"
   },
   {
+    "id": "6d1b753c-4ac8-4648-8505-9a292f1af209",
+    "from": "https://deepmind.google/blog/fluid-natural-voice-translation-with-gemini-35-live-translate/",
+    "to": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-live-3-5-translate/?utm_source=deepmind.google&utm_medium=referral&utm_campaign=gdm&utm_content="
+  },
+  {
+    "id": "6dea7292-83d8-4d70-a3f2-5ce63ae37a82",
+    "from": "https://deepmind.google/blog/ferminet-quantum-physics-and-chemistry-from-first-principles/",
+    "to": "https://deepmind.google/blog/ferminet-quantum-physics-and-chemistry-from-first-principles/"
+  },
+  {
+    "id": "6e2068bf-745d-4bcd-8aaa-3c114f941430",
+    "from": "https://deepmind.google/blog/gemini-3-5-frontier-intelligence-with-action/",
+    "to": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/"
+  },
+  {
     "id": "6e73cccb-0a87-43fd-91e1-add34b1cdc52",
     "from": "https://983f2f5-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/announcing-gemma-3n-preview-powerful-efficient-mobile-first-ai/",
     "to": "https://developers.googleblog.com/en/introducing-gemma-3n/"
   },
   {
+    "id": "6fb0e4ac-0616-43d1-812b-02a730ca89d8",
+    "from": "https://deepmind.google/blog/how-ai-is-helping-advance-the-science-of-bioacoustics-to-save-endangered-species/",
+    "to": "https://deepmind.google/blog/how-ai-is-helping-advance-the-science-of-bioacoustics-to-save-endangered-species/"
+  },
+  {
+    "id": "7156de5e-6be3-47b1-9d88-12712d755d16",
+    "from": "https://deepmind.google/blog/state-of-the-art-video-and-image-generation-with-veo-2-and-imagen-3/",
+    "to": "https://blog.google/innovation-and-ai/models-and-research/google-labs/video-image-generation-update-december-2024/"
+  },
+  {
     "id": "719b823e-5e1c-452c-be04-1fa7605533a5",
     "from": "https://d1f9a8b-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/alphaproteo-generates-novel-proteins-for-biology-and-health-research/",
     "to": "https://deepmind.google/blog/alphaproteo-generates-novel-proteins-for-biology-and-health-research/"
+  },
+  {
+    "id": "726a12ef-08f3-443a-85da-663f9e3f461e",
+    "from": "https://deepmind.google/blog/start-building-with-gemini-3/",
+    "to": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-3-developers/"
+  },
+  {
+    "id": "731d57a3-0419-43da-9a57-cfc8022bbc0f",
+    "from": "https://deepmind.google/blog/measuring-progress-toward-agi-a-cognitive-framework/",
+    "to": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/measuring-agi-cognitive-framework/"
   },
   {
     "id": "7348a8ca-93fd-4cff-bf8b-036ea08c8222",
@@ -410,9 +840,34 @@
     "to": "https://deepmind.google/blog/watermarking-ai-generated-text-and-video-with-synthid/"
   },
   {
+    "id": "73d18bfc-4f3b-55f1-aa70-40f8e1293422",
+    "from": "https://deepmind.google/blog/introducing-agentic-video-in-gemini/",
+    "to": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-agentic-video-in-gemini/"
+  },
+  {
     "id": "73d5ad98-10a4-48fe-a068-243a79dbf1a5",
     "from": "https://d1f9a8b-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/transforming-the-future-of-music-creation/",
     "to": "https://deepmind.google/blog/transforming-the-future-of-music-creation/"
+  },
+  {
+    "id": "750fe5d9-6a16-47cf-a74b-00baf9a5b0a4",
+    "from": "https://deepmind.google/blog/new-generative-media-models-and-tools-built-with-and-for-creators/",
+    "to": "https://blog.google/innovation-and-ai/products/google-generative-ai-veo-imagen-3/"
+  },
+  {
+    "id": "75344e61-ea8c-465f-a11c-07090678610f",
+    "from": "https://deepmind.google/blog/ai-co-clinician/",
+    "to": "https://deepmind.google/blog/ai-co-clinician/"
+  },
+  {
+    "id": "756aed16-5e7e-45c8-a15d-d50857ad724b",
+    "from": "https://deepmind.google/blog/the-ai-for-science-forum-a-new-era-of-discovery/",
+    "to": "https://blog.google/innovation-and-ai/technology/ai/ai-science-forum-2024/"
+  },
+  {
+    "id": "763795d9-7587-5ece-8877-ef65fd09b3fc",
+    "from": "https://deepmind.google/blog/introducing-weathernext-3-our-most-advanced-and-accurate-global-weather-ai-model/",
+    "to": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/introducing-weathernext-3/"
   },
   {
     "id": "765a4bfe-7a21-423d-a793-cb00a0989bdf",
@@ -425,6 +880,11 @@
     "to": "https://blog.google/innovation-and-ai/products/kaggle-game-arena/"
   },
   {
+    "id": "77c9152b-4b13-4101-986a-4496d2ec1a47",
+    "from": "https://deepmind.google/blog/accelerating-the-frontiers-of-scientific-discovery-googles-40m-commitment-to-the-genesis-mission/",
+    "to": "https://cloud.google.com/blog/topics/public-sector/accelerating-frontiers-of-scientific-discovery-40-million-dollar-commitment-genesis-mission"
+  },
+  {
     "id": "78010ac8-2100-44b2-b8e6-657bc02ad8ac",
     "from": "https://d1f9a8b-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/funsearch-making-new-discoveries-in-mathematical-sciences-using-large-language-models/",
     "to": "https://deepmind.google/blog/funsearch-making-new-discoveries-in-mathematical-sciences-using-large-language-models/"
@@ -433,6 +893,11 @@
     "id": "7984a76a-767b-4288-a97a-b43a8cf7d7c9",
     "from": "https://983f2f5-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/genie-2-a-large-scale-foundation-world-model/",
     "to": "https://deepmind.google/blog/genie-2-a-large-scale-foundation-world-model/"
+  },
+  {
+    "id": "7c21b54b-65d7-4224-9311-a559af034646",
+    "from": "https://deepmind.google/discover/blog/how-a-gemma-model-helped-discover-a-new-potential-cancer-therapy-pathway/",
+    "to": "https://blog.google/innovation-and-ai/products/google-gemma-ai-cancer-therapy-discovery/"
   },
   {
     "id": "7c8dbdb3-8afe-4a49-b7ff-58e5f6fa9ed6",
@@ -460,9 +925,19 @@
     "to": "https://blog.google/innovation-and-ai/technology/ai/google-gemini-ai/"
   },
   {
+    "id": "7f6d646e-5293-423b-9653-d816fb287a33",
+    "from": "https://deepmind.google/blog/nano-banana-2-combining-pro-capabilities-with-lightning-fast-speed/",
+    "to": "https://blog.google/innovation-and-ai/technology/ai/nano-banana-2/"
+  },
+  {
     "id": "7fd568c0-abcf-4fb6-97b7-79225d0869a7",
     "from": "https://983f2f5-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/generate-videos-in-gemini-and-whisk-with-veo-2/",
     "to": "https://blog.google/products-and-platforms/products/gemini/video-generation/"
+  },
+  {
+    "id": "8023e08e-63a8-4dd4-ae83-48fdcbdb90ec",
+    "from": "https://deepmind.google/blog/looking-ahead-to-the-ai-seoul-summit/",
+    "to": "https://deepmind.google/blog/looking-ahead-to-the-ai-seoul-summit/"
   },
   {
     "id": "81f33cd2-921d-4bb7-87e1-d08c0ceffa80",
@@ -480,6 +955,16 @@
     "to": "https://deepmind.google/blog/introducing-the-frontier-safety-framework/"
   },
   {
+    "id": "83755405-ba81-4294-88b8-ea6334845060",
+    "from": "https://deepmind.google/blog/advanced-audio-dialog-and-generation-with-gemini-25/",
+    "to": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/gemini-2-5-native-audio/"
+  },
+  {
+    "id": "8404ea85-df94-4b0f-9301-b4e01e77d090",
+    "from": "https://deepmind.google/blog/announcing-our-partnership-with-the-republic-of-korea/",
+    "to": "https://deepmind.google/blog/announcing-our-partnership-with-the-republic-of-korea/"
+  },
+  {
     "id": "85384266-6920-4165-8354-fb3410ebbea4",
     "from": "https://983f2f5-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/sima-generalist-ai-agent-for-3d-virtual-environments/",
     "to": "https://deepmind.google/blog/sima-generalist-ai-agent-for-3d-virtual-environments/"
@@ -490,9 +975,34 @@
     "to": "https://deepmind.google/blog/alphageometry-an-olympiad-level-ai-system-for-geometry/"
   },
   {
+    "id": "8699a5d7-4540-4286-984f-002674a2f733",
+    "from": "https://deepmind.google/blog/ai-pointer/",
+    "to": "https://deepmind.google/blog/ai-pointer/"
+  },
+  {
     "id": "869ba1fa-04e0-4665-be2f-1771db3f6c51",
     "from": "https://d1f9a8b-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/synthid-detector--a-new-portal-to-help-identify-ai-generated-content/",
     "to": "https://blog.google/innovation-and-ai/products/google-synthid-ai-content-detector/"
+  },
+  {
+    "id": "86c105d2-78d4-4a45-9f2e-33e098ff4e3d",
+    "from": "https://deepmind.google/blog/introducing-gemma-3n-the-developer-guide/",
+    "to": "https://developers.googleblog.com/en/introducing-gemma-3n-developer-guide/"
+  },
+  {
+    "id": "879dd82a-eb36-45f6-a9ac-85e185cfeb4c",
+    "from": "https://deepmind.google/blog/introducing-computer-use-in-gemini-3-5-flash/",
+    "to": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-computer-use-gemini-3-5-flash/?utm_source=deepmind.google&utm_medium=referral&utm_campaign=gdm&utm_content="
+  },
+  {
+    "id": "883ed8c9-5894-49c0-bd6c-a856ea7f6993",
+    "from": "https://deepmind.google/blog/watermarking-ai-generated-text-and-video-with-synthid/",
+    "to": "https://deepmind.google/blog/watermarking-ai-generated-text-and-video-with-synthid/"
+  },
+  {
+    "id": "88e341de-aacf-44e9-a3fa-00f8c39de39c",
+    "from": "https://deepmind.google/blog/powering-the-future-of-robotics-in-europe/",
+    "to": "https://blog.google/topics/google-europe/powering-the-future-of-robotics-in-europe/?utm_source=deepmind.google&utm_medium=referral&utm_campaign=gdm&utm_content="
   },
   {
     "id": "8958121d-5bfe-46c1-b766-62de5eb04ad5",
@@ -500,14 +1010,49 @@
     "to": "https://deepmind.google/blog/identifying-ai-generated-images-with-synthid/"
   },
   {
+    "id": "89a14332-e412-41c6-8aca-c226b18299fe",
+    "from": "https://deepmind.google/blog/ai-solves-imo-problems-at-silver-medal-level/",
+    "to": "https://deepmind.google/blog/ai-solves-imo-problems-at-silver-medal-level/"
+  },
+  {
+    "id": "89ca8336-794d-4ce7-8b24-257e86fa4208",
+    "from": "https://deepmind.google/blog/medgemma-our-most-capable-open-models-for-health-ai-development/",
+    "to": "https://research.google/blog/medgemma-our-most-capable-open-models-for-health-ai-development/"
+  },
+  {
+    "id": "8a075083-4ca0-42a4-8fe9-79048ee6b516",
+    "from": "https://deepmind.google/blog/accelerating-discovery-in-india-through-ai-powered-science-and-education/",
+    "to": "https://deepmind.google/blog/accelerating-discovery-in-india-through-ai-powered-science-and-education/"
+  },
+  {
     "id": "8a185d33-e0e8-4dda-8782-69befe8105c1",
     "from": "https://983f2f5-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/",
     "to": "https://deepmind.google/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/"
   },
   {
+    "id": "8a2f8b43-d240-46ad-9e1c-e7bbcf81d606",
+    "from": "https://deepmind.google/discover/blog/introducing-veo-3-1-and-advanced-creative-capabilities/",
+    "to": "https://blog.google/innovation-and-ai/products/veo-updates-flow/"
+  },
+  {
+    "id": "8a70698d-7df7-4d9a-90ee-612605721acb",
+    "from": "https://deepmind.google/blog/co-scientist-a-multi-agent-ai-partner-to-accelerate-research/",
+    "to": "https://deepmind.google/blog/co-scientist-a-multi-agent-ai-partner-to-accelerate-research/"
+  },
+  {
+    "id": "8a7dd76f-9f8e-4782-8d31-4d2b4d803bc9",
+    "from": "https://deepmind.google/blog/introducing-the-gemini-25-computer-use-model/",
+    "to": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/gemini-computer-use-model/"
+  },
+  {
     "id": "8bb69005-fb2e-4ee4-bc5a-897445fc1bf4",
     "from": "https://983f2f5-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/alphaproteo-generates-novel-proteins-for-biology-and-health-research/",
     "to": "https://deepmind.google/blog/alphaproteo-generates-novel-proteins-for-biology-and-health-research/"
+  },
+  {
+    "id": "8c0e3444-1ff4-4be5-9433-b086d674d813",
+    "from": "https://deepmind.google/blog/improved-gemini-audio-models-for-powerful-voice-experiences/",
+    "to": "https://blog.google/products-and-platforms/products/gemini/gemini-audio-model-updates/"
   },
   {
     "id": "8dab745f-211b-4f6d-979a-d5e64b925b12",
@@ -518,6 +1063,11 @@
     "id": "9016343f-09b1-488d-8db1-d0c34513a09d",
     "from": "https://983f2f5-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/gemini-25-updates-to-our-family-of-thinking-models/",
     "to": "https://developers.googleblog.com/en/gemini-2-5-thinking-model-updates/"
+  },
+  {
+    "id": "90566725-9ab1-40da-86b2-04d8820ab19f",
+    "from": "https://deepmind.google/blog/generate-videos-in-gemini-and-whisk-with-veo-2/",
+    "to": "https://blog.google/products-and-platforms/products/gemini/video-generation/"
   },
   {
     "id": "929027b1-9a85-45fd-b8eb-b14298237253",
@@ -540,9 +1090,19 @@
     "to": "https://developers.googleblog.com/en/gemini-25-flash-lite-is-now-stable-and-generally-available/"
   },
   {
+    "id": "94168749-a837-4dc2-aa96-07a73ec3a206",
+    "from": "https://deepmind.google/blog/introducing-google-antigravity-2-0/",
+    "to": "https://antigravity.google/blog/introducing-google-antigravity-2-0"
+  },
+  {
     "id": "943cea00-5882-4f83-ac5d-24a320860375",
     "from": "https://d1f9a8b-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/google-deepmind-at-icml-2024/",
     "to": "https://deepmind.google/blog/google-deepmind-at-icml-2024/"
+  },
+  {
+    "id": "944acaec-e134-4a3c-ba9a-50bcd19a9dd5",
+    "from": "https://deepmind.google/blog/google-deepmind-supports-us-department-of-energy-on-genesis/",
+    "to": "https://deepmind.google/blog/google-deepmind-supports-us-department-of-energy-on-genesis/"
   },
   {
     "id": "9458f7ef-5056-4614-b437-69c02ac4b25a",
@@ -553,6 +1113,11 @@
     "id": "9606b589-e978-4754-b0b1-90e6f5d2472c",
     "from": "https://983f2f5-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/weather-lab-cyclone-predictions-with-ai/",
     "to": "https://deepmind.google/blog/how-were-supporting-better-tropical-cyclone-prediction-with-ai/"
+  },
+  {
+    "id": "974d5fe4-ae15-47bb-804d-e8a596e9aa0f",
+    "from": "https://deepmind.google/blog/taking-a-responsible-path-to-agi/",
+    "to": "https://deepmind.google/blog/taking-a-responsible-path-to-agi/"
   },
   {
     "id": "97ce9806-88ed-49e2-a91a-4ea9c128ae3b",
@@ -570,6 +1135,11 @@
     "to": "https://deepmind.google/blog/google-deepmind-at-iclr-2024/"
   },
   {
+    "id": "98a88efe-dfd8-4a1c-9d09-acb70a1ec2d0",
+    "from": "https://deepmind.google/discover/blog/strengthening-our-frontier-safety-framework/",
+    "to": "https://deepmind.google/blog/strengthening-our-frontier-safety-framework/"
+  },
+  {
     "id": "99e0a6bc-7018-4968-b7e0-74c86c1a95ad",
     "from": "https://983f2f5-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/advanced-version-of-gemini-with-deep-think-officially-achieves-gold-medal-standard-at-the-international-mathematical-olympiad/",
     "to": "https://deepmind.google/blog/advanced-version-of-gemini-with-deep-think-officially-achieves-gold-medal-standard-at-the-international-mathematical-olympiad/"
@@ -580,9 +1150,24 @@
     "to": "https://developers.googleblog.com/en/start-building-with-the-gemini-2-0-flash-family/"
   },
   {
+    "id": "9a403ce3-17d2-4bd7-890f-18cbf395970b",
+    "from": "https://deepmind.google/blog/strengthening-our-frontier-safety-framework/",
+    "to": "https://deepmind.google/blog/strengthening-our-frontier-safety-framework/"
+  },
+  {
     "id": "9c6de951-3963-4522-93e1-59613cc53e95",
     "from": "https://d1f9a8b-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/looking-ahead-to-the-ai-seoul-summit/",
     "to": "https://deepmind.google/blog/looking-ahead-to-the-ai-seoul-summit/"
+  },
+  {
+    "id": "9c879e28-ef52-4735-8859-fa3f987c252a",
+    "from": "https://deepmind.google/blog/how-were-supporting-better-tropical-cyclone-prediction-with-ai/",
+    "to": "https://deepmind.google/blog/how-were-supporting-better-tropical-cyclone-prediction-with-ai/"
+  },
+  {
+    "id": "9c88859d-9d9a-4c62-a7a2-121db429c05e",
+    "from": "https://deepmind.google/blog/alphaevolve-impact/",
+    "to": "https://deepmind.google/blog/alphaevolve-impact/"
   },
   {
     "id": "9d54425a-f8d9-45f0-aacb-c1fe656ae157",
@@ -595,6 +1180,16 @@
     "to": "https://deepmind.google/blog/advancing-geminis-security-safeguards/"
   },
   {
+    "id": "9ee82c06-25f2-4fb6-9458-eacbcf5daa67",
+    "from": "https://deepmind.google/blog/alphaproteo-generates-novel-proteins-for-biology-and-health-research/",
+    "to": "https://deepmind.google/blog/alphaproteo-generates-novel-proteins-for-biology-and-health-research/"
+  },
+  {
+    "id": "9f17e521-1c34-495b-ac2f-593a38ad5702",
+    "from": "https://deepmind.google/blog/veo-3-1-ingredients-to-video-more-consistency-creativity-and-control/",
+    "to": "https://blog.google/innovation-and-ai/technology/ai/veo-3-1-ingredients-to-video/"
+  },
+  {
     "id": "a08fcb17-af94-4f19-a27f-6719d0228ec6",
     "from": "https://d1f9a8b-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/rt-2-new-model-translates-vision-and-language-into-action/",
     "to": "https://deepmind.google/blog/rt-2-new-model-translates-vision-and-language-into-action/"
@@ -605,9 +1200,39 @@
     "to": "https://developers.googleblog.com/en/start-building-with-the-gemini-2-0-flash-family/"
   },
   {
+    "id": "a1c22de6-0059-4cde-a2a2-059ed4abd68f",
+    "from": "https://deepmind.google/blog/gemini-robotics-on-device-brings-ai-to-local-robotic-devices/",
+    "to": "https://deepmind.google/blog/gemini-robotics-on-device-brings-ai-to-local-robotic-devices/"
+  },
+  {
+    "id": "a3b0e33f-01b8-48aa-9866-99b48766e88a",
+    "from": "https://deepmind.google/blog/google-deepmind-at-neurips-2024/",
+    "to": "https://deepmind.google/blog/google-deepmind-at-neurips-2024/"
+  },
+  {
+    "id": "a468e3a3-3e8d-4dee-81d2-d28e765b959d",
+    "from": "https://deepmind.google/blog/evaluating-potential-cybersecurity-threats-of-advanced-ai/",
+    "to": "https://deepmind.google/blog/evaluating-potential-cybersecurity-threats-of-advanced-ai/"
+  },
+  {
     "id": "a4784d92-525c-4825-b0fb-2c11cce2d56a",
     "from": "https://983f2f5-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/discovering-new-solutions-to-century-old-problems-in-fluid-dynamics/",
     "to": "https://deepmind.google/blog/discovering-new-solutions-to-century-old-problems-in-fluid-dynamics/"
+  },
+  {
+    "id": "a504dc2b-47ee-414a-8a00-286fa725ee17",
+    "from": "https://deepmind.google/blog/advanced-version-of-gemini-with-deep-think-officially-achieves-gold-medal-standard-at-the-international-mathematical-olympiad/",
+    "to": "https://deepmind.google/blog/advanced-version-of-gemini-with-deep-think-officially-achieves-gold-medal-standard-at-the-international-mathematical-olympiad/"
+  },
+  {
+    "id": "a527d9af-204b-4f8e-9860-8e0e36ff0ac6",
+    "from": "https://deepmind.google/blog/google-deepmind-and-a24-announce-first-of-its-kind-research-partnership/",
+    "to": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/deepmind-a24-research-partnership/?utm_source=deepmind.google&utm_medium=referral&utm_campaign=gdm&utm_content="
+  },
+  {
+    "id": "a571d18c-b45e-4f63-98ab-57dee88b3cb8",
+    "from": "https://deepmind.google/blog/weathernext-2-our-most-advanced-weather-forecasting-model/",
+    "to": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/weathernext-2/"
   },
   {
     "id": "a6932d70-def2-4713-94a3-e3213378d762",
@@ -635,9 +1260,34 @@
     "to": "https://deepmind.google/blog/funsearch-making-new-discoveries-in-mathematical-sciences-using-large-language-models/"
   },
   {
+    "id": "a96dc667-d964-4e84-8c28-aaee3724ccb0",
+    "from": "https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/",
+    "to": "https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/"
+  },
+  {
+    "id": "a9e758bf-b4ac-4aa1-9210-fe6bda139e64",
+    "from": "https://deepmind.google/blog/introducing-gemma-3-270m-the-compact-model-for-hyper-efficient-ai/",
+    "to": "https://developers.googleblog.com/en/introducing-gemma-3-270m/"
+  },
+  {
+    "id": "a9ebae23-0d08-4664-ba02-83cd0d81efcd",
+    "from": "https://deepmind.google/blog/gencast-predicts-weather-and-the-risks-of-extreme-conditions-with-sota-accuracy/",
+    "to": "https://deepmind.google/blog/gencast-predicts-weather-and-the-risks-of-extreme-conditions-with-sota-accuracy/"
+  },
+  {
+    "id": "aab199ee-dc86-4d03-83ef-d0f7054dbbc4",
+    "from": "https://deepmind.google/blog/accelerating-discovery-with-the-ai-for-math-initiative/",
+    "to": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/ai-for-math/"
+  },
+  {
     "id": "aaf9b27e-0acc-42bb-9e93-c17701e9208c",
     "from": "https://d1f9a8b-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/gencast-predicts-weather-and-the-risks-of-extreme-conditions-with-sota-accuracy/",
     "to": "https://deepmind.google/blog/gencast-predicts-weather-and-the-risks-of-extreme-conditions-with-sota-accuracy/"
+  },
+  {
+    "id": "ac6b1366-2594-4159-bb6b-cd0afe52816c",
+    "from": "https://deepmind.google/blog/gemini-3-1-pro-a-smarter-model-for-your-most-complex-tasks/",
+    "to": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/"
   },
   {
     "id": "acf10cd8-a9c1-4d61-832b-f5da3b03d6ce",
@@ -660,6 +1310,11 @@
     "to": "https://deepmind.google/blog/generating-audio-for-video/"
   },
   {
+    "id": "aff5d263-de51-467c-999c-ccc5110e79f1",
+    "from": "https://deepmind.google/blog/sima-2-an-agent-that-plays-reasons-and-learns-with-you-in-virtual-3d-worlds/",
+    "to": "https://deepmind.google/blog/sima-2-an-agent-that-plays-reasons-and-learns-with-you-in-virtual-3d-worlds/"
+  },
+  {
     "id": "b0386ad7-141b-4786-9e7e-5ba4790a876a",
     "from": "https://d1f9a8b-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/advancing-geminis-security-safeguards/",
     "to": "https://deepmind.google/blog/advancing-geminis-security-safeguards/"
@@ -668,6 +1323,16 @@
     "id": "b12a0b37-6902-4375-b618-1b0334c09109",
     "from": "https://983f2f5-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/facts-grounding-a-new-benchmark-for-evaluating-the-factuality-of-large-language-models/",
     "to": "https://deepmind.google/blog/facts-grounding-a-new-benchmark-for-evaluating-the-factuality-of-large-language-models/"
+  },
+  {
+    "id": "b1784d76-31b8-47f6-9e10-ca12659eba70",
+    "from": "https://deepmind.google/blog/making-it-easier-to-understand-how-content-was-created-and-edited/",
+    "to": "https://blog.google/innovation-and-ai/products/identifying-ai-generated-media-online/"
+  },
+  {
+    "id": "b22685fe-d98d-44ac-978a-6752ba5fcf6f",
+    "from": "https://deepmind.google/blog/how-alphachip-transformed-computer-chip-design/",
+    "to": "https://deepmind.google/blog/how-alphachip-transformed-computer-chip-design/"
   },
   {
     "id": "b2bc9027-8bfd-485c-af93-ab481585b0a6",
@@ -685,9 +1350,44 @@
     "to": "https://deepmind.google/blog/a-catalogue-of-genetic-mutations-to-help-pinpoint-the-cause-of-diseases/"
   },
   {
+    "id": "b325c0d6-d583-4bd0-b6c2-13685c356e79",
+    "from": "https://deepmind.google/blog/measuring-the-impact-of-learning-with-ai-in-sierra-leone-and-beyond/",
+    "to": "https://deepmind.google/blog/measuring-the-impact-of-learning-with-ai-in-sierra-leone-and-beyond/"
+  },
+  {
     "id": "b458cd19-9e4c-4ffd-a48a-7202ffdb6cd8",
     "from": "https://983f2f5-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/tacticai-ai-assistant-for-football-tactics/",
     "to": "https://deepmind.google/blog/tacticai-ai-assistant-for-football-tactics/"
+  },
+  {
+    "id": "b46a3df2-8643-405e-b1ca-77a12ab6c637",
+    "from": "https://deepmind.google/blog/t5gemma-a-new-collection-of-encoder-decoder-gemma-models/",
+    "to": "https://developers.googleblog.com/en/t5gemma/"
+  },
+  {
+    "id": "b5632e5e-3a3e-4d24-b37b-6bfca7532530",
+    "from": "https://deepmind.google/blog/gemma-scope-helping-the-safety-community-shed-light-on-the-inner-workings-of-language-models/",
+    "to": "https://deepmind.google/blog/gemma-scope-helping-the-safety-community-shed-light-on-the-inner-workings-of-language-models/"
+  },
+  {
+    "id": "b57ce0b9-6ec1-4d81-9838-745c2536c635",
+    "from": "https://deepmind.google/blog/alphaearth-foundations-helps-map-our-planet-in-unprecedented-detail/",
+    "to": "https://deepmind.google/blog/alphaearth-foundations-helps-map-our-planet-in-unprecedented-detail/"
+  },
+  {
+    "id": "b5b3de20-b872-4ef0-99b9-20210967d305",
+    "from": "https://deepmind.google/blog/gemini-25-updates-to-our-family-of-thinking-models/",
+    "to": "https://developers.googleblog.com/en/gemini-2-5-thinking-model-updates/"
+  },
+  {
+    "id": "b62681e8-4822-4aea-b5fb-6ec0fb19db3a",
+    "from": "https://deepmind.google/blog/bringing-ai-to-the-next-generation-of-fusion-energy/",
+    "to": "https://deepmind.google/blog/bringing-ai-to-the-next-generation-of-fusion-energy/"
+  },
+  {
+    "id": "b8427ca4-6cfd-4242-9051-a00a16ba54f6",
+    "from": "https://deepmind.google/blog/facts-grounding-a-new-benchmark-for-evaluating-the-factuality-of-large-language-models/",
+    "to": "https://deepmind.google/blog/facts-grounding-a-new-benchmark-for-evaluating-the-factuality-of-large-language-models/"
   },
   {
     "id": "b8774cf5-3b69-47de-a1d8-6cdf22c51ce4",
@@ -705,14 +1405,59 @@
     "to": "https://blog.google/products-and-platforms/products/gemini/gemini-2-5-pro-updates/"
   },
   {
+    "id": "ba09e46d-1bbb-42d2-892a-58be01099c93",
+    "from": "https://deepmind.google/blog/engineering-more-resilient-crops-for-a-warming-climate/",
+    "to": "https://deepmind.google/blog/engineering-more-resilient-crops-for-a-warming-climate/"
+  },
+  {
+    "id": "bc05fcbb-5cb1-4cd7-bc3d-9191270b6ecd",
+    "from": "https://deepmind.google/blog/alphafold-five-years-of-impact/",
+    "to": "https://deepmind.google/blog/alphafold-five-years-of-impact/"
+  },
+  {
+    "id": "bd5bdd6e-6efb-4ef1-89ae-951e69f2d12c",
+    "from": "https://deepmind.google/discover/blog/gemini-achieves-gold-level-performance-at-the-international-collegiate-programming-contest-world-finals/",
+    "to": "https://deepmind.google/blog/gemini-achieves-gold-medal-level-at-the-international-collegiate-programming-contest-world-finals/"
+  },
+  {
+    "id": "bf2aa256-323d-4104-9e79-63b92dd03e86",
+    "from": "https://deepmind.google/blog/how-weathernext-helped-the-national-hurricane-center-better-predict-hurricane-melissas-historic-landfall-in-jamaica/",
+    "to": "https://deepmind.google/blog/how-weathernext-helped-the-national-hurricane-center-better-predict-hurricane-melissas-historic-landfall-in-jamaica/"
+  },
+  {
+    "id": "bf916b8e-0659-4d20-85a0-5104f22e7217",
+    "from": "https://deepmind.google/blog/teaching-ai-to-see-the-world-more-like-we-do/",
+    "to": "https://deepmind.google/blog/teaching-ai-to-see-the-world-more-like-we-do/"
+  },
+  {
+    "id": "c02a7b12-009e-4e92-a502-161410e21ea1",
+    "from": "https://deepmind.google/blog/try-deep-think-in-the-gemini-app/",
+    "to": "https://blog.google/products-and-platforms/products/gemini/gemini-2-5-deep-think/"
+  },
+  {
+    "id": "c03fbd2d-2fac-444a-91ce-e5155972fd35",
+    "from": "https://deepmind.google/blog/gemini-robotics-er-1-6/",
+    "to": "https://deepmind.google/blog/gemini-robotics-er-1-6/"
+  },
+  {
     "id": "c07a9845-e6c3-4500-ad0b-25d976065a0d",
     "from": "https://d1f9a8b-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/updating-the-frontier-safety-framework/",
     "to": "https://deepmind.google/blog/updating-the-frontier-safety-framework/"
   },
   {
+    "id": "c0bbec0c-74bb-41a4-be98-b6aff9d19c0b",
+    "from": "https://deepmind.google/blog/gemini-25-pro-preview-even-better-coding-performance/",
+    "to": "https://developers.googleblog.com/en/gemini-2-5-pro-io-improved-coding-performance/?utm_source=deepmind.google&utm_medium=referral&utm_campaign=gdm&utm_content="
+  },
+  {
     "id": "c27a1887-91fa-4de7-817e-54380314f164",
     "from": "https://d1f9a8b-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/ferminet-quantum-physics-and-chemistry-from-first-principles/",
     "to": "https://deepmind.google/blog/ferminet-quantum-physics-and-chemistry-from-first-principles/"
+  },
+  {
+    "id": "c33bf7ed-8a16-4f97-8c5d-9af3f3613b27",
+    "from": "https://deepmind.google/blog/gemini-2-0-is-now-available-to-everyone/",
+    "to": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/gemini-model-updates-february-2025/"
   },
   {
     "id": "c384abff-7eaa-4b5d-8e43-8cbb4b7f4224",
@@ -725,9 +1470,19 @@
     "to": "https://deepmind.google/blog/evaluating-potential-cybersecurity-threats-of-advanced-ai/"
   },
   {
+    "id": "c6ca9637-9bed-41d3-8b9c-65cff2f86d22",
+    "from": "https://deepmind.google/blog/how-were-bringing-ai-image-verification-to-the-gemini-app/",
+    "to": "https://blog.google/innovation-and-ai/products/ai-image-verification-gemini-app/"
+  },
+  {
     "id": "c8010fcf-24cb-4d24-97cb-b98c12b491c6",
     "from": "https://d1f9a8b-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/generate-videos-in-gemini-and-whisk-with-veo-2/",
     "to": "https://blog.google/products-and-platforms/products/gemini/video-generation/"
+  },
+  {
+    "id": "c834b180-21ff-4a68-9d3f-fbe08c235be4",
+    "from": "https://deepmind.google/blog/how-a-gemma-model-helped-discover-a-new-potential-cancer-therapy-pathway/",
+    "to": "https://blog.google/innovation-and-ai/products/google-gemma-ai-cancer-therapy-discovery/"
   },
   {
     "id": "c95f85c7-1b04-42fa-b506-cf4e87f1a946",
@@ -745,6 +1500,11 @@
     "to": "https://deepmind.google/blog/a-glimpse-of-the-next-generation-of-alphafold/"
   },
   {
+    "id": "cae2efa8-682c-4e2e-90d4-b7153ba4a22a",
+    "from": "https://deepmind.google/blog/pushing-the-frontiers-of-audio-generation/",
+    "to": "https://deepmind.google/blog/pushing-the-frontiers-of-audio-generation/"
+  },
+  {
     "id": "caed8b4f-ad9d-40ab-9101-89c67d4ee747",
     "from": "https://d1f9a8b-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/facts-grounding-a-new-benchmark-for-evaluating-the-factuality-of-large-language-models/",
     "to": "https://deepmind.google/blog/facts-grounding-a-new-benchmark-for-evaluating-the-factuality-of-large-language-models/"
@@ -758,6 +1518,11 @@
     "id": "cbf8792a-07fd-4af4-9de6-256ffcc9bc1c",
     "from": "https://d1f9a8b-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/taking-a-responsible-path-to-agi/",
     "to": "https://deepmind.google/blog/taking-a-responsible-path-to-agi/"
+  },
+  {
+    "id": "cc169a20-6ac3-4939-aa86-d8e67e6d185b",
+    "from": "https://deepmind.google/blog/aeneas-transforms-how-historians-connect-the-past/",
+    "to": "https://deepmind.google/blog/aeneas-transforms-how-historians-connect-the-past/"
   },
   {
     "id": "ccf93807-d872-44d1-bc4e-58dec72ccc5e",
@@ -780,14 +1545,29 @@
     "to": "https://developers.googleblog.com/en/experiment-with-gemini-20-flash-native-image-generation/"
   },
   {
+    "id": "d24db65c-5679-443b-812b-45da3f785ff2",
+    "from": "https://deepmind.google/blog/image-editing-in-gemini-just-got-a-major-upgrade/",
+    "to": "https://blog.google/products-and-platforms/products/gemini/updated-image-editing-model/"
+  },
+  {
     "id": "d3091410-fac9-4e50-b4d4-bc9ae1f965f1",
     "from": "https://983f2f5-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/introducing-gemini-20-our-new-ai-model-for-the-agentic-era/",
     "to": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/google-gemini-ai-update-december-2024/"
   },
   {
+    "id": "d349d4f6-68e6-4f15-8fc4-d3d46cd0b97c",
+    "from": "https://deepmind.google/blog/gemma-4-byte-for-byte-the-most-capable-open-models/",
+    "to": "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/"
+  },
+  {
     "id": "d55b9db1-752f-4f1a-9b23-47b25f2e88d2",
     "from": "https://d1f9a8b-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/sima-generalist-ai-agent-for-3d-virtual-environments/",
     "to": "https://deepmind.google/blog/sima-generalist-ai-agent-for-3d-virtual-environments/"
+  },
+  {
+    "id": "d58d7ff6-6b5b-46e5-a1fe-2f78f407d557",
+    "from": "https://deepmind.google/blog/empowering-indias-next-generation-of-innovators-with-atl-saathi/",
+    "to": "https://deepmind.google/blog/empowering-indias-next-generation-of-innovators-with-atl-saathi/"
   },
   {
     "id": "d5e066d7-af2a-4092-b789-90bffd1c7533",
@@ -800,9 +1580,19 @@
     "to": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/gemini-model-updates-february-2025/"
   },
   {
+    "id": "d75dd940-5433-49de-a6ed-25f8dba62d5b",
+    "from": "https://deepmind.google/blog/introducing-veo-31-and-advanced-creative-capabilities/",
+    "to": "https://blog.google/innovation-and-ai/products/veo-updates-flow/"
+  },
+  {
     "id": "d7d0402e-57da-47eb-92a1-4e9e769f47a4",
     "from": "https://983f2f5-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/scaling-up-learning-across-many-different-robot-types/",
     "to": "https://deepmind.google/blog/scaling-up-learning-across-many-different-robot-types/"
+  },
+  {
+    "id": "d8d68ce7-9172-4f41-bdbe-95b594312201",
+    "from": "https://deepmind.google/blog/announcing-gemma-3n-preview-powerful-efficient-mobile-first-ai/",
+    "to": "https://developers.googleblog.com/en/introducing-gemma-3n/"
   },
   {
     "id": "d8dfa11e-e04a-4272-95aa-5188e5917d8c",
@@ -820,9 +1610,39 @@
     "to": "https://deepmind.google/blog/generating-audio-for-video/"
   },
   {
+    "id": "da161f4e-2291-40ae-87b4-5d2bf19c2420",
+    "from": "https://deepmind.google/blog/were-expanding-our-gemini-25-family-of-models/",
+    "to": "https://blog.google/products-and-platforms/products/gemini/gemini-2-5-model-family-expands/"
+  },
+  {
     "id": "da700e8b-0e50-42d0-a16d-6a5c7e79da54",
     "from": "https://983f2f5-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/gemini-25-pro-preview-even-better-coding-performance/",
     "to": "https://developers.googleblog.com/en/gemini-2-5-pro-io-improved-coding-performance/?utm_source=deepmind.google&utm_medium=referral&utm_campaign=gdm&utm_content="
+  },
+  {
+    "id": "dbb6fc7d-86d3-4667-ba18-34063ce6f80e",
+    "from": "https://deepmind.google/blog/introducing-gemini-3-6-flash-3-5-flash-lite-and-3-5-flash-cyber/",
+    "to": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-6-flash-3-5-flash-lite-3-5-flash-cyber/?utm_source=deepmind.google&utm_medium=referral&utm_campaign=gdm&utm_content="
+  },
+  {
+    "id": "dc110586-6b73-4a72-9711-58fff3731262",
+    "from": "https://deepmind.google/blog/the-ethics-of-advanced-ai-assistants/",
+    "to": "https://deepmind.google/blog/the-ethics-of-advanced-ai-assistants/"
+  },
+  {
+    "id": "dc25a7ab-a44e-44b8-ab0d-5e3c4586ec43",
+    "from": "https://deepmind.google/blog/from-atari-to-eve-online-building-on-15-years-of-ai-research-in-games/",
+    "to": "https://deepmind.google/blog/from-atari-to-eve-online-building-on-15-years-of-ai-research-in-games/"
+  },
+  {
+    "id": "dc6b0328-6210-42f9-8d8b-515b20dd6147",
+    "from": "https://deepmind.google/blog/introducing-google-antigravity/",
+    "to": "https://antigravity.google/blog/introducing-google-antigravity?utm_source=deepmind.google&utm_medium=referral&utm_campaign=gdm&utm_content="
+  },
+  {
+    "id": "dc9cc4f9-5898-414b-ad2c-c4dddac4779f",
+    "from": "https://deepmind.google/blog/alphagenome-ai-for-better-understanding-the-genome/",
+    "to": "https://deepmind.google/blog/alphagenome-ai-for-better-understanding-the-genome/"
   },
   {
     "id": "dcc8bdbc-31f7-45c9-ab01-ed25fd7c59b9",
@@ -845,6 +1665,11 @@
     "to": "https://deepmind.google/blog/google-deepmind-at-neurips-2023/"
   },
   {
+    "id": "dd2e9134-7a0c-4c54-98e1-d93fcc21df9e",
+    "from": "https://deepmind.google/blog/fast-tracking-genetic-leads-to-reverse-cellular-aging/",
+    "to": "https://deepmind.google/blog/fast-tracking-genetic-leads-to-reverse-cellular-aging/"
+  },
+  {
     "id": "de3080a1-e618-44a0-a155-0a78cfbcb08f",
     "from": "https://d1f9a8b-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/advanced-version-of-gemini-with-deep-think-officially-achieves-gold-medal-standard-at-the-international-mathematical-olympiad/",
     "to": "https://deepmind.google/blog/advanced-version-of-gemini-with-deep-think-officially-achieves-gold-medal-standard-at-the-international-mathematical-olympiad/"
@@ -858,6 +1683,31 @@
     "id": "decfdc9f-9876-483b-8b9d-5e043034197f",
     "from": "https://d1f9a8b-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/how-alphachip-transformed-computer-chip-design/",
     "to": "https://deepmind.google/blog/how-alphachip-transformed-computer-chip-design/"
+  },
+  {
+    "id": "df0f3022-dbdd-48e5-84a0-97e1a46b044a",
+    "from": "https://deepmind.google/discover/blog/discovering-new-solutions-to-century-old-problems-in-fluid-dynamics/",
+    "to": "https://deepmind.google/blog/discovering-new-solutions-to-century-old-problems-in-fluid-dynamics/"
+  },
+  {
+    "id": "e00c7fdd-58de-4ade-a568-fef123e2b4dd",
+    "from": "https://deepmind.google/blog/updated-production-ready-gemini-models-reduced-15-pro-pricing-increased-rate-limits-and-more/",
+    "to": "https://developers.googleblog.com/en/updated-gemini-models-reduced-15-pro-pricing-increased-rate-limits-and-more/"
+  },
+  {
+    "id": "e087dd9f-b1e2-470d-8702-e3881e5edea4",
+    "from": "https://deepmind.google/blog/gemini-25-flash-lite-is-now-ready-for-scaled-production-use/",
+    "to": "https://developers.googleblog.com/en/gemini-25-flash-lite-is-now-stable-and-generally-available/"
+  },
+  {
+    "id": "e0f9f72e-5037-4506-941f-1c5c6b4f44ad",
+    "from": "https://deepmind.google/blog/mapping-the-misuse-of-generative-ai/",
+    "to": "https://deepmind.google/blog/mapping-the-misuse-of-generative-ai/"
+  },
+  {
+    "id": "e1256d6b-cb3d-4c21-aa85-75934de08864",
+    "from": "https://deepmind.google/discover/blog/using-ai-to-perceive-the-universe-in-greater-depth/",
+    "to": "https://deepmind.google/blog/using-ai-to-perceive-the-universe-in-greater-depth/"
   },
   {
     "id": "e13f39a8-fead-4837-a143-2eb2cb368722",
@@ -878,6 +1728,11 @@
     "id": "e2c374d0-7ad1-40ab-a172-99131d26ac6b",
     "from": "https://983f2f5-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/using-ai-to-fight-climate-change/",
     "to": "https://deepmind.google/blog/using-ai-to-fight-climate-change/"
+  },
+  {
+    "id": "e2c46896-d3a8-4265-ae97-19379b97ac45",
+    "from": "https://deepmind.google/discover/blog/accelerating-discovery-with-the-ai-for-math-initiative/",
+    "to": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/ai-for-math/"
   },
   {
     "id": "e3c75a4a-54b3-4847-baa9-27793e772edc",
@@ -905,6 +1760,16 @@
     "to": "https://deepmind.google/blog/empowering-the-next-generation-for-an-ai-enabled-world/"
   },
   {
+    "id": "e5d00128-2993-4e43-9938-c3a6bcaec498",
+    "from": "https://deepmind.google/blog/simulate-real-world-places-with-project-genie-and-street-view/",
+    "to": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/project-genie-expands/"
+  },
+  {
+    "id": "e669b37d-4d54-4bc3-aef5-8174999be753",
+    "from": "https://deepmind.google/blog/alphafold-3-predicts-the-structure-and-interactions-of-all-lifes-molecules/",
+    "to": "https://blog.google/innovation-and-ai/products/google-deepmind-isomorphic-alphafold-3-ai-model/"
+  },
+  {
     "id": "e6ebe7eb-6029-4a78-8d81-c70c4150a8b5",
     "from": "https://d1f9a8b-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/gemini-robotics-brings-ai-into-the-physical-world/",
     "to": "https://deepmind.google/blog/gemini-robotics-brings-ai-into-the-physical-world/"
@@ -920,9 +1785,44 @@
     "to": "https://deepmind.google/blog/exploring-institutions-for-global-ai-governance/"
   },
   {
+    "id": "e92b26ed-dd7f-485c-85ca-3349cf90bc2a",
+    "from": "https://deepmind.google/blog/start-building-with-gemini-20-flash-and-flash-lite/",
+    "to": "https://developers.googleblog.com/en/start-building-with-the-gemini-2-0-flash-family/"
+  },
+  {
+    "id": "e958a696-bc12-4d95-8526-74cc37e9d488",
+    "from": "https://deepmind.google/blog/investing-in-multi-agent-ai-safety-research/",
+    "to": "https://deepmind.google/blog/investing-in-multi-agent-ai-safety-research/"
+  },
+  {
+    "id": "ea2721b2-6c58-472a-8269-a0d80ecb245d",
+    "from": "https://deepmind.google/blog/deepening-our-partnership-with-the-uk-ai-security-institute/",
+    "to": "https://deepmind.google/blog/deepening-our-partnership-with-the-uk-ai-security-institute/"
+  },
+  {
+    "id": "ea6fb09b-6926-4d70-92cf-b98f9fe50ef0",
+    "from": "https://deepmind.google/blog/experiment-with-gemini-20-flash-native-image-generation/",
+    "to": "https://developers.googleblog.com/en/experiment-with-gemini-20-flash-native-image-generation/"
+  },
+  {
     "id": "eaa7d450-4647-40ac-a695-82443420b286",
     "from": "https://983f2f5-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/gencast-predicts-weather-and-the-risks-of-extreme-conditions-with-sota-accuracy/",
     "to": "https://deepmind.google/blog/gencast-predicts-weather-and-the-risks-of-extreme-conditions-with-sota-accuracy/"
+  },
+  {
+    "id": "eb42016f-2407-4c4f-a5b4-1ff10df791aa",
+    "from": "https://deepmind.google/blog/gemini-for-science-ai-experiments-and-tools-for-a-new-era-of-discovery/",
+    "to": "https://blog.google/innovation-and-ai/technology/research/gemini-for-science-io-2026/"
+  },
+  {
+    "id": "eb6fdee3-7373-45b8-b49e-f8cc9d1dd2c1",
+    "from": "https://deepmind.google/blog/google-deepmind-at-iclr-2024/",
+    "to": "https://deepmind.google/blog/google-deepmind-at-iclr-2024/"
+  },
+  {
+    "id": "ece4df5f-ccec-4e52-96b6-0edc67e233b1",
+    "from": "https://deepmind.google/blog/accelerating-mathematical-and-scientific-discovery-with-gemini-deep-think/",
+    "to": "https://deepmind.google/blog/accelerating-mathematical-and-scientific-discovery-with-gemini-deep-think/"
   },
   {
     "id": "ecfd5a1e-3fcc-41b6-a6aa-d6e30e2d7467",
@@ -935,9 +1835,19 @@
     "to": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/gemini-model-thinking-updates-march-2025/"
   },
   {
+    "id": "ef53b9c9-32a7-40c0-b5a4-a5c1ab4a44b3",
+    "from": "https://deepmind.google/blog/gemini-robotics-brings-ai-into-the-physical-world/",
+    "to": "https://deepmind.google/blog/gemini-robotics-brings-ai-into-the-physical-world/"
+  },
+  {
     "id": "ef6c818d-463a-406a-8932-acd75ea001d2",
     "from": "https://983f2f5-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/aeneas-transforms-how-historians-connect-the-past/",
     "to": "https://deepmind.google/blog/aeneas-transforms-how-historians-connect-the-past/"
+  },
+  {
+    "id": "eff8de6c-9dd1-4b49-91e8-349160c956a1",
+    "from": "https://deepmind.google/blog/lyria-3-pro-create-longer-tracks-in-more/",
+    "to": "https://blog.google/innovation-and-ai/technology/ai/lyria-3-pro/"
   },
   {
     "id": "f054452e-5d6d-485a-bf47-dccc4ae00ee0",
@@ -948,6 +1858,16 @@
     "id": "f0bde1db-9b6f-40a6-9a10-7b31795504c9",
     "from": "https://d1f9a8b-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/fuel-your-creativity-with-new-generative-media-models-and-tools/",
     "to": "https://blog.google/innovation-and-ai/products/generative-media-models-io-2025/"
+  },
+  {
+    "id": "f112068a-4b9a-4246-b1c2-f76d24e7c9ba",
+    "from": "https://deepmind.google/discover/blog/introducing-the-gemini-2-5-computer-use-model/",
+    "to": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/gemini-computer-use-model/"
+  },
+  {
+    "id": "f178eebf-08c1-4dd2-bbbd-21e5e0fd4989",
+    "from": "https://deepmind.google/blog/uniting-biological-toolkits-for-a-new-approach-to-als/",
+    "to": "https://deepmind.google/blog/uniting-biological-toolkits-for-a-new-approach-to-als/"
   },
   {
     "id": "f1b87260-c7e9-44ea-8cc3-bd03e2944926",
@@ -980,6 +1900,11 @@
     "to": "https://deepmind.google/blog/google-deepmind-research-at-icml-2023/"
   },
   {
+    "id": "f6ad3595-d0e0-4346-aebd-e6090afe3450",
+    "from": "https://deepmind.google/blog/were-expanding-our-presence-in-singapore-to-advance-ai-in-the-asia-pacific-region/",
+    "to": "https://deepmind.google/blog/were-expanding-our-presence-in-singapore-to-advance-ai-in-the-asia-pacific-region/"
+  },
+  {
     "id": "f6c2bc55-75a0-4995-8d9f-ffbdc4f6e200",
     "from": "https://d1f9a8b-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/advanced-audio-dialog-and-generation-with-gemini-25/",
     "to": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/gemini-2-5-native-audio/"
@@ -990,13 +1915,53 @@
     "to": "https://blog.google/innovation-and-ai/products/google-generative-ai-veo-imagen-3/"
   },
   {
+    "id": "f8e4677e-d0a0-4d02-9e67-83622708a41c",
+    "from": "https://deepmind.google/blog/putting-sign-language-ai-into-users-hands/",
+    "to": "https://deepmind.google/blog/putting-sign-language-ai-into-users-hands/"
+  },
+  {
     "id": "faa90724-ebfa-4ca1-959b-0258040d9d4e",
     "from": "https://d1f9a8b-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/alphafold-3-predicts-the-structure-and-interactions-of-all-lifes-molecules/",
     "to": "https://blog.google/innovation-and-ai/products/google-deepmind-isomorphic-alphafold-3-ai-model/"
   },
   {
+    "id": "fad6ce7b-8e07-4c41-9812-3b0e98ebacd4",
+    "from": "https://deepmind.google/blog/music-ai-sandbox-now-with-new-features-and-broader-access/",
+    "to": "https://deepmind.google/blog/music-ai-sandbox-now-with-new-features-and-broader-access/"
+  },
+  {
+    "id": "fadc7a3a-6bda-4c0e-80b6-9d8d72b334f8",
+    "from": "https://deepmind.google/blog/diffusiongemma-4x-faster-text-generation/",
+    "to": "https://blog.google/innovation-and-ai/technology/developers-tools/diffusion-gemma-faster-text-generation/?utm_source=deepmind.google&utm_medium=referral&utm_campaign=gdm&utm_content="
+  },
+  {
+    "id": "fb8bc0c1-2971-443b-a283-dc384ad279e5",
+    "from": "https://deepmind.google/blog/securing-the-future-of-ai-agents/",
+    "to": "https://deepmind.google/blog/securing-the-future-of-ai-agents/"
+  },
+  {
+    "id": "fcd97a20-0ee5-4f6f-843f-8c2a289da495",
+    "from": "https://deepmind.google/blog/introducing-the-frontier-safety-framework/",
+    "to": "https://deepmind.google/blog/introducing-the-frontier-safety-framework/"
+  },
+  {
     "id": "fe2f0b56-11fa-4a14-a29f-5debd5416f18",
     "from": "https://d1f9a8b-dot-gdm-deepmind-com-prod.appspot.com/discover/blog/evaluating-potential-cybersecurity-threats-of-advanced-ai/",
     "to": "https://deepmind.google/blog/evaluating-potential-cybersecurity-threats-of-advanced-ai/"
+  },
+  {
+    "id": "fee0de14-bed3-4e08-81e8-b67ca5d0bc22",
+    "from": "https://deepmind.google/blog/rethinking-how-we-measure-ai-intelligence/",
+    "to": "https://blog.google/innovation-and-ai/products/kaggle-game-arena/"
+  },
+  {
+    "id": "ff4a6de7-6215-4a17-82ad-ee2a20b43f51",
+    "from": "https://deepmind.google/blog/advances-in-robot-dexterity/",
+    "to": "https://deepmind.google/blog/advances-in-robot-dexterity/"
+  },
+  {
+    "id": "provider-ca5fd3bd4cc6d8eeb9",
+    "from": "https://deepmind.google/blog/piloting-the-worlds-first-double-blind-ai-evaluations/",
+    "to": "https://deepmind.google/blog/piloting-the-worlds-first-double-blind-ai-evaluations/"
   }
 ]

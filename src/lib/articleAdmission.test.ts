@@ -1,5 +1,5 @@
 import { describe, expect, test } from "bun:test";
-import { admittedArticles, isArticleAdmitted } from "./articleAdmission.js";
+import { admittedArticles, admittedRouteArticles, isArticleAdmitted } from "./articleAdmission.js";
 import type { Article } from "../types/article.js";
 import providerArticles from "../../public/data/provider-articles.json";
 import deepMindSourceUrls from "../data/deepmind-source-urls.json";
@@ -42,5 +42,20 @@ describe("article cache admission", () => {
     }
     const record = records.get(deepMindSourceUrls[0].id)!;
     expect(isArticleAdmitted({ ...record, url: "https://unknown.appspot.com/blog/story" })).toBeFalse();
+  });
+
+  test("keeps old DeepMind routes while listing each verified source once", () => {
+    const rows = (providerArticles as Article[]).filter((article) => article.source_key === "deepmind-blog");
+    const routes = admittedRouteArticles(rows);
+    const canonical = admittedArticles(rows);
+    expect(routes).toHaveLength(deepMindSourceUrls.length);
+    expect(canonical).toHaveLength(new Set(deepMindSourceUrls.map((entry) => entry.to)).size);
+    expect(new Set(canonical.map((article) => article.url)).size).toBe(canonical.length);
+    const pair = rows.filter((article) => [
+      "38e1ee58-f110-4626-9ea9-ccd723019442",
+      "24cc54f5-2a0c-473f-8ed8-34d8597951f2",
+    ].includes(article.id));
+    expect(admittedArticles(pair).map((article) => article.id))
+      .toEqual(["38e1ee58-f110-4626-9ea9-ccd723019442"]);
   });
 });

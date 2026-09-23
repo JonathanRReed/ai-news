@@ -2,6 +2,7 @@ import { getEntity, intelligenceSources } from "./intelligenceCatalog.js";
 import type { IntelligenceSource } from "./intelligenceCatalog.js";
 import type { Article } from "../types/article.js";
 import { isSafeArticleRouteId } from "./articleRoutes.js";
+import { articleSourceIdentity } from "./articleSourceIdentity.mjs";
 import deepMindSourceUrls from "../data/deepmind-source-urls.json";
 
 const deepMindSourceById = new Map(
@@ -75,6 +76,34 @@ export function sourceKeyForArticle(article: Article): string | null {
   return sourceForArticle(article)?.sourceKey ?? null;
 }
 
-export function admittedArticles(articles: Article[]): Article[] {
+export function admittedRouteArticles(articles: Article[]): Article[] {
   return articles.map(currentPublisherUrl).filter(isArticleAdmitted);
+}
+
+function deepMindPreference(article: Article): number {
+  const original = deepMindSourceById.get(article.id)?.from ?? article.url;
+  const url = exactHttpsUrl(original);
+  if (url?.hostname !== "deepmind.google") return 0;
+  return url.pathname.startsWith("/blog/") ? 2 : 1;
+}
+
+export function admittedArticles(articles: Article[]): Article[] {
+  const routes = admittedRouteArticles(articles);
+  const preferred = new Map<string, Article>();
+  for (const article of routes) {
+    if (article.source_key !== "deepmind-blog") continue;
+    const source = articleSourceIdentity(article.url);
+    const previous = preferred.get(source);
+    if (
+      !previous
+      || deepMindPreference(article) > deepMindPreference(previous)
+      || (deepMindPreference(article) === deepMindPreference(previous) && article.id < previous.id)
+    ) {
+      preferred.set(source, article);
+    }
+  }
+  return routes.filter((article) =>
+    article.source_key !== "deepmind-blog"
+    || preferred.get(articleSourceIdentity(article.url))?.id === article.id,
+  );
 }
