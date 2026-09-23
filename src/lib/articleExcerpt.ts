@@ -27,8 +27,12 @@ export function articleExcerpt(
   article: Pick<Article, "summary" | "content"> & Partial<Pick<Article, "source_key">>,
   maxLength = ARTICLE_EXCERPT_MAX_LENGTH,
 ): string {
-  const value = article.summary || article.content || "";
-  return isSourceBoilerplate(article.source_key, value)
-    ? ""
-    : truncateArticleExcerpt(value, maxLength);
+  // Some publisher feeds expose only the first word of a page as its summary.
+  // A fragment like "We" is not useful source context or a page description.
+  for (const value of [article.summary, article.content]) {
+    if (isSourceBoilerplate(article.source_key, value)) continue;
+    const excerpt = truncateArticleExcerpt(value, maxLength);
+    if (excerpt.length >= 20 && excerpt.toLowerCase() !== "no content.") return excerpt;
+  }
+  return "";
 }

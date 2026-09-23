@@ -14,3 +14,13 @@ test("site-wide publisher descriptions do not masquerade as article summaries", 
   expect(articleExcerpt({ source_key: "anthropic-sitemap", summary: anthropic })).toBe("");
   expect(articleExcerpt({ source_key: "other-source", summary: mistral })).toBe(mistral);
 });
+
+test("incomplete publisher fragments are omitted", () => {
+  expect(articleExcerpt({ summary: "We", content: "We" })).toBe("");
+  expect(articleExcerpt({ summary: "We", content: "The publisher released a new model today." }))
+    .toBe("The publisher released a new model today.");
+  expect(articleExcerpt({ summary: "No content.", content: "" })).toBe("");
+  expect(articleExcerpt({ summary: "Release v3.54.0", content: "" })).toBe("");
+  expect(articleExcerpt({ summary: "The publisher released a new model today.", content: "" }))
+    .toBe("The publisher released a new model today.");
+});
