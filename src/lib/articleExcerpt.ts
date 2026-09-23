@@ -1,4 +1,5 @@
 import type { Article } from "../types/article.js";
+import { isSourceBoilerplate } from "./sourceBoilerplate.mjs";
 
 export const ARTICLE_EXCERPT_MAX_LENGTH = 500;
 
@@ -23,8 +24,11 @@ export function truncateArticleExcerpt(
 }
 
 export function articleExcerpt(
-  article: Pick<Article, "summary" | "content">,
+  article: Pick<Article, "summary" | "content"> & Partial<Pick<Article, "source_key">>,
   maxLength = ARTICLE_EXCERPT_MAX_LENGTH,
 ): string {
-  return truncateArticleExcerpt(article.summary || article.content || "", maxLength);
+  const value = article.summary || article.content || "";
+  return isSourceBoilerplate(article.source_key, value)
+    ? ""
+    : truncateArticleExcerpt(value, maxLength);
 }

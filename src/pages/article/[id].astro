@@ -97,16 +97,11 @@ function articlePageTitle(currentArticle: Article, currentDateLabel: string, inc
   return `${truncateAtWord(currentArticle.title, titleBudget)}${suffix}`;
 }
 
-function articleMetaDescription(currentArticle: Article, currentExcerpt: string, currentDateLabel: string): string {
+function articleMetaDescription(currentArticle: Article, currentExcerpt: string, sourceDomain: string): string {
   const placeholderExcerpt = currentExcerpt.toLowerCase() === "no content.";
-  const sourceText =
-    !currentExcerpt || placeholderExcerpt
-      ? `${currentArticle.company} release ${currentArticle.title} published ${currentDateLabel}.`
-      : currentExcerpt;
-  return truncateAtWord(
-    `${sourceText} Linked by AI News Hub with the company, publication date and a link to the original post.`,
-    155,
-  );
+  return !currentExcerpt || placeholderExcerpt
+    ? truncateAtWord(`${currentArticle.title}. Read the original at ${sourceDomain || "the publisher's site"}.`, 155)
+    : truncateAtWord(currentExcerpt, 155);
 }
 
 function articlePath(currentArticle: Article): string {
@@ -126,7 +121,7 @@ function shortDate(value: string): string {
 
 const excerpt = articleExcerpt(article);
 const source = intelligenceSources.find((candidate) => candidate.sourceKey === article.source_key);
-const previewWasTruncated = cleanText(article.content || article.summary || "").length > excerpt.length;
+const previewWasTruncated = Boolean(excerpt) && cleanText(article.content || article.summary || "").length > excerpt.length;
 const defaultTitleCounts = new Map<string, number>();
 for (const currentArticle of allArticles) {
   const defaultTitle = articlePageTitle(currentArticle, "", false);
@@ -134,7 +129,7 @@ for (const currentArticle of allArticles) {
 }
 const defaultTitle = articlePageTitle(article, "", false);
 const includeDateInTitle = (defaultTitleCounts.get(defaultTitle) ?? 0) > 1;
-const description = articleMetaDescription(article, excerpt, seoDateLabel);
+const description = articleMetaDescription(article, excerpt, domain);
 const title = articlePageTitle(article, seoDateLabel, includeDateInTitle);
 const articleTimeline = [...allArticles].sort((a, b) => articleTimestamp(b) - articleTimestamp(a));
 const currentArticleIndex = articleTimeline.findIndex((currentArticle) => currentArticle.id === article.id);

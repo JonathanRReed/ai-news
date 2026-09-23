@@ -1,5 +1,6 @@
 import { feedParserInternals } from './parse-feed.mjs';
 import { admittedHttpsUrl } from './source-policy.mjs';
+import { isSourceBoilerplate } from '../../src/lib/sourceBoilerplate.mjs';
 
 const { blocks, decodeXml, stripMarkup, tagValue } = feedParserInternals;
 
@@ -68,9 +69,10 @@ export function parsePageMetadata(source, html, requestUrl, options = {}) {
   if (!canonical) return null;
 
   const title = stripMarkup(metaContent(html, 'og:title') || tagValue(html, 'title'));
-  const summary = stripMarkup(
+  const extractedSummary = stripMarkup(
     metaContent(html, 'og:description') || metaContent(html, 'description'),
   );
+  const summary = isSourceBoilerplate(source.sourceKey, extractedSummary) ? '' : extractedSummary;
   const publishedAt = normalizeDate(
     metaContent(html, 'article:published_time') ||
     metaContent(html, 'datePublished') ||

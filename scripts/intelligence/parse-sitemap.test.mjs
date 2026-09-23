@@ -57,4 +57,16 @@ describe('parsePageMetadata', () => {
       'https://example.com/news/model-release',
     )).toBeNull();
   });
+
+  test('drops a publisher-wide description that says nothing about the article', () => {
+    const generic = 'The most powerful AI platform for enterprises. Customize, fine-tune, and deploy AI assistants, autonomous agents, and multimodal AI with open models.';
+    const html = page.replace('A first-party description of what changed.', generic);
+    const result = parsePageMetadata(
+      { ...source, sourceKey: 'mistral-sitemap' },
+      html,
+      'https://example.com/news/model-release',
+    );
+    expect(result?.summary).toBe('');
+    expect(result?.content).toBe('');
+  });
 });
