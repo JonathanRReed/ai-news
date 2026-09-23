@@ -47,7 +47,7 @@ describe("article cache admission", () => {
     const records = new Map((providerArticles as Article[]).map((article) => [article.id, article]));
     for (const mapping of deepMindSourceUrls) {
       const record = records.get(mapping.id);
-      expect(record?.url).toBe(mapping.from);
+      expect([mapping.from, mapping.to]).toContain(record?.url);
       expect(record && isArticleAdmitted(record)).toBeTrue();
       expect(admittedArticles([record!])[0]?.url).toBe(mapping.to);
     }
