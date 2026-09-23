@@ -109,9 +109,13 @@ function articlePageTitle(currentArticle: Article, currentDateLabel: string, inc
 
 function articleMetaDescription(currentArticle: Article, currentExcerpt: string, sourceDomain: string): string {
   const placeholderExcerpt = currentExcerpt.toLowerCase() === "no content.";
-  return !currentExcerpt || placeholderExcerpt
-    ? truncateAtWord(`${currentArticle.title}. Read the original at ${sourceDomain || "the publisher's site"}.`, 155)
-    : truncateAtWord(currentExcerpt, 155);
+  if (currentExcerpt && !placeholderExcerpt) return truncateAtWord(currentExcerpt, 155);
+
+  const title = cleanText(currentArticle.title).replace(/[.!?]+$/, "");
+  const sourceNote = `. Read the original at ${sourceDomain || "the publisher's site"}.`;
+  return title.length + sourceNote.length <= 155
+    ? `${title}${sourceNote}`
+    : truncateAtWord(title, 155);
 }
 
 function articlePath(currentArticle: Article): string {

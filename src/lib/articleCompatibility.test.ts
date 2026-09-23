@@ -31,4 +31,21 @@ describe('toArticle', () => {
       source_url: 'https://example.com/feed.xml',
     });
   });
+
+  test('decodes punctuation in live feed items', () => {
+    const item = {
+      id: 'live-route',
+      legacy_id: null,
+      entity_name: 'Example Lab',
+      title: 'New release &mdash; available now',
+      canonical_url: 'https://example.com/release',
+      published_at: '2026-08-30T00:00:00.000Z',
+      excerpt: 'The model&rsquo;s release is available now.',
+      content: '',
+      source_type: 'rss_official',
+      source_url: 'https://example.com/feed.xml',
+    } as FeedItem;
+    expect(toArticle(item).title).toBe('New release — available now');
+    expect(toArticle(item).summary).toBe('The model’s release is available now.');
+  });
 });

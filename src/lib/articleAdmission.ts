@@ -3,6 +3,7 @@ import type { IntelligenceSource } from "./intelligenceCatalog.js";
 import type { Article } from "../types/article.js";
 import { isSafeArticleRouteId } from "./articleRoutes.js";
 import { articleSourceIdentity } from "./articleSourceIdentity.mjs";
+import { decodePublisherPunctuation } from "./publisherText.js";
 import deepMindSourceUrls from "../data/deepmind-source-urls.json";
 import duplicateSourceUrls from "../data/duplicate-source-urls.json";
 
@@ -82,7 +83,12 @@ export function sourceKeyForArticle(article: Article): string | null {
 }
 
 export function admittedRouteArticles(articles: Article[]): Article[] {
-  return articles.map(currentPublisherUrl).filter(isArticleAdmitted);
+  return articles.map(currentPublisherUrl).filter(isArticleAdmitted).map((article) => ({
+    ...article,
+    title: decodePublisherPunctuation(article.title),
+    ...(article.summary ? { summary: decodePublisherPunctuation(article.summary) } : {}),
+    ...(article.content ? { content: decodePublisherPunctuation(article.content) } : {}),
+  }));
 }
 
 function sourcePreference(article: Article): number {

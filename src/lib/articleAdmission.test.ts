@@ -33,6 +33,16 @@ describe("article cache admission", () => {
     ])).toEqual([admitted]);
   });
 
+  test("decodes punctuation from admitted publisher records", () => {
+    const article = admittedArticles([{
+      ...admitted,
+      title: "A new model &mdash; from OpenAI",
+      summary: "It&rsquo;s available&nbsp;today for testing.",
+    }])[0];
+    expect(article.title).toBe("A new model — from OpenAI");
+    expect(article.summary).toBe("It’s available today for testing.");
+  });
+
   test("uses verified publisher URLs and rejects unknown staging hosts", () => {
     const records = new Map((providerArticles as Article[]).map((article) => [article.id, article]));
     for (const mapping of deepMindSourceUrls) {
