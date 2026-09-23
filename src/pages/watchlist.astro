@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import WatchlistIsland from "../components/WatchlistIsland.tsx";
-import { allArticles, SITE_URL } from "../lib/feeds.js";
+import { SITE_URL } from "../lib/feeds.js";
 import { intelligenceEntities } from "../lib/intelligenceCatalog.js";
 
 const description = "A private, browser-local watchlist for AI labs, providers, and agent tools. No login, profile, or paid plan required.";
@@ -16,7 +16,7 @@ const description = "A private, browser-local watchlist for AI labs, providers, 
       </div>
     </section>
     <section class="industrial-container pb-16 md:pb-24">
-      <WatchlistIsland client:load entities={intelligenceEntities} articles={allArticles()} />
+      <WatchlistIsland client:load entities={intelligenceEntities} />
     </section>
   </main>
 </Layout>

@@ -1,8 +1,11 @@
+/* global AbortController */
 import React, { useEffect, useMemo, useState } from "react";
 import EntityWatchButton, { WATCHLIST_EVENT, WATCHLIST_KEY } from "./EntityWatchButton.js";
 import type { IntelligenceEntity } from "../lib/intelligenceCatalog.js";
 import { articlePath } from "../lib/articleRoutes.js";
 import type { Article } from "../types/article.js";
+
+type WatchlistStory = Pick<Article, "id" | "company" | "title" | "published_at">;
 
 function watchedSlugs(): string[] {
   if (typeof window === "undefined") return [];
@@ -14,8 +17,10 @@ function watchedSlugs(): string[] {
   }
 }
 
-export default function WatchlistIsland({ entities, articles }: { entities: IntelligenceEntity[]; articles: Article[] }) {
+export default function WatchlistIsland({ entities }: { entities: IntelligenceEntity[] }) {
   const [slugs, setSlugs] = useState<string[]>([]);
+  const [articles, setArticles] = useState<WatchlistStory[] | null>(null);
+  const [loadError, setLoadError] = useState(false);
   useEffect(() => {
     const update = () => setSlugs(watchedSlugs());
     update();
@@ -28,8 +33,26 @@ export default function WatchlistIsland({ entities, articles }: { entities: Inte
   }, []);
 
   const selected = useMemo(() => entities.filter((entity) => slugs.includes(entity.slug)), [entities, slugs]);
+  useEffect(() => {
+    if (!selected.length || articles !== null || loadError) return;
+    const controller = new AbortController();
+    fetch("/data/watchlist.json", { signal: controller.signal })
+      .then((response) => {
+        if (!response.ok) throw new Error(`Watchlist data returned ${response.status}`);
+        return response.json() as Promise<{ articles: WatchlistStory[] }>;
+      })
+      .then((data) => {
+        if (!Array.isArray(data.articles)) throw new Error("Watchlist data is invalid");
+        setArticles(data.articles);
+      })
+      .catch((error: unknown) => {
+        if (error instanceof Error && error.name === "AbortError") return;
+        setLoadError(true);
+      });
+    return () => controller.abort();
+  }, [selected.length, articles, loadError]);
   const names = useMemo(() => new Set(selected.map((entity) => entity.name)), [selected]);
-  const stories = useMemo(() => articles.filter((article) => names.has(article.company)).slice(0, 80), [articles, names]);
+  const stories = useMemo(() => (articles ?? []).filter((article) => names.has(article.company)).slice(0, 80), [articles, names]);
 
   if (!selected.length) {
     return (
@@ -54,7 +77,11 @@ export default function WatchlistIsland({ entities, articles }: { entities: Inte
           <h2 className="text-2xl font-bold text-white">Latest watched updates</h2>
           <span className="micro-label text-text-2">{stories.length} updates</span>
         </div>
-        {stories.length ? (
+        {loadError ? (
+          <p className="industrial-border p-6 text-text-2">Could not load updates. Reload the page to try again.</p>
+        ) : articles === null ? (
+          <p className="industrial-border p-6 text-text-2">Loading watched updates...</p>
+        ) : stories.length ? (
           <ol>
             {stories.map((article) => (
               <li key={article.id} className="border-b border-white/15 py-4">
