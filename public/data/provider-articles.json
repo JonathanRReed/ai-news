@@ -1,5 +1,17 @@
 [
   {
+    "id": "5be8ed6a-21d6-56d6-9b89-3ae218e9b219",
+    "company": "Codex CLI",
+    "title": "0.159.0-alpha.5",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.159.0-alpha.5",
+    "published_at": "2026-09-26T17:42:48+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.159.0-alpha.5",
+    "content": "Release 0.159.0-alpha.5",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
     "id": "95dd8682-d963-52f3-b889-3821a4636afe",
     "company": "Hermes Agent",
     "title": "v0.21.4+canary.20260926T065603Z",
@@ -5678,7 +5690,7 @@
   {
     "id": "f604ec73-4aff-57e8-9dbc-2d9cbaa62ce5",
     "company": "Anthropic",
-    "title": "Claude's progress on the Riemann hypothesis",
+    "title": "Claude has improved on a longstanding lower bound for the fraction of zeros of the Riemann zeta function that satisfy the Riemann hypothesis",
     "url": "https://www.anthropic.com/research/riemann-zeta",
     "published_at": "2026-09-10T13:15:27+00:00",
     "source_type": "scraped",
