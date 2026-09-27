@@ -1,5 +1,65 @@
 [
   {
+    "id": "7dbfcf09-819b-5f97-8fe9-1874f90517a7",
+    "company": "Codex CLI",
+    "title": "rust-v0.159.0-alpha.7",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.159.0-alpha.7",
+    "published_at": "2026-09-27T00:33:08+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.159.0-alpha.7",
+    "content": "Release 0.159.0-alpha.7",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "36745949-9d7f-577b-9677-5458d0ada50c",
+    "company": "Codex CLI",
+    "title": "0.158.0-alpha.15.2",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.158.0-alpha.15.2",
+    "published_at": "2026-09-27T00:12:29+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.158.0-alpha.15.2",
+    "content": "Release 0.158.0-alpha.15.2",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "e0a241c8-9249-5e4a-8a91-206eedc54f31",
+    "company": "Codex CLI",
+    "title": "0.159.0-alpha.6",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.159.0-alpha.6",
+    "published_at": "2026-09-26T20:19:28+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.159.0-alpha.6",
+    "content": "Release 0.159.0-alpha.6",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "141a71fa-d89d-54b4-a4d0-5c89617db980",
+    "company": "OpenClaw",
+    "title": "release-publish/8d8bd43120f3-1790449772",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/release-publish%2F8d8bd43120f3-1790449772",
+    "published_at": "2026-09-26T19:08:11+00:00",
+    "source_type": "rss_official",
+    "summary": "test(plugins, model-picker, terminal): remove low-value tests (batch …",
+    "content": "test(plugins, model-picker, terminal): remove low-value tests (batch …",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
+  },
+  {
+    "id": "6c25a852-3bf2-5e11-874e-e129e9d99e9f",
+    "company": "OpenClaw",
+    "title": "v2026.8.33",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.8.33",
+    "published_at": "2026-09-26T18:50:27+00:00",
+    "source_type": "rss_official",
+    "summary": "OpenClaw 2026.8.33",
+    "content": "OpenClaw 2026.8.33",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
+  },
+  {
     "id": "5be8ed6a-21d6-56d6-9b89-3ae218e9b219",
     "company": "Codex CLI",
     "title": "0.159.0-alpha.5",
