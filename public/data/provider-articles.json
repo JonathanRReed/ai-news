@@ -1,5 +1,29 @@
 [
   {
+    "id": "86b41cd7-d21c-5acd-90f1-c0ec86ed9fbe",
+    "company": "Codex CLI",
+    "title": "rust-v0.158.0-alpha.15.3",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.158.0-alpha.15.3",
+    "published_at": "2026-09-27T17:38:33+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.158.0-alpha.15.3",
+    "content": "Release 0.158.0-alpha.15.3",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "32e18526-86d6-5afe-9a78-bff76c5be06d",
+    "company": "OpenClaw",
+    "title": "release-publish/593401e94869-1790518861: fix(ci): expose bounded Docker survivor failure metadata (#159659)",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/release-publish%2F593401e94869-1790518861",
+    "published_at": "2026-09-27T14:15:55+00:00",
+    "source_type": "rss_official",
+    "summary": "fix(ci): expose bounded Docker survivor failure metadata Keep diagnostic artifacts and outcomes unchanged. Publish only redacted phase, exit and signal coordinates plus scheduler status and timeout flags as check annotations. Hosted review and CI remain pending; local dependency admission was unavailable. Co-authored-by: RomneyDa fix(ci): retain survivor metadata beyond clipped failure tails Use a bounded host metadata pipe within the existing scheduler process owner. Validate the three...",
+    "content": "fix(ci): expose bounded Docker survivor failure metadata Keep diagnostic artifacts and outcomes unchanged. Publish only redacted phase, exit and signal coordinates plus scheduler status and timeout flags as check annotations. Hosted review and CI remain pending; local dependency admission was unavailable. Co-authored-by: RomneyDa 6581799+RomneyDa@users.noreply.github.com fix(ci): retain survivor metadata beyond clipped failure tails Use a bounded host metadata pipe within the existing scheduler process owner. Validate the three fields and emit only after process-group and log cleanup. Preserve artifact bytes and all lane outcomes. Fix the publisher consistent-return lint defect. Co-authored-by: RomneyDa 6581799+RomneyDa@users.noreply.github.com fix(ci): use typed Docker timeout flags directly Remove two unnecessary boolean comparisons without changing annotation output or failure handling. Co-authored-by: RomneyDa 6581799+RomneyDa@users.noreply.github.com Co-authored-by: RomneyDa 6581799+RomneyDa@users.noreply.github.com",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
+  },
+  {
     "id": "c007e23a-627a-5fd2-aa38-8fc4346d4809",
     "company": "Hermes Agent",
     "title": "v0.21.4+canary.20260927T065737Z",
