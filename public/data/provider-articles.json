@@ -1,5 +1,17 @@
 [
   {
+    "id": "c007e23a-627a-5fd2-aa38-8fc4346d4809",
+    "company": "Hermes Agent",
+    "title": "v0.21.4+canary.20260927T065737Z",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.21.4%2Bcanary.20260927T065737Z",
+    "published_at": "2026-09-27T06:57:38+00:00",
+    "source_type": "rss_official",
+    "summary": "Hermes Agent canary 20260927T065737Z",
+    "content": "Hermes Agent canary 20260927T065737Z",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
     "id": "44d4f0bd-e219-59b7-9d58-7c7c36e01ca0",
     "company": "Codex CLI",
     "title": "0.159.0-alpha.9",
@@ -44,6 +56,18 @@
     "source_type": "rss_official",
     "summary": "fix(release): enforce only authored npm lock policy ( #159376 )",
     "content": "fix(release): enforce only authored npm lock policy ( #159376 )",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
+  },
+  {
+    "id": "82205d72-a914-504e-858d-7199d556eaae",
+    "company": "OpenClaw",
+    "title": "release-publish/aad795bf312a-1790492351",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/release-publish%2Faad795bf312a-1790492351",
+    "published_at": "2026-09-27T04:31:19+00:00",
+    "source_type": "rss_official",
+    "summary": "fix(release): acquire frozen first-hop inventory before admission ( #1 …",
+    "content": "fix(release): acquire frozen first-hop inventory before admission ( #1 …",
     "source_url": "https://github.com/openclaw/openclaw/releases.atom",
     "source_key": "openclaw-releases"
   },
