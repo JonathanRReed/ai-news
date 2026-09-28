@@ -1,5 +1,53 @@
 [
   {
+    "id": "4959178c-4e7c-5b91-8c93-120d512accec",
+    "company": "Hugging Face",
+    "title": "Holo4: powering generalist computer-use agents",
+    "url": "https://huggingface.co/blog/Hcompany/holo4",
+    "published_at": "2026-09-28T09:44:05+00:00",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://huggingface.co/blog/feed.xml",
+    "source_key": "hugging-face-blog"
+  },
+  {
+    "id": "19bb23a3-73b4-5d85-b598-f5a168617458",
+    "company": "NVIDIA AI",
+    "title": "NVIDIA Open Agent Safety Platform: A Reference for Continuous In-Silicon Agent Monitoring",
+    "url": "https://developer.nvidia.com/blog/nvidia-open-agent-safety-platform-a-reference-for-continuous-in-silicon-agent-monitoring/",
+    "published_at": "2026-09-28T08:56:55+00:00",
+    "source_type": "rss_official",
+    "summary": "To understand where agentic AI stands today, consider the last seismic shift in technology: the rise of the internet in the 90s. It was new and full of...",
+    "content": "To understand where agentic AI stands today, consider the last seismic shift in technology: the rise of the internet in the 90s. It was new and full of...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/",
+    "source_key": "nvidia-generative-ai"
+  },
+  {
+    "id": "abacfdc4-08da-5823-a8ff-b092588999d5",
+    "company": "NVIDIA AI",
+    "title": "Add Runtime Controls to AI Agents with NVIDIA OpenShell",
+    "url": "https://developer.nvidia.com/blog/add-runtime-controls-to-ai-agents-with-nvidia-openshell/",
+    "published_at": "2026-09-28T08:55:00+00:00",
+    "source_type": "rss_official",
+    "summary": "AI agents can be given a goal, write code, use tools, and keep working as new information becomes available. This opens the door to applications that...",
+    "content": "AI agents can be given a goal, write code, use tools, and keep working as new information becomes available. This opens the door to applications that...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/",
+    "source_key": "nvidia-generative-ai"
+  },
+  {
+    "id": "114ecf00-3c2b-5943-b0ee-d8523c506ad5",
+    "company": "Hermes Agent",
+    "title": "v0.21.4+canary.20260928T071354Z",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.21.4%2Bcanary.20260928T071354Z",
+    "published_at": "2026-09-28T07:13:55+00:00",
+    "source_type": "rss_official",
+    "summary": "Hermes Agent canary 20260928T071354Z",
+    "content": "Hermes Agent canary 20260928T071354Z",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
     "id": "bb5bb874-2afd-5464-96fd-0eb03f9ba1c9",
     "company": "Codex CLI",
     "title": "0.158.0",
