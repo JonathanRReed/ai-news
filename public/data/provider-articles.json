@@ -1,8 +1,56 @@
 [
   {
+    "id": "0819c1c6-4c0e-532b-8d54-f208756a06ba",
+    "company": "Codex CLI",
+    "title": "rust-v0.158.0-alpha.15.4",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.158.0-alpha.15.4",
+    "published_at": "2026-09-28T00:53:13+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.158.0-alpha.15.4",
+    "content": "Release 0.158.0-alpha.15.4",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "7620870f-da37-533b-a1f6-c13ce85cc384",
+    "company": "Codex CLI",
+    "title": "0.159.0-alpha.11",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.159.0-alpha.11",
+    "published_at": "2026-09-28T00:29:06+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.159.0-alpha.11",
+    "content": "Release 0.159.0-alpha.11",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "b614ba7d-9e89-5765-a06e-c4b93ed24bf7",
+    "company": "OpenClaw",
+    "title": "release-publish/b7a0e00097cc-1790552114: fix(ci): distinguish survivor recovery failure boundaries (#159751)",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/release-publish%2Fb7a0e00097cc-1790552114",
+    "published_at": "2026-09-27T23:30:05+00:00",
+    "source_type": "rss_official",
+    "summary": "Refine the existing phase only during recovery and restore it on success. Preserve updater exits, assertion short-circuiting, signal capture and cleanup ordering. Co-authored-by: roboclaw-bot Co-authored-by: RomneyDa",
+    "content": "Refine the existing phase only during recovery and restore it on success. Preserve updater exits, assertion short-circuiting, signal capture and cleanup ordering. Co-authored-by: roboclaw-bot 309084314+roboclaw-bot@users.noreply.github.com Co-authored-by: RomneyDa 6581799+RomneyDa@users.noreply.github.com",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
+  },
+  {
+    "id": "9c62fcc4-a277-5900-ab17-91f909ba1ab6",
+    "company": "Codex CLI",
+    "title": "0.159.0-alpha.10",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.159.0-alpha.10",
+    "published_at": "2026-09-27T21:18:25+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.159.0-alpha.10",
+    "content": "Release 0.159.0-alpha.10",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
     "id": "86b41cd7-d21c-5acd-90f1-c0ec86ed9fbe",
     "company": "Codex CLI",
-    "title": "rust-v0.158.0-alpha.15.3",
+    "title": "0.158.0-alpha.15.3",
     "url": "https://github.com/openai/codex/releases/tag/rust-v0.158.0-alpha.15.3",
     "published_at": "2026-09-27T17:38:33+00:00",
     "source_type": "rss_official",
