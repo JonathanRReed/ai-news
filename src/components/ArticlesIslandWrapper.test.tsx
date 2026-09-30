@@ -1,6 +1,9 @@
 import React from "react";
 import { expect, test } from "bun:test";
 import { renderToStaticMarkup } from "react-dom/server";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ArticlesProvider } from "../hooks/useArticlesContext.js";
+import ArticleListIsland from "./ArticleListIsland.js";
 import ArticlesIslandWrapper from "./ArticlesIslandWrapper.js";
 import type { Article } from "../types/article.js";
 
@@ -26,4 +29,29 @@ test("server-rendered package versions stay readable without email-like text nod
   expect(html.match(/@cline\/agents@<wbr\s*\/>0\.0\.88/g)).toHaveLength(2);
   expect(html.replace(/<[^>]*>/g, "")).toContain("@cline/agents@0.0.88");
   expect(html).not.toContain("/cdn-cgi/l/email-protection");
+});
+
+test("highlighted package titles keep the same safe text-node boundary", () => {
+  const client = new QueryClient();
+  const html = renderToStaticMarkup(
+    <QueryClientProvider client={client}>
+      <ArticlesProvider
+        filters={{ company: "All", topics: [], q: versionArticle.title }}
+        initialData={{
+          pages: [{ data: [versionArticle], state: "static", cacheFreshness: versionArticle.published_at }],
+          pageParams: [null],
+        }}
+      >
+        <ArticleListIsland
+          now={Date.parse("2026-09-30T04:00:00Z")}
+          onClearFilters={() => {}}
+          readState={{ seen: new Set(), saved: new Set(), markSeen: () => {}, toggleSaved: () => {}, hydrated: true }}
+        />
+      </ArticlesProvider>
+    </QueryClientProvider>,
+  );
+  const highlighted = html.match(/<mark[^>]*>(.*?)<\/mark>/)?.[1];
+  expect(highlighted).toMatch(/@cline\/agents@<wbr\s*\/>0\.0\.88/);
+  expect(highlighted?.replace(/<[^>]*>/g, "")).toBe(versionArticle.title);
+  client.clear();
 });
