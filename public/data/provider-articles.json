@@ -1,5 +1,41 @@
 [
   {
+    "id": "c0408181-05bd-5eb3-9cbe-3fad8b45e6e4",
+    "company": "Codex CLI",
+    "title": "0.161.0-alpha.4",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.161.0-alpha.4",
+    "published_at": "2026-09-30T11:58:01+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.161.0-alpha.4",
+    "content": "Release 0.161.0-alpha.4",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "0f752c75-128c-5acd-830c-f5826019ecb3",
+    "company": "Cline",
+    "title": "Desktop v0.0.39",
+    "url": "https://github.com/cline/cline/releases/tag/desktop-v0.0.39",
+    "published_at": "2026-09-30T07:18:26+00:00",
+    "source_type": "rss_official",
+    "summary": "On Linux with the proprietary NVIDIA driver, the app window no longer opens blank. The app now turns off WebKitGTK's DMA-BUF renderer when it detects the NVIDIA driver. To keep that renderer on (for example, on a hybrid-GPU system), set WEBKIT_DISABLE_DMABUF_RENDERER=0 The Linux .deb and .rpm packages now include app info, so GNOME Software and KDE Discover show Cline's icon and description and list it under Installed Full Changelog : desktop-v0.0.38...desktop-v0.0.39",
+    "content": "On Linux with the proprietary NVIDIA driver, the app window no longer opens blank. The app now turns off WebKitGTK's DMA-BUF renderer when it detects the NVIDIA driver. To keep that renderer on (for example, on a hybrid-GPU system), set WEBKIT_DISABLE_DMABUF_RENDERER=0 The Linux .deb and .rpm packages now include app info, so GNOME Software and KDE Discover show Cline's icon and description and list it under Installed Full Changelog : desktop-v0.0.38...desktop-v0.0.39",
+    "source_url": "https://github.com/cline/cline/releases.atom",
+    "source_key": "cline-releases"
+  },
+  {
+    "id": "f392085e-d97b-5147-9845-6878fe2c279f",
+    "company": "Hermes Agent",
+    "title": "v0.21.4+canary.20260930T070235Z",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.21.4%2Bcanary.20260930T070235Z",
+    "published_at": "2026-09-30T07:02:37+00:00",
+    "source_type": "rss_official",
+    "summary": "Hermes Agent canary 20260930T070235Z",
+    "content": "Hermes Agent canary 20260930T070235Z",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
     "id": "048e12a3-9c0c-5555-b022-87cdd57118f7",
     "company": "OpenClaw",
     "title": "openclaw 2026.9.7",
@@ -494,7 +530,7 @@
   {
     "id": "899238ad-4ffc-5724-9bb5-b59503911fc0",
     "company": "Anthropic",
-    "title": "What Do You Want from AI?",
+    "title": "What do you want from AI?",
     "url": "https://www.anthropic.com/research/your-thoughts-on-ai",
     "published_at": "2026-09-29T16:39:00+00:00",
     "source_type": "scraped",
