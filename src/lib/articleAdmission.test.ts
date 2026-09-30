@@ -111,4 +111,23 @@ describe("article cache admission", () => {
       expect(admittedArticles(routes).map((article) => article.id)).toEqual([canonicalId]);
     }
   });
+
+  test("keeps both Education Report routes while presenting one verified report", () => {
+    const rows = (providerArticles as Article[]).filter((article) => [
+      "23517512-d27f-5bed-8711-af9838e4868a",
+      "f625fa71-efb5-5520-a965-d9f94c0a2f0e",
+    ].includes(article.id));
+    expect(rows).toHaveLength(2);
+    expect(admittedRouteArticles(rows).map((article) => article.id)).toEqual(rows.map((article) => article.id));
+    const canonical = admittedArticles(rows);
+    expect(canonical).toHaveLength(1);
+    expect(canonical[0].id).toBe("23517512-d27f-5bed-8711-af9838e4868a");
+    expect(canonical[0].url).toBe("https://www.anthropic.com/research/anthropic-education-report-how-educators-use-claude");
+    expect(admittedRouteArticles(rows).every((article) => article.published_at === "2025-08-27T00:09:00.000Z")).toBeTrue();
+    // Only the verified original URL and source identity may receive a correction.
+    const news = rows.find((article) => article.id === "f625fa71-efb5-5520-a965-d9f94c0a2f0e")!;
+    expect(admittedRouteArticles([{ ...news, url: "https://www.anthropic.com/news/a-different-report" }])[0].url)
+      .toBe("https://www.anthropic.com/news/a-different-report");
+    expect(admittedArticles([{ ...news, source_key: "missing-source" }])).toHaveLength(0);
+  });
 });
