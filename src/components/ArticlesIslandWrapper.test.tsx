@@ -31,12 +31,12 @@ test("server-rendered package versions stay readable without email-like text nod
   expect(html).not.toContain("/cdn-cgi/l/email-protection");
 });
 
-test("highlighted package titles keep the same safe text-node boundary", () => {
+test("package titles remain readable when search highlighting splits the text", () => {
   const client = new QueryClient();
   const html = renderToStaticMarkup(
     <QueryClientProvider client={client}>
       <ArticlesProvider
-        filters={{ company: "All", topics: [], q: versionArticle.title }}
+        filters={{ company: "All", topics: [], q: "agents" }}
         initialData={{
           pages: [{ data: [versionArticle], state: "static", cacheFreshness: versionArticle.published_at }],
           pageParams: [null],
@@ -51,7 +51,8 @@ test("highlighted package titles keep the same safe text-node boundary", () => {
     </QueryClientProvider>,
   );
   const highlighted = html.match(/<mark[^>]*>(.*?)<\/mark>/)?.[1];
-  expect(highlighted).toMatch(/@cline\/agents@<wbr\s*\/>0\.0\.88/);
-  expect(highlighted?.replace(/<[^>]*>/g, "")).toBe(versionArticle.title);
+  expect(highlighted).toBe("agents");
+  expect(html).toMatch(/@cline\/<mark[^>]*>agents<\/mark>@<wbr\s*\/>0\.0\.88/);
+  expect(html.replace(/<[^>]*>/g, "")).toContain(versionArticle.title);
   client.clear();
 });

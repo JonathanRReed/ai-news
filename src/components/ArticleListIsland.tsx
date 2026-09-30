@@ -87,7 +87,7 @@ function highlightText(text: string, terms: string[]): React.ReactNode {
   const lower = terms.map((t) => t.toLowerCase());
   return text.split(re).map((part, i) =>
     lower.includes(part.toLowerCase())
-      ? <mark key={i} className="bg-brand/30 text-white">{part}</mark>
+      ? <mark key={i} className="bg-brand/30 text-white"><PublisherText text={part} /></mark>
       : <React.Fragment key={i}><PublisherText text={part} /></React.Fragment>
   );
 }
