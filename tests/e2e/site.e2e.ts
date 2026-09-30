@@ -173,9 +173,9 @@ test("retains both Education Report routes with one canonical and the publisher 
   expect(xml).not.toContain("/article/f625fa71-efb5-5520-a965-d9f94c0a2f0e/");
 });
 
-test("a saved retained alias can be viewed and unsaved through its canonical report", async ({ page }) => {
+test("canonical and alias saved routes can be unsaved as one report", async ({ page }) => {
   await page.addInitScript(() => {
-    localStorage.setItem("ai-news-saved", JSON.stringify(["f625fa71-efb5-5520-a965-d9f94c0a2f0e"]));
+    localStorage.setItem("ai-news-saved", JSON.stringify(["23517512-d27f-5bed-8711-af9838e4868a", "f625fa71-efb5-5520-a965-d9f94c0a2f0e"]));
   });
   await page.goto("/");
   await expect.poll(async () => page.locator('astro-island[component-url*="ArticlesIslandWrapper"]').evaluate((element) => !element.hasAttribute("ssr"))).toBe(true);

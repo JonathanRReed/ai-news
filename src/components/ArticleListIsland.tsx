@@ -1,7 +1,7 @@
 /* global KeyboardEvent */
 import React, { useState, useEffect, useRef, useMemo, useCallback } from "react";
 import PublisherText from "./PublisherText.js";
-import { admittedArticles, articleSourceRouteIds } from "../lib/articleAdmission.js";
+import { admittedArticles, articleSourceRouteIndex } from "../lib/articleAdmission.js";
 import { useArticlesContext } from "../hooks/useArticlesContext.js";
 import { countNewerThan, fetchSavedArticles } from "../hooks/fetchArticlesPage.js";
 import { companyLogoAlt, resolveCompanyLogo } from "../lib/companyCatalog.js";
@@ -291,9 +291,7 @@ export default function ArticleListIsland({
     ));
   }, [loadedArticles]);
 
-  const sourceRouteIds = useMemo(() => new Map(
-    allArticles.map((article) => [article.id, articleSourceRouteIds(article, loadedArticles)]),
-  ), [allArticles, loadedArticles]);
+  const sourceRouteIds = useMemo(() => articleSourceRouteIndex(loadedArticles), [loadedArticles]);
 
   const toggleSaved = useCallback((id: string) => {
     const savedIds = (sourceRouteIds.get(id) ?? [id]).filter((routeId) => saved.has(routeId));

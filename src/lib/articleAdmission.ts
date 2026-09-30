@@ -21,6 +21,10 @@ const verifiedSourceById = new Map(
   }]),
 );
 const duplicateSourceIds = new Set(duplicateSourceUrls.map(({ id }) => id));
+const verifiedRouteSources = [...verifiedSourceById].map(([id, mapping]) => ({
+  id,
+  source: `${mapping.sourceKey}:${articleSourceIdentity(mapping.to)}`,
+}));
 
 function currentPublisherUrl(article: Article): Article {
   const verified = verifiedSourceById.get(article.id);
@@ -136,21 +140,34 @@ export function admittedArticles(articles: Article[]): Article[] {
   });
 }
 
+/** Index route state once across the loaded rows, using the existing deduplication policy. */
+export function articleSourceRouteIndex(loadedArticles: Article[]): Map<string, string[]> {
+  const loadedById = new Map<string, Article>();
+  for (const row of loadedArticles) {
+    if (!loadedById.has(row.id)) loadedById.set(row.id, row);
+  }
+  const sourceById = new Map<string, string | null>();
+  const idsBySource = new Map<string, Set<string>>();
+  for (const row of loadedById.values()) {
+    const source = isArticleAdmitted(row) ? dedupKey(currentPublisherUrl(row)) : null;
+    sourceById.set(row.id, source);
+    if (!source) continue;
+    const ids = idsBySource.get(source) ?? new Set<string>();
+    ids.add(row.id);
+    idsBySource.set(source, ids);
+  }
+  for (const { id, source } of verifiedRouteSources) {
+    const ids = idsBySource.get(source);
+    if (ids && (!loadedById.has(id) || sourceById.get(id) === source)) ids.add(id);
+  }
+  return new Map([...loadedById.keys()].map((id) => {
+    const source = sourceById.get(id);
+    return [id, source ? [...idsBySource.get(source)!] : [id]];
+  }));
+}
+
 /** Known published route IDs that represent this same admitted source record. */
 export function articleSourceRouteIds(article: Article, loadedArticles: Article[] = []): string[] {
-  if (!isArticleAdmitted(article)) return [article.id];
-  const source = dedupKey(currentPublisherUrl(article));
-  if (!source) return [article.id];
-
-  const ids = new Set([article.id]);
-  const loadedById = new Map(loadedArticles.map((row) => [row.id, row]));
-  for (const row of loadedArticles) {
-    if (isArticleAdmitted(row) && dedupKey(currentPublisherUrl(row)) === source) ids.add(row.id);
-  }
-  for (const [id, mapping] of verifiedSourceById) {
-    if (`${mapping.sourceKey}:${articleSourceIdentity(mapping.to)}` !== source) continue;
-    const observed = loadedById.get(id);
-    if (!observed || (isArticleAdmitted(observed) && dedupKey(currentPublisherUrl(observed)) === source)) ids.add(id);
-  }
-  return [...ids];
+  if (!isArticleAdmitted(article) || !dedupKey(currentPublisherUrl(article))) return [article.id];
+  return articleSourceRouteIndex([article, ...loadedArticles]).get(article.id) ?? [article.id];
 }

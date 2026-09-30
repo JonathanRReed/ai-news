@@ -10,9 +10,9 @@ test("saved archive lookup resolves a retained source alias to its exported repo
     "f625fa71-efb5-5520-a965-d9f94c0a2f0e",
   ].includes(article.id)))[0];
   const originalFetch = globalThis.fetch;
-  globalThis.fetch = (async () => new Response(JSON.stringify([canonical]), {
+  globalThis.fetch = Object.assign(async () => new Response(JSON.stringify([canonical]), {
     headers: { "content-type": "application/json" },
-  })) as typeof fetch;
+  }), { preconnect: originalFetch.preconnect });
   try {
     expect((await fetchSavedArticles(["f625fa71-efb5-5520-a965-d9f94c0a2f0e"])).map((article) => article.id))
       .toEqual(["23517512-d27f-5bed-8711-af9838e4868a"]);
