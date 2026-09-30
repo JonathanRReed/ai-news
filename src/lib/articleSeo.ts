@@ -15,15 +15,25 @@ export function truncateAtWord(text: string, maxLength: number): string {
 }
 
 export function articleMetaDescription(currentArticle: Pick<Article, "title">, currentExcerpt: string, sourceDomain: string): string {
-  const placeholderExcerpt = currentExcerpt.toLowerCase() === "no content.";
+  const excerpt = cleanText(currentExcerpt);
+  const placeholderExcerpt = excerpt.toLowerCase() === "no content.";
   const title = cleanText(currentArticle.title).replace(/[.!?]+$/, "");
-  if (currentExcerpt && !placeholderExcerpt) {
-    const excerpt = cleanText(currentExcerpt);
-    // Release feeds often repeat the same boilerplate across distinct versions.
-    // Keep the publisher headline first without repeating it when already present.
-    const description = excerpt.toLocaleLowerCase("en-US").startsWith(title.toLocaleLowerCase("en-US"))
-      ? excerpt
-      : `${title}. ${excerpt}`;
+  if (excerpt && !placeholderExcerpt) {
+    const beginsWithTitle = title.length > 0
+      && excerpt.toLocaleLowerCase("en-US").startsWith(title.toLocaleLowerCase("en-US"))
+      && (excerpt.length === title.length || /^[\\s:;,.!?—–-]/u.test(excerpt.slice(title.length)));
+    if (beginsWithTitle && title.length <= 70) return truncateAtWord(excerpt, 155);
+
+    const summary = beginsWithTitle
+      ? excerpt.slice(title.length).replace(/^[\\s:;,.!?—–-]+/u, "")
+      : excerpt;
+    if (!summary) return truncateAtWord(excerpt, 155);
+
+    // Keep the real headline identifiable while reserving room for source context.
+    const headline = truncateAtWord(title, 70);
+    const description = headline
+      ? `${headline}${headline.endsWith("...") ? " " : ". "}${summary}`
+      : summary;
     return truncateAtWord(description, 155);
   }
   const sourceNote = `. Read the original at ${sourceDomain || "the publisher's site"}.`;
