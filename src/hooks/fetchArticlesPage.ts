@@ -1,7 +1,7 @@
 /* global AbortSignal */
 import { SUPABASE_URL, SUPABASE_REST_HEADERS, supabaseConfigured } from '../lib/supabaseClient.js';
 import { toArticle } from '../lib/articleCompatibility.js';
-import { admittedArticles } from '../lib/articleAdmission.js';
+import { admittedArticles, articleSourceRouteIds } from '../lib/articleAdmission.js';
 import { fetchIntelligencePage, isKnownCompanyName } from '../lib/intelligenceClient.js';
 import type { IntelligenceFilters } from '../lib/intelligenceClient.js';
 import type { Article, PageData } from '../types/article.js';
@@ -45,7 +45,7 @@ export async function fetchSavedArticles(ids: string[]): Promise<Article[]> {
   const wanted = new Set(ids.filter(Boolean));
   if (wanted.size === 0) return [];
   const articles = await fetchSupplementalArticles();
-  return articles.filter((article) => wanted.has(article.id));
+  return articles.filter((article) => articleSourceRouteIds(article).some((id) => wanted.has(id)));
 }
 
 export async function countNewerThan(filters: ArticleFilters, sinceMs: number): Promise<number> {

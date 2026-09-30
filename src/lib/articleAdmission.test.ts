@@ -1,5 +1,5 @@
 import { describe, expect, test } from "bun:test";
-import { admittedArticles, admittedRouteArticles, isArticleAdmitted } from "./articleAdmission.js";
+import { admittedArticles, admittedRouteArticles, isArticleAdmitted, articleSourceRouteIds } from "./articleAdmission.js";
 import type { Article } from "../types/article.js";
 import providerArticles from "../../public/data/provider-articles.json";
 import deepMindSourceUrls from "../data/deepmind-source-urls.json";
@@ -129,5 +129,20 @@ describe("article cache admission", () => {
     expect(admittedRouteArticles([{ ...news, url: "https://www.anthropic.com/news/a-different-report" }])[0].url)
       .toBe("https://www.anthropic.com/news/a-different-report");
     expect(admittedArticles([{ ...news, source_key: "missing-source" }])).toHaveLength(0);
+  });
+
+  test("retained route state cannot transfer to a changed source identity", () => {
+    const rows = (providerArticles as Article[]).filter((article) => [
+      "23517512-d27f-5bed-8711-af9838e4868a",
+      "f625fa71-efb5-5520-a965-d9f94c0a2f0e",
+    ].includes(article.id));
+    const canonical = admittedArticles(rows)[0];
+    const alias = rows.find((article) => article.id === "f625fa71-efb5-5520-a965-d9f94c0a2f0e")!;
+    expect(articleSourceRouteIds(canonical, rows)).toContain(alias.id);
+    const unrelated = { ...alias, url: "https://www.anthropic.com/news/a-different-report" };
+    expect(articleSourceRouteIds(canonical, [canonical, unrelated])).not.toContain(alias.id);
+    expect(articleSourceRouteIds(unrelated, [canonical, unrelated])).toEqual([alias.id]);
+    expect(articleSourceRouteIds(canonical, [canonical, { ...alias, source_key: "missing-source" }]))
+      .not.toContain(alias.id);
   });
 });
