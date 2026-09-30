@@ -54,6 +54,9 @@ jobs:
           bunx supabase db lint --local --level warning
 
       - name: Build
+        env:
+          PUBLIC_SUPABASE_URL: https://arejerdupcduqhgdoyht.supabase.co
+          PUBLIC_SUPABASE_ANON_KEY: playwright-public-key
         run: bun run build
 
       - name: Install Chromium
