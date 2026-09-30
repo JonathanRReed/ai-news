@@ -172,3 +172,18 @@ test("retains both Education Report routes with one canonical and the publisher 
   expect(xml).toContain("/article/23517512-d27f-5bed-8711-af9838e4868a/");
   expect(xml).not.toContain("/article/f625fa71-efb5-5520-a965-d9f94c0a2f0e/");
 });
+
+test("a saved retained alias can be viewed and unsaved through its canonical report", async ({ page }) => {
+  await page.addInitScript(() => {
+    localStorage.setItem("ai-news-saved", JSON.stringify(["f625fa71-efb5-5520-a965-d9f94c0a2f0e"]));
+  });
+  await page.goto("/");
+  await expect.poll(async () => page.locator('astro-island[component-url*="ArticlesIslandWrapper"]').evaluate((element) => !element.hasAttribute("ssr"))).toBe(true);
+  await page.getByRole("group", { name: "Filter by read state" }).getByRole("button", { name: /^Saved/ }).click();
+  const card = page.locator('article[data-article-id="23517512-d27f-5bed-8711-af9838e4868a"]');
+  await expect(card).toBeVisible();
+  await expect(page.locator("article[data-article-id]")).toHaveCount(1);
+  await card.getByRole("button", { name: "Remove “Education Report: How educators use Claude” from saved" }).click();
+  await expect(card).toHaveCount(0);
+  await expect.poll(async () => page.evaluate(() => JSON.parse(localStorage.getItem("ai-news-saved") || "[]"))).toEqual([]);
+});
