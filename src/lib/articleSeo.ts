@@ -21,11 +21,11 @@ export function articleMetaDescription(currentArticle: Pick<Article, "title">, c
   if (excerpt && !placeholderExcerpt) {
     const beginsWithTitle = title.length > 0
       && excerpt.toLocaleLowerCase("en-US").startsWith(title.toLocaleLowerCase("en-US"))
-      && (excerpt.length === title.length || /^[\\s:;,.!?—–-]/u.test(excerpt.slice(title.length)));
+      && (excerpt.length === title.length || /^[\s:;,.!?—–-]/u.test(excerpt.slice(title.length)));
     if (beginsWithTitle && title.length <= 70) return truncateAtWord(excerpt, 155);
 
     const summary = beginsWithTitle
-      ? excerpt.slice(title.length).replace(/^[\\s:;,.!?—–-]+/u, "")
+      ? excerpt.slice(title.length).replace(/^[\s:;,.!?—–-]+/u, "")
       : excerpt;
     if (!summary) return truncateAtWord(excerpt, 155);
 
