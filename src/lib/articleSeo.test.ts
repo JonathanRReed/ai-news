@@ -27,3 +27,24 @@ test("long descriptions are bounded without adding claims", () => {
   expect(result.length).toBeLessThanOrEqual(155);
   expect(result).toContain("Release v1.2.3");
 });
+
+test("long headlines reserve room for substantive publisher context", () => {
+  const title = "AI Infra Summit: " + "NVIDIA Vera Rubin infrastructure ".repeat(6);
+  const excerpt = "Details include rollout dates, supported hardware, and upgrade steps.";
+  const result = articleMetaDescription({ title }, excerpt, "example.com");
+  expect(result).toStartWith("AI Infra Summit:");
+  expect(result).toContain("Details include rollout dates");
+  expect(result.length).toBeLessThanOrEqual(155);
+});
+
+test("long inline headlines retain their following publisher summary", () => {
+  const title = "AI Infra Summit: " + "NVIDIA Vera Rubin infrastructure ".repeat(6);
+  const result = articleMetaDescription({ title }, `${title}. Details include rollout dates and supported hardware.`, "example.com");
+  expect(result).toContain("Details include rollout dates");
+  expect(result.length).toBeLessThanOrEqual(155);
+});
+
+test("a headline prefix does not swallow a different opening word", () => {
+  expect(articleMetaDescription({ title: "Model" }, "Models share a common release schedule.", "example.com"))
+    .toBe("Model. Models share a common release schedule.");
+});
