@@ -16,8 +16,8 @@ export default defineConfig({
     { name: "mobile-chromium", use: { ...devices["Pixel 7"] } },
   ],
   webServer: {
-    // CI has already built the same public test configuration in its Build step.
-    command: process.env.CI
+    // The verify workflow opts in only after building the public test configuration.
+    command: process.env.PLAYWRIGHT_USE_EXISTING_BUILD === "1"
       ? "bun run preview:cloudflare"
       : "bun run build && bun run preview:cloudflare",
     url: "http://127.0.0.1:4377",

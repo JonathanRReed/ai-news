@@ -63,6 +63,8 @@ jobs:
         run: bunx playwright install --with-deps chromium
 
       - name: Browser tests
+        env:
+          PLAYWRIGHT_USE_EXISTING_BUILD: "1"
         run: bun run test:e2e
 
       - name: Stop local Supabase
