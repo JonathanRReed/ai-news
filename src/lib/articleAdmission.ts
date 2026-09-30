@@ -15,7 +15,9 @@ const verifiedSourceById = new Map(
     from: mapping.from,
     to: mapping.to,
     sourceKey: mapping.sourceKey,
-    publishedAt: "published_at" in mapping ? mapping.published_at : undefined,
+    publishedAt: "published_at" in mapping && typeof mapping.published_at === "string"
+      ? mapping.published_at
+      : undefined,
   }]),
 );
 const duplicateSourceIds = new Set(duplicateSourceUrls.map(({ id }) => id));
