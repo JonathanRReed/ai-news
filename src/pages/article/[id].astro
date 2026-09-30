@@ -8,6 +8,7 @@ import routeAliases from "../../../public/data/route-aliases.json";
 import legacyArticles from "../../data/legacy-article-records.json";
 import { admittedArticles, admittedRouteArticles } from "../../lib/articleAdmission.js";
 import { articleExcerpt } from "../../lib/articleExcerpt.js";
+import { cleanText, truncateAtWord, articleMetaDescription } from "../../lib/articleSeo.js";
 import { articleSourceIdentity } from "../../lib/articleSourceIdentity.mjs";
 import {
   articlePath as safeArticlePath,
@@ -84,20 +85,6 @@ const dateLabel = new Intl.DateTimeFormat("en-US", { month: "long", day: "numeri
 const seoDateLabel = new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", year: "numeric" }).format(new Date(article.published_at));
 const shortDateFormatter = new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", year: "numeric" });
 
-function cleanText(text: string): string {
-  return text.replace(/\s+/g, " ").trim();
-}
-
-function truncateAtWord(text: string, maxLength: number): string {
-  const clean = cleanText(text);
-  if (clean.length <= maxLength) return clean;
-
-  const clipped = clean.slice(0, Math.max(0, maxLength - 3));
-  const lastSpace = clipped.lastIndexOf(" ");
-  const base = lastSpace > 40 ? clipped.slice(0, lastSpace) : clipped;
-  return `${base.trim()}...`;
-}
-
 function articlePageTitle(currentArticle: Article, currentDateLabel: string, includeDate: boolean): string {
   const suffix = includeDate
     ? ` | ${currentArticle.company} | ${currentDateLabel} | AI News Hub`
@@ -109,17 +96,6 @@ function articlePageTitle(currentArticle: Article, currentDateLabel: string, inc
 
 function titleComparisonKey(value: string): string {
   return value.toLocaleLowerCase("en-US").replace(/\.\.\./g, "").replace(/[^\p{L}\p{N}]+/gu, " ").trim();
-}
-
-function articleMetaDescription(currentArticle: Article, currentExcerpt: string, sourceDomain: string): string {
-  const placeholderExcerpt = currentExcerpt.toLowerCase() === "no content.";
-  if (currentExcerpt && !placeholderExcerpt) return truncateAtWord(currentExcerpt, 155);
-
-  const title = cleanText(currentArticle.title).replace(/[.!?]+$/, "");
-  const sourceNote = `. Read the original at ${sourceDomain || "the publisher's site"}.`;
-  return title.length + sourceNote.length <= 155
-    ? `${title}${sourceNote}`
-    : truncateAtWord(title, 155);
 }
 
 function articlePath(currentArticle: Article): string {
