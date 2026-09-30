@@ -156,3 +156,34 @@ test("uses a native mobile navigation dialog without horizontal overflow", async
   const dimensions = await page.evaluate(() => ({ width: window.innerWidth, scrollWidth: document.documentElement.scrollWidth }));
   expect(dimensions.scrollWidth).toBeLessThanOrEqual(dimensions.width);
 });
+
+test("retains both Education Report routes with one canonical and the publisher date", async ({ page }) => {
+  const canonical = "https://ai-news.helloworldfirm.com/article/23517512-d27f-5bed-8711-af9838e4868a/";
+  for (const id of ["23517512-d27f-5bed-8711-af9838e4868a", "f625fa71-efb5-5520-a965-d9f94c0a2f0e"]) {
+    const response = await page.goto(`/article/${id}/`);
+    expect(response?.status()).toBe(200);
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", canonical);
+    await expect(page.getByRole("heading", { level: 1 })).toHaveText("Education Report: How educators use Claude");
+    await expect(page.locator('time[datetime="2025-08-27T00:09:00.000Z"]').first()).toHaveText("August 27, 2025");
+  }
+  const sitemap = await page.request.get("/sitemap-0.xml");
+  expect(sitemap.status()).toBe(200);
+  const xml = await sitemap.text();
+  expect(xml).toContain("/article/23517512-d27f-5bed-8711-af9838e4868a/");
+  expect(xml).not.toContain("/article/f625fa71-efb5-5520-a965-d9f94c0a2f0e/");
+});
+
+test("canonical and alias saved routes can be unsaved as one report", async ({ page }) => {
+  await page.addInitScript(() => {
+    localStorage.setItem("ai-news-saved", JSON.stringify(["23517512-d27f-5bed-8711-af9838e4868a", "f625fa71-efb5-5520-a965-d9f94c0a2f0e"]));
+  });
+  await page.goto("/");
+  await expect.poll(async () => page.locator('astro-island[component-url*="ArticlesIslandWrapper"]').evaluate((element) => !element.hasAttribute("ssr"))).toBe(true);
+  await page.getByRole("group", { name: "Filter by read state" }).getByRole("button", { name: /^Saved/ }).click();
+  const card = page.locator('article[data-article-id="23517512-d27f-5bed-8711-af9838e4868a"]');
+  await expect(card).toBeVisible();
+  await expect(page.locator("article[data-article-id]")).toHaveCount(1);
+  await card.getByRole("button", { name: "Remove “Education Report: How educators use Claude” from saved" }).click();
+  await expect(card).toHaveCount(0);
+  await expect.poll(async () => page.evaluate(() => JSON.parse(localStorage.getItem("ai-news-saved") || "[]"))).toEqual([]);
+});

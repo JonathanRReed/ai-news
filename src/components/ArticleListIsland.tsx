@@ -1,5 +1,7 @@
 /* global KeyboardEvent */
-import React, { useState, useEffect, useRef, useMemo } from "react";
+import React, { useState, useEffect, useRef, useMemo, useCallback } from "react";
+import PublisherText from "./PublisherText.js";
+import { admittedArticles, articleSourceRouteIndex } from "../lib/articleAdmission.js";
 import { useArticlesContext } from "../hooks/useArticlesContext.js";
 import { countNewerThan, fetchSavedArticles } from "../hooks/fetchArticlesPage.js";
 import { companyLogoAlt, resolveCompanyLogo } from "../lib/companyCatalog.js";
@@ -49,7 +51,7 @@ function relativeTime(value: string, nowMs: number): string {
   if (diff < 3600000) return `${Math.max(1, Math.round(diff / 60000))}m ago`;
   if (diff < day) return `${Math.round(diff / 3600000)}h ago`;
   if (diff < 7 * day) return `${Math.round(diff / day)}d ago`;
-  return new Date(t).toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" });
+  return new Date(t).toLocaleDateString(undefined, { timeZone: "UTC", month: "short", day: "numeric", year: "numeric" });
 }
 
 function timeBucket(value: string, nowMs: number): string {
@@ -80,14 +82,14 @@ function sourceTypeLabel(sourceType?: string): string {
 }
 
 function highlightText(text: string, terms: string[]): React.ReactNode {
-  if (!terms.length) return text;
+  if (!terms.length) return <PublisherText text={text} />;
   const escaped = terms.map((t) => t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
   const re = new RegExp(`(${escaped.join("|")})`, "ig");
   const lower = terms.map((t) => t.toLowerCase());
   return text.split(re).map((part, i) =>
     lower.includes(part.toLowerCase())
-      ? <mark key={i} className="bg-brand/30 text-white">{part}</mark>
-      : <React.Fragment key={i}>{part}</React.Fragment>
+      ? <mark key={i} className="bg-brand/30 text-white"><PublisherText text={part} /></mark>
+      : <React.Fragment key={i}><PublisherText text={part} /></React.Fragment>
   );
 }
 
@@ -223,7 +225,7 @@ function ArticleCard({
               "max-w-3xl leading-relaxed text-text-2 text-pretty",
             )}
           >
-            {expanded ? expandedExcerpt : excerpt}
+            <PublisherText text={expanded ? expandedExcerpt : excerpt} />
           </p>
           {hasMoreExcerpt && (
             <button
@@ -256,7 +258,7 @@ export default function ArticleListIsland({
   onClearFilters: () => void;
 }) {
   const { data, isFetching, error, fetchNextPage, hasNextPage, refetch, filters } = useArticlesContext();
-  const { seen, saved, markSeen, toggleSaved } = readState;
+  const { seen, saved, markSeen, toggleSaved: toggleSavedRoute } = readState;
   const [savedArchiveArticles, setSavedArchiveArticles] = useState<Article[]>([]);
   // Seed "now" from a build-time timestamp (prop) so the SSR/crawler render shows real
   // relative times instead of "Just now"; the effect then refreshes to the live clock.
@@ -268,23 +270,33 @@ export default function ArticleListIsland({
     return () => window.clearInterval(id);
   }, []);
 
-  const allArticles = useMemo<Article[]>(() => {
+  const loadedArticles = useMemo<Article[]>(() => {
     if (!Array.isArray(data?.pages)) return [];
-    const merged = data.pages.reduce((acc: Article[], page: PageData) => (Array.isArray(page?.data) ? acc.concat(page.data) : acc), [] as Article[])
+    return data.pages.reduce((acc: Article[], page: PageData) => (Array.isArray(page?.data) ? acc.concat(page.data) : acc), [] as Article[])
       .concat(view === "saved" ? savedArchiveArticles : []);
+  }, [data?.pages, savedArchiveArticles, view]);
+
+  const allArticles = useMemo<Article[]>(() => {
     const seenIds = new Set<string>();
     const deduped: Article[] = [];
-    for (const art of merged) {
+    for (const art of loadedArticles) {
       if (!seenIds.has(art.id)) {
         deduped.push(art);
         seenIds.add(art.id);
       }
     }
-    return deduped.sort((a, b) => (
+    return admittedArticles(deduped).sort((a, b) => (
       new Date(b.published_at).getTime() - new Date(a.published_at).getTime()
       || b.id.localeCompare(a.id)
     ));
-  }, [data?.pages, savedArchiveArticles, view]);
+  }, [loadedArticles]);
+
+  const sourceRouteIds = useMemo(() => articleSourceRouteIndex(loadedArticles), [loadedArticles]);
+
+  const toggleSaved = useCallback((id: string) => {
+    const savedIds = (sourceRouteIds.get(id) ?? [id]).filter((routeId) => saved.has(routeId));
+    for (const routeId of savedIds.length ? savedIds : [id]) toggleSavedRoute(routeId);
+  }, [sourceRouteIds, saved, toggleSavedRoute]);
 
   useEffect(() => {
     if (view !== "saved" || saved.size === 0) return;
@@ -306,14 +318,14 @@ export default function ArticleListIsland({
     (data?.pages ?? []).find((page) => page.cacheFreshness)?.cacheFreshness ?? null
   ), [data?.pages]);
   const newestPublishedLabel = cacheFreshness
-    ? new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", year: "numeric" }).format(new Date(cacheFreshness))
+    ? new Intl.DateTimeFormat("en-US", { timeZone: "UTC", month: "short", day: "numeric", year: "numeric" }).format(new Date(cacheFreshness))
     : "the latest successful export";
 
   const articles = useMemo<Article[]>(() => {
-    if (view === "unread") return allArticles.filter((a) => !seen.has(a.id));
-    if (view === "saved") return allArticles.filter((a) => saved.has(a.id));
+    if (view === "unread") return allArticles.filter((a) => !(sourceRouteIds.get(a.id) ?? [a.id]).some((id) => seen.has(id)));
+    if (view === "saved") return allArticles.filter((a) => (sourceRouteIds.get(a.id) ?? [a.id]).some((id) => saved.has(id)));
     return allArticles;
-  }, [allArticles, view, seen, saved]);
+  }, [allArticles, view, seen, saved, sourceRouteIds]);
 
   const [visibleCount, setVisibleCount] = useState(20);
   const [pendingIncrease, setPendingIncrease] = useState(false);
@@ -622,8 +634,8 @@ export default function ArticleListIsland({
     density,
     nowMs,
     terms: searchTerms,
-    seen: seen.has(article.id),
-    saved: saved.has(article.id),
+    seen: (sourceRouteIds.get(article.id) ?? [article.id]).some((id) => seen.has(id)),
+    saved: (sourceRouteIds.get(article.id) ?? [article.id]).some((id) => saved.has(id)),
     selected: article.id === selectedId,
     onOpen: markSeen,
     onToggleSaved: toggleSaved,

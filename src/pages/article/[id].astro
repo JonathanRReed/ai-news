@@ -8,7 +8,7 @@ import routeAliases from "../../../public/data/route-aliases.json";
 import legacyArticles from "../../data/legacy-article-records.json";
 import { admittedArticles, admittedRouteArticles } from "../../lib/articleAdmission.js";
 import { articleExcerpt } from "../../lib/articleExcerpt.js";
-import { cleanText, truncateAtWord, articleMetaDescription } from "../../lib/articleSeo.js";
+import { cleanText, truncateAtWord, articleMetaDescription, articlePublicationDateLabel } from "../../lib/articleSeo.js";
 import { articleSourceIdentity } from "../../lib/articleSourceIdentity.mjs";
 import {
   articlePath as safeArticlePath,
@@ -81,9 +81,8 @@ const logo = resolveCompanyLogo(article.company);
 const topics = deriveTopics(article);
 const entities = deriveEntities(article);
 const minutes = readingMinutes(article);
-const dateLabel = new Intl.DateTimeFormat("en-US", { month: "long", day: "numeric", year: "numeric" }).format(new Date(article.published_at));
-const seoDateLabel = new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", year: "numeric" }).format(new Date(article.published_at));
-const shortDateFormatter = new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", year: "numeric" });
+const dateLabel = articlePublicationDateLabel(article.published_at);
+const seoDateLabel = articlePublicationDateLabel(article.published_at, "short");
 
 function articlePageTitle(currentArticle: Article, currentDateLabel: string, includeDate: boolean): string {
   const suffix = includeDate
@@ -109,7 +108,7 @@ function articleTimestamp(currentArticle: Article): number {
 
 function shortDate(value: string): string {
   const date = new Date(value);
-  return Number.isNaN(date.getTime()) ? "Undated" : shortDateFormatter.format(date);
+  return Number.isNaN(date.getTime()) ? "Undated" : articlePublicationDateLabel(value, "short");
 }
 
 

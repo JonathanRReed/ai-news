@@ -18,6 +18,13 @@
     "to": "https://techcrunch.com/2026/07/04/what-is-mistral-ai-everything-to-know-about-the-openai-competitor/"
   },
   {
+    "id": "23517512-d27f-5bed-8711-af9838e4868a",
+    "sourceKey": "anthropic-sitemap",
+    "from": "https://www.anthropic.com/research/anthropic-education-report-how-educators-use-claude",
+    "to": "https://www.anthropic.com/research/anthropic-education-report-how-educators-use-claude",
+    "published_at": "2025-08-27T00:09:00.000Z"
+  },
+  {
     "id": "3d741c8f-4d82-4a85-967f-7562c68ad796",
     "sourceKey": "xai-techcrunch-archive",
     "from": "https://techcrunch.com/2025/09/03/xais-cfo-is-the-latest-executive-to-leave-elon-musks-ai-firm/",
@@ -130,6 +137,13 @@
     "sourceKey": "mistral-techcrunch-archive",
     "from": "https://techcrunch.com/2026/07/04/what-is-mistral-ai-everything-to-know-about-the-openai-competitor/",
     "to": "https://techcrunch.com/2026/07/04/what-is-mistral-ai-everything-to-know-about-the-openai-competitor/"
+  },
+  {
+    "id": "f625fa71-efb5-5520-a965-d9f94c0a2f0e",
+    "sourceKey": "anthropic-sitemap",
+    "from": "https://www.anthropic.com/news/anthropic-education-report-how-educators-use-claude",
+    "to": "https://www.anthropic.com/research/anthropic-education-report-how-educators-use-claude",
+    "published_at": "2025-08-27T00:09:00.000Z"
   },
   {
     "id": "f8c50092-ca62-4718-8455-4f40092113d5",

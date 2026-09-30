@@ -1,5 +1,5 @@
 import { expect, test } from "bun:test";
-import { articleMetaDescription } from "./articleSeo.js";
+import { articleMetaDescription, articlePublicationDateLabel } from "./articleSeo.js";
 
 test("distinct releases retain their headlines when publisher excerpts repeat", () => {
   const excerpt = "Bug fixes and stability improvements for this release.";
@@ -47,4 +47,13 @@ test("long inline headlines retain their following publisher summary", () => {
 test("a headline prefix does not swallow a different opening word", () => {
   expect(articleMetaDescription({ title: "Model" }, "Models share a common release schedule.", "example.com"))
     .toBe("Model. Models share a common release schedule.");
+});
+
+test("publication labels keep the publisher UTC day near midnight", () => {
+  expect(articlePublicationDateLabel("2025-08-27T00:09:00.000Z")).toBe("August 27, 2025");
+  expect(articlePublicationDateLabel("2025-08-27T00:09:00.000Z", "short")).toBe("Aug 27, 2025");
+});
+
+test("publication labels keep the same day at the other UTC boundary", () => {
+  expect(articlePublicationDateLabel("2025-08-27T23:59:00.000Z")).toBe("August 27, 2025");
 });

@@ -42,3 +42,10 @@ export function articleMetaDescription(currentArticle: Pick<Article, "title">, c
     : truncateAtWord(title, 155);
 }
 
+
+export function articlePublicationDateLabel(value: string, month: "long" | "short" = "long"): string {
+  // Static publication labels must not shift with the build machine's timezone.
+  return new Intl.DateTimeFormat("en-US", {
+    timeZone: "UTC", month, day: "numeric", year: "numeric",
+  }).format(new Date(value));
+}
