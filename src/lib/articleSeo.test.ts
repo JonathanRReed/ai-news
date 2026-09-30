@@ -1,5 +1,5 @@
 import { expect, test } from "bun:test";
-import { articleMetaDescription } from "./articleSeo";
+import { articleMetaDescription } from "./articleSeo.js";
 
 test("distinct releases retain their headlines when publisher excerpts repeat", () => {
   const excerpt = "Bug fixes and stability improvements for this release.";
