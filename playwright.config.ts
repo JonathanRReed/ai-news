@@ -16,9 +16,12 @@ export default defineConfig({
     { name: "mobile-chromium", use: { ...devices["Pixel 7"] } },
   ],
   webServer: {
-    command: "bun run build && bun run preview:cloudflare",
+    // The verify workflow opts in only after building the public test configuration.
+    command: process.env.PLAYWRIGHT_USE_EXISTING_BUILD === "1"
+      ? "bun run preview:cloudflare"
+      : "bun run build && bun run preview:cloudflare",
     url: "http://127.0.0.1:4377",
-    timeout: 240_000,
+    timeout: 600_000,
     reuseExistingServer: !process.env.CI,
     env: {
       ASTRO_DEV_BACKGROUND: "0",
