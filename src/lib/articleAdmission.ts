@@ -11,14 +11,23 @@ const verifiedSourceById = new Map(
   [
     ...deepMindSourceUrls.map(({ id, from, to }) => ({ id, from, to, sourceKey: "deepmind-blog" })),
     ...duplicateSourceUrls,
-  ].map(({ id, from, to, sourceKey }) => [id, { from, to, sourceKey }]),
+  ].map((mapping) => [mapping.id, {
+    from: mapping.from,
+    to: mapping.to,
+    sourceKey: mapping.sourceKey,
+    publishedAt: "published_at" in mapping ? mapping.published_at : undefined,
+  }]),
 );
 const duplicateSourceIds = new Set(duplicateSourceUrls.map(({ id }) => id));
 
 function currentPublisherUrl(article: Article): Article {
   const verified = verifiedSourceById.get(article.id);
   return verified && article.source_key === verified.sourceKey && verified.from === article.url
-    ? { ...article, url: verified.to }
+    ? {
+      ...article,
+      url: verified.to,
+      ...(verified.publishedAt ? { published_at: verified.publishedAt } : {}),
+    }
     : article;
 }
 

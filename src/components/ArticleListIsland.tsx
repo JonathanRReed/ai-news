@@ -1,5 +1,6 @@
 /* global KeyboardEvent */
 import React, { useState, useEffect, useRef, useMemo } from "react";
+import PublisherText from "./PublisherText.js";
 import { useArticlesContext } from "../hooks/useArticlesContext.js";
 import { countNewerThan, fetchSavedArticles } from "../hooks/fetchArticlesPage.js";
 import { companyLogoAlt, resolveCompanyLogo } from "../lib/companyCatalog.js";
@@ -80,14 +81,14 @@ function sourceTypeLabel(sourceType?: string): string {
 }
 
 function highlightText(text: string, terms: string[]): React.ReactNode {
-  if (!terms.length) return text;
+  if (!terms.length) return <PublisherText text={text} />;
   const escaped = terms.map((t) => t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
   const re = new RegExp(`(${escaped.join("|")})`, "ig");
   const lower = terms.map((t) => t.toLowerCase());
   return text.split(re).map((part, i) =>
     lower.includes(part.toLowerCase())
       ? <mark key={i} className="bg-brand/30 text-white">{part}</mark>
-      : <React.Fragment key={i}>{part}</React.Fragment>
+      : <React.Fragment key={i}><PublisherText text={part} /></React.Fragment>
   );
 }
 
@@ -223,7 +224,7 @@ function ArticleCard({
               "max-w-3xl leading-relaxed text-text-2 text-pretty",
             )}
           >
-            {expanded ? expandedExcerpt : excerpt}
+            <PublisherText text={expanded ? expandedExcerpt : excerpt} />
           </p>
           {hasMoreExcerpt && (
             <button
