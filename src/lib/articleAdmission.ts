@@ -135,3 +135,22 @@ export function admittedArticles(articles: Article[]): Article[] {
     return !source || preferred.get(source)?.id === article.id;
   });
 }
+
+/** Known published route IDs that represent this same admitted source record. */
+export function articleSourceRouteIds(article: Article, loadedArticles: Article[] = []): string[] {
+  if (!isArticleAdmitted(article)) return [article.id];
+  const source = dedupKey(currentPublisherUrl(article));
+  if (!source) return [article.id];
+
+  const ids = new Set([article.id]);
+  const loadedById = new Map(loadedArticles.map((row) => [row.id, row]));
+  for (const row of loadedArticles) {
+    if (isArticleAdmitted(row) && dedupKey(currentPublisherUrl(row)) === source) ids.add(row.id);
+  }
+  for (const [id, mapping] of verifiedSourceById) {
+    if (`${mapping.sourceKey}:${articleSourceIdentity(mapping.to)}` !== source) continue;
+    const observed = loadedById.get(id);
+    if (!observed || (isArticleAdmitted(observed) && dedupKey(currentPublisherUrl(observed)) === source)) ids.add(id);
+  }
+  return [...ids];
+}
