@@ -56,7 +56,8 @@ describe("article cache admission", () => {
   });
 
   test("keeps old DeepMind routes while listing each verified source once", () => {
-    const rows = (providerArticles as Article[]).filter((article) => article.source_key === "deepmind-blog");
+    const legacyIds = new Set(deepMindSourceUrls.map((entry) => entry.id));
+    const rows = (providerArticles as Article[]).filter((article) => legacyIds.has(article.id));
     const routes = admittedRouteArticles(rows);
     const canonical = admittedArticles(rows);
     expect(routes).toHaveLength(deepMindSourceUrls.length);
@@ -68,6 +69,19 @@ describe("article cache admission", () => {
     ].includes(article.id));
     expect(admittedArticles(pair).map((article) => article.id))
       .toEqual(["38e1ee58-f110-4626-9ea9-ccd723019442"]);
+  });
+
+  test("admits new DeepMind feed records independently of the legacy URL map", () => {
+    const legacyIds = new Set(deepMindSourceUrls.map((entry) => entry.id));
+    const legacy = (providerArticles as Article[]).find((article) => legacyIds.has(article.id))!;
+    const fresh = {
+      ...legacy,
+      id: "new-deepmind-feed-record",
+      url: "https://deepmind.google/blog/new-feed-record/",
+    };
+    expect(admittedRouteArticles([fresh]).map((article) => article.id)).toEqual([fresh.id]);
+    expect(admittedArticles([fresh]).map((article) => article.id)).toEqual([fresh.id]);
+    expect(isArticleAdmitted({ ...fresh, url: "https://attacker.example/story" })).toBeFalse();
   });
 
   test("keeps renamed publisher routes while listing the verified source once", () => {
