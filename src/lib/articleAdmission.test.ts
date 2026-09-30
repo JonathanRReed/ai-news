@@ -1,5 +1,5 @@
 import { describe, expect, test } from "bun:test";
-import { admittedArticles, admittedRouteArticles, isArticleAdmitted, articleSourceRouteIds } from "./articleAdmission.js";
+import { admittedArticles, admittedRouteArticles, isArticleAdmitted, articleSourceRouteIds, articleSourceRouteIndex } from "./articleAdmission.js";
 import type { Article } from "../types/article.js";
 import providerArticles from "../../public/data/provider-articles.json";
 import deepMindSourceUrls from "../data/deepmind-source-urls.json";
@@ -144,5 +144,25 @@ describe("article cache admission", () => {
     expect(articleSourceRouteIds(unrelated, [canonical, unrelated])).toEqual([alias.id]);
     expect(articleSourceRouteIds(canonical, [canonical, { ...alias, source_key: "missing-source" }]))
       .not.toContain(alias.id);
+  });
+
+  test("the loaded-route index keeps first identity and excludes altered aliases", () => {
+    const rows = (providerArticles as Article[]).filter((article) => [
+      "23517512-d27f-5bed-8711-af9838e4868a",
+      "f625fa71-efb5-5520-a965-d9f94c0a2f0e",
+    ].includes(article.id));
+    const canonical = admittedArticles(rows)[0];
+    const alias = rows.find((article) => article.id === "f625fa71-efb5-5520-a965-d9f94c0a2f0e")!;
+    const changed = { ...alias, url: "https://www.anthropic.com/news/a-different-report" };
+    const changedIndex = articleSourceRouteIndex([canonical, changed]);
+    expect(changedIndex.get(canonical.id)).toEqual([canonical.id]);
+    expect(changedIndex.get(alias.id)).toEqual([alias.id]);
+    const invalidIndex = articleSourceRouteIndex([canonical, { ...alias, source_key: "missing-source" }]);
+    expect(invalidIndex.get(canonical.id)).toEqual([canonical.id]);
+    const firstIndex = articleSourceRouteIndex([canonical, { ...canonical, url: changed.url }, alias]);
+    expect(firstIndex.get(canonical.id)).toContain(alias.id);
+    const changedFirst = articleSourceRouteIndex([{ ...canonical, url: changed.url }, canonical, alias]);
+    expect(changedFirst.get(canonical.id)).toEqual([canonical.id]);
+    expect(changedFirst.get(alias.id)).toEqual([alias.id]);
   });
 });
