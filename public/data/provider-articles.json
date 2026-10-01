@@ -1,5 +1,65 @@
 [
   {
+    "id": "87212fa6-e750-5b21-ab47-6de6fd5a6e0c",
+    "company": "Codex CLI",
+    "title": "0.161.0-alpha.8",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.161.0-alpha.8",
+    "published_at": "2026-10-01T06:36:10+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.161.0-alpha.8",
+    "content": "Release 0.161.0-alpha.8",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "48ba62aa-d393-5dec-bc4a-4d999473979a",
+    "company": "NVIDIA AI",
+    "title": "Fine-Tuning NVIDIA Nemotron for Saudi Arabic Dialects, with a Path to Other Languages",
+    "url": "https://developer.nvidia.com/blog/fine-tuning-nvidia-nemotron-for-saudi-arabic-dialects-with-a-path-to-other-languages/",
+    "published_at": "2026-10-01T05:00:00+00:00",
+    "source_type": "rss_official",
+    "summary": "Automatic speech recognition must handle how people actually speak, not only the languages and styles that dominate pretraining data. Regional dialects and...",
+    "content": "Automatic speech recognition must handle how people actually speak, not only the languages and styles that dominate pretraining data. Regional dialects and...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/",
+    "source_key": "nvidia-generative-ai"
+  },
+  {
+    "id": "1c18384e-e17e-59ff-8d1a-d9bd78de985f",
+    "company": "Codex CLI",
+    "title": "0.161.0-alpha.7",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.161.0-alpha.7",
+    "published_at": "2026-10-01T04:03:41+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.161.0-alpha.7",
+    "content": "Release 0.161.0-alpha.7",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "a871389b-dea7-5184-84fa-9daf7ff6bb7a",
+    "company": "Codex CLI",
+    "title": "0.161.0-alpha.6",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.161.0-alpha.6",
+    "published_at": "2026-10-01T02:43:14+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.161.0-alpha.6",
+    "content": "Release 0.161.0-alpha.6",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "3ceade74-0c6d-5788-a2a8-07846ab9d675",
+    "company": "Gemini CLI",
+    "title": "Release v0.64.0-nightly.20261001.gc6bccb7ec",
+    "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.64.0-nightly.20261001.gc6bccb7ec",
+    "published_at": "2026-10-01T01:34:16+00:00",
+    "source_type": "rss_official",
+    "summary": "What's Changed fix(cli): prevent CPU hang and quote swallowing on @ within code ( #29434 ) by @elberthc-byte in #29557 fix(core): serialize file tool operations and make writes atomic ( #29078 ) by @elberthc-byte in #29499 Full Changelog : v0.64.0-nightly.20260930.g38700b4b3...v0.64.0-nightly.20261001.gc6bccb7ec",
+    "content": "What's Changed fix(cli): prevent CPU hang and quote swallowing on @ within code ( #29434 ) by @elberthc-byte in #29557 fix(core): serialize file tool operations and make writes atomic ( #29078 ) by @elberthc-byte in #29499 Full Changelog : v0.64.0-nightly.20260930.g38700b4b3...v0.64.0-nightly.20261001.gc6bccb7ec",
+    "source_url": "https://github.com/google-gemini/gemini-cli/releases.atom",
+    "source_key": "gemini-cli-releases"
+  },
+  {
     "id": "dbf270c0-b949-5e72-b826-74881bd4c967",
     "company": "Codex CLI",
     "title": "0.160.0-alpha.6.2",
