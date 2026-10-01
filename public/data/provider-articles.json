@@ -1,5 +1,65 @@
 [
   {
+    "id": "d116516a-61bc-5ae9-9db6-e77276a4b97a",
+    "company": "Anthropic",
+    "title": "Barclays scales Claude to upgrade operations and improve client experience",
+    "url": "https://www.anthropic.com/news/barclays-scales-claude",
+    "published_at": "2026-10-01T15:19:00+00:00",
+    "source_type": "scraped",
+    "summary": "Barclays, the British universal bank, is expanding its strategic collaboration with Anthropic to integrate secure, enterprise-grade AI systems across its global operations.",
+    "content": "Barclays, the British universal bank, is expanding its strategic collaboration with Anthropic to integrate secure, enterprise-grade AI systems across its global operations.",
+    "source_url": "https://www.anthropic.com/sitemap.xml",
+    "source_key": "anthropic-sitemap"
+  },
+  {
+    "id": "34300b23-0909-5937-8ecf-2e0be884069d",
+    "company": "Codex CLI",
+    "title": "0.161.0-alpha.11",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.161.0-alpha.11",
+    "published_at": "2026-10-01T12:32:41+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.161.0-alpha.11",
+    "content": "Release 0.161.0-alpha.11",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "ecb72384-97eb-5817-ac24-d02e4ec4fe6c",
+    "company": "Codex CLI",
+    "title": "0.161.0-alpha.10",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.161.0-alpha.10",
+    "published_at": "2026-10-01T10:40:16+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.161.0-alpha.10",
+    "content": "Release 0.161.0-alpha.10",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "54d84522-c50d-5dfc-9d3a-a1f9a6d49d76",
+    "company": "Codex CLI",
+    "title": "0.161.0-alpha.9",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.161.0-alpha.9",
+    "published_at": "2026-10-01T08:46:14+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.161.0-alpha.9",
+    "content": "Release 0.161.0-alpha.9",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "aba5ec4d-e150-5c48-84da-c80c80e57f02",
+    "company": "Hermes Agent",
+    "title": "v0.21.4+canary.20261001T070239Z",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.21.4%2Bcanary.20261001T070239Z",
+    "published_at": "2026-10-01T07:02:40+00:00",
+    "source_type": "rss_official",
+    "summary": "Hermes Agent canary 20261001T070239Z",
+    "content": "Hermes Agent canary 20261001T070239Z",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
     "id": "87212fa6-e750-5b21-ab47-6de6fd5a6e0c",
     "company": "Codex CLI",
     "title": "0.161.0-alpha.8",
