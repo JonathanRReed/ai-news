@@ -1,8 +1,20 @@
 [
   {
+    "id": "a4b0e4d3-400a-53f7-bfc8-09ede1c785c4",
+    "company": "Gemini CLI",
+    "title": "Release v0.64.0-nightly.20261003.gfb972b2f8",
+    "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.64.0-nightly.20261003.gfb972b2f8",
+    "published_at": "2026-10-03T01:29:14+00:00",
+    "source_type": "rss_official",
+    "summary": "What's Changed fix(cli): ensure Enter and Spacebar reliably confirm selection list options by @ugorla-dev in #29502 Full Changelog : v0.64.0-nightly.20261002.gc9096a847...v0.64.0-nightly.20261003.gfb972b2f8",
+    "content": "What's Changed fix(cli): ensure Enter and Spacebar reliably confirm selection list options by @ugorla-dev in #29502 Full Changelog : v0.64.0-nightly.20261002.gc9096a847...v0.64.0-nightly.20261003.gfb972b2f8",
+    "source_url": "https://github.com/google-gemini/gemini-cli/releases.atom",
+    "source_key": "gemini-cli-releases"
+  },
+  {
     "id": "277fea67-86a0-5388-a04a-467e680e3073",
     "company": "Codex CLI",
-    "title": "rust-v0.162.0-alpha.9",
+    "title": "0.162.0-alpha.9",
     "url": "https://github.com/openai/codex/releases/tag/rust-v0.162.0-alpha.9",
     "published_at": "2026-10-03T00:23:41+00:00",
     "source_type": "rss_official",
@@ -14,12 +26,12 @@
   {
     "id": "74205341-ab59-5acf-a200-912ee2b3c58f",
     "company": "OpenClaw",
-    "title": "v2026.9.8",
+    "title": "openclaw 2026.9.8",
     "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.9.8",
     "published_at": "2026-10-02T23:03:52+00:00",
     "source_type": "rss_official",
-    "summary": "OpenClaw 2026.9.8",
-    "content": "OpenClaw 2026.9.8",
+    "summary": "OpenClaw v2026.9.8 58 commits · 43 pull requests · 21 contributors Changes included in this release The release notes and changelog contain the same content, presented in two formats: Release notes — formatted for people, with expandable sections. Changelog — plain Markdown for AI agents and tools. Thanks @609NFT @aniketkrs @aniruddhaadak80 @EndeavorPioneer @ericcaiwx-star @fuller-stack-dev @hailongguo0530-alt @jasdeepohri-max @miguelpt2026 @NickM83 @obviyus @Patrick-Erichsen @PennyVibe...",
+    "content": "OpenClaw v2026.9.8 58 commits · 43 pull requests · 21 contributors Changes included in this release The release notes and changelog contain the same content, presented in two formats: Release notes — formatted for people, with expandable sections. Changelog — plain Markdown for AI agents and tools. Thanks @609NFT @aniketkrs @aniruddhaadak80 @EndeavorPioneer @ericcaiwx-star @fuller-stack-dev @hailongguo0530-alt @jasdeepohri-max @miguelpt2026 @NickM83 @obviyus @Patrick-Erichsen @PennyVibe @RomneyDa @scotthuang @steipete @VACInc @vincentkoc @WG-Mojo @xilopaint @yashas-13 Release verification npm package: https://www.npmjs.com/package/openclaw/v/2026.9.8 registry tarball: https://registry.npmjs.org/openclaw/-/openclaw-2026.9.8.tgz integrity: sha512-G+JkNUhtpDE3cXR4AEi2NyyG9fqI/T2WUSl8ZnR8AATH8Dh1kC3qYFL7wwPoZtgHiP/cszA86PEiE0PDysxb9Q== release SHA: fc23bc864e4553c2d215e479eeec47b67a0bf943 full release CI report: https://github.com/openclaw/releases/blob/main/evidence/2026.9.8/release-evidence.md release publish: https://github.com/openclaw/openclaw/actions/runs/37089852299 npm preflight: https://github.com/openclaw/openclaw/actions/runs/37046778498 full release validation: https://github.com/openclaw/openclaw/actions/runs/37045896743 plugin npm publish: https://github.com/openclaw/openclaw/actions/runs/37090141905 plugin ClawHub submission: https://github.com/openclaw/openclaw/actions/runs/37090144556 ; public artifact verification follows successful release-parent completion plugin ClawHub bootstrap: not needed OpenClaw npm publish: https://github.com/openclaw/openclaw/actions/runs/37087759921/attempts/1 Telegram integration checks: waived by the release owner for 2026.9.8 (source QA, Package Acceptance, published-package E2E); not run. Android APK: skipped — apps/android/version.json is 2026.8.2, release train is 2026.9.8; run pnpm android:version:pin -- --from-gateway before the next tag.",
     "source_url": "https://github.com/openclaw/openclaw/releases.atom",
     "source_key": "openclaw-releases"
   },
