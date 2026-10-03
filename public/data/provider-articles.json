@@ -1,5 +1,29 @@
 [
   {
+    "id": "a1a4e615-124e-51b5-9a24-302ac2c72052",
+    "company": "Codex CLI",
+    "title": "0.162.0-alpha.10",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.162.0-alpha.10",
+    "published_at": "2026-10-03T10:08:11+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.162.0-alpha.10",
+    "content": "Release 0.162.0-alpha.10",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "57e831b4-826c-5228-b8b6-87309e8cf8eb",
+    "company": "Hermes Agent",
+    "title": "v0.21.4+canary.20261003T070620Z",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.21.4%2Bcanary.20261003T070620Z",
+    "published_at": "2026-10-03T07:06:22+00:00",
+    "source_type": "rss_official",
+    "summary": "Hermes Agent canary 20261003T070620Z",
+    "content": "Hermes Agent canary 20261003T070620Z",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
     "id": "a4b0e4d3-400a-53f7-bfc8-09ede1c785c4",
     "company": "Gemini CLI",
     "title": "Release v0.64.0-nightly.20261003.gfb972b2f8",
