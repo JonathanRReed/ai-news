@@ -1,5 +1,17 @@
 [
   {
+    "id": "b815415d-4e8e-5ba5-aca5-4dc463a3f354",
+    "company": "Codex CLI",
+    "title": "0.162.0-alpha.13",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.162.0-alpha.13",
+    "published_at": "2026-10-04T15:51:07+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.162.0-alpha.13",
+    "content": "Release 0.162.0-alpha.13",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
     "id": "2a774d82-2d4f-590b-804f-93296e758441",
     "company": "AI21 Labs",
     "title": "From manual negotiation to automated scheduling: How AI21 manages its GPU fleet with Kueue | AI21",
