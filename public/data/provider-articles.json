@@ -1,5 +1,41 @@
 [
   {
+    "id": "e0fd0b9a-8a8e-5b7c-847b-fda3642d67dd",
+    "company": "Claude Code",
+    "title": "v2.1.289",
+    "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.289",
+    "published_at": "2026-10-03T23:07:17+00:00",
+    "source_type": "rss_official",
+    "summary": "What's changed Fixed a deny or ask rule on a nested part of a compound shell command not holding over a user-installed mod's approval on managed machines Fixed the terminal freezing on short code blocks with many unclosed tags or deeply nested ${ substitutions Fixed Read deny rules not applying to files @-mentioned, changed, or selected in the IDE through a symlink [VSCode] Reverted a 2.1.288 change to claude auth status that may have made sign-outs more frequent Improved how quickly large...",
+    "content": "What's changed Fixed a deny or ask rule on a nested part of a compound shell command not holding over a user-installed mod's approval on managed machines Fixed the terminal freezing on short code blocks with many unclosed tags or deeply nested ${ substitutions Fixed Read deny rules not applying to files @-mentioned, changed, or selected in the IDE through a symlink [VSCode] Reverted a 2.1.288 change to claude auth status that may have made sign-outs more frequent Improved how quickly large files open in a plugin code pane by laying the highlighted view out once at its final width Fixed plugin list , plugin eval and plugin update showing a stale copy of a plugin installed from a local folder marketplace, and hot reload for a symlinked --plugin-dir Fixed installed mods not loading in the first session after an upgrade Fixed a plugin's rows above the prompt showing a stale row while the Background tasks dialog was open in fullscreen Fixed plugin panes drawing nothing when a link used a localhost address, an @ in its path, an uppercase host or a file: path Fixed a user-installed plugin being able to rewrite the descriptions of an organization-managed MCP server's sign-in tools Fixed a freeze or forced quit at launch when a plugin drew a Box with a border style the terminal does not know Fixed supervised and background sessions ending when a plugin's on-screen handler threw asynchronously Fixed sessions ending with an interface error when a plugin region with no height kept growing Fixed Bash deny and ask rules missing a command behind an environment variable prefix with an expanded value (e.g. TZ=\"$HOME\" rm -rf build ) when the sandbox auto-allows commands Fixed a Bash deny or ask rule being skipped under sandbox auto-allow when a bare variable assignment came before the command Fixed claude plugin validate skipping the plugin when the folder also holds a marketplace manifest Added agent.spawn for teammates, one agent id across plugin hook events, and idle and waiting states in $.agent.list() Fixed sessions ending with \"unrecoverable interface error\" when a value a mod's ui.render hook wrote made a row throw while drawn; the engine now draws its own row instead Fixed text with a tab, a stray escape and a C1 control, or a short text with a tab and CRLF line endings, drawing over the rows below it Fixed right-aligned content in a mod's pane or band drawing under the close mark or [-] , which now also keep one column in from the terminal's edge Fixed a mod's Client that fails while drawn taking down everything the mod drew around it; it now fails alone and raises ui.fault Fixed claude plugin validate failing an Anthropic marketplace's own plugin and listing a clean plugin.json in --json Fixed a mod's band that fails to draw briefly telling the cards under it to step aside Fixed a failed plugin component showing Error or nothing as its reason when the failure carried no message Improved the line a mod's author sees when its band or pane fails to draw: it names the mod and says nothing was drawn Fixed published artifact pages freezing or crashing the reader's browser tab on short code blocks with many unclosed tags Fixed a mod's Client region staying failed for the whole session after the terminal threw while drawing it",
+    "source_url": "https://github.com/anthropics/claude-code/releases.atom",
+    "source_key": "claude-code-releases"
+  },
+  {
+    "id": "c9fd4ee8-065d-5b81-957e-eef9d00f16f2",
+    "company": "Hugging Face",
+    "title": "The Agent Said It Was Done. The Database Disagreed.",
+    "url": "https://huggingface.co/blog/microsoft/thinkingbox",
+    "published_at": "2026-10-03T22:56:48+00:00",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://huggingface.co/blog/feed.xml",
+    "source_key": "hugging-face-blog"
+  },
+  {
+    "id": "c5b2517f-3fdf-57c3-9d07-9be3923a7018",
+    "company": "Codex CLI",
+    "title": "0.162.0-alpha.11",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.162.0-alpha.11",
+    "published_at": "2026-10-03T20:21:16+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.162.0-alpha.11",
+    "content": "Release 0.162.0-alpha.11",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
     "id": "a1a4e615-124e-51b5-9a24-302ac2c72052",
     "company": "Codex CLI",
     "title": "0.162.0-alpha.10",
