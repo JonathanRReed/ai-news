@@ -1,5 +1,17 @@
 [
   {
+    "id": "d8ee30be-a11e-51ed-a102-acdc8ed5f543",
+    "company": "Codex CLI",
+    "title": "0.162.0-alpha.12",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.162.0-alpha.12",
+    "published_at": "2026-10-04T05:58:47+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.162.0-alpha.12",
+    "content": "Release 0.162.0-alpha.12",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
     "id": "e0fd0b9a-8a8e-5b7c-847b-fda3642d67dd",
     "company": "Claude Code",
     "title": "v2.1.289",
