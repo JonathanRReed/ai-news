@@ -1,5 +1,29 @@
 [
   {
+    "id": "2a774d82-2d4f-590b-804f-93296e758441",
+    "company": "AI21 Labs",
+    "title": "From manual negotiation to automated scheduling: How AI21 manages its GPU fleet with Kueue | AI21",
+    "url": "https://www.ai21.com/blog/how-ai21-manages-its-gpu-fleet-with-kueue/",
+    "published_at": "2026-10-04T11:37:50+00:00",
+    "source_type": "scraped",
+    "summary": "An independent verifier takes agentic search past published SOTA. Our trained 8B does it for almost $0 per question.",
+    "content": "An independent verifier takes agentic search past published SOTA. Our trained 8B does it for almost $0 per question.",
+    "source_url": "https://www.ai21.com/sitemap_index.xml",
+    "source_key": "ai21-sitemap"
+  },
+  {
+    "id": "526997fe-dd5c-5288-8c6e-4d41186b083e",
+    "company": "Hermes Agent",
+    "title": "v0.21.4+canary.20261004T084456Z",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.21.4%2Bcanary.20261004T084456Z",
+    "published_at": "2026-10-04T08:44:58+00:00",
+    "source_type": "rss_official",
+    "summary": "Hermes Agent canary 20261004T084456Z",
+    "content": "Hermes Agent canary 20261004T084456Z",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
     "id": "d8ee30be-a11e-51ed-a102-acdc8ed5f543",
     "company": "Codex CLI",
     "title": "0.162.0-alpha.12",
