@@ -10,7 +10,7 @@ const missingSources = [
 
 test("unavailable sources do not invite readers to a removed original", () => {
   const description = articleMetaDescription({ title: "Recorded publisher title" }, "", "huggingface.co", true);
-  assert.match(description, /Source unavailable/);
+  assert.equal(description, "Recorded publisher title. Source unavailable.");
   assert.doesNotMatch(description, /Read the original/);
 });
 
@@ -59,4 +59,10 @@ test("available-source metadata and real publisher excerpts remain unchanged", (
     articleMetaDescription({ title: "Recorded publisher title" }, "A preserved publisher excerpt.", "huggingface.co", true),
     articleMetaDescription({ title: "Recorded publisher title" }, "A preserved publisher excerpt.", "huggingface.co"),
   );
+});
+
+test("footer credits provenance without promising every source is available", () => {
+  const footer = readFileSync(new URL("../components/Footer.astro", import.meta.url), "utf8");
+  assert.match(footer, /Every story credits its original source/);
+  assert.doesNotMatch(footer, /Every story links to its original source/);
 });

@@ -37,7 +37,7 @@ export function articleMetaDescription(currentArticle: Pick<Article, "title">, c
     return truncateAtWord(description, 155);
   }
   const sourceNote = sourceUnavailable
-    ? ". Source unavailable; original record preserved."
+    ? ". Source unavailable."
     : `. Read the original at ${sourceDomain || "the publisher's site"}.`;
   return title.length + sourceNote.length <= 155
     ? `${title}${sourceNote}`
@@ -51,4 +51,3 @@ export function articlePublicationDateLabel(value: string, month: "long" | "shor
     timeZone: "UTC", month, day: "numeric", year: "numeric",
   }).format(new Date(value));
 }
-
