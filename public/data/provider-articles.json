@@ -1,8 +1,20 @@
 [
   {
+    "id": "eedf3b30-c002-594b-9c31-b5a5bae811c8",
+    "company": "Gemini CLI",
+    "title": "Release v0.64.0-nightly.20261005.gfb972b2f8",
+    "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.64.0-nightly.20261005.gfb972b2f8",
+    "published_at": "2026-10-05T01:39:02+00:00",
+    "source_type": "rss_official",
+    "summary": "Full Changelog : v0.64.0-nightly.20261003.gfb972b2f8...v0.64.0-nightly.20261005.gfb972b2f8",
+    "content": "Full Changelog : v0.64.0-nightly.20261003.gfb972b2f8...v0.64.0-nightly.20261005.gfb972b2f8",
+    "source_url": "https://github.com/google-gemini/gemini-cli/releases.atom",
+    "source_key": "gemini-cli-releases"
+  },
+  {
     "id": "7f650e6e-ff83-5c0b-a9c7-c3ffe5d1b6cf",
     "company": "Codex CLI",
-    "title": "rust-v0.162.0-alpha.14",
+    "title": "0.162.0-alpha.14",
     "url": "https://github.com/openai/codex/releases/tag/rust-v0.162.0-alpha.14",
     "published_at": "2026-10-05T01:02:40+00:00",
     "source_type": "rss_official",
@@ -10,6 +22,18 @@
     "content": "Release 0.162.0-alpha.14",
     "source_url": "https://github.com/openai/codex/releases.atom",
     "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "63fa8a2b-0e2e-58f1-aceb-b4455d6fa839",
+    "company": "OpenClaw",
+    "title": "release-publish/6bc3e8ae39ca-1791171552",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/release-publish%2F6bc3e8ae39ca-1791171552",
+    "published_at": "2026-10-04T22:07:20+00:00",
+    "source_type": "rss_official",
+    "summary": "fix(release): keep lineage arguments nonempty ( #165143 )",
+    "content": "fix(release): keep lineage arguments nonempty ( #165143 )",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
   },
   {
     "id": "db5f85ee-27fc-5989-b5d9-0cad1e65dcdb",
