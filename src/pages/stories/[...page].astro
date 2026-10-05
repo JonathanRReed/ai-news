@@ -26,8 +26,8 @@ const title = pageNumber === 1
   ? "All Primary-Source AI Stories | AI News Hub"
   : `AI News Stories, Page ${pageNumber} | AI News Hub`;
 const description = pageNumber === 1
-  ? "Browse every primary-source AI lab, model-provider, research and infrastructure story tracked by AI News Hub, ordered by date with direct source links."
-  : `Browse primary-source AI news stories on page ${pageNumber} of ${pageCount}, ordered by publication date with publisher names and links to each original source.`;
+  ? "Browse every primary-source AI lab, model-provider, research and infrastructure story tracked by AI News Hub, ordered by date with publisher attribution."
+  : `Browse primary-source AI news stories on page ${pageNumber} of ${pageCount}, ordered by publication date with publisher names and source details.`;
 const previousUrl = pageNumber > 1
   ? pageNumber === 2 ? "/stories/" : `/stories/${pageNumber - 1}/`
   : undefined;
@@ -68,7 +68,7 @@ const structuredData = {
       <div class="max-w-5xl reveal-stagger">
         <h1 class="macro-heading max-w-5xl">All stories from official sources.</h1>
         <p class="mt-6 max-w-3xl text-lg leading-relaxed text-text-2 md:text-xl">
-          Every collected story in publication order. Open its story page for source details, then continue to the original publisher.
+          Every collected story in publication order. Open a story for source details.
         </p>
         <p class="micro-label mt-5 text-muted">Page {pageNumber} of {pageCount} · {articles.length} stories</p>
       </div>

@@ -61,8 +61,12 @@ test("available-source metadata and real publisher excerpts remain unchanged", (
   );
 });
 
-test("footer credits provenance without promising every source is available", () => {
+test("site copy credits provenance without promising every source is available", () => {
   const footer = readFileSync(new URL("../components/Footer.astro", import.meta.url), "utf8");
   assert.match(footer, /Every story credits its original source/);
   assert.doesNotMatch(footer, /Every story links to its original source/);
+  for (const path of ["../pages/index.astro", "../pages/about.astro", "../pages/stories/[...page].astro"]) {
+    const source = readFileSync(new URL(path, import.meta.url), "utf8");
+    assert.doesNotMatch(source, /link to the original source for each story|every entry links to the original post|links to each original source|direct source links/);
+  }
 });

@@ -21,4 +21,3 @@ const unavailableByUrl = new Map(
 export function unavailableArticleSource(url) {
   return unavailableByUrl.get(sourceUrlKey(url)) ?? null;
 }
-

@@ -820,4 +820,3 @@ function groupByBucket(articles: Article[], nowMs: number): { bucket: string; it
   }
   return order.filter((b) => map.has(b)).map((bucket) => ({ bucket, items: map.get(bucket) as Article[] }));
 }
-
