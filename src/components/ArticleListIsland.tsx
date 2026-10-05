@@ -12,6 +12,7 @@ import type { FeedView } from "./ArticlesIslandWrapper.js";
 import { boundedSearchTerms } from "../lib/intelligenceClient.js";
 import { articleExcerpt, truncateArticleExcerpt } from "../lib/articleExcerpt.js";
 import { articlePath } from "../lib/articleRoutes.js";
+import { unavailableArticleSource } from "../lib/articleSourceAvailability.mjs";
 import { itemTypeLabel } from "../lib/itemTypes.js";
 import { cn } from "../lib/utils.js";
 
@@ -137,7 +138,8 @@ function ArticleCard({
 }) {
   const [expanded, setExpanded] = useState(false);
   const logoPath = resolveCompanyLogo(article.company);
-  const safeUrl = getSafeArticleUrl(article.url);
+  const sourceUnavailable = Boolean(unavailableArticleSource(article.url));
+  const safeUrl = sourceUnavailable ? "" : getSafeArticleUrl(article.url);
   const localUrl = articlePath(article.id);
   const domain = getDomain(article.url);
   const topics = deriveTopics(article).slice(0, 3);
@@ -213,6 +215,7 @@ function ArticleCard({
             Original source
           </a>
         )}
+        {sourceUnavailable && <span>Source unavailable</span>}
       </div>
 
       {showExcerpt && excerpt && (

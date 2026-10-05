@@ -187,3 +187,52 @@ test("canonical and alias saved routes can be unsaved as one report", async ({ p
   await expect(card).toHaveCount(0);
   await expect.poll(async () => page.evaluate(() => JSON.parse(localStorage.getItem("ai-news-saved") || "[]"))).toEqual([]);
 });
+
+test("preserves removed publisher records without dead outbound links", async ({ page }) => {
+  const records = [
+    {
+      id: "e04aca47-64ae-4a1f-a7f5-b0eda5ca198d",
+      url: "https://huggingface.co/blog/nvidia/model-evaluation-skill",
+      title: "Conversational LLM Evaluations in Minutes with NVIDIA NeMo Evaluator Agent Skills",
+      published: "March 6, 2026",
+    },
+    {
+      id: "48123fe1-c0b4-46f3-97d5-51f0c1ad13c0",
+      url: "https://huggingface.co/blog/build-small-hackathon/sponsors-vouchers",
+      title: "Sponsors especially OPENAI CODEX voucher usage for codex - openAI challange",
+      published: "June 7, 2026",
+    },
+  ];
+  for (const record of records) {
+    const response = await page.goto(`/article/${record.id}/`);
+    expect(response?.status()).toBe(200);
+    await expect(page.getByRole("heading", { level: 1 })).toHaveText(record.title);
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", `https://ai-news.helloworldfirm.com/article/${record.id}/`);
+    await expect(page.locator("main article time").first()).toHaveText(record.published);
+    await expect(page.getByText("Source unavailable", { exact: true })).toBeVisible();
+    await expect(page.getByText(record.url, { exact: true })).toBeVisible();
+    await expect(page.locator(`a[href="${record.url}"]`)).toHaveCount(0);
+    await expect(page.getByRole("link", { name: /Read the original/ })).toHaveCount(0);
+    await expect(page.locator('meta[name="description"]')).not.toHaveAttribute("content", /Read the original/);
+    await expect(page.getByRole("heading", { name: "Publisher feed status" })).toBeVisible();
+  }
+});
+
+test("saved cards retain missing-source records without linking to removed pages", async ({ page }) => {
+  await page.addInitScript(() => {
+    localStorage.setItem("ai-news-saved", JSON.stringify([
+      "e04aca47-64ae-4a1f-a7f5-b0eda5ca198d",
+      "48123fe1-c0b4-46f3-97d5-51f0c1ad13c0",
+    ]));
+  });
+  await page.goto("/");
+  await expect.poll(async () => page.locator('astro-island[component-url*="ArticlesIslandWrapper"]').evaluate((element) => !element.hasAttribute("ssr"))).toBe(true);
+  await page.getByRole("group", { name: "Filter by read state" }).getByRole("button", { name: /^Saved/ }).click();
+  for (const id of ["e04aca47-64ae-4a1f-a7f5-b0eda5ca198d", "48123fe1-c0b4-46f3-97d5-51f0c1ad13c0"]) {
+    const card = page.locator(`article[data-article-id="${id}"]`);
+    await expect(card).toBeVisible();
+    await expect(card.getByText("Source unavailable", { exact: true })).toBeVisible();
+    await expect(card.getByRole("link", { name: "Original source", exact: true })).toHaveCount(0);
+    await expect(card.locator(`a[href="/article/${id}/"]`)).toHaveCount(1);
+  }
+});
