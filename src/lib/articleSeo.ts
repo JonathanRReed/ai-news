@@ -14,7 +14,7 @@ export function truncateAtWord(text: string, maxLength: number): string {
   return `${base.trim()}...`;
 }
 
-export function articleMetaDescription(currentArticle: Pick<Article, "title">, currentExcerpt: string, sourceDomain: string): string {
+export function articleMetaDescription(currentArticle: Pick<Article, "title">, currentExcerpt: string, sourceDomain: string, sourceUnavailable = false): string {
   const excerpt = cleanText(currentExcerpt);
   const placeholderExcerpt = excerpt.toLowerCase() === "no content.";
   const title = cleanText(currentArticle.title).replace(/[.!?]+$/, "");
@@ -36,7 +36,9 @@ export function articleMetaDescription(currentArticle: Pick<Article, "title">, c
       : summary;
     return truncateAtWord(description, 155);
   }
-  const sourceNote = `. Read the original at ${sourceDomain || "the publisher's site"}.`;
+  const sourceNote = sourceUnavailable
+    ? ". Source unavailable; original record preserved."
+    : `. Read the original at ${sourceDomain || "the publisher's site"}.`;
   return title.length + sourceNote.length <= 155
     ? `${title}${sourceNote}`
     : truncateAtWord(title, 155);
@@ -49,3 +51,4 @@ export function articlePublicationDateLabel(value: string, month: "long" | "shor
     timeZone: "UTC", month, day: "numeric", year: "numeric",
   }).format(new Date(value));
 }
+
