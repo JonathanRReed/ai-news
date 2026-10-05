@@ -1,5 +1,29 @@
 [
   {
+    "id": "7f650e6e-ff83-5c0b-a9c7-c3ffe5d1b6cf",
+    "company": "Codex CLI",
+    "title": "rust-v0.162.0-alpha.14",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.162.0-alpha.14",
+    "published_at": "2026-10-05T01:02:40+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.162.0-alpha.14",
+    "content": "Release 0.162.0-alpha.14",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "db5f85ee-27fc-5989-b5d9-0cad1e65dcdb",
+    "company": "OpenClaw",
+    "title": "release-publish/6cc10ab3e851-1791145446",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/release-publish%2F6cc10ab3e851-1791145446",
+    "published_at": "2026-10-04T20:23:24+00:00",
+    "source_type": "rss_official",
+    "summary": "test(ui): preload lazy text excerpt parser ( #165083 )",
+    "content": "test(ui): preload lazy text excerpt parser ( #165083 )",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
+  },
+  {
     "id": "b815415d-4e8e-5ba5-aca5-4dc463a3f354",
     "company": "Codex CLI",
     "title": "0.162.0-alpha.13",
