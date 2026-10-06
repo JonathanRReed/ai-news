@@ -1,5 +1,29 @@
 [
   {
+    "id": "7c762583-672b-5cfe-8925-218167ad5f0a",
+    "company": "AI21 Labs",
+    "title": "The verifiability litmus test for agent design | AI21",
+    "url": "https://www.ai21.com/blog/the-verifiability-litmus-test-for-agent-design/",
+    "published_at": "2026-10-06T08:06:17+00:00",
+    "source_type": "scraped",
+    "summary": "Whether answers can be verified decides AI agent design. Case studies from agentic search, deep research, RAG and coding.",
+    "content": "Whether answers can be verified decides AI agent design. Case studies from agentic search, deep research, RAG and coding.",
+    "source_url": "https://www.ai21.com/sitemap_index.xml",
+    "source_key": "ai21-sitemap"
+  },
+  {
+    "id": "83afbd57-5740-5f87-b633-8f248684d877",
+    "company": "Hermes Agent",
+    "title": "v0.21.4+canary.20261006T070224Z",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.21.4%2Bcanary.20261006T070224Z",
+    "published_at": "2026-10-06T07:02:25+00:00",
+    "source_type": "rss_official",
+    "summary": "Hermes Agent canary 20261006T070224Z",
+    "content": "Hermes Agent canary 20261006T070224Z",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
     "id": "e75644f0-c4d1-574e-9efc-3417c51abebf",
     "company": "Hugging Face",
     "title": "Falcon-Emirati: When an LLM Learns the Dialect, the Culture, and the Nuance",
