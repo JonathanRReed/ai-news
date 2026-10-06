@@ -1,5 +1,53 @@
 [
   {
+    "id": "e75644f0-c4d1-574e-9efc-3417c51abebf",
+    "company": "Hugging Face",
+    "title": "Falcon-Emirati: When an LLM Learns the Dialect, the Culture, and the Nuance",
+    "url": "https://huggingface.co/blog/tiiuae/falcon-emirati",
+    "published_at": "2026-10-06T06:44:39+00:00",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://huggingface.co/blog/feed.xml",
+    "source_key": "hugging-face-blog"
+  },
+  {
+    "id": "28909890-5ad7-5518-9feb-984b1f2162f8",
+    "company": "Codex CLI",
+    "title": "0.161.0-alpha.13.1",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.161.0-alpha.13.1",
+    "published_at": "2026-10-06T05:38:59+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.161.0-alpha.13.1",
+    "content": "Release 0.161.0-alpha.13.1",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "5d3579f6-a74c-5f15-ba17-a24fab990d6e",
+    "company": "Claude Code",
+    "title": "v2.1.291",
+    "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.291",
+    "published_at": "2026-10-06T03:55:19+00:00",
+    "source_type": "rss_official",
+    "summary": "What's changed Fixed a regression in 2.1.290 where cloud sessions could drop answers to permission prompts Fixed a regression in 2.1.288 where the last messages of a session could be lost when quitting",
+    "content": "What's changed Fixed a regression in 2.1.290 where cloud sessions could drop answers to permission prompts Fixed a regression in 2.1.288 where the last messages of a session could be lost when quitting",
+    "source_url": "https://github.com/anthropics/claude-code/releases.atom",
+    "source_key": "claude-code-releases"
+  },
+  {
+    "id": "a0174950-0b0d-57f6-ac44-4e03b6809fa7",
+    "company": "Gemini CLI",
+    "title": "Release v0.64.0-nightly.20261006.gfb972b2f8",
+    "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.64.0-nightly.20261006.gfb972b2f8",
+    "published_at": "2026-10-06T01:46:47+00:00",
+    "source_type": "rss_official",
+    "summary": "Full Changelog : v0.64.0-nightly.20261005.gfb972b2f8...v0.64.0-nightly.20261006.gfb972b2f8",
+    "content": "Full Changelog : v0.64.0-nightly.20261005.gfb972b2f8...v0.64.0-nightly.20261006.gfb972b2f8",
+    "source_url": "https://github.com/google-gemini/gemini-cli/releases.atom",
+    "source_key": "gemini-cli-releases"
+  },
+  {
     "id": "b3842f77-30dd-5939-bbe7-dd3041ffecf4",
     "company": "OpenHands",
     "title": "v1.25.0",
