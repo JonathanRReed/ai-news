@@ -8,5 +8,10 @@
     "url": "https://huggingface.co/blog/build-small-hackathon/sponsors-vouchers",
     "checked_at": "2026-10-05",
     "evidence": "Publisher page displays 404 and Blog post not found"
+  },
+  {
+    "url": "https://cohere.com/blog/ai-in-oil-and-gas",
+    "checked_at": "2026-10-07",
+    "evidence": "Publisher URL returns HTTP 404 and displays 404 ERROR: Oops! Page lost in training data shuffle."
   }
 ]

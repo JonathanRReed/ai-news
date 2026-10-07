@@ -202,6 +202,12 @@ test("preserves removed publisher records without dead outbound links", async ({
       title: "Sponsors especially OPENAI CODEX voucher usage for codex - openAI challange",
       published: "June 7, 2026",
     },
+    {
+      id: "e4fb6b08-0233-54a1-8c6e-6cfb429c0299",
+      url: "https://cohere.com/blog/ai-in-oil-and-gas",
+      title: "AI in oil and gas: Transforming safety and efficiency",
+      published: "September 30, 2026",
+    },
   ];
   for (const record of records) {
     const response = await page.goto(`/article/${record.id}/`);
@@ -215,7 +221,18 @@ test("preserves removed publisher records without dead outbound links", async ({
     await expect(page.getByRole("link", { name: /Read the original/ })).toHaveCount(0);
     await expect(page.locator('meta[name="description"]')).not.toHaveAttribute("content", /Read the original/);
     await expect(page.getByRole("heading", { name: "Publisher feed status" })).toBeVisible();
+    if (record.url === "https://cohere.com/blog/ai-in-oil-and-gas") {
+      await expect(page.getByText("Oil and gas companies leverage generative AI to boost productivity, optimize predictive maintenance, and enhance worker safety.", { exact: true })).toBeVisible();
+      const metadata = await page.locator('script[type="application/ld+json"]').allTextContents();
+      expect(metadata.some((value) => JSON.parse(value).isBasedOn === record.url)).toBe(true);
+    }
   }
+});
+
+test("a missing Cohere page does not disable other Cohere source links", async ({ page }) => {
+  await page.goto("/article/23a2beb8-c347-5dd1-8c31-89e2bee95a8c/");
+  await expect(page.getByRole("link", { name: "Read the original on cohere.com", exact: true })).toHaveAttribute("href", "https://cohere.com/blog/embed-5");
+  await expect(page.getByText("Source unavailable", { exact: true })).toHaveCount(0);
 });
 
 test("saved cards retain missing-source records without linking to removed pages", async ({ page }) => {
@@ -223,12 +240,13 @@ test("saved cards retain missing-source records without linking to removed pages
     localStorage.setItem("ai-news-saved", JSON.stringify([
       "e04aca47-64ae-4a1f-a7f5-b0eda5ca198d",
       "48123fe1-c0b4-46f3-97d5-51f0c1ad13c0",
+      "e4fb6b08-0233-54a1-8c6e-6cfb429c0299",
     ]));
   });
   await page.goto("/");
   await expect.poll(async () => page.locator('astro-island[component-url*="ArticlesIslandWrapper"]').evaluate((element) => !element.hasAttribute("ssr"))).toBe(true);
   await page.getByRole("group", { name: "Filter by read state" }).getByRole("button", { name: /^Saved/ }).click();
-  for (const id of ["e04aca47-64ae-4a1f-a7f5-b0eda5ca198d", "48123fe1-c0b4-46f3-97d5-51f0c1ad13c0"]) {
+  for (const id of ["e04aca47-64ae-4a1f-a7f5-b0eda5ca198d", "48123fe1-c0b4-46f3-97d5-51f0c1ad13c0", "e4fb6b08-0233-54a1-8c6e-6cfb429c0299"]) {
     const card = page.locator(`article[data-article-id="${id}"]`);
     await expect(card).toBeVisible();
     await expect(card.getByText("Source unavailable", { exact: true })).toBeVisible();
