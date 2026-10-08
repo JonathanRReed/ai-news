@@ -1,8 +1,68 @@
 [
   {
+    "id": "d2aa2dc7-9202-54b2-a636-8313e0521b3b",
+    "company": "Hermes Agent",
+    "title": "Hermes Agent v0.21.6",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.21.6",
+    "published_at": "2026-10-08T11:51:57+00:00",
+    "source_type": "rss_official",
+    "summary": "Hermes Agent v0.21.6 Release Date: October 8, 2026 Patch release. This tag rolls up the ~2,100 PRs merged since v0.21.5 into a stable tagged release for Docker and Hermes Cloud. Full curated notes for this window ship with v0.22.0. About this release This is the first release cut by the new stable release pipeline: one attempt ref, a tested Docker image, and a receipt tag at publish. It ships the tag, this GitHub release and the Docker image. The desktop app, Termux packages and the...",
+    "content": "Hermes Agent v0.21.6 Release Date: October 8, 2026 Patch release. This tag rolls up the ~2,100 PRs merged since v0.21.5 into a stable tagged release for Docker and Hermes Cloud. Full curated notes for this window ship with v0.22.0. About this release This is the first release cut by the new stable release pipeline: one attempt ref, a tested Docker image, and a receipt tag at publish. It ships the tag, this GitHub release and the Docker image. The desktop app, Termux packages and the Microsoft Store stay on their current build for now and move with the next bundled release. Measured at commit 818c13be1dc4fd28987e1e881a9408224afd4535 , the window since v0.21.5 contains 8,867 non-merge commits across 8,342 changed files (+772,490 / −225,600), 2,106 merged PRs and 3,027 closed issues . Also in the window, undocumented here on purpose: live transcription while you speak on CLI, TUI and Desktop ( stt.streaming ); spoken voice turns routed to their own model ( auxiliary.voice_chat ) with reasoning off by default; third-party plugins running in a per-profile plugin host ( plugins.isolation: host ) and one Settings ▸ Plugins home for their settings pages; favorite and pinned models at the top of the Desktop picker, a usage chip before a subscription hits its wall, and rate-limited providers that say why and until when; local models in hermes model plus llama.cpp CUDA on Linux x64 and arm64; pluggable, layered language packs across core, Desktop and TUI; a summary-first hermes status ( --short , --full ); a review-pane diff scope selector (Uncommitted / Branch / Last turn) and keep-awake that follows the turn; cron, doctor and home-channel warnings when the cron store goes unwritable; approval flags for credential uploads and invisible Unicode in terminal commands; a Discord setup that checks the bot token and prints the invite link; a unified Kanban workflow definition; activate.fish ; GPT-6.1 Sol and Claude Sonnet 5.5 / Haiku 5.5 in the catalogs; and dozens of new community plugins. Full curated release notes for this window ship with v0.22.0 , which will document everything from v0.21.0 onward — highlights, feature areas, and complete contributor credits. Nothing in this window is skipped. Updating Docker / Hermes Cloud: nousresearch/hermes-agent:stable (or :latest ). CLI (git installs): hermes update , or re-run the installer one-liner. Desktop app and Termux: no change in this release; they update with the next bundled release. Full Changelog : v2026.9.24...v0.21.6",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
+    "id": "03384004-38d6-5d17-b3d4-2c58d51b1f07",
+    "company": "OpenClaw",
+    "title": "openclaw 2026.9.9",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.9.9",
+    "published_at": "2026-10-08T11:30:51+00:00",
+    "source_type": "rss_official",
+    "summary": "2026.9.9 Highlights GPT-6.1 Sol support: update the managed Codex app-server and its embedded model catalog so native Codex sessions can discover and run GPT-6.1 Sol. ( #161446 , #163560 ) Thanks @IstiqlalBhat , @fuller-stack-dev , @vincentkoc , and @RomneyDa . Safer updates: inspect live WAL ownership without unstable full-database copies and retain published 2026.9.8 updater compatibility. ( #162268 , #163998 ) Thanks @RomneyDa . Responsive background work: reuse the prepared runtime for...",
+    "content": "2026.9.9 Highlights GPT-6.1 Sol support: update the managed Codex app-server and its embedded model catalog so native Codex sessions can discover and run GPT-6.1 Sol. ( #161446 , #163560 ) Thanks @IstiqlalBhat , @fuller-stack-dev , @vincentkoc , and @RomneyDa . Safer updates: inspect live WAL ownership without unstable full-database copies and retain published 2026.9.8 updater compatibility. ( #162268 , #163998 ) Thanks @RomneyDa . Responsive background work: reuse the prepared runtime for Skill Workshop reviews and rooted cron jobs so they no longer stall the Gateway. ( #164049 ) Thanks @RomneyDa . Windows session recovery: bind session creation to the physical SQLite store identity so junction-backed stores publish correctly. ( #162033 ) Thanks @cestercian , @RomneyDa , and @zhyx1996 . Cross-platform reliability: prevent Node process-exit hangs, preserve node work during metadata updates, and restore native Windows workspace and sandbox startup. ( #163788 , #164087 , #164202 , #158303 ) Thanks @paulcam206 and @RomneyDa . Changes No intentional capability changes beyond enabling the already-advertised GPT-6.1 Sol model on the managed Codex runtime. Fixes Codex: ship the 0.160.0 managed app-server, synchronized protocol/catalog metadata, and a package-level regression that requires GPT-6.1 Sol in the bundled native catalog. ( #161446 , #163560 ) Thanks @IstiqlalBhat , @fuller-stack-dev , @vincentkoc , and @RomneyDa . Update and Gateway availability: avoid unstable live-database copies during ownership admission, reuse prepared plugin/runtime facts for rooted work, preserve node work through metadata refreshes, and retain 2026.9.8 first-hop compatibility. ( #162268 , #164049 , #164087 , #163998 ) Thanks @RomneyDa . Windows: restore junction-backed session creation, native empty-workspace initialization, and MXC sandbox readiness and wire compatibility. ( #162033 , #164202 , #158303 ) Thanks @cestercian , @RomneyDa , @zhyx1996 , and @paulcam206 . Delivery and scheduling: restore ordinary iMessage finals, credit Discord thread deliveries, keep Telegram dashboard/control access separate, prevent stale cron cleanup from aborting a later run, and keep queued cancellation from stalling active turns. ( #163742 , #163756 , #161369 , #163704 , #164230 ) Thanks @VACInc , @Kimiyu-186 , @MertBasar0 , @stuart-minion-ai , @mmaps , @joshavant , @jayzhou2309 , @AXEG0 , @vincentkoc , and @RomneyDa . CLI lifecycle: prevent Node 24 and 26 CLI, hook-relay, and Gateway processes from hanging after output. ( #163788 ) Thanks @RomneyDa . Complete contribution record This audited record covers the complete v2026.9.8.. bec0cfd history: 14 in-range PRs + 0 retained seed-only PRs = 14 unique PRs. The generation manifest also supplies direct commits as editorial input; the grouped notes above prioritize user impact. Shipped baseline exclusions: v2026.9.8 (0 PRs). Pull requests PR #161446 Thanks @IstiqlalBhat and @fuller-stack-dev and @RomneyDa . PR #163560 Thanks @vincentkoc and @RomneyDa . PR #163742 Thanks @VACInc and @Kimiyu-186 and @RomneyDa . PR #163788 Thanks @RomneyDa . PR #163704 Related #163568 . Thanks @jayzhou2309 and @RomneyDa and @AXEG0 . PR #158303 Thanks @paulcam206 and @RomneyDa . PR #161369 Thanks @mmaps and @joshavant and @RomneyDa . PR #163756 Related #163724 . Thanks @MertBasar0 and @RomneyDa and @stuart-minion-ai . PR #164087 Thanks @RomneyDa . PR #164202 Thanks @RomneyDa . PR #164230 Thanks @vincentkoc and @RomneyDa . PR #162268 Thanks @RomneyDa . PR #164049 Thanks @RomneyDa . PR #162033 Related #161953 . Thanks @cestercian and @RomneyDa and @zhyx1996 . Release verification npm package: https://www.npmjs.com/package/openclaw/v/2026.9.9 registry tarball: https://registry.npmjs.org/openclaw/-/openclaw-2026.9.9.tgz integrity: sha512-3sB6ejq5smBozfBhVEDfK48wFpbkx+0f6PJ19qZjC3ab3RoFrYO58CnE2mAsbUy8sXdxdBtjQ3vkAqcW9BZXAw== release SHA: bcfc88812a35243893585dbeca87ca41b48272ca full release CI report: https://github.com/openclaw/releases/blob/main/evidence/2026.9.9/release-evidence.md release publish: https://github.com/openclaw/openclaw/actions/runs/37760358165 npm preflight: https://github.com/openclaw/openclaw/actions/runs/37737494191 full release validation: https://github.com/openclaw/openclaw/actions/runs/37736976027 plugin npm publish: https://github.com/openclaw/openclaw/actions/runs/37761210573 plugin ClawHub publish: no normal OIDC candidates plugin ClawHub bootstrap: not needed OpenClaw npm publish: https://github.com/openclaw/openclaw/actions/runs/37755950239/attempts/1 Telegram integration checks: waived by the release owner for 2026.9.9 (source QA, Package Acceptance, published-package E2E); not run. Android APK: skipped — apps/android/version.json is 2026.8.2, release train is 2026.9.9; run pnpm android:version:pin -- --from-gateway before the next tag.",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
+  },
+  {
+    "id": "8f4bc747-5806-5940-ba73-9589bd413925",
+    "company": "Hermes Agent",
+    "title": "rc.4-v0.21.6",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/rc.4-v0.21.6",
+    "published_at": "2026-10-08T10:42:00+00:00",
+    "source_type": "rss_official",
+    "summary": "{\"attempt\":4,\"autopublish\":false,\"claimEpoch\":1791456120,\"commit\":\"81…",
+    "content": "{\"attempt\":4,\"autopublish\":false,\"claimEpoch\":1791456120,\"commit\":\"81…",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
+    "id": "c9a6ae7e-4fd2-57ba-a06d-ce03267cf49a",
+    "company": "Hermes Agent",
+    "title": "rc.3-v0.21.6",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/rc.3-v0.21.6",
+    "published_at": "2026-10-08T09:01:28+00:00",
+    "source_type": "rss_official",
+    "summary": "{\"attempt\":3,\"autopublish\":false,\"claimEpoch\":1791450088,\"commit\":\"02…",
+    "content": "{\"attempt\":3,\"autopublish\":false,\"claimEpoch\":1791450088,\"commit\":\"02…",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
+    "id": "45692ba1-2903-51de-aac5-365943408a45",
+    "company": "Hermes Agent",
+    "title": "v0.21.5+canary.20261008T070449Z",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.21.5%2Bcanary.20261008T070449Z",
+    "published_at": "2026-10-08T07:04:50+00:00",
+    "source_type": "rss_official",
+    "summary": "Hermes Agent canary 20261008T070449Z",
+    "content": "Hermes Agent canary 20261008T070449Z",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
     "id": "a597ba94-d2e5-58bd-8092-665b761542fe",
     "company": "Codex CLI",
-    "title": "rust-v0.162.0-alpha.17.2",
+    "title": "0.162.0-alpha.17.2",
     "url": "https://github.com/openai/codex/releases/tag/rust-v0.162.0-alpha.17.2",
     "published_at": "2026-10-08T06:23:40+00:00",
     "source_type": "rss_official",
@@ -10,6 +70,18 @@
     "content": "Release 0.162.0-alpha.17.2",
     "source_url": "https://github.com/openai/codex/releases.atom",
     "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "1039f495-5017-5332-884a-bf133646b562",
+    "company": "OpenClaw",
+    "title": "release-publish/2b988ee83444-1791449196",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/release-publish%2F2b988ee83444-1791449196",
+    "published_at": "2026-10-08T06:16:36+00:00",
+    "source_type": "rss_official",
+    "summary": "perf(projects): avoid display refresh stalls in project recents ( #166 …",
+    "content": "perf(projects): avoid display refresh stalls in project recents ( #166 …",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
   },
   {
     "id": "42616099-4a61-5f62-8199-7480eaf3c7ed",
@@ -26,12 +98,12 @@
   {
     "id": "26b8a620-c303-54b9-92e4-a4507db9fe3d",
     "company": "Cline",
-    "title": "desktop-v0.0.45",
+    "title": "Desktop v0.0.45",
     "url": "https://github.com/cline/cline/releases/tag/desktop-v0.0.45",
     "published_at": "2026-10-08T05:58:09+00:00",
     "source_type": "rss_official",
-    "summary": "Desktop v0.0.45",
-    "content": "Desktop v0.0.45",
+    "summary": "SSH remotes start again. Since 0.0.38, connecting to an SSH environment failed with SyntaxError: Invalid character On SSH environments, the git branch label no longer opens two new SSH logins every 5 seconds. It checks every 30 seconds now, and switching branches from the picker still updates it right away Long model names in the composer show in full when the row has room, and only truncate when it runs out Turning reasoning off no longer fails with a 400 error on GPT-6 Astra, GPT-6.1 Sol,...",
+    "content": "SSH remotes start again. Since 0.0.38, connecting to an SSH environment failed with SyntaxError: Invalid character On SSH environments, the git branch label no longer opens two new SSH logins every 5 seconds. It checks every 30 seconds now, and switching branches from the picker still updates it right away Long model names in the composer show in full when the row has room, and only truncate when it runs out Turning reasoning off no longer fails with a 400 error on GPT-6 Astra, GPT-6.1 Sol, Claude Fable 5 or Claude Opus 5.5 The background service no longer crashes about 3 seconds after an MCP server or hook quits before reading all of its input Settings migrated from the VS Code extension no longer add an empty SAP AI Core provider Refreshed the model catalog. Adds Claude Haiku 5.5. Default models change for Google Vertex AI (Claude Sonnet 5.5 → Claude Haiku 5.5), Cortecs, DevPass (LLM Gateway), Eden AI, GitHub Copilot, LLM Gateway, NanoGPT, OpenCode Go, Requesty, and Vivgrid (most now Claude Haiku 5.5) Full Changelog : desktop-v0.0.44...desktop-v0.0.45",
     "source_url": "https://github.com/cline/cline/releases.atom",
     "source_key": "cline-releases"
   },
