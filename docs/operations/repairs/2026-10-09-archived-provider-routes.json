@@ -117,5 +117,6 @@
       "source_commit": "6767e95511c3789627029599ea22a25f55fbac99",
       "record_sha256": "4c8ce85c5bda58f2fa653c7e1b1df6d59fc3ea766fe0c1708e93181e30e9d1d5"
     }
-  ]
+  ],
+  "digest_scope": "SHA-256 of the restored JSON metadata-and-summary projection, with original property order. Historical full content is intentionally omitted, matching the existing archive format; this is not a digest of the entire historical raw record."
 }

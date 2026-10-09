@@ -5,7 +5,7 @@ import provenance from '../../docs/operations/repairs/2026-10-09-archived-provid
 import { verifyLegacyArticleRecords } from './verify-routes.mjs';
 
 describe('historical provider routes lost during feed rotation', () => {
-  test.each(provenance.records)('preserves $id with its original source record', ({ id, record_sha256 }) => {
+  test.each(provenance.records)('preserves $id with its original archived metadata and summary', ({ id, record_sha256 }) => {
     const matches = records.filter((record) => record.id === id);
     expect(matches).toHaveLength(1);
     const record = matches[0];
