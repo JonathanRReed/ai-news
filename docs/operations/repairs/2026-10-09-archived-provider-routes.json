@@ -1,0 +1,122 @@
+{
+  "restored_at": "2026-10-09",
+  "reason": "Historical provider cache rotation removed published records; restore original routes with the existing archived-record presentation.",
+  "records": [
+    {
+      "id": "provider-57a1ccb589459feecc",
+      "source_commit": "1e28e04db8809461feaf5c16e3a3a765fa59774b",
+      "record_sha256": "01e15b30c9c688e99214712a60755a02e1b37541c19d029f182909f66076cacd"
+    },
+    {
+      "id": "provider-657aea0aee164a15f4",
+      "source_commit": "9c83d47f56636671f9451272aa0b745f113979e0",
+      "record_sha256": "607f5651d6111c3c39ff6b2a869b06c6bb593c51551f6a58c67e73a3c1373e0a"
+    },
+    {
+      "id": "provider-bf30f7b095456c562b",
+      "source_commit": "a352487b5cc4ec9f1e345467650ef4488a1a0b11",
+      "record_sha256": "66caef2eefad61d5ebb6380397edb186334cc582511e443a6817f1049b8036d1"
+    },
+    {
+      "id": "provider-ce2fcb2078931d7b86",
+      "source_commit": "a352487b5cc4ec9f1e345467650ef4488a1a0b11",
+      "record_sha256": "9ba17f9edd1bf6cdd8bb5baa45d2e89245068262152129d7f7a94b7e96a7bd81"
+    },
+    {
+      "id": "provider-a89005ee78562e1992",
+      "source_commit": "a352487b5cc4ec9f1e345467650ef4488a1a0b11",
+      "record_sha256": "4b903682875255b824e48ef2dc738ac6b415dfd46baaa4a56c50cb5ba1afbbe6"
+    },
+    {
+      "id": "provider-d7726a6f1058b0e017",
+      "source_commit": "a352487b5cc4ec9f1e345467650ef4488a1a0b11",
+      "record_sha256": "d7d62a678eba221c7f48e3c79b020739b1775b7e284123fee5a52315978023e6"
+    },
+    {
+      "id": "provider-2aa8bd9a078c1c5c8b",
+      "source_commit": "a352487b5cc4ec9f1e345467650ef4488a1a0b11",
+      "record_sha256": "4311e067dac9d360136b0d616200bcbbf54fdb6e8e974f03d5eef385d613efaf"
+    },
+    {
+      "id": "provider-eb50d11a60d7fe6b46",
+      "source_commit": "4dff6d46b6f7b39ea24c80ffad09afbe34805380",
+      "record_sha256": "97073fe46e8c15461f2f49d0302656641b6c52eee8a0d20827f513fad3bcc967"
+    },
+    {
+      "id": "provider-ed529d92ad7d77e711",
+      "source_commit": "4dff6d46b6f7b39ea24c80ffad09afbe34805380",
+      "record_sha256": "c4255c54c1ad521e89aa029768b4b0d98f3d4734756b42014e4c157a88c44511"
+    },
+    {
+      "id": "provider-60e51c09049492ded1",
+      "source_commit": "4dff6d46b6f7b39ea24c80ffad09afbe34805380",
+      "record_sha256": "6a11ac5ee035d5e60b6c90e997eb83315beb33d686a70a187fd9c585bd22b87f"
+    },
+    {
+      "id": "provider-44ea9d8c739ccb8d6c",
+      "source_commit": "5705b5dc701be42f955af968d459e03d803b81df",
+      "record_sha256": "30d2ad6c88aab547f76601e1cbf91f7c422e2fe5f03c7ef5179b65da6347f403"
+    },
+    {
+      "id": "provider-94f0787623f6db870e",
+      "source_commit": "5705b5dc701be42f955af968d459e03d803b81df",
+      "record_sha256": "ac142b67bb64273e5929c8d2353a0d10d457bfc32cc4542a479d41ced1111507"
+    },
+    {
+      "id": "provider-32f859c39373075e97",
+      "source_commit": "44dfa69998fc122dd7117b04aa001e8e0efefc1d",
+      "record_sha256": "d32e315eb74d4ebc2cfd6a2a769ebbfd83165991f75309fb0682a7cbd355896d"
+    },
+    {
+      "id": "provider-aa78e39ed0b22146e1",
+      "source_commit": "513d56a6ac72000821f49e94a21defe58c7945ef",
+      "record_sha256": "e93d42655d315aac509b4a1dba42f4d82e1880a058c30f216c19dc113627f937"
+    },
+    {
+      "id": "provider-3f46a91e91bb6416a8",
+      "source_commit": "513d56a6ac72000821f49e94a21defe58c7945ef",
+      "record_sha256": "99fc5ba92dde03ad6a2c2a3fa1520e41580d0d99e60894a92f9cf9cb6312cf4f"
+    },
+    {
+      "id": "provider-23377ac17e155e5482",
+      "source_commit": "474a160367e87bfff8a2418c34c1dab5eab7fd47",
+      "record_sha256": "788511cb16e5dc7394b973ca19ee0d0a9b720c07b5320429655999f74cce34b1"
+    },
+    {
+      "id": "provider-f57d330952579e06c9",
+      "source_commit": "474a160367e87bfff8a2418c34c1dab5eab7fd47",
+      "record_sha256": "f74ccabe048ea172901ba676261ac5224077597719cc1ec515c238246d60c118"
+    },
+    {
+      "id": "provider-430a664b11bec0c282",
+      "source_commit": "0f253b2586c05bc100c9374e0486336526de6794",
+      "record_sha256": "fc95d5520c30ae006687cd4e408259227b9958dce54cba7dbbdab865de725708"
+    },
+    {
+      "id": "provider-52ec83bfebdc75a47d",
+      "source_commit": "2edc81dfea6ff8170bab4501dfee1642551ecfff",
+      "record_sha256": "572efaccf83522b87dbb957c6aff94a1deeb62ac73c31a6561b4d449026a8a5f"
+    },
+    {
+      "id": "provider-78013f6b822debcc61",
+      "source_commit": "743cbdbee30fc8837a89c3328b024c310534f3f2",
+      "record_sha256": "c1c6135d0f6221f1e3110bd297573fc48578127e23a4950902660bd9b898b432"
+    },
+    {
+      "id": "provider-5873aae836699b36d4",
+      "source_commit": "fe2909d0db6203fac03b9a408c0284e92f344071",
+      "record_sha256": "0f3466bfe0eafb9fc5a06910c4493ec94a543b7679a1fbda91f767488b7ac361"
+    },
+    {
+      "id": "provider-da0ebd58290ec4688d",
+      "source_commit": "6767e95511c3789627029599ea22a25f55fbac99",
+      "record_sha256": "42112468bfb9b6f74e08133c8850f2e83c8e2d25c33892f6e0cfd566f7d7393c"
+    },
+    {
+      "id": "provider-16c947376356e20ee3",
+      "source_commit": "6767e95511c3789627029599ea22a25f55fbac99",
+      "record_sha256": "4c8ce85c5bda58f2fa653c7e1b1df6d59fc3ea766fe0c1708e93181e30e9d1d5"
+    }
+  ],
+  "digest_scope": "SHA-256 of the restored JSON metadata-and-summary projection, with original property order. Historical full content is intentionally omitted, matching the existing archive format; this is not a digest of the entire historical raw record."
+}
