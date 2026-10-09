@@ -1,5 +1,41 @@
 [
   {
+    "id": "7eb7deba-56d8-5f3f-ad06-ac54544b1d5c",
+    "company": "Codex CLI",
+    "title": "rust-v0.163.0-alpha.4",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.163.0-alpha.4",
+    "published_at": "2026-10-09T11:37:20+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.163.0-alpha.4",
+    "content": "Release 0.163.0-alpha.4",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "2254624c-95c6-5e26-901c-863d050f47d6",
+    "company": "Hermes Agent",
+    "title": "v0.21.6+canary.20261009T070410Z",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.21.6%2Bcanary.20261009T070410Z",
+    "published_at": "2026-10-09T07:04:11+00:00",
+    "source_type": "rss_official",
+    "summary": "Hermes Agent canary 20261009T070410Z",
+    "content": "Hermes Agent canary 20261009T070410Z",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
+    "id": "705fdfc5-0a07-572c-a1dd-e0769d0e7a88",
+    "company": "OpenAI",
+    "title": "Sophos cuts threat investigation time by 96% with OpenAI Daybreak",
+    "url": "https://openai.com/index/sophos",
+    "published_at": "2026-10-09T07:00:00+00:00",
+    "source_type": "rss_official",
+    "summary": "Discover how Sophos uses OpenAI’s Daybreak to cut cyber-threat investigation time by 96% and automate 52% of MDR cases while preserving human oversight.",
+    "content": "Discover how Sophos uses OpenAI’s Daybreak to cut cyber-threat investigation time by 96% and automate 52% of MDR cases while preserving human oversight.",
+    "source_url": "https://openai.com/news/rss.xml",
+    "source_key": "openai-news"
+  },
+  {
     "id": "d3818f97-ac51-59a4-b5bb-1f1c59263633",
     "company": "Hermes Agent",
     "title": "rc.5-v0.21.7",
