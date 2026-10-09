@@ -310,6 +310,16 @@
     "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
+    "id": "provider-16c947376356e20ee3",
+    "company": "NVIDIA AI",
+    "title": "NVIDIA BioNeMo Agent Toolkit Brings Accelerated AI to Life Sciences Researchers in Claude Science",
+    "url": "https://blogs.nvidia.com/blog/claude-science-bionemo-agent-toolkit/",
+    "published_at": "2026-06-30T17:00:38.000Z",
+    "source_type": "rss_official",
+    "summary": "Life sciences has entered an era of computational scale, and for more than a decade, NVIDIA has built the full GPU-accelerated computing stack — spanning hardware, frameworks, libraries, models, microservices and domain-specific tools — to help researchers run more sophisticated workflows and iterate faster. This week, Anthropic announced Claude Science, an AI workbench for science […]",
+    "source_url": "https://blogs.nvidia.com/feed/"
+  },
+  {
     "id": "provider-1769eef911eb51d334",
     "company": "Amazon AI",
     "title": "AWS vector solutions: Build agentic AI where your data lives",
@@ -450,6 +460,16 @@
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
+    "id": "provider-23377ac17e155e5482",
+    "company": "Amazon AI",
+    "title": "Introducing Web Search on Amazon Bedrock for foundation model grounding",
+    "url": "https://aws.amazon.com/blogs/machine-learning/introducing-web-search-on-amazon-bedrock-for-foundation-model-grounding/",
+    "published_at": "2026-08-04T18:39:14.000Z",
+    "source_type": "rss_official",
+    "summary": "Today, we are introducing the general availability of Web Search on Amazon Bedrock. It is a server-side built-in tool that grounds model responses in current web knowledge. With Web Search, grounding becomes a native capability of Amazon Bedrock, with no third-party vendors to onboard, no external APIs to orchestrate, and no additional third party vendor security reviews to conduct. In this post, we walk through what Web Search on Amazon Bedrock is, why it matters, how to enable it using the Ope",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
     "id": "provider-24f61f475dbd0f55ee",
     "company": "NVIDIA AI",
     "title": "NVIDIA Vera Rubin POD: Seven Chips, Five Rack-Scale Systems, One AI Supercomputer",
@@ -560,6 +580,16 @@
     "source_url": "https://huggingface.co/blog/feed.xml"
   },
   {
+    "id": "provider-2aa8bd9a078c1c5c8b",
+    "company": "Amazon AI",
+    "title": "Part 2: Amazon Bedrock cost attribution with Amazon Athena and CUDOS",
+    "url": "https://aws.amazon.com/blogs/machine-learning/part-2-amazon-bedrock-cost-attribution-with-amazon-athena-and-cudos/",
+    "published_at": "2026-08-12T17:45:20.000Z",
+    "source_type": "rss_official",
+    "summary": "Learn how to visualize and analyze Amazon Bedrock cost attribution using Amazon Athena and CUDOS dashboards. This post shows how to set up CUR 2.0 with IAM principal data, query Bedrock spend by principal, project, and team, and build dashboards to track AI costs across your organization.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
     "id": "provider-2af0f9bb5af6ee2be9",
     "company": "OpenAI",
     "title": "Our approach to government and national security partnerships",
@@ -628,6 +658,16 @@
     "source_type": "rss_official",
     "summary": "",
     "source_url": "https://research.ibm.com/rss"
+  },
+  {
+    "id": "provider-32f859c39373075e97",
+    "company": "Amazon AI",
+    "title": "Agent Skills for Automated Reasoning policies in Amazon Bedrock",
+    "url": "https://aws.amazon.com/blogs/machine-learning/agent-skills-for-automated-reasoning-policies-in-amazon-bedrock/",
+    "published_at": "2026-08-06T16:12:24.000Z",
+    "source_type": "rss_official",
+    "summary": "Learn how to run the full Amazon Bedrock Automated Reasoning policy lifecycle from your coding agent. A suite of open source Agent Skills builds, reviews, tests, debugs, deploys, and validates a custom policy end to end, turning a specialized console task into a repeatable engineering workflow.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
   },
   {
     "id": "provider-3310bc9491a42df8e5",
@@ -800,6 +840,16 @@
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
+    "id": "provider-3f46a91e91bb6416a8",
+    "company": "Amazon AI",
+    "title": "How we built an MCP bridge to give our AgentCore-hosted AI agent access to local MCP tools",
+    "url": "https://aws.amazon.com/blogs/machine-learning/how-we-built-an-mcp-bridge-to-give-our-agentcore-hosted-ai-agent-access-to-local-mcp-tools/",
+    "published_at": "2026-08-05T18:02:23.000Z",
+    "source_type": "rss_official",
+    "summary": "AI agents on Amazon Bedrock AgentCore run in the cloud, but users' tools and files live on their laptops. Learn how to build a secure MCP bridge that lets a cloud-hosted agent call local MCP servers by tunneling signed messages over the existing WebSocket connection through a browser extension and Chrome native messaging, with no open ports or VPN required.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
     "id": "provider-4297cfaff65a1b20ab",
     "company": "Hugging Face",
     "title": "Multimodal Embedding & Reranker Models with Sentence Transformers",
@@ -808,6 +858,16 @@
     "source_type": "rss_official",
     "summary": "",
     "source_url": "https://huggingface.co/blog/feed.xml"
+  },
+  {
+    "id": "provider-430a664b11bec0c282",
+    "company": "Amazon AI",
+    "title": "Optimizing production agents with Amazon Bedrock AgentCore Observability",
+    "url": "https://aws.amazon.com/blogs/machine-learning/optimizing-production-agents-with-amazon-bedrock-agentcore-observability/",
+    "published_at": "2026-07-31T15:33:11.000Z",
+    "source_type": "rss_official",
+    "summary": "As your AI agents move from prototype to production, the challenge shifts from getting them to work to keeping them fast and efficient. Learn how to use Amazon Bedrock AgentCore Observability and Amazon CloudWatch to find performance bottlenecks and diagnose memory issues in long-running agent sessions.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
   },
   {
     "id": "provider-43ecb7ebe03aa00850",
@@ -858,6 +918,16 @@
     "source_type": "rss_official",
     "summary": "",
     "source_url": "https://huggingface.co/blog/feed.xml"
+  },
+  {
+    "id": "provider-44ea9d8c739ccb8d6c",
+    "company": "Amazon AI",
+    "title": "How Pixieset achieved 35% AI feature adoption by solving the right problem with Amazon Bedrock",
+    "url": "https://aws.amazon.com/blogs/machine-learning/how-pixieset-achieved-35-ai-feature-adoption-by-solving-the-right-problem-with-amazon-bedrock/",
+    "published_at": "2026-08-11T16:11:15.000Z",
+    "source_type": "rss_official",
+    "summary": "Photographers are among the most skeptical audiences for generative AI. Learn how Pixieset used Amazon Bedrock to launch an AI-generated alt text feature to millions of users in four months, reaching 35% adoption by automating the tedious image SEO work photographers avoid, without touching the creative craft they take pride in.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
   },
   {
     "id": "provider-452721e3ec3a60bb6f",
@@ -1050,6 +1120,16 @@
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
+    "id": "provider-52ec83bfebdc75a47d",
+    "company": "NVIDIA AI",
+    "title": "NVIDIA and Japan Bring Full-Stack AI and Robotics to Every Industry",
+    "url": "https://blogs.nvidia.com/blog/japan-ecosystem-2026/",
+    "published_at": "2026-07-15T10:51:37.000Z",
+    "source_type": "rss_official",
+    "summary": "Home to leading manufacturers, robotics pioneers, infrastructure builders and iconic gaming companies, of course, Japan is one of the world’s centers of AI — building across the full stack with NVIDIA technologies. This week NVIDIA and its partners in Japan are showcasing the AI ecosystem’s latest advancements. Check back here for updates.",
+    "source_url": "https://blogs.nvidia.com/feed/"
+  },
+  {
     "id": "provider-530a77f8d1506f882a",
     "company": "NVIDIA AI",
     "title": "Save Big and Play Bigger: GeForce NOW Summer Sale Brings Major Membership Savings",
@@ -1110,6 +1190,16 @@
     "source_url": "https://deepmind.google/blog/rss.xml"
   },
   {
+    "id": "provider-57a1ccb589459feecc",
+    "company": "Amazon AI",
+    "title": "Preserving the privacy of AI training data",
+    "url": "https://www.amazon.science/blog/preserving-the-privacy-of-ai-training-data",
+    "published_at": "2026-04-29T17:59:07.000Z",
+    "source_type": "rss_official",
+    "summary": "How we reproduced three attacks that extract private training data from AI models and the cryptographic defenses that stop them.",
+    "source_url": "https://www.amazon.science/index.rss"
+  },
+  {
     "id": "provider-585dc69b82b200d60d",
     "company": "Amazon AI",
     "title": "Extract Data with On-demand and Batch Pipelines Dynamically",
@@ -1118,6 +1208,16 @@
     "source_type": "rss_official",
     "summary": "This post demonstrates an intelligent document processing pipeline that consists of both on-demand inference and batch inference options on Amazon Bedrock to enable the flexibility on the document processing time and cost.",
     "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
+    "id": "provider-5873aae836699b36d4",
+    "company": "NVIDIA AI",
+    "title": "Winning a Kaggle Competition with Generative AI–Assisted Coding",
+    "url": "https://developer.nvidia.com/blog/winning-a-kaggle-competition-with-generative-ai-assisted-coding/",
+    "published_at": "2026-04-23T20:15:02.000Z",
+    "source_type": "rss_official",
+    "summary": "In March 2026, three LLM agents generated over 600,000 lines of code, ran 850 experiments, and helped secure a first-place finish in a Kaggle playground...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
     "id": "provider-590aeb1533510dfb12",
@@ -1220,6 +1320,16 @@
     "source_url": "https://research.ibm.com/rss"
   },
   {
+    "id": "provider-60e51c09049492ded1",
+    "company": "Amazon AI",
+    "title": "How ONESTRUCTION built the Ishigaki-IDS foundation model with AWS GenAIIC",
+    "url": "https://aws.amazon.com/blogs/machine-learning/how-onestruction-built-the-ishigaki-ids-foundation-model-with-aws-genaiic/",
+    "published_at": "2026-08-11T16:14:33.000Z",
+    "source_type": "rss_official",
+    "summary": "ONESTRUCTION, with technical advisory from the AWS Generative AI Innovation Center, built Ishigaki-IDS, a foundation model specialized for construction and BIM workflows. This architectural case study shows how they combined synthetic data, a three-stage training pipeline, and verifiable rewards on Amazon EC2 to build a domain model in a data-scarce field.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
     "id": "provider-61883c97ea030fce58",
     "company": "Amazon AI",
     "title": "New in Amazon Bedrock AgentCore: Build agents with broader knowledge and continuous learning",
@@ -1288,6 +1398,16 @@
     "source_type": "rss_official",
     "summary": "",
     "source_url": "https://research.ibm.com/rss"
+  },
+  {
+    "id": "provider-657aea0aee164a15f4",
+    "company": "Amazon AI",
+    "title": "Implement vector-prompt document classification using Amazon Bedrock",
+    "url": "https://aws.amazon.com/blogs/machine-learning/implement-vector-prompt-document-classification-using-amazon-bedrock/",
+    "published_at": "2026-08-18T17:10:37.000Z",
+    "source_type": "rss_official",
+    "summary": "Learn how to build a multi-agent document classification solution on Amazon Bedrock using the Strands Agents SDK. Three specialized agents combine textual analysis with Claude Haiku 4.5 and visual similarity search with Amazon Titan Multimodal Embeddings to accurately classify insurance documents such as policies and affidavits.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
   },
   {
     "id": "provider-6974e0b50fe27d773f",
@@ -1458,6 +1578,16 @@
     "source_type": "rss_official",
     "summary": "See how top researchers used IBM Quantum Credits to develop new methods that extend today’s quantum hardware.",
     "source_url": "https://research.ibm.com/rss"
+  },
+  {
+    "id": "provider-78013f6b822debcc61",
+    "company": "NVIDIA AI",
+    "title": "Speed Up Unreal Engine NNE Inference with NVIDIA TensorRT for RTX Runtime",
+    "url": "https://developer.nvidia.com/blog/speed-up-unreal-engine-nne-inference-with-nvidia-tensorrt-for-rtx-runtime/",
+    "published_at": "2026-04-30T17:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Neural network techniques are increasingly used in computer graphics to boost image quality, improve performance, and streamline content creation. Approaches...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/"
   },
   {
     "id": "provider-791d372451dd178b87",
@@ -1810,6 +1940,16 @@
     "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
   },
   {
+    "id": "provider-94f0787623f6db870e",
+    "company": "Amazon AI",
+    "title": "First Orion accelerates QA automation using Amazon Nova Act",
+    "url": "https://aws.amazon.com/blogs/machine-learning/first-orion-accelerates-qa-automation-using-amazon-nova-act/",
+    "published_at": "2026-08-11T16:09:06.000Z",
+    "source_type": "rss_official",
+    "summary": "Learn how First Orion, a branded communications company, shifted from brittle script-based UI testing to AI-driven QA automation with Amazon Nova Act. By describing tests in plain English instead of maintaining selector-based code, they cut QA cycle times, freed engineering capacity, and caught regressions earlier.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
     "id": "provider-950caa79948d4d0f9a",
     "company": "OpenAI",
     "title": "Patch the Planet: a Daybreak initiative to support open source maintainers",
@@ -2090,6 +2230,16 @@
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
+    "id": "provider-a89005ee78562e1992",
+    "company": "Amazon AI",
+    "title": "Accelerating M&A due diligence with Amazon Bedrock AgentCore",
+    "url": "https://aws.amazon.com/blogs/machine-learning/accelerating-ma-due-diligence-with-amazon-bedrock-agentcore/",
+    "published_at": "2026-08-13T15:52:44.000Z",
+    "source_type": "rss_official",
+    "summary": "Learn how to build a multi-agent M&A due diligence system on Amazon Bedrock AgentCore. This post walks through a reference architecture that combines agent orchestration, knowledge retrieval, and governance controls, then deploys a complete sample you can run in your own AWS account.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
     "id": "provider-a8a48c3b3b70188786",
     "company": "OpenAI",
     "title": "New usage analytics and updated spend controls for enterprises",
@@ -2098,6 +2248,16 @@
     "source_type": "rss_official",
     "summary": "OpenAI introduces new spend controls and usage analytics for ChatGPT Enterprise, helping organizations manage costs and scale AI with confidence.",
     "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-aa78e39ed0b22146e1",
+    "company": "Amazon AI",
+    "title": "How LendingTree built a multi-agent mortgage assistant on Amazon Bedrock",
+    "url": "https://aws.amazon.com/blogs/machine-learning/how-lendingtree-built-a-multi-agent-mortgage-assistant-on-amazon-bedrock/",
+    "published_at": "2026-08-05T18:50:02.000Z",
+    "source_type": "rss_official",
+    "summary": "Learn how LendingTree built a production multi-agent mortgage assistant on Amazon Bedrock. Three coordinated agents use LangGraph, the Model Context Protocol, and Amazon Nova models with built-in guardrails to deliver 24/7 personalized mortgage guidance while meeting strict financial-services compliance.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
   },
   {
     "id": "provider-aad1d0a16447fa7a53",
@@ -2380,6 +2540,16 @@
     "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
   },
   {
+    "id": "provider-bf30f7b095456c562b",
+    "company": "Amazon AI",
+    "title": "Custom reward functions for multi-turn reinforcement learning with Amazon Nova Forge",
+    "url": "https://aws.amazon.com/blogs/machine-learning/custom-reward-functions-for-multi-turn-reinforcement-learning-with-amazon-nova-forge/",
+    "published_at": "2026-08-14T16:02:10.000Z",
+    "source_type": "rss_official",
+    "summary": "In multi-turn reinforcement learning, your custom reward function decides what the model actually learns. This post shows how to design a composite multi-turn reward for Amazon Nova Forge, execute model-generated code safely inside it, and instrument each component to catch the pitfalls that quietly collapse a reward.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
     "id": "provider-bf90df5182593ffa4a",
     "company": "Amazon AI",
     "title": "How OneAdvanced deployed over 50 AI agents on UK-sovereign AWS",
@@ -2630,6 +2800,16 @@
     "source_url": "https://openai.com/news/rss.xml"
   },
   {
+    "id": "provider-ce2fcb2078931d7b86",
+    "company": "Amazon AI",
+    "title": "Monitor on-premises and multi-cloud AI agents with AgentCore Observability",
+    "url": "https://aws.amazon.com/blogs/machine-learning/monitor-on-premises-and-multi-cloud-ai-agents-with-agentcore-observability/",
+    "published_at": "2026-08-13T16:02:10.000Z",
+    "source_type": "rss_official",
+    "summary": "Set up Amazon Bedrock AgentCore Observability for AI agents running outside AWS: on-premises, on GCP, on Azure, or on developer machines. This walkthrough uses the AWS Distro for OpenTelemetry (ADOT) and IAM credentials to route session traces, span metrics, and token usage to the same AgentCore Observability dashboard.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
     "id": "provider-ceb8405acea36991ed",
     "company": "IBM Research",
     "title": "MIT and IBM renew their research collaboration",
@@ -2750,6 +2930,16 @@
     "source_url": "https://blogs.nvidia.com/feed/"
   },
   {
+    "id": "provider-d7726a6f1058b0e017",
+    "company": "Amazon AI",
+    "title": "Amazon Quick for Microsoft 365: Agentic AI where you work",
+    "url": "https://aws.amazon.com/blogs/machine-learning/amazon-quick-for-microsoft-365-agentic-ai-where-you-work/",
+    "published_at": "2026-08-13T15:48:15.000Z",
+    "source_type": "rss_official",
+    "summary": "Amazon Quick is now available directly inside Microsoft Word, Excel, PowerPoint, and Outlook. These extensions bring connected data access and agentic document editing into the Microsoft 365 apps your teams already use, so you can analyze data, draft content, and reach enterprise knowledge without switching applications.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
     "id": "provider-d9be611d91ace95acc",
     "company": "Amazon AI",
     "title": "Built from the inside out: How AWS Professional Services became a frontier team first",
@@ -2777,6 +2967,16 @@
     "published_at": "2026-07-08T15:00:27.000Z",
     "source_type": "rss_official",
     "summary": "NVIDIA Nemotron 3 Ultra is offering leading performance at lower cost than top closed models with the largest and most widely adopted AI agent orchestration platform. LangChain tuned its Deep Agents harness for NVIDIA Nemotron 3 Ultra, achieving the highest accuracy among open models, while completing more tasks at higher throughput and running at 10x […]",
+    "source_url": "https://blogs.nvidia.com/feed/"
+  },
+  {
+    "id": "provider-da0ebd58290ec4688d",
+    "company": "NVIDIA AI",
+    "title": "NVIDIA Unlocks AI Compute at Scale, Inviting Partners to Power the AI Infrastructure Buildout",
+    "url": "https://blogs.nvidia.com/blog/nvidia-unlocks-ai-compute-at-scale-capital-partners-to-power-ai-infrastructure-buildout/",
+    "published_at": "2026-07-02T03:34:48.000Z",
+    "source_type": "rss_official",
+    "summary": "As AI moves from model development to production inference, compute demand is accelerating and shifting toward continuously operating AI factories that generate tokens at scale. This shift requires access to large‑scale, multi‑tenant accelerated computing that can come online quickly, stay highly utilized and support the economics of token‑scale AI services. Emerging AI companies historically have […]",
     "source_url": "https://blogs.nvidia.com/feed/"
   },
   {
@@ -2980,6 +3180,16 @@
     "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
   },
   {
+    "id": "provider-eb50d11a60d7fe6b46",
+    "company": "Amazon AI",
+    "title": "Pay with confidence: How Solv Labs built verifiable, auditable agent payments on Amazon Bedrock AgentCore payments",
+    "url": "https://aws.amazon.com/blogs/machine-learning/pay-with-confidence-how-solv-labs-built-verifiable-auditable-agent-payments-on-amazon-bedrock-agentcore-payments/",
+    "published_at": "2026-08-12T13:44:58.000Z",
+    "source_type": "rss_official",
+    "summary": "Solv Labs built a governed agent-payments workflow on Amazon Bedrock AgentCore payments, where every transaction is authorized, attested in an AWS Nitro Enclave, priced for risk, and anchored to a public blockchain before settlement. See how the pattern gives enterprises a verifiable, auditable trail for autonomous agent payments in regulated environments.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
     "id": "provider-eba53cab6075e13c03",
     "company": "OpenAI",
     "title": "Warp’s big bet on building open source with GPT-5.5",
@@ -2998,6 +3208,16 @@
     "source_type": "rss_official",
     "summary": "",
     "source_url": "https://huggingface.co/blog/feed.xml"
+  },
+  {
+    "id": "provider-ed529d92ad7d77e711",
+    "company": "Amazon AI",
+    "title": "Tiered KV cache for large LLMs on Amazon SageMaker HyperPod with Curvine",
+    "url": "https://aws.amazon.com/blogs/machine-learning/tiered-kv-cache-for-large-llms-on-amazon-sagemaker-hyperpod-with-curvine/",
+    "published_at": "2026-08-12T13:42:48.000Z",
+    "source_type": "rss_official",
+    "summary": "Running large language model inference at scale forces a KV cache trade-off: oversized GPU instances or slow time-to-first-token. This post builds a tiered KV cache on Amazon SageMaker HyperPod that extends the cache into a shared, distributed NVMe pool with Curvine, so replicas reuse cache at near-local-disk speeds on cost-efficient instances.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
   },
   {
     "id": "provider-efc69d42c8cbc0caaf",
@@ -3107,6 +3327,16 @@
     "published_at": "2026-07-20T10:59:23.000Z",
     "source_type": "rss_official",
     "summary": "Erin Davis calls it the “SuperDuperPOD.” That’s two things in one name: pharmaceutical giant Bristol Myers Squibb (BMS) already runs one of the largest AI clusters in life sciences, with serious results to show for it. And they’re doubling down. BMS announced today it is deploying its second NVIDIA DGX SuperPOD, this one built on […]",
+    "source_url": "https://blogs.nvidia.com/feed/"
+  },
+  {
+    "id": "provider-f57d330952579e06c9",
+    "company": "NVIDIA AI",
+    "title": "NVIDIA Vera Rubin Driving Performance Per Watt, Lowest Token Cost for Partners Worldwide",
+    "url": "https://blogs.nvidia.com/blog/vera-rubin/",
+    "published_at": "2026-07-21T15:36:43.000Z",
+    "source_type": "rss_official",
+    "summary": "NVIDIA Vera Rubin is here, and it’s going gigascale. Vera Rubin NVL72 production is ramping up with racks running at partners CoreWeave, Google Cloud, Microsoft Azure, Oracle Cloud Infrastructure and Nebius. Spanning 350+ factory sites in 30 countries, Vera Rubin has the largest, most mature rack-scale supply chain ever assembled to meet customer compute demand. […]",
     "source_url": "https://blogs.nvidia.com/feed/"
   },
   {
