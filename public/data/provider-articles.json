@@ -1,8 +1,44 @@
 [
   {
+    "id": "d3818f97-ac51-59a4-b5bb-1f1c59263633",
+    "company": "Hermes Agent",
+    "title": "rc.5-v0.21.7",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/rc.5-v0.21.7",
+    "published_at": "2026-10-09T03:53:41+00:00",
+    "source_type": "rss_official",
+    "summary": "{\"attempt\":5,\"autopublish\":false,\"claimEpoch\":1791518021,\"commit\":\"17…",
+    "content": "{\"attempt\":5,\"autopublish\":false,\"claimEpoch\":1791518021,\"commit\":\"17…",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
+    "id": "b2e89394-a5ab-5c30-a0a9-0a74c0434f4a",
+    "company": "Hermes Agent",
+    "title": "abandoned-rc.4-v0.21.7",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/abandoned-rc.4-v0.21.7",
+    "published_at": "2026-10-09T03:53:27+00:00",
+    "source_type": "rss_official",
+    "summary": "{\"attempt\":4,\"attemptRef\":\"rc.4-v0.21.7\",\"schema\":1,\"version\":\"0.21.7\"}",
+    "content": "{\"attempt\":4,\"attemptRef\":\"rc.4-v0.21.7\",\"schema\":1,\"version\":\"0.21.7\"}",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
+    "id": "a458a55c-b281-5150-8c59-9ab6b67b4fea",
+    "company": "Hermes Agent",
+    "title": "rc.4-v0.21.7",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/rc.4-v0.21.7",
+    "published_at": "2026-10-09T02:34:59+00:00",
+    "source_type": "rss_official",
+    "summary": "{\"attempt\":4,\"autopublish\":false,\"claimEpoch\":1791513299,\"commit\":\"90…",
+    "content": "{\"attempt\":4,\"autopublish\":false,\"claimEpoch\":1791513299,\"commit\":\"90…",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
     "id": "d737d94f-bc74-55eb-a5f0-4d8a6aa40f42",
     "company": "Codex CLI",
-    "title": "rust-v0.163.0-alpha.2",
+    "title": "0.163.0-alpha.2",
     "url": "https://github.com/openai/codex/releases/tag/rust-v0.163.0-alpha.2",
     "published_at": "2026-10-09T00:18:42+00:00",
     "source_type": "rss_official",
