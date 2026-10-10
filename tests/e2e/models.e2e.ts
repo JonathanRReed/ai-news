@@ -13,6 +13,8 @@ test("selects AI launches consistently in model timeline and lab cards", async (
   await expect(cards.getByRole("link", { name: "Introducing Mistral Large 4 | Mistral", exact: true })).toBeVisible();
   await expect(cards.getByRole("link", { name: "GPT-6 and Intelligent UI for everyone", exact: true })).toBeVisible();
   await expect(timeline.getByRole("link", { name: "Introducing dots", exact: true })).toBeVisible();
+  await expect(cards.getByRole("link", { name: "Introducing NV-Reason-CT Open 3D CT VLM for Radiologist Chain-of-Thought Reasoning", exact: true })).toBeVisible();
+  await expect(cards.getByRole("link", { name: "Stable Video 4D — Stability AI", exact: true })).toBeVisible();
   for (const title of ["Rally Up: ‘Gears of War: E-Day’ Launches on GeForce NOW", "What's new at IBM Quantum Q3 2026", "rust-v0.163.0-alpha.6"]) {
     await expect(page.getByRole("link", { name: title, exact: true })).toHaveCount(0);
   }
