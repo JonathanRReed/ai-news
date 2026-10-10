@@ -1,5 +1,29 @@
 [
   {
+    "id": "b4421948-5fb7-5bd9-998f-85b375a5fa11",
+    "company": "Gemini CLI",
+    "title": "Release v0.65.0-nightly.20261010.g9b6e0265d",
+    "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.65.0-nightly.20261010.g9b6e0265d",
+    "published_at": "2026-10-10T01:38:44+00:00",
+    "source_type": "rss_official",
+    "summary": "What's Changed fix(cli): handle JSON parse and response stream errors in fetchJson by @jesussamuel-byte in #29658 fix(core): preserve line terminators in truncateString by @diegogodinezr in #29673 fix(vscode-ide-companion): make IdeServer.stop() resolve while MCP sessions are open by @elberthc-byte in #29674 fix(core): retain ask_user question text in the tool result display by @elberthc-byte in #29677 fix(core): eliminate false positives on untrusted command flags and compound loops by...",
+    "content": "What's Changed fix(cli): handle JSON parse and response stream errors in fetchJson by @jesussamuel-byte in #29658 fix(core): preserve line terminators in truncateString by @diegogodinezr in #29673 fix(vscode-ide-companion): make IdeServer.stop() resolve while MCP sessions are open by @elberthc-byte in #29674 fix(core): retain ask_user question text in the tool result display by @elberthc-byte in #29677 fix(core): eliminate false positives on untrusted command flags and compound loops by @DavidAPierce in #29672 fix(cli): clear cached credentials when re-selecting Google login by @urielefrenvirtusa in #29643 fix(cli): resolve hang on Enter keypress in interactive mode ( #23297 ) by @elberthc-byte in #29476 perf(core): optimize ignore filtering and enable subtree pruning ( #29077 ) by @amelidev in #29582 fix(a2a-server): isolate tool rejection to active call in sequential batches by @jvargassanchez-dot in #29683 fix(cli): skip eager recursive file reading for @ references by @jvargassanchez-dot in #29617 Full Changelog : v0.65.0-nightly.20261008.g44d764ee5...v0.65.0-nightly.20261010.g9b6e0265d",
+    "source_url": "https://github.com/google-gemini/gemini-cli/releases.atom",
+    "source_key": "gemini-cli-releases"
+  },
+  {
+    "id": "c1892c4c-8999-5895-adeb-14e3c291a6de",
+    "company": "Codex CLI",
+    "title": "rust-v0.163.0-alpha.6",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.163.0-alpha.6",
+    "published_at": "2026-10-10T01:27:22+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.163.0-alpha.6",
+    "content": "Release 0.163.0-alpha.6",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
     "id": "9b4a3dbb-4a28-5c98-b857-635071ad5ffd",
     "company": "Codex CLI",
     "title": "0.163.0-alpha.5",
