@@ -1,5 +1,17 @@
 [
   {
+    "id": "e6fe4300-3e82-525e-a546-8bb90575351d",
+    "company": "Hermes Agent",
+    "title": "v0.21.6+canary.20261010T070026Z",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.21.6%2Bcanary.20261010T070026Z",
+    "published_at": "2026-10-10T07:00:27+00:00",
+    "source_type": "rss_official",
+    "summary": "Hermes Agent canary 20261010T070026Z",
+    "content": "Hermes Agent canary 20261010T070026Z",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
     "id": "b4421948-5fb7-5bd9-998f-85b375a5fa11",
     "company": "Gemini CLI",
     "title": "Release v0.65.0-nightly.20261010.g9b6e0265d",
