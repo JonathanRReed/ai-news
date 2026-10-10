@@ -2,8 +2,9 @@
 import Layout from "../layouts/Layout.astro";
 import { articlePath } from "../lib/articleRoutes.js";
 import { allArticles } from "../lib/feeds.js";
-import { deriveTopics, deriveEntities } from "../lib/articleTags.js";
+import { deriveEntities } from "../lib/articleTags.js";
 import { companyLogoAlt, resolveCompanyLogo, companies } from "../lib/companyCatalog.js";
+import { modelReleases } from "../lib/modelReleases.js";
 import type { Article } from "../types/article.js";
 
 const siteUrl = "https://ai-news.helloworldfirm.com";
@@ -12,7 +13,7 @@ const title = "AI Model Release Timeline | AI News Hub";
 const description =
   "Reverse-chronological model and product releases from major AI labs, pulled from primary-source feeds with dates, companies, and links.";
 
-const releases = allArticles().filter((a) => deriveTopics(a).includes("releases"));
+const releases = modelReleases(allArticles());
 
 // Latest release per lab (catalog order), skipping labs with nothing.
 const labNames = companies.filter((c) => c.name !== "All").map((c) => c.name);
@@ -43,7 +44,8 @@ const structuredData = {
       <div class="max-w-5xl reveal-stagger">
         <h1 class="macro-heading max-w-4xl">What each lab shipped, newest first.</h1>
         <p class="mt-6 max-w-2xl text-lg leading-relaxed text-text-2">
-          Release and launch posts pulled from official feeds.
+          Model announcements and AI product launches from official feeds, including model previews.
+          Routine CLI versions and prerelease builds stay in the news feed.
         </p>
       </div>
     </section>
