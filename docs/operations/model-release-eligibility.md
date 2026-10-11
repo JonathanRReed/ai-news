@@ -8,6 +8,10 @@ A selection needs a current, affirmative announcement or availability claim tied
 
 Some official previews have only a name and an availability caption, without an informative purpose description. For recall, the page retains these when the entire excerpt is an affirmative public/research-preview caption and the headline and canonical news, blog, or product URL identify the same artifact. This is a limited selection tradeoff, not evidence that an un-described feature is AI-powered. An informative purpose, a conflicting role, a different URL identity, or a routine prerelease build cannot use this exception.
 
+## Sparse numbered launches
+
+Short numbered launch headlines can retain identity-only evidence when a feed omits an informative purpose. This is a recall heuristic within the admitted publisher collection, not proof that every numbered software product is AI-powered. An explicit non-AI artifact role in the headline or excerpt overrides it, including expense tools and operating systems.
+
 ## Producer cards and source attribution
 
 The article's company field identifies its admitted feed. It is not a separate producer field. A hosted Hugging Face community post remains source-attributed in the timeline and news feed, but cannot become Hugging Face's latest producer card. Producer cards select the latest attributable eligible record without rewriting source labels or inferring another producer.

@@ -79,6 +79,29 @@ describe("model release page eligibility", () => {
     expect(isModelRelease(article("ExpenseFlow comes to teams", definition.replace(/ is (an?) /, " is now available as $1 ")))).toBe(expected);
   });
 
+  test.each([
+    [true, "Previewing Aurora mode: GPT-6 at high speed", "Preview Aurora, a new API service tier that runs GPT-6 faster."],
+    [true, "Canvas is here", "Our video generation model, Canvas, is now available."],
+    [false, "Canvas is here", "Our manual AI tool, Canvas, is now available."],
+    [false, "Introducing a quantum processor for language models", ""],
+    [true, "Aurora Editor: coding for teams", "We’ve released Aurora Editor, a new AI coding assistant."],
+    [true, "Aurora Editor: coding for teams", "We have launched Aurora Editor, a new AI coding assistant."],
+    [false, "Aurora Editor: coding for teams", "We haven’t released Aurora Editor, a new AI coding assistant."],
+    [false, "Preview v0.65.0-alpha.2", ""],
+    [false, "Introducing ExpenseFlow: a non-AI expense tool", ""],
+    [false, "Introducing ExpenseFlow: a human-only AI tool", ""],
+    [false, "Introducing ExpenseFlow: a manual AI tool", ""],
+    [false, "Introducing ExpenseFlow 3.0", "ExpenseFlow 3.0 is a new expense-tracking tool."],
+    [false, "Introducing DesktopOS 12.0", "DesktopOS 12.0 is a desktop operating system."],
+    [true, "Introducing QubitLM: a language model for quantum calibration", ""],
+    [true, "Introducing PlayGen: a generative AI model for gaming", ""],
+    [true, "Introducing EvalFlow: an AI evaluation platform", "EvalFlow is a new AI evaluation platform."],
+    [false, "Evaluation of GPT-6", "Introducing GPT-6, a new language model."],
+    [false, "Introducing EvalFlow: an AI evaluation benchmark", "EvalFlow is an AI evaluation benchmark."],
+  ])("shares current launch grammar and artifact-role guards: %s %s", (expected, title, summary) => {
+    expect(isModelRelease(article(title, summary))).toBe(expected);
+  });
+
   test("corroborates unnumbered reasoning and modality-conversion product launches", () => {
     expect(isModelRelease(article("Announcing Aurora Plus for sovereignty", "Aurora Plus delivers advanced reasoning with a minimal compute footprint."))).toBe(true);
     expect(isModelRelease(article("Palette launches SketchFlow", "SketchFlow is a new sketch-to-image tool."))).toBe(true);
