@@ -43,6 +43,15 @@ describe("model release page eligibility", () => {
     expect(isModelRelease(article("GPT-6 and Intelligent UI for everyone", "GPT‑6 is rolling out globally in ChatGPT."))).toBe(true);
   });
 
+  test.each([
+    [true, "Sentinel Security is an AI application security agent with manual approval for patches."],
+    [true, "Sentinel Security is an AI coding assistant with a manual review workflow."],
+    [false, "Sentinel Security is a manual expense-tracking tool."],
+    [false, "Sentinel Security is a human-only expense-tracking tool."],
+  ])("separates artifact operation from human oversight: %s %s", (expected, summary) => {
+    expect(isModelRelease(article("Introducing Sentinel Security", summary))).toBe(expected);
+  });
+
   test("corroborates unnumbered reasoning and modality-conversion product launches", () => {
     expect(isModelRelease(article("Announcing Aurora Plus for sovereignty", "Aurora Plus delivers advanced reasoning with a minimal compute footprint."))).toBe(true);
     expect(isModelRelease(article("Palette launches SketchFlow", "SketchFlow is a new sketch-to-image tool."))).toBe(true);
@@ -199,6 +208,131 @@ describe("model release page eligibility", () => {
     expect(isModelRelease(article("New agent skill: Nova Studio generative AI inference", "Nova Studio generative AI inference introduces the nova-ml skill for coding agents."))).toBe(true);
     expect(isModelRelease(article("New agent skill: Nova Studio generative AI inference", "Different Product introduces the nova-ml skill for coding agents."))).toBe(false);
     expect(isModelRelease(article("New agent skill: Nova Studio generative AI inference", "Nova Studio generative AI inference introduces a dashboard for coding agents."))).toBe(false);
+  });
+
+  test.each([
+    "GPT-6 is not available now",
+    "Aurora 4 is not yet generally available",
+    "GPT-6 might be available now",
+    "Aurora 4 may become generally available",
+    "Aurora 4 will be available now",
+    "We are not introducing Aurora 4",
+    "We might introduce Aurora 4",
+    "Aurora 4: not now in research preview",
+  ])("requires affirmative headline launch evidence: %s", (title) => {
+    expect(isModelRelease(article(title))).toBe(false);
+  });
+
+  test.each([
+    ["Model downloads get faster for enterprise users", "Introducing faster model downloads for enterprise users, a network setting for our existing platform."],
+    ["New tool: Acme Studio", "Acme Studio introduces an expense-tracking tool. Our team uses AI models elsewhere."],
+    ["Introducing Acme Studio", "Acme Studio is a new expense-tracking tool. Our team uses AI models elsewhere."],
+    ["Introducing ExpenseFlow", "ExpenseFlow is an expense-tracking tool. A separate application uses AI models."],
+    ["Faster downloads for Aurora models", "Introducing faster downloads for Aurora models, a new network setting for the existing platform."],
+    ["Introducing ExpenseFlow", "Introducing ExpenseFlow, an expense-tracking tool. Other products deliver advanced reasoning."],
+  ])("binds AI purpose to the announced artifact: %s", (title, summary) => {
+    expect(isModelRelease(article(title, summary))).toBe(false);
+  });
+
+  test.each([
+    "now available",
+    "now stable and generally available",
+    "now generally available",
+    "available now",
+    "rolling out to users today",
+  ])("recognizes affirmative same-model availability modifiers: %s", (availability) => {
+    expect(isModelRelease(article("The new Aurora Images is here", `The new Aurora Images is powered by our image generation model. The upgraded model is ${availability}.`))).toBe(true);
+    expect(isModelRelease(article("The new Aurora Images is here", `The new Aurora Images is powered by our image generation model. A companion dashboard is ${availability}.`))).toBe(false);
+  });
+
+  test.each([
+    "not available now",
+    "not yet generally available",
+    "not now stable and generally available",
+    "possibly available now",
+    "expected to be generally available",
+  ])("rejects non-affirmative same-model availability modifiers: %s", (availability) => {
+    expect(isModelRelease(article("The new Aurora Images is here", `The new Aurora Images is powered by our image generation model. The upgraded model is ${availability}.`))).toBe(false);
+  });
+
+  test.each(["public", "research"])("includes substantive %s product previews", (kind) => {
+    const summary = `Sentinel Security is our AI application-security agent. It is now in ${kind} preview.`;
+    expect(isModelRelease(article(`Sentinel Security: now in ${kind} preview`, summary))).toBe(true);
+    expect(isModelRelease(article("Sentinel Security", summary))).toBe(true);
+    expect(isModelRelease(article("Sentinel Security", `Sentinel Security is our AI application-security agent. Another product is now in ${kind} preview.`))).toBe(false);
+    expect(isModelRelease(article(`Sentinel Security: not now in ${kind} preview`, "Sentinel Security is our AI application-security agent."))).toBe(false);
+    expect(isModelRelease(article(`ExpenseFlow: now in ${kind} preview`, "ExpenseFlow is an expense-tracking tool. We use AI models elsewhere."))).toBe(false);
+    expect(isModelRelease({ ...article(`Flows for work that runs the business`, `Flows is now in ${kind} preview.`), url: "https://lab.example/news/flows/" })).toBe(true);
+  });
+
+  test.each([
+    ["OpenAI models, Codex, and Managed Agents come to AWS", "OpenAI GPT models, Codex, and Managed Agents are now available on AWS."],
+    ["Aurora models, Sentinel, and Managed Agents come to CloudBox", "Aurora GPT models, Sentinel, and Managed Agents are now stable and generally available on CloudBox."],
+    ["Aurora 4 and Vega 3 come to CloudBox", "Aurora 4 and Vega 3 are now available as language models on CloudBox."],
+  ])("preserves coordinated availability subjects: %s", (title, summary) => {
+    expect(isModelRelease(article(title, summary))).toBe(true);
+    expect(isModelRelease(article(title, summary.replace("are now", "are not now")))).toBe(false);
+    expect(isModelRelease(article("Different products come to CloudBox", summary))).toBe(false);
+  });
+
+  test.each([
+    "GPT-6 isn’t available now",
+    "Considering introducing Aurora 4",
+    "A possible release of Aurora 4",
+  ])("does not confuse uncertainty with a headline claim: %s", (title) => {
+    expect(isModelRelease(article(title))).toBe(false);
+  });
+
+  test.each([
+    "If Aurora 4 is available now as a language model, teams can use it.",
+    "We don’t think Aurora 4 is available now as a language model.",
+    "We might find Aurora 4 is now generally available as a language model.",
+  ])("checks the full availability clause’s polarity: %s", (summary) => {
+    expect(isModelRelease(article("Aurora 4 in production", summary))).toBe(false);
+  });
+
+  test.each([
+    ["Introducing model downloads", "Introducing model downloads, a network setting for the existing platform."],
+    ["Introducing ModelGate", "ModelGate is a network setting for model downloads."],
+    ["Introducing faster downloads for Aurora models", "Introducing faster downloads for Aurora models."],
+    ["Introducing ExpenseFlow", "ExpenseFlow is an expense-tracking tool while our team uses AI models elsewhere."],
+  ])("uses the artifact’s declared role instead of model-related operations: %s", (title, summary) => {
+    expect(isModelRelease(article(title, summary))).toBe(false);
+  });
+
+  test("requires every coordinated product rather than one overlapping name", () => {
+    expect(isModelRelease(article("OpenAI models, Codex, and Managed Agents come to AWS", "OpenAI GPT models, Different, and Managed Agents are now available on AWS."))).toBe(false);
+  });
+
+  test("keeps a confirmed launch when uncertainty concerns later features", () => {
+    expect(isModelRelease(article("Introducing Aurora 4", "Aurora 4 is a new language model. Additional features might arrive later."))).toBe(true);
+    expect(isModelRelease(article("Aurora 4 in production", "Aurora 4 is now generally available as a language model. Other tools may arrive later."))).toBe(true);
+  });
+
+  test.each([
+    [false, "GPT-6 is not available now, but introducing updated billing", "", ""],
+    [false, "Aurora 4: a possible new language model", "", ""],
+    [false, "Introducing ExpenseFlow", "ExpenseFlow is a new expense tool. This company builds language models.", ""],
+    [false, "ExpenseFlow comes to teams", "ExpenseFlow is now available. This company builds language models.", ""],
+    [false, "Aurora downloads come to teams", "Aurora downloads are now available as a download setting for language models.", ""],
+    [false, "Research Toolkit is now in public preview", "Research Toolkit is now in public preview, an editing tool for manual tax reports.", "https://lab.example/blog/research-toolkit"],
+    [true, "Aurora 4 comes to CloudBox", "Pricing will change and Aurora 4 is now available as a language model.", ""],
+    [true, "Aurora 4 comes to CloudBox", "We are not changing pricing, and Aurora 4 is now available as a language model.", ""],
+    [true, "Aurora and Vega models come to CloudBox", "Aurora and Vega language models are now available on CloudBox.", ""],
+    [true, "Aurora 4 comes to CloudBox", "Aurora 4 is now available as a language model and will gain more tools later.", ""],
+    [true, "Aurora 4 comes to CloudBox", "Aurora 4, our new language model, is now generally available.", ""],
+    [false, "Aurora 4 comes to CloudBox", "Vega 4 is now available as a language model. Aurora 4 is not available.", ""],
+  ])("keeps clause identity, polarity, and purpose together: %s %s", (eligible, title, summary, url) => {
+    expect(isModelRelease({ ...article(title, summary), url })).toBe(eligible);
+  });
+
+  test("keeps sparse official previews separate from role-proven releases", () => {
+    const url = "https://lab.example/news/flows/";
+    expect(isModelRelease({ ...article("Flows for everyday work", "Flows is now in public preview."), url })).toBe(true);
+    expect(isModelRelease({ ...article("Flows for everyday work", "Flows is now in research preview."), url })).toBe(true);
+    expect(isModelRelease({ ...article("Flows for everyday work", "Flows is now in public preview, software used for manual tax editing."), url })).toBe(false);
+    expect(isModelRelease({ ...article("Flows for everyday work", "Flows is now in public preview. Flows is an expense tool. Our company builds language models."), url })).toBe(false);
+    expect(isModelRelease({ ...article("Flows for everyday work", "Flows is now in public preview."), url: "https://lab.example/news/other/" })).toBe(false);
   });
 
   test("classifies frozen publisher inputs from the source and review audit", () => {

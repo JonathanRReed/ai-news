@@ -4,8 +4,8 @@ import type { Article } from "../types/article.js";
 // defaults. Require a launch/availability claim about an AI model or product;
 // the publisher's opening excerpt can corroborate a terse headline. Model names
 // are not an allowlist, and mentions elsewhere in a long article are not evidence.
-const LAUNCH = /\b(?:introduc(?:e|es|ed|ing)|announc(?:e|es|ed|ing)|launch(?:es|ed|ing)?|releas(?:e|es|ed|ing)|unveil(?:s|ed|ing)?|open[ -]sourcing|now available|available now|now open[ -]source|generally available|rolling out|expands[^.!?]{0,40}model availability)\b/i;
-const AI_DESCRIPTION = /\b(?:models?|LLMs?|VLMs?|ASR|TTS|agents?|translat(?:e|ion)|(?:chat)?GPT(?:[-\w.]+)?|AI (?:[a-z-]+ )?(?:models?|assistants?|agents?|platform|product|tool|systems|applications|capabilities|inference)|(?:enterprise|physics|physical|generative|agentic) AI|agentic|proactive assistants?|autonomous agents?|coding assistants?|advanced reasoning|(?:sketch|text|image|video|speech|audio)[ -]to[ -](?:image|text|video|speech|audio)|computer[ -]use|connectors and (?:[a-z-]+ )?workflows|frontier intelligence)\b/i;
+const LAUNCH = /\b(?:introduc(?:e|es|ed|ing)|announc(?:e|es|ed|ing)|launch(?:es|ed|ing)?|releas(?:e|es|ed|ing)|unveil(?:s|ed|ing)?|open[ -]sourcing|now available|available now|now open[ -]source|generally available|rolling out|now in (?:public|research) preview|expands[^.!?]{0,40}model availability)\b/i;
+const AI_DESCRIPTION = /\b(?:(?:foundation|language|vision|visual|audio|speech|image|video|multimodal|reasoning|neural|embedding|generative|decision)(?:[ -][a-z-]+){0,2} models?|LLMs?|VLMs?|ASR|TTS|agents?|translat(?:e|ion)|(?:chat)?GPT(?:[-\w.]+)?|AI (?:[a-z-]+ ){0,3}(?:models?|assistants?|agents?|platform|product|tool|systems|applications|capabilities|inference)|(?:enterprise|physics|physical|generative|agentic) AI|agentic|proactive assistants?|autonomous agents?|coding assistants?|advanced reasoning|(?:sketch|text|image|video|speech|audio)[ -]to[ -](?:image|text|video|speech|audio)|computer[ -]use|connectors and (?:[a-z-]+ )?workflows|frontier intelligence|multimodal (?:[a-z-]+ )?classifier)\b/i;
 const NON_LAUNCH = /\b(?:evaluation|benchmarks?|case study|reports?(?!-generation)|survey|leaderboard|dataset|follow-up|conference|advisory (?:council|board)|institute|mission|blueprint|partner network|partnerships?|partners|funding|investigation|policy|recap|ICYMI|lessons|adoption|comparison|overview|roundup|research initiative|proof of concept|academy|fellowship|scholarship|class of|program|training infrastructure|model co-design)\b/i;
 const INSTRUCTIONAL = /\b(?:how|why|using|building|build|serve|deploy|optimize|experiment|guide|tutorial|fine[ -]tuning|evaluating|training|explained|explaining)\b/i;
 const UNRELATED_SUBJECT = /\b(?:quantum|qiskit|geforce|games?|gaming|regional office|hardware|CPU|computers|data centers?|GPU cluster|earnings|financial results|business model|pricing model|economic index)\b/i;
@@ -19,6 +19,106 @@ const DESCRIPTIVE_LAUNCH = /\b(?:new|next[ -]generation|frontier|open|models?|LL
 const RETURN_LAUNCH = /\b(?:is back|returns?) with\b.*\bopen[ -](?:source|weights?)\b/i;
 const OPENING_LAUNCH = /^(?:today[, ]+|we(?:[’']re| are)?\s+|we are pleased to\s+|we(?:[’']re| are) excited to\s+)?(?:introduc(?:e|es|ed|ing)|announc(?:e|es|ed|ing)|launch(?:es|ed|ing)?|releas(?:e|es|ed|ing)|upgrad(?:e|es|ed|ing)|rolling out)/i;
 
+const NON_AFFIRMATIVE = /\b(?:not|never|no longer|may|might|could|would|should|will|possibly|possible|potential|possibility|perhaps|consider(?:s|ed|ing)?|expected to|plans? to|planning to|hopes? to|rumou?rs?|whether|if|(?:isn|aren|don|doesn|won|haven|hasn|wasn|weren|couldn|wouldn|shouldn)[’']t|can(?:not|[’']t))\b/i;
+const AVAILABLE = /^(?:(?:now )?(?:[a-z-]+ and )?generally available|now (?:available|open[ -]source|rolling out|in (?:public|research) preview)|available now|rolling out)\b/i;
+
+function evidenceClauses(text: string): string[] {
+  // Preserve versions and coordinated product lists. Split "and" only when
+  // both sides have independent predicates, rather than a shared model role.
+  return text.split(/(?<!\bvs)[.!?]\s+|;\s*|\s+\b(?:but|however|whereas|while)\b\s+/i).flatMap((sentence) => {
+    const clauses: string[] = [];
+    let start = 0;
+    for (const conjunction of sentence.matchAll(/,?\s+and\s+/gi)) {
+      const index = conjunction.index!;
+      const left = sentence.slice(start, index);
+      const right = sentence.slice(index + conjunction[0].length);
+      if (/\b(?:is|are|was|were|will|would|may|might|can|could|do|does)\b/i.test(left)
+        && /^.{1,100}?\s+(?:is|are|introduces?|launches?|releases?)\s+/i.test(right)) {
+        clauses.push(left.trim());
+        start = index + conjunction[0].length;
+      }
+    }
+    clauses.push(sentence.slice(start).trim());
+    return clauses;
+  });
+}
+
+function declaredRole(clause: string): string | null {
+  return clause.match(/^.{3,80}? (?:is|are) (?:an?|our|the) (.+)/i)?.[1]
+    || clause.match(/\b(?:available(?: now)?|preview)(?:\s+as\s+|,\s+)(?:an?|our|the) (.+)/i)?.[1]
+    || clause.match(/\b(?:introduc(?:e|es|ed|ing)|announc(?:e|es|ed|ing)|launch(?:es|ed|ing)?|releas(?:e|es|ed|ing))\s+[^,]+,\s+(?:an?|our|the|its)\s+([^.!?]+)/i)?.[1]
+    || null;
+}
+
+function refersToArtifact(clause: string): boolean {
+  const subject = clause.match(/^(it|(?:this|these) [\w -]+?)\s+(?:is|are|[a-z-]+s)\b/i)?.[1];
+  return subject?.toLowerCase() === "it"
+    || Boolean(subject && /\b(?:models?|agents?|assistants?|products?|tools?|services?|updates?)$/i.test(subject))
+    || /^(?:building on|based on|we(?:[’']re| are)? releasing the (?:model|code))\b/i.test(clause);
+}
+
+function hasAIPurpose(clause: string): boolean {
+  return AI_DESCRIPTION.test(clause) || /\bmodels?\b/i.test(clause);
+}
+
+function announcedPurpose(clause: string): boolean {
+  // Definitions and appositives describe the artifact's role. A model mention
+  // in a name or target audience cannot override a declared non-AI role.
+  const declaration = declaredRole(clause);
+  // Here "model" must be the noun, not a modifier in "model downloads".
+  // Prepositional target audiences are not the announced artifact's role.
+  const artifactRole = (declaration || clause).split(/\s+(?:for|about|from|using)\s+/i)[0];
+  if (/\bfamily of models\b/i.test(artifactRole)) return true;
+  const role = artifactRole.split(/\s+of\s+/i)[0];
+  const model = /\bmodels?\b(?=\s*(?:$|[,.:;!?'’"]|\b(?:is|are|and|on|in|with|that|which|to|now|[a-z-]+(?:ed|ing))\b))/i.test(role);
+  if (model || AI_DESCRIPTION.test(role)) return true;
+  if (!declaration) return AI_DESCRIPTION.test(clause);
+  const softwareRole = /\b(?:tools?|services?|assistants?|agents?|platforms?|applications?|APIs?|versions?|packages?|frameworks?|runtimes?|capabilit(?:y|ies)|librar(?:y|ies)|engines?)\b/i.test(role)
+    || /^collection of visualizations\b/i.test(declaration);
+  const announcingObject = clause.slice(0, clause.indexOf(declaration));
+  return softwareRole && (hasAIPurpose(declaration) || /\bAI\b/i.test(declaration) || hasAIPurpose(announcingObject));
+}
+
+function affirmativeLaunch(clause: string): RegExpMatchArray | null {
+  for (const claim of clause.matchAll(new RegExp(LAUNCH.source, "gi"))) {
+    const prefix = evidenceClauses(clause.slice(0, claim.index)).at(-1) || "";
+    if (!NON_AFFIRMATIVE.test(prefix)) return claim;
+  }
+  return null;
+}
+
+function availabilitySubject(clause: string): string | null {
+  const predicate = clause.match(/\s+(?:is|are)\s+/i);
+  if (!predicate || predicate.index === undefined) return null;
+  if (NON_AFFIRMATIVE.test(clause.slice(0, predicate.index))) return null;
+  const access = clause.slice(predicate.index + predicate[0].length);
+  if (!AVAILABLE.test(access)) return null;
+  // Remove an appositive, not a comma-separated list of announced products.
+  return clause.slice(0, predicate.index)
+    .replace(/,\s*[a-z][^,]*(?:,\s*)?$/, "")
+    .replace(/\s+(?:from|by)\s+.*$/i, "").trim();
+}
+
+function sameAvailabilityArtifact(availableName: string, headline: string): boolean {
+  const normalized = availableName.replace(/^(?:the|our|new|a|an)\s+/i, "");
+  if (headline.toLowerCase().includes(normalized.toLowerCase())) return true;
+  const products = normalized.split(/,\s*(?:and\s+)?|\s+and\s+/i).filter(Boolean);
+  if (products.length > 1 && !/\bfamily of models\b/i.test(headline)) {
+    // A coordinated claim must match every named product. GPT describes the
+    // model class here; it need not occur in the headline's shorter "models".
+    return products.every((product) => {
+      const words = product.replace(/\b(?:[a-z-]+|GPT)\s+(?=models?\b)/g, "")
+        .split(/[^a-z0-9]+/i).filter((word) => word && !/^(?:the|our|new|models?)$/i.test(word));
+      return words.length > 0 && words.every((word) => headline.toLowerCase().split(/[^a-z0-9]+/).includes(word.toLowerCase()));
+    });
+  }
+  const version = availableName.match(/\d+(?:\.\d+)*/g)?.at(-1);
+  const sharedName = availableName.split(/\s+/).some((word) => /^[A-Z][a-zA-Z-]{2,}/.test(word)
+    && !/^(?:Our|The|New|Model|AI|Embed|Language|Open|Source)$/.test(word)
+    && headline.toLowerCase().includes(word.toLowerCase()));
+  return Boolean(version && headline.includes(version) && sharedName);
+}
+
 export function isModelRelease(article: Pick<Article, "title" | "summary" | "content"> & Partial<Pick<Article, "url">>): boolean {
   const title = article.title.replace(/[\u2010-\u2015]/g, "-").trim();
   const lead = (article.summary || article.content || "").slice(0, 300).replace(/[\u2010-\u2015]/g, "-");
@@ -31,12 +131,22 @@ export function isModelRelease(article: Pick<Article, "title" | "summary" | "con
   }
   const headline = title.split(/\s+\|\s+/)[0]
     .replace(/\b(introducing|announcing|launching|unveiling)\s*:\s*/i, "$1 ");
-  const subject = headline.split(/:|(?<!\d),|,(?!\d)|\s+-\s+/)[0];
+  const leadClauses = evidenceClauses(lead);
+  const openingSentence = leadClauses[0] || "";
+  const nextSentence = leadClauses[1] || "";
+  const headlineEvidence = evidenceClauses(headline).find((clause) => affirmativeLaunch(clause)) || headline;
+  const headlineClaim = affirmativeLaunch(headlineEvidence);
+  // Negated/speculative keywords cannot fall through to name or URL shortcuts.
+  if (LAUNCH.test(headline) && !headlineClaim) return false;
+  const subject = headlineEvidence.split(/:|(?<!\d),|,(?!\d)|\s+-\s+/)[0];
   const introduced = /\b(?:introduc(?:e|es|ed|ing)|announc(?:e|es|ed|ing)|launch(?:es|ed|ing)?|unveil(?:s|ed|ing)?|releas(?:e|es|ed|ing)|open[ -]sourcing)\s+/i.test(subject);
   const name = subject.replace(/^.*\b(?:introduc(?:e|es|ed|ing)|announc(?:e|es|ed|ing)|launch(?:es|ed|ing)?|unveil(?:s|ed|ing)?|releas(?:e|es|ed|ing)|open[ -]sourcing)\s+/i, "")
     .split(/\s+(?:and|is|are|now|on|for|with|in|by|using)\b/i)[0].replace(/[.!?]+$/, "");
   const namedVersion = /[a-z]/i.test(name) && !/^\d/.test(name) && NAMED_VERSION.test(name)
     && !/^(?:with|from|for|on|using|our|the|a|an|before|after|how|why)\b/i.test(name);
+  const caption = headlineEvidence.slice(subject.length);
+  const captionRole = caption.match(DESCRIPTIVE_LAUNCH);
+  if (!headlineClaim && captionRole && NON_AFFIRMATIVE.test(caption.slice(0, captionRole.index))) return false;
   const definedName = lead.match(MODEL_DEFINITION)?.[1].split(/\s+/).slice(0, 2).join(" ");
   const definedModelSubject = Boolean(definedName && subject.toLowerCase().startsWith(definedName.toLowerCase()));
   const describedModelSubject = namedVersion
@@ -60,17 +170,12 @@ export function isModelRelease(article: Pick<Article, "title" | "summary" | "con
     || NON_LAUNCH.test(title) || NON_PRODUCT_LAUNCH.test(subject)
     || /\b(?:before|after|prior to|ahead of|since|without|until) (?:the )?(?:release|launch)\b/i.test(headline)
     || NON_PRODUCT_DESCRIPTION.test(lead)) return false;
-  const availableName = lead.match(/^((?:(?![.!?](?:\s|$)).){3,100}?)\s+(?:is|are)\s+(?:now (?:(?:stable and )?generally available|available|open[ -]source|rolling out)|rolling out|generally available|available now)/i)?.[1]
-    .split(/,|\s+(?:from|by)\s+/i)[0].trim();
-  const availableVersion = availableName?.match(/\d+(?:\.\d+)*/g)?.at(-1);
-  const sharedName = availableName?.split(/\s+/).some((word) => /^[A-Z][a-zA-Z-]{2,}/.test(word)
-    && !/^(?:Our|The|New|Model|AI|Embed|Language|Open|Source)$/.test(word)
-    && headline.toLowerCase().includes(word.toLowerCase()));
-  // Feeds can include a provider or variant name omitted from the headline.
-  // An abbreviated availability claim must still share a name and version.
-  const availability = Boolean(availableName && AI_DESCRIPTION.test(lead)
-    && (headline.toLowerCase().includes(availableName.toLowerCase())
-      || (availableVersion && headline.includes(availableVersion) && sharedName)));
+  const availability = leadClauses.some((clause, index) => {
+    const availableName = availabilitySubject(clause);
+    const continuation = leadClauses[index + 1] || "";
+    const purpose = announcedPurpose(clause) || announcedPurpose(headlineEvidence) || (refersToArtifact(continuation) && hasAIPurpose(continuation));
+    return availableName !== null && purpose && sameAvailabilityArtifact(availableName, headline);
+  });
   // Launch articles sometimes include a developer guide after the colon. A
   // tutorial or partnership as the subject still cannot become a release.
   if (!availability && (INSTRUCTIONAL.test(subject) || (!introduced && INSTRUCTIONAL.test(headline)))) return false;
@@ -83,23 +188,39 @@ export function isModelRelease(article: Pick<Article, "title" | "summary" | "con
     && !/\b(?:already|existing|used in|previously released)\b/i.test(lead)) return true;
   // A publisher can announce an unnumbered open model with a return headline
   // and no excerpt. Require both that launch claim and an AI description.
-  if (RETURN_LAUNCH.test(headline) && AI_DESCRIPTION.test(headline)) return true;
-  const launch = headline.match(LAUNCH);
+  if (RETURN_LAUNCH.test(headline) && hasAIPurpose(headline)) return true;
+  const launch = headlineClaim;
   const headlineLaunch = launch && ((launch.index ?? 0) < 40
     || /\b(?:now available|now open[ -]source|generally available)\b/i.test(headline));
   // Check the availability clause itself, too: an editorial prefix can precede
   // a model name ("Open intelligence: Example 3 is now open source").
-  const availabilityName = headline.split(":").at(-1)?.trim().split(/\s+(?:is|are)\b/i)[0] || "";
+  const availabilityName = headlineEvidence.split(":").at(-1)?.trim().split(/\s+(?:is|are)\b/i)[0] || "";
   const nameWords = name.split(/\s+/).filter((word) => /^[A-Z][\w.-]{2,}$/.test(word));
-  const sameSubject = name.length > 2 && (lead.toLowerCase().includes(name.toLowerCase())
-    || (nameWords.length > 1 && nameWords.every((word) => lead.toLowerCase().includes(word.toLowerCase()))));
+  const matchesSubject = (clause: string) => name.length > 2 && (clause.toLowerCase().includes(name.toLowerCase())
+    || (nameWords.length > 1 && nameWords.every((word) => clause.toLowerCase().includes(word.toLowerCase()))));
+  const sameSubject = leadClauses.some(matchesSubject);
+  const subjectPurpose = leadClauses.some((clause) => matchesSubject(clause) && announcedPurpose(clause))
+    || (matchesSubject(openingSentence) && refersToArtifact(nextSentence) && hasAIPurpose(nextSentence))
+    || (sameSubject && /^(?:delivers?|offers?|provides?|your (?:teams?|users|customers) get)\b/i.test(openingSentence) && hasAIPurpose(openingSentence));
+  const informativeRole = leadClauses.some((clause) => matchesSubject(clause) && declaredRole(clause));
+  const conflictingRole = leadClauses.some((clause) => {
+    if (!matchesSubject(clause)) return false;
+    const declaration = declaredRole(clause);
+    if (!declaration) return false;
+    // Oversight or configuration attached to an AI artifact does not make
+    // the artifact itself manual. Bound exclusions to its core declared role.
+    const role = declaration.split(/\s+(?:for|of|about|from|using|with|that|which)\s+/i)[0];
+    return /\b(?:settings?|configuration)\b/i.test(role)
+      || /\b(?:manual|hand-operated|human-only|non[ -]AI)\b/i.test(role);
+  });
+  if (conflictingRole) return false;
   // A scoped package is an identifiable software artifact; an explicit launch
   // for AI establishes product purpose without a provider/package allowlist.
   const scopedSoftware = /\b(?:introduc(?:e|es|ed|ing)|announc(?:e|es|ed|ing)|launch(?:es|ed|ing)?|releas(?:e|es|ed|ing))\s+@[\w.-]+\/[\w.-]+/i.test(headline)
     && /\bfor\b[^.!?]{0,40}\bAI\b/i.test(headline);
-  if (headlineLaunch && (AI_DESCRIPTION.test(headline) || scopedSoftware || /\breranker(?:s| family)?\b/i.test(headline) || namedVersion
+  if (headlineLaunch && (/\bmodel availability\b/i.test(launch[0]) || announcedPurpose(headlineEvidence) || scopedSoftware || /\breranker(?:s| family)?\b/i.test(headline) || namedVersion
     || NAMED_VERSION.test(availabilityName)
-    || (sameSubject && AI_DESCRIPTION.test(lead)))) return true;
+    || subjectPurpose)) return true;
   if (availability) return true;
   // Editorial headlines may describe the purpose rather than repeat the full
   // named launch. Corroborate multiple meaningful identity words from an
@@ -110,7 +231,7 @@ export function isModelRelease(article: Pick<Article, "title" | "summary" | "con
     .filter((word) => word.length > 2 && !/^(?:the|for|and|new|our|model|models|tools|tool|from|with)$/i.test(word)) || [];
   const sharedIdentity = identity.filter((word) => headline.toLowerCase().includes(word.toLowerCase()));
   if (openingArtifact && sharedIdentity.length >= 2
-    && (AI_DESCRIPTION.test(lead) || /\btools?\b/i.test(lead) && /\bconnectors?\b/i.test(lead))) return true;
+    && (announcedPurpose(openingSentence) || /\btools?\b/i.test(lead) && /\bconnectors?\b/i.test(lead))) return true;
   // A provider/product can precede the launch verb. For an editorial caption,
   // corroborate the full announcing identity and the explicitly new artifact
   // role, rather than treating an incidental introduced item as a launch.
@@ -121,20 +242,20 @@ export function isModelRelease(article: Pick<Article, "title" | "summary" | "con
   if (subjectIntroduction && newRole && announcingWords.length >= 2
     && announcingWords.every((word) => headline.toLowerCase().includes(word.toLowerCase()))
     && new RegExp(`\\b${newRole}\\b`, "i").test(subjectIntroduction[2])
-    && AI_DESCRIPTION.test(lead)) return true;
-  // A sparse public-preview caption must identify the same named artifact in
-  // both headline and canonical URL; raw CLI prerelease builds were rejected
-  // above. This is a substantive product preview, not a version-tag preview.
-  const previewName = lead.match(/^([A-Z][\w -]{2,70}?) (?:is|are) now in public preview\b/)?.[1];
+    && announcedPurpose(subjectIntroduction[0])) return true;
+  // Recall tradeoff for a source-verified sparse preview: the entire excerpt
+  // must be an affirmative caption without informative purpose, and the URL
+  // must independently identify the same artifact. Never override a role.
+  const previewName = lead.trim().match(/^([A-Z][\w -]{2,70}?) (?:is|are) now in (?:public|research) preview[.!?]?$/)?.[1];
   const previewSlug = previewName?.toLowerCase().replace(/[^a-z0-9]+/g, "-");
   const artifactSlug = sourcePath.replace(/\/$/, "").split("/").at(-1);
-  if (previewName && headline.includes(previewName) && artifactSlug === previewSlug
+  if (previewName && !informativeRole && headline.includes(previewName) && artifactSlug === previewSlug
     && /\/(?:news|blog|products?|platforms?)\//i.test(sourcePath)) return true;
   // A same-subject definition of a NEW tool/model establishes a substantive
   // product launch; a definition describing existing usage does not.
   if (sameSubject && /^.{3,80}? (?:is|are) (?:a |an |our |the )?new\b/i.test(lead)
-    && AI_DESCRIPTION.test(`${headline} ${lead}`)
-    && /\b(?:models?|tools?|platform|service|assistant|application)\b/i.test(`${headline} ${lead}`)) return true;
+    && hasAIPurpose(`${headline} ${openingSentence}`)
+    && /\b(?:models?|tools?|platform|service|assistant|application)\b/i.test(`${headline} ${openingSentence}`)) return true;
   // Sparse model-family captions identify a released artifact, unlike a bare
   // name or an article mentioning models. Corroborate that identity in the URL.
   const captionName = subject.toLowerCase().replace(/\s+(?:suite|family)$/i, "").replace(/[^a-z0-9]+/g, "-");
@@ -142,8 +263,12 @@ export function isModelRelease(article: Pick<Article, "title" | "summary" | "con
     && /\b(?:SoTA|new|open|state-of-the-art)\b/i.test(headline.slice(subject.length))
     && sourcePath.replace(/\/$/, "").split("/").at(-1) === captionName) return true;
 
-  if (namedVersion && headline !== subject && DESCRIPTIVE_LAUNCH.test(headline.slice(subject.length))) return true;
-  if (namedVersion && OPENING_LAUNCH.test(lead) && AI_DESCRIPTION.test(lead)) return true;
+  if (namedVersion && headlineEvidence !== subject) {
+    const description = headlineEvidence.slice(subject.length);
+    const role = description.match(DESCRIPTIVE_LAUNCH);
+    if (role && !NON_AFFIRMATIVE.test(description.slice(0, role.index))) return true;
+  }
+  if (namedVersion && OPENING_LAUNCH.test(lead) && hasAIPurpose(openingSentence)) return true;
 
   // A preview update can name the model before announcing its updated version.
   // Bind that first-person release claim to the same full base name nearby;
@@ -158,17 +283,15 @@ export function isModelRelease(article: Pick<Article, "title" | "summary" | "con
   // An unnumbered name needs a launch claim that names that same subject. This
   // tolerates short navigation prefixes without accepting incidental old-model
   // release mentions in customer stories or research articles.
-  if (sameSubject && OPENING_LAUNCH.test(lead) && AI_DESCRIPTION.test(lead)) return true;
+  if (sameSubject && OPENING_LAUNCH.test(lead) && subjectPurpose) return true;
   const leadLaunch = lead.match(/\bwe(?:[’']re| are)?(?:\s+[a-z]+){0,5}\s+(?:introduc(?:e|ing)|announc(?:e|ing)|launch(?:ing)?|releas(?:e|ing)|open[ -]sourcing)\b/i);
-  if (sameSubject && AI_DESCRIPTION.test(lead) && leadLaunch && (leadLaunch.index ?? 0) < 150
+  if (sameSubject && (subjectPurpose || hasAIPurpose(headline)) && leadClauses.some((clause) => matchesSubject(clause) && affirmativeLaunch(clause)) && leadLaunch && (leadLaunch.index ?? 0) < 150
     && lead.slice((leadLaunch.index ?? 0) + leadLaunch[0].length).toLowerCase().includes(name.toLowerCase())) return true;
   // A follow-up availability sentence can refer back to the named artifact's
   // upgraded model; a different named product is not such a reference.
-  const openingSentence = lead.split(/[.!?]\s+/)[0];
-  const nextSentence = lead.slice(openingSentence.length).replace(/^[.!?]\s+/, "");
   if (sameSubject && openingSentence.toLowerCase().startsWith(name.toLowerCase())
-    && AI_DESCRIPTION.test(openingSentence)
-    && /^the (?:new|upgraded|updated) model is (?:now available|rolling out|generally available|available now)\b/i.test(nextSentence)) return true;
+    && hasAIPurpose(openingSentence)
+    && /^(?:it|the (?:new|upgraded|updated) (?:model|agent|assistant|product|tool|service))$/i.test(availabilitySubject(nextSentence) || "")) return true;
   // Some publisher feeds truncate the excerpt; their canonical launch slug
   // supplies corroboration for a model/product description in the headline.
   const launchedName = subject.replace(/^.*\b(?:introduc(?:e|es|ed|ing)|announc(?:e|es|ed|ing)|launch(?:es|ed|ing)?|unveil(?:s|ed|ing)?|releas(?:e|es|ed|ing)|open[ -]sourcing)\s+(?:the )?/i, "").replace(/[.!?]+$/, "");
@@ -182,7 +305,7 @@ export function isModelRelease(article: Pick<Article, "title" | "summary" | "con
   const targetAudience = /\bfor [A-Z]/.test(launchedName);
   if (introduced && namedProduct && canonicalSlug === nameSlug
     && ((uninformativeLead && (modelOrProductPath || targetAudience))
-      || (targetAudience && AI_DESCRIPTION.test(lead)))) return true;
+      || (targetAudience && hasAIPurpose(openingSentence)))) return true;
   // Sparse open-model captions can put modality words before a numbered name.
   // Require an open-model claim and the same artifact identity in its URL.
   if (uninformativeLead && namedVersion && /\bopen(?:[ -](?:source|weights?))?\b.*\bmodels?\b/i.test(subject)
@@ -198,7 +321,10 @@ export function isModelRelease(article: Pick<Article, "title" | "summary" | "con
   // require the URL to identify this headline's subject, rather than accepting
   // an unrelated AI mention anywhere in an announcement excerpt.
   return Boolean(launchUrl && (canonicalIdentity || newModelIdentity) && !existingUsage
-    && (AI_DESCRIPTION.test(headline) || AI_DESCRIPTION.test(lead)));
+    && (hasAIPurpose(headline) || hasAIPurpose(openingSentence)
+      || (OPENING_LAUNCH.test(openingSentence)
+        && /^(?:it|this (?:model|agent|tool|service)|(?:projects|users|developers|customers) that (?:join|use|adopt))\b/i.test(nextSentence)
+        && hasAIPurpose(nextSentence))));
 }
 
 export function modelReleases(articles: Article[]): Article[] {

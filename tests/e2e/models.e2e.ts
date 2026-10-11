@@ -4,6 +4,7 @@ import { readFileSync } from "node:fs";
 import { decodePublisherPunctuation } from "../../src/lib/publisherText.js";
 import type { Article } from "../../src/types/article.js";
 import { isModelRelease, modelReleases } from "../../src/lib/modelReleases.js";
+import { latestModelReleasesPerLab } from "../../src/lib/modelReleaseProducers.js";
 
 test("selects eligible releases consistently in the timeline and lab cards", async ({ page, request }) => {
   const feed = await request.get("/data/provider-feed.json");
@@ -27,11 +28,8 @@ test("selects eligible releases consistently in the timeline and lab cards", asy
   const labs = catalog.entities.filter((entity) => entity.status === "active" && entity.entityType !== "harness" && active.has(entity.slug));
   const releases = modelReleases(all);
   const expectedTimeline = releases.slice(0, 60);
-  const expectedCards = labs
-    .flatMap((company) => {
-      const article = releases.find((article) => article.company === company.name);
-      return article ? [article] : [];
-    });
+  const expectedCards = latestModelReleasesPerLab(releases, labs.map((company) => company.name))
+    .map(({ article }) => article);
   expect(releases.length).toBeGreaterThan(0);
   const errors: string[] = [];
   page.on("pageerror", (error) => errors.push(error.message));
@@ -57,6 +55,18 @@ test("selects eligible releases consistently in the timeline and lab cards", asy
   for (const article of all.filter((article) => !isModelRelease(article)).slice(0, 3)) {
     expect(articles.some((entry) => entry.id === article.id)).toBe(true);
     await expect(page.locator(`main a[href="${articlePath(article.id)}"]`)).toHaveCount(0);
+  }
+  // A community publisher remains in the source-attributed timeline and news
+  // feed, but cannot replace the hosting platform's own latest-release card.
+  const community = releases.filter((article) => article.company === "Hugging Face"
+    && /^\/blog\/[^/]+\/[^/]+/.test(new URL(article.url).pathname));
+  for (const article of community) {
+    const link = `a[href="${articlePath(article.id)}"]`;
+    await expect(cards.locator(link)).toHaveCount(0);
+    expect(articles.some((entry) => entry.id === article.id && entry.company === "Hugging Face")).toBe(true);
+    if (expectedTimeline.some((entry) => entry.id === article.id)) {
+      await expect(timeline.locator("li").filter({ has: page.locator(link) })).toContainText("Hugging Face");
+    }
   }
   expect(errors).toEqual([]);
 });

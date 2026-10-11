@@ -5,7 +5,7 @@ import { allArticles } from "../lib/feeds.js";
 import { deriveEntities } from "../lib/articleTags.js";
 import { companyLogoAlt, resolveCompanyLogo, companies } from "../lib/companyCatalog.js";
 import { modelReleases } from "../lib/modelReleases.js";
-import type { Article } from "../types/article.js";
+import { latestModelReleasesPerLab } from "../lib/modelReleaseProducers.js";
 
 const siteUrl = "https://ai-news.helloworldfirm.com";
 const canonicalUrl = `${siteUrl}/models/`;
@@ -15,11 +15,9 @@ const description =
 
 const releases = modelReleases(allArticles());
 
-// Latest release per lab (catalog order), skipping labs with nothing.
+// Latest attributable release per lab, in catalog order.
 const labNames = companies.filter((c) => c.name !== "All").map((c) => c.name);
-const latestPerLab = labNames
-  .map((name) => ({ name, article: releases.find((a) => a.company === name) }))
-  .filter((entry): entry is { name: string; article: Article } => Boolean(entry.article));
+const latestPerLab = latestModelReleasesPerLab(releases, labNames);
 
 const timeline = releases.slice(0, 60);
 const leadReleaseLogo = latestPerLab[0] ? resolveCompanyLogo(latestPerLab[0].name) : "";

@@ -839,5 +839,245 @@
       "summary": "In collaboration with NVIDIA, we"
     },
     "eligible": true
+  },
+  {
+    "article": {
+      "id": "4a6a874d-0000-4bbe-8522-83f598d9953a",
+      "company": "OpenAI",
+      "title": "OpenAI models, Codex, and Managed Agents come to AWS",
+      "url": "https://openai.com/index/openai-on-aws",
+      "published_at": "2026-04-28T00:00:00+00:00",
+      "source_type": "rss_official",
+      "summary": "OpenAI GPT models, Codex, and Managed Agents are now available on AWS, enabling enterprises to build secure AI in their AWS environments.",
+      "content": "OpenAI GPT models, Codex, and Managed Agents are now available on AWS, enabling enterprises to build secure AI in their AWS environments.",
+      "source_url": "https://openai.com/news/rss.xml",
+      "source_key": "openai-news"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "24c0f7ce-cfbd-47d4-9c0d-953dc5a0b62f",
+      "company": "OpenAI",
+      "title": "Codex Security: now in research preview",
+      "url": "https://openai.com/index/codex-security-now-in-research-preview",
+      "published_at": "2026-03-06T10:00:00+00:00",
+      "source_type": "rss_official",
+      "summary": "Codex Security is an AI application security agent that analyzes project context to detect, validate, and patch complex vulnerabilities with higher confidence and less noise.",
+      "content": "Codex Security is an AI application security agent that analyzes project context to detect, validate, and patch complex vulnerabilities with higher confidence and less noise.",
+      "source_url": "https://openai.com/news/rss.xml",
+      "source_key": "openai-news"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "8a932bb3-f8fb-41f8-968c-14d86c466d53",
+      "company": "OpenAI",
+      "title": "Introducing Activation Atlases",
+      "url": "https://openai.com/index/introducing-activation-atlases",
+      "published_at": "2019-03-06T08:00:00+00:00",
+      "source_type": "rss_official",
+      "summary": "We’ve created activation atlases (in collaboration with Google researchers), a new technique for visualizing what interactions between neurons can represent. As AI systems are deployed in increasingly sensitive contexts, having a better understanding of their internal decision-making processes will",
+      "content": "We’ve created activation atlases (in collaboration with Google researchers), a new technique for visualizing what interactions between neurons can represent. As AI systems are deployed in increasingly sensitive contexts, having a better understanding of their internal decision-making processes will let us identify weaknesses and investigate failures.",
+      "source_url": "https://openai.com/news/rss.xml",
+      "source_key": "openai-news"
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "66551a80-69b0-58bf-9860-31c6cd988f1c",
+      "company": "Amazon AI",
+      "title": "Amazon Quick is now generally available on desktop",
+      "url": "https://aws.amazon.com/blogs/machine-learning/amazon-quick-is-now-generally-available-on-desktop/",
+      "published_at": "2026-09-10T18:16:37+00:00",
+      "source_type": "rss_official",
+      "summary": "Your teams get an AI assistant that handles real work while your data stays in your environment and your conversations stay private Today, the Amazon Quick desktop application is generally available on macOS and Windows. We’re also adding a new activity feed to the mobile experience on iOS and Android that consolidates email, calendar, CRM, […]",
+      "content": "Your teams get an AI assistant that handles real work while your data stays in your environment and your conversations stay private Today, the Amazon Quick desktop application is generally available on macOS and Windows. We’re also adding a new activity feed to the mobile experience on iOS and Android that consolidates email, calendar, CRM, and messaging into one prioritized view, showing your teams the decisions that need them while agents resolve the routine items in the background, so they spend less time sorting through updates and more time on high-value work. Enterprise IT organizations face a compounding problem: the tools your teams need to stay productive are multiplying, and so is the shadow AI risk that comes with them. When people work around approved systems to get things done faster, governance breaks down, data leaves controlled environments, and IT loses visibility. The answer is not to restrict AI access but to give teams an enterprise-grade AI assistant built for work, on infrastructure IT already controls. Quick runs on AWS, the same infrastructure behind the most security-sensitive workloads on the planet. Your data stays in your environment, your conversations remain private, and everything is auditable. Full audit trails are available through Amazon CloudWatch and AWS CloudTrail. The compliance certifications your security team requires (HIPAA, FedRAMP, SOC 2, and ISO 27001) are built in from day one. Customers across manufacturing, healthcare, and sports have been using Quick on desktop during preview—asking complex questions in natural language and getting grounded, trustworthy answers in seconds, cutting time-to-insight significantly while keeping governance and accuracy built in from the start. For organizations managing knowledge workers across hundreds of roles and workflows, the capacity equation matters too. Business goals keep growing, but the hours in a day do not. Most of the time that should go to high-judgment work gets consumed by pulling information together, chasing follow-ups, and assembling deliverables. Quick changes that equation by providing a thought partner that knows your context, builds what you need, and takes action on your behalf. Quick also gives your team a shared workspace where the dashboards, agents, and automations one person builds are available to the whole team. Here is what Quick looks like across a real workday, from delegating meeting prep on a laptop to triaging priorities on a phone and following up after the workday ends. Here, an enterprise account executive at a manufacturing company uses Quick to dramatically simplify prep for a key customer meeting—typing a single request and letting Quick assemble the brief in the background Focus on what matters, not what’s loudest Most work tools generate a firehose of notifications.&nbsp;Quick’s&nbsp;activity feed does the opposite: it&nbsp;consolidates&nbsp;signals from email, messaging, CRM, and calendar into one prioritized view.&nbsp;Items&nbsp;agents resolve on their own disappear. What&nbsp;remains&nbsp;is a short queue of things only you can act on, and the feed gets smarter over time. Quick&nbsp;learns&nbsp;your relationships, priorities, and patterns, so it surfaces what matters most, not just what arrived most recently. &nbsp; Here, the same rep triages her morning from her phone,&nbsp;approving an addition to her meeting brief and responding to a pipeline review request for her VP, without opening another app. &nbsp; For teams&nbsp;operating&nbsp;at enterprise scale, that prioritization is what turns a firehose of updates into a clear path forward: &nbsp; “At Southwest Airlines,&nbsp;we’re&nbsp;building agentic AI tools and autonomous agents to streamline operations across our 70,000+ Employees and enhance the experience for the millions of Customers we serve every day. Amazon Quick Desktop gives our teams the ability to ask complex questions in natural language and get grounded, trustworthy answers in seconds instead of waiting on ad hoc report requests. Our developers build once and deploy intelligent experiences across the enterprise, with governance and accuracy baked in from the start. Quick cuts time-to-insight significantly and is already powering high-impact use cases across the&nbsp;organization&nbsp;including market analytics.&nbsp;It’s&nbsp;become the foundation of how we put AI-driven intelligence directly into the hands of our People.” &nbsp; -Justin Bundick, VP Technology Intelligence Platforms, Southwest Airlines &nbsp; From meeting to momentum Most AI tools answer questions. Quick completes tasks by synthesizing information across systems, drafting deliverables, updating records, and executing follow-ups on behalf of your team. Teams do not get a summary of what they&nbsp;could&nbsp;do. They get finished output, ready for review. &nbsp; Here, she&nbsp;picks up on&nbsp;her laptop where she left off on&nbsp;mobile—reviewing&nbsp;the completed work in mission control and sharing the finished brief with her account team. &nbsp; Early customers point to that shift&nbsp;from answers to finished work&nbsp;as the thing that changes how their teams&nbsp;operate: &nbsp; “We’ve&nbsp;been evaluating Amazon Quick ahead of its general availability launch, and the adoption was easy. Clean design, intuitive experience, and the knowledge graph and memory adapt to the way you work. You can create agents that run asynchronously on your behalf and go from concept to working prototype in a fraction of the time. Quick is becoming a force multiplier that frees you to focus on higher-value work.” &nbsp; — Chuck Metturdharma, VP & Chief AI Officer, Labcorp &nbsp; The work follows through, even when you don’t have time Quick is built on the tools, systems, and infrastructure your organization already runs on. There is no migration, no new ecosystem to adopt. It connects to what you have and starts delivering value on day one. &nbsp; Here, after the meeting, she wraps the day from her phone,&nbsp;having Quick refine and send a customer follow-up, then queue up the next morning’s materials for engineering. &nbsp; Every decision stays yours while Quick handles the rest. &nbsp; Whether&nbsp;you’re&nbsp;an IT leader, account executive, a program manager juggling cross-functional launches, or a finance lead closing the books, Quick works the way you do, across every device, on your schedule. You bring the judgment; Quick gives your teams the capacity to match their goals. &nbsp; That capacity shows up differently for every team,&nbsp;but the pattern is the same: people spend less time on setup and more time acting on what they know: &nbsp; “Amazon Quick allows our domain experts—the people who know golf and our data best—to do work that used to sit in a technical backlog.&nbsp;We’ve&nbsp;prototyped working systems in days instead of weeks. When an idea proves&nbsp;out, they can hand&nbsp;our engineering team well-documented,&nbsp;validated&nbsp;requirements instead of a rough concept, so development starts from a proven foundation. And with it on mobile, they can act on an idea the moment it hits instead of waiting until they are back at a computer.” &nbsp; — Randall Kato, VP Golf Technology, PGA TOUR &nbsp; These are the kinds of results customers are already achieving with Quick, and they&nbsp;represent&nbsp;what becomes possible when your team can delegate the routine and focus on the work that moves the business. &nbsp; Download Quick today Spencer Martenson Spencer has spent six years at AWS translating complex technology into stories that resonate with customers. He previously led product marketing for SAP on AWS, helping enterprises modernize their critical ERP workloads in the cloud. Now he’s focused on Amazon Quick — building GTM strategies that help customers work smarter by taking advantage of the latest advancements in AI. Spencer lives in Seattle, spending his spare time pursuing rare birds and training his dog. Chris Lott Chris is a Principal GenAI/ML Specialist Solutions Architect on the Amazon Quick team. He has over 25 years of enterprise software development experience. Chris enjoys gardening, cooking, aerospace/general aviation, and traveling the world. Ramon Lopez Ramon is a Principal Solutions Architect for Amazon Quick. With many years of experience building BI solutions and a background in accounting, he loves working with customers, creating solutions, and making world-class services. When not working, he prefers to be outdoors in the ocean or up on a mountain.",
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/",
+      "source_key": "aws-machine-learning"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "provider-375537c0c035cf9da7",
+      "company": "Alibaba Qwen",
+      "title": "Qwen2-VL: To See the World More Clearly",
+      "url": "https://qwenlm.github.io/blog/qwen2-vl/",
+      "published_at": "2024-08-28T16:24:00+00:00",
+      "source_type": "rss_official",
+      "summary": "DEMO GITHUB HUGGING FACE MODELSCOPE API DISCORD After a year&rsquo;s relentless efforts, today we are thrilled to release Qwen2-VL! Qwen2-VL is the latest version of the vision language models based on Qwen2 in the Qwen model familities. Compared with Qwen-VL, Qwen2-VL has the capabilities of: SoTA understanding of images of various resolution & ratio: Qwen2-VL achieves state-of-the-art performance on visual understanding benchmarks, including MathVista, DocVQA, RealWorldQA, MTVQA, etc. Understa",
+      "content": "DEMO GITHUB HUGGING FACE MODELSCOPE API DISCORD After a year&rsquo;s relentless efforts, today we are thrilled to release Qwen2-VL! Qwen2-VL is the latest version of the vision language models based on Qwen2 in the Qwen model familities. Compared with Qwen-VL, Qwen2-VL has the capabilities of: SoTA understanding of images of various resolution & ratio: Qwen2-VL achieves state-of-the-art performance on visual understanding benchmarks, including MathVista, DocVQA, RealWorldQA, MTVQA, etc. Understanding videos of 20min+: Qwen2-VL can understand videos over 20 minutes for high-quality video-based question answering, dialog, content creation, etc.",
+      "source_url": "https://qwenlm.github.io/blog/index.xml",
+      "source_key": "qwen-blog"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "provider-1d34249cbd48b6b79c",
+      "company": "Alibaba Qwen",
+      "title": "Introducing Qwen-VL",
+      "url": "https://qwenlm.github.io/blog/qwen-vl/",
+      "published_at": "2024-01-25T05:33:00+00:00",
+      "source_type": "rss_official",
+      "summary": "Along with the rapid development of our large language model Qwen, we leveraged Qwen’s capabilities and unified multimodal pretraining to address the limitations of multimodal models in generalization, and we opensourced multimodal model Qwen-VL in Sep. 2023. Recently, the Qwen-VL series has undergone a significant upgrade with the launch of two enhanced versions, Qwen-VL-Plus and Qwen-VL-Max. The key technical advancements in these versions include: Substantially boost in image-related reasonin",
+      "content": "Along with the rapid development of our large language model Qwen, we leveraged Qwen’s capabilities and unified multimodal pretraining to address the limitations of multimodal models in generalization, and we opensourced multimodal model Qwen-VL in Sep. 2023. Recently, the Qwen-VL series has undergone a significant upgrade with the launch of two enhanced versions, Qwen-VL-Plus and Qwen-VL-Max. The key technical advancements in these versions include: Substantially boost in image-related reasoning capabilities; Considerable enhancement in recognizing, extracting, and analyzing details within images and texts contained therein; Support for high-definition images with resolutions above one million pixels and images of various aspect ratios.",
+      "source_url": "https://qwenlm.github.io/blog/index.xml",
+      "source_key": "qwen-blog"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "b3680604-d1c5-497c-9937-fd4cd3ea9824",
+      "company": "Hugging Face",
+      "title": "Introducing IDEFICS: An Open Reproduction of State-of-the-art Visual Langage Model",
+      "url": "https://huggingface.co/blog/idefics",
+      "published_at": "2023-08-22T00:00:00+00:00",
+      "source_type": "rss_official",
+      "summary": "",
+      "content": "",
+      "source_url": "https://huggingface.co/blog/feed.xml",
+      "source_key": "hugging-face-blog"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "625c977e-ae97-5a67-99ea-3b361370ab8b",
+      "company": "Amazon AI",
+      "title": "The new AgentCore runtime: Elastic, optimized, and consistently fast starts",
+      "url": "https://aws.amazon.com/blogs/machine-learning/the-new-agentcore-runtime-elastic-optimized-and-consistently-fast-starts/",
+      "published_at": "2026-09-18T15:31:34+00:00",
+      "source_type": "rss_official",
+      "summary": "Today we are announcing the new AgentCore runtime, a capability of Amazon Bedrock AgentCore built for the speed, flexibility, and cost efficiency that production agents demand. It reclaims memory as sessions release it and delivers consistent cold starts regardless of image size or concurrency.",
+      "content": "Agents are no longer experiments. They process claims, write and review code, coordinate across systems, and run for hours without supervision. As agents take on more complex, longer-running work, the infrastructure underneath them must evolve just as fast. We built Amazon Bedrock AgentCore to help developers build, connect, and optimize agents securely at scale. AgentCore runtime, a capability of Amazon Bedrock AgentCore, is the managed compute layer that gives developers a fully managed environment to deploy and run agents without building or maintaining infrastructure. Since launch, thousands of teams have used it to run production agents. Every conversation with those teams teaches us something about what agents need next: faster responsiveness as workloads scale, finer control over resource allocation, and economics that track actual usage precisely. Today, we are announcing the new AgentCore runtime, purpose-built for the speed, flexibility, and cost efficiency that production agents demand. It brings better memory management, reclaiming memory as a session releases it instead of holding it at the peak. It also delivers consistent cold start times regardless of container size or agent concurrency. You get the serverless model you already liked, now more elastic. Memory is released back the instant a session ends, startup times stay consistent regardless of size or concurrency, and the bill tracks the work your agent does. From conversation to workload Many agents started as chat bots: you asked, it answered, and the exchange ended in seconds. Then came coding agents that work for minutes to hours, holding context across many steps, running while you watch or step away. Now agents are becoming ambient, always on, triggered by events, running unattended, surfacing only when a job finishes or hits a decision that needs a person. And there are far more of them: no longer novelties but running everywhere. They are embedded in products, behind everyday features, and increasingly launched by other agents. The first version of AgentCore runtime built a strong foundation for this spectrum of agents: serverless, session isolation, scale to zero, and pay only for what you use. Today’s launch of the new runtime extends that foundation across the full spectrum, staying fast and consistent for interactive agents, and durable and affordable for long-running, more autonomous agents. What AgentCore runtime provides With AgentCore runtime, you can focus on the agent instead of worrying about the scalable infrastructure needed underneath it. Two things make that possible, and they’re the reasons customers reach for it: You pay only for what you consume, and not for idle CPU waiting for I/O. Billing follows resource usage, so there’s no standing charge for capacity you provisioned “just in case.” The platform scales all the way down to zero. When an agent isn’t handling work, there’s nothing running and nothing to pay for. When work arrives, the platform gets you the capacity you need. Together they make it cheap to keep many agents idle most of the time and even cheap to run one that stays busy. The consumption model bends to the workload instead of forcing the workload to bend to it. As agents move from short question-and-answer sessions to ambient, always-on work, that same model runs into two challenges. Memory is expensive, and today you pay the peak. A session holds on to memory from the moment it allocates it until the session ends, because nothing reclaims it along the way. This works when the allocated memory is used to serve subsequent resources without incurring the latency to fetch it again. However, a long-running or bursty agent keeps paying for its high point the whole time it runs, well after it has stopped using that memory. For an agent that spikes now and then but sits idle most of the day, that is the gap between paying for the peak around the clock and paying for the real usage. Startup times vary. Every new session has to start before it can do any work, so fast, predictable startup is central to a good experience. It matters most when a person is waiting on an agent that paused for input and needs to resume. The catch is the hardware-enforced isolation these sessions depend on: a session that lands on an already-initialized environment starts in under 100 milliseconds, but keeping environments hot enough to guarantee that means holding compute in reserve. So most sessions begin with a cold start: booting a fresh environment, pulling the image, and initializing the agent before the first request runs. That latency penalty grows with image size and concurrency, and it’s worst under bursty traffic, exactly when most sessions arrive and the fewest ready environments remain. That inconsistency is what a waiting user feels. The workarounds are heavy. To cover both challenges, customers often build the machinery themselves: holding spare environments ready so requests avoid a cold start, optimizing memory allocation, and tearing it all down again to keep the bill in check. Keeping capacity ready ahead of demand is costly and complex for anyone to run. It reserves scarce compute whether or not that compute is working, and it still gives way when a burst outruns what was set aside. This is undifferentiated work, and none of it is the agent itself. Benefits of the new AgentCore runtime The enhanced AgentCore runtime takes care of both challenges for you, starting with lower memory consumption tracked to what you use. The new runtime now starts each session from a small, efficient memory profile rather than a full provisioned footprint. Additional memory is allocated and paged in on demand as the workload needs it. Based on an analysis of allocation patterns across billions of sessions, we tuned the new runtime to reclaim memory when it goes cold and is unlikely to be accessed again. It no longer holds that memory until the session ends. With the original runtime, allocated memory remained held even if it wasn’t used by subsequent requests, so the usage tracked the high watermark. With the new runtime, memory that is released or goes cold is reclaimed, and the bill tracks those changes over the lifetime of the session. Figure 1: Session memory usage for the original runtime compared to the new runtime Faster, more consistent cold starts come as a direct benefit of smaller profiles at startup. The enhanced runtime prepares the environment once, snapshots it, and restores that snapshot for each new instance. Because the snapshot stays small and consistent, so do the starts, no matter the image size or how much concurrency you run. Rather than repeating the boot-and-initialize work on every cold start, the platform restores an environment that is already up. The runtime now delivers consistent starts in a tight, predictable range. What we measured. To isolate what the platform itself adds to a cold start, we tested an empty echo agent that returns its input and calls no model and no tools. The timing reflects the runtime’s start path rather than any application work. A Python client on an Amazon Elastic Compute Cloud (Amazon EC2) instance in us-west-2 called agents in us-east-1 over the public internet with no virtual private cloud (VPC) peering, using the boto3 SDK. These are client-side numbers, so each one includes the round trip between the two AWS Regions on top of the platform’s own start time. We sent 5,000 cold invocations per agent across both versions and five image sizes, within default account quotas. Measured this way, the new runtime delivers a P75 cold start latency of about 2 seconds from a 200 MB image all the way to 2 GB, because image size has no effect on it. The original runtime’s latency, by contrast, rises with image size, from roughly 5.4 seconds to nearly 30 seconds. To put this latency in perspective, it helps to separate cold start latency from what a user waits on. Start time is how long it takes to get a ready environment before your agent code handles its first request. It is not the time the agent spends working. In a production agent, most of the wall-clock time a user experiences comes from the agent loop and its model calls, often several seconds each. In our echo test, the agent’s own code ran in about 34 milliseconds at P75, so nearly everything here is platform start time. The new runtime makes the platform’s portion of the start time fast and predictable, which matters most when a person is waiting on an interactive agent. A practical tip for interactive agents. You can hide the start time almost entirely by beginning the session as soon as the user engages, for example when they open a chat, even before they type in the input box, rather than waiting for them to submit. The session warms while they are greeted and while they type their first request, so by the time they send that message, the environment is ready. Figure 2: P75 cold start latency across image sizes for the original and new runtime How the new runtime works The next generation of the runtime reworks how sessions use memory, how agents load, and what you pay for. Page memory in on demand and reclaim it when it is freed. Instead of holding on to a session’s peak memory after it’s allocated, the new runtime now backs the session with a smaller resident footprint and brings in more memory as the workload touches it. When your agent lets memory go, by releasing per-request buffers and by letting cached data expire between requests, the platform takes it back rather than letting it stay claimed until the session ends. Load the agent once, then snapshot it. When you create or update an instance of the new runtime, AgentCore launches your container and waits for it to report healthy, then captures a snapshot of the running environment. By that point, your one-time initialization has already run, so work such as loading model artifacts and fetching static config is baked into the snapshot. Every new instance then starts by restoring that snapshot rather than initializing from scratch. The expensive startup work is paid once, and each instance inherits it instantly. Keep the snapshot small and its size steady. A naive snapshot of a running process captures far more than a restored instance needs, including caches and transient memory that pad the snapshot and make restore time grow with image size. The new runtime strips that excess, so the snapshot holds only the working state an instance needs to resume, not its full resident footprint. The result is a snapshot whose size stays roughly flat as the container image grows, and that is what holds restore latency steady across a wide range of image sizes. Higher rate, lower bill. The new runtime bills you for the memory that&nbsp; your agent uses, loaded on demand and reclaimed when idle, not for holding your whole container image in memory all session. You pay a higher rate but on far fewer GB-hours, and for most agents the footprint drops more than the rate rises, so the bill goes down. What’s next (coming soon) Beyond what we shipped today, several capabilities are on the way to give you more choice over pricing, compute, compatibility, and control. Committed baseline discounts. Today’s consumption-based pricing stays and works well for spiky and scale-to-zero workloads. Alongside it, the new runtime will add a baseline pricing option: you reserve a memory floor for a session and burst above it on demand. Baseline pricing suits steady, always-active agent sessions that want predictable cost, while consumption pricing continues to provide greater elasticity. Larger compute and storage. Expand your agent’s environment with more RAM, vCPU, and session storage. x86 support. Run the agent, tool, or environment you already have with x86 microVMs. Teams whose code or dependencies target x86 can move an agent, a tool, or an execution environment to AgentCore as-is. Greater lifecycle control. Suspend and resume sessions with memory snapshotting. Attach to runtime hooks to serialize state before an active session terminates, so sessions can resume indefinitely. Scoped identity for unattended agents. Unattended agents raise a question a chat turn never did: what is this agent allowed to do when no one is watching it act? Session context keys will give each session its own scoped identity, so an unattended agent, tool, or environment acts with exactly the permissions defined for it and nothing more. Getting started To get started with the new runtime, set the platformVersion parameter to V2 when you create or update a runtime. See the AgentCore Developer Guide for more details on using the runtime. You can find samples in the AgentCore GitHub samples repo . An accompanying load test example shows the new runtime’s consistent cold start latency in your own AWS account. About the authors Evandro Franco Evandro is a Sr.&nbsp;Data Scientist working on Amazon Web Services. He is part of the Global GTM team that helps AWS customers overcome business challenges related to AI/ML on top of AWS, mainly on Amazon Bedrock AgentCore and Strands Agents. He has more than 18 years of experience working with technology, from software development, infrastructure, serverless, to machine learning. In his free time, Evandro enjoys playing with his son, mainly building some funny Lego bricks. Mark Roy Mark is a Principal AI Architect for AWS, helping customers design and build agentic AI solutions. Mark’s work covers a wide range of use cases, with a primary interest in AI agents at enterprise scale. He is a worldwide tech lead for Agentic AI, including Bedrock AgentCore. Mark has helped companies in insurance, financial services, media and entertainment, healthcare, utilities, and manufacturing. Prior to joining AWS, Mark was an architect, developer, and technology leader for over 25 years, including 19 years in financial services. Shishir Bharathi Shishir is a Principal Engineer in AWS, currently building Amazon Bedrock AgentCore Runtime. His experience spans the full agentic stack, drawing on deep work across AI systems, from developing conversational agents in Alexa and LLM post-training and customization to recommender systems in Prime Video. He now focuses on making the infrastructure that powers production agentic systems more reliable, efficient, and scalable. Abhishek Singh Abhishek is a Senior Software Development Engineer at AWS on the Bedrock AgentCore team. He is the tech lead for AgentCore Runtime and has led the design and development of multiple AgentCore services from the ground up, including Runtime, Code Interpreter, and Browser. He has 12 years of experience building distributed systems, previously on Bedrock and SageMaker. Outside of work, he likes playing soccer and tennis, and spending quality time with family. Aniketh Manjunath Aniketh is a Software Development Engineer at AWS on the Amazon Bedrock AgentCore team, working on AgentCore Runtime with a focus on the performance and efficiency of agent execution at scale. He has over five years of experience building large-scale distributed systems at Amazon, previously on Amazon SageMaker, and now works on making the infrastructure behind production agentic systems faster and more reliable as it scales to meet growing demand. Outside of work, he enjoys hiking, watching movies, and playing cricket. Rahul Nama Rahul is a Software Development Engineer at AWS, where he builds AgentCore Runtime systems that enable AI agents to run reliably at scale. He is passionate about building distributed systems and optimizing infrastructure to simplify the lifecycle of AI agents. Outside of work, he plays semi professional cricket and enjoys exploring the outdoors.",
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/",
+      "source_key": "aws-machine-learning"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "3f6ed181-d601-59e7-83c4-fc9ddd7a7796",
+      "company": "Mistral AI",
+      "title": "Introducing Search Toolkit | Mistral AI",
+      "url": "https://mistral.ai/news/search-toolkit/",
+      "published_at": "2026-08-04T22:32:09.297+00:00",
+      "source_type": "scraped",
+      "summary": "Search Toolkit is a composable framework for building production search pipelines for AI applications.",
+      "content": "Search Toolkit is a composable framework for building production search pipelines for AI applications.",
+      "source_url": "https://mistral.ai/sitemap-index.xml",
+      "source_key": "mistral-sitemap"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "b31eb307-210d-4b23-9e8d-6e660cd630c2",
+      "company": "OpenAI",
+      "title": "OpenAI Microscope",
+      "url": "https://openai.com/index/microscope",
+      "published_at": "2020-04-14T07:00:00+00:00",
+      "source_type": "rss_official",
+      "summary": "We’re introducing OpenAI Microscope, a collection of visualizations of every significant layer and neuron of eight vision “model organisms” which are often studied in interpretability. Microscope makes it easier to analyze the features that form inside these neural networks, and we hope it will help",
+      "content": "We’re introducing OpenAI Microscope, a collection of visualizations of every significant layer and neuron of eight vision “model organisms” which are often studied in interpretability. Microscope makes it easier to analyze the features that form inside these neural networks, and we hope it will help the research community as we move towards understanding these complicated systems.",
+      "source_url": "https://openai.com/news/rss.xml",
+      "source_key": "openai-news"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "provider-5715a25d291366ab69",
+      "company": "Alibaba Qwen",
+      "title": "Introducing Qwen",
+      "url": "https://qwenlm.github.io/blog/qwen/",
+      "published_at": "2024-01-23T14:13:29+00:00",
+      "source_type": "rss_official",
+      "summary": "4 months after our first release of Qwen-7B, which is the starting point of our opensource journey of large language models (LLM), we now provide an introduction to the Qwen series to give you a whole picture of our work as well as our objectives. Below are important links to our opensource projects and community. PAPER GITHUB HUGGING FACE MODELSCOPE DISCORD Additionally, we have WeChat groups for chatting and we invite you to join the groups through the provided link in our GitHub readme.",
+      "content": "4 months after our first release of Qwen-7B, which is the starting point of our opensource journey of large language models (LLM), we now provide an introduction to the Qwen series to give you a whole picture of our work as well as our objectives. Below are important links to our opensource projects and community. PAPER GITHUB HUGGING FACE MODELSCOPE DISCORD Additionally, we have WeChat groups for chatting and we invite you to join the groups through the provided link in our GitHub readme.",
+      "source_url": "https://qwenlm.github.io/blog/index.xml",
+      "source_key": "qwen-blog"
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "97d0c33b-9611-4c5b-9a0c-5dcbb4846a40",
+      "company": "OpenAI",
+      "title": "OpenAI Red Teaming Network",
+      "url": "https://openai.com/index/red-teaming-network",
+      "published_at": "2023-09-19T07:00:00+00:00",
+      "source_type": "rss_official",
+      "summary": "We’re announcing an open call for the OpenAI Red Teaming Network and invite domain experts interested in improving the safety of OpenAI’s models to join our efforts.",
+      "content": "We’re announcing an open call for the OpenAI Red Teaming Network and invite domain experts interested in improving the safety of OpenAI’s models to join our efforts.",
+      "source_url": "https://openai.com/news/rss.xml",
+      "source_key": "openai-news"
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "aa155012-08fd-4ce7-94f1-661eb3b895de",
+      "company": "OpenAI",
+      "title": "Safety Gym",
+      "url": "https://openai.com/index/safety-gym",
+      "published_at": "2019-11-21T08:00:00+00:00",
+      "source_type": "rss_official",
+      "summary": "We’re releasing Safety Gym, a suite of environments and tools for measuring progress towards reinforcement learning agents that respect safety constraints while training.",
+      "content": "We’re releasing Safety Gym, a suite of environments and tools for measuring progress towards reinforcement learning agents that respect safety constraints while training.",
+      "source_url": "https://openai.com/news/rss.xml",
+      "source_key": "openai-news"
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "f1b87260-c7e9-44ea-8cc3-bd03e2944926",
+      "company": "Google DeepMind",
+      "title": "We’re expanding our Gemini 2.5 family of models",
+      "url": "https://blog.google/products-and-platforms/products/gemini/gemini-2-5-model-family-expands/",
+      "published_at": "2025-06-17T16:01:00+00:00",
+      "source_type": "rss_official",
+      "summary": "Gemini 2.5 Flash and Pro are now generally available, and we’re introducing 2.5 Flash-Lite, our most cost-efficient and fastest 2.5 model yet.",
+      "content": "Gemini 2.5 Flash and Pro are now generally available, and we’re introducing 2.5 Flash-Lite, our most cost-efficient and fastest 2.5 model yet.",
+      "source_url": "https://deepmind.google/blog/rss.xml",
+      "source_key": "deepmind-blog"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "427d393f-872d-4200-a4af-b00e80e5f45a",
+      "company": "Hugging Face",
+      "title": "Introducing ⚔️ AI vs. AI ⚔️ a deep reinforcement learning multi-agents competition system",
+      "url": "https://huggingface.co/blog/aivsai",
+      "published_at": "2023-02-07T00:00:00+00:00",
+      "source_type": "rss_official",
+      "summary": "",
+      "content": "",
+      "source_url": "https://huggingface.co/blog/feed.xml",
+      "source_key": "hugging-face-blog"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "be7c2ac5-c50d-4270-ad98-37042e512e33",
+      "company": "OpenAI",
+      "title": "Universe",
+      "url": "https://openai.com/index/universe",
+      "published_at": "2016-12-05T08:00:00+00:00",
+      "source_type": "rss_official",
+      "summary": "We’re releasing Universe, a software platform for measuring and training an AI’s general intelligence across the world’s supply of games, websites and other applications.",
+      "content": "We’re releasing Universe, a software platform for measuring and training an AI’s general intelligence across the world’s supply of games, websites and other applications.",
+      "source_url": "https://openai.com/news/rss.xml",
+      "source_key": "openai-news"
+    },
+    "eligible": true
   }
 ]
