@@ -87,10 +87,13 @@ describe("model release page eligibility", () => {
   });
 
   test("body mentions and source categories do not establish a launch", () => {
+    expect(isModelRelease(article("Aurora powers real-time transcription", "Aurora is an open source speech model used in existing deployments."))).toBe(false);
+    expect(isModelRelease(article("Aurora enables real-time transcription", "Aurora is an open source speech model designed to transcribe audio..."))).toBe(false);
+    expect(isModelRelease(article("Aurora powers enhanced transcription in existing deployments", "Aurora is an open source speech model used in existing deployments."))).toBe(false);
     expect(isModelRelease(article("AI safety report", "Today we discuss the release of GPT-6."))).toBe(false);
     expect(isModelRelease(article("GLM-5.3 and the spread of advanced cyber capabilities", "GLM-5.3 was released without safeguards."))).toBe(false);
     expect(isModelRelease(article("Introducing Claude Corps", "Claude Corps is a national fellowship."))).toBe(false);
-    expect(isModelRelease(article("NVIDIA Aurora enables quantum calibration", "NVIDIA Aurora Calibration is an open source vision language model (VLM)."))).toBe(true);
+    expect(isModelRelease(article("NVIDIA Aurora enables quantum calibration with enhanced learning", "NVIDIA Aurora Calibration is an open source vision language model (VLM)."))).toBe(true);
     expect(isModelRelease(article("A vendor’s quantum computing update", "Aurora is an open source vision language model (VLM)."))).toBe(false);
     expect(isModelRelease(article("Introducing Labs", "Our new division incubates experimental AI products."))).toBe(false);
     expect(isModelRelease(article("Introducing SynthID Bio", "Proof of concept for watermarking AI-generated proteins."))).toBe(false);

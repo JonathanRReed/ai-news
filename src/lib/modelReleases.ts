@@ -60,9 +60,12 @@ export function isModelRelease(article: Pick<Article, "title" | "summary" | "con
   // tutorial or partnership as the subject still cannot become a release.
   if (!availability && (INSTRUCTIONAL.test(subject) || (!introduced && INSTRUCTIONAL.test(headline)))) return false;
 
-  // Domain words such as quantum or CPU do not make an explicitly defined AI
-  // model unrelated. A model-led publisher definition can be the entire excerpt.
-  if (definedModelSubject) return true;
+  // A definition identifies the model; it does not establish a release. For a
+  // truncated publisher excerpt, require an explicit new/enhanced capability
+  // announcement, and reject definitions describing existing deployments.
+  const newCapability = /\b(?:enables?|brings?|advances?)\b[^.!?]*\b(?:new|enhanced|next[ -]generation)\b/i.test(headline);
+  if (definedModelSubject && newCapability
+    && !/\b(?:already|existing|used in|previously released)\b/i.test(lead)) return true;
   // A publisher can announce an unnumbered open model with a return headline
   // and no excerpt. Require both that launch claim and an AI description.
   if (RETURN_LAUNCH.test(headline) && AI_DESCRIPTION.test(headline)) return true;
