@@ -59,7 +59,7 @@ test("selects eligible releases consistently in the timeline and lab cards", asy
   // A community publisher remains in the source-attributed timeline and news
   // feed, but cannot replace the hosting platform's own latest-release card.
   const community = releases.filter((article) => article.company === "Hugging Face"
-    && /^\/blog\/[^/]+\/[^/]+/.test(new URL(article.url).pathname));
+    && latestModelReleasesPerLab([article], ["Hugging Face"]).length === 0);
   for (const article of community) {
     const link = `a[href="${articlePath(article.id)}"]`;
     await expect(cards.locator(link)).toHaveCount(0);

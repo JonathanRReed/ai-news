@@ -44,6 +44,8 @@ test("credits the verified Hugging Face organization without changing its source
   const snapshot = JSON.stringify(records);
   expect(latestModelReleasesPerLab(records, ["Hugging Face"]))
     .toEqual([{ name: "Hugging Face", article: organization }]);
+  expect(records.filter((article) => latestModelReleasesPerLab([article], ["Hugging Face"]).length === 0))
+    .toEqual([community]);
   expect(JSON.stringify(records)).toBe(snapshot);
 });
 
