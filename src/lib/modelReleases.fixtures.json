@@ -784,5 +784,16 @@
       "summary": "We’ve seen developers doing amazing things with Gemini 2.5 Pro, so we decided to release an updated version a couple of weeks early to get into developers hands sooner."
     },
     "eligible": true
+  },
+  {
+    "article": {
+      "id": "61d78dfb-17a3-58b9-9d70-f11881956c43",
+      "company": "Hugging Face",
+      "title": "Introducing @huggingface/kernels: 200+ WebGPU Kernels for Local AI",
+      "url": "https://huggingface.co/blog/webgpu-kernels",
+      "published_at": "2026-09-01T00:00:00+00:00",
+      "summary": ""
+    },
+    "eligible": true
   }
 ]

@@ -162,6 +162,25 @@ describe("model release page eligibility", () => {
     expect(isModelRelease(article("Aurora 2.5 Pro Preview: improved coding", "Developers use Aurora 2.5 Pro. We discuss an updated version released previously."))).toBe(false);
   });
 
+  test("uses canonical path identity despite tracking queries and fragments", () => {
+    expect(isModelRelease({ ...article("Flows for work that runs the business", "Flows is now in public preview."), url: "https://lab.example/news/flows/?utm_source=feed" })).toBe(true);
+    expect(isModelRelease({ ...article("Flows for work that runs the business", "Flows is now in public preview."), url: "https://lab.example/news/flows/#overview" })).toBe(true);
+    expect(isModelRelease({ ...article("Flows for work that runs the business", "Flows is now in public preview."), url: "not a URL" })).toBe(false);
+  });
+
+  test("requires an affirmative updated-version release claim", () => {
+    expect(isModelRelease(article("Aurora 2.5 Pro Preview: improved coding", "Developers use Aurora 2.5 Pro, but we’re not releasing an updated version this cycle."))).toBe(false);
+    expect(isModelRelease(article("Aurora 2.5 Pro Preview: improved coding", "Developers use Aurora 2.5 Pro, but we decided not to release an updated version."))).toBe(false);
+    expect(isModelRelease(article("Aurora 2.5 Pro Preview: improved coding", "Developers use Aurora 2.5 Pro, and we might release an updated version someday."))).toBe(false);
+  });
+
+  test("recognizes scoped software artifacts explicitly launched for AI", () => {
+    expect(isModelRelease(article("Introducing @newlab/kernels: GPU operations for Local AI"))).toBe(true);
+    expect(isModelRelease(article("Introducing @newlab/runner: software tools for enterprise AI"))).toBe(true);
+    expect(isModelRelease(article("Introducing @vendor/tracker: issue tracking for teams", "Our customers sometimes use AI models."))).toBe(false);
+    expect(isModelRelease(article("Introducing @newlab/checks: a benchmark for Local AI"))).toBe(false);
+  });
+
   test("classifies frozen publisher inputs from the source and review audit", () => {
     for (const { article, eligible } of fixtures) {
       expect({ title: article.title, eligible: isModelRelease(article) }).toEqual({ title: article.title, eligible });

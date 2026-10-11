@@ -22,6 +22,13 @@ const OPENING_LAUNCH = /^(?:today[, ]+|we(?:[’']re| are)?\s+|we are pleased to
 export function isModelRelease(article: Pick<Article, "title" | "summary" | "content"> & Partial<Pick<Article, "url">>): boolean {
   const title = article.title.replace(/[\u2010-\u2015]/g, "-").trim();
   const lead = (article.summary || article.content || "").slice(0, 300).replace(/[\u2010-\u2015]/g, "-");
+  // Tracking queries and fragments do not identify the announced artifact.
+  let sourcePath = "";
+  try {
+    sourcePath = article.url ? new URL(article.url).pathname : "";
+  } catch {
+    // A malformed URL supplies no canonical identity evidence.
+  }
   const headline = title.split(/\s+\|\s+/)[0]
     .replace(/\b(introducing|announcing|launching|unveiling)\s*:\s*/i, "$1 ");
   const subject = headline.split(/:|(?<!\d),|,(?!\d)|\s+-\s+/)[0];
@@ -86,7 +93,11 @@ export function isModelRelease(article: Pick<Article, "title" | "summary" | "con
   const nameWords = name.split(/\s+/).filter((word) => /^[A-Z][\w.-]{2,}$/.test(word));
   const sameSubject = name.length > 2 && (lead.toLowerCase().includes(name.toLowerCase())
     || (nameWords.length > 1 && nameWords.every((word) => lead.toLowerCase().includes(word.toLowerCase()))));
-  if (headlineLaunch && (AI_DESCRIPTION.test(headline) || /\breranker(?:s| family)?\b/i.test(headline) || namedVersion
+  // A scoped package is an identifiable software artifact; an explicit launch
+  // for AI establishes product purpose without a provider/package allowlist.
+  const scopedSoftware = /\b(?:introduc(?:e|es|ed|ing)|announc(?:e|es|ed|ing)|launch(?:es|ed|ing)?|releas(?:e|es|ed|ing))\s+@[\w.-]+\/[\w.-]+/i.test(headline)
+    && /\bfor\b[^.!?]{0,40}\bAI\b/i.test(headline);
+  if (headlineLaunch && (AI_DESCRIPTION.test(headline) || scopedSoftware || /\breranker(?:s| family)?\b/i.test(headline) || namedVersion
     || NAMED_VERSION.test(availabilityName)
     || (sameSubject && AI_DESCRIPTION.test(lead)))) return true;
   if (availability) return true;
@@ -105,9 +116,9 @@ export function isModelRelease(article: Pick<Article, "title" | "summary" | "con
   // above. This is a substantive product preview, not a version-tag preview.
   const previewName = lead.match(/^([A-Z][\w -]{2,70}?) (?:is|are) now in public preview\b/)?.[1];
   const previewSlug = previewName?.toLowerCase().replace(/[^a-z0-9]+/g, "-");
-  const artifactSlug = article.url?.replace(/\/$/, "").split("/").at(-1);
+  const artifactSlug = sourcePath.replace(/\/$/, "").split("/").at(-1);
   if (previewName && headline.includes(previewName) && artifactSlug === previewSlug
-    && /\/(?:news|blog|products?|platforms?)\//i.test(article.url || "")) return true;
+    && /\/(?:news|blog|products?|platforms?)\//i.test(sourcePath)) return true;
   // A same-subject definition of a NEW tool/model establishes a substantive
   // product launch; a definition describing existing usage does not.
   if (sameSubject && /^.{3,80}? (?:is|are) (?:a |an |our |the )?new\b/i.test(lead)
@@ -118,7 +129,7 @@ export function isModelRelease(article: Pick<Article, "title" | "summary" | "con
   const captionName = subject.toLowerCase().replace(/\s+(?:suite|family)$/i, "").replace(/[^a-z0-9]+/g, "-");
   if (!lead && /\b(?:paired encoders and decoders|reasoning models|language models|vision models)\b/i.test(headline.slice(subject.length))
     && /\b(?:SoTA|new|open|state-of-the-art)\b/i.test(headline.slice(subject.length))
-    && article.url?.replace(/\/$/, "").split("/").at(-1) === captionName) return true;
+    && sourcePath.replace(/\/$/, "").split("/").at(-1) === captionName) return true;
 
   if (namedVersion && headline !== subject && DESCRIPTIVE_LAUNCH.test(headline.slice(subject.length))) return true;
   if (namedVersion && OPENING_LAUNCH.test(lead) && AI_DESCRIPTION.test(lead)) return true;
@@ -127,7 +138,7 @@ export function isModelRelease(article: Pick<Article, "title" | "summary" | "con
   // Bind that first-person release claim to the same full base name nearby;
   // an unrelated release or a historical usage mention is not corroboration.
   const baseName = name.replace(/\s+(?:preview|beta|alpha)$/i, "");
-  const updateClaim = lead.match(/\bwe(?:[’']re| are)?(?:\s+[a-z]+){0,5}\s+releas(?:e|ing) an? (?:updated|new) version\b/i);
+  const updateClaim = lead.match(/\bwe(?:[’']re| are)?(?: (?:decided to|(?:are )?(?:excited|pleased|ready) to))?\s+releas(?:e|ing) an? (?:updated|new) version\b/i);
   const baseIndex = lead.toLowerCase().indexOf(baseName.toLowerCase());
   if (namedVersion && !toolBuild && /\bpreview\b/i.test(subject) && updateClaim
     && baseIndex >= 0 && baseIndex < (updateClaim.index ?? 0)
@@ -147,11 +158,11 @@ export function isModelRelease(article: Pick<Article, "title" | "summary" | "con
   const launchedName = subject.replace(/^.*\b(?:introduc(?:e|es|ed|ing)|announc(?:e|es|ed|ing)|launch(?:es|ed|ing)?|unveil(?:s|ed|ing)?|releas(?:e|es|ed|ing)|open[ -]sourcing)\s+(?:the )?/i, "").replace(/[.!?]+$/, "");
   const namedProduct = /^[A-Z][\w.-]*(?:\s+(?:[A-Z][\w.-]*|for|of|the|and)){1,4}$/.test(launchedName);
   const nameSlug = launchedName.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-  const canonicalSlug = article.url?.replace(/\/$/, "").split("/").at(-1)?.replace(/^(?:introducing|announcing|launching|meet)-/, "");
+  const canonicalSlug = sourcePath.replace(/\/$/, "").split("/").at(-1)?.replace(/^(?:introducing|announcing|launching|meet)-/, "");
   const uninformativeLead = !lead || /\bis an AI safety and research company\b/i.test(lead);
   // When an official feed supplies no useful excerpt, corroborate a proper
   // named launch with the same artifact name in its canonical URL.
-  const modelOrProductPath = /\/(?:[^/]*models[^/]*|products?|platforms?)\//i.test(article.url || "");
+  const modelOrProductPath = /\/(?:[^/]*models[^/]*|products?|platforms?)\//i.test(sourcePath);
   const targetAudience = /\bfor [A-Z]/.test(launchedName);
   if (introduced && namedProduct && canonicalSlug === nameSlug
     && ((uninformativeLead && (modelOrProductPath || targetAudience))
@@ -160,7 +171,7 @@ export function isModelRelease(article: Pick<Article, "title" | "summary" | "con
   // Require an open-model claim and the same artifact identity in its URL.
   if (uninformativeLead && namedVersion && /\bopen(?:[ -](?:source|weights?))?\b.*\bmodels?\b/i.test(subject)
     && canonicalSlug && canonicalSlug.split("-").every((part) => name.toLowerCase().split(/\W+/).includes(part))) return true;
-  const launchUrl = /\/(?:introducing|announcing|launching|meet)-/i.test(article.url || "");
+  const launchUrl = /\/(?:introducing|announcing|launching|meet)-/i.test(sourcePath);
   const identityWords = canonicalSlug?.split("-").filter((word) => !/^(?:a|an|the|for|and|with|of|ai)$/.test(word)) || [];
   const titleWords = headline.toLowerCase().replace(/[^a-z0-9]+/g, "-").split("-");
   const canonicalIdentity = identityWords.length > 0 && identityWords.every((word) => titleWords.includes(word === "vuln" ? "vulnerability" : word));
