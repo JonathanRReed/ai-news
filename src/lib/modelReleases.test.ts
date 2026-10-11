@@ -102,6 +102,42 @@ describe("model release page eligibility", () => {
     expect(isModelRelease(article(title, summary))).toBe(expected);
   });
 
+  test.each([
+    [false, "AuroraX comes to CloudBox", "Aurora is now available as a language model."],
+    [false, "Aurora 4.5 comes to CloudBox", "Aurora 4 is now available as a language model."],
+    [true, "Aurora 4 comes to CloudBox", "Aurora 4 is now available as a language model."],
+    [false, "Introducing ExpenseFlow 3.0, an expense tracker", ""],
+    [false, "Introducing CalendarFlow 3.0, a calendar app", ""],
+    [false, "Introducing GraphicsFlow 3.0, a graphics card", ""],
+    [false, "Introducing InvoiceFlow 3.0, an invoicing dashboard", ""],
+    [true, "After considering customer feedback, we are releasing Aurora 4, a language model", ""],
+    [true, "Aurora 4 comes to CloudBox", "After considering customer feedback, Aurora 4 is now available as a language model."],
+    [false, "We are considering releasing Aurora 4, a language model", ""],
+    [false, "After considering customer feedback, we might release Aurora 4, a language model", ""],
+    [false, "Aurora 4 comes to CloudBox", "After considering customer feedback, Aurora 4 might be available now as a language model."],
+    [false, "Aurora 4 comes to CloudBox", "Aurora 4 might be available now as a language model."],
+    [false, "Introducing WorkFlex: a new operating model", ""],
+    [false, "Introducing CarePath: a new healthcare delivery model", ""],
+    [false, "Introducing Subscriptions Plus: a new subscription model", ""],
+    [true, "Introducing GraphCoder", "GraphCoder is a tool for developers. It uses a reasoning model to autocomplete code."],
+    [false, "Introducing GraphCoder", "GraphCoder is an expense tracker. It is used by teams that build reasoning models."],
+    [false, "Introducing GraphCoder", "GraphCoder is a manual coding tool. It uses a reasoning model to autocomplete code."],
+    [false, "Introducing GraphCoder", "GraphCoder is a tool for developers. This company builds reasoning models."],
+    [true, "Introducing CanvasEdit", "CanvasEdit is an image editing version of Canvas. Built upon an open-source vision model, it extends image editing capabilities."],
+    [false, "Introducing CanvasEdit", "CanvasEdit is an image editing version of Canvas. Built upon a subscription model, it changes customer billing."],
+    [true, "Introducing GraphCoder", "GraphCoder is an expense tracker. It uses a reasoning model to categorize expenses."],
+    [false, "Introducing GraphCoder", "GraphCoder is an expense tracker. It does not use a reasoning model to categorize expenses."],
+    [false, "Introducing GraphCoder", "GraphCoder is an expense tracker. It might use a reasoning model to categorize expenses."],
+    [true, "Introducing GraphCoder", "GraphCoder is an expense tracker. It does not require configuration; it uses a reasoning model to categorize expenses."],
+    [false, "Introducing GraphCoder", "GraphCoder is an expense tracker. This company does not require configuration; it uses a reasoning model to categorize expenses."],
+    [true, "Introducing WorkFlex: a language model for operating model design", ""],
+    [false, "Aurora 4 in production", "Preview of Aurora 4, a language model released last year."],
+    [false, "Aurora 4 in production", "Preview of Aurora 4, a language model."],
+    [true, "Previewing Aurora 4", "Preview Aurora 4, a language model."],
+  ])("bounds artifact identity, role, and affirmative preview grammar: %s %s", (expected, title, summary) => {
+    expect(isModelRelease(article(title, summary))).toBe(expected);
+  });
+
   test("corroborates unnumbered reasoning and modality-conversion product launches", () => {
     expect(isModelRelease(article("Announcing Aurora Plus for sovereignty", "Aurora Plus delivers advanced reasoning with a minimal compute footprint."))).toBe(true);
     expect(isModelRelease(article("Palette launches SketchFlow", "SketchFlow is a new sketch-to-image tool."))).toBe(true);
