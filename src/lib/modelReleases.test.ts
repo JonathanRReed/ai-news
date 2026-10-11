@@ -234,6 +234,29 @@ describe("model release page eligibility", () => {
     expect(isModelRelease({ title: "We released Aurora 4 in 2020, a language model", summary: "", published_at: "2020-10-11T00:00:00Z" })).toBe(true);
   });
 
+  test.each([
+    [false, "In 2020, we released Aurora 4, a language model", ""],
+    [false, "We released Aurora 4, a language model, in 2020", ""],
+    [true, "We released Aurora 5, a new language model based on Aurora 4 introduced in 2020", ""],
+    [false, "Meet Aurora: our existing AI agent", ""],
+    [false, "Introducing Aurora: our existing AI agent", ""],
+    [true, "Introducing Aurora: a new AI agent for existing enterprise systems", ""],
+    [true, "Introducing Aurora Copilot", "Aurora Copilot is a new AI copilot for software development."],
+    [false, "Introducing Aurora Copilot", "Aurora Copilot is a manual copilot for airline crews."],
+    [false, "Introducing Aurora Copilot", "Aurora Copilot is a manual AI copilot for software development."],
+    [false, "Aurora 4 helps developers meet latency targets, a language model", ""],
+    [false, "Aurora 4 models meet enterprise needs, a language model", ""],
+    [true, "Meet Aurora 4, a language model", ""],
+  ])("binds temporal, existing-artifact, and imperative evidence to the launch: %s %s", (expected, title, summary) => {
+    expect(isModelRelease(article(title, summary))).toBe(expected);
+  });
+
+  test("propagates publication context to independent dated release evidence", () => {
+    const release = { title: "We can't wait to introduce Aurora 4", summary: "We released Aurora 4 in 2026, a language model.", published_at: "2026-10-11T00:00:00Z" };
+    expect(isModelRelease(release)).toBe(true);
+    expect(isModelRelease({ ...release, summary: "We released Aurora 4 in 2020, a language model." })).toBe(false);
+  });
+
   test("corroborates unnumbered reasoning and modality-conversion product launches", () => {
     expect(isModelRelease(article("Announcing Aurora Plus for sovereignty", "Aurora Plus delivers advanced reasoning with a minimal compute footprint."))).toBe(true);
     expect(isModelRelease(article("Palette launches SketchFlow", "SketchFlow is a new sketch-to-image tool."))).toBe(true);
