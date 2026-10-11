@@ -1,0 +1,1308 @@
+[
+  {
+    "article": {
+      "id": "1c305457-0595-45fd-aeed-0df0535a7485",
+      "company": "Google DeepMind",
+      "title": "Introducing Gemini Omni",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni/",
+      "published_at": "2026-05-17T19:50:57+00:00",
+      "summary": ""
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "a89ea43a-0d1b-5a09-9d8a-e5b31d9b3459",
+      "company": "Amazon AI",
+      "title": "Video and image search in Amazon Bedrock Knowledge Base using Marengo 3.0",
+      "url": "https://aws.amazon.com/blogs/machine-learning/video-and-image-search-in-amazon-bedrock-knowledge-base-using-marengo-3-0/",
+      "published_at": "2026-09-10T21:15:39+00:00",
+      "summary": "TwelveLabs Marengo Embed 3.0 is now generally available as an embedding model in Amazon Bedrock Knowledge Bases, bringing fully managed natural language search to video, image, and audio content. This walkthrough shows how to build a knowledge base powered by Marengo 3.0 and run semantic queries aga"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "3468a614-e0e4-43cc-9c32-b0b4b18fce53",
+      "company": "Hugging Face",
+      "title": "SmolVLM Grows Smaller – Introducing the 256M & 500M Models!",
+      "url": "https://huggingface.co/blog/smolervlm",
+      "published_at": "2025-01-23T00:00:00+00:00",
+      "summary": ""
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "000691a8-e57d-48f5-9478-372afb0d31b6",
+      "company": "OpenAI",
+      "title": "Introducing the OpenAI Partner Network",
+      "url": "https://openai.com/index/introducing-openai-partner-network",
+      "published_at": "2026-06-14T17:00:00+00:00",
+      "summary": "OpenAI launches the Partner Network, investing $150M to help global partners accelerate enterprise AI adoption, deployment, and transformation."
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "a0ba80c7-40a0-4cdd-b448-a31e2b046341",
+      "company": "OpenAI",
+      "title": "OpenAI announces strategic collaboration with Japan’s Digital Agency",
+      "url": "https://openai.com/global-affairs/strategic-collaboration-with-japan-digital-agency",
+      "published_at": "2025-10-02T00:00:00+00:00",
+      "summary": "OpenAI and Japan’s Digital Agency partner to advance generative AI in public services, support international AI governance, and promote safe, trustworthy AI adoption worldwide."
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "7d620d16-23d9-4758-ba9d-69402f78558b",
+      "company": "OpenAI",
+      "title": "With GPT-5, Wrtn builds lifestyle AI for millions in Korea",
+      "url": "https://openai.com/index/wrtn",
+      "published_at": "2025-10-02T10:00:00+00:00",
+      "summary": "Wrtn scaled AI apps to 6.5M users in Korea with GPT-5, creating ‘Lifestyle AI’ that blends productivity, creativity, and learning—now expanding across East Asia."
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "b91a7174-a0fd-4598-809f-d69aad4434a5",
+      "company": "OpenAI",
+      "title": "Predicting model behavior before release by simulating deployment",
+      "url": "https://openai.com/index/deployment-simulation",
+      "published_at": "2026-06-16T00:00:00+00:00",
+      "summary": "OpenAI introduces Deployment Simulation, a method to predict AI model behavior before deployment using real conversation data to improve safety and evaluation accuracy."
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "74f18a33-9ad5-47ba-aa9c-561802c31834",
+      "company": "OpenAI",
+      "title": "Introducing Intelligence Age",
+      "url": "https://openai.com/index/introducing-intelligence-age/",
+      "published_at": "2026-08-20T07:00:00+00:00",
+      "summary": "Introducing Intelligence Age, a new OpenAI blog exploring how transformative AI could reshape power, governance, the economy, and individual freedom."
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "b42c3971-cf8a-4328-8825-fd4e4c6e8ffd",
+      "company": "OpenAI",
+      "title": "Introducing Stargate UK",
+      "url": "https://openai.com/index/introducing-stargate-uk",
+      "published_at": "2025-09-16T14:30:00+00:00",
+      "summary": ""
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "4ad029d0-e363-46e2-89b4-60baf428a152",
+      "company": "Hugging Face",
+      "title": "Introducing Real World VoiceEQ: Measuring the human quality of voice AI",
+      "url": "https://huggingface.co/blog/real-world-voiceeq",
+      "published_at": "2026-07-15T00:00:00+00:00",
+      "summary": ""
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "d73ea1e3-bbae-47b5-bb19-799e70cbc070",
+      "company": "Hugging Face",
+      "title": "PRX Part 3 — Training a Text-to-Image Model in 24h!",
+      "url": "https://huggingface.co/blog/Photoroom/prx-part3",
+      "published_at": "2026-03-03T16:50:49+00:00",
+      "summary": ""
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "f14adcd6-cacc-4caf-a117-7e412e1542ae",
+      "company": "Hugging Face",
+      "title": "BERT 101 - State Of The Art NLP Model Explained",
+      "url": "https://huggingface.co/blog/bert-101",
+      "published_at": "2022-03-02T00:00:00+00:00",
+      "summary": ""
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "f0dd7764-b9ac-4329-9439-42624aa5b275",
+      "company": "OpenAI",
+      "title": "Sycophancy in GPT-4o: what happened and what we’re doing about it",
+      "url": "https://openai.com/index/sycophancy-in-gpt-4o",
+      "published_at": "2025-04-29T18:00:00+00:00",
+      "summary": "We have rolled back last week’s GPT‑4o update in ChatGPT so people are now using an earlier version with more balanced behavior. The update we removed was overly flattering or agreeable—often described as sycophantic."
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "29dcf46c-1127-54f1-9737-cd3746159a3e",
+      "company": "OpenAI",
+      "title": "Introducing Astra for Law",
+      "url": "https://openai.com/index/astra-for-law",
+      "published_at": "2026-09-17T00:00:00+00:00",
+      "summary": "OpenAI for Law brings frontier intelligence for law, custom firm workflows, connected legal data sources, and legal-grade controls for confidential client work."
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "569cb952-69d4-553e-99a0-e489a5c98da4",
+      "company": "NVIDIA AI",
+      "title": "Perplexity Portable Computer Is Now Available on Windows, Powered by NVIDIA RTX",
+      "url": "https://blogs.nvidia.com/blog/local-ai-perplexity-windows-pcs/",
+      "published_at": "2026-09-14T15:00:52+00:00",
+      "summary": "As local models become more capable, AI agents can handle more work directly on a PC while keeping sensitive information on the device. Portable Computer is a local version of the agent Perplexity Computer that plans and carries out multistep tasks. Accelerated by NVIDIA GPUs, it uses local models t"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "1bb86a9b-a391-57f0-91df-be68ac2c9515",
+      "company": "Mistral AI",
+      "title": "Introducing Shieldstral. | Mistral AI",
+      "url": "https://mistral.ai/news/shieldstral/",
+      "published_at": "2026-08-11T13:07:49.366+00:00",
+      "summary": "Shieldstral introduces a 3B open-weights multimodal safety classifier that outperforms models up to 7x its size."
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "879dd82a-eb36-45f6-a9ac-85e185cfeb4c",
+      "company": "Google DeepMind",
+      "title": "Introducing computer use in Gemini 3.5 Flash",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-computer-use-gemini-3-5-flash/?utm_source=deepmind.google&utm_medium=referral&utm_campaign=gdm&utm_content=",
+      "published_at": "2026-06-24T16:30:01+00:00",
+      "summary": ""
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "9356e8a0-3ed1-5cc4-b251-25a0afc2c350",
+      "company": "Mistral AI",
+      "title": "Introducing: Devstral 2 and Mistral Vibe CLI. | Mistral AI",
+      "url": "https://mistral.ai/news/devstral-2-vibe-cli/",
+      "published_at": "2026-06-17T10:01:44.917+00:00",
+      "summary": "The most powerful AI platform for enterprises. Customize, fine-tune, and deploy AI assistants, autonomous agents, and multimodal AI with open models."
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "c7d72fde-9329-5fe4-940f-80ec2a64501d",
+      "company": "Stability AI",
+      "title": "Stability AI and Arm Collaborate to Release Stable Audio Open Small, Enabling Real-World Deployment for On-Device Audio Generation — Stability AI",
+      "url": "https://stability.ai/news-updates/stability-ai-and-arm-release-stable-audio-open-small-enabling-real-world-deployment-for-on-device-audio-control",
+      "published_at": "2025-11-06T00:00:00+00:00",
+      "summary": "We’re open-sourcing Stable Audio Open Small in partnership with Arm, whose technology powers 99% of smartphones globally. Building on the industry-leading text-to-audio model Stable Audio Open, the new compact variant is smaller and faster, while preserving output quality and prompt adherence.&n"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "provider-a3a8b55d7f9f4d7bbf",
+      "company": "NVIDIA AI",
+      "title": "NVIDIA Introduces New Jetson Thor Computers to Advance Mainstream Robotics and Edge AI",
+      "url": "https://blogs.nvidia.com/blog/jetson-thor-robotics-edge-ai-agent/",
+      "published_at": "2026-07-15T23:00:54.000Z",
+      "summary": "General-purpose robots and autonomous machines are moving from research labs to real-world mass-market deployment, creating demand for compact, power-efficient AI supercomputers capable of running foundation models at the edge. To meet that need, NVIDIA today introduced the T3000 and T2000, new modu"
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "69244703-7bf9-5edc-9c19-f8325cb5f484",
+      "company": "Mistral AI",
+      "title": "Introducing Mistral Large 4 | Mistral",
+      "url": "https://mistral.ai/news/mistral-large-4/",
+      "published_at": "2026-10-06T15:24:14.171+00:00",
+      "summary": ""
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "3050a33d-40a8-5328-924a-0e9b6795fcce",
+      "company": "Hugging Face",
+      "title": "Introducing Falcon ASR",
+      "url": "https://huggingface.co/blog/tiiuae/falcon-asr",
+      "published_at": "2026-10-07T13:21:03+00:00",
+      "summary": ""
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "54aba291-7fa4-5ef2-8700-c31d47ccbf5f",
+      "company": "OpenAI",
+      "title": "Introducing dots",
+      "url": "https://openai.com/index/introducing-dots",
+      "published_at": "2026-09-29T00:00:00+00:00",
+      "summary": "Dots by OpenAI are proactive assistants that can keep working across complex projects and everyday tasks. Learn how dots help you stay in control while work moves forward."
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "7f542193-c154-5940-b11d-88b88861a7d5",
+      "company": "Anthropic",
+      "title": "Claude Opus 4.6",
+      "url": "https://www.anthropic.com/news/claude-opus-4-6",
+      "published_at": "2026-09-09T21:28:45+00:00",
+      "summary": "We're upgrading our smartest model. Across agentic coding, computer use, tool use, search, and finance, Opus 4.6 is an industry-leading model."
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "f754f4ea-2456-4b12-b7a0-8f78d97864ae",
+      "company": "OpenAI",
+      "title": "Introducing gpt-oss",
+      "url": "https://openai.com/index/introducing-gpt-oss",
+      "published_at": "2025-08-05T00:00:00+00:00",
+      "summary": "We’re releasing gpt-oss-120b and gpt-oss-20b—two state-of-the-art open-weight language models that deliver strong real-world performance at low cost. Available under the flexible Apache 2.0 license, these models outperform similarly sized open models on reasoning tasks, demonstrate strong tool use c"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "360db359-425f-4239-a1b9-2593866975de",
+      "company": "Hugging Face",
+      "title": "Meta is back with Muse Glimmer: local, agentic, multimodal, and open source",
+      "url": "https://huggingface.co/blog/muse-glimmer",
+      "published_at": "2026-08-10T00:00:00+00:00",
+      "summary": ""
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "provider-70589b91cb80ef48d6",
+      "company": "NVIDIA AI",
+      "title": "NVIDIA Ising Enables Fully Automated Quantum Computer Calibration with Enhanced In-Context Learning",
+      "url": "https://developer.nvidia.com/blog/nvidia-ising-enables-fully-automated-quantum-computer-calibration-with-enhanced-in-context-learning/",
+      "published_at": "2026-07-27T16:00:00+00:00",
+      "summary": "NVIDIA Ising Calibration is an open source vision language model (VLM) designed to interpret diagnostic outputs from quantum processors and determine how they..."
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "da70e987-cdee-534c-a028-f69785451727",
+      "company": "OpenAI",
+      "title": "Introducing the Agents API",
+      "url": "https://openai.com/index/introducing-the-agents-api",
+      "published_at": "2026-09-10T00:00:00+00:00",
+      "summary": "Build and launch cloud agents with the Agents API, a managed service powered by the Codex harness for orchestration, long-running sessions, and tool use."
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "0a5f6802-1767-54dc-9115-ee6a073d7646",
+      "company": "Cohere",
+      "title": "Introducing North Small Translate | Cohere",
+      "url": "https://cohere.com/blog/north-small-translate",
+      "published_at": "2026-09-10T00:00:00+00:00",
+      "summary": "Outsized performance, right-sized footprint — translation built for speed and cost efficiency."
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "049acf77-6a5e-5ae8-bfb3-ff47e2bd6934",
+      "company": "Anthropic",
+      "title": "Introducing Claude for Small Business",
+      "url": "https://www.anthropic.com/news/claude-for-small-business",
+      "published_at": "2026-08-27T15:09:24+00:00",
+      "summary": "We're launching Claude for Small Business, a package of connectors and ready-to-run workflows that put Claude inside the tools small businesses use every day."
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "804f49a6-383c-57b9-bca4-6dd6af2e629f",
+      "company": "Mistral AI",
+      "title": "Robostral Navigate: single-camera AI navigation | Mistral AI",
+      "url": "https://mistral.ai/news/robostral-navigate/",
+      "published_at": "2026-08-04T08:43:03.213+00:00",
+      "summary": "Introducing Robostral Navigate: 8B model achieving 76.6% on R2R-CE with just a single RGB camera. No depth sensors, LiDAR, or multiple cameras needed."
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "a3a1aa26-97e6-5e04-a1c0-fc26e6c94c84",
+      "company": "Amazon AI",
+      "title": "Bring near-Astra intelligence to everyday work with GPT-6.1 Sol on Amazon Bedrock",
+      "url": "https://aws.amazon.com/blogs/machine-learning/bring-near-astra-intelligence-to-everyday-work-with-gpt-6-1-sol-on-amazon-bedrock/",
+      "published_at": "2026-09-29T19:34:14+00:00",
+      "summary": "GPT-6.1 Sol is now generally available on Amazon Bedrock, bringing stronger reasoning to coding, computer use, and professional workloads that run frequently."
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "9d0596fb-a4ff-5c8e-a8c4-1de6fa5124b7",
+      "company": "Amazon AI",
+      "title": "Amazon Bedrock expands Claude model availability to in-country inferencing in India",
+      "url": "https://aws.amazon.com/blogs/machine-learning/amazon-bedrock-expands-claude-model-availability-to-india-cross-region-inference/",
+      "published_at": "2026-09-30T01:13:14+00:00",
+      "summary": "Anthropic's Claude Opus 5, Claude Sonnet 5, and Claude Haiku 4.5 are now available in India through Amazon Bedrock geographic cross-Region inference. You can access these models while processing data within the India Regions, and get started from the Amazon Bedrock console or with the Messages, Invo"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "provider-cbf5a1c55f2de7cd51",
+      "company": "Alibaba Qwen",
+      "title": "Qwen-Image: Crafting with Native Text Rendering",
+      "url": "https://qwenlm.github.io/blog/qwen-image/",
+      "published_at": "2025-08-04T14:08:30+00:00",
+      "summary": "GITHUB HUGGING FACE MODELSCOPE DEMO DISCORD We are thrilled to release Qwen-Image, a 20B MMDiT image foundation model that achieves significant advances in complex text rendering and precise image editing. To try the latest model, feel free to visit Qwen Chat and choose “Image Generation”. The key f"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "86c105d2-78d4-4a45-9f2e-33e098ff4e3d",
+      "company": "Google DeepMind",
+      "title": "Introducing Gemma 3n: The developer guide",
+      "url": "https://developers.googleblog.com/en/introducing-gemma-3n-developer-guide/",
+      "published_at": "2025-10-25T17:54:47+00:00",
+      "summary": "Gemma 3n is designed for the developer community that helped shape Gemma."
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "e087dd9f-b1e2-470d-8702-e3881e5edea4",
+      "company": "Google DeepMind",
+      "title": "Gemini 2.5 Flash-Lite is now ready for scaled production use",
+      "url": "https://developers.googleblog.com/en/gemini-25-flash-lite-is-now-stable-and-generally-available/",
+      "published_at": "2025-10-25T17:34:32+00:00",
+      "summary": "Gemini 2.5 Flash-Lite, previously in preview, is now stable and generally available. This cost-efficient model provides high quality in a small size, and includes 2.5 family features like a 1 million-token context window and multimodality."
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "24d67cd4-8c7f-58f0-bedf-3d6e8deb78a5",
+      "company": "Stability AI",
+      "title": "Stable Audio 3.0, the model family built with open-weight models — Stability AI",
+      "url": "https://stability.ai/news-updates/meet-stable-audio-3-the-model-family-built-for-artistic-experimentation-with-open-weight-models",
+      "published_at": "2026-05-21T00:00:00+00:00",
+      "summary": "We"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "9cba90c0-d4f5-5f08-9228-4f2fbfcd224a",
+      "company": "Stability AI",
+      "title": "Stability AI Introduces Stable Audio 2.5, the First Audio Model Built for Enterprise Sound Production at Scale — Stability AI",
+      "url": "https://stability.ai/news-updates/stability-ai-introduces-stable-audio-25-the-first-audio-model-built-for-enterprise-sound-production-at-scale",
+      "published_at": "2025-12-11T00:00:00+00:00",
+      "summary": "We’re excited to release Stable Audio 2.5, our latest audio model and the first developed for enterprise-grade use cases. Stable Audio 2.5 introduces advancements in quality and control that address the demand for dynamic compositions that can be adapted for custom brand needs."
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "d7bd5254-6d73-58f5-9892-c85e815f1ce4",
+      "company": "Stability AI",
+      "title": "Stable Video 4D — Stability AI",
+      "url": "https://stability.ai/news-updates/stable-video-4d",
+      "published_at": "2026-05-25T00:00:00+00:00",
+      "summary": "We are pleased to announce the availability of Stable Video 4D, an innovative model that allows users to upload a single video and receive dynamic novel-view videos of eight new angles/views, delivering a new level of versatility and creativity."
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "fd5e691d-9278-49df-8c3b-20861934975c",
+      "company": "OpenAI",
+      "title": "Introducing GPT-Rosalind for life sciences research",
+      "url": "https://openai.com/index/introducing-gpt-rosalind",
+      "published_at": "2026-04-16T01:00:00+00:00",
+      "summary": "OpenAI introduces GPT-Rosalind, a frontier reasoning model built to accelerate drug discovery, genomics analysis, protein reasoning, and scientific research workflows."
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "fd51dda1-498b-58d0-b9fb-5ac4c2604772",
+      "company": "NVIDIA AI",
+      "title": "Introducing NV-Reason-CT Open 3D CT VLM for Radiologist Chain-of-Thought Reasoning",
+      "url": "https://developer.nvidia.com/blog/introducing-nv-reason-ct-open-3d-ct-vlm-for-radiologist-chain-of-thought-reasoning/",
+      "published_at": "2026-09-23T22:54:56+00:00",
+      "summary": "Radiology AI has made remarkable strides in detecting abnormalities across chest X-rays, pathology slides, and 2D scans. Yet one of the most clinically rich and..."
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "c1892c4c-8999-5895-adeb-14e3c291a6de",
+      "company": "Codex CLI",
+      "title": "rust-v0.163.0-alpha.6",
+      "url": "https://github.com/openai/codex/releases/tag/rust-v0.163.0-alpha.6",
+      "published_at": "2026-10-10T01:27:22+00:00",
+      "summary": "Release 0.163.0-alpha.6"
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "27f426dd-8005-5574-a2a2-2b360f7da399",
+      "company": "IBM Research",
+      "title": "What's new at IBM Quantum Q3 2026",
+      "url": "https://research.ibm.com/blog/whats-new-q3-2026",
+      "published_at": "2026-10-07T04:00:00+00:00",
+      "summary": "Explore the latest updates, releases, and resources from IBM Quantum and the Qiskit community."
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "b678e1a1-5ee7-5681-b6fd-3e14cfd795f0",
+      "company": "NVIDIA AI",
+      "title": "Rally Up: ‘Gears of War: E-Day’ Launches on GeForce NOW",
+      "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-gears-of-war-e-day/",
+      "published_at": "2026-10-08T13:00:46+00:00",
+      "summary": "Gears of War: E-Day leads the charge on GeForce NOW this week, bringing Marcus Fenix and Dom Santiago’s first fight against the Locust Horde to the cloud with GeForce RTX-powered performance. A new way to join the action is also coming: Fire TV users will soon be able to purchase GeForce NOW members"
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "cd69bf1d-9363-5f2e-aebf-04f935330229",
+      "company": "Hugging Face",
+      "title": "Multimodal open d1 decision models for the edge",
+      "url": "https://huggingface.co/blog/LiquidAI/open-d1",
+      "published_at": "2026-10-07T16:54:33+00:00",
+      "source_type": "rss_official",
+      "summary": "",
+      "content": "",
+      "source_url": "https://huggingface.co/blog/feed.xml",
+      "source_key": "hugging-face-blog"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "79d4bf8c-d881-5449-9259-ed0b813dd4c1",
+      "company": "Cohere",
+      "title": "Cohere Releases Command A+ for Sovereign AI | Cohere",
+      "url": "https://cohere.com/blog/cohere-releases-command-a-plus",
+      "published_at": "2026-08-05T00:00:00+00:00",
+      "source_type": "scraped",
+      "summary": "Delivers advanced reasoning with a minimal compute footprint. Command A+ offers full data sovereignty for governments and regulated industries worldwide.",
+      "content": "Delivers advanced reasoning with a minimal compute footprint. Command A+ offers full data sovereignty for governments and regulated industries worldwide.",
+      "source_url": "https://cohere.com/sitemap.xml",
+      "source_key": "cohere-sitemap"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "83e8e665-8e90-5f43-a32a-6230d8c31a49",
+      "company": "Stability AI",
+      "title": "Clipdrop Launches Stable Doodle — Stability AI",
+      "url": "https://stability.ai/news-updates/clipdrop-launches-stable-doodle",
+      "published_at": "2026-05-25T00:00:00+00:00",
+      "source_type": "scraped",
+      "summary": "Stability AI launches Stable Doodle, a sketch-to-image tool that converts a simple drawing into a dynamic image, providing limitless imaging possibilities to a range of professionals and hobbyists.",
+      "content": "Stability AI launches Stable Doodle, a sketch-to-image tool that converts a simple drawing into a dynamic image, providing limitless imaging possibilities to a range of professionals and hobbyists.",
+      "source_url": "https://stability.ai/sitemap.xml",
+      "source_key": "stability-sitemap"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "4d3de435-d8f6-4c04-b8bd-b0cdd94f6164",
+      "company": "OpenAI",
+      "title": "Introducing the Realtime API",
+      "url": "https://openai.com/index/introducing-the-realtime-api",
+      "published_at": "2024-10-01T10:05:00+00:00",
+      "source_type": "rss_official",
+      "summary": "Developers can now build fast speech-to-speech experiences into their applications",
+      "content": "Developers can now build fast speech-to-speech experiences into their applications",
+      "source_url": "https://openai.com/news/rss.xml",
+      "source_key": "openai-news"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "c2d3674f-3d8d-4e62-b5ec-200f049c041d",
+      "company": "Hugging Face",
+      "title": "Introducing the Ettin Reranker Family",
+      "url": "https://huggingface.co/blog/ettin-reranker",
+      "published_at": "2026-05-19T00:00:00+00:00",
+      "summary": ""
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "55c0bfbd-8c1a-451e-99a0-a111ec59f09d",
+      "company": "Hugging Face",
+      "title": "Ettin Suite: SoTA Paired Encoders and Decoders",
+      "url": "https://huggingface.co/blog/ettin",
+      "published_at": "2025-07-16T00:00:00+00:00",
+      "summary": ""
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "fb1759cd-e482-51bc-ac02-122b6c5bb6f6",
+      "company": "Anthropic",
+      "title": "Petri: An open-source AI auditing tool",
+      "url": "https://www.anthropic.com/research/petri-open-source-auditing",
+      "published_at": "2026-09-10T18:49:39+00:00",
+      "summary": "Petri is a new open-source automated auditing tool from Anthropic designed to accelerate AI safety research."
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "d5ad6e9f-f271-4307-b352-cc96560e56f6",
+      "company": "OpenAI",
+      "title": "Introducing LifeSciBench",
+      "url": "https://openai.com/index/introducing-life-sci-bench",
+      "published_at": "2026-06-17T00:00:00+00:00",
+      "summary": "Introducing LifeSciBench, an expert-authored, expert-reviewed benchmark for evaluating how AI systems handle real-world life science research tasks and decisions."
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "18f5a8e2-280c-4bc9-9c0b-df41ac3033bf",
+      "company": "OpenAI",
+      "title": "1,000 Scientist AI Jam Session",
+      "url": "https://openai.com/global-affairs/1000-scientist-ai-jam-session",
+      "published_at": "2025-02-28T08:00:00+00:00",
+      "summary": "OpenAI and nine national labs bring together leading scientists for first-of-its kind event."
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "dfe3ee15-5af7-4aeb-96be-7d90b9db3d6e",
+      "company": "Hugging Face",
+      "title": "Introducing HELMET: Holistically Evaluating Long-context Language Models",
+      "url": "https://huggingface.co/blog/helmet",
+      "published_at": "2025-04-16T00:00:00+00:00",
+      "summary": ""
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "fcda4f82-d0fc-4fce-9d33-3e8a0a53812d",
+      "company": "OpenAI",
+      "title": "Introducing the Model Spec",
+      "url": "https://openai.com/index/introducing-the-model-spec",
+      "published_at": "2024-05-08T00:00:00+00:00",
+      "summary": ""
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "0c98c43d-7ed8-40f0-a830-82608d448fb4",
+      "company": "OpenAI",
+      "title": "Introducing OpenAI Japan",
+      "url": "https://openai.com/index/introducing-openai-japan",
+      "published_at": "2024-04-14T00:00:00+00:00",
+      "summary": "We are excited to announce our first office in Asia and we’re releasing a GPT-4 custom model optimized for the Japanese language."
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "c2418a2f-eba6-4bfa-bf9b-93198e545396",
+      "company": "OpenAI",
+      "title": "Introducing Stargate UAE",
+      "url": "https://openai.com/index/introducing-stargate-uae",
+      "published_at": "2025-05-22T00:00:00+00:00",
+      "summary": "We’re launching Stargate UAE – the first international deployment of Stargate, OpenAI’s AI infrastructure platform."
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "0ba7ddf1-e05f-4a8e-8428-504b74f122b0",
+      "company": "OpenAI",
+      "title": "Announcing OpenAI DevDay 2025",
+      "url": "https://openai.com/index/announcing-devday-2025",
+      "published_at": "2025-07-23T00:00:00+00:00",
+      "summary": "We’re hosting our third annual OpenAI DevDay on October 6, 2025 at Fort Mason in San Francisco."
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "74e7193a-3793-4d3a-bf54-37003bd3d219",
+      "company": "OpenAI",
+      "title": "Announcing OpenAI Grove Cohort 2",
+      "url": "https://openai.com/index/openai-grove",
+      "published_at": "2026-01-02T10:00:00+00:00",
+      "summary": "Applications are now open for OpenAI Grove Cohort 2, a 5-week founder program designed for individuals at any stage, from pre-idea to product. Participants receive $50K in API credits, early access to AI tools, and hands-on mentorship from the OpenAI team."
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "7fd13af8-648e-4735-a11f-10a62ab64250",
+      "company": "OpenAI",
+      "title": "Horizon 1000: Advancing AI for primary healthcare",
+      "url": "https://openai.com/index/horizon-1000",
+      "published_at": "2026-01-20T21:00:00+00:00",
+      "summary": "OpenAI and the Gates Foundation launch Horizon 1000, a $50M pilot advancing AI capabilities for healthcare in Africa. The initiative aims to reach 1,000 clinics by 2028."
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "0d295739-8a00-4f72-9680-571b119e8586",
+      "company": "Hugging Face",
+      "title": "Introducing ConTextual: How well can your Multimodal model jointly reason over text and image in text-rich scenes?",
+      "url": "https://huggingface.co/blog/leaderboard-contextual",
+      "published_at": "2024-03-05T00:00:00+00:00",
+      "summary": ""
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "fc9e9d14-eead-4546-9ba6-f927e2ec25e4",
+      "company": "OpenAI",
+      "title": "OpenAI Scholars 2020: Applications open",
+      "url": "https://openai.com/index/openai-scholars-2020",
+      "published_at": "2019-10-11T07:00:00+00:00",
+      "summary": "We are now accepting applications for our third class of OpenAI Scholars."
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "5d4142ed-a48d-487d-a7a4-f52707529127",
+      "company": "OpenAI",
+      "title": "OpenAI and Broadcom unveil LLM-optimized inference chip",
+      "url": "https://openai.com/index/openai-broadcom-jalapeno-inference-chip",
+      "published_at": "2026-06-24T06:00:00+00:00",
+      "summary": "OpenAI and Broadcom introduce Jalapeño, a custom AI chip built for LLM inference to improve performance, efficiency, and scale across AI systems."
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "8eec3499-4ec1-5c2c-b8d1-bb5b7b22e055",
+      "company": "Anthropic",
+      "title": "An opt-in vulnerability-finding service for open-source software",
+      "url": "https://www.anthropic.com/research/launching-opt-in-vuln-finding-service-for-open-source",
+      "published_at": "2026-10-08T19:00:00+00:00",
+      "summary": "We’re launching OSS Scanner, an opt-in vulnerability scanner for the open-source ecosystem informed by our experience using Claude to find vulnerabilities during Project Glasswing. Projects that join will receive thorough, periodic security scans by our strongest models at no cost."
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "60ca1529-67df-4b68-861f-8a7cd9b3030b",
+      "company": "Hugging Face",
+      "title": "H Company's new Holo2 model takes the lead in UI Localization",
+      "url": "https://huggingface.co/blog/Hcompany/introducing-holo2-235b-a22b",
+      "published_at": "2026-02-03T17:40:14+00:00",
+      "summary": ""
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "36fa3979-cd14-43f8-80c8-cf1f4df0092a",
+      "company": "Hugging Face",
+      "title": "OpenReasoning-Nemotron: A Family of State-of-the-Art Distilled Reasoning Models",
+      "url": "https://huggingface.co/blog/nvidia/openreasoning-nemotron",
+      "published_at": "2025-07-18T17:39:59+00:00",
+      "summary": ""
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "f38ef6ff-195e-532b-ae73-ca187df9ed04",
+      "company": "Anthropic",
+      "title": "Advancing Claude in healthcare and the life sciences",
+      "url": "https://www.anthropic.com/news/healthcare-life-sciences",
+      "published_at": "2026-08-27T15:12:44+00:00",
+      "summary": "Introducing Claude for Healthcare with HIPAA-ready infrastructure, plus expanded Life Sciences tools for clinical trials and regulatory submissions. New connectors to CMS, Medidata, and ClinicalTrials.gov."
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "6a85f655-8bb8-5ff8-bfcb-7de7778e7f13",
+      "company": "Mistral AI",
+      "title": "Workflows for work that runs the business | Mistral AI",
+      "url": "https://mistral.ai/news/workflows/",
+      "published_at": "2026-09-09T15:29:12.872+00:00",
+      "summary": "Workflows is now in public preview."
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "1b1cb63d-3ddc-57bf-b6db-f53ab29e951d",
+      "company": "Google DeepMind",
+      "title": "Advancing Private AI Compute with secure, server-side memory",
+      "url": "https://deepmind.google/blog/advancing-private-ai-compute-with-secure-server-side-memory/",
+      "published_at": "2026-09-23T16:00:57+00:00",
+      "summary": "Introducing private, server-side memory to Private AI Compute for personal AI."
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "c0bbec0c-74bb-41a4-be98-b6aff9d19c0b",
+      "company": "Google DeepMind",
+      "title": "Gemini 2.5 Pro Preview: even better coding performance",
+      "url": "https://developers.googleblog.com/en/gemini-2-5-pro-io-improved-coding-performance/?utm_source=deepmind.google&utm_medium=referral&utm_campaign=gdm&utm_content=",
+      "published_at": "2025-05-06T15:06:55+00:00",
+      "summary": "We’ve seen developers doing amazing things with Gemini 2.5 Pro, so we decided to release an updated version a couple of weeks early to get into developers hands sooner."
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "61d78dfb-17a3-58b9-9d70-f11881956c43",
+      "company": "Hugging Face",
+      "title": "Introducing @huggingface/kernels: 200+ WebGPU Kernels for Local AI",
+      "url": "https://huggingface.co/blog/webgpu-kernels",
+      "published_at": "2026-09-01T00:00:00+00:00",
+      "summary": ""
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "a1c40ac3-0e91-5f8a-943d-027147f93bd4",
+      "company": "NVIDIA AI",
+      "title": "How NVIDIA GPUs Help Accelerate OpenAI’s GPT-6 Astra Ultrafast",
+      "url": "https://blogs.nvidia.com/blog/gpus-openai-gpt-6-astra-ultrafast/",
+      "published_at": "2026-10-01T23:44:13+00:00",
+      "summary": "GPT-6 Astra Ultrafast, running on NVIDIA Blackwell GPUs, is available now in the OpenAI API and to eligible ChatGPT Work and Codex users. Accelerated by inference optimizations through OpenAI’s models that tap into the capabilities of the NVIDIA Blackwell architecture, Ultrafast offers up to 8x faster token generation than the Astra Standard mode. For developers, […]"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "05b94d9e-8bd2-54b3-9148-41854ebaf349",
+      "company": "Amazon AI",
+      "title": "New agent skill: Amazon SageMaker optimized generative AI inference for your coding agent",
+      "url": "https://aws.amazon.com/blogs/machine-learning/new-agent-skill-amazon-sagemaker-optimized-generative-ai-inference-for-your-coding-agent/",
+      "published_at": "2026-10-05T17:23:19+00:00",
+      "summary": "Amazon SageMaker optimized generative AI inference introduces the aws-ai-ml skill through the Agent Toolkit for AWS, giving coding agents like Kiro, Claude Code, and Codex deep expertise in inference optimization and benchmarking. Describe what you want, and your agent generates executable SageMaker Python SDK v3 code to benchmark, recommend, and compare deployments."
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "f8e4677e-d0a0-4d02-9e67-83622708a41c",
+      "company": "Google DeepMind",
+      "title": "Putting sign language AI into users’ hands",
+      "url": "https://deepmind.google/blog/putting-sign-language-ai-into-users-hands/",
+      "published_at": "2026-08-12T14:01:59+00:00",
+      "summary": "Introducing sign-language-to-text (SL2T), our breakthrough model powering new sign language features for Deaf and hard of hearing users."
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "65170d00-f16c-5fa1-80d1-2b563917a515",
+      "company": "Stability AI",
+      "title": "Stable Diffusion 3.5 Models Optimized with TensorRT Deliver 2X Faster Performance and 40% Less Memory on NVIDIA RTX GPUs — Stability AI",
+      "url": "https://stability.ai/news-updates/stable-diffusion-35-models-optimized-with-tensorrt-deliver-2x-faster-performance-and-40-less-memory-on-nvidia-rtx-gpus",
+      "published_at": "2025-12-11T00:00:00+00:00",
+      "summary": "In collaboration with NVIDIA, we"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "4a6a874d-0000-4bbe-8522-83f598d9953a",
+      "company": "OpenAI",
+      "title": "OpenAI models, Codex, and Managed Agents come to AWS",
+      "url": "https://openai.com/index/openai-on-aws",
+      "published_at": "2026-04-28T00:00:00+00:00",
+      "source_type": "rss_official",
+      "summary": "OpenAI GPT models, Codex, and Managed Agents are now available on AWS, enabling enterprises to build secure AI in their AWS environments.",
+      "content": "OpenAI GPT models, Codex, and Managed Agents are now available on AWS, enabling enterprises to build secure AI in their AWS environments.",
+      "source_url": "https://openai.com/news/rss.xml",
+      "source_key": "openai-news"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "24c0f7ce-cfbd-47d4-9c0d-953dc5a0b62f",
+      "company": "OpenAI",
+      "title": "Codex Security: now in research preview",
+      "url": "https://openai.com/index/codex-security-now-in-research-preview",
+      "published_at": "2026-03-06T10:00:00+00:00",
+      "source_type": "rss_official",
+      "summary": "Codex Security is an AI application security agent that analyzes project context to detect, validate, and patch complex vulnerabilities with higher confidence and less noise.",
+      "content": "Codex Security is an AI application security agent that analyzes project context to detect, validate, and patch complex vulnerabilities with higher confidence and less noise.",
+      "source_url": "https://openai.com/news/rss.xml",
+      "source_key": "openai-news"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "8a932bb3-f8fb-41f8-968c-14d86c466d53",
+      "company": "OpenAI",
+      "title": "Introducing Activation Atlases",
+      "url": "https://openai.com/index/introducing-activation-atlases",
+      "published_at": "2019-03-06T08:00:00+00:00",
+      "source_type": "rss_official",
+      "summary": "We’ve created activation atlases (in collaboration with Google researchers), a new technique for visualizing what interactions between neurons can represent. As AI systems are deployed in increasingly sensitive contexts, having a better understanding of their internal decision-making processes will",
+      "content": "We’ve created activation atlases (in collaboration with Google researchers), a new technique for visualizing what interactions between neurons can represent. As AI systems are deployed in increasingly sensitive contexts, having a better understanding of their internal decision-making processes will let us identify weaknesses and investigate failures.",
+      "source_url": "https://openai.com/news/rss.xml",
+      "source_key": "openai-news"
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "66551a80-69b0-58bf-9860-31c6cd988f1c",
+      "company": "Amazon AI",
+      "title": "Amazon Quick is now generally available on desktop",
+      "url": "https://aws.amazon.com/blogs/machine-learning/amazon-quick-is-now-generally-available-on-desktop/",
+      "published_at": "2026-09-10T18:16:37+00:00",
+      "source_type": "rss_official",
+      "summary": "Your teams get an AI assistant that handles real work while your data stays in your environment and your conversations stay private Today, the Amazon Quick desktop application is generally available on macOS and Windows. We’re also adding a new activity feed to the mobile experience on iOS and Android that consolidates email, calendar, CRM, […]",
+      "content": "Your teams get an AI assistant that handles real work while your data stays in your environment and your conversations stay private Today, the Amazon Quick desktop application is generally available on macOS and Windows. We’re also adding a new activity feed to the mobile experience on iOS and Android that consolidates email, calendar, CRM, and messaging into one prioritized view, showing your teams the decisions that need them while agents resolve the routine items in the background, so they spend less time sorting through updates and more time on high-value work. Enterprise IT organizations face a compounding problem: the tools your teams need to stay productive are multiplying, and so is the shadow AI risk that comes with them. When people work around approved systems to get things done faster, governance breaks down, data leaves controlled environments, and IT loses visibility. The answer is not to restrict AI access but to give teams an enterprise-grade AI assistant built for work, on infrastructure IT already controls. Quick runs on AWS, the same infrastructure behind the most security-sensitive workloads on the planet. Your data stays in your environment, your conversations remain private, and everything is auditable. Full audit trails are available through Amazon CloudWatch and AWS CloudTrail. The compliance certifications your security team requires (HIPAA, FedRAMP, SOC 2, and ISO 27001) are built in from day one. Customers across manufacturing, healthcare, and sports have been using Quick on desktop during preview—asking complex questions in natural language and getting grounded, trustworthy answers in seconds, cutting time-to-insight significantly while keeping governance and accuracy built in from the start. For organizations managing knowledge workers across hundreds of roles and workflows, the capacity equation matters too. Business goals keep growing, but the hours in a day do not. Most of the time that should go to high-judgment work gets consumed by pulling information together, chasing follow-ups, and assembling deliverables. Quick changes that equation by providing a thought partner that knows your context, builds what you need, and takes action on your behalf. Quick also gives your team a shared workspace where the dashboards, agents, and automations one person builds are available to the whole team. Here is what Quick looks like across a real workday, from delegating meeting prep on a laptop to triaging priorities on a phone and following up after the workday ends. Here, an enterprise account executive at a manufacturing company uses Quick to dramatically simplify prep for a key customer meeting—typing a single request and letting Quick assemble the brief in the background Focus on what matters, not what’s loudest Most work tools generate a firehose of notifications.&nbsp;Quick’s&nbsp;activity feed does the opposite: it&nbsp;consolidates&nbsp;signals from email, messaging, CRM, and calendar into one prioritized view.&nbsp;Items&nbsp;agents resolve on their own disappear. What&nbsp;remains&nbsp;is a short queue of things only you can act on, and the feed gets smarter over time. Quick&nbsp;learns&nbsp;your relationships, priorities, and patterns, so it surfaces what matters most, not just what arrived most recently. &nbsp; Here, the same rep triages her morning from her phone,&nbsp;approving an addition to her meeting brief and responding to a pipeline review request for her VP, without opening another app. &nbsp; For teams&nbsp;operating&nbsp;at enterprise scale, that prioritization is what turns a firehose of updates into a clear path forward: &nbsp; “At Southwest Airlines,&nbsp;we’re&nbsp;building agentic AI tools and autonomous agents to streamline operations across our 70,000+ Employees and enhance the experience for the millions of Customers we serve every day. Amazon Quick Desktop gives our teams the ability to ask complex questions in natural language and get grounded, trustworthy answers in seconds instead of waiting on ad hoc report requests. Our developers build once and deploy intelligent experiences across the enterprise, with governance and accuracy baked in from the start. Quick cuts time-to-insight significantly and is already powering high-impact use cases across the&nbsp;organization&nbsp;including market analytics.&nbsp;It’s&nbsp;become the foundation of how we put AI-driven intelligence directly into the hands of our People.” &nbsp; -Justin Bundick, VP Technology Intelligence Platforms, Southwest Airlines &nbsp; From meeting to momentum Most AI tools answer questions. Quick completes tasks by synthesizing information across systems, drafting deliverables, updating records, and executing follow-ups on behalf of your team. Teams do not get a summary of what they&nbsp;could&nbsp;do. They get finished output, ready for review. &nbsp; Here, she&nbsp;picks up on&nbsp;her laptop where she left off on&nbsp;mobile—reviewing&nbsp;the completed work in mission control and sharing the finished brief with her account team. &nbsp; Early customers point to that shift&nbsp;from answers to finished work&nbsp;as the thing that changes how their teams&nbsp;operate: &nbsp; “We’ve&nbsp;been evaluating Amazon Quick ahead of its general availability launch, and the adoption was easy. Clean design, intuitive experience, and the knowledge graph and memory adapt to the way you work. You can create agents that run asynchronously on your behalf and go from concept to working prototype in a fraction of the time. Quick is becoming a force multiplier that frees you to focus on higher-value work.” &nbsp; — Chuck Metturdharma, VP & Chief AI Officer, Labcorp &nbsp; The work follows through, even when you don’t have time Quick is built on the tools, systems, and infrastructure your organization already runs on. There is no migration, no new ecosystem to adopt. It connects to what you have and starts delivering value on day one. &nbsp; Here, after the meeting, she wraps the day from her phone,&nbsp;having Quick refine and send a customer follow-up, then queue up the next morning’s materials for engineering. &nbsp; Every decision stays yours while Quick handles the rest. &nbsp; Whether&nbsp;you’re&nbsp;an IT leader, account executive, a program manager juggling cross-functional launches, or a finance lead closing the books, Quick works the way you do, across every device, on your schedule. You bring the judgment; Quick gives your teams the capacity to match their goals. &nbsp; That capacity shows up differently for every team,&nbsp;but the pattern is the same: people spend less time on setup and more time acting on what they know: &nbsp; “Amazon Quick allows our domain experts—the people who know golf and our data best—to do work that used to sit in a technical backlog.&nbsp;We’ve&nbsp;prototyped working systems in days instead of weeks. When an idea proves&nbsp;out, they can hand&nbsp;our engineering team well-documented,&nbsp;validated&nbsp;requirements instead of a rough concept, so development starts from a proven foundation. And with it on mobile, they can act on an idea the moment it hits instead of waiting until they are back at a computer.” &nbsp; — Randall Kato, VP Golf Technology, PGA TOUR &nbsp; These are the kinds of results customers are already achieving with Quick, and they&nbsp;represent&nbsp;what becomes possible when your team can delegate the routine and focus on the work that moves the business. &nbsp; Download Quick today Spencer Martenson Spencer has spent six years at AWS translating complex technology into stories that resonate with customers. He previously led product marketing for SAP on AWS, helping enterprises modernize their critical ERP workloads in the cloud. Now he’s focused on Amazon Quick — building GTM strategies that help customers work smarter by taking advantage of the latest advancements in AI. Spencer lives in Seattle, spending his spare time pursuing rare birds and training his dog. Chris Lott Chris is a Principal GenAI/ML Specialist Solutions Architect on the Amazon Quick team. He has over 25 years of enterprise software development experience. Chris enjoys gardening, cooking, aerospace/general aviation, and traveling the world. Ramon Lopez Ramon is a Principal Solutions Architect for Amazon Quick. With many years of experience building BI solutions and a background in accounting, he loves working with customers, creating solutions, and making world-class services. When not working, he prefers to be outdoors in the ocean or up on a mountain.",
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/",
+      "source_key": "aws-machine-learning"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "provider-375537c0c035cf9da7",
+      "company": "Alibaba Qwen",
+      "title": "Qwen2-VL: To See the World More Clearly",
+      "url": "https://qwenlm.github.io/blog/qwen2-vl/",
+      "published_at": "2024-08-28T16:24:00+00:00",
+      "source_type": "rss_official",
+      "summary": "DEMO GITHUB HUGGING FACE MODELSCOPE API DISCORD After a year&rsquo;s relentless efforts, today we are thrilled to release Qwen2-VL! Qwen2-VL is the latest version of the vision language models based on Qwen2 in the Qwen model familities. Compared with Qwen-VL, Qwen2-VL has the capabilities of: SoTA understanding of images of various resolution & ratio: Qwen2-VL achieves state-of-the-art performance on visual understanding benchmarks, including MathVista, DocVQA, RealWorldQA, MTVQA, etc. Understa",
+      "content": "DEMO GITHUB HUGGING FACE MODELSCOPE API DISCORD After a year&rsquo;s relentless efforts, today we are thrilled to release Qwen2-VL! Qwen2-VL is the latest version of the vision language models based on Qwen2 in the Qwen model familities. Compared with Qwen-VL, Qwen2-VL has the capabilities of: SoTA understanding of images of various resolution & ratio: Qwen2-VL achieves state-of-the-art performance on visual understanding benchmarks, including MathVista, DocVQA, RealWorldQA, MTVQA, etc. Understanding videos of 20min+: Qwen2-VL can understand videos over 20 minutes for high-quality video-based question answering, dialog, content creation, etc.",
+      "source_url": "https://qwenlm.github.io/blog/index.xml",
+      "source_key": "qwen-blog"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "provider-1d34249cbd48b6b79c",
+      "company": "Alibaba Qwen",
+      "title": "Introducing Qwen-VL",
+      "url": "https://qwenlm.github.io/blog/qwen-vl/",
+      "published_at": "2024-01-25T05:33:00+00:00",
+      "source_type": "rss_official",
+      "summary": "Along with the rapid development of our large language model Qwen, we leveraged Qwen’s capabilities and unified multimodal pretraining to address the limitations of multimodal models in generalization, and we opensourced multimodal model Qwen-VL in Sep. 2023. Recently, the Qwen-VL series has undergone a significant upgrade with the launch of two enhanced versions, Qwen-VL-Plus and Qwen-VL-Max. The key technical advancements in these versions include: Substantially boost in image-related reasonin",
+      "content": "Along with the rapid development of our large language model Qwen, we leveraged Qwen’s capabilities and unified multimodal pretraining to address the limitations of multimodal models in generalization, and we opensourced multimodal model Qwen-VL in Sep. 2023. Recently, the Qwen-VL series has undergone a significant upgrade with the launch of two enhanced versions, Qwen-VL-Plus and Qwen-VL-Max. The key technical advancements in these versions include: Substantially boost in image-related reasoning capabilities; Considerable enhancement in recognizing, extracting, and analyzing details within images and texts contained therein; Support for high-definition images with resolutions above one million pixels and images of various aspect ratios.",
+      "source_url": "https://qwenlm.github.io/blog/index.xml",
+      "source_key": "qwen-blog"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "b3680604-d1c5-497c-9937-fd4cd3ea9824",
+      "company": "Hugging Face",
+      "title": "Introducing IDEFICS: An Open Reproduction of State-of-the-art Visual Langage Model",
+      "url": "https://huggingface.co/blog/idefics",
+      "published_at": "2023-08-22T00:00:00+00:00",
+      "source_type": "rss_official",
+      "summary": "",
+      "content": "",
+      "source_url": "https://huggingface.co/blog/feed.xml",
+      "source_key": "hugging-face-blog"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "625c977e-ae97-5a67-99ea-3b361370ab8b",
+      "company": "Amazon AI",
+      "title": "The new AgentCore runtime: Elastic, optimized, and consistently fast starts",
+      "url": "https://aws.amazon.com/blogs/machine-learning/the-new-agentcore-runtime-elastic-optimized-and-consistently-fast-starts/",
+      "published_at": "2026-09-18T15:31:34+00:00",
+      "source_type": "rss_official",
+      "summary": "Today we are announcing the new AgentCore runtime, a capability of Amazon Bedrock AgentCore built for the speed, flexibility, and cost efficiency that production agents demand. It reclaims memory as sessions release it and delivers consistent cold starts regardless of image size or concurrency.",
+      "content": "Agents are no longer experiments. They process claims, write and review code, coordinate across systems, and run for hours without supervision. As agents take on more complex, longer-running work, the infrastructure underneath them must evolve just as fast. We built Amazon Bedrock AgentCore to help developers build, connect, and optimize agents securely at scale. AgentCore runtime, a capability of Amazon Bedrock AgentCore, is the managed compute layer that gives developers a fully managed environment to deploy and run agents without building or maintaining infrastructure. Since launch, thousands of teams have used it to run production agents. Every conversation with those teams teaches us something about what agents need next: faster responsiveness as workloads scale, finer control over resource allocation, and economics that track actual usage precisely. Today, we are announcing the new AgentCore runtime, purpose-built for the speed, flexibility, and cost efficiency that production agents demand. It brings better memory management, reclaiming memory as a session releases it instead of holding it at the peak. It also delivers consistent cold start times regardless of container size or agent concurrency. You get the serverless model you already liked, now more elastic. Memory is released back the instant a session ends, startup times stay consistent regardless of size or concurrency, and the bill tracks the work your agent does. From conversation to workload Many agents started as chat bots: you asked, it answered, and the exchange ended in seconds. Then came coding agents that work for minutes to hours, holding context across many steps, running while you watch or step away. Now agents are becoming ambient, always on, triggered by events, running unattended, surfacing only when a job finishes or hits a decision that needs a person. And there are far more of them: no longer novelties but running everywhere. They are embedded in products, behind everyday features, and increasingly launched by other agents. The first version of AgentCore runtime built a strong foundation for this spectrum of agents: serverless, session isolation, scale to zero, and pay only for what you use. Today’s launch of the new runtime extends that foundation across the full spectrum, staying fast and consistent for interactive agents, and durable and affordable for long-running, more autonomous agents. What AgentCore runtime provides With AgentCore runtime, you can focus on the agent instead of worrying about the scalable infrastructure needed underneath it. Two things make that possible, and they’re the reasons customers reach for it: You pay only for what you consume, and not for idle CPU waiting for I/O. Billing follows resource usage, so there’s no standing charge for capacity you provisioned “just in case.” The platform scales all the way down to zero. When an agent isn’t handling work, there’s nothing running and nothing to pay for. When work arrives, the platform gets you the capacity you need. Together they make it cheap to keep many agents idle most of the time and even cheap to run one that stays busy. The consumption model bends to the workload instead of forcing the workload to bend to it. As agents move from short question-and-answer sessions to ambient, always-on work, that same model runs into two challenges. Memory is expensive, and today you pay the peak. A session holds on to memory from the moment it allocates it until the session ends, because nothing reclaims it along the way. This works when the allocated memory is used to serve subsequent resources without incurring the latency to fetch it again. However, a long-running or bursty agent keeps paying for its high point the whole time it runs, well after it has stopped using that memory. For an agent that spikes now and then but sits idle most of the day, that is the gap between paying for the peak around the clock and paying for the real usage. Startup times vary. Every new session has to start before it can do any work, so fast, predictable startup is central to a good experience. It matters most when a person is waiting on an agent that paused for input and needs to resume. The catch is the hardware-enforced isolation these sessions depend on: a session that lands on an already-initialized environment starts in under 100 milliseconds, but keeping environments hot enough to guarantee that means holding compute in reserve. So most sessions begin with a cold start: booting a fresh environment, pulling the image, and initializing the agent before the first request runs. That latency penalty grows with image size and concurrency, and it’s worst under bursty traffic, exactly when most sessions arrive and the fewest ready environments remain. That inconsistency is what a waiting user feels. The workarounds are heavy. To cover both challenges, customers often build the machinery themselves: holding spare environments ready so requests avoid a cold start, optimizing memory allocation, and tearing it all down again to keep the bill in check. Keeping capacity ready ahead of demand is costly and complex for anyone to run. It reserves scarce compute whether or not that compute is working, and it still gives way when a burst outruns what was set aside. This is undifferentiated work, and none of it is the agent itself. Benefits of the new AgentCore runtime The enhanced AgentCore runtime takes care of both challenges for you, starting with lower memory consumption tracked to what you use. The new runtime now starts each session from a small, efficient memory profile rather than a full provisioned footprint. Additional memory is allocated and paged in on demand as the workload needs it. Based on an analysis of allocation patterns across billions of sessions, we tuned the new runtime to reclaim memory when it goes cold and is unlikely to be accessed again. It no longer holds that memory until the session ends. With the original runtime, allocated memory remained held even if it wasn’t used by subsequent requests, so the usage tracked the high watermark. With the new runtime, memory that is released or goes cold is reclaimed, and the bill tracks those changes over the lifetime of the session. Figure 1: Session memory usage for the original runtime compared to the new runtime Faster, more consistent cold starts come as a direct benefit of smaller profiles at startup. The enhanced runtime prepares the environment once, snapshots it, and restores that snapshot for each new instance. Because the snapshot stays small and consistent, so do the starts, no matter the image size or how much concurrency you run. Rather than repeating the boot-and-initialize work on every cold start, the platform restores an environment that is already up. The runtime now delivers consistent starts in a tight, predictable range. What we measured. To isolate what the platform itself adds to a cold start, we tested an empty echo agent that returns its input and calls no model and no tools. The timing reflects the runtime’s start path rather than any application work. A Python client on an Amazon Elastic Compute Cloud (Amazon EC2) instance in us-west-2 called agents in us-east-1 over the public internet with no virtual private cloud (VPC) peering, using the boto3 SDK. These are client-side numbers, so each one includes the round trip between the two AWS Regions on top of the platform’s own start time. We sent 5,000 cold invocations per agent across both versions and five image sizes, within default account quotas. Measured this way, the new runtime delivers a P75 cold start latency of about 2 seconds from a 200 MB image all the way to 2 GB, because image size has no effect on it. The original runtime’s latency, by contrast, rises with image size, from roughly 5.4 seconds to nearly 30 seconds. To put this latency in perspective, it helps to separate cold start latency from what a user waits on. Start time is how long it takes to get a ready environment before your agent code handles its first request. It is not the time the agent spends working. In a production agent, most of the wall-clock time a user experiences comes from the agent loop and its model calls, often several seconds each. In our echo test, the agent’s own code ran in about 34 milliseconds at P75, so nearly everything here is platform start time. The new runtime makes the platform’s portion of the start time fast and predictable, which matters most when a person is waiting on an interactive agent. A practical tip for interactive agents. You can hide the start time almost entirely by beginning the session as soon as the user engages, for example when they open a chat, even before they type in the input box, rather than waiting for them to submit. The session warms while they are greeted and while they type their first request, so by the time they send that message, the environment is ready. Figure 2: P75 cold start latency across image sizes for the original and new runtime How the new runtime works The next generation of the runtime reworks how sessions use memory, how agents load, and what you pay for. Page memory in on demand and reclaim it when it is freed. Instead of holding on to a session’s peak memory after it’s allocated, the new runtime now backs the session with a smaller resident footprint and brings in more memory as the workload touches it. When your agent lets memory go, by releasing per-request buffers and by letting cached data expire between requests, the platform takes it back rather than letting it stay claimed until the session ends. Load the agent once, then snapshot it. When you create or update an instance of the new runtime, AgentCore launches your container and waits for it to report healthy, then captures a snapshot of the running environment. By that point, your one-time initialization has already run, so work such as loading model artifacts and fetching static config is baked into the snapshot. Every new instance then starts by restoring that snapshot rather than initializing from scratch. The expensive startup work is paid once, and each instance inherits it instantly. Keep the snapshot small and its size steady. A naive snapshot of a running process captures far more than a restored instance needs, including caches and transient memory that pad the snapshot and make restore time grow with image size. The new runtime strips that excess, so the snapshot holds only the working state an instance needs to resume, not its full resident footprint. The result is a snapshot whose size stays roughly flat as the container image grows, and that is what holds restore latency steady across a wide range of image sizes. Higher rate, lower bill. The new runtime bills you for the memory that&nbsp; your agent uses, loaded on demand and reclaimed when idle, not for holding your whole container image in memory all session. You pay a higher rate but on far fewer GB-hours, and for most agents the footprint drops more than the rate rises, so the bill goes down. What’s next (coming soon) Beyond what we shipped today, several capabilities are on the way to give you more choice over pricing, compute, compatibility, and control. Committed baseline discounts. Today’s consumption-based pricing stays and works well for spiky and scale-to-zero workloads. Alongside it, the new runtime will add a baseline pricing option: you reserve a memory floor for a session and burst above it on demand. Baseline pricing suits steady, always-active agent sessions that want predictable cost, while consumption pricing continues to provide greater elasticity. Larger compute and storage. Expand your agent’s environment with more RAM, vCPU, and session storage. x86 support. Run the agent, tool, or environment you already have with x86 microVMs. Teams whose code or dependencies target x86 can move an agent, a tool, or an execution environment to AgentCore as-is. Greater lifecycle control. Suspend and resume sessions with memory snapshotting. Attach to runtime hooks to serialize state before an active session terminates, so sessions can resume indefinitely. Scoped identity for unattended agents. Unattended agents raise a question a chat turn never did: what is this agent allowed to do when no one is watching it act? Session context keys will give each session its own scoped identity, so an unattended agent, tool, or environment acts with exactly the permissions defined for it and nothing more. Getting started To get started with the new runtime, set the platformVersion parameter to V2 when you create or update a runtime. See the AgentCore Developer Guide for more details on using the runtime. You can find samples in the AgentCore GitHub samples repo . An accompanying load test example shows the new runtime’s consistent cold start latency in your own AWS account. About the authors Evandro Franco Evandro is a Sr.&nbsp;Data Scientist working on Amazon Web Services. He is part of the Global GTM team that helps AWS customers overcome business challenges related to AI/ML on top of AWS, mainly on Amazon Bedrock AgentCore and Strands Agents. He has more than 18 years of experience working with technology, from software development, infrastructure, serverless, to machine learning. In his free time, Evandro enjoys playing with his son, mainly building some funny Lego bricks. Mark Roy Mark is a Principal AI Architect for AWS, helping customers design and build agentic AI solutions. Mark’s work covers a wide range of use cases, with a primary interest in AI agents at enterprise scale. He is a worldwide tech lead for Agentic AI, including Bedrock AgentCore. Mark has helped companies in insurance, financial services, media and entertainment, healthcare, utilities, and manufacturing. Prior to joining AWS, Mark was an architect, developer, and technology leader for over 25 years, including 19 years in financial services. Shishir Bharathi Shishir is a Principal Engineer in AWS, currently building Amazon Bedrock AgentCore Runtime. His experience spans the full agentic stack, drawing on deep work across AI systems, from developing conversational agents in Alexa and LLM post-training and customization to recommender systems in Prime Video. He now focuses on making the infrastructure that powers production agentic systems more reliable, efficient, and scalable. Abhishek Singh Abhishek is a Senior Software Development Engineer at AWS on the Bedrock AgentCore team. He is the tech lead for AgentCore Runtime and has led the design and development of multiple AgentCore services from the ground up, including Runtime, Code Interpreter, and Browser. He has 12 years of experience building distributed systems, previously on Bedrock and SageMaker. Outside of work, he likes playing soccer and tennis, and spending quality time with family. Aniketh Manjunath Aniketh is a Software Development Engineer at AWS on the Amazon Bedrock AgentCore team, working on AgentCore Runtime with a focus on the performance and efficiency of agent execution at scale. He has over five years of experience building large-scale distributed systems at Amazon, previously on Amazon SageMaker, and now works on making the infrastructure behind production agentic systems faster and more reliable as it scales to meet growing demand. Outside of work, he enjoys hiking, watching movies, and playing cricket. Rahul Nama Rahul is a Software Development Engineer at AWS, where he builds AgentCore Runtime systems that enable AI agents to run reliably at scale. He is passionate about building distributed systems and optimizing infrastructure to simplify the lifecycle of AI agents. Outside of work, he plays semi professional cricket and enjoys exploring the outdoors.",
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/",
+      "source_key": "aws-machine-learning"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "3f6ed181-d601-59e7-83c4-fc9ddd7a7796",
+      "company": "Mistral AI",
+      "title": "Introducing Search Toolkit | Mistral AI",
+      "url": "https://mistral.ai/news/search-toolkit/",
+      "published_at": "2026-08-04T22:32:09.297+00:00",
+      "source_type": "scraped",
+      "summary": "Search Toolkit is a composable framework for building production search pipelines for AI applications.",
+      "content": "Search Toolkit is a composable framework for building production search pipelines for AI applications.",
+      "source_url": "https://mistral.ai/sitemap-index.xml",
+      "source_key": "mistral-sitemap"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "b31eb307-210d-4b23-9e8d-6e660cd630c2",
+      "company": "OpenAI",
+      "title": "OpenAI Microscope",
+      "url": "https://openai.com/index/microscope",
+      "published_at": "2020-04-14T07:00:00+00:00",
+      "source_type": "rss_official",
+      "summary": "We’re introducing OpenAI Microscope, a collection of visualizations of every significant layer and neuron of eight vision “model organisms” which are often studied in interpretability. Microscope makes it easier to analyze the features that form inside these neural networks, and we hope it will help",
+      "content": "We’re introducing OpenAI Microscope, a collection of visualizations of every significant layer and neuron of eight vision “model organisms” which are often studied in interpretability. Microscope makes it easier to analyze the features that form inside these neural networks, and we hope it will help the research community as we move towards understanding these complicated systems.",
+      "source_url": "https://openai.com/news/rss.xml",
+      "source_key": "openai-news"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "provider-5715a25d291366ab69",
+      "company": "Alibaba Qwen",
+      "title": "Introducing Qwen",
+      "url": "https://qwenlm.github.io/blog/qwen/",
+      "published_at": "2024-01-23T14:13:29+00:00",
+      "source_type": "rss_official",
+      "summary": "4 months after our first release of Qwen-7B, which is the starting point of our opensource journey of large language models (LLM), we now provide an introduction to the Qwen series to give you a whole picture of our work as well as our objectives. Below are important links to our opensource projects and community. PAPER GITHUB HUGGING FACE MODELSCOPE DISCORD Additionally, we have WeChat groups for chatting and we invite you to join the groups through the provided link in our GitHub readme.",
+      "content": "4 months after our first release of Qwen-7B, which is the starting point of our opensource journey of large language models (LLM), we now provide an introduction to the Qwen series to give you a whole picture of our work as well as our objectives. Below are important links to our opensource projects and community. PAPER GITHUB HUGGING FACE MODELSCOPE DISCORD Additionally, we have WeChat groups for chatting and we invite you to join the groups through the provided link in our GitHub readme.",
+      "source_url": "https://qwenlm.github.io/blog/index.xml",
+      "source_key": "qwen-blog"
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "97d0c33b-9611-4c5b-9a0c-5dcbb4846a40",
+      "company": "OpenAI",
+      "title": "OpenAI Red Teaming Network",
+      "url": "https://openai.com/index/red-teaming-network",
+      "published_at": "2023-09-19T07:00:00+00:00",
+      "source_type": "rss_official",
+      "summary": "We’re announcing an open call for the OpenAI Red Teaming Network and invite domain experts interested in improving the safety of OpenAI’s models to join our efforts.",
+      "content": "We’re announcing an open call for the OpenAI Red Teaming Network and invite domain experts interested in improving the safety of OpenAI’s models to join our efforts.",
+      "source_url": "https://openai.com/news/rss.xml",
+      "source_key": "openai-news"
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "aa155012-08fd-4ce7-94f1-661eb3b895de",
+      "company": "OpenAI",
+      "title": "Safety Gym",
+      "url": "https://openai.com/index/safety-gym",
+      "published_at": "2019-11-21T08:00:00+00:00",
+      "source_type": "rss_official",
+      "summary": "We’re releasing Safety Gym, a suite of environments and tools for measuring progress towards reinforcement learning agents that respect safety constraints while training.",
+      "content": "We’re releasing Safety Gym, a suite of environments and tools for measuring progress towards reinforcement learning agents that respect safety constraints while training.",
+      "source_url": "https://openai.com/news/rss.xml",
+      "source_key": "openai-news"
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "f1b87260-c7e9-44ea-8cc3-bd03e2944926",
+      "company": "Google DeepMind",
+      "title": "We’re expanding our Gemini 2.5 family of models",
+      "url": "https://blog.google/products-and-platforms/products/gemini/gemini-2-5-model-family-expands/",
+      "published_at": "2025-06-17T16:01:00+00:00",
+      "source_type": "rss_official",
+      "summary": "Gemini 2.5 Flash and Pro are now generally available, and we’re introducing 2.5 Flash-Lite, our most cost-efficient and fastest 2.5 model yet.",
+      "content": "Gemini 2.5 Flash and Pro are now generally available, and we’re introducing 2.5 Flash-Lite, our most cost-efficient and fastest 2.5 model yet.",
+      "source_url": "https://deepmind.google/blog/rss.xml",
+      "source_key": "deepmind-blog"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "427d393f-872d-4200-a4af-b00e80e5f45a",
+      "company": "Hugging Face",
+      "title": "Introducing ⚔️ AI vs. AI ⚔️ a deep reinforcement learning multi-agents competition system",
+      "url": "https://huggingface.co/blog/aivsai",
+      "published_at": "2023-02-07T00:00:00+00:00",
+      "source_type": "rss_official",
+      "summary": "",
+      "content": "",
+      "source_url": "https://huggingface.co/blog/feed.xml",
+      "source_key": "hugging-face-blog"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "be7c2ac5-c50d-4270-ad98-37042e512e33",
+      "company": "OpenAI",
+      "title": "Universe",
+      "url": "https://openai.com/index/universe",
+      "published_at": "2016-12-05T08:00:00+00:00",
+      "source_type": "rss_official",
+      "summary": "We’re releasing Universe, a software platform for measuring and training an AI’s general intelligence across the world’s supply of games, websites and other applications.",
+      "content": "We’re releasing Universe, a software platform for measuring and training an AI’s general intelligence across the world’s supply of games, websites and other applications.",
+      "source_url": "https://openai.com/news/rss.xml",
+      "source_key": "openai-news"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "ad4eb6c5-acc9-49a0-8adf-5b90c8a64f1f",
+      "company": "OpenAI",
+      "title": "Previewing Ultrafast mode: GPT-5.6 Sol at up to 14X the speed",
+      "url": "https://openai.com/index/previewing-ultrafast",
+      "published_at": "2026-08-13T10:00:00+00:00",
+      "source_type": "rss_official",
+      "summary": "Preview Ultrafast, a new OpenAI API service tier that runs GPT-5.6 Sol up to 14× faster. Powered by Cerebras, it delivers up to 750 output tokens per second.",
+      "content": "Preview Ultrafast, a new OpenAI API service tier that runs GPT-5.6 Sol up to 14× faster. Powered by Cerebras, it delivers up to 750 output tokens per second.",
+      "source_url": "https://openai.com/news/rss.xml",
+      "source_key": "openai-news"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "e941784b-e329-4602-add3-188fc7e334d2",
+      "company": "OpenAI",
+      "title": "Sora is here",
+      "url": "https://openai.com/index/sora-is-here",
+      "published_at": "2024-12-09T10:00:00+00:00",
+      "source_type": "rss_official",
+      "summary": "Our video generation model, Sora, is now available to use at sora.com. Users can generate videos up to 1080p resolution, up to 20 sec long, and in widescreen, vertical or square aspect ratios. You can bring your own assets to extend, remix, and blend, or generate entirely new content from text.",
+      "content": "Our video generation model, Sora, is now available to use at sora.com. Users can generate videos up to 1080p resolution, up to 20 sec long, and in widescreen, vertical or square aspect ratios. You can bring your own assets to extend, remix, and blend, or generate entirely new content from text.",
+      "source_url": "https://openai.com/news/rss.xml",
+      "source_key": "openai-news"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "b8a161c7-590c-4779-8dea-76f4735a761b",
+      "company": "OpenAI",
+      "title": "New GPT-3 capabilities: Edit & insert",
+      "url": "https://openai.com/index/gpt-3-edit-insert",
+      "published_at": "2022-03-15T07:00:00+00:00",
+      "source_type": "rss_official",
+      "summary": "We’ve released new versions of GPT-3 and Codex which can edit or insert content into existing text, rather than just completing existing text.",
+      "content": "We’ve released new versions of GPT-3 and Codex which can edit or insert content into existing text, rather than just completing existing text.",
+      "source_url": "https://openai.com/news/rss.xml",
+      "source_key": "openai-news"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "834187fb-d76d-52a4-8655-3424dfe677d8",
+      "company": "Amazon AI",
+      "title": "Introducing GLM 5.3 on Amazon Bedrock",
+      "url": "https://aws.amazon.com/blogs/machine-learning/introducing-glm-5-3-on-amazon-bedrock/",
+      "published_at": "2026-10-05T23:25:17+00:00",
+      "source_type": "rss_official",
+      "summary": "GLM 5.3 from Z.ai is now available on Amazon Bedrock: a 753B-parameter mixture-of-experts model built for coding and long-horizon agentic tasks. Learn how to invoke it with the OpenAI-compatible APIs, cut cost and latency with prompt caching, and run an authorized security test with the open-source Strix agent.",
+      "content": "Coding and agentic workloads are asking more of AI models than ever: refactor a repository spanning hundreds of files, sustain a multi-hour agentic workflow without losing context, and reason through complex systems problems with tool use at every step. Meeting those demands with open-weight models has historically meant provisioning and operating your own inference infrastructure. GLM 5.3 from Z.ai (Zhipu AI) is now available on Amazon Bedrock . GLM 5.3, as published on Hugging Face Hub , is a 753B-parameter mixture-of-experts model optimized for coding and long-horizon agentic tasks. In particular, Z.ai has reported the model shows notable cyber security capabilities. On Amazon Bedrock, you can now use it through fully managed APIs with cross-Region inference, prompt caching, and service tiers. You don’t manage any infrastructure. Access to GLM 5.3 on Bedrock is available to eligible enterprise customers. In this post, we show you how to invoke GLM 5.3 on Amazon Bedrock using the OpenAI-compatible APIs and reduce cost and latency with prompt caching. We then put the model to work in a realistic agentic workflow: running an authorized security test of your own application with Strix, an open-source AI penetration testing agent. What’s new compared to GLM 5 GLM 5 arrived on Amazon Bedrock earlier this year. GLM 5.3 builds on the same lineage, with a range of important gains: Stronger coding: Z.ai claims competitive performance on a range of coding benchmarks including DeepSWE, Terminal Bench 3.0, and FrontierSWE. They also report a 50% improvement over GLM 5.2 on their own internal coding benchmark. Direct comparisons to GLM 5 were not reported, because the magnitude of improvements led to updating the benchmark tests themselves since the GLM 5.1 announcement . Emergent cyber security capabilities: Reported benchmark performance on security tasks stands out, which makes the model a natural fit for defensive security workflows. For example, Z.ai measured a leading score of 84.5 on the CyberGym benchmark at release. Broader Amazon Bedrock integration: Cross-Region inference profiles, implicit and explicit prompt caching, and improved feature parity of the OpenAI-compatible Responses and Chat Completions APIs alongside Invoke and Converse. Key capabilities Frontier coding and agentic performance. GLM 5.3 is designed for complex systems engineering and long-horizon agentic tasks. These include multi-step reasoning, tool-augmented workflows, and sustained context across large code bases. Flexible API access. You can invoke GLM 5.3 through the OpenAI-compatible Responses and Chat Completions APIs, or the Amazon Bedrock Invoke and Converse APIs. Prompt caching. GLM 5.3 supports implicit (automatic) prompt caching by default, and explicit cache controls (recommended) on the Responses and Chat Completions APIs. For agentic workloads that resend large system prompts or repository context every turn, caching reduces both latency and input cost. Cross-Region inference. GLM 5.3 is available through US cross-Region inference ( us.zai.glm-5.3 ) and Global cross-Region inference ( global.zai.glm-5.3 ) profiles. You send requests to the “source” AWS Region of your choice, and Amazon Bedrock securely routes each request for processing. Refer to the Amazon Bedrock User Guide for more details. Service tiers. Choose Flex to optimize cost for less-time-sensitive workloads, Priority to prioritize latency-critical requests in return for a higher price, or Standard for the default balance between price and speed. Prerequisites For the following usage examples, you need: An AWS account with access to Amazon Bedrock. AWS Identity and Access Management (IAM) permissions to call the base model and the target inference profile: bedrock:InvokeModel , bedrock:InvokeModelWithResponseStream , and bedrock:CallWithBearerToken . (For the code-based demos) Python 3.10 or later. (For the optional security-testing demo only) install Docker and Strix with the bedrock extra . Try GLM 5.3 on the Amazon Bedrock console You can start sending prompts to GLM 5.3 on the AWS Management Console, with no need to write code or install developer tools. To get started, navigate to Amazon Bedrock and then choose Test > Playground from the left sidebar menu. From this playground interface you can select GLM 5.3 from the model list and send your first prompts through the chat UI, as shown in the following screenshot: Figure 1: Chatting with GLM 5.3 on the Amazon Bedrock console Get started with the Responses API Programmatically, you can call the model through the bedrock-runtime endpoint. This supports both the OpenAI-compatible Responses and Chat Completions APIs, and the Amazon Bedrock Invoke and Converse APIs for GLM 5.3. For new applications the OpenAI-compatible APIs are recommended as they support a more complete set of features. Amazon Bedrock does support generating API keys for OpenAI-compatible integrations that require them. However, we strongly recommend preferring short-lived credentials over long-lived API keys where possible. In the following example, we will call the Responses API from Python using the OpenAI Python SDK, and the aws-bedrock-token-generator library to generate short-term tokens from your standard AWS Command Line Interface (AWS CLI) credentials . Install the required packages. pip install -U openai aws-bedrock-token-generator Save the following code as bedrock-request.py . from aws_bedrock_token_generator import provide_token from openai import OpenAI region = \"us-west-2\" # Your source AWS Region client = OpenAI( api_key=provide_token(region=region), base_url=f\"https://bedrock-runtime.{region}.amazonaws.com/openai/v1\", ) resp = client.responses.create( input=\"Refactor this Python function to be iterative instead of recursive: ...\", model=\"global.zai.glm-5.3\", ) print(resp.output_text) Run the script, which will display the model’s output. python bedrock-request.py Optimize inference with explicit prompt caching Long-running coding and knowledge workflows often resend stable context across multiple conversation turns, such as system prompts, tool definitions, or repository files. GLM 5.3 on Amazon Bedrock supports implicit prompt caching by default, which helps reduce response latency and input token costs for repeated calls sharing the same initial prompt prefix. With explicit prompt caching mode you specifically identify the reusable prompt prefixes, which can further improve cache hit rate (and therefore latency and cost savings) over implicit caching. To use explicit prompt caching with GLM 5.3, as shown in the following example: Select the explicit caching mode through prompt_cache_options on your request. Add one or more prompt_cache_breakpoint markers on input content blocks to indicate the end (inclusive) of reusable prompt prefixes. Each breakpoint must contain at least 1,024 tokens to be eligible for caching. resp = client.responses.create( model=\"global.zai.glm-5.3\", # Enable explicit caching mode: extra_body={\"prompt_cache_options\": {\"mode\": \"explicit\"}}, input=[ { \"type\": \"message\", \"role\": \"system\", \"content\": [ { \"type\": \"input_text\", \"text\": SYSTEM_PROMPT, # A long, static system prompt is a great target for caching: \"prompt_cache_breakpoint\": {\"mode\": \"explicit\"}, }, ] }, { \"type\": \"message\", \"role\": \"user\", \"content\": [ { \"type\": \"input_text\", \"text\": USER_INPUT, # Multiple breakpoints can also be defined, for layered cache: \"prompt_cache_breakpoint\": {\"mode\": \"explicit\"}, }, ], }, ], ) if resp.usage.input_tokens_details.cached_tokens: print(\"Hit cache!\") For more information, refer to the prompt caching section of the Amazon Bedrock User Guide. Example agentic workload: Authorized security testing with Strix One workload that benefits directly from GLM 5.3’s strengths is automated security testing of your own applications. Strix is an open-source AI penetration testing agent that runs your code dynamically, finds vulnerabilities, and validates them with proof-of-concept tests. As of this writing, the Strix documentation uses GLM 5.3 as its default model. You can configure Strix to use GLM 5.3 on Amazon Bedrock instead of a third-party inference provider, so model inference runs under your AWS account’s controls. Only test applications you own or have explicit written permission to test. Unauthorized security testing of systems you don’t own is illegal in most jurisdictions and violates the AWS Acceptable Use Policy. In this walkthrough, the target is OWASP Juice Shop , a deliberately vulnerable sample application running locally on your machine. If you want fully managed, continuous security testing beyond running open-source agents yourself, AWS Continuum provides on-demand penetration testing and other security analyses as a managed service. The two approaches are complementary: open-source agents like Strix give you developer-driven, in-the-loop, and deeply customizable testing against local builds, while AWS Continuum runs managed assessments at scale. To run an authorized security test Start the example Juice Shop target application locally. docker run --rm -p 3000:3000 bkimminich/juice-shop Configure Strix to use GLM 5.3 on Amazon Bedrock. Strix uses LiteLLM under the hood so (as described in their documentation for Amazon Bedrock ) your AWS CLI credentials will be picked up automatically. This means no API key is required, but you might want to set environment variables like AWS_PROFILE and AWS_REGION to configure your connection. At the time of writing, LiteLLM does not yet resolve bedrock/global.zai.glm-5.3 . Until this is fixed, you can explicitly specify the Converse API route and the inference profile Amazon Resource Name (ARN) as shown in the following snippet: # Fill in the REGION and ACCOUNT_ID placeholders below before running! export STRIX_LLM=\"bedrock/converse/arn:aws:bedrock:{AWS_REGION}:{AWS_ACCOUNT_ID}:inference-profile/global.zai.glm-5.3\" Run Strix against the local target. strix --target http://localhost:3000 Wait for the root Strix agent to complete, then review the findings. Strix spins up a team of sub-agents to map the threat surface, explore a range of potential vulnerability categories, and attempt to validate each finding with a working proof of concept. This helps minimize time spent triaging false positives. A successful run will generate a report including severity, evidence, and remediation guidance for each finding. The following video shows the end-to-end journey of setting up and running Strix against the example application, and exploring the results: Figure 2: Running an example security test with GLM 5.3 and Strix Clean up Stop the Juice Shop container with Ctrl+C in the terminal where it’s running, or run docker ps to find the container ID and stop it with docker stop . Amazon Bedrock inference is pay-per-token with no persistent resources, so there are no further charges after your requests complete. If you generated an Amazon Bedrock API key for this walkthrough and no longer need it, delete it on the Amazon Bedrock console. Availability Give GLM 5.3 a try on the Amazon Bedrock console , use it through coding assistants like OpenCode as shown in our recent post with Kimi K3 , or connect your custom applications through the supported APIs. Interested in how Amazon Bedrock can support your team? Connect with us to start the conversation. About the authors Alex Thewsey Alex is an AI Specialist Solutions Architect at AWS, based in Singapore. He focuses on how open source technologies and open weight models can help customers around the world to build innovative AI solutions and tackle AI governance challenges.",
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/",
+      "source_key": "aws-machine-learning"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "94f8f7fd-bffb-4447-a5be-6b1d81fee5b6",
+      "company": "Hugging Face",
+      "title": "Introducing Mellum2: A 12B Mixture-of-Experts Model by JetBrains",
+      "url": "https://huggingface.co/blog/JetBrains/mellum2-launch",
+      "published_at": "2026-06-01T15:45:17+00:00",
+      "source_type": "rss_official",
+      "summary": "",
+      "content": "",
+      "source_url": "https://huggingface.co/blog/feed.xml",
+      "source_key": "hugging-face-blog"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "e5e120a2-f5d9-4610-acc5-9575d9852b4f",
+      "company": "OpenAI",
+      "title": "Introducing GPT-5.5",
+      "url": "https://openai.com/index/introducing-gpt-5-5",
+      "published_at": "2026-04-23T11:00:00+00:00",
+      "source_type": "rss_official",
+      "summary": "This post introduced GPT-5.5, a model built for complex tasks like coding, research, and data analysis across tools.",
+      "content": "This post introduced GPT-5.5, a model built for complex tasks like coding, research, and data analysis across tools.",
+      "source_url": "https://openai.com/news/rss.xml",
+      "source_key": "openai-news"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "3570973d-5515-4ea3-ba7b-020acd559980",
+      "company": "Google DeepMind",
+      "title": "Gemini 3.1 Flash-Lite: Built for intelligence at scale",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-lite/",
+      "published_at": "2026-03-03T16:35:55+00:00",
+      "source_type": "rss_official",
+      "summary": "Gemini 3.1 Flash-Lite is our fastest and most cost-efficient Gemini 3 series model yet.",
+      "content": "Gemini 3.1 Flash-Lite is our fastest and most cost-efficient Gemini 3 series model yet.",
+      "source_url": "https://deepmind.google/blog/rss.xml",
+      "source_key": "deepmind-blog"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "112bcb93-f51b-5f9b-b83d-fb06fff4158c",
+      "company": "AI21 Labs",
+      "title": "Introducing Jamba2: The open source model family for enterprise reliability and efficiency | AI21",
+      "url": "https://www.ai21.com/blog/introducing-jamba2/",
+      "published_at": "2026-01-08T13:31:16+00:00",
+      "source_type": "scraped",
+      "summary": "Jamba2 is an open source enterprise LLM family built for reliability and steerability, delivering strong grounding and instruction following with a compact design.",
+      "content": "Jamba2 is an open source enterprise LLM family built for reliability and steerability, delivering strong grounding and instruction following with a compact design.",
+      "source_url": "https://www.ai21.com/sitemap_index.xml",
+      "source_key": "ai21-sitemap"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "b660bcb7-5e84-4a03-aca0-9f5c9c56d332",
+      "company": "OpenAI",
+      "title": "A new personal finance experience in ChatGPT",
+      "url": "https://openai.com/index/personal-finance-chatgpt",
+      "published_at": "2026-05-15T00:00:00+00:00",
+      "source_type": "rss_official",
+      "summary": "Preview a new personal finance experience in ChatGPT for Pro users in the U.S. Securely connect your financial accounts and get AI-powered insights and guidance grounded in your financial context, goals, and priorities.",
+      "content": "Preview a new personal finance experience in ChatGPT for Pro users in the U.S. Securely connect your financial accounts and get AI-powered insights and guidance grounded in your financial context, goals, and priorities.",
+      "source_url": "https://openai.com/news/rss.xml",
+      "source_key": "openai-news"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "c51fb8c5-921f-4960-a750-de2ee7a4126f",
+      "company": "OpenAI",
+      "title": "Premium seats are coming to ChatGPT Business",
+      "url": "https://openai.com/index/premium-seats-chatgpt-business",
+      "published_at": "2026-08-10T00:00:00+00:00",
+      "source_type": "rss_official",
+      "summary": "Premium seats are now available on ChatGPT Business, with 5x more usage, no five-hour usage limit, and flexible seat options for every teammate.",
+      "content": "Premium seats are now available on ChatGPT Business, with 5x more usage, no five-hour usage limit, and flexible seat options for every teammate.",
+      "source_url": "https://openai.com/news/rss.xml",
+      "source_key": "openai-news"
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "provider-9da15b80c4428f2623",
+      "company": "Alibaba Qwen",
+      "title": "Qwen2.5 Omni: See, Hear, Talk, Write, Do It All!",
+      "url": "https://qwenlm.github.io/blog/qwen2.5-omni/",
+      "published_at": "2025-03-26T16:00:45+00:00",
+      "source_type": "rss_official",
+      "summary": "QWEN CHAT HUGGING FACE MODELSCOPE DASHSCOPE GITHUB PAPER DEMO DISCORD We release Qwen2.5-Omni, the new flagship end-to-end multimodal model in the Qwen series. Designed for comprehensive multimodal perception, it seamlessly processes diverse inputs including text, images, audio, and video, while delivering real-time streaming responses through both text generation and natural speech synthesis. To try the latest model, feel free to visit Qwen Chat and choose Qwen2.5-Omni-7B. The model is now open",
+      "content": "QWEN CHAT HUGGING FACE MODELSCOPE DASHSCOPE GITHUB PAPER DEMO DISCORD We release Qwen2.5-Omni, the new flagship end-to-end multimodal model in the Qwen series. Designed for comprehensive multimodal perception, it seamlessly processes diverse inputs including text, images, audio, and video, while delivering real-time streaming responses through both text generation and natural speech synthesis. To try the latest model, feel free to visit Qwen Chat and choose Qwen2.5-Omni-7B. The model is now openly available on Hugging Face, ModelScope, DashScope,and GitHub, with technical documentation available in our Paper.",
+      "source_url": "https://qwenlm.github.io/blog/index.xml",
+      "source_key": "qwen-blog"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "provider-ff9c1f8663075e8f66",
+      "company": "Alibaba Qwen",
+      "title": "Hello Qwen2",
+      "url": "https://qwenlm.github.io/blog/qwen2/",
+      "published_at": "2024-06-06T16:00:00+00:00",
+      "source_type": "rss_official",
+      "summary": "GITHUB HUGGING FACE MODELSCOPE DEMO DISCORD Introduction After months of efforts, we are pleased to announce the evolution from Qwen1.5 to Qwen2. This time, we bring to you: Pretrained and instruction-tuned models of 5 sizes, including Qwen2-0.5B, Qwen2-1.5B, Qwen2-7B, Qwen2-57B-A14B, and Qwen2-72B; Having been trained on data in 27 additional languages besides English and Chinese; State-of-the-art performance in a large number of benchmark evaluations; Significantly improved performance in codi",
+      "content": "GITHUB HUGGING FACE MODELSCOPE DEMO DISCORD Introduction After months of efforts, we are pleased to announce the evolution from Qwen1.5 to Qwen2. This time, we bring to you: Pretrained and instruction-tuned models of 5 sizes, including Qwen2-0.5B, Qwen2-1.5B, Qwen2-7B, Qwen2-57B-A14B, and Qwen2-72B; Having been trained on data in 27 additional languages besides English and Chinese; State-of-the-art performance in a large number of benchmark evaluations; Significantly improved performance in coding and mathematics; Extended context length support up to 128K tokens with Qwen2-7B-Instruct and Qwen2-72B-Instruct.",
+      "source_url": "https://qwenlm.github.io/blog/index.xml",
+      "source_key": "qwen-blog"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "1931d939-08f3-59a6-bce7-af1d9cd43353",
+      "company": "OpenAI",
+      "title": "Now everyone can put data to work",
+      "url": "https://openai.com/index/put-data-to-work",
+      "published_at": "2026-09-10T15:00:00+00:00",
+      "source_type": "rss_official",
+      "summary": "Meet the Data agent in ChatGPT Work. Connect company data, uncover insights, and build interactive dashboards with AI using natural language.",
+      "content": "Meet the Data agent in ChatGPT Work. Connect company data, uncover insights, and build interactive dashboards with AI using natural language.",
+      "source_url": "https://openai.com/news/rss.xml",
+      "source_key": "openai-news"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "dab1d888-fb43-5758-a14d-51f56969c77f",
+      "company": "OpenAI",
+      "title": "Build more natural voice experiences with GPT‑Live‑1 in the API",
+      "url": "https://openai.com/index/introducing-gpt-live-1-in-the-api",
+      "published_at": "2026-09-10T00:00:00+00:00",
+      "source_type": "rss_official",
+      "summary": "GPT‑Live‑1 brings natural, full-duplex voice conversations to the API, with stronger instruction following, custom voices, and telephony support.",
+      "content": "GPT‑Live‑1 brings natural, full-duplex voice conversations to the API, with stronger instruction following, custom voices, and telephony support.",
+      "source_url": "https://openai.com/news/rss.xml",
+      "source_key": "openai-news"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "eb13ca15-5506-55e5-8556-ca94fc361751",
+      "company": "Cohere",
+      "title": "North Mini Code: Agentic Coding for Developers | Cohere",
+      "url": "https://cohere.com/blog/north-mini-code",
+      "published_at": "2026-08-12T00:00:00+00:00",
+      "source_type": "scraped",
+      "summary": "Meet North Mini Code, Cohere's first open-source agentic coding model: a 30B MoE that codes strongly on minimal hardware.",
+      "content": "Meet North Mini Code, Cohere's first open-source agentic coding model: a 30B MoE that codes strongly on minimal hardware.",
+      "source_url": "https://cohere.com/sitemap.xml",
+      "source_key": "cohere-sitemap"
+    },
+    "eligible": true
+  }
+]
