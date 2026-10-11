@@ -806,5 +806,38 @@
       "summary": "GPT-6 Astra Ultrafast, running on NVIDIA Blackwell GPUs, is available now in the OpenAI API and to eligible ChatGPT Work and Codex users. Accelerated by inference optimizations through OpenAI’s models that tap into the capabilities of the NVIDIA Blackwell architecture, Ultrafast offers up to 8x faster token generation than the Astra Standard mode. For developers, […]"
     },
     "eligible": true
+  },
+  {
+    "article": {
+      "id": "05b94d9e-8bd2-54b3-9148-41854ebaf349",
+      "company": "Amazon AI",
+      "title": "New agent skill: Amazon SageMaker optimized generative AI inference for your coding agent",
+      "url": "https://aws.amazon.com/blogs/machine-learning/new-agent-skill-amazon-sagemaker-optimized-generative-ai-inference-for-your-coding-agent/",
+      "published_at": "2026-10-05T17:23:19+00:00",
+      "summary": "Amazon SageMaker optimized generative AI inference introduces the aws-ai-ml skill through the Agent Toolkit for AWS, giving coding agents like Kiro, Claude Code, and Codex deep expertise in inference optimization and benchmarking. Describe what you want, and your agent generates executable SageMaker Python SDK v3 code to benchmark, recommend, and compare deployments."
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "f8e4677e-d0a0-4d02-9e67-83622708a41c",
+      "company": "Google DeepMind",
+      "title": "Putting sign language AI into users’ hands",
+      "url": "https://deepmind.google/blog/putting-sign-language-ai-into-users-hands/",
+      "published_at": "2026-08-12T14:01:59+00:00",
+      "summary": "Introducing sign-language-to-text (SL2T), our breakthrough model powering new sign language features for Deaf and hard of hearing users."
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "65170d00-f16c-5fa1-80d1-2b563917a515",
+      "company": "Stability AI",
+      "title": "Stable Diffusion 3.5 Models Optimized with TensorRT Deliver 2X Faster Performance and 40% Less Memory on NVIDIA RTX GPUs — Stability AI",
+      "url": "https://stability.ai/news-updates/stable-diffusion-35-models-optimized-with-tensorrt-deliver-2x-faster-performance-and-40-less-memory-on-nvidia-rtx-gpus",
+      "published_at": "2025-12-11T00:00:00+00:00",
+      "summary": "In collaboration with NVIDIA, we"
+    },
+    "eligible": true
   }
 ]

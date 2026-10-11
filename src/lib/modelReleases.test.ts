@@ -186,6 +186,19 @@ describe("model release page eligibility", () => {
     expect(isModelRelease(article("How to use Aurora 3", "A different model is available now for API users."))).toBe(false);
     expect(isModelRelease(article("How to use Aurora 3", "Aurora 3 is not available now as an AI model."))).toBe(false);
     expect(isModelRelease(article("How to use Aurora 3", "Aurora 3 may be available now as an AI model."))).toBe(false);
+    expect(isModelRelease(article("Aurora in production", "Aurora is an AI speech model used in existing deployments. A companion dashboard is available now."))).toBe(false);
+    expect(isModelRelease(article("Aurora 3 in production", "Aurora 3 is an AI speech model used in existing deployments. A companion dashboard is available now."))).toBe(false);
+    expect(isModelRelease(article("Aurora language model access remains delayed and is not available now"))).toBe(false);
+    expect(isModelRelease(article("The new Aurora Images is here", "The new Aurora Images is powered by our image generation model. The upgraded model is rolling out to users today."))).toBe(true);
+    expect(isModelRelease(article("Aurora in production", "Aurora is an AI speech model used in existing deployments. A companion dashboard is now available."))).toBe(false);
+  });
+
+  test("corroborates lowercase and subject-prefixed artifact announcements", () => {
+    expect(isModelRelease(article("Bringing sign language AI to users", "Introducing sign-language-to-text, our new translation model."))).toBe(true);
+    expect(isModelRelease(article("Bringing sign language AI to users", "Introducing different-language-to-audio, our new translation model."))).toBe(false);
+    expect(isModelRelease(article("New agent skill: Nova Studio generative AI inference", "Nova Studio generative AI inference introduces the nova-ml skill for coding agents."))).toBe(true);
+    expect(isModelRelease(article("New agent skill: Nova Studio generative AI inference", "Different Product introduces the nova-ml skill for coding agents."))).toBe(false);
+    expect(isModelRelease(article("New agent skill: Nova Studio generative AI inference", "Nova Studio generative AI inference introduces a dashboard for coding agents."))).toBe(false);
   });
 
   test("classifies frozen publisher inputs from the source and review audit", () => {
