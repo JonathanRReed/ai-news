@@ -60,7 +60,7 @@ export function isModelRelease(article: Pick<Article, "title" | "summary" | "con
     || NON_LAUNCH.test(title) || NON_PRODUCT_LAUNCH.test(subject)
     || /\b(?:before|after|prior to|ahead of|since|without|until) (?:the )?(?:release|launch)\b/i.test(headline)
     || NON_PRODUCT_DESCRIPTION.test(lead)) return false;
-  const availableName = lead.match(/^(.{3,100}?)\s+(?:is|are)\s+(?:now (?:(?:stable and )?generally available|available|open[ -]source|rolling out)|rolling out|generally available)/i)?.[1]
+  const availableName = lead.match(/^(.{3,100}?)\s+(?:is|are)\s+(?:now (?:(?:stable and )?generally available|available|open[ -]source|rolling out)|rolling out|generally available|available now)/i)?.[1]
     .split(/,|\s+(?:from|by)\s+/i)[0].trim();
   const availableVersion = availableName?.match(/\d+(?:\.\d+)*/g)?.at(-1);
   const sharedName = availableName?.split(/\s+/).some((word) => /^[A-Z][a-zA-Z-]{2,}/.test(word)
@@ -86,7 +86,7 @@ export function isModelRelease(article: Pick<Article, "title" | "summary" | "con
   if (RETURN_LAUNCH.test(headline) && AI_DESCRIPTION.test(headline)) return true;
   const launch = headline.match(LAUNCH);
   const headlineLaunch = launch && ((launch.index ?? 0) < 40
-    || /\b(?:now available|now open[ -]source|generally available)\b/i.test(headline));
+    || /\b(?:now available|available now|now open[ -]source|generally available)\b/i.test(headline));
   // Check the availability clause itself, too: an editorial prefix can precede
   // a model name ("Open intelligence: Example 3 is now open source").
   const availabilityName = headline.split(":").at(-1)?.trim().split(/\s+(?:is|are)\b/i)[0] || "";
@@ -152,7 +152,7 @@ export function isModelRelease(article: Pick<Article, "title" | "summary" | "con
   if (sameSubject && AI_DESCRIPTION.test(lead) && leadLaunch && (leadLaunch.index ?? 0) < 150
     && lead.slice((leadLaunch.index ?? 0) + leadLaunch[0].length).toLowerCase().includes(name.toLowerCase())) return true;
   if (sameSubject && AI_DESCRIPTION.test(lead) && lead.toLowerCase().startsWith(name.toLowerCase())
-    && /\b(?:is|are) (?:now (?:(?:stable and )?generally available|available|open[ -]source|rolling out)|rolling out|generally available)/i.test(lead)) return true;
+    && /\b(?:is|are) (?:now (?:(?:stable and )?generally available|available|open[ -]source|rolling out)|rolling out|generally available|available now)/i.test(lead)) return true;
   // Some publisher feeds truncate the excerpt; their canonical launch slug
   // supplies corroboration for a model/product description in the headline.
   const launchedName = subject.replace(/^.*\b(?:introduc(?:e|es|ed|ing)|announc(?:e|es|ed|ing)|launch(?:es|ed|ing)?|unveil(?:s|ed|ing)?|releas(?:e|es|ed|ing)|open[ -]sourcing)\s+(?:the )?/i, "").replace(/[.!?]+$/, "");

@@ -181,6 +181,13 @@ describe("model release page eligibility", () => {
     expect(isModelRelease(article("Introducing @newlab/checks: a benchmark for Local AI"))).toBe(false);
   });
 
+  test("binds available-now claims to the same model and affirmative access", () => {
+    expect(isModelRelease(article("How to use Aurora 3", "Aurora 3 is available now as an AI model."))).toBe(true);
+    expect(isModelRelease(article("How to use Aurora 3", "A different model is available now for API users."))).toBe(false);
+    expect(isModelRelease(article("How to use Aurora 3", "Aurora 3 is not available now as an AI model."))).toBe(false);
+    expect(isModelRelease(article("How to use Aurora 3", "Aurora 3 may be available now as an AI model."))).toBe(false);
+  });
+
   test("classifies frozen publisher inputs from the source and review audit", () => {
     for (const { article, eligible } of fixtures) {
       expect({ title: article.title, eligible: isModelRelease(article) }).toEqual({ title: article.title, eligible });
