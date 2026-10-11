@@ -66,6 +66,16 @@ describe("model release page eligibility", () => {
     expect(isModelRelease(article(title, summary))).toBe(expected);
   });
 
+  test.each([
+    [false, "ExpenseFlow is an expense-tracking tool for teams that build language models."],
+    [false, "ExpenseFlow is an expense-tracking tool for researchers building AI models."],
+    [true, "ExpenseFlow is an automated auditing tool for AI research."],
+    [true, "ExpenseFlow is an AI assistant for teams that manage expenses."],
+  ])("separates artifact purpose from its audience: %s %s", (expected, definition) => {
+    expect(isModelRelease(article("ExpenseFlow comes to teams", `ExpenseFlow is now available. ${definition}`))).toBe(expected);
+    expect(isModelRelease(article("ExpenseFlow comes to teams", definition.replace(" is an ", " is now available as an ")))).toBe(expected);
+  });
+
   test("corroborates unnumbered reasoning and modality-conversion product launches", () => {
     expect(isModelRelease(article("Announcing Aurora Plus for sovereignty", "Aurora Plus delivers advanced reasoning with a minimal compute footprint."))).toBe(true);
     expect(isModelRelease(article("Palette launches SketchFlow", "SketchFlow is a new sketch-to-image tool."))).toBe(true);

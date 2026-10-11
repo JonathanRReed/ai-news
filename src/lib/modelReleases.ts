@@ -76,7 +76,10 @@ function announcedPurpose(clause: string): boolean {
   const softwareRole = /\b(?:tools?|services?|assistants?|agents?|platforms?|applications?|APIs?|versions?|packages?|frameworks?|runtimes?|capabilit(?:y|ies)|librar(?:y|ies)|engines?)\b/i.test(role)
     || /^collection of visualizations\b/i.test(declaration);
   const announcingObject = clause.slice(0, clause.indexOf(declaration));
-  return softwareRole && (hasAIPurpose(declaration) || /\bAI\b/i.test(declaration) || hasAIPurpose(announcingObject));
+  // A human audience's AI work is not the software's purpose. Direct uses
+  // such as "for AI research" remain purpose evidence, as do AI roles above.
+  const purpose = declaration.replace(/\s+for\s+(?:(?:our|your|the|their)\s+)?(?:teams?|users?|developers?|customers?|researchers?|people|companies|businesses|organizations?)\b.*$/i, "");
+  return softwareRole && (hasAIPurpose(purpose) || /\bAI\b/i.test(purpose) || hasAIPurpose(announcingObject));
 }
 
 function affirmativeLaunch(clause: string): RegExpMatchArray | null {
