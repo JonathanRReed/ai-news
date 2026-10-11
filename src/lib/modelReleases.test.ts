@@ -52,6 +52,20 @@ describe("model release page eligibility", () => {
     expect(isModelRelease(article("Introducing Sentinel Security", summary))).toBe(expected);
   });
 
+  test.each([
+    [true, "Aurora 3 comes to CloudBox", "Aurora 3 is now generally available. Aurora 3 is a language model."],
+    [false, "Aurora 3 comes to CloudBox", "Aurora 3 is now generally available. Vega 3 is a language model."],
+    [false, "Aurora 3 comes to CloudBox", "Aurora 3 is now generally available. Aurora 3 is a manual expense-tracking tool."],
+    [false, "We can't wait to introduce Aurora 4", "Aurora 4 is our new language model."],
+    [true, "We can't wait to introduce Aurora 4", "Aurora 4 is now available as a language model."],
+    [false, "We cannot wait to release Aurora 4", "We plan to release Aurora 4, our language model, next month."],
+    [true, "We cannot wait to release Aurora 4", "Today we release Aurora 4, a language model."],
+    [false, "We can't introduce Aurora 4", "Aurora 4 is our new language model."],
+    [false, "We can't wait to not introduce Aurora 4", "Aurora 4 is our new language model."],
+  ])("connects affirmative launch grammar and exact repeated identity: %s %s", (expected, title, summary) => {
+    expect(isModelRelease(article(title, summary))).toBe(expected);
+  });
+
   test("corroborates unnumbered reasoning and modality-conversion product launches", () => {
     expect(isModelRelease(article("Announcing Aurora Plus for sovereignty", "Aurora Plus delivers advanced reasoning with a minimal compute footprint."))).toBe(true);
     expect(isModelRelease(article("Palette launches SketchFlow", "SketchFlow is a new sketch-to-image tool."))).toBe(true);

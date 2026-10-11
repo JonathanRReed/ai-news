@@ -87,6 +87,17 @@ function affirmativeLaunch(clause: string): RegExpMatchArray | null {
   return null;
 }
 
+function anticipatedLaunch(clause: string): boolean {
+  return [...clause.matchAll(new RegExp(LAUNCH.source, "gi"))].some((claim) =>
+    /\bcan(?:not|[’']t) wait to\s*$/i.test(clause.slice(0, claim.index)));
+}
+
+function repeatsArtifactDefinition(clause: string, artifact: string): boolean {
+  const defined = clause.match(/^(.{3,100}?)\s+(?:is|are)\s+(?:an?|our|the)\s+/i)?.[1];
+  const normalize = (name: string) => name.replace(/^(?:the|our|new|a|an)\s+/i, "").trim().toLowerCase();
+  return Boolean(defined && normalize(defined) === normalize(artifact));
+}
+
 function availabilitySubject(clause: string): string | null {
   const predicate = clause.match(/\s+(?:is|are)\s+/i);
   if (!predicate || predicate.index === undefined) return null;
@@ -137,7 +148,8 @@ export function isModelRelease(article: Pick<Article, "title" | "summary" | "con
   const headlineEvidence = evidenceClauses(headline).find((clause) => affirmativeLaunch(clause)) || headline;
   const headlineClaim = affirmativeLaunch(headlineEvidence);
   // Negated/speculative keywords cannot fall through to name or URL shortcuts.
-  if (LAUNCH.test(headline) && !headlineClaim) return false;
+  const headlineAnticipation = evidenceClauses(headline).some(anticipatedLaunch);
+  if (LAUNCH.test(headline) && !headlineClaim && !headlineAnticipation) return false;
   const subject = headlineEvidence.split(/:|(?<!\d),|,(?!\d)|\s+-\s+/)[0];
   const introduced = /\b(?:introduc(?:e|es|ed|ing)|announc(?:e|es|ed|ing)|launch(?:es|ed|ing)?|unveil(?:s|ed|ing)?|releas(?:e|es|ed|ing)|open[ -]sourcing)\s+/i.test(subject);
   const name = subject.replace(/^.*\b(?:introduc(?:e|es|ed|ing)|announc(?:e|es|ed|ing)|launch(?:es|ed|ing)?|unveil(?:s|ed|ing)?|releas(?:e|es|ed|ing)|open[ -]sourcing)\s+/i, "")
@@ -170,12 +182,22 @@ export function isModelRelease(article: Pick<Article, "title" | "summary" | "con
     || NON_LAUNCH.test(title) || NON_PRODUCT_LAUNCH.test(subject)
     || /\b(?:before|after|prior to|ahead of|since|without|until) (?:the )?(?:release|launch)\b/i.test(headline)
     || NON_PRODUCT_DESCRIPTION.test(lead)) return false;
+  const nameWords = name.split(/\s+/).filter((word) => /^[A-Z][\w.-]{2,}$/.test(word));
+  const matchesSubject = (clause: string) => name.length > 2 && (clause.toLowerCase().includes(name.toLowerCase())
+    || (nameWords.length > 1 && nameWords.every((word) => clause.toLowerCase().includes(word.toLowerCase()))));
   const availability = leadClauses.some((clause, index) => {
     const availableName = availabilitySubject(clause);
     const continuation = leadClauses[index + 1] || "";
-    const purpose = announcedPurpose(clause) || announcedPurpose(headlineEvidence) || (refersToArtifact(continuation) && hasAIPurpose(continuation));
+    const purpose = announcedPurpose(clause) || announcedPurpose(headlineEvidence)
+      || (availableName !== null && repeatsArtifactDefinition(continuation, availableName) && announcedPurpose(continuation))
+      || (refersToArtifact(continuation) && hasAIPurpose(continuation));
     return availableName !== null && purpose && sameAvailabilityArtifact(availableName, headline);
   });
+  // Anticipation is not a release claim. It may coexist with an independent
+  // current release/availability assertion, bound to this same artifact.
+  if (headlineAnticipation && !availability && !leadClauses.some((clause, index) =>
+    matchesSubject(clause) && affirmativeLaunch(clause)
+    && (announcedPurpose(clause) || (refersToArtifact(leadClauses[index + 1] || "") && hasAIPurpose(leadClauses[index + 1] || ""))))) return false;
   // Launch articles sometimes include a developer guide after the colon. A
   // tutorial or partnership as the subject still cannot become a release.
   if (!availability && (INSTRUCTIONAL.test(subject) || (!introduced && INSTRUCTIONAL.test(headline)))) return false;
@@ -195,9 +217,6 @@ export function isModelRelease(article: Pick<Article, "title" | "summary" | "con
   // Check the availability clause itself, too: an editorial prefix can precede
   // a model name ("Open intelligence: Example 3 is now open source").
   const availabilityName = headlineEvidence.split(":").at(-1)?.trim().split(/\s+(?:is|are)\b/i)[0] || "";
-  const nameWords = name.split(/\s+/).filter((word) => /^[A-Z][\w.-]{2,}$/.test(word));
-  const matchesSubject = (clause: string) => name.length > 2 && (clause.toLowerCase().includes(name.toLowerCase())
-    || (nameWords.length > 1 && nameWords.every((word) => clause.toLowerCase().includes(word.toLowerCase()))));
   const sameSubject = leadClauses.some(matchesSubject);
   const subjectPurpose = leadClauses.some((clause) => matchesSubject(clause) && announcedPurpose(clause))
     || (matchesSubject(openingSentence) && refersToArtifact(nextSentence) && hasAIPurpose(nextSentence))
