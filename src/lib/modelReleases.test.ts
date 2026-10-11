@@ -291,6 +291,23 @@ describe("model release page eligibility", () => {
     expect(isModelRelease({ ...release, summary: "We released Aurora 4 in 2020, a language model." })).toBe(false);
   });
 
+  test.each([
+    [true, "BrowserFlow is a browser agent that uses AI to navigate websites."],
+    [true, "BrowserFlow is a browser agent powered by AI."],
+    [false, "BrowserFlow is a browser agent that does not use AI to navigate websites."],
+    [false, "BrowserFlow is a browser agent that might use AI to navigate websites."],
+    [false, "BrowserFlow is a browser agent for teams that use AI to navigate websites."],
+    [false, "BrowserFlow is a manual browser agent powered by AI."],
+  ])("preserves affirmative computational functions of a qualified agent: %s %s", (expected, summary) => {
+    expect(isModelRelease(article("Introducing BrowserFlow", summary))).toBe(expected);
+  });
+
+  test.each(["Embed", "Embedding", "embed", "Seed", "Red"])("preserves a release date attached to the artifact identity: %s", (name) => {
+    const release = { title: `We released ${name} in 2020, a language model`, summary: "", published_at: "2026-10-11T00:00:00Z" };
+    expect(isModelRelease(release)).toBe(false);
+    expect(isModelRelease({ ...release, published_at: "2020-10-11T00:00:00Z" })).toBe(true);
+  });
+
   test("corroborates unnumbered reasoning and modality-conversion product launches", () => {
     expect(isModelRelease(article("Announcing Aurora Plus for sovereignty", "Aurora Plus delivers advanced reasoning with a minimal compute footprint."))).toBe(true);
     expect(isModelRelease(article("Palette launches SketchFlow", "SketchFlow is a new sketch-to-image tool."))).toBe(true);

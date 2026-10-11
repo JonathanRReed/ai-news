@@ -147,8 +147,10 @@ function announcedPurpose(clause: string): boolean {
   // A qualified agent role needs computational purpose. The generic label
   // alone cannot turn an informative human or material role into software.
   const agentRole = /^agents?$/i.test(role.match(ARTIFACT_ROLE)?.[0] || "");
-  const computationalAgent = COMPUTATIONAL_DESCRIPTION.test(purpose)
-    || /\b(?:AI[ -]powered|coding|software|computer[ -]use|machine[ -]learning|ML[ -]agents?)\b/i.test(purpose);
+  const computationalSignal = purpose.match(COMPUTATIONAL_DESCRIPTION)
+    || purpose.match(/\b(?:AI|coding|software|computer[ -]use|machine[ -]learning|ML[ -]agents?)\b/i);
+  const computationalAgent = Boolean(computationalSignal
+    && !NON_AFFIRMATIVE.test(purpose.slice(0, computationalSignal.index)));
   if (declaration && agentRole && !uninformativeRole(role) && !computationalAgent) return false;
   if (modelNoun(role) || AI_DESCRIPTION.test(role.replace(/[“”"‘’]/g, ""))) return true;
   if (!declaration) return AI_DESCRIPTION.test(offeredSubject);
@@ -171,7 +173,7 @@ function affirmativeLaunch(clause: string, publicationYear?: number): RegExpMatc
     // Keep appositive and preposed release timing. A direct time complement
     // of another past predicate describes that event, not this launch.
     const object = clause.slice((claim.index || 0) + claim[0].length);
-    const timing = `${prefix} ${object}`.replace(/\b(?:[a-z-]+(?:ed|ing)|built)\s+(?:in (?:19|20)\d{2}|last year|(?:\d+|many|several) years? ago)\b/gi, "");
+    const timing = `${prefix} ${object}`.replace(/\b(?:trained|developed|founded|built|introduced|released|launched|unveiled)\s+(?:in (?:19|20)\d{2}|last year|(?:\d+|many|several) years? ago)\b/gi, "");
     const datedYear = timing.match(/\bin ((?:19|20)\d{2})\b/i)?.[1];
     const historical = /(?:released|launched|introduced|unveiled)/i.test(claim[0])
       && (/\b(?:last year|(?:\d+|many|several) years? ago)\b/i.test(timing)
