@@ -2,12 +2,15 @@ import type { Article } from "../types/article.js";
 
 function canRepresentLab(article: Article): boolean {
   // company is the admitted feed's entity, not a separate producer field.
-  // Hugging Face community URLs identify another author/organization. Keep
-  // their source label in the timeline without crediting the host as producer.
+  // Hugging Face's verified organization namespace is first-party; other
+  // community namespaces keep their source label without producer credit.
   if (article.company !== "Hugging Face") return true;
   try {
     const url = new URL(article.url);
-    return url.hostname === "huggingface.co" && /^\/blog\/[^/]+\/?$/.test(url.pathname);
+    return url.hostname === "huggingface.co"
+      && /^\/blog\/(?:huggingface\/)?[^/]+\/?$/.test(url.pathname)
+      && !/^\/blog\/huggingface\/?$/.test(url.pathname)
+      && !/%(?:2f|5c)/i.test(url.pathname);
   } catch {
     return false;
   }

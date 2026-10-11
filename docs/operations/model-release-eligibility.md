@@ -18,6 +18,18 @@ Identity matching normalizes punctuation and versions, but does not infer arbitr
 
 ## Producer cards and source attribution
 
-The article's company field identifies its admitted feed. It is not a separate producer field. A hosted Hugging Face community post remains source-attributed in the timeline and news feed, but cannot become Hugging Face's latest producer card. Producer cards select the latest attributable eligible record without rewriting source labels or inferring another producer.
+The article's company field identifies its admitted feed. It is not a separate producer field. A hosted Hugging Face community post remains source-attributed in the timeline and news feed, but cannot become Hugging Face's latest producer card. Hugging Face's own [verified organization](https://huggingface.co/huggingface) publishes first-party articles under `/blog/huggingface/<slug>` as well as the editorial `/blog/<slug>` path. Other organizations, lookalike hosts and malformed paths cannot use that producer credit. Producer cards select the latest attributable eligible record without rewriting source labels or inferring another producer.
+
+## Remaining heuristic limits
+
+The classifier does not fully parse arbitrary prose. These pre-existing edge cases remain outside the bounded repair:
+
+- A shared provider word and version can corroborate different artifacts in the availability fallback.
+- A capitalized-word excerpt fallback can omit version tokens.
+- Spaced `report generation` can be excluded where `report-generation` is retained.
+- A negated or speculative purpose that does not parse as a declaration can fall through to keyword evidence.
+- A launch verb embedded in reporting, response or allegation wording can be mistaken for the main announcement.
+
+The sparse numbered-caption fallback can also admit analysis wording without independent release evidence. These are precision and recall limits, not evidence that every selected artifact has launched or is AI-powered.
 
 Frozen publisher fixtures and general boundary tests cover the selection rules. Browser tests verify the same selections in the timeline and producer cards, including retained community source labels.

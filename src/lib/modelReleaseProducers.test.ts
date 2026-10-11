@@ -35,3 +35,31 @@ test("preserves catalog order and the latest eligible first-party record", () =>
   expect(latestModelReleasesPerLab([latest, older, hf], ["Hugging Face", "OpenAI"]))
     .toEqual([{ name: "Hugging Face", article: hf }, { name: "OpenAI", article: latest }]);
 });
+
+test("credits the verified Hugging Face organization without changing its source record", () => {
+  const community = release("community", "Hugging Face", "https://huggingface.co/blog/LiquidAI/open-d1");
+  const organization = release("organization", "Hugging Face", "https://huggingface.co/blog/huggingface/new-release/?utm_source=feed#overview");
+  const older = release("older", "Hugging Face", "https://huggingface.co/blog/older-release");
+  const records = [community, organization, older];
+  const snapshot = JSON.stringify(records);
+  expect(latestModelReleasesPerLab(records, ["Hugging Face"]))
+    .toEqual([{ name: "Hugging Face", article: organization }]);
+  expect(JSON.stringify(records)).toBe(snapshot);
+});
+
+test.each([
+  "https://huggingface.co.evil.example/blog/huggingface/new-release",
+  "https://evil.huggingface.co/blog/huggingface/new-release",
+  "https://huggingface.co/blog/huggingface-other/new-release",
+  "https://huggingface.co/blog/huggingface.evil/new-release",
+  "https://huggingface.co/blog/LiquidAI/new-release",
+  "https://huggingface.co/blog/huggingface/new-release/extra",
+  "https://huggingface.co/blog/huggingface/",
+  "https://huggingface.co/blog/huggingface//new-release",
+  "https://huggingface.co/blog/huggingface/new%2Frelease",
+  "https://huggingface.co/blog/huggingface/new%5Crelease",
+  "not a URL",
+])("does not credit lookalike or malformed producer paths: %s", (url) => {
+  expect(latestModelReleasesPerLab([release("candidate", "Hugging Face", url)], ["Hugging Face"]))
+    .toEqual([]);
+});
