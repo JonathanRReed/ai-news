@@ -77,8 +77,9 @@ function announcedPurpose(clause: string): boolean {
     || /^collection of visualizations\b/i.test(declaration);
   const announcingObject = clause.slice(0, clause.indexOf(declaration));
   // A human audience's AI work is not the software's purpose. Direct uses
-  // such as "for AI research" remain purpose evidence, as do AI roles above.
-  const purpose = declaration.replace(/\s+for\s+(?:(?:our|your|the|their)\s+)?(?:teams?|users?|developers?|customers?|researchers?|people|companies|businesses|organizations?)\b.*$/i, "");
+  // such as "for AI research" or "for developers to test language models"
+  // remain purpose evidence, as do AI roles above.
+  const purpose = declaration.replace(/\s+for\s+(?:(?:our|your|the|their)\s+)?(?:teams?|users?|developers?|customers?|researchers?|people|companies|businesses|organizations?)\b(?!\s+to\b).*$/i, "");
   return softwareRole && (hasAIPurpose(purpose) || /\bAI\b/i.test(purpose) || hasAIPurpose(announcingObject));
 }
 

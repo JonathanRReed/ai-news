@@ -69,11 +69,14 @@ describe("model release page eligibility", () => {
   test.each([
     [false, "ExpenseFlow is an expense-tracking tool for teams that build language models."],
     [false, "ExpenseFlow is an expense-tracking tool for researchers building AI models."],
+    [true, "ExpenseFlow is an automated testing tool for developers to test language models."],
+    [true, "ExpenseFlow is a visualization tool for researchers to study vision models."],
+    [false, "ExpenseFlow is an expense-tracking tool for developers to manage expenses."],
     [true, "ExpenseFlow is an automated auditing tool for AI research."],
     [true, "ExpenseFlow is an AI assistant for teams that manage expenses."],
   ])("separates artifact purpose from its audience: %s %s", (expected, definition) => {
     expect(isModelRelease(article("ExpenseFlow comes to teams", `ExpenseFlow is now available. ${definition}`))).toBe(expected);
-    expect(isModelRelease(article("ExpenseFlow comes to teams", definition.replace(" is an ", " is now available as an ")))).toBe(expected);
+    expect(isModelRelease(article("ExpenseFlow comes to teams", definition.replace(/ is (an?) /, " is now available as $1 ")))).toBe(expected);
   });
 
   test("corroborates unnumbered reasoning and modality-conversion product launches", () => {
