@@ -1,6 +1,38 @@
 import { expect, test } from "@playwright/test";
+import { articlePath } from "../../src/lib/articleRoutes.js";
+import { readFileSync } from "node:fs";
+import { decodePublisherPunctuation } from "../../src/lib/publisherText.js";
+import type { Article } from "../../src/types/article.js";
+import { isModelRelease, modelReleases } from "../../src/lib/modelReleases.js";
 
-test("selects AI launches consistently in model timeline and lab cards", async ({ page, request }) => {
+test("selects eligible releases consistently in the timeline and lab cards", async ({ page, request }) => {
+  const feed = await request.get("/data/provider-feed.json");
+  expect(feed.ok()).toBe(true);
+  const articles = await feed.json() as Article[];
+  const cached = JSON.parse(readFileSync(new URL("../../public/data/provider-articles.json", import.meta.url), "utf8")) as Article[];
+  const byId = new Map(cached.map((article) => [article.id, article]));
+  // Admission and canonical titles/URLs come from the served news feed; use the
+  // original publisher excerpt rather than the feed's display-length excerpt.
+  const all = articles.map((entry) => {
+    const original = byId.get(entry.id)!;
+    expect(original).toBeDefined();
+    return { ...entry, summary: decodePublisherPunctuation(original.summary || ""),
+      content: decodePublisherPunctuation(original.content || "") };
+  }).sort((a, b) => Date.parse(b.published_at) - Date.parse(a.published_at) || b.id.localeCompare(a.id));
+  const catalog = JSON.parse(readFileSync(new URL("../../src/data/intelligence-catalog.json", import.meta.url), "utf8")) as {
+    entities: Array<{ name: string; slug: string; status: string; entityType: string }>;
+    sources: Array<{ active: boolean; entitySlug: string }>;
+  };
+  const active = new Set(catalog.sources.filter((source) => source.active).map((source) => source.entitySlug));
+  const labs = catalog.entities.filter((entity) => entity.status === "active" && entity.entityType !== "harness" && active.has(entity.slug));
+  const releases = modelReleases(all);
+  const expectedTimeline = releases.slice(0, 60);
+  const expectedCards = labs
+    .flatMap((company) => {
+      const article = releases.find((article) => article.company === company.name);
+      return article ? [article] : [];
+    });
+  expect(releases.length).toBeGreaterThan(0);
   const errors: string[] = [];
   page.on("pageerror", (error) => errors.push(error.message));
   await page.goto("/models/");
@@ -9,26 +41,22 @@ test("selects AI launches consistently in model timeline and lab cards", async (
 
   const timeline = page.locator("main ol");
   const cards = page.locator("main article");
-  await expect(timeline.getByRole("link", { name: "Introducing Mistral Large 4 | Mistral", exact: true })).toBeVisible();
-  await expect(cards.getByRole("link", { name: "Introducing Mistral Large 4 | Mistral", exact: true })).toBeVisible();
-  await expect(cards.getByRole("link", { name: "GPT-6 and Intelligent UI for everyone", exact: true })).toBeVisible();
-  await expect(timeline.getByRole("link", { name: "Introducing dots", exact: true })).toBeVisible();
-  await expect(cards.getByRole("link", { name: "Introducing NV-Reason-CT Open 3D CT VLM for Radiologist Chain-of-Thought Reasoning", exact: true })).toBeVisible();
-  await expect(cards.getByRole("link", { name: "Stable Video 4D — Stability AI", exact: true })).toBeVisible();
-  for (const title of ["Rally Up: ‘Gears of War: E-Day’ Launches on GeForce NOW", "What's new at IBM Quantum Q3 2026", "rust-v0.163.0-alpha.6"]) {
-    await expect(page.getByRole("link", { name: title, exact: true })).toHaveCount(0);
-  }
-  const cardLinks = await cards.locator('a[href^="/article/"]').evaluateAll((links) => links.map((link) => link.getAttribute("href")));
+  const articleLinks = (locator: typeof timeline) => locator.locator('a[href^="/article/"]')
+    .evaluateAll((links) => links.map((link) => link.getAttribute("href")));
+  expect(await articleLinks(timeline)).toEqual(expectedTimeline.map((article) => articlePath(article.id)));
+  const cardLinks = await articleLinks(cards);
+  expect(cardLinks).toEqual(expectedCards.map((article) => articlePath(article.id)));
   expect(new Set(cardLinks).size).toBe(cardLinks.length);
-  expect(await timeline.locator("li").count()).toBe(60);
+  expect([...expectedTimeline, ...expectedCards].every(isModelRelease)).toBe(true);
+  expect(await timeline.locator("li").count()).toBe(expectedTimeline.length);
   const dates = await timeline.locator("time").evaluateAll((times) => times.map((time) => Date.parse(time.getAttribute("datetime") || "")));
   expect(dates).toEqual([...dates].sort((a, b) => b - a));
 
-  // Page selection must not remove any of these records from the normal feed.
-  const feed = await request.get("/data/provider-feed.json");
-  const articles = await feed.json() as Array<{ title: string }>;
-  for (const title of ["What's new at IBM Quantum Q3 2026", "rust-v0.163.0-alpha.6"]) {
-    expect(articles.some((article) => article.title === title)).toBe(true);
+  // Excluded records remain available to the normal feed; no current title is
+  // required to remain a lab's latest release after a future feed refresh.
+  for (const article of all.filter((article) => !isModelRelease(article)).slice(0, 3)) {
+    expect(articles.some((entry) => entry.id === article.id)).toBe(true);
+    await expect(page.locator(`main a[href="${articlePath(article.id)}"]`)).toHaveCount(0);
   }
   expect(errors).toEqual([]);
 });

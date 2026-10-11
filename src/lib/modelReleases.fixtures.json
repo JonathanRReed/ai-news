@@ -1,0 +1,501 @@
+[
+  {
+    "article": {
+      "id": "1c305457-0595-45fd-aeed-0df0535a7485",
+      "company": "Google DeepMind",
+      "title": "Introducing Gemini Omni",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni/",
+      "published_at": "2026-05-17T19:50:57+00:00",
+      "summary": ""
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "a89ea43a-0d1b-5a09-9d8a-e5b31d9b3459",
+      "company": "Amazon AI",
+      "title": "Video and image search in Amazon Bedrock Knowledge Base using Marengo 3.0",
+      "url": "https://aws.amazon.com/blogs/machine-learning/video-and-image-search-in-amazon-bedrock-knowledge-base-using-marengo-3-0/",
+      "published_at": "2026-09-10T21:15:39+00:00",
+      "summary": "TwelveLabs Marengo Embed 3.0 is now generally available as an embedding model in Amazon Bedrock Knowledge Bases, bringing fully managed natural language search to video, image, and audio content. This walkthrough shows how to build a knowledge base powered by Marengo 3.0 and run semantic queries aga"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "3468a614-e0e4-43cc-9c32-b0b4b18fce53",
+      "company": "Hugging Face",
+      "title": "SmolVLM Grows Smaller – Introducing the 256M & 500M Models!",
+      "url": "https://huggingface.co/blog/smolervlm",
+      "published_at": "2025-01-23T00:00:00+00:00",
+      "summary": ""
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "000691a8-e57d-48f5-9478-372afb0d31b6",
+      "company": "OpenAI",
+      "title": "Introducing the OpenAI Partner Network",
+      "url": "https://openai.com/index/introducing-openai-partner-network",
+      "published_at": "2026-06-14T17:00:00+00:00",
+      "summary": "OpenAI launches the Partner Network, investing $150M to help global partners accelerate enterprise AI adoption, deployment, and transformation."
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "a0ba80c7-40a0-4cdd-b448-a31e2b046341",
+      "company": "OpenAI",
+      "title": "OpenAI announces strategic collaboration with Japan’s Digital Agency",
+      "url": "https://openai.com/global-affairs/strategic-collaboration-with-japan-digital-agency",
+      "published_at": "2025-10-02T00:00:00+00:00",
+      "summary": "OpenAI and Japan’s Digital Agency partner to advance generative AI in public services, support international AI governance, and promote safe, trustworthy AI adoption worldwide."
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "7d620d16-23d9-4758-ba9d-69402f78558b",
+      "company": "OpenAI",
+      "title": "With GPT-5, Wrtn builds lifestyle AI for millions in Korea",
+      "url": "https://openai.com/index/wrtn",
+      "published_at": "2025-10-02T10:00:00+00:00",
+      "summary": "Wrtn scaled AI apps to 6.5M users in Korea with GPT-5, creating ‘Lifestyle AI’ that blends productivity, creativity, and learning—now expanding across East Asia."
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "b91a7174-a0fd-4598-809f-d69aad4434a5",
+      "company": "OpenAI",
+      "title": "Predicting model behavior before release by simulating deployment",
+      "url": "https://openai.com/index/deployment-simulation",
+      "published_at": "2026-06-16T00:00:00+00:00",
+      "summary": "OpenAI introduces Deployment Simulation, a method to predict AI model behavior before deployment using real conversation data to improve safety and evaluation accuracy."
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "74f18a33-9ad5-47ba-aa9c-561802c31834",
+      "company": "OpenAI",
+      "title": "Introducing Intelligence Age",
+      "url": "https://openai.com/index/introducing-intelligence-age/",
+      "published_at": "2026-08-20T07:00:00+00:00",
+      "summary": "Introducing Intelligence Age, a new OpenAI blog exploring how transformative AI could reshape power, governance, the economy, and individual freedom."
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "b42c3971-cf8a-4328-8825-fd4e4c6e8ffd",
+      "company": "OpenAI",
+      "title": "Introducing Stargate UK",
+      "url": "https://openai.com/index/introducing-stargate-uk",
+      "published_at": "2025-09-16T14:30:00+00:00",
+      "summary": ""
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "4ad029d0-e363-46e2-89b4-60baf428a152",
+      "company": "Hugging Face",
+      "title": "Introducing Real World VoiceEQ: Measuring the human quality of voice AI",
+      "url": "https://huggingface.co/blog/real-world-voiceeq",
+      "published_at": "2026-07-15T00:00:00+00:00",
+      "summary": ""
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "d73ea1e3-bbae-47b5-bb19-799e70cbc070",
+      "company": "Hugging Face",
+      "title": "PRX Part 3 — Training a Text-to-Image Model in 24h!",
+      "url": "https://huggingface.co/blog/Photoroom/prx-part3",
+      "published_at": "2026-03-03T16:50:49+00:00",
+      "summary": ""
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "f14adcd6-cacc-4caf-a117-7e412e1542ae",
+      "company": "Hugging Face",
+      "title": "BERT 101 - State Of The Art NLP Model Explained",
+      "url": "https://huggingface.co/blog/bert-101",
+      "published_at": "2022-03-02T00:00:00+00:00",
+      "summary": ""
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "f0dd7764-b9ac-4329-9439-42624aa5b275",
+      "company": "OpenAI",
+      "title": "Sycophancy in GPT-4o: what happened and what we’re doing about it",
+      "url": "https://openai.com/index/sycophancy-in-gpt-4o",
+      "published_at": "2025-04-29T18:00:00+00:00",
+      "summary": "We have rolled back last week’s GPT‑4o update in ChatGPT so people are now using an earlier version with more balanced behavior. The update we removed was overly flattering or agreeable—often described as sycophantic."
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "29dcf46c-1127-54f1-9737-cd3746159a3e",
+      "company": "OpenAI",
+      "title": "Introducing Astra for Law",
+      "url": "https://openai.com/index/astra-for-law",
+      "published_at": "2026-09-17T00:00:00+00:00",
+      "summary": "OpenAI for Law brings frontier intelligence for law, custom firm workflows, connected legal data sources, and legal-grade controls for confidential client work."
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "569cb952-69d4-553e-99a0-e489a5c98da4",
+      "company": "NVIDIA AI",
+      "title": "Perplexity Portable Computer Is Now Available on Windows, Powered by NVIDIA RTX",
+      "url": "https://blogs.nvidia.com/blog/local-ai-perplexity-windows-pcs/",
+      "published_at": "2026-09-14T15:00:52+00:00",
+      "summary": "As local models become more capable, AI agents can handle more work directly on a PC while keeping sensitive information on the device. Portable Computer is a local version of the agent Perplexity Computer that plans and carries out multistep tasks. Accelerated by NVIDIA GPUs, it uses local models t"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "1bb86a9b-a391-57f0-91df-be68ac2c9515",
+      "company": "Mistral AI",
+      "title": "Introducing Shieldstral. | Mistral AI",
+      "url": "https://mistral.ai/news/shieldstral/",
+      "published_at": "2026-08-11T13:07:49.366+00:00",
+      "summary": "Shieldstral introduces a 3B open-weights multimodal safety classifier that outperforms models up to 7x its size."
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "879dd82a-eb36-45f6-a9ac-85e185cfeb4c",
+      "company": "Google DeepMind",
+      "title": "Introducing computer use in Gemini 3.5 Flash",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-computer-use-gemini-3-5-flash/?utm_source=deepmind.google&utm_medium=referral&utm_campaign=gdm&utm_content=",
+      "published_at": "2026-06-24T16:30:01+00:00",
+      "summary": ""
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "9356e8a0-3ed1-5cc4-b251-25a0afc2c350",
+      "company": "Mistral AI",
+      "title": "Introducing: Devstral 2 and Mistral Vibe CLI. | Mistral AI",
+      "url": "https://mistral.ai/news/devstral-2-vibe-cli/",
+      "published_at": "2026-06-17T10:01:44.917+00:00",
+      "summary": "The most powerful AI platform for enterprises. Customize, fine-tune, and deploy AI assistants, autonomous agents, and multimodal AI with open models."
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "c7d72fde-9329-5fe4-940f-80ec2a64501d",
+      "company": "Stability AI",
+      "title": "Stability AI and Arm Collaborate to Release Stable Audio Open Small, Enabling Real-World Deployment for On-Device Audio Generation — Stability AI",
+      "url": "https://stability.ai/news-updates/stability-ai-and-arm-release-stable-audio-open-small-enabling-real-world-deployment-for-on-device-audio-control",
+      "published_at": "2025-11-06T00:00:00+00:00",
+      "summary": "We’re open-sourcing Stable Audio Open Small in partnership with Arm, whose technology powers 99% of smartphones globally. Building on the industry-leading text-to-audio model Stable Audio Open, the new compact variant is smaller and faster, while preserving output quality and prompt adherence.&n"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "provider-a3a8b55d7f9f4d7bbf",
+      "company": "NVIDIA AI",
+      "title": "NVIDIA Introduces New Jetson Thor Computers to Advance Mainstream Robotics and Edge AI",
+      "url": "https://blogs.nvidia.com/blog/jetson-thor-robotics-edge-ai-agent/",
+      "published_at": "2026-07-15T23:00:54.000Z",
+      "summary": "General-purpose robots and autonomous machines are moving from research labs to real-world mass-market deployment, creating demand for compact, power-efficient AI supercomputers capable of running foundation models at the edge. To meet that need, NVIDIA today introduced the T3000 and T2000, new modu"
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "69244703-7bf9-5edc-9c19-f8325cb5f484",
+      "company": "Mistral AI",
+      "title": "Introducing Mistral Large 4 | Mistral",
+      "url": "https://mistral.ai/news/mistral-large-4/",
+      "published_at": "2026-10-06T15:24:14.171+00:00",
+      "summary": ""
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "3050a33d-40a8-5328-924a-0e9b6795fcce",
+      "company": "Hugging Face",
+      "title": "Introducing Falcon ASR",
+      "url": "https://huggingface.co/blog/tiiuae/falcon-asr",
+      "published_at": "2026-10-07T13:21:03+00:00",
+      "summary": ""
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "54aba291-7fa4-5ef2-8700-c31d47ccbf5f",
+      "company": "OpenAI",
+      "title": "Introducing dots",
+      "url": "https://openai.com/index/introducing-dots",
+      "published_at": "2026-09-29T00:00:00+00:00",
+      "summary": "Dots by OpenAI are proactive assistants that can keep working across complex projects and everyday tasks. Learn how dots help you stay in control while work moves forward."
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "7f542193-c154-5940-b11d-88b88861a7d5",
+      "company": "Anthropic",
+      "title": "Claude Opus 4.6",
+      "url": "https://www.anthropic.com/news/claude-opus-4-6",
+      "published_at": "2026-09-09T21:28:45+00:00",
+      "summary": "We're upgrading our smartest model. Across agentic coding, computer use, tool use, search, and finance, Opus 4.6 is an industry-leading model."
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "f754f4ea-2456-4b12-b7a0-8f78d97864ae",
+      "company": "OpenAI",
+      "title": "Introducing gpt-oss",
+      "url": "https://openai.com/index/introducing-gpt-oss",
+      "published_at": "2025-08-05T00:00:00+00:00",
+      "summary": "We’re releasing gpt-oss-120b and gpt-oss-20b—two state-of-the-art open-weight language models that deliver strong real-world performance at low cost. Available under the flexible Apache 2.0 license, these models outperform similarly sized open models on reasoning tasks, demonstrate strong tool use c"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "360db359-425f-4239-a1b9-2593866975de",
+      "company": "Hugging Face",
+      "title": "Meta is back with Muse Glimmer: local, agentic, multimodal, and open source",
+      "url": "https://huggingface.co/blog/muse-glimmer",
+      "published_at": "2026-08-10T00:00:00+00:00",
+      "summary": ""
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "provider-70589b91cb80ef48d6",
+      "company": "NVIDIA AI",
+      "title": "NVIDIA Ising Enables Fully Automated Quantum Computer Calibration with Enhanced In-Context Learning",
+      "url": "https://developer.nvidia.com/blog/nvidia-ising-enables-fully-automated-quantum-computer-calibration-with-enhanced-in-context-learning/",
+      "published_at": "2026-07-27T16:00:00+00:00",
+      "summary": "NVIDIA Ising Calibration is an open source vision language model (VLM) designed to interpret diagnostic outputs from quantum processors and determine how they..."
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "da70e987-cdee-534c-a028-f69785451727",
+      "company": "OpenAI",
+      "title": "Introducing the Agents API",
+      "url": "https://openai.com/index/introducing-the-agents-api",
+      "published_at": "2026-09-10T00:00:00+00:00",
+      "summary": "Build and launch cloud agents with the Agents API, a managed service powered by the Codex harness for orchestration, long-running sessions, and tool use."
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "0a5f6802-1767-54dc-9115-ee6a073d7646",
+      "company": "Cohere",
+      "title": "Introducing North Small Translate | Cohere",
+      "url": "https://cohere.com/blog/north-small-translate",
+      "published_at": "2026-09-10T00:00:00+00:00",
+      "summary": "Outsized performance, right-sized footprint — translation built for speed and cost efficiency."
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "049acf77-6a5e-5ae8-bfb3-ff47e2bd6934",
+      "company": "Anthropic",
+      "title": "Introducing Claude for Small Business",
+      "url": "https://www.anthropic.com/news/claude-for-small-business",
+      "published_at": "2026-08-27T15:09:24+00:00",
+      "summary": "We're launching Claude for Small Business, a package of connectors and ready-to-run workflows that put Claude inside the tools small businesses use every day."
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "804f49a6-383c-57b9-bca4-6dd6af2e629f",
+      "company": "Mistral AI",
+      "title": "Robostral Navigate: single-camera AI navigation | Mistral AI",
+      "url": "https://mistral.ai/news/robostral-navigate/",
+      "published_at": "2026-08-04T08:43:03.213+00:00",
+      "summary": "Introducing Robostral Navigate: 8B model achieving 76.6% on R2R-CE with just a single RGB camera. No depth sensors, LiDAR, or multiple cameras needed."
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "a3a1aa26-97e6-5e04-a1c0-fc26e6c94c84",
+      "company": "Amazon AI",
+      "title": "Bring near-Astra intelligence to everyday work with GPT-6.1 Sol on Amazon Bedrock",
+      "url": "https://aws.amazon.com/blogs/machine-learning/bring-near-astra-intelligence-to-everyday-work-with-gpt-6-1-sol-on-amazon-bedrock/",
+      "published_at": "2026-09-29T19:34:14+00:00",
+      "summary": "GPT-6.1 Sol is now generally available on Amazon Bedrock, bringing stronger reasoning to coding, computer use, and professional workloads that run frequently."
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "9d0596fb-a4ff-5c8e-a8c4-1de6fa5124b7",
+      "company": "Amazon AI",
+      "title": "Amazon Bedrock expands Claude model availability to in-country inferencing in India",
+      "url": "https://aws.amazon.com/blogs/machine-learning/amazon-bedrock-expands-claude-model-availability-to-india-cross-region-inference/",
+      "published_at": "2026-09-30T01:13:14+00:00",
+      "summary": "Anthropic's Claude Opus 5, Claude Sonnet 5, and Claude Haiku 4.5 are now available in India through Amazon Bedrock geographic cross-Region inference. You can access these models while processing data within the India Regions, and get started from the Amazon Bedrock console or with the Messages, Invo"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "provider-cbf5a1c55f2de7cd51",
+      "company": "Alibaba Qwen",
+      "title": "Qwen-Image: Crafting with Native Text Rendering",
+      "url": "https://qwenlm.github.io/blog/qwen-image/",
+      "published_at": "2025-08-04T14:08:30+00:00",
+      "summary": "GITHUB HUGGING FACE MODELSCOPE DEMO DISCORD We are thrilled to release Qwen-Image, a 20B MMDiT image foundation model that achieves significant advances in complex text rendering and precise image editing. To try the latest model, feel free to visit Qwen Chat and choose “Image Generation”. The key f"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "86c105d2-78d4-4a45-9f2e-33e098ff4e3d",
+      "company": "Google DeepMind",
+      "title": "Introducing Gemma 3n: The developer guide",
+      "url": "https://developers.googleblog.com/en/introducing-gemma-3n-developer-guide/",
+      "published_at": "2025-10-25T17:54:47+00:00",
+      "summary": "Gemma 3n is designed for the developer community that helped shape Gemma."
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "e087dd9f-b1e2-470d-8702-e3881e5edea4",
+      "company": "Google DeepMind",
+      "title": "Gemini 2.5 Flash-Lite is now ready for scaled production use",
+      "url": "https://developers.googleblog.com/en/gemini-25-flash-lite-is-now-stable-and-generally-available/",
+      "published_at": "2025-10-25T17:34:32+00:00",
+      "summary": "Gemini 2.5 Flash-Lite, previously in preview, is now stable and generally available. This cost-efficient model provides high quality in a small size, and includes 2.5 family features like a 1 million-token context window and multimodality."
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "24d67cd4-8c7f-58f0-bedf-3d6e8deb78a5",
+      "company": "Stability AI",
+      "title": "Stable Audio 3.0, the model family built with open-weight models — Stability AI",
+      "url": "https://stability.ai/news-updates/meet-stable-audio-3-the-model-family-built-for-artistic-experimentation-with-open-weight-models",
+      "published_at": "2026-05-21T00:00:00+00:00",
+      "summary": "We"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "9cba90c0-d4f5-5f08-9228-4f2fbfcd224a",
+      "company": "Stability AI",
+      "title": "Stability AI Introduces Stable Audio 2.5, the First Audio Model Built for Enterprise Sound Production at Scale — Stability AI",
+      "url": "https://stability.ai/news-updates/stability-ai-introduces-stable-audio-25-the-first-audio-model-built-for-enterprise-sound-production-at-scale",
+      "published_at": "2025-12-11T00:00:00+00:00",
+      "summary": "We’re excited to release Stable Audio 2.5, our latest audio model and the first developed for enterprise-grade use cases. Stable Audio 2.5 introduces advancements in quality and control that address the demand for dynamic compositions that can be adapted for custom brand needs."
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "d7bd5254-6d73-58f5-9892-c85e815f1ce4",
+      "company": "Stability AI",
+      "title": "Stable Video 4D — Stability AI",
+      "url": "https://stability.ai/news-updates/stable-video-4d",
+      "published_at": "2026-05-25T00:00:00+00:00",
+      "summary": "We are pleased to announce the availability of Stable Video 4D, an innovative model that allows users to upload a single video and receive dynamic novel-view videos of eight new angles/views, delivering a new level of versatility and creativity."
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "fd5e691d-9278-49df-8c3b-20861934975c",
+      "company": "OpenAI",
+      "title": "Introducing GPT-Rosalind for life sciences research",
+      "url": "https://openai.com/index/introducing-gpt-rosalind",
+      "published_at": "2026-04-16T01:00:00+00:00",
+      "summary": "OpenAI introduces GPT-Rosalind, a frontier reasoning model built to accelerate drug discovery, genomics analysis, protein reasoning, and scientific research workflows."
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "fd51dda1-498b-58d0-b9fb-5ac4c2604772",
+      "company": "NVIDIA AI",
+      "title": "Introducing NV-Reason-CT Open 3D CT VLM for Radiologist Chain-of-Thought Reasoning",
+      "url": "https://developer.nvidia.com/blog/introducing-nv-reason-ct-open-3d-ct-vlm-for-radiologist-chain-of-thought-reasoning/",
+      "published_at": "2026-09-23T22:54:56+00:00",
+      "summary": "Radiology AI has made remarkable strides in detecting abnormalities across chest X-rays, pathology slides, and 2D scans. Yet one of the most clinically rich and..."
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "c1892c4c-8999-5895-adeb-14e3c291a6de",
+      "company": "Codex CLI",
+      "title": "rust-v0.163.0-alpha.6",
+      "url": "https://github.com/openai/codex/releases/tag/rust-v0.163.0-alpha.6",
+      "published_at": "2026-10-10T01:27:22+00:00",
+      "summary": "Release 0.163.0-alpha.6"
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "27f426dd-8005-5574-a2a2-2b360f7da399",
+      "company": "IBM Research",
+      "title": "What's new at IBM Quantum Q3 2026",
+      "url": "https://research.ibm.com/blog/whats-new-q3-2026",
+      "published_at": "2026-10-07T04:00:00+00:00",
+      "summary": "Explore the latest updates, releases, and resources from IBM Quantum and the Qiskit community."
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "b678e1a1-5ee7-5681-b6fd-3e14cfd795f0",
+      "company": "NVIDIA AI",
+      "title": "Rally Up: ‘Gears of War: E-Day’ Launches on GeForce NOW",
+      "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-gears-of-war-e-day/",
+      "published_at": "2026-10-08T13:00:46+00:00",
+      "summary": "Gears of War: E-Day leads the charge on GeForce NOW this week, bringing Marcus Fenix and Dom Santiago’s first fight against the Locust Horde to the cloud with GeForce RTX-powered performance. A new way to join the action is also coming: Fire TV users will soon be able to purchase GeForce NOW members"
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "cd69bf1d-9363-5f2e-aebf-04f935330229",
+      "company": "Hugging Face",
+      "title": "Multimodal open d1 decision models for the edge",
+      "url": "https://huggingface.co/blog/LiquidAI/open-d1",
+      "published_at": "2026-10-07T16:54:33+00:00",
+      "source_type": "rss_official",
+      "summary": "",
+      "content": "",
+      "source_url": "https://huggingface.co/blog/feed.xml",
+      "source_key": "hugging-face-blog"
+    },
+    "eligible": true
+  }
+]

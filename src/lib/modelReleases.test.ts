@@ -1,5 +1,5 @@
 import { describe, expect, test } from "bun:test";
-import { allArticles } from "./feeds.js";
+import fixtures from "./modelReleases.fixtures.json";
 import { isModelRelease, modelReleases } from "./modelReleases.js";
 
 const article = (title: string, summary = "") => ({ title, summary });
@@ -21,8 +21,13 @@ describe("model release page eligibility", () => {
     "Open General Intelligence: MiniMax H3 Is Now Open Source - MiniMax News",
     "Introducing workspace agents in ChatGPT",
     "Introducing Gemini 4 public preview",
+    "Introducing Aurora 3.0-preview",
+    "SmolVLM Grows Smaller – Introducing the 256M & 500M Models!",
     "Launching a new AI assistant",
     "Introducing Aurora 3: a new language model",
+    "Introducing Aurora 3: a language model for quantum calibration",
+    "Introducing Aurora 3: a language model for CPU inference",
+    "A lab returns with Aurora: an open-source language model",
     "Introducing Gemma 3n: The developer guide",
     "Mistral releases Voxtral, its first open source AI audio model",
     "Introducing physics AI at Mistral: the foundation for engineering acceleration.",
@@ -55,10 +60,16 @@ describe("model release page eligibility", () => {
     "Codex CLI v3.1.0 released",
     "How to launch an app with GPT-6",
     "Announcing a partnership with Mistral",
+    "Announcing a strategic collaboration for generative AI",
+    "Introducing the OpenAI Partner Network",
+    "NVIDIA Introduces New Jetson Thor Computers for Physical AI",
+    "With GPT-5, Wrtn builds lifestyle AI for millions",
+    "Predicting model behavior before release by simulating deployment",
     "Launching a game: powered by GPT-6",
     "Announcing a data center with GPT-6 support",
     "Introducing a report about Claude",
     "GPT-6: lessons from enterprise adoption",
+    "A lab is back with a report on open source language models",
     "Serve Aurora 3, a frontier model, on your server",
     "NarrateAI: production-ready LLM quality assurance on Amazon Bedrock",
     "Meta Llama: Everything you need to know about the open generative AI model",
@@ -79,6 +90,8 @@ describe("model release page eligibility", () => {
     expect(isModelRelease(article("AI safety report", "Today we discuss the release of GPT-6."))).toBe(false);
     expect(isModelRelease(article("GLM-5.3 and the spread of advanced cyber capabilities", "GLM-5.3 was released without safeguards."))).toBe(false);
     expect(isModelRelease(article("Introducing Claude Corps", "Claude Corps is a national fellowship."))).toBe(false);
+    expect(isModelRelease(article("NVIDIA Aurora enables quantum calibration", "NVIDIA Aurora Calibration is an open source vision language model (VLM)."))).toBe(true);
+    expect(isModelRelease(article("A vendor’s quantum computing update", "Aurora is an open source vision language model (VLM)."))).toBe(false);
     expect(isModelRelease(article("Introducing Labs", "Our new division incubates experimental AI products."))).toBe(false);
     expect(isModelRelease(article("Introducing SynthID Bio", "Proof of concept for watermarking AI-generated proteins."))).toBe(false);
     const mislabeled = { ...article("Introducing Mistral Large 4 | Mistral"), item_type: "other" };
@@ -97,17 +110,31 @@ describe("model release page eligibility", () => {
     expect(isModelRelease(article("Aurora 3 and changing cyber risks", "Aurora 3 was released without safeguards, like other models."))).toBe(false);
   });
 
-  test("retains the verified launch and preserves excluded cache records for the normal feed", () => {
-    const all = allArticles();
-    const releases = modelReleases(all);
-    for (const title of ["Introducing Mistral Large 4 | Mistral", "Introducing Falcon ASR", "Introducing dots", "Claude Opus 4.6", "Introducing gpt-oss", "Introducing the Agents API", "Introducing North Small Translate | Cohere", "Introducing Claude for Small Business", "Robostral Navigate: single-camera AI navigation | Mistral AI", "Bring near-Astra intelligence to everyday work with GPT-6.1 Sol on Amazon Bedrock", "Amazon Bedrock expands Claude model availability to in-country inferencing in India", "Qwen-Image: Crafting with Native Text Rendering", "Introducing Gemma 3n: The developer guide", "Gemini 2.5 Flash-Lite is now ready for scaled production use", "Stable Audio 3.0, the model family built with open-weight models — Stability AI", "Stability AI Introduces Stable Audio 2.5, the First Audio Model Built for Enterprise Sound Production at Scale — Stability AI", "Stable Video 4D — Stability AI", "Introducing GPT-Rosalind for life sciences research", "Introducing NV-Reason-CT Open 3D CT VLM for Radiologist Chain-of-Thought Reasoning"]) {
-      expect(releases.some((a) => a.title === title)).toBe(true);
+  test("corroborates sparse named launches and abbreviated availability claims", () => {
+    expect(isModelRelease({ ...article("Introducing Aurora Omni"), url: "https://lab.example/models/aurora-omni/" })).toBe(true);
+    expect(isModelRelease(article("Introducing Aurora Omni"))).toBe(false);
+    expect(isModelRelease({ ...article("Multimodal open z9 decision models for the edge"), url: "https://lab.example/blog/open-z9" })).toBe(true);
+    expect(isModelRelease({ ...article("Open models for edge devices"), url: "https://lab.example/blog/open-z9" })).toBe(false);
+    expect(isModelRelease({ ...article("How open z9 models power a customer deployment"), url: "https://lab.example/blog/open-z9" })).toBe(false);
+    expect(isModelRelease({ ...article("Introducing a new initiative"), url: "https://lab.example/news/introducing-a-new-initiative" })).toBe(false);
+    expect(isModelRelease(article("Aurora 3 retrospective", "People are now using an earlier version of Aurora 3 after a rollback."))).toBe(false);
+    expect(isModelRelease(article("Search video using Aurora 3.0", "NewLab Aurora Embed 3.0 is now generally available as an embedding model."))).toBe(true);
+    expect(isModelRelease(article("Search video using Aurora 3.0", "DifferentLab Vega Embed 3.0 is now generally available as an embedding model."))).toBe(false);
+    expect(isModelRelease(article("Introducing a new partner network", "Our new partner network will fund deployment of generative AI."))).toBe(false);
+  });
+
+  test("classifies frozen publisher inputs from the source and review audit", () => {
+    for (const { article, eligible } of fixtures) {
+      expect({ title: article.title, eligible: isModelRelease(article) }).toEqual({ title: article.title, eligible });
     }
-    for (const title of ["rust-v0.163.0-alpha.6", "What's new at IBM Quantum Q3 2026", "Rally Up: ‘Gears of War: E-Day’ Launches on GeForce NOW"]) {
-      expect(all.some((a) => a.title === title)).toBe(true);
-      expect(releases.some((a) => a.title === title)).toBe(false);
-    }
-    expect(allArticles()).toEqual(all);
-    expect(releases).toEqual(all.filter(isModelRelease));
+  });
+
+  test("filters without removing or changing records in the normal news collection", () => {
+    const articles = fixtures.map(({ article }) => ({ ...article }));
+    const snapshot = JSON.stringify(articles);
+    const releases = modelReleases(articles);
+    expect(releases).toEqual(fixtures.filter(({ eligible }) => eligible).map(({ article }) => article));
+    expect(JSON.stringify(articles)).toBe(snapshot);
+    expect(articles.length).toBe(fixtures.length);
   });
 });
