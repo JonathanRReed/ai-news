@@ -740,5 +740,49 @@
       "summary": ""
     },
     "eligible": true
+  },
+  {
+    "article": {
+      "id": "f38ef6ff-195e-532b-ae73-ca187df9ed04",
+      "company": "Anthropic",
+      "title": "Advancing Claude in healthcare and the life sciences",
+      "url": "https://www.anthropic.com/news/healthcare-life-sciences",
+      "published_at": "2026-08-27T15:12:44+00:00",
+      "summary": "Introducing Claude for Healthcare with HIPAA-ready infrastructure, plus expanded Life Sciences tools for clinical trials and regulatory submissions. New connectors to CMS, Medidata, and ClinicalTrials.gov."
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "6a85f655-8bb8-5ff8-bfcb-7de7778e7f13",
+      "company": "Mistral AI",
+      "title": "Workflows for work that runs the business | Mistral AI",
+      "url": "https://mistral.ai/news/workflows/",
+      "published_at": "2026-09-09T15:29:12.872+00:00",
+      "summary": "Workflows is now in public preview."
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "1b1cb63d-3ddc-57bf-b6db-f53ab29e951d",
+      "company": "Google DeepMind",
+      "title": "Advancing Private AI Compute with secure, server-side memory",
+      "url": "https://deepmind.google/blog/advancing-private-ai-compute-with-secure-server-side-memory/",
+      "published_at": "2026-09-23T16:00:57+00:00",
+      "summary": "Introducing private, server-side memory to Private AI Compute for personal AI."
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "c0bbec0c-74bb-41a4-be98-b6aff9d19c0b",
+      "company": "Google DeepMind",
+      "title": "Gemini 2.5 Pro Preview: even better coding performance",
+      "url": "https://developers.googleblog.com/en/gemini-2-5-pro-io-improved-coding-performance/?utm_source=deepmind.google&utm_medium=referral&utm_campaign=gdm&utm_content=",
+      "published_at": "2025-05-06T15:06:55+00:00",
+      "summary": "We’ve seen developers doing amazing things with Gemini 2.5 Pro, so we decided to release an updated version a couple of weeks early to get into developers hands sooner."
+    },
+    "eligible": true
   }
 ]

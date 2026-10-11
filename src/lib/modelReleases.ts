@@ -90,6 +90,24 @@ export function isModelRelease(article: Pick<Article, "title" | "summary" | "con
     || NAMED_VERSION.test(availabilityName)
     || (sameSubject && AI_DESCRIPTION.test(lead)))) return true;
   if (availability) return true;
+  // Editorial headlines may describe the purpose rather than repeat the full
+  // named launch. Corroborate multiple meaningful identity words from an
+  // explicit opening announcement, plus an AI model/product capability.
+  const openingArtifact = lead.match(/^(?:Today[, ]+|We(?:[’']re| are)? )?(?:introducing|announcing|launching|releasing) (?:the )?([A-Z][^,.!?]{2,90})/i)?.[1]
+    .split(/\s+(?:with|is|are|our)\b/i)[0];
+  const identity = openingArtifact?.split(/[^a-z0-9]+/i)
+    .filter((word) => word.length > 2 && !/^(?:the|for|and|new|our|model|models|tools|tool|from|with)$/i.test(word)) || [];
+  const sharedIdentity = identity.filter((word) => headline.toLowerCase().includes(word.toLowerCase()));
+  if (openingArtifact && /^[A-Z]/.test(openingArtifact) && sharedIdentity.length >= 2
+    && (AI_DESCRIPTION.test(lead) || /\btools?\b/i.test(lead) && /\bconnectors?\b/i.test(lead))) return true;
+  // A sparse public-preview caption must identify the same named artifact in
+  // both headline and canonical URL; raw CLI prerelease builds were rejected
+  // above. This is a substantive product preview, not a version-tag preview.
+  const previewName = lead.match(/^([A-Z][\w -]{2,70}?) (?:is|are) now in public preview\b/)?.[1];
+  const previewSlug = previewName?.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+  const artifactSlug = article.url?.replace(/\/$/, "").split("/").at(-1);
+  if (previewName && headline.includes(previewName) && artifactSlug === previewSlug
+    && /\/(?:news|blog|products?|platforms?)\//i.test(article.url || "")) return true;
   // A same-subject definition of a NEW tool/model establishes a substantive
   // product launch; a definition describing existing usage does not.
   if (sameSubject && /^.{3,80}? (?:is|are) (?:a |an |our |the )?new\b/i.test(lead)
@@ -104,6 +122,16 @@ export function isModelRelease(article: Pick<Article, "title" | "summary" | "con
 
   if (namedVersion && headline !== subject && DESCRIPTIVE_LAUNCH.test(headline.slice(subject.length))) return true;
   if (namedVersion && OPENING_LAUNCH.test(lead) && AI_DESCRIPTION.test(lead)) return true;
+
+  // A preview update can name the model before announcing its updated version.
+  // Bind that first-person release claim to the same full base name nearby;
+  // an unrelated release or a historical usage mention is not corroboration.
+  const baseName = name.replace(/\s+(?:preview|beta|alpha)$/i, "");
+  const updateClaim = lead.match(/\bwe(?:[’']re| are)?(?:\s+[a-z]+){0,5}\s+releas(?:e|ing) an? (?:updated|new) version\b/i);
+  const baseIndex = lead.toLowerCase().indexOf(baseName.toLowerCase());
+  if (namedVersion && !toolBuild && /\bpreview\b/i.test(subject) && updateClaim
+    && baseIndex >= 0 && baseIndex < (updateClaim.index ?? 0)
+    && (updateClaim.index ?? 0) - (baseIndex + baseName.length) <= 80) return true;
 
   // An unnumbered name needs a launch claim that names that same subject. This
   // tolerates short navigation prefixes without accepting incidental old-model

@@ -37,7 +37,7 @@ test("selects eligible releases consistently in the timeline and lab cards", asy
   page.on("pageerror", (error) => errors.push(error.message));
   await page.goto("/models/");
   await expect(page).toHaveTitle("AI Model Release Timeline | AI News Hub");
-  await expect(page.getByText("Model announcements and AI product launches from official feeds, including model previews.", { exact: false })).toBeVisible();
+  await expect(page.getByText("Model announcements and AI product launches from official feeds, including model previews and substantive product previews.", { exact: false })).toBeVisible();
 
   const timeline = page.locator("main ol");
   const cards = page.locator("main article");

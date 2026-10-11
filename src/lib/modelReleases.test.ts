@@ -146,6 +146,22 @@ describe("model release page eligibility", () => {
     expect(isModelRelease({ ...article("Customers using Aurora", "Existing deployments use Aurora, a language model."), url: "https://lab.example/introducing-other-product" })).toBe(false);
   });
 
+  test("corroborates editorial launch identity and substantive public product previews", () => {
+    expect(isModelRelease(article("Advancing Aurora in healthcare and science", "Introducing Aurora for Healthcare with new tools and connectors."))).toBe(true);
+    expect(isModelRelease(article("A customer using Aurora in healthcare", "Introducing Different for Healthcare with new tools and connectors."))).toBe(false);
+    expect(isModelRelease(article("Advancing private AI compute with memory", "Introducing private, server-side memory to an AI architecture."))).toBe(false);
+    expect(isModelRelease({ ...article("Flows for work that runs the business", "Flows is now in public preview."), url: "https://lab.example/news/flows/" })).toBe(true);
+    expect(isModelRelease({ ...article("Flows for work that runs the business", "Different is now in public preview."), url: "https://lab.example/news/flows/" })).toBe(false);
+    expect(isModelRelease({ ...article("Flows for work that runs the business", "Flows is now in public preview."), url: "https://lab.example/news/other-product/" })).toBe(false);
+    expect(isModelRelease({ ...article("SDK v0.4.0-beta.2", "SDK is now in public preview."), url: "https://github.com/lab/sdk/releases/tag/v0.4.0-beta.2" })).toBe(false);
+  });
+
+  test("binds a mid-excerpt updated-preview release to the named artifact", () => {
+    expect(isModelRelease(article("Aurora 2.5 Pro Preview: improved coding", "Developers use Aurora 2.5 Pro, so we decided to release an updated version early."))).toBe(true);
+    expect(isModelRelease(article("Aurora 2.5 Pro Preview: improved coding", "Developers use Different 2.5 Pro, so we decided to release an updated version early."))).toBe(false);
+    expect(isModelRelease(article("Aurora 2.5 Pro Preview: improved coding", "Developers use Aurora 2.5 Pro. We discuss an updated version released previously."))).toBe(false);
+  });
+
   test("classifies frozen publisher inputs from the source and review audit", () => {
     for (const { article, eligible } of fixtures) {
       expect({ title: article.title, eligible: isModelRelease(article) }).toEqual({ title: article.title, eligible });
