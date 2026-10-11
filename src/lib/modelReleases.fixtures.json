@@ -1259,5 +1259,50 @@
       "source_key": "qwen-blog"
     },
     "eligible": true
+  },
+  {
+    "article": {
+      "id": "1931d939-08f3-59a6-bce7-af1d9cd43353",
+      "company": "OpenAI",
+      "title": "Now everyone can put data to work",
+      "url": "https://openai.com/index/put-data-to-work",
+      "published_at": "2026-09-10T15:00:00+00:00",
+      "source_type": "rss_official",
+      "summary": "Meet the Data agent in ChatGPT Work. Connect company data, uncover insights, and build interactive dashboards with AI using natural language.",
+      "content": "Meet the Data agent in ChatGPT Work. Connect company data, uncover insights, and build interactive dashboards with AI using natural language.",
+      "source_url": "https://openai.com/news/rss.xml",
+      "source_key": "openai-news"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "dab1d888-fb43-5758-a14d-51f56969c77f",
+      "company": "OpenAI",
+      "title": "Build more natural voice experiences with GPT‑Live‑1 in the API",
+      "url": "https://openai.com/index/introducing-gpt-live-1-in-the-api",
+      "published_at": "2026-09-10T00:00:00+00:00",
+      "source_type": "rss_official",
+      "summary": "GPT‑Live‑1 brings natural, full-duplex voice conversations to the API, with stronger instruction following, custom voices, and telephony support.",
+      "content": "GPT‑Live‑1 brings natural, full-duplex voice conversations to the API, with stronger instruction following, custom voices, and telephony support.",
+      "source_url": "https://openai.com/news/rss.xml",
+      "source_key": "openai-news"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "eb13ca15-5506-55e5-8556-ca94fc361751",
+      "company": "Cohere",
+      "title": "North Mini Code: Agentic Coding for Developers | Cohere",
+      "url": "https://cohere.com/blog/north-mini-code",
+      "published_at": "2026-08-12T00:00:00+00:00",
+      "source_type": "scraped",
+      "summary": "Meet North Mini Code, Cohere's first open-source agentic coding model: a 30B MoE that codes strongly on minimal hardware.",
+      "content": "Meet North Mini Code, Cohere's first open-source agentic coding model: a 30B MoE that codes strongly on minimal hardware.",
+      "source_url": "https://cohere.com/sitemap.xml",
+      "source_key": "cohere-sitemap"
+    },
+    "eligible": true
   }
 ]

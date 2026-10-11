@@ -2,7 +2,7 @@
 
 The Models page selects model announcements and substantive AI software releases from the admitted news collection. It does not change, delete, or retag news records.
 
-A selection needs a current, affirmative announcement or availability claim tied to the same artifact as its AI purpose. Names, role descriptions, coordinated product lists, and directly referring follow-up sentences can provide that evidence. Negation, uncertainty, an unrelated organization's AI work, and a different product's availability do not qualify. A declared manual tool or configuration setting overrides weaker keyword evidence.
+A selection needs a current, affirmative announcement or availability claim tied to the same artifact as its AI purpose. Names, role descriptions, coordinated product lists, and directly referring follow-up sentences can provide that evidence. Negation, uncertainty, an unrelated organization's AI work, and a different product's availability do not qualify. A declared manual tool or configuration setting overrides weaker keyword evidence. Explicitly dated past-tense launches use the article’s publication year when supplied; a different year or relative historical qualifier alone is not current release evidence.
 
 ## Sparse preview exception
 

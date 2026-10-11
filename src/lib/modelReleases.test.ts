@@ -191,6 +191,49 @@ describe("model release page eligibility", () => {
     expect(isModelRelease(article(title, summary))).toBe(expected);
   });
 
+  test.each([
+    [true, "Despite earlier delays, we release Aurora 4, a language model", ""],
+    [true, "Following earlier delays, we release Aurora 4, a language model", ""],
+    [false, "We delay release of Aurora 4, a language model", ""],
+    [false, "Despite earlier progress, we delay release of Aurora 4, a language model", ""],
+    [true, "EchoLink comes to teams", "EchoLink is now available for speech-to-speech interaction."],
+    [true, "EchoLink comes to teams", "EchoLink is available now for text-to-image generation."],
+    [false, "EchoLink comes to teams", "Vega is now available for speech-to-speech interaction."],
+    [false, "EchoLink comes to teams", "EchoLink is not available for speech-to-speech interaction."],
+    [false, "Storage credits come to teams", "Storage credits are now available for ChatGPT Business."],
+    [false, "Storage credits come to teams", "Storage credits are now available for language models."],
+    [false, "ExpenseFlow comes to teams", "ExpenseFlow is now available for researchers building language models."],
+    [true, "Introducing Aurora 4: a new language model topping benchmarks", ""],
+    [false, "Introducing AuroraBench: a new benchmark for language models", ""],
+    [false, "Introducing AuroraBench: a benchmark of language models", ""],
+    [false, "Introducing AuroraBench: a language model benchmark", ""],
+    [false, "Aurora 4 benchmarks top language models", ""],
+    [false, "We released Aurora 4 last year, a language model", ""],
+    [false, "Aurora 4 was released in 2020, a language model", ""],
+    [false, "Hello Aurora 4", "We released Aurora 4 last year, a language model."],
+    [true, "We released Aurora 4 last year; Aurora 4 is now available as a language model", ""],
+    [true, "Today we release Aurora 4, a language model", ""],
+    [true, "Aurora 4 was released today, a language model", ""],
+    [true, "Now everyone can put data to work", "Meet the Data agent in ChatGPT Work. Connect company data and build dashboards with AI."],
+    [false, "Now everyone can put data to work", "Meet the expense tracker in ChatGPT Work. Track expenses manually."],
+    [false, "Now everyone can put data to work", "Meet the existing Data agent in ChatGPT Work. It was released last year."],
+  ])("requires current artifact evidence while preserving launch context: %s %s", (expected, title, summary) => {
+    expect(isModelRelease(article(title, summary))).toBe(expected);
+  });
+
+  test.each([
+    [true, "Build more natural voice experiences with Aurora-4 in the API", "Aurora-4 is a voice model for speech-to-speech interaction.", "https://example.com/index/introducing-aurora-4-in-the-api"],
+    [false, "Build more natural voice experiences with Aurora-4 in the API", "Aurora-4 is a voice model for speech-to-speech interaction.", "https://example.com/index/introducing-vega-4-in-the-api"],
+    [false, "Build expense dashboards with ExpenseFlow in the API", "ExpenseFlow is a manual expense tracker. Our company also builds AI models.", "https://example.com/index/introducing-expenseflow-in-the-api"],
+  ])("corroborates instructional captions only through same-artifact canonical launches: %s %s", (expected, title, summary, url) => {
+    expect(isModelRelease({ title, summary, url })).toBe(expected);
+  });
+
+  test("uses publication context for explicitly dated past launches", () => {
+    expect(isModelRelease({ title: "We released Aurora 4 in 2020, a language model", summary: "", published_at: "2026-10-11T00:00:00Z" })).toBe(false);
+    expect(isModelRelease({ title: "We released Aurora 4 in 2020, a language model", summary: "", published_at: "2020-10-11T00:00:00Z" })).toBe(true);
+  });
+
   test("corroborates unnumbered reasoning and modality-conversion product launches", () => {
     expect(isModelRelease(article("Announcing Aurora Plus for sovereignty", "Aurora Plus delivers advanced reasoning with a minimal compute footprint."))).toBe(true);
     expect(isModelRelease(article("Palette launches SketchFlow", "SketchFlow is a new sketch-to-image tool."))).toBe(true);
