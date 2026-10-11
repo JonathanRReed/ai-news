@@ -43,6 +43,15 @@ describe("model release page eligibility", () => {
     expect(isModelRelease(article("GPT-6 and Intelligent UI for everyone", "GPT‑6 is rolling out globally in ChatGPT."))).toBe(true);
   });
 
+  test("corroborates unnumbered reasoning and modality-conversion product launches", () => {
+    expect(isModelRelease(article("Announcing Aurora Plus for sovereignty", "Aurora Plus delivers advanced reasoning with a minimal compute footprint."))).toBe(true);
+    expect(isModelRelease(article("Palette launches SketchFlow", "SketchFlow is a new sketch-to-image tool."))).toBe(true);
+    expect(isModelRelease(article("Introducing EchoLink", "EchoLink provides speech-to-speech interaction."))).toBe(true);
+    expect(isModelRelease(article("Announcing Aurora Plus", "A different product delivers advanced reasoning."))).toBe(false);
+    expect(isModelRelease(article("Palette launches SummerFlow", "A different platform has a sketch-to-image tool."))).toBe(false);
+    expect(isModelRelease(article("Introducing CompanyMixer", "CompanyMixer is a hand-operated mixing tool."))).toBe(false);
+  });
+
   test.each([
     "Rally Up: Gears of War: E-Day Launches on GeForce NOW",
     "What's new at IBM Quantum Q3 2026",
@@ -124,6 +133,17 @@ describe("model release page eligibility", () => {
     expect(isModelRelease(article("Search video using Aurora 3.0", "NewLab Aurora Embed 3.0 is now generally available as an embedding model."))).toBe(true);
     expect(isModelRelease(article("Search video using Aurora 3.0", "DifferentLab Vega Embed 3.0 is now generally available as an embedding model."))).toBe(false);
     expect(isModelRelease(article("Introducing a new partner network", "Our new partner network will fund deployment of generative AI."))).toBe(false);
+  });
+
+  test("distinguishes newly defined artifacts from benchmarks, events, and existing usage", () => {
+    expect(isModelRelease(article("Spectra: An open-source AI auditing tool", "Spectra is a new open-source automated auditing tool for AI research."))).toBe(true);
+    expect(isModelRelease(article("Spectra: An open-source AI auditing tool", "Spectra is an open-source auditing tool used in existing deployments."))).toBe(false);
+    expect(isModelRelease(article("Introducing the Aurora Reranker Family"))).toBe(true);
+    expect(isModelRelease(article("1,000 Scientist AI Jam Session", "Researchers meet for an AI event."))).toBe(false);
+    expect(isModelRelease(article("2027: A year of AI models"))).toBe(false);
+    expect(isModelRelease({ ...article("Introducing ScienceCheck", "Introducing ScienceCheck, an expert-authored, expert-reviewed benchmark for evaluating AI systems."), url: "https://lab.example/introducing-sciencecheck" })).toBe(false);
+    expect(isModelRelease(article("Introducing Aurora 4", "Aurora 4 is a new language model that outperforms previous models on the ScienceCheck benchmark."))).toBe(true);
+    expect(isModelRelease({ ...article("Customers using Aurora", "Existing deployments use Aurora, a language model."), url: "https://lab.example/introducing-other-product" })).toBe(false);
   });
 
   test("classifies frozen publisher inputs from the source and review audit", () => {

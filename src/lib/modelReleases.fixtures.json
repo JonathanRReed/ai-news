@@ -497,5 +497,248 @@
       "source_key": "hugging-face-blog"
     },
     "eligible": true
+  },
+  {
+    "article": {
+      "id": "79d4bf8c-d881-5449-9259-ed0b813dd4c1",
+      "company": "Cohere",
+      "title": "Cohere Releases Command A+ for Sovereign AI | Cohere",
+      "url": "https://cohere.com/blog/cohere-releases-command-a-plus",
+      "published_at": "2026-08-05T00:00:00+00:00",
+      "source_type": "scraped",
+      "summary": "Delivers advanced reasoning with a minimal compute footprint. Command A+ offers full data sovereignty for governments and regulated industries worldwide.",
+      "content": "Delivers advanced reasoning with a minimal compute footprint. Command A+ offers full data sovereignty for governments and regulated industries worldwide.",
+      "source_url": "https://cohere.com/sitemap.xml",
+      "source_key": "cohere-sitemap"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "83e8e665-8e90-5f43-a32a-6230d8c31a49",
+      "company": "Stability AI",
+      "title": "Clipdrop Launches Stable Doodle — Stability AI",
+      "url": "https://stability.ai/news-updates/clipdrop-launches-stable-doodle",
+      "published_at": "2026-05-25T00:00:00+00:00",
+      "source_type": "scraped",
+      "summary": "Stability AI launches Stable Doodle, a sketch-to-image tool that converts a simple drawing into a dynamic image, providing limitless imaging possibilities to a range of professionals and hobbyists.",
+      "content": "Stability AI launches Stable Doodle, a sketch-to-image tool that converts a simple drawing into a dynamic image, providing limitless imaging possibilities to a range of professionals and hobbyists.",
+      "source_url": "https://stability.ai/sitemap.xml",
+      "source_key": "stability-sitemap"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "4d3de435-d8f6-4c04-b8bd-b0cdd94f6164",
+      "company": "OpenAI",
+      "title": "Introducing the Realtime API",
+      "url": "https://openai.com/index/introducing-the-realtime-api",
+      "published_at": "2024-10-01T10:05:00+00:00",
+      "source_type": "rss_official",
+      "summary": "Developers can now build fast speech-to-speech experiences into their applications",
+      "content": "Developers can now build fast speech-to-speech experiences into their applications",
+      "source_url": "https://openai.com/news/rss.xml",
+      "source_key": "openai-news"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "c2d3674f-3d8d-4e62-b5ec-200f049c041d",
+      "company": "Hugging Face",
+      "title": "Introducing the Ettin Reranker Family",
+      "url": "https://huggingface.co/blog/ettin-reranker",
+      "published_at": "2026-05-19T00:00:00+00:00",
+      "summary": ""
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "55c0bfbd-8c1a-451e-99a0-a111ec59f09d",
+      "company": "Hugging Face",
+      "title": "Ettin Suite: SoTA Paired Encoders and Decoders",
+      "url": "https://huggingface.co/blog/ettin",
+      "published_at": "2025-07-16T00:00:00+00:00",
+      "summary": ""
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "fb1759cd-e482-51bc-ac02-122b6c5bb6f6",
+      "company": "Anthropic",
+      "title": "Petri: An open-source AI auditing tool",
+      "url": "https://www.anthropic.com/research/petri-open-source-auditing",
+      "published_at": "2026-09-10T18:49:39+00:00",
+      "summary": "Petri is a new open-source automated auditing tool from Anthropic designed to accelerate AI safety research."
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "d5ad6e9f-f271-4307-b352-cc96560e56f6",
+      "company": "OpenAI",
+      "title": "Introducing LifeSciBench",
+      "url": "https://openai.com/index/introducing-life-sci-bench",
+      "published_at": "2026-06-17T00:00:00+00:00",
+      "summary": "Introducing LifeSciBench, an expert-authored, expert-reviewed benchmark for evaluating how AI systems handle real-world life science research tasks and decisions."
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "18f5a8e2-280c-4bc9-9c0b-df41ac3033bf",
+      "company": "OpenAI",
+      "title": "1,000 Scientist AI Jam Session",
+      "url": "https://openai.com/global-affairs/1000-scientist-ai-jam-session",
+      "published_at": "2025-02-28T08:00:00+00:00",
+      "summary": "OpenAI and nine national labs bring together leading scientists for first-of-its kind event."
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "dfe3ee15-5af7-4aeb-96be-7d90b9db3d6e",
+      "company": "Hugging Face",
+      "title": "Introducing HELMET: Holistically Evaluating Long-context Language Models",
+      "url": "https://huggingface.co/blog/helmet",
+      "published_at": "2025-04-16T00:00:00+00:00",
+      "summary": ""
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "fcda4f82-d0fc-4fce-9d33-3e8a0a53812d",
+      "company": "OpenAI",
+      "title": "Introducing the Model Spec",
+      "url": "https://openai.com/index/introducing-the-model-spec",
+      "published_at": "2024-05-08T00:00:00+00:00",
+      "summary": ""
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "0c98c43d-7ed8-40f0-a830-82608d448fb4",
+      "company": "OpenAI",
+      "title": "Introducing OpenAI Japan",
+      "url": "https://openai.com/index/introducing-openai-japan",
+      "published_at": "2024-04-14T00:00:00+00:00",
+      "summary": "We are excited to announce our first office in Asia and we’re releasing a GPT-4 custom model optimized for the Japanese language."
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "c2418a2f-eba6-4bfa-bf9b-93198e545396",
+      "company": "OpenAI",
+      "title": "Introducing Stargate UAE",
+      "url": "https://openai.com/index/introducing-stargate-uae",
+      "published_at": "2025-05-22T00:00:00+00:00",
+      "summary": "We’re launching Stargate UAE – the first international deployment of Stargate, OpenAI’s AI infrastructure platform."
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "0ba7ddf1-e05f-4a8e-8428-504b74f122b0",
+      "company": "OpenAI",
+      "title": "Announcing OpenAI DevDay 2025",
+      "url": "https://openai.com/index/announcing-devday-2025",
+      "published_at": "2025-07-23T00:00:00+00:00",
+      "summary": "We’re hosting our third annual OpenAI DevDay on October 6, 2025 at Fort Mason in San Francisco."
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "74e7193a-3793-4d3a-bf54-37003bd3d219",
+      "company": "OpenAI",
+      "title": "Announcing OpenAI Grove Cohort 2",
+      "url": "https://openai.com/index/openai-grove",
+      "published_at": "2026-01-02T10:00:00+00:00",
+      "summary": "Applications are now open for OpenAI Grove Cohort 2, a 5-week founder program designed for individuals at any stage, from pre-idea to product. Participants receive $50K in API credits, early access to AI tools, and hands-on mentorship from the OpenAI team."
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "7fd13af8-648e-4735-a11f-10a62ab64250",
+      "company": "OpenAI",
+      "title": "Horizon 1000: Advancing AI for primary healthcare",
+      "url": "https://openai.com/index/horizon-1000",
+      "published_at": "2026-01-20T21:00:00+00:00",
+      "summary": "OpenAI and the Gates Foundation launch Horizon 1000, a $50M pilot advancing AI capabilities for healthcare in Africa. The initiative aims to reach 1,000 clinics by 2028."
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "0d295739-8a00-4f72-9680-571b119e8586",
+      "company": "Hugging Face",
+      "title": "Introducing ConTextual: How well can your Multimodal model jointly reason over text and image in text-rich scenes?",
+      "url": "https://huggingface.co/blog/leaderboard-contextual",
+      "published_at": "2024-03-05T00:00:00+00:00",
+      "summary": ""
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "fc9e9d14-eead-4546-9ba6-f927e2ec25e4",
+      "company": "OpenAI",
+      "title": "OpenAI Scholars 2020: Applications open",
+      "url": "https://openai.com/index/openai-scholars-2020",
+      "published_at": "2019-10-11T07:00:00+00:00",
+      "summary": "We are now accepting applications for our third class of OpenAI Scholars."
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "5d4142ed-a48d-487d-a7a4-f52707529127",
+      "company": "OpenAI",
+      "title": "OpenAI and Broadcom unveil LLM-optimized inference chip",
+      "url": "https://openai.com/index/openai-broadcom-jalapeno-inference-chip",
+      "published_at": "2026-06-24T06:00:00+00:00",
+      "summary": "OpenAI and Broadcom introduce Jalapeño, a custom AI chip built for LLM inference to improve performance, efficiency, and scale across AI systems."
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "8eec3499-4ec1-5c2c-b8d1-bb5b7b22e055",
+      "company": "Anthropic",
+      "title": "An opt-in vulnerability-finding service for open-source software",
+      "url": "https://www.anthropic.com/research/launching-opt-in-vuln-finding-service-for-open-source",
+      "published_at": "2026-10-08T19:00:00+00:00",
+      "summary": "We’re launching OSS Scanner, an opt-in vulnerability scanner for the open-source ecosystem informed by our experience using Claude to find vulnerabilities during Project Glasswing. Projects that join will receive thorough, periodic security scans by our strongest models at no cost."
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "60ca1529-67df-4b68-861f-8a7cd9b3030b",
+      "company": "Hugging Face",
+      "title": "H Company's new Holo2 model takes the lead in UI Localization",
+      "url": "https://huggingface.co/blog/Hcompany/introducing-holo2-235b-a22b",
+      "published_at": "2026-02-03T17:40:14+00:00",
+      "summary": ""
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "36fa3979-cd14-43f8-80c8-cf1f4df0092a",
+      "company": "Hugging Face",
+      "title": "OpenReasoning-Nemotron: A Family of State-of-the-Art Distilled Reasoning Models",
+      "url": "https://huggingface.co/blog/nvidia/openreasoning-nemotron",
+      "published_at": "2025-07-18T17:39:59+00:00",
+      "summary": ""
+    },
+    "eligible": true
   }
 ]
