@@ -251,6 +251,40 @@ describe("model release page eligibility", () => {
     expect(isModelRelease(article(title, summary))).toBe(expected);
   });
 
+  test.each([
+    [true, "We released Aurora 5, a language model trained in 2020"],
+    [true, "We released Aurora 5, a language model developed in 2020"],
+    [true, "We released Aurora 5, a language model from a lab founded in 2020"],
+    [true, "Trained in 2020, we released Aurora 5, a language model"],
+    [true, "A lab founded in 2020 released Aurora 5, a language model"],
+    [true, "We released Aurora 5, a language model trained last year"],
+    [false, "We released Aurora 5, a language model trained in 2020, in 2025"],
+    [false, "We released Aurora 5 in 2020, a language model trained in 2026"],
+    [false, "In 2020, we released Aurora 5, a language model trained in 2026"],
+    [false, "Announcing a possible Aurora 4 release, a language model"],
+    [false, "Introducing possibly Aurora 4, a language model"],
+    [true, "Introducing Aurora 4, a language model for possible future applications"],
+    [false, "Introducing TripMate: a new travel agent"],
+    [false, "Introducing HomePro: a real estate agent"],
+    [false, "Introducing BondPlus: a chemical agent"],
+    [true, "Introducing TripMate: a new AI travel agent"],
+    [true, "Introducing TripMate: an AI-powered travel agent"],
+    [false, "Introducing TripMate: a manual AI-powered travel agent"],
+    [false, "Introducing TripMate: a human-only AI-powered travel agent"],
+    [false, "Introducing TripMate: a travel agent for teams using AI-powered research tools"],
+  ])("separates descriptive predicates and non-computational roles from launch evidence: %s %s", (expected, title) => {
+    expect(isModelRelease({ title, summary: "", published_at: "2026-10-11T00:00:00Z" })).toBe(expected);
+  });
+
+  test.each([
+    [true, "Introducing GraphCoder", "GraphCoder is a coding-native agent for technical work."],
+    [true, "Introducing Aurora Computer Use", "Aurora Computer Use is a specialized model built to power agents that interact with user interfaces."],
+    [true, "Introducing Arena, our first ML-Agents environment", ""],
+    [false, "Introducing TripMate", "TripMate is a travel agent for researchers who build language models."],
+  ])("keeps computational agent qualifiers tied to the core role: %s %s", (expected, title, summary) => {
+    expect(isModelRelease(article(title, summary))).toBe(expected);
+  });
+
   test("propagates publication context to independent dated release evidence", () => {
     const release = { title: "We can't wait to introduce Aurora 4", summary: "We released Aurora 4 in 2026, a language model.", published_at: "2026-10-11T00:00:00Z" };
     expect(isModelRelease(release)).toBe(true);

@@ -5,7 +5,8 @@ import type { Article } from "../types/article.js";
 // the publisher's opening excerpt can corroborate a terse headline. Model names
 // are not an allowlist, and mentions elsewhere in a long article are not evidence.
 const LAUNCH = /\b(?:introduc(?:e|es|ed|ing)|announc(?:e|es|ed|ing)|launch(?:es|ed|ing)?|(?:releas(?:e|es|ed|ing)|^preview(?:s|ed|ing)?(?=\s+(?!of\b)))|unveil(?:s|ed|ing)?|open[ -]sourcing|^(?:today[, ]+)?meet(?=\s)|now available|available now|now open[ -]source|generally available|rolling out|now in (?:public|research) preview|expands[^.!?]{0,40}model availability)\b/i;
-const AI_DESCRIPTION = /\b(?:(?:foundation|language|vision|visual|audio|speech|image|video|multimodal|reasoning|neural|embedding|generative|decision)(?:[ -][a-z-]+){0,2} models?|LLMs?|VLMs?|ASR|TTS|agents?|translat(?:e|ion)|(?:chat)?GPT(?:[-\w.]+)?|AI (?:[a-z-]+ ){0,3}(?:models?|assistants?|copilots?|agents?|platform|product|tool|systems|applications|capabilities|inference)|(?:enterprise|physics|physical|generative|agentic) AI|agentic|proactive assistants?|autonomous agents?|coding assistants?|advanced reasoning|(?:sketch|text|image|video|speech|audio)[ -]to[ -](?:image|text|video|speech|audio)|computer[ -]use|connectors and (?:[a-z-]+ )?workflows|frontier intelligence|multimodal (?:[a-z-]+ )?classifier)\b/i;
+const COMPUTATIONAL_DESCRIPTION = /\b(?:(?:foundation|language|vision|visual|audio|speech|image|video|multimodal|reasoning|neural|embedding|generative|decision)(?:[ -][a-z-]+){0,2} models?|LLMs?|VLMs?|ASR|TTS|translat(?:e|ion)|(?:chat)?GPT(?:[-\w.]+)?|AI (?:[a-z-]+ ){0,3}(?:models?|assistants?|copilots?|agents?|platform|product|tool|systems|applications|capabilities|inference)|(?:enterprise|physics|physical|generative|agentic) AI|agentic|proactive assistants?|autonomous agents?|coding assistants?|advanced reasoning|(?:sketch|text|image|video|speech|audio)[ -]to[ -](?:image|text|video|speech|audio)|computer[ -]use|connectors and (?:[a-z-]+ )?workflows|frontier intelligence|multimodal (?:[a-z-]+ )?classifier)\b/i;
+const AI_DESCRIPTION = new RegExp(`${COMPUTATIONAL_DESCRIPTION.source}|\\bagents?\\b`, "i");
 const NON_LAUNCH = /\b(?:evaluation|benchmarks?|case study|reports?(?!-generation)|survey|leaderboard|dataset|follow-up|conference|advisory (?:council|board)|institute|mission|blueprint|partner network|partnerships?|partners|funding|investigation|policy|recap|ICYMI|lessons|adoption|comparison|overview|roundup|research initiative|proof of concept|academy|fellowship|scholarship|class of|program|training infrastructure|model co-design)\b/i;
 const INSTRUCTIONAL = /\b(?:how|why|using|building|build|serve|deploy|optimize|experiment|guide|tutorial|fine[ -]tuning|evaluating|training|explained|explaining)\b/i;
 const UNRELATED_SUBJECT = /\b(?:quantum|qiskit|geforce|games?|gaming|regional office|hardware|CPU|computers|data centers?|GPU cluster|earnings|financial results|business model|pricing model|economic index)\b/i;
@@ -142,6 +143,13 @@ function announcedPurpose(clause: string): boolean {
   if (/\bfamily of models\b/i.test(artifactRole)
     || (/\b(?:family|reproduction|version|generation|collection) of\b/i.test(artifactRole) && hasAIPurpose(artifactRole))) return true;
   const role = artifactRole.split(/\s+of\s+/i)[0];
+  const purpose = (declaration || "").replace(/\s+for\s+(?:(?:our|your|the|their)\s+)?(?:teams?|users?|developers?|customers?|researchers?|people|companies|businesses|organizations?)\b(?!\s+to\b).*$/i, "");
+  // A qualified agent role needs computational purpose. The generic label
+  // alone cannot turn an informative human or material role into software.
+  const agentRole = /^agents?$/i.test(role.match(ARTIFACT_ROLE)?.[0] || "");
+  const computationalAgent = COMPUTATIONAL_DESCRIPTION.test(purpose)
+    || /\b(?:AI[ -]powered|coding|software|computer[ -]use|machine[ -]learning|ML[ -]agents?)\b/i.test(purpose);
+  if (declaration && agentRole && !uninformativeRole(role) && !computationalAgent) return false;
   if (modelNoun(role) || AI_DESCRIPTION.test(role.replace(/[“”"‘’]/g, ""))) return true;
   if (!declaration) return AI_DESCRIPTION.test(offeredSubject);
   const softwareRole = /\b(?:models?|tools?|services?|assistants?|copilots?|agents?|platforms?|applications?|APIs?|versions?|packages?|frameworks?|runtimes?|capabilit(?:y|ies)|librar(?:y|ies)|engines?)\b/i.test(role)
@@ -150,7 +158,6 @@ function announcedPurpose(clause: string): boolean {
   // A human audience's AI work is not the software's purpose. Direct uses
   // such as "for AI research" or "for developers to test language models"
   // remain purpose evidence, as do AI roles above.
-  const purpose = declaration.replace(/\s+for\s+(?:(?:our|your|the|their)\s+)?(?:teams?|users?|developers?|customers?|researchers?|people|companies|businesses|organizations?)\b(?!\s+to\b).*$/i, "");
   const describedPurpose = purpose.slice(role.length);
   return AI_DESCRIPTION.test(announcingObject)
     || /\bAI[ -]powered\b/i.test(purpose)
@@ -161,10 +168,10 @@ function announcedPurpose(clause: string): boolean {
 function affirmativeLaunch(clause: string, publicationYear?: number): RegExpMatchArray | null {
   for (const claim of clause.matchAll(new RegExp(LAUNCH.source, "gi"))) {
     const prefix = evidenceClauses(clause.slice(0, claim.index)).at(-1) || "";
-    // Keep appositive and preposed timing within this proposition. A date
-    // attached to a second past predicate describes that other event.
+    // Keep appositive and preposed release timing. A direct time complement
+    // of another past predicate describes that event, not this launch.
     const object = clause.slice((claim.index || 0) + claim[0].length);
-    const timing = `${prefix} ${object.split(/\b(?:released|launched|introduced|unveiled)\b/i)[0]}`;
+    const timing = `${prefix} ${object}`.replace(/\b(?:[a-z-]+(?:ed|ing)|built)\s+(?:in (?:19|20)\d{2}|last year|(?:\d+|many|several) years? ago)\b/gi, "");
     const datedYear = timing.match(/\bin ((?:19|20)\d{2})\b/i)?.[1];
     const historical = /(?:released|launched|introduced|unveiled)/i.test(claim[0])
       && (/\b(?:last year|(?:\d+|many|several) years? ago)\b/i.test(timing)
@@ -172,9 +179,14 @@ function affirmativeLaunch(clause: string, publicationYear?: number): RegExpMatc
     const coreRole = (declaredRole(clause) || object.split(/[:,]/)[0])
       .split(/\s+(?:for|of|about|from|using|with|that|which)\s+/i)[0];
     const roleIndex = coreRole.match(ARTIFACT_ROLE)?.index;
+    const roleQualifier = coreRole.slice(0, roleIndex);
     const existingArtifact = /\b(?:introduc\w*|announc\w*|meet)$/i.test(claim[0])
-      && /\b(?:existing|previously released|already released)\b/i.test(coreRole.slice(0, roleIndex));
-    if (!NON_AFFIRMATIVE.test(prefix) && !historical && !existingArtifact) return claim;
+      && /\b(?:existing|previously released|already released)\b/i.test(roleQualifier);
+    // Uncertainty about the announced object is still uncertainty about the
+    // launch. Later purposes or relative clauses have their own predicates.
+    const announcedObject = object.split(/[,;:]|\s+(?:for|to|with|that|which)\s+/i)[0];
+    if (!NON_AFFIRMATIVE.test(`${prefix} ${announcedObject} ${roleQualifier}`)
+      && !historical && !existingArtifact) return claim;
   }
   return null;
 }
