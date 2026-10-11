@@ -138,6 +138,59 @@ describe("model release page eligibility", () => {
     expect(isModelRelease(article(title, summary))).toBe(expected);
   });
 
+  test.each([
+    [false, "A lab declines to release Aurora 4, a language model", ""],
+    [false, "A lab refuses to release Aurora 4, a language model", ""],
+    [false, "A lab delays release of Aurora 4, a language model", ""],
+    [false, "A lab has yet to release Aurora 4, a language model", ""],
+    [false, "A lab cancels release of Aurora 4, a language model", ""],
+    [true, "After delaying billing changes, we release Aurora 4, a language model", ""],
+    [false, "Premium seats are coming to ChatGPT Business", "Premium seats are now available on ChatGPT Business."],
+    [false, "Storage credits come to ChatGPT Business", "Storage credits are now available on ChatGPT Business."],
+    [false, "Billing options come to ChatGPT Business", "Billing options are now available on ChatGPT Business."],
+    [true, "Aurora 4 comes to CloudBox", "Aurora 4 is now available as a language model on ChatGPT Business."],
+    [true, "Aurora 4 Omni: See, Hear, Talk, Write", "We release Aurora 4-Omni, a new multimodal model."],
+    [false, "Aurora 4 Omni: See, Hear, Talk, Write", "We release Aurora 4-X, a new multimodal model."],
+    [true, "Aurora 4 comes to CloudBox", "Now available: Aurora 4, a language model for reasoning."],
+    [true, "Aurora 4 comes to CloudBox", "Available now: Aurora 4, a language model for reasoning."],
+    [false, "Aurora 4 comes to CloudBox", "Now available: Vega 4, a language model for reasoning."],
+    [false, "Aurora 4 comes to CloudBox", "Not available now: Aurora 4, a language model for reasoning."],
+    [false, "ExpenseFlow comes to CloudBox", "Now available: ExpenseFlow, an expense tracker."],
+    [false, "ExpenseFlow comes to CloudBox", "Now available: ExpenseFlow, a manual AI tool."],
+    [true, "Aurora 3 predicts molecular structures", "Introducing a new AI model for molecular prediction."],
+    [false, "Aurora 3 predicts molecular structures", "Introducing Vega 3, a new AI model for molecular prediction."],
+    [false, "Hello Aurora-4o", "We are announcing Aurora-4 Omni, our new multimodal model."],
+    [false, "Hello Aurora-4o", "We are announcing Aurora-4 Xray, our new multimodal model."],
+    [false, "Hello Aurora-4o", "We are announcing Vega-4 Omni, our new multimodal model."],
+    [false, "Hello Aurora-4o", "We are announcing Aurora-4.5 Omni, our new multimodal model."],
+    [true, "Hello GPT-4o", "We are announcing GPT-4 Omni, our new multimodal model."],
+    [false, "Hello GPT-4o", "We are announcing GPT-4 Original, our new multimodal model."],
+    [false, "Hello GPT-4o", "We are announcing GPT-4.5 Omni, our new multimodal model."],
+    [false, "Hello GPT-4o", "We are announcing Aurora-4 Omni, our new multimodal model."],
+    [false, "Hello GPT-4o", "We plan to release GPT-4 Omni, our new multimodal model."],
+    [false, "Hello GPT-4o", "We are announcing GPT-4 Omni, a manual expense-tracking tool."],
+  ])("binds launch verbs and availability captions to their artifact: %s %s", (expected, title, summary) => {
+    expect(isModelRelease(article(title, summary))).toBe(expected);
+  });
+
+  test.each([
+    [true, "Introducing Aurora 4", "We're releasing Aurora 4, a language model. This partnership brings it to more developers."],
+    [true, "Introducing Aurora 4", "We're releasing Aurora 4, a language model. This collaboration makes it available worldwide."],
+    [false, "OpenAI and Greek Government launch ‘OpenAI for Greece’", "OpenAI and the Greek Government have launched “OpenAI for Greece” to bring ChatGPT Edu into secondary schools and support responsible AI learning. This partnership aims to boost AI literacy, fuel local start-ups, and drive national economic growth."],
+    [false, "A lab and government launch AI for Country", "A lab and government have launched AI for Country to bring ChatGPT Edu into schools. This partnership boosts AI literacy."],
+    [false, "Introducing a partnership for Aurora 4", "We're announcing a partnership. This partnership supports developers of language models."],
+    [false, "Introducing Aurora 4", "Aurora 4 is a partnership. This collaboration supports developers of language models."],
+    [true, "Introducing Aurora 4, a language model", "Aurora 4 is our most capable release yet."],
+    [true, "Introducing Aurora 4, a language model", "Aurora 4 is our most capable model yet."],
+    [true, "Introducing Aurora 4, a language model", "Aurora 4 is our most capable tool yet."],
+    [true, "Introducing Aurora 4, a language model", "Aurora 4 is our most powerful release to date."],
+    [false, "Introducing Aurora 4, a language model", "Aurora 4 is our most capable expense tracker yet."],
+    [false, "Introducing Aurora 4, a language model", "Aurora 4 is our most capable operating system yet."],
+    [false, "Introducing Aurora 4, a language model", "Aurora 4 is a manual expense-tracking tool."],
+  ])("retains explicit model launches with delivery context or qualitative descriptions: %s %s", (expected, title, summary) => {
+    expect(isModelRelease(article(title, summary))).toBe(expected);
+  });
+
   test("corroborates unnumbered reasoning and modality-conversion product launches", () => {
     expect(isModelRelease(article("Announcing Aurora Plus for sovereignty", "Aurora Plus delivers advanced reasoning with a minimal compute footprint."))).toBe(true);
     expect(isModelRelease(article("Palette launches SketchFlow", "SketchFlow is a new sketch-to-image tool."))).toBe(true);

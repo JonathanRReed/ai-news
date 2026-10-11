@@ -1214,5 +1214,50 @@
       "source_key": "openai-news"
     },
     "eligible": true
+  },
+  {
+    "article": {
+      "id": "c51fb8c5-921f-4960-a750-de2ee7a4126f",
+      "company": "OpenAI",
+      "title": "Premium seats are coming to ChatGPT Business",
+      "url": "https://openai.com/index/premium-seats-chatgpt-business",
+      "published_at": "2026-08-10T00:00:00+00:00",
+      "source_type": "rss_official",
+      "summary": "Premium seats are now available on ChatGPT Business, with 5x more usage, no five-hour usage limit, and flexible seat options for every teammate.",
+      "content": "Premium seats are now available on ChatGPT Business, with 5x more usage, no five-hour usage limit, and flexible seat options for every teammate.",
+      "source_url": "https://openai.com/news/rss.xml",
+      "source_key": "openai-news"
+    },
+    "eligible": false
+  },
+  {
+    "article": {
+      "id": "provider-9da15b80c4428f2623",
+      "company": "Alibaba Qwen",
+      "title": "Qwen2.5 Omni: See, Hear, Talk, Write, Do It All!",
+      "url": "https://qwenlm.github.io/blog/qwen2.5-omni/",
+      "published_at": "2025-03-26T16:00:45+00:00",
+      "source_type": "rss_official",
+      "summary": "QWEN CHAT HUGGING FACE MODELSCOPE DASHSCOPE GITHUB PAPER DEMO DISCORD We release Qwen2.5-Omni, the new flagship end-to-end multimodal model in the Qwen series. Designed for comprehensive multimodal perception, it seamlessly processes diverse inputs including text, images, audio, and video, while delivering real-time streaming responses through both text generation and natural speech synthesis. To try the latest model, feel free to visit Qwen Chat and choose Qwen2.5-Omni-7B. The model is now open",
+      "content": "QWEN CHAT HUGGING FACE MODELSCOPE DASHSCOPE GITHUB PAPER DEMO DISCORD We release Qwen2.5-Omni, the new flagship end-to-end multimodal model in the Qwen series. Designed for comprehensive multimodal perception, it seamlessly processes diverse inputs including text, images, audio, and video, while delivering real-time streaming responses through both text generation and natural speech synthesis. To try the latest model, feel free to visit Qwen Chat and choose Qwen2.5-Omni-7B. The model is now openly available on Hugging Face, ModelScope, DashScope,and GitHub, with technical documentation available in our Paper.",
+      "source_url": "https://qwenlm.github.io/blog/index.xml",
+      "source_key": "qwen-blog"
+    },
+    "eligible": true
+  },
+  {
+    "article": {
+      "id": "provider-ff9c1f8663075e8f66",
+      "company": "Alibaba Qwen",
+      "title": "Hello Qwen2",
+      "url": "https://qwenlm.github.io/blog/qwen2/",
+      "published_at": "2024-06-06T16:00:00+00:00",
+      "source_type": "rss_official",
+      "summary": "GITHUB HUGGING FACE MODELSCOPE DEMO DISCORD Introduction After months of efforts, we are pleased to announce the evolution from Qwen1.5 to Qwen2. This time, we bring to you: Pretrained and instruction-tuned models of 5 sizes, including Qwen2-0.5B, Qwen2-1.5B, Qwen2-7B, Qwen2-57B-A14B, and Qwen2-72B; Having been trained on data in 27 additional languages besides English and Chinese; State-of-the-art performance in a large number of benchmark evaluations; Significantly improved performance in codi",
+      "content": "GITHUB HUGGING FACE MODELSCOPE DEMO DISCORD Introduction After months of efforts, we are pleased to announce the evolution from Qwen1.5 to Qwen2. This time, we bring to you: Pretrained and instruction-tuned models of 5 sizes, including Qwen2-0.5B, Qwen2-1.5B, Qwen2-7B, Qwen2-57B-A14B, and Qwen2-72B; Having been trained on data in 27 additional languages besides English and Chinese; State-of-the-art performance in a large number of benchmark evaluations; Significantly improved performance in coding and mathematics; Extended context length support up to 128K tokens with Qwen2-7B-Instruct and Qwen2-72B-Instruct.",
+      "source_url": "https://qwenlm.github.io/blog/index.xml",
+      "source_key": "qwen-blog"
+    },
+    "eligible": true
   }
 ]
