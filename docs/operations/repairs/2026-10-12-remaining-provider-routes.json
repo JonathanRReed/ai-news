@@ -1,0 +1,102 @@
+{
+  "restored_at": "2026-10-12",
+  "reason": "Restore seven published provider routes removed by historical feed cache rotation: five proven canonical aliases and two exact archived records.",
+  "aliases": [
+    {
+      "legacy_id": "provider-0045195481fb0a3cc1",
+      "destination_path": "/article/aab199ee-dc86-4d03-83ef-d0f7054dbbc4",
+      "source_commit": "93e3659bae9dfabe344a103b9c82f1865f97c121",
+      "original_company": "Google DeepMind",
+      "original_url": "https://deepmind.google/blog/accelerating-discovery-with-the-ai-for-math-initiative/",
+      "expected_id": "ca84f4f1-2abe-1df3-be28-50b558a809db",
+      "expected_legacy_id": "aab199ee-dc86-4d03-83ef-d0f7054dbbc4",
+      "expected_canonical_url": "https://deepmind.google/blog/accelerating-discovery-with-the-ai-for-math-initiative/",
+      "expected_title": "Accelerating discovery with the AI for Math Initiative",
+      "expected_published_at": "2025-10-29T14:31:13.000Z"
+    },
+    {
+      "legacy_id": "provider-c0db56626898f83c32",
+      "destination_path": "/article/d5ad6e9f-f271-4307-b352-cc96560e56f6",
+      "source_commit": "0f253b2586c05bc100c9374e0486336526de6794",
+      "original_company": "OpenAI",
+      "original_url": "https://openai.com/index/introducing-life-sci-bench",
+      "expected_id": "c1e84d5d-6941-52ae-b610-8e6481a8861d",
+      "expected_legacy_id": "d5ad6e9f-f271-4307-b352-cc96560e56f6",
+      "expected_canonical_url": "https://openai.com/index/introducing-life-sci-bench",
+      "expected_title": "Introducing LifeSciBench",
+      "expected_published_at": "2026-06-17T00:00:00.000Z"
+    },
+    {
+      "legacy_id": "provider-fd7de8c19456d6d700",
+      "destination_path": "/article/91444657-0c50-480c-9af2-8d5be06c10b3",
+      "source_commit": "7aaff46b892d9091786f18ae4e99441990758cf4",
+      "original_company": "Hugging Face",
+      "original_url": "https://huggingface.co/blog/gemma4",
+      "expected_id": "e0cf374c-5b3f-ac46-9132-7c019fa722c7",
+      "expected_legacy_id": "91444657-0c50-480c-9af2-8d5be06c10b3",
+      "expected_canonical_url": "https://huggingface.co/blog/gemma4",
+      "expected_title": "Welcome Gemma 4: Frontier multimodal intelligence on device",
+      "expected_published_at": "2026-04-02T00:00:00.000Z"
+    },
+    {
+      "legacy_id": "provider-b5f756c4b535d7239b",
+      "destination_path": "/article/7a5eeee4-461d-4fb3-b675-586c3098a373",
+      "source_commit": "fe2909d0db6203fac03b9a408c0284e92f344071",
+      "original_company": "OpenAI",
+      "original_url": "https://openai.com/index/advancing-youth-safety-and-opportunity-through-global-leadership",
+      "expected_id": "68b49188-9a52-e81b-e7c4-2f5af80bf56c",
+      "expected_legacy_id": "7a5eeee4-461d-4fb3-b675-586c3098a373",
+      "expected_canonical_url": "https://openai.com/index/advancing-youth-safety-and-opportunity-through-global-leadership",
+      "expected_title": "Advancing youth safety and opportunity through global leadership",
+      "expected_published_at": "2026-06-02T07:00:00.000Z"
+    },
+    {
+      "legacy_id": "provider-5a42e1a49c5662b1ee",
+      "destination_path": "/article/2b2d4bfc-a9e6-4586-9de4-cd28d744e9dc",
+      "source_commit": "513d56a6ac72000821f49e94a21defe58c7945ef",
+      "original_company": "OpenAI",
+      "original_url": "https://openai.com/academy/codex-for-work/how-data-science-teams-use-codex",
+      "expected_id": "f07373ff-c28b-f252-8ac7-02717aa8ea81",
+      "expected_legacy_id": "2b2d4bfc-a9e6-4586-9de4-cd28d744e9dc",
+      "expected_canonical_url": "https://openai.com/academy/codex-for-work/how-data-science-teams-use-codex",
+      "expected_title": "How data science teams use ChatGPT Work",
+      "expected_published_at": "2026-07-14T00:00:00.000Z"
+    }
+  ],
+  "records": [
+    {
+      "id": "provider-861439005f13d6a3ba",
+      "source_commit": "474a160367e87bfff8a2418c34c1dab5eab7fd47",
+      "record_sha256": "c6019f3d677a4f8a635b29ec3c4517be3b60eb2621c2fb51357c108dd2d1d672"
+    },
+    {
+      "id": "provider-6cde8ecec38f6e8f2a",
+      "source_commit": "695c8804e48722f2c4fa3fc463e108a0fa8cedf5",
+      "record_sha256": "c917f9520b01a35c38a42798eca869f78f3f4f63eb18d0a9ade41ef6722abed0"
+    }
+  ],
+  "digest_scope": "SHA-256 of the restored JSON metadata-and-summary projection, with original property order. Historical full content is intentionally omitted, matching the existing archive format; this is not a digest of the entire historical raw record.",
+  "database_execution": {
+    "project_ref": "arejerdupcduqhgdoyht",
+    "executed_at_utc": "2026-10-12T06:14:22.524902Z",
+    "executed_sql_sha256": "8adfd27aff707112bb2fc10799bb9c2fe6e169ac836f827ef9336e11cd370c47",
+    "guarded_sql_body_sha256": "3032038786d46669d210483903c8185186cf915123d609efee97d1f683ca80a0",
+    "rows_before": 3158,
+    "rows_after": 3163,
+    "preserved_row_count": 3158,
+    "preserved_rows_md5_before": "fd781aac0a798184026d736d0ebaa097",
+    "preserved_rows_md5_after": "fd781aac0a798184026d736d0ebaa097",
+    "execution_evidence": "Parent production execution and read-only verification receipt."
+  },
+  "alias_export_verification": {
+    "view": "public.intelligence_route_aliases_v1",
+    "checked_at_utc": "2026-10-12T06:16:52.162188Z",
+    "row_count": 3163,
+    "ordered_projection_md5": "a12c10ca190dc130a650bfb10b9e23f2",
+    "fields": [
+      "legacy_id",
+      "destination_path"
+    ],
+    "artifact_matches": true
+  }
+}
