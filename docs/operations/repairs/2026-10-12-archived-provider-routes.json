@@ -1,0 +1,17 @@
+{
+  "restored_at": "2026-10-12",
+  "reason": "Restore two GSC-confirmed 404 provider routes removed by historical feed cache rotation, using original Git records and the existing archived-record presentation.",
+  "records": [
+    {
+      "id": "provider-6b7f4e5d9665ad79e0",
+      "source_commit": "7aaff46b892d9091786f18ae4e99441990758cf4",
+      "record_sha256": "788122a1cbd46a9ea5b01cd39f8ce6842a27672b896009aa7a9d28d3feaecfe8"
+    },
+    {
+      "id": "provider-55466a1fcb7750b91c",
+      "source_commit": "4dff6d46b6f7b39ea24c80ffad09afbe34805380",
+      "record_sha256": "7c15ea0bb71c4a167d207f16d25e8598c2e8f3234aaf0b9078b9d05d08d00a69"
+    }
+  ],
+  "digest_scope": "SHA-256 of the restored JSON metadata-and-summary projection, with original property order. Historical full content is intentionally omitted, matching the existing archive format; this is not a digest of the entire historical raw record."
+}
