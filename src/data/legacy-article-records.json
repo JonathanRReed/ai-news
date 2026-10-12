@@ -1180,6 +1180,16 @@
     "source_url": "https://blogs.nvidia.com/feed/"
   },
   {
+    "id": "provider-55466a1fcb7750b91c",
+    "company": "Amazon AI",
+    "title": "Customize Amazon Quick embedded chat into your application",
+    "url": "https://aws.amazon.com/blogs/machine-learning/customize-amazon-quick-embedded-chat-into-your-application/",
+    "published_at": "2026-08-18T17:13:13.000Z",
+    "source_type": "rss_official",
+    "summary": "Amazon Quick embedded chat brings a conversational AI interface into your web application. This post walks through customizing the embedded chat with container and SDK styling, branding removal, and a custom agent persona so it matches your brand's look, feel, and voice.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
     "id": "provider-577c841925da1a7ef3",
     "company": "Google DeepMind",
     "title": "Advanced version of Gemini with Deep Think officially achieves gold-medal standard at the International Mathematical Olympiad",
@@ -1448,6 +1458,16 @@
     "source_type": "rss_official",
     "summary": "Learn how Endava uses Codex to build an agentic organization, accelerating software delivery and reducing requirements analysis from weeks to hours.",
     "source_url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "provider-6b7f4e5d9665ad79e0",
+    "company": "Amazon AI",
+    "title": "How Cohere Health digitizes clinical policies using Amazon Bedrock AgentCore",
+    "url": "https://aws.amazon.com/blogs/machine-learning/how-cohere-health-digitizes-clinical-policies-using-amazon-bedrock-agentcore/",
+    "published_at": "2026-08-07T16:26:58.000Z",
+    "source_type": "rss_official",
+    "summary": "In this post, you learn how Cohere Health built a multi-tenant agentic architecture on AgentCore using AgentCore Runtime’s secure MicroVM isolation, unified tool access through AgentCore Gateway, AgentCore Memory, and the Agent Skills open standard to rapidly scale policy digitization capabilities, while preserving transparency, version control, and human oversight.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
   },
   {
     "id": "provider-6b8042abbe29be589e",
