@@ -1,5 +1,77 @@
 [
   {
+    "id": "b20c1d9b-dcab-5542-81aa-a02610d05c33",
+    "company": "Hermes Agent",
+    "title": "rc.14-v0.21.7",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/rc.14-v0.21.7",
+    "published_at": "2026-10-12T00:32:49+00:00",
+    "source_type": "rss_official",
+    "summary": "{\"attempt\":14,\"autopublish\":false,\"claimEpoch\":1791765169,\"commit\":\"8…",
+    "content": "{\"attempt\":14,\"autopublish\":false,\"claimEpoch\":1791765169,\"commit\":\"8…",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
+    "id": "74a7c3b8-865d-5041-aef5-75ebb74f4f50",
+    "company": "Hermes Agent",
+    "title": "abandoned-rc.13-v0.21.7",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/abandoned-rc.13-v0.21.7",
+    "published_at": "2026-10-12T00:32:28+00:00",
+    "source_type": "rss_official",
+    "summary": "{\"attempt\":13,\"attemptRef\":\"rc.13-v0.21.7\",\"schema\":1,\"version\":\"0.21…",
+    "content": "{\"attempt\":13,\"attemptRef\":\"rc.13-v0.21.7\",\"schema\":1,\"version\":\"0.21…",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
+    "id": "44ce7254-487e-557e-89cf-8c28b3bb8a77",
+    "company": "OpenClaw",
+    "title": "release-publish/99d262df8760-1791761551: fix: honor Windows permissions for SQLite recovery snapshots (#169397)",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/release-publish%2F99d262df8760-1791761551",
+    "published_at": "2026-10-11T23:31:56+00:00",
+    "source_type": "rss_official",
+    "summary": "fix(update): recover SQLite rollback journals on Windows docs: keep immutable recovery platform scope unchanged",
+    "content": "fix(update): recover SQLite rollback journals on Windows docs: keep immutable recovery platform scope unchanged",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
+  },
+  {
+    "id": "999ed95e-9c3d-5f5f-8141-dd81b7f31604",
+    "company": "OpenClaw",
+    "title": "release-publish/2040d1b71db9-1791766004: perf(sessions): reuse config-owned roster and projection facts (#169263)",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/release-publish%2F2040d1b71db9-1791766004",
+    "published_at": "2026-10-11T22:21:52+00:00",
+    "source_type": "rss_official",
+    "summary": "perf(sessions): reuse config-owned roster and projection facts Retain roster facts for the published config revision and model facts across row-only publications. Let selection and facts publications retire list caches while preserving materialization-scoped weak presentations. Keep independent mutable inputs batch-scoped and invalidate same-object config republication. Exercise configuration refresh through the actual publisher. fix(sessions): keep roster publication reads import-light...",
+    "content": "perf(sessions): reuse config-owned roster and projection facts Retain roster facts for the published config revision and model facts across row-only publications. Let selection and facts publications retire list caches while preserving materialization-scoped weak presentations. Keep independent mutable inputs batch-scoped and invalidate same-object config republication. Exercise configuration refresh through the actual publisher. fix(sessions): keep roster publication reads import-light Publish config identity and revision before observers through an import-free leaf so roster reads do not introduce a full-graph import cycle. Include the leaf in the extracted maintainer runtime and retire its eligibility on reset. Prove model metadata reuse through updated session-list output and catalog lookup counts instead of asserting empty cache-map identity. test(gateway): type mutable catalog regression entries test(gateway): keep catalog regression on API capacity",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
+  },
+  {
+    "id": "985c5f71-a341-5f8b-8eb9-a0a2eb894e3a",
+    "company": "Hermes Agent",
+    "title": "rc.13-v0.21.7",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/rc.13-v0.21.7",
+    "published_at": "2026-10-11T20:32:53+00:00",
+    "source_type": "rss_official",
+    "summary": "{\"attempt\":13,\"autopublish\":false,\"claimEpoch\":1791750773,\"commit\":\"1…",
+    "content": "{\"attempt\":13,\"autopublish\":false,\"claimEpoch\":1791750773,\"commit\":\"1…",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
+    "id": "ff488b36-d60e-5d70-b4a3-d5a917940fab",
+    "company": "Hermes Agent",
+    "title": "abandoned-rc.12-v0.21.7",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/abandoned-rc.12-v0.21.7",
+    "published_at": "2026-10-11T20:32:21+00:00",
+    "source_type": "rss_official",
+    "summary": "{\"attempt\":12,\"attemptRef\":\"rc.12-v0.21.7\",\"schema\":1,\"version\":\"0.21…",
+    "content": "{\"attempt\":12,\"attemptRef\":\"rc.12-v0.21.7\",\"schema\":1,\"version\":\"0.21…",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
     "id": "45142cb8-18fd-5def-ba75-1b2f5804115d",
     "company": "Hermes Agent",
     "title": "rc.12-v0.21.7",
