@@ -1500,6 +1500,16 @@
     "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
   },
   {
+    "id": "provider-6cde8ecec38f6e8f2a",
+    "company": "Amazon AI",
+    "title": "How Axonius built secure multi-tenant AI agents on Bedrock AgentCore",
+    "url": "https://aws.amazon.com/blogs/machine-learning/how-axonius-built-secure-multi-tenant-ai-agents-on-bedrock-agentcore/",
+    "published_at": "2026-08-18T16:27:07.000Z",
+    "source_type": "rss_official",
+    "summary": "Learn how Axonius, a cybersecurity SaaS provider, used Amazon Bedrock AgentCore to deploy fully isolated, multi-tenant AI agents across hundreds of customer environments, without building custom compute isolation, authentication, or observability infrastructure from scratch.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/"
+  },
+  {
     "id": "provider-6e1426e3d96c2f3978",
     "company": "Hugging Face",
     "title": "LeRobot v0.5.0: Scaling Every Dimension",
@@ -1758,6 +1768,16 @@
     "source_type": "rss_official",
     "summary": "",
     "source_url": "https://huggingface.co/blog/feed.xml"
+  },
+  {
+    "id": "provider-861439005f13d6a3ba",
+    "company": "Amazon AI",
+    "title": "Isabelle/HOL: The proof assistant behind the Nitro Isolation Engine",
+    "url": "https://www.amazon.science/blog/isabelle-hol-the-proof-assistant-behind-the-nitro-isolation-engine",
+    "published_at": "2026-04-17T13:00:00.000Z",
+    "source_type": "rss_official",
+    "summary": "Isabelle/HOL's balance of expressiveness, automation, and scalability enabled the world's first formally verified cloud hypervisor.",
+    "source_url": "https://www.amazon.science/index.rss"
   },
   {
     "id": "provider-86c43061612c7b50f5",
