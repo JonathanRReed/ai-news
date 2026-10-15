@@ -33,7 +33,7 @@ async function fetchSupplementalArticles(): Promise<Article[]> {
       const response = await fetch(SUPPLEMENTAL_ARTICLES_PATH);
       if (!response.ok) return [];
       const data: unknown = await response.json();
-      return Array.isArray(data) ? admittedArticles(data.filter(isArticle)) : [];
+      return Array.isArray(data) ? admittedArticles(data.filter(isArticle), { includeInternalBuilds: true }) : [];
     } catch {
       return [];
     }

@@ -2,11 +2,8 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { displayedSourceHealth } from "../lib/source-health.js";
 import { cn } from "../lib/utils.js";
-import {
-  SUPABASE_REST_HEADERS,
-  SUPABASE_URL,
-  supabaseConfigured,
-} from "../lib/supabaseClient.js";
+import { supabaseConfigured } from "../lib/supabaseClient.js";
+import { fetchSourceHealth } from "../lib/fetchSourceHealth.js";
 
 type SourceHealth = {
   source_key: string;
@@ -24,6 +21,8 @@ type FallbackSource = {
   name: string;
   active: boolean;
   verifiedAt: string;
+  officialUrl?: string;
+  description?: string;
 };
 
 const HEALTH_STATES = new Set<SourceHealth["health"]>(["healthy", "stale", "failing", "pending", "inactive"]);
@@ -105,13 +104,8 @@ export default function SourceHealthReceipt({
       order: "name.asc",
       limit: String(Math.min(stableKeys.length, 100)),
     });
-    fetch(`${SUPABASE_URL}/rest/v1/intelligence_source_health_v1?${params}`, {
-      headers: SUPABASE_REST_HEADERS,
-      signal: controller.signal,
-    })
-      .then(async (response) => {
-        if (!response.ok) throw new Error(`source health responded ${response.status}`);
-        const payload: unknown = await response.json();
+    fetchSourceHealth(params, controller.signal)
+      .then((payload) => {
         if (!Array.isArray(payload) || !payload.every(isSourceHealth)) throw new Error("source health returned an invalid payload");
         if (payload.length === 0) {
           setState("fallback");
@@ -126,44 +120,36 @@ export default function SourceHealthReceipt({
     return () => controller.abort();
   }, [stableKeys]);
 
-  if (state !== "live") {
-    return (
-      <div className="grid gap-px bg-white/15 md:grid-cols-2" role="status">
-        {fallbacks.map((source) => (
-          <article key={source.sourceKey} className="bg-bg-0 p-4">
+  const healthByKey = new Map(rows.map((row) => [row.source_key, row]));
+  return (
+    <div className="source-card-grid" aria-live="polite">
+      {fallbacks.map((source) => {
+        const health = state === "live" ? healthByKey.get(source.sourceKey) : undefined;
+        return (
+          <article key={source.sourceKey} className="p-5">
             <div className="flex flex-wrap items-center justify-between gap-2">
-              <strong className="text-sm text-white">{source.name}</strong>
-              <span className="micro-label border border-white/20 px-2 py-1 text-text-2">
-                {state === "loading" ? "Checking" : source.active ? "Tracked" : "Not active"}
+              <h3 className="font-bold text-white">{source.name}</h3>
+              <span className={cn("micro-label border px-2 py-1", health ? statusClass(health.health) : "border-white/20 text-text-2")}>
+                {health ? statusLabel(health.health) : state === "loading" ? "Checking" : source.active ? "Tracked" : "Not active"}
               </span>
             </div>
-            <p className="micro-label mt-3 text-text-2">
-              Source added {source.verifiedAt}. Current fetch status is {state === "loading" ? "loading" : "unavailable"}.
-            </p>
+            {source.description && <p className="micro-label mt-3 text-text-2">{source.description}</p>}
+            {health ? (
+              <dl className="mt-4 grid gap-3 text-xs sm:grid-cols-2">
+                <div><dt className="micro-label text-muted">Last checked</dt><dd className="mt-1 font-mono text-text-2">{dateTime(health.last_checked_at)}</dd></div>
+                <div><dt className="micro-label text-muted">Last success</dt><dd className="mt-1 font-mono text-text-2">{dateTime(health.last_success_at)}</dd></div>
+                <div><dt className="micro-label text-muted">Latest item</dt><dd className="mt-1 font-mono text-text-2">{dateTime(health.last_item_at)}</dd></div>
+                <div><dt className="micro-label text-muted">Consecutive failures</dt><dd className="mt-1 font-mono tabular-nums text-text-2">{health.consecutive_failures}</dd></div>
+              </dl>
+            ) : (
+              <p className="micro-label mt-3 text-text-2">
+                Source added {source.verifiedAt}. Current fetch status is {state === "loading" ? "loading" : "unavailable"}.
+              </p>
+            )}
+            {source.officialUrl && <a href={source.officialUrl} target="_blank" rel="noopener noreferrer" className="micro-label mt-5 inline-block text-white underline decoration-brand decoration-2 underline-offset-4 hover:text-brand-hover focus-industrial">Open official source</a>}
           </article>
-        ))}
-      </div>
-    );
-  }
-
-  return (
-    <div className="grid gap-px bg-white/15 md:grid-cols-2" aria-live="polite">
-      {rows.map((source) => (
-        <article key={source.source_key} className="bg-bg-0 p-4">
-          <div className="flex flex-wrap items-center justify-between gap-2">
-            <strong className="text-sm text-white">{source.name}</strong>
-            <span className={cn("micro-label border px-2 py-1", statusClass(source.health))}>
-              {statusLabel(source.health)}
-            </span>
-          </div>
-          <dl className="mt-4 grid gap-3 text-xs sm:grid-cols-2">
-            <div><dt className="micro-label text-muted">Last checked</dt><dd className="mt-1 font-mono text-text-2">{dateTime(source.last_checked_at)}</dd></div>
-            <div><dt className="micro-label text-muted">Last success</dt><dd className="mt-1 font-mono text-text-2">{dateTime(source.last_success_at)}</dd></div>
-            <div><dt className="micro-label text-muted">Latest item</dt><dd className="mt-1 font-mono text-text-2">{dateTime(source.last_item_at)}</dd></div>
-            <div><dt className="micro-label text-muted">Consecutive failures</dt><dd className="mt-1 font-mono tabular-nums text-text-2">{source.consecutive_failures}</dd></div>
-          </dl>
-        </article>
-      ))}
+        );
+      })}
     </div>
   );
 }

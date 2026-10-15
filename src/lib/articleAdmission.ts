@@ -119,8 +119,18 @@ function dedupKey(article: Article): string | null {
   return `${article.source_key}:${articleSourceIdentity(article.url)}`;
 }
 
-export function admittedArticles(articles: Article[]): Article[] {
-  const routes = admittedRouteArticles(articles);
+export function isInternalReleaseBuild(article: Article): boolean {
+  const url = exactHttpsUrl(article.url);
+  if (url?.hostname !== "github.com") return false;
+  try {
+    return /\/releases\/tag\/release-publish\//i.test(decodeURIComponent(url.pathname));
+  } catch {
+    return false;
+  }
+}
+
+export function admittedArticles(articles: Article[], options: { includeInternalBuilds?: boolean } = {}): Article[] {
+  const routes = admittedRouteArticles(articles).filter(article => options.includeInternalBuilds || !isInternalReleaseBuild(article));
   const preferred = new Map<string, Article>();
   for (const article of routes) {
     const source = dedupKey(article);

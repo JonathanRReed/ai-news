@@ -1,27 +1,7 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import StoryRows from "../../components/StoryRows.astro";
-import EntityWatchButton from "../../components/EntityWatchButton.tsx";
-import SourceHealthReceipt from "../../components/SourceHealthReceipt.tsx";
-import { allArticles, SITE_URL } from "../../lib/feeds.js";
-import { cn } from "../../lib/utils.js";
-import {
-  entityForArticle,
-  entitySources,
-  entityTypeLabel,
-  intelligenceEntities,
-  isEntityCovered,
-} from "../../lib/intelligenceCatalog.js";
-import type { IntelligenceEntity, IntelligenceSource } from "../../lib/intelligenceCatalog.js";
-import { sourceRoleLabel, transportTypeLabel } from "../../lib/itemTypes.js";
-import type { Article } from "../../types/article.js";
-
-interface Props {
-  entity: IntelligenceEntity;
-  sources: IntelligenceSource[];
-  articles: Article[];
-}
-
+import EntityNewsPage from "../../components/EntityNewsPage.astro";
+import { allArticles } from "../../lib/feeds.js";
+import { entityForArticle, entitySources, intelligenceEntities } from "../../lib/intelligenceCatalog.js";
 export function getStaticPaths() {
   const articles = allArticles();
   return intelligenceEntities.map((entity) => ({
@@ -34,76 +14,5 @@ export function getStaticPaths() {
   }));
 }
 
-const { entity, sources, articles } = Astro.props as Props;
-const covered = isEntityCovered(entity.slug);
-const activeSources = sources.filter((source) => source.active);
-const publicType = entity.entityType === "harness" ? "Agent tool" : entityTypeLabel(entity.entityType);
-const description = `Tracked ${entity.name} news, releases, research, source status, RSS, JSON, and a free local watchlist.`;
-const rows = articles.map((article) => ({ article }));
-
 ---
-
-<Layout title={`${entity.name} News and Releases | AI News Hub`} description={description} canonical={`${SITE_URL}/entities/${entity.slug}/`} currentPage="none">
-  <main id="main-content" class="industrial-shell flex-1">
-    <section class="industrial-container py-10 md:py-14">
-      <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-end">
-        <div class="reveal-stagger">
-          <h1 class="macro-heading">{entity.name}</h1>
-          <p class="mt-6 max-w-3xl text-lg leading-relaxed text-text-2">
-            {covered ? `${activeSources.length} official source${activeSources.length === 1 ? "" : "s"} tracked for ${publicType.toLowerCase()} news and releases.` : "No reliable official feed is active yet. You can still open the official site or add this page to your watchlist."}
-          </p>
-          <div class="mt-6 flex flex-wrap gap-3">
-            <EntityWatchButton client:load slug={entity.slug} name={entity.name} />
-            <a href={`/feed/entity/${entity.slug}.xml`} class="ghost-button">RSS</a>
-            <a href={`/feed/entity/${entity.slug}.json`} class="ghost-button">JSON</a>
-            <a href={entity.homepageUrl} target="_blank" rel="noopener noreferrer" class="ghost-button">Official site</a>
-          </div>
-        </div>
-        <aside class="industrial-border p-5">
-          <p class="micro-label mb-4 text-text-2">Available here</p>
-          <dl class="grid grid-cols-2 gap-px bg-white/15">
-            <div class="bg-bg-0 p-4"><dt class="micro-label text-muted">Status</dt><dd class="mt-2 font-mono text-sm text-white">{covered ? "Active" : "Watchlist"}</dd></div>
-            <div class="bg-bg-0 p-4"><dt class="micro-label text-muted">Updates</dt><dd class="mt-2 font-mono text-sm text-white">{articles.length} items</dd></div>
-          </dl>
-        </aside>
-      </div>
-    </section>
-
-    <section class="industrial-container pb-12">
-      <div class="mb-4 flex items-baseline justify-between gap-4 border-b border-white/15 pb-3">
-        <h2 class="text-2xl font-bold text-white">Official sources</h2>
-        <span class="micro-label text-text-2">Status and last checks</span>
-      </div>
-      <SourceHealthReceipt
-        client:load
-        sourceKeys={sources.map((source) => source.sourceKey)}
-        fallbacks={sources.map((source) => ({
-          sourceKey: source.sourceKey,
-          name: source.name,
-          active: source.active,
-          verifiedAt: source.verifiedAt,
-        }))}
-      />
-      <div class="industrial-grid mt-4">
-        {sources.map((source) => (
-          <article class="col-span-12 p-5 md:col-span-6 lg:col-span-4">
-            <div class="flex items-start justify-between gap-4">
-              <h3 class="font-bold text-white">{source.name}</h3>
-              <span class={cn("micro-label", source.active ? "text-brand-hover" : "text-text-2")}>{source.active ? "Active" : "Inactive"}</span>
-            </div>
-            <p class="micro-label mt-3 text-text-2">{sourceRoleLabel(source.sourceRole)} · {transportTypeLabel(source.transportType)} · added {source.verifiedAt}</p>
-            <a href={source.officialUrl} target="_blank" rel="noopener noreferrer" class="micro-label mt-5 inline-block text-white underline decoration-brand decoration-2 underline-offset-4 hover:text-brand-hover focus-industrial">Open official source</a>
-          </article>
-        ))}
-      </div>
-    </section>
-
-    <section class="industrial-container pb-16 md:pb-24">
-      <div class="mb-4 flex items-baseline justify-between gap-4 border-b border-white/15 pb-3">
-        <h2 class="text-2xl font-bold text-white">Latest updates</h2>
-        <span class="micro-label text-text-2">Newest first</span>
-      </div>
-      <StoryRows rows={rows.slice(0, 80)} emptyMessage="No updates are available from these sources yet. Check the source status above or open the official site." />
-    </section>
-  </main>
-</Layout>
+<EntityNewsPage {...Astro.props} />

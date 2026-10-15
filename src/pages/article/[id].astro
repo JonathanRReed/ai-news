@@ -37,8 +37,8 @@ export function getStaticPaths() {
   );
   for (const article of routeArticles) {
     if (paths.has(article.id)) continue;
-    const canonical = articleBySource.get(articleSourceIdentity(article.url));
-    if (canonical) paths.set(article.id, { params: { id: article.id }, props: { article: canonical } });
+    const canonical = articleBySource.get(articleSourceIdentity(article.url)) ?? article;
+    paths.set(article.id, { params: { id: article.id }, props: { article: canonical } });
   }
   for (const alias of routeAliases as Array<{ legacy_id: string; destination_path: string }>) {
     if (!isSafeArticleRouteId(alias.legacy_id)) continue;

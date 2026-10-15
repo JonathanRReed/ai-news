@@ -254,3 +254,20 @@ test("saved cards retain missing-source records without linking to removed pages
     await expect(card.locator(`a[href="/article/${id}/"]`)).toHaveCount(1);
   }
 });
+
+test('provider pages keep sources compact and expose older updates', async ({ page, request }) => {
+  await page.goto('/entities/openai/');
+  await expect(page.getByRole('heading', { name: 'Latest updates', exact: true })).toBeVisible();
+  const sources = page.locator('details').filter({ hasText: 'Official sources and status' });
+  await expect(sources).not.toHaveAttribute('open', '');
+  await sources.locator('summary').click();
+  await expect(sources.locator('article')).toHaveCount(1);
+  await expect(sources.getByRole('link', { name: 'Open official source' })).toBeVisible();
+  await page.getByRole('link', { name: 'Older updates', exact: true }).click();
+  await expect(page).toHaveURL(/\/entities\/openai\/page\/2\/$/);
+  await expect(page.getByRole('navigation', { name: 'Update pages' })).toContainText('Page 2');
+  await page.getByRole('link', { name: 'Newer updates', exact: true }).click();
+  await expect(page).toHaveURL(/\/entities\/openai\/$/);
+  const oldBuild = await request.get('/article/8694b1d1-d6f8-5fbc-974e-cebec82535df/');
+  expect(oldBuild.status()).toBe(200);
+});
