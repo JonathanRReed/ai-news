@@ -63,6 +63,27 @@ function canonicalLink(html) {
   return canonical ? attribute(canonical, 'href') : '';
 }
 
+function structuredPublicationDate(source, html, canonical) {
+  for (const match of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script\s*>/gi)) {
+    if (attribute(match[1], 'type').toLowerCase() !== 'application/ld+json') continue;
+    let data;
+    try { data = JSON.parse(match[2]); } catch { continue; }
+    const queue = Array.isArray(data) ? [...data] : [data];
+    for (let i = 0; i < queue.length && i < 1000; i++) {
+      const item = queue[i];
+      if (!item || typeof item !== 'object') continue;
+      if (Array.isArray(item['@graph'])) queue.push(...item['@graph']);
+      const types = Array.isArray(item['@type']) ? item['@type'] : [item['@type']];
+      if (!types.some(type => ['Article', 'NewsArticle', 'BlogPosting', 'TechArticle'].includes(type))) continue;
+      const identity = item.mainEntityOfPage?.['@id'] ?? item.mainEntityOfPage ?? item.url;
+      if (identity && (typeof identity !== 'string' || webUrl(source, identity)?.toString() !== canonical.toString())) continue;
+      const date = typeof item.datePublished === 'string' ? normalizeDate(item.datePublished) : null;
+      if (date) return date;
+    }
+  }
+  return null;
+}
+
 export function parsePageMetadata(source, html, requestUrl, options = {}) {
   const rawCanonical = canonicalLink(html);
   const canonical = rawCanonical ? webUrl(source, rawCanonical) : webUrl(source, requestUrl);
@@ -76,6 +97,7 @@ export function parsePageMetadata(source, html, requestUrl, options = {}) {
   const publishedAt = normalizeDate(
     metaContent(html, 'article:published_time') ||
     metaContent(html, 'datePublished') ||
+    structuredPublicationDate(source, html, canonical) ||
     options.lastModified,
   );
   if (!title || !publishedAt) return null;

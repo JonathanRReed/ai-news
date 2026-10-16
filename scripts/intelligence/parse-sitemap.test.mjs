@@ -70,3 +70,16 @@ describe('parsePageMetadata', () => {
     expect(result?.content).toBe('');
   });
 });
+
+test('uses article JSON-LD publication time before sitemap modification time', () => {
+  const html = '<title>Updated article</title><script type="application/ld+json">' + JSON.stringify({ '@graph': [
+    { '@type': 'Organization', datePublished: '2000-01-01' },
+    { '@type': 'BlogPosting', mainEntityOfPage: { '@id': 'https://example.com/news/model-release' }, datePublished: '2025-01-29T15:38:00Z', dateModified: '2026-10-15T18:58:00Z' },
+  ] }) + '</script>';
+  expect(parsePageMetadata(source, html, 'https://example.com/news/model-release', { lastModified: '2026-09-30' })?.published_at).toBe('2025-01-29T15:38:00.000Z');
+});
+
+test('ignores malformed and unrelated structured articles', () => {
+  const html = '<title>Current article</title><script type="application/ld+json">{invalid</script><script type="application/ld+json">' + JSON.stringify({ '@type': 'NewsArticle', url: 'https://example.com/news/another', datePublished: '2000-01-01' }) + '</script>';
+  expect(parsePageMetadata(source, html, 'https://example.com/news/model-release', { lastModified: '2026-09-30' })?.published_at).toBe('2026-09-30T00:00:00.000Z');
+});
