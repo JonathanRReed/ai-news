@@ -1,5 +1,29 @@
 [
   {
+    "id": "55ff82ff-cb20-5ec6-8a2a-e8efdfb5074a",
+    "company": "Codex CLI",
+    "title": "rust-v0.164.0-alpha.1",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.164.0-alpha.1",
+    "published_at": "2026-10-16T12:39:40+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.164.0-alpha.1",
+    "content": "Release 0.164.0-alpha.1",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "3b37ee3b-6854-5c48-a3bb-cb879a5fb655",
+    "company": "Hermes Agent",
+    "title": "v0.22.2+canary.20261016T065950Z",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.22.2%2Bcanary.20261016T065950Z",
+    "published_at": "2026-10-16T06:59:52+00:00",
+    "source_type": "rss_official",
+    "summary": "Hermes Agent canary 20261016T065950Z",
+    "content": "Hermes Agent canary 20261016T065950Z",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
     "id": "00f207b7-636b-548e-bfcf-f96efc352d44",
     "company": "Cline",
     "title": "v4.1.25",
@@ -14,12 +38,12 @@
   {
     "id": "d415a5f4-d018-50e1-b202-2a99ccdf4163",
     "company": "Cline",
-    "title": "desktop-v0.0.47",
+    "title": "Desktop v0.0.47",
     "url": "https://github.com/cline/cline/releases/tag/desktop-v0.0.47",
     "published_at": "2026-10-16T06:18:55+00:00",
     "source_type": "rss_official",
-    "summary": "Desktop v0.0.47",
-    "content": "Desktop v0.0.47",
+    "summary": "Marketplace plugins such as goal load again. In 0.0.46 they failed with Cannot find module '@cline/sdk' because the packaged app didn't include the SDK packages plugins import The Cloud sessions toggle is gone from Settings. Cloud sessions are on wherever they are available When a provider error interrupts a response mid-stream, Cline retries it up to 3 times before failing the turn The Cline provider's default model is now Gemini 4 Argon, the new first model in Cline's recommended list...",
+    "content": "Marketplace plugins such as goal load again. In 0.0.46 they failed with Cannot find module '@cline/sdk' because the packaged app didn't include the SDK packages plugins import The Cloud sessions toggle is gone from Settings. Cloud sessions are on wherever they are available When a provider error interrupts a response mid-stream, Cline retries it up to 3 times before failing the turn The Cline provider's default model is now Gemini 4 Argon, the new first model in Cline's recommended list Refreshed the model catalog. Adds the Boundless and Standard Compute providers, and SambaNova now comes from the catalog with MiniMax M3 as its default. The Cline recommended list adds Gemini 4 Argon and drops Grok 4.7, and the Cline free list replaces Step 5 Preview with Nemotron 3.5 Super VL. OpenCode Go no longer lists MiniMax M2.7. Default models change for Cortecs, CrossModel, Eden AI, Google Gemini, GitHub Copilot, Google Vertex AI, LLM Gateway, Ofox, OpenCode Go, and Prime Inference (Gemini 4 Argon), Fireworks AI, Nebius Token Factory, and Requesty (Muse Spark Open), CoreWeave, DigitalOcean, NanoGPT, and Nvidia (Nemotron 3.5 Super VL), Aixy and Neon (Claude Haiku 5.5), Agnes AI, Ambient, IteraCompute, Poe, Scaleway, and SenseNova Full Changelog : desktop-v0.0.46...desktop-v0.0.47",
     "source_url": "https://github.com/cline/cline/releases.atom",
     "source_key": "cline-releases"
   },
