@@ -56,7 +56,7 @@ test("separates labs, harnesses, major updates, and daily digests", async ({ pag
 
   await page.goto("/major-updates/");
   await expect(page.getByText("What counts as major", { exact: true })).toBeVisible();
-  await expect(page.getByText("must use release language and name a model version").first()).toBeVisible();
+  await expect(page.getByText("A named model version needs launch evidence in its headline or opening excerpt.").first()).toBeVisible();
 
   await page.goto("/digest/daily/");
   await expect(page.getByRole("heading", { level: 1 })).toContainText(/\w+, \w+ \d+, \d{4}/);
