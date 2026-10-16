@@ -200,3 +200,8 @@
   border: 1px solid var(--line-1);
   background: var(--surface-0);
 }
+
+/* The search field supplies its own accessible clear button. */
+#article-search::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
