@@ -1,0 +1,98 @@
+---
+import Layout from "../layouts/Layout.astro";
+import StoryRows from "../components/StoryRows.astro";
+import EntityWatchButton from "../components/EntityWatchButton.tsx";
+import SourceHealthReceipt from "../components/SourceHealthReceipt.tsx";
+import { SITE_URL } from "../lib/feeds.js";
+import {
+  entityTypeLabel,
+  isEntityCovered,
+} from "../lib/intelligenceCatalog.js";
+import type { IntelligenceEntity, IntelligenceSource } from "../lib/intelligenceCatalog.js";
+import { sourceRoleLabel, transportTypeLabel } from "../lib/itemTypes.js";
+import type { Article } from "../types/article.js";
+
+interface Props {
+  entity: IntelligenceEntity;
+  sources: IntelligenceSource[];
+  articles: Article[];
+  pageNumber?: number;
+}
+
+const { entity, sources, articles, pageNumber = 1 } = Astro.props as Props;
+const covered = isEntityCovered(entity.slug);
+const activeSources = sources.filter((source) => source.active);
+const publicType = entity.entityType === "harness" ? "Agent tool" : entityTypeLabel(entity.entityType);
+const description = `Tracked ${entity.name} news, releases, research, source status, RSS, JSON, and a free local watchlist.`;
+const pageSize = 40;
+const pageCount = Math.max(1, Math.ceil(articles.length / pageSize));
+const pageUrl = (page: number) => page === 1 ? `/entities/${entity.slug}/` : `/entities/${entity.slug}/page/${page}/`;
+const rows = articles.slice((pageNumber - 1) * pageSize, pageNumber * pageSize).map((article) => ({ article }));
+
+---
+
+<Layout title={`${entity.name} News and Releases${pageNumber > 1 ? ` · Page ${pageNumber}` : ""} | AI News Hub`} description={description} canonical={`${SITE_URL}${pageUrl(pageNumber)}`} currentPage="none">
+  <main id="main-content" class="industrial-shell flex-1">
+    <section class="industrial-container py-10 md:py-14">
+      <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-end">
+        <div >
+          <h1 class="macro-heading">{entity.name}</h1>
+          <p class="mt-6 max-w-3xl text-lg leading-relaxed text-text-2">
+            {covered ? `${activeSources.length} official source${activeSources.length === 1 ? "" : "s"} tracked for ${publicType.toLowerCase()} news and releases.` : "No reliable official feed is active yet. You can still open the official site or add this page to your watchlist."}
+          </p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <EntityWatchButton client:load slug={entity.slug} name={entity.name} />
+            <a href={`/feed/entity/${entity.slug}.xml`} class="ghost-button">RSS</a>
+            <a href={`/feed/entity/${entity.slug}.json`} class="ghost-button">JSON</a>
+            <a href={entity.homepageUrl} target="_blank" rel="noopener noreferrer" class="ghost-button">Official site</a>
+          </div>
+        </div>
+        <aside class="industrial-border p-5">
+          <p class="micro-label mb-4 text-text-2">Available here</p>
+          <dl class="grid grid-cols-2 gap-px bg-white/15">
+            <div class="bg-bg-0 p-4"><dt class="micro-label text-muted">Status</dt><dd class="mt-2 font-mono text-sm text-white">{covered ? "Active" : "Watchlist"}</dd></div>
+            <div class="bg-bg-0 p-4"><dt class="micro-label text-muted">Updates</dt><dd class="mt-2 font-mono text-sm text-white">{articles.length} items</dd></div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <section class="industrial-container pb-8">
+      <details class="industrial-border p-4">
+        <summary class="cursor-pointer font-medium text-white focus-industrial">Official sources and status ({sources.length})</summary>
+        <div class="mt-4">
+      <SourceHealthReceipt
+        client:load
+        sourceKeys={sources.map((source) => source.sourceKey)}
+        fallbacks={sources.map((source) => ({
+          sourceKey: source.sourceKey,
+          name: source.name,
+          active: source.active,
+          verifiedAt: source.verifiedAt,
+          officialUrl: source.officialUrl,
+          description: `${sourceRoleLabel(source.sourceRole)} · ${transportTypeLabel(source.transportType)}`,
+        }))}
+      />
+
+        </div>
+      </details>
+    </section>
+
+    <section class="industrial-container pb-16 md:pb-24">
+      <div class="mb-4 flex items-baseline justify-between gap-4 border-b border-white/15 pb-3">
+        <h2 class="text-2xl font-bold text-white">Latest updates</h2>
+        <span class="micro-label text-text-2">Newest first</span>
+      </div>
+      <StoryRows rows={rows} emptyMessage="No updates are available from these sources yet. Check the source status above or open the official site." />
+      {pageCount > 1 && (
+        <nav aria-label="Update pages" class="mt-6 flex flex-wrap items-center justify-between gap-4">
+          <span class="micro-label text-text-2">Page {pageNumber} of {pageCount} · {articles.length.toLocaleString()} updates</span>
+          <div class="flex flex-wrap gap-3">
+            {pageNumber > 1 && <a href={pageUrl(pageNumber - 1)} rel="prev" class="ghost-button">Newer updates</a>}
+            {pageNumber < pageCount && <a href={pageUrl(pageNumber + 1)} rel="next" class="ghost-button">Older updates</a>}
+          </div>
+        </nav>
+      )}
+    </section>
+  </main>
+</Layout>

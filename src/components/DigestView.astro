@@ -15,12 +15,12 @@ interface Props {
 const { digest, allWeeks } = Astro.props as Props;
 
 function dateLabel(iso: string): string {
-  return new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric" }).format(new Date(iso));
+  return new Intl.DateTimeFormat("en-US", { timeZone: "UTC", month: "short", day: "numeric" }).format(new Date(iso));
 }
 ---
 
 <section class="industrial-container py-10 md:py-14">
-  <div class="max-w-5xl reveal-stagger">
+  <div class="max-w-5xl">
     <h1 class="macro-heading max-w-4xl">{digest.label}</h1>
     <p class="mt-6 max-w-2xl text-lg leading-relaxed text-text-2">
       The {digest.topStories.length} latest {digest.topStories.length === 1 ? "story" : "stories"} from {digest.count} updates published by {digest.labs} sources this week.
@@ -29,7 +29,7 @@ function dateLabel(iso: string): string {
 </section>
 
 <section class="industrial-container pb-16 md:pb-24">
-  <ol class="reveal-stagger border-t border-white/15">
+  <ol class="border-t border-white/15">
     {digest.topStories.map((article: Article, index: number) => {
       const logo = resolveCompanyLogo(article.company);
       const topics = deriveTopics(article).slice(0, 3);
@@ -71,7 +71,7 @@ function dateLabel(iso: string): string {
   </div>
 
   {allWeeks.length > 1 && (
-    <div class="mt-12 border-t border-white/15 pt-8 reveal-stagger">
+    <div class="mt-12 border-t border-white/15 pt-8">
       <p class="micro-label mb-4 text-text-2">Past weeks</p>
       <ul class="flex flex-wrap gap-3">
         {allWeeks.map((w) => (

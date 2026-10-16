@@ -1,3 +1,4 @@
+import { isModelRelease } from "./modelReleases.js";
 import type { Article } from "../types/article.js";
 
 export interface MajorUpdateClassification {
@@ -10,12 +11,15 @@ const NAMED_MODEL_VERSION = /\b(?:gpt|claude|gemini|llama|qwen|deepseek|glm|kimi
 const MAJOR_SEMVER = /\bv(?:ersion\s*)?(?:[2-9]|[1-9]\d+)\.0(?:\.0)?\b/i;
 const HARNESS_NAMES = /\b(hermes|openclaw|openhands|aider|cline|roo code|goose|continue|letta|codex cli|claude code|gemini cli|kimi cli)\b/i;
 
-export function classifyMajorUpdate(article: Pick<Article, "title" | "summary" | "content">): MajorUpdateClassification | null {
-  // Keep promotion conservative: both the named version and release language must
-  // appear in the headline. Body copy can mention unrelated historical releases.
+export function classifyMajorUpdate(article: Pick<Article, "title" | "summary" | "content"> & Partial<Pick<Article, "url" | "published_at">>): MajorUpdateClassification | null {
+  // The model version must be in the headline. The shared launch classifier
+  // can corroborate a terse headline without promoting unrelated body mentions.
   const text = article.title;
   if (RELEASE_INTENT.test(text) && NAMED_MODEL_VERSION.test(text)) {
     return { significance: "major", reason: "Named model version announced or released" };
+  }
+  if (NAMED_MODEL_VERSION.test(text) && isModelRelease(article)) {
+    return { significance: "major", reason: "Named model version with corroborated launch evidence" };
   }
   if (RELEASE_INTENT.test(text) && HARNESS_NAMES.test(text) && MAJOR_SEMVER.test(text)) {
     return { significance: "major", reason: "Major harness version released" };

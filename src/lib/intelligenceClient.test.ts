@@ -313,3 +313,23 @@ describe('search bounds', () => {
     expect(termCount).toBeLessThanOrEqual(MAX_SEARCH_TERMS);
   });
 });
+
+test('operational GitHub builds are excluded before static pagination and in live query filters', async () => {
+  const hidden = { ...feedItem(0), canonical_url: 'https://github.com/NousResearch/hermes-agent/releases/tag/v1%2Bcanary.1' };
+  const regular = [feedItem(1), feedItem(2), feedItem(3)];
+  const cached = await fetchIntelligencePage({}, null, {
+    supabaseUrl: '', anonKey: '', staticArticles: [hidden, ...regular].map(toArticle), pageSize: 2,
+  });
+  expect(cached.data.map(item => item.id)).toEqual(regular.slice(0, 2).map(item => item.id));
+  let query = new URLSearchParams();
+  await fetchIntelligencePage({}, null, {
+    supabaseUrl: 'https://example.supabase.co', anonKey: 'public-test-key', staticArticles: [], pageSize: 2,
+    fetchImpl: async (input) => { query = new URL(String(input)).searchParams; return new Response(JSON.stringify(regular)); },
+  });
+  expect(query.getAll('canonical_url')).toEqual([
+    'not.ilike.https://github.com/*/releases/tag/release-publish*',
+    'not.ilike.https://github.com/*/releases/tag/abandoned-rc*',
+    'not.ilike.https://github.com/*/releases/tag/*canary*',
+    'not.ilike.https://github.com/*/releases/tag/*nightly*',
+  ]);
+});

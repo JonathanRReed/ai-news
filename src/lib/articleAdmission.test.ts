@@ -166,3 +166,26 @@ describe("article cache admission", () => {
     expect(changedFirst.get(alias.id)).toEqual([alias.id]);
   });
 });
+
+test('omits intermediate release-publish builds from news without breaking saved routes', () => {
+  const build: Article = {
+    ...admitted, id: 'internal-build', company: 'OpenClaw',
+    title: 'release-publish/abcdef-123',
+    url: 'https://github.com/openclaw/openclaw/releases/tag/release-publish%2Fabcdef-123',
+    source_url: 'https://github.com/openclaw/openclaw/releases.atom', source_key: 'openclaw-releases',
+  };
+  expect(admittedArticles([build])).toEqual([]);
+  expect(admittedRouteArticles([build])).toHaveLength(1);
+  expect(admittedArticles([build], { includeInternalBuilds: true })).toHaveLength(1);
+  const release = { ...build, id: 'public-beta', title: 'v2026.10.10-beta.1', url: 'https://github.com/openclaw/openclaw/releases/tag/v2026.10.10-beta.1' };
+  expect(admittedArticles([release])).toHaveLength(1);
+});
+
+test('corrects the verified Cohere publication date without changing its permanent route', () => {
+  const row = providerArticles.find(article => article.url === 'https://cohere.com/blog/ai-in-oil-and-gas')!;
+  expect(row).toBeDefined();
+  const result = admittedRouteArticles([row as Article])[0];
+  expect(result.id).toBe(row.id);
+  expect(result.url).toBe(row.url);
+  expect(result.published_at).toBe('2025-01-29T15:38:00.000Z');
+});

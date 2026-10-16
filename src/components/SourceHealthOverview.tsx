@@ -1,11 +1,8 @@
 /* global AbortController */
 import React, { useEffect, useMemo, useState } from "react";
 import { displayedSourceHealth, type SourceHealthState } from "../lib/source-health.js";
-import {
-  SUPABASE_REST_HEADERS,
-  SUPABASE_URL,
-  supabaseConfigured,
-} from "../lib/supabaseClient.js";
+import { supabaseConfigured } from "../lib/supabaseClient.js";
+import { fetchSourceHealth } from "../lib/fetchSourceHealth.js";
 
 type HealthRow = { health: SourceHealthState; last_checked_at: string | null; last_success_at: string | null };
 const HEALTH_STATES = new Set(["healthy", "stale", "failing", "pending", "inactive"]);
@@ -32,13 +29,8 @@ export default function SourceHealthOverview({ registryActive }: { registryActiv
       active: "eq.true",
       limit: "200",
     });
-    fetch(`${SUPABASE_URL}/rest/v1/intelligence_source_health_v1?${params}`, {
-      headers: SUPABASE_REST_HEADERS,
-      signal: controller.signal,
-    })
-      .then(async (response) => {
-        if (!response.ok) throw new Error(`source health responded ${response.status}`);
-        const payload: unknown = await response.json();
+    fetchSourceHealth(params, controller.signal)
+      .then((payload) => {
         if (!Array.isArray(payload) || payload.length === 0 || !payload.every(isHealthRow)) {
           setUnavailable(true);
           return;
@@ -77,9 +69,9 @@ export default function SourceHealthOverview({ registryActive }: { registryActiv
         <span className="micro-label text-text-2">Last check {lastCheckedLabel}</span>
       </div>
       <dl className="mt-4 grid grid-cols-2 gap-px bg-white/15 md:grid-cols-4">
-        <div className="bg-bg-0 p-4"><dt className="micro-label text-muted">Checked recently</dt><dd className="mt-2 font-mono text-2xl font-medium tabular-nums text-ok">{rows ? counts.healthy : "..."}</dd></div>
-        <div className="bg-bg-0 p-4"><dt className="micro-label text-muted">Delayed</dt><dd className="mt-2 font-mono text-2xl font-medium tabular-nums text-warn">{rows ? counts.stale : "..."}</dd></div>
-        <div className="bg-bg-0 p-4"><dt className="micro-label text-muted">Unavailable</dt><dd className="mt-2 font-mono text-2xl font-medium tabular-nums text-brand-hover">{rows ? counts.failing + counts.pending : "..."}</dd></div>
+        <div className="bg-bg-0 p-4"><dt className="micro-label text-muted">Checked recently</dt><dd className="mt-2 font-mono text-2xl font-medium tabular-nums text-ok">{rows ? counts.healthy : unavailable ? "—" : "..."}</dd></div>
+        <div className="bg-bg-0 p-4"><dt className="micro-label text-muted">Delayed</dt><dd className="mt-2 font-mono text-2xl font-medium tabular-nums text-warn">{rows ? counts.stale : unavailable ? "—" : "..."}</dd></div>
+        <div className="bg-bg-0 p-4"><dt className="micro-label text-muted">Unavailable</dt><dd className="mt-2 font-mono text-2xl font-medium tabular-nums text-brand-hover">{rows ? counts.failing + counts.pending : unavailable ? "—" : "..."}</dd></div>
         <div className="bg-bg-0 p-4"><dt className="micro-label text-muted">Sources tracked</dt><dd className="mt-2 font-mono text-2xl font-medium tabular-nums text-white">{registryActive}</dd></div>
       </dl>
       {rows && counts.stale > 0 && <p className="mt-4 text-sm leading-relaxed text-warn">Some source checks are overdue. Collected stories remain available, but newer updates may be missing.</p>}

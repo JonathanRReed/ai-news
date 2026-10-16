@@ -39,7 +39,7 @@ const latestCacheIso = new Date(nowMs).toISOString();
 // Absolute date, not a relative label: this is static HTML that only rebuilds when the
 // cache changes, so a relative value would go stale (and lie) on quiet days.
 const newestLabel = latestCacheDate
-  ? new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", year: "numeric" }).format(new Date(latestCacheDate))
+  ? new Intl.DateTimeFormat("en-US", { timeZone: "UTC", month: "short", day: "numeric", year: "numeric" }).format(new Date(latestCacheDate))
   : "No date";
 // Seed the first 20 (content stripped to keep the HTML lean) so the island renders
 // server-side for crawlers and first paint, then refetches full data on the client.
@@ -110,7 +110,7 @@ const collectionStructuredData = {
 >
   <main id="main-content" class="industrial-shell">
     <section class="industrial-container py-10 md:py-14">
-      <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_400px] lg:items-end reveal-stagger">
+      <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_400px] lg:items-end">
         <div class="max-w-5xl">
           <h1 class="macro-heading max-w-5xl">
             See what changed in AI today.
@@ -151,7 +151,7 @@ const collectionStructuredData = {
       </div>
     </section>
     <section class="industrial-container pb-8">
-      <nav class="industrial-grid reveal-stagger" aria-label="Browse AI news">
+      <nav class="industrial-grid" aria-label="Browse AI news">
         <a href="/major-updates/" class="col-span-12 p-5 text-white hover:bg-bg-1 focus-industrial sm:col-span-6 lg:col-span-3"><strong class="block text-lg font-semibold">Major updates</strong><span class="mt-2 block text-sm leading-relaxed text-text-2">Model launches, releases, and other notable changes.</span></a>
         <a href="/labs/" class="col-span-12 p-5 text-white hover:bg-bg-1 focus-industrial sm:col-span-6 lg:col-span-3"><strong class="block text-lg font-semibold">Labs and providers</strong><span class="mt-2 block text-sm leading-relaxed text-text-2">Z.AI, Kimi, OpenAI, Anthropic, and more.</span></a>
         <a href="/harnesses/" class="col-span-12 p-5 text-white hover:bg-bg-1 focus-industrial sm:col-span-6 lg:col-span-3"><strong class="block text-lg font-semibold">Agent tools</strong><span class="mt-2 block text-sm leading-relaxed text-text-2">Hermes, OpenClaw, OpenHands, coding agents, and CLIs.</span></a>
@@ -163,7 +163,7 @@ const collectionStructuredData = {
     </section>
     {latestDigest && (
       <section class="industrial-container pb-2">
-        <div class="industrial-border reveal-stagger p-6 md:p-8">
+        <div class="industrial-border p-6 md:p-8">
           <div class="flex flex-wrap items-baseline justify-between gap-3 border-b border-white/15 pb-4">
             <h2 class="text-xl font-semibold text-white">Latest this week</h2>
             <a

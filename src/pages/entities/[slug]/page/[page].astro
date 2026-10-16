@@ -1,0 +1,17 @@
+---
+import EntityNewsPage from "../../../../components/EntityNewsPage.astro";
+import { allArticles } from "../../../../lib/feeds.js";
+import { entityForArticle, entitySources, intelligenceEntities } from "../../../../lib/intelligenceCatalog.js";
+
+export function getStaticPaths() {
+  const articles = allArticles();
+  return intelligenceEntities.flatMap((entity) => {
+    const updates = articles.filter((article) => entityForArticle(article)?.slug === entity.slug);
+    return Array.from({ length: Math.max(0, Math.ceil(updates.length / 40) - 1) }, (_, index) => ({
+      params: { slug: entity.slug, page: String(index + 2) },
+      props: { entity, sources: entitySources(entity.slug), articles: updates, pageNumber: index + 2 },
+    }));
+  });
+}
+---
+<EntityNewsPage {...Astro.props} />

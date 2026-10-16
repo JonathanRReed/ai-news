@@ -23,7 +23,7 @@ const dateLabel = (iso: string) => new Intl.DateTimeFormat("en-US", {
 ---
 
 {rows.length ? (
-  <ol class="reveal-stagger border-t border-white/15">
+  <ol class="border-t border-white/15">
     {rows.map(({ article, reason }, index) => {
       const logo = resolveCompanyLogo(article.company);
       const topics = deriveTopics(article).slice(0, 3);

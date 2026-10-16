@@ -3,9 +3,8 @@ import React, { useEffect, useMemo, useState } from "react";
 import EntityWatchButton, { WATCHLIST_EVENT, WATCHLIST_KEY } from "./EntityWatchButton.js";
 import type { IntelligenceEntity } from "../lib/intelligenceCatalog.js";
 import { articlePath } from "../lib/articleRoutes.js";
-import type { Article } from "../types/article.js";
-
-type WatchlistStory = Pick<Article, "id" | "company" | "title" | "published_at">;
+import { isWatchlistStory, type WatchlistStory } from "../lib/watchlist.js";
+import { articlePublicationDateLabel } from "../lib/articleSeo.js";
 
 function watchedSlugs(): string[] {
   if (typeof window === "undefined") return [];
@@ -18,11 +17,13 @@ function watchedSlugs(): string[] {
 }
 
 export default function WatchlistIsland({ entities }: { entities: IntelligenceEntity[] }) {
+  const [hydrated, setHydrated] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(40);
   const [slugs, setSlugs] = useState<string[]>([]);
   const [articles, setArticles] = useState<WatchlistStory[] | null>(null);
   const [loadError, setLoadError] = useState(false);
   useEffect(() => {
-    const update = () => setSlugs(watchedSlugs());
+    const update = () => { setSlugs(watchedSlugs()); setHydrated(true); };
     update();
     window.addEventListener(WATCHLIST_EVENT, update);
     window.addEventListener("storage", update);
@@ -36,23 +37,28 @@ export default function WatchlistIsland({ entities }: { entities: IntelligenceEn
   useEffect(() => {
     if (!selected.length || articles !== null || loadError) return;
     const controller = new AbortController();
+    const timer = setTimeout(() => { setLoadError(true); controller.abort(); }, 8000);
     fetch("/data/watchlist.json", { signal: controller.signal })
       .then((response) => {
         if (!response.ok) throw new Error(`Watchlist data returned ${response.status}`);
         return response.json() as Promise<{ articles: WatchlistStory[] }>;
       })
       .then((data) => {
-        if (!Array.isArray(data.articles)) throw new Error("Watchlist data is invalid");
+        if (!Array.isArray(data.articles) || !data.articles.every(isWatchlistStory)) throw new Error("Watchlist data is invalid");
         setArticles(data.articles);
       })
       .catch((error: unknown) => {
         if (error instanceof Error && error.name === "AbortError") return;
         setLoadError(true);
-      });
-    return () => controller.abort();
+      })
+      .finally(() => clearTimeout(timer));
+    return () => { clearTimeout(timer); controller.abort(); };
   }, [selected.length, articles, loadError]);
   const names = useMemo(() => new Set(selected.map((entity) => entity.name)), [selected]);
-  const stories = useMemo(() => (articles ?? []).filter((article) => names.has(article.company)).slice(0, 80), [articles, names]);
+  const matchingStories = useMemo(() => (articles ?? []).filter((article) => names.has(article.company)), [articles, names]);
+  const stories = matchingStories.slice(0, visibleCount);
+
+  if (!hydrated) return <p role="status" className="industrial-border p-6 text-text-2">Loading your saved sources…</p>;
 
   if (!selected.length) {
     return (
@@ -75,21 +81,24 @@ export default function WatchlistIsland({ entities }: { entities: IntelligenceEn
       <section>
         <div className="mb-4 flex items-baseline justify-between gap-4 border-b border-white/15 pb-3">
           <h2 className="text-2xl font-bold text-white">Latest watched updates</h2>
-          <span className="micro-label text-text-2">{stories.length} updates</span>
+          <span className="micro-label text-text-2">{stories.length} of {matchingStories.length} updates</span>
         </div>
         {loadError ? (
           <p className="industrial-border p-6 text-text-2">Could not load updates. Reload the page to try again.</p>
         ) : articles === null ? (
           <p className="industrial-border p-6 text-text-2">Loading watched updates...</p>
         ) : stories.length ? (
+          <>
           <ol>
             {stories.map((article) => (
               <li key={article.id} className="border-b border-white/15 py-4">
-                <p className="micro-label mb-2 text-text-2">{article.company} · {new Date(article.published_at).toLocaleDateString()}</p>
+                <p className="micro-label mb-2 text-text-2">{article.company} · {articlePublicationDateLabel(article.published_at, "short")}</p>
                 <a href={articlePath(article.id)} className="text-lg font-bold text-white underline decoration-brand decoration-2 underline-offset-4 hover:text-brand-hover focus-industrial break-words">{article.title}</a>
               </li>
             ))}
           </ol>
+          {stories.length < matchingStories.length && <button type="button" className="ghost-button mt-6" onClick={() => setVisibleCount(count => count + 40)}>Load 40 more</button>}
+          </>
         ) : (
           <p className="industrial-border p-6 text-text-2">No stories are available for these sources yet. Open a source page to see its current status.</p>
         )}

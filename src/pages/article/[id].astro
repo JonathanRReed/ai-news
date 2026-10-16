@@ -37,8 +37,8 @@ export function getStaticPaths() {
   );
   for (const article of routeArticles) {
     if (paths.has(article.id)) continue;
-    const canonical = articleBySource.get(articleSourceIdentity(article.url));
-    if (canonical) paths.set(article.id, { params: { id: article.id }, props: { article: canonical } });
+    const canonical = articleBySource.get(articleSourceIdentity(article.url)) ?? article;
+    paths.set(article.id, { params: { id: article.id }, props: { article: canonical } });
   }
   for (const alias of routeAliases as Array<{ legacy_id: string; destination_path: string }>) {
     if (!isSafeArticleRouteId(alias.legacy_id)) continue;
@@ -180,7 +180,7 @@ const structuredData = {
   preloadImages={logo ? [logo] : []}
 >
   <main id="main-content" class="industrial-shell flex-1">
-    <article class="industrial-container max-w-3xl py-12 md:py-16 reveal-stagger">
+    <article class="industrial-container max-w-3xl py-12 md:py-16">
       <a href="/" class="micro-label inline-flex items-center gap-2 text-text-2 transition-colors hover:text-white focus-industrial">Back to the feed</a>
 
       <div class="mt-8 flex items-center gap-3 border-b border-white/15 pb-5">

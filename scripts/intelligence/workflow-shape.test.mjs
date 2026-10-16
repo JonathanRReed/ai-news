@@ -5,6 +5,8 @@ import { URL } from 'node:url';
 const refresh = await readFile(new URL('../../.github/workflows/refresh-feeds.yml', import.meta.url), 'utf8');
 const verify = await readFile(new URL('../../.github/workflows/verify.yml', import.meta.url), 'utf8');
 const useArticles = await readFile(new URL('../../src/hooks/useArticles.ts', import.meta.url), 'utf8');
+const packageJson = JSON.parse(await readFile(new URL('../../package.json', import.meta.url), 'utf8'));
+const bunVersion = packageJson.packageManager.replace(/^bun@/, '');
 const checkoutSha = 'de0fac2e4500dabe0009e67214ff5f5447ce83dd';
 const setupBunSha = '0c5077e51419868618aeaa5fe8019c62421857d6';
 
@@ -21,7 +23,8 @@ describe('refresh workflow', () => {
     expect(refresh).toContain(`actions/checkout@${checkoutSha}`);
     expect(refresh).toContain(`oven-sh/setup-bun@${setupBunSha}`);
     expect(refresh).not.toMatch(/uses:\s+[^\s]+@v\d/);
-    expect(refresh).toContain('bun-version: "1.4.0"');
+    expect(refresh).toContain(`bun-version: "${bunVersion}"`);
+    expect(verify).toContain(`bun-version: "${bunVersion}"`);
     expect(refresh).toContain('bun install --frozen-lockfile');
     expect(refresh).toContain('SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}');
   });

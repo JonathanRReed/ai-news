@@ -1,3 +1,4 @@
+import { correctedPublicationDate } from "./publicationCorrections.mjs";
 import { getEntity, intelligenceSources } from "./intelligenceCatalog.js";
 import type { IntelligenceSource } from "./intelligenceCatalog.js";
 import type { Article } from "../types/article.js";
@@ -27,6 +28,7 @@ const verifiedRouteSources = [...verifiedSourceById].map(([id, mapping]) => ({
 }));
 
 function currentPublisherUrl(article: Article): Article {
+  article = { ...article, published_at: correctedPublicationDate(article.source_key, article.url, article.published_at) };
   const verified = verifiedSourceById.get(article.id);
   return verified && article.source_key === verified.sourceKey && verified.from === article.url
     ? {
@@ -119,8 +121,20 @@ function dedupKey(article: Article): string | null {
   return `${article.source_key}:${articleSourceIdentity(article.url)}`;
 }
 
-export function admittedArticles(articles: Article[]): Article[] {
-  const routes = admittedRouteArticles(articles);
+export function isInternalReleaseBuild(article: Pick<Article, "url">): boolean {
+  const url = exactHttpsUrl(article.url);
+  if (url?.hostname !== "github.com") return false;
+  try {
+    const tag = decodeURIComponent(url.pathname).split("/releases/tag/")[1];
+    return Boolean(tag && (/^release-publish/i.test(tag) || /^abandoned-rc/i.test(tag) || /canary|nightly/i.test(tag)));
+
+  } catch {
+    return false;
+  }
+}
+
+export function admittedArticles(articles: Article[], options: { includeInternalBuilds?: boolean } = {}): Article[] {
+  const routes = admittedRouteArticles(articles).filter(article => options.includeInternalBuilds || !isInternalReleaseBuild(article));
   const preferred = new Map<string, Article>();
   for (const article of routes) {
     const source = dedupKey(article);
@@ -170,4 +184,11 @@ export function articleSourceRouteIndex(loadedArticles: Article[]): Map<string, 
 export function articleSourceRouteIds(article: Article, loadedArticles: Article[] = []): string[] {
   if (!isArticleAdmitted(article) || !dedupKey(currentPublisherUrl(article))) return [article.id];
   return articleSourceRouteIndex([article, ...loadedArticles]).get(article.id) ?? [article.id];
+}
+
+/** Apply operational-build exclusions before the server chooses a page. */
+export function applyPublicReleaseFilters(params: URLSearchParams): void {
+  for (const tag of ['release-publish*', 'abandoned-rc*', '*canary*', '*nightly*']) {
+    params.append('canonical_url', `not.ilike.https://github.com/*/releases/tag/${tag}`);
+  }
 }

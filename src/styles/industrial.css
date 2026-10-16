@@ -20,12 +20,13 @@
 .industrial-grid {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: 1px;
-  background: var(--line-1);
-  grid-auto-flow: dense;
+  gap: 1rem;
+  grid-auto-flow: row;
 }
 
 .industrial-grid > * {
+  min-width: 0;
+  border: 1px solid var(--line-1);
   background: var(--surface-0);
 }
 
@@ -177,28 +178,8 @@
   background: var(--surface-1);
 }
 
-/* Reveal on scroll: progressive enhancement, one quiet fade, never hides content for long. */
-html.motion-ready .reveal-stagger > * {
-  opacity: 0;
-  transform: translateY(6px);
-  transition: opacity var(--dur-slow) var(--ease-out), transform var(--dur-slow) var(--ease-out);
-}
-
-html.motion-ready .reveal-stagger.is-visible > * {
-  opacity: 1;
-  transform: none;
-}
-
-html.motion-ready .reveal-stagger.is-visible > *:nth-child(2) { transition-delay: 40ms; }
-html.motion-ready .reveal-stagger.is-visible > *:nth-child(3) { transition-delay: 80ms; }
-html.motion-ready .reveal-stagger.is-visible > *:nth-child(4) { transition-delay: 120ms; }
-
 @media (prefers-reduced-motion: reduce) {
-  html.motion-ready .reveal-stagger > * {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
+
   .article-card-hoverable {
     transition: none;
   }
@@ -206,4 +187,21 @@ html.motion-ready .reveal-stagger.is-visible > *:nth-child(4) { transition-delay
   .animate-spin {
     animation: none;
   }
+}
+
+/* Only real cards paint a surface; an incomplete row has no placeholder cells. */
+.source-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+  gap: 1rem;
+}
+.source-card-grid > article {
+  min-width: 0;
+  border: 1px solid var(--line-1);
+  background: var(--surface-0);
+}
+
+/* The search field supplies its own accessible clear button. */
+#article-search::-webkit-search-cancel-button {
+  -webkit-appearance: none;
 }

@@ -18,6 +18,7 @@ function source({
   required = false,
   includePaths = [],
   allowedHosts = [],
+  verifiedAt = '2026-08-30',
 }) {
   return {
     sourceKey,
@@ -35,7 +36,7 @@ function source({
     active,
     archiveOnly,
     required,
-    verifiedAt: '2026-08-30',
+    verifiedAt,
     includePaths,
     allowedHosts,
   };
@@ -208,6 +209,17 @@ export const sources = [
     transportType: 'sitemap',
     sourceRole: 'newsroom',
     includePaths: ['/news/', '/research/'],
+  }),
+  source({
+    sourceKey: 'meta-research-sitemap',
+    entitySlug: 'meta-ai',
+    name: 'Meta AI Research',
+    officialUrl: 'https://research.meta.ai/blog',
+    endpointUrl: 'https://research.meta.ai/sitemap.xml',
+    transportType: 'sitemap',
+    sourceRole: 'newsroom',
+    includePaths: ['/blog/'],
+    verifiedAt: '2026-10-16',
   }),
   source({
     sourceKey: 'meta-llama-models-releases',

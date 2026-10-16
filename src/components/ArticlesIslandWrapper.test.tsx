@@ -113,3 +113,29 @@ test("saved and read flags on the retained alias still apply to the report", () 
   const unread = renderFeedPages("unread", { seen: new Set([alias]) });
   expect(unread).not.toContain("data-article-id=");
 });
+
+test('SSR keeps interactive controls disabled until their event handlers are ready', () => {
+  const html = renderToStaticMarkup(<ArticlesIslandWrapper initialArticles={[versionArticle]} now={Date.parse('2026-10-15T23:00:00Z')} />);
+  expect(html).toContain('<fieldset disabled="" aria-busy="true"');
+  expect(html).toContain('News filters and saved stories');
+  expect(html).toContain('/article/package-version-preview/');
+});
+
+test('saved stories honor source filters and never offer unrelated feed pagination', () => {
+  function render(company: string) {
+    return renderToStaticMarkup(<QueryClientProvider client={new QueryClient()}>
+      <ArticlesProvider filters={{ company, topics: [], q: '' }} initialData={{
+        pages: [{ data: [versionArticle], state: 'static', cacheFreshness: versionArticle.published_at, next: { publishedAt: versionArticle.published_at, id: versionArticle.id } }], pageParams: [null],
+      }}>
+        <ArticleListIsland now={Date.parse('2026-10-15T23:00:00Z')} view="saved" onClearFilters={() => {}} readState={{ seen: new Set(), saved: new Set([versionArticle.id]), markSeen: () => {}, toggleSaved: () => {}, hydrated: true }} />
+      </ArticlesProvider>
+    </QueryClientProvider>);
+  }
+  const all = render('All');
+  expect(all).toContain('/article/package-version-preview/');
+  expect(all).not.toContain('Load 20 more');
+  const filtered = render('OpenAI');
+  expect(filtered).not.toContain('/article/package-version-preview/');
+  expect(filtered).toContain('Loading saved stories');
+  expect(filtered).not.toContain('Load more to keep looking');
+});
