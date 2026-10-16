@@ -1,3 +1,4 @@
+import { correctedPublicationDate } from '../../src/lib/publicationCorrections.mjs';
 import { entities, sources } from '../../config/intelligence-sources.mjs';
 import { fetchSource } from './fetch-source.mjs';
 import { eventBundleForItems } from './events.mjs';
@@ -106,7 +107,7 @@ function preserveExistingIdentity(item, existing) {
     ...item,
     id: existing.id,
     legacy_id: existing.legacy_id ?? item.legacy_id,
-    published_at: existing.published_at,
+    published_at: correctedPublicationDate(item.source_key, item.canonical_url, existing.published_at),
     first_seen_at: existing.first_seen_at,
   };
 }

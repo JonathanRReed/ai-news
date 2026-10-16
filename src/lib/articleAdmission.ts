@@ -1,3 +1,4 @@
+import { correctedPublicationDate } from "./publicationCorrections.mjs";
 import { getEntity, intelligenceSources } from "./intelligenceCatalog.js";
 import type { IntelligenceSource } from "./intelligenceCatalog.js";
 import type { Article } from "../types/article.js";
@@ -27,6 +28,7 @@ const verifiedRouteSources = [...verifiedSourceById].map(([id, mapping]) => ({
 }));
 
 function currentPublisherUrl(article: Article): Article {
+  article = { ...article, published_at: correctedPublicationDate(article.source_key, article.url, article.published_at) };
   const verified = verifiedSourceById.get(article.id);
   return verified && article.source_key === verified.sourceKey && verified.from === article.url
     ? {

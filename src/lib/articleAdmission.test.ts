@@ -180,3 +180,12 @@ test('omits intermediate release-publish builds from news without breaking saved
   const release = { ...build, id: 'public-beta', title: 'v2026.10.10-beta.1', url: 'https://github.com/openclaw/openclaw/releases/tag/v2026.10.10-beta.1' };
   expect(admittedArticles([release])).toHaveLength(1);
 });
+
+test('corrects the verified Cohere publication date without changing its permanent route', () => {
+  const row = providerArticles.find(article => article.url === 'https://cohere.com/blog/ai-in-oil-and-gas')!;
+  expect(row).toBeDefined();
+  const result = admittedRouteArticles([row as Article])[0];
+  expect(result.id).toBe(row.id);
+  expect(result.url).toBe(row.url);
+  expect(result.published_at).toBe('2025-01-29T15:38:00.000Z');
+});

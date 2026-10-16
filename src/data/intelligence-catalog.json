@@ -501,6 +501,26 @@
       "allowedHosts": []
     },
     {
+      "sourceKey": "meta-research-sitemap",
+      "entitySlug": "meta-ai",
+      "name": "Meta AI Research",
+      "officialUrl": "https://research.meta.ai/blog",
+      "endpointUrl": "https://research.meta.ai/sitemap.xml",
+      "transportType": "sitemap",
+      "sourceRole": "newsroom",
+      "parserKey": "sitemap",
+      "sourceType": "scraped",
+      "itemType": "other",
+      "active": true,
+      "archiveOnly": false,
+      "required": false,
+      "verifiedAt": "2026-10-16",
+      "includePaths": [
+        "/blog/"
+      ],
+      "allowedHosts": []
+    },
+    {
       "sourceKey": "meta-llama-models-releases",
       "entitySlug": "meta-ai",
       "name": "Meta Llama Models Releases",
