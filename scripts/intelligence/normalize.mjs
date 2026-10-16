@@ -58,7 +58,16 @@ function isTrackingParameter(name) {
   return normalized.startsWith('utm_') || TRACKING_PARAMETERS.has(normalized);
 }
 
-export function normalizeUrl(value) {
+// Only a validated dated changelog section keeps its fragment as part of its identity.
+const DATED_SECTION_FRAGMENT = /^#(\d{4}-\d{2}-\d{2})$/;
+
+function datedSectionFragment(source, url, publishedAt) {
+  if (source.parserKey !== 'sitemap_changelog') return '';
+  const match = new URL(url).hash.match(DATED_SECTION_FRAGMENT);
+  return match && publishedAt.startsWith(`${match[1]}T`) ? match[0] : '';
+}
+
+export function normalizeUrl(value, { fragment = '' } = {}) {
   const raw = requireText(value, 'URL');
   let url;
   try {
@@ -80,7 +89,7 @@ export function normalizeUrl(value) {
       return leftName.localeCompare(rightName) || leftValue.localeCompare(rightValue);
     });
 
-  url.hash = '';
+  url.hash = fragment;
   url.search = '';
   for (const [name, parameterValue] of retainedParameters) {
     url.searchParams.append(name, parameterValue);
@@ -88,9 +97,9 @@ export function normalizeUrl(value) {
   return url.toString();
 }
 
-export function stableItemId(sourceKey, canonicalUrl) {
+export function stableItemId(sourceKey, canonicalUrl, options = {}) {
   const normalizedSourceKey = requireText(sourceKey, 'sourceKey');
-  const normalizedUrl = normalizeUrl(canonicalUrl);
+  const normalizedUrl = normalizeUrl(canonicalUrl, options);
   return stableRecordId(`item:${normalizedSourceKey}`, normalizedUrl);
 }
 
@@ -101,14 +110,14 @@ export function normalizeItem(input, source, options = {}) {
   const sourceKey = requireText(source.sourceKey, 'sourceKey');
   const entitySlug = requireText(source.entitySlug, 'entitySlug');
   const entityName = requireText(source.entityName, 'entityName');
-  const canonicalUrl = normalizeUrl(
-    admittedHttpsUrl(source, input.canonical_url ?? input.url).toString(),
-  );
+  const admittedUrl = admittedHttpsUrl(source, input.canonical_url ?? input.url).toString();
   const title = requireText(input.title, 'title');
   const publishedAt = normalizeDate(
     input.published_at ?? input.publishedAt ?? input.pubDate,
     'published_at',
   );
+  const fragment = datedSectionFragment(source, admittedUrl, publishedAt);
+  const canonicalUrl = normalizeUrl(admittedUrl, { fragment });
   const now = normalizeDate(options.now ?? new Date().toISOString(), 'now');
   const publisherSummary = cleanText(input.summary ?? input.excerpt);
   const summary = truncateArticleExcerpt(publisherSummary);
@@ -134,7 +143,7 @@ export function normalizeItem(input, source, options = {}) {
     : {};
 
   return {
-    id: stableItemId(sourceKey, canonicalUrl),
+    id: stableItemId(sourceKey, canonicalUrl, { fragment }),
     legacy_id: legacyId,
     source_key: sourceKey,
     entity_slug: entitySlug,

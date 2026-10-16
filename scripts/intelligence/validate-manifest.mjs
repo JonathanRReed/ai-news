@@ -5,7 +5,7 @@ import { entities as defaultEntities, sources as defaultSources } from '../../co
 const ENTITY_TYPES = new Set(['lab', 'provider', 'model', 'harness', 'research_org', 'product']);
 const ENTITY_STATUSES = new Set(['active', 'watchlist', 'archived']);
 const TRANSPORT_TYPES = new Set(['rss', 'atom', 'sitemap', 'html']);
-const ACTIVE_PARSER_KEYS = new Set(['rss', 'atom', 'sitemap']);
+const ACTIVE_PARSER_KEYS = new Set(['rss', 'atom', 'sitemap', 'sitemap_changelog']);
 const SOURCE_ROLES = new Set(['newsroom', 'changelog', 'research', 'model_cards', 'documentation', 'releases']);
 const SOURCE_TYPES = new Set(['rss_official', 'rss_unofficial', 'scraped']);
 const SLUG_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;

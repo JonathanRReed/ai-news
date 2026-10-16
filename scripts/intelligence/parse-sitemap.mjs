@@ -45,6 +45,43 @@ export function parseSitemap(source, xml) {
     });
 }
 
+const TITLE_SUFFIXES = new Map([
+  ['xai-news-sitemap', [' | SpaceXSI', ' | xAI']],
+  ['deepseek-api-news', [' | DeepSeek API Docs']],
+]);
+const CHANGELOG_SUMMARY_LENGTH = 280;
+// Sitemap lastmod tracks edits, not publication. These sources must date from the page or be skipped.
+const PAGE_DATED_SOURCES = new Set(['xai-news-sitemap', 'deepseek-api-news']);
+
+function utcDate(year, month, day) {
+  const date = new Date(Date.UTC(year, month - 1, day));
+  return date.getUTCFullYear() === year && date.getUTCMonth() === month - 1 && date.getUTCDate() === day
+    ? date.toISOString()
+    : null;
+}
+
+function titleWithoutSuffix(source, title) {
+  const suffix = (TITLE_SUFFIXES.get(source.sourceKey) ?? []).find((value) => title.endsWith(value));
+  return suffix ? title.slice(0, -suffix.length).trim() : title;
+}
+
+// DeepSeek API docs label the current news page in the sidebar ("... 2026/09/10").
+// Old slugs such as news0725 carry no year, so only six-digit slugs are a fallback.
+function deepseekNewsDate(html, canonical) {
+  const { pathname } = new URL(canonical);
+  for (const [, tag, text] of html.matchAll(/(<a\b[^>]*>)([^<]*)<\/a>/gi)) {
+    if (attribute(tag, 'aria-current') !== 'page' || attribute(tag, 'href') !== pathname) continue;
+    const label = stripMarkup(text).match(/(\d{4})\/(\d{2})\/(\d{2})$/);
+    if (label) return utcDate(Number(label[1]), Number(label[2]), Number(label[3]));
+  }
+  const slug = pathname.match(/\/news(\d{2})(\d{2})(\d{2})\/?$/);
+  return slug ? utcDate(2000 + Number(slug[1]), Number(slug[2]), Number(slug[3])) : null;
+}
+
+function sourcePageDate(source, html, canonical) {
+  return source.sourceKey === 'deepseek-api-news' ? deepseekNewsDate(html, canonical) : null;
+}
+
 function attribute(tag, name) {
   const match = tag.match(new RegExp(`${name}\\s*=\\s*["']([^"']+)["']`, 'i'));
   return match ? decodeXml(match[1]).trim() : '';
@@ -100,7 +137,10 @@ export function parsePageMetadata(source, html, requestUrl, options = {}) {
   const canonical = rawCanonical ? webUrl(source, rawCanonical) : webUrl(source, requestUrl);
   if (!canonical) return null;
 
-  const title = stripMarkup(metaContent(html, 'og:title') || tagValue(html, 'title'));
+  const title = titleWithoutSuffix(
+    source,
+    stripMarkup(metaContent(html, 'og:title') || tagValue(html, 'title')),
+  );
   const extractedSummary = stripMarkup(
     metaContent(html, 'og:description') || metaContent(html, 'description'),
   );
@@ -108,7 +148,8 @@ export function parsePageMetadata(source, html, requestUrl, options = {}) {
   const publishedAt = normalizeDate(metaContent(html, 'article:published_time')) ||
     normalizeDate(metaContent(html, 'datePublished')) ||
     structuredPublicationDate(source, html, canonical) ||
-    normalizeDate(options.lastModified);
+    sourcePageDate(source, html, canonical) ||
+    (PAGE_DATED_SOURCES.has(source.sourceKey) ? null : normalizeDate(options.lastModified));
   if (!title || !publishedAt) return null;
 
   return {
@@ -120,4 +161,43 @@ export function parsePageMetadata(source, html, requestUrl, options = {}) {
     content: summary,
     source_url: source.endpointUrl,
   };
+}
+
+function excerpt(value) {
+  if (value.length <= CHANGELOG_SUMMARY_LENGTH) return value;
+  const cut = value.slice(0, CHANGELOG_SUMMARY_LENGTH);
+  return `${cut.slice(0, cut.lastIndexOf(' ')).trim()}…`;
+}
+
+// A rolling changelog page holds one dated section per release. Each section's own
+// date and anchor are its identity, so sitemap lastmod never invents a release.
+export function parseChangelogSections(source, html, requestUrl) {
+  const rawCanonical = canonicalLink(html);
+  const canonical = rawCanonical ? webUrl(source, rawCanonical) : webUrl(source, requestUrl);
+  if (!canonical) return [];
+  canonical.hash = '';
+
+  const starts = [...html.matchAll(/<div\b[^>]*\bid=["'](\d{4})-(\d{2})-(\d{2})["'][^>]*>/gi)];
+  const items = new Map();
+  starts.forEach((match, index) => {
+    const section = html.slice(match.index, starts[index + 1]?.index ?? html.length);
+    const heading = section.match(/data-component-part=["']update-description["'][^>]*>([\s\S]*?)<\/div>/i);
+    const body = section.match(/data-component-part=["']update-content["'][^>]*>([\s\S]*)$/i);
+    const title = heading ? stripMarkup(heading[1]) : '';
+    const publishedAt = utcDate(Number(match[1]), Number(match[2]), Number(match[3]));
+    if (!title || !publishedAt) return;
+    const url = new URL(canonical);
+    url.hash = `${match[1]}-${match[2]}-${match[3]}`;
+    const summary = body ? excerpt(stripMarkup(body[1]).split('Was this page helpful?')[0].trim()) : '';
+    items.set(url.toString(), {
+      external_id: url.toString(),
+      title,
+      url: url.toString(),
+      published_at: publishedAt,
+      summary,
+      content: summary,
+      source_url: source.endpointUrl,
+    });
+  });
+  return [...items.values()];
 }
