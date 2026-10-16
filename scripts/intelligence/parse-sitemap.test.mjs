@@ -93,3 +93,36 @@ test('the current Meta newsroom admits dated primary blog articles only', async 
   const html = '<title>Introducing Muse Spark Open</title><meta property="article:published_time" content="2026-10-15T00:00:00Z">';
   expect(parsePageMetadata(meta, html, 'https://research.meta.ai/blog/muse-spark-open')?.published_at).toBe('2026-10-15T00:00:00.000Z');
 });
+
+test('matches article identity fragments without replacing publication time with modification time', () => {
+  for (const identity of ['https://example.com/news/model-release#webpage', '/news/model-release#article', '#webpage']) {
+    const html = '<title>Current article</title><script type="application/ld+json">' + JSON.stringify({ '@type': 'BlogPosting', mainEntityOfPage: { '@id': identity }, datePublished: '2025-01-29' }) + '</script>';
+    expect(parsePageMetadata(source, html, 'https://example.com/news/model-release', { lastModified: '2026-10-15' })?.published_at).toBe('2025-01-29T00:00:00.000Z');
+  }
+});
+
+test('article identity normalization preserves host, path and query checks', () => {
+  for (const identity of ['https://attacker.example/news/model-release#webpage', 'http://example.com/news/model-release#article', 'https://example.com/news/other#article', 'https://example.com/news/model-release?other=1#article']) {
+    const html = '<title>Current article</title><script type="application/ld+json">' + JSON.stringify({ '@type': 'BlogPosting', mainEntityOfPage: { '@id': identity }, datePublished: '2000-01-01' }) + '</script>';
+    expect(parsePageMetadata(source, html, 'https://example.com/news/model-release', { lastModified: '2026-10-15' })?.published_at).toBe('2026-10-15T00:00:00.000Z');
+  }
+});
+
+
+test('invalid higher-priority date metadata does not hide a valid publication date', () => {
+  const html = '<title>Current article</title><meta property="article:published_time" content="not a date"><script type="application/ld+json">' + JSON.stringify({
+    '@type': 'Article',
+    url: 'https://example.com/news/model-release#article',
+    datePublished: '2025-01-29',
+  }) + '</script>';
+  expect(parsePageMetadata(source, html, 'https://example.com/news/model-release', { lastModified: '2026-10-15' })?.published_at).toBe('2025-01-29T00:00:00.000Z');
+});
+
+test('publication date fallback preserves priority and rejects all-invalid dates', () => {
+  const html = '<title>Current article</title><meta property="article:published_time" content="2025-02-01"><meta name="datePublished" content="2025-01-01">';
+  const parse = content => parsePageMetadata(source, content, 'https://example.com/news/model-release', { lastModified: '2026-10-15' })?.published_at;
+  expect(parse(html)).toBe('2025-02-01T00:00:00.000Z');
+  expect(parse(html.replace('2025-02-01', 'invalid'))).toBe('2025-01-01T00:00:00.000Z');
+  expect(parse(html.replace('2025-02-01', 'invalid').replace('2025-01-01', 'invalid'))).toBe('2026-10-15T00:00:00.000Z');
+  expect(parsePageMetadata(source, '<title>Missing dates</title>', 'https://example.com/news/model-release', { lastModified: 'invalid' })).toBeNull();
+});
