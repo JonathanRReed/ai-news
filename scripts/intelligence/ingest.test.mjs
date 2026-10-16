@@ -284,3 +284,14 @@ describe('manifestRows', () => {
     ]);
   });
 });
+
+test('publisher date corrections never mutate database identity on refresh', async () => {
+  const { entities, sources } = await import('../../config/intelligence-sources.mjs');
+  const source = sources.find(item => item.sourceKey === 'cohere-sitemap');
+  const scoped = { entities, sources: [source] };
+  const { sourceRows } = manifestRows(scoped);
+  const existing = { id: 'e4fb6b08-0233-54a1-8c6e-6cfb429c0299', legacy_id: null, source_id: sourceRows[0].id, canonical_url: 'https://cohere.com/blog/ai-in-oil-and-gas', published_at: '2026-09-30T00:00:00Z', first_seen_at: '2026-09-30T00:00:00Z' };
+  const client = fakeClient({ existingContentItems: [existing] });
+  await runIngestion({ manifest: scoped, client, now: '2026-10-16T00:00:00Z', fetchSourceImpl: async () => ({ status: 'success', httpStatus: 200, fetchedAt: '2026-10-16T00:00:00Z', items: [{ ...validItem, url: existing.canonical_url, published_at: '2025-01-29T15:38:00Z' }] }) });
+  expect(client.calls.upserts.find(call => call.table === 'content_items').rows[0].published_at).toBe(existing.published_at);
+});

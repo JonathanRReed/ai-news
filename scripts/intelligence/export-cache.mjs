@@ -1,3 +1,4 @@
+import { correctedPublicationDate } from '../../src/lib/publicationCorrections.mjs';
 import { randomUUID } from 'node:crypto';
 import { open, readFile, rename } from 'node:fs/promises';
 import { createAdminClient } from './supabase-rest.mjs';
@@ -20,7 +21,7 @@ function toLegacyArticle(row, sourceByKey) {
     company: row.entity_name,
     title: row.title,
     url: canonicalUrl,
-    published_at: row.published_at,
+    published_at: correctedPublicationDate(row.source_key, canonicalUrl, row.published_at),
     source_type: row.source_type || 'rss_official',
     summary: row.excerpt || '',
     content: row.content || '',
