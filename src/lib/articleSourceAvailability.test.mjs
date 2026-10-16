@@ -6,7 +6,6 @@ import { articleMetaDescription } from "./articleSeo.ts";
 const missingSources = [
   "https://huggingface.co/blog/nvidia/model-evaluation-skill",
   "https://huggingface.co/blog/build-small-hackathon/sponsors-vouchers",
-  "https://cohere.com/blog/ai-in-oil-and-gas",
 ];
 
 test("unavailable sources do not invite readers to a removed original", () => {
@@ -32,7 +31,7 @@ test("only verified missing URLs are recorded with their check dates", async () 
   const { unavailableArticleSource } = await import("./articleSourceAvailability.mjs");
   for (const url of missingSources) {
     assert.equal(unavailableArticleSource(url)?.checked_at,
-      url === "https://cohere.com/blog/ai-in-oil-and-gas" ? "2026-10-07" : "2026-10-05");
+      "2026-10-05");
     assert.equal(unavailableArticleSource(url + "/#comments")?.url, url);
   }
   for (const url of [
@@ -61,7 +60,7 @@ test("availability does not depend on a route ID or mutate publisher records", a
     published_at: "2026-09-30T00:00:00+00:00",
   });
   const originalRecord = { ...cohereArticle };
-  assert.equal(unavailableArticleSource(cohereArticle.url)?.checked_at, "2026-10-07");
+  assert.equal(unavailableArticleSource(cohereArticle.url), null);
   assert.deepEqual(cohereArticle, originalRecord);
 });
 
