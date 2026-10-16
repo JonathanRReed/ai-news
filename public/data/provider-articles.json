@@ -1,5 +1,29 @@
 [
   {
+    "id": "fbf6e77d-9246-544b-a499-aec0efe99751",
+    "company": "Hugging Face",
+    "title": "Scaling Indic Pretraining: 2.8 Trillion Tokens and an Open Data Generation Pipeline",
+    "url": "https://huggingface.co/blog/nvidia/scaling-indic-pretraining",
+    "published_at": "2026-10-16T01:44:47+00:00",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://huggingface.co/blog/feed.xml",
+    "source_key": "hugging-face-blog"
+  },
+  {
+    "id": "c5f07996-cbcb-5689-aa6a-0a9f1e8a024d",
+    "company": "Gemini CLI",
+    "title": "Release v0.66.0-nightly.20261016.gdebf42324",
+    "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.66.0-nightly.20261016.gdebf42324",
+    "published_at": "2026-10-16T01:32:08+00:00",
+    "source_type": "rss_official",
+    "summary": "What's Changed chore(release): bump version to 0.66.0-nightly.20261013.g204db94ae by @gemini-cli-robot in #29740 Changelog for v0.64.0 by @gemini-cli-robot in #29741 fix(ui): implement synchronized output and isolate spinner rendering by @diegogodinezr in #29725 fix(ui): fix debug console height calculation and terminalBuffer flickering by @ugorla-dev in #29695 fix(cli): prevent right-hand border bleed in scrollable tool containers by @villahernandez-coder in #29742 refactor(core,cli): emit...",
+    "content": "What's Changed chore(release): bump version to 0.66.0-nightly.20261013.g204db94ae by @gemini-cli-robot in #29740 Changelog for v0.64.0 by @gemini-cli-robot in #29741 fix(ui): implement synchronized output and isolate spinner rendering by @diegogodinezr in #29725 fix(ui): fix debug console height calculation and terminalBuffer flickering by @ugorla-dev in #29695 fix(cli): prevent right-hand border bleed in scrollable tool containers by @villahernandez-coder in #29742 refactor(core,cli): emit tool call groups from the scheduler and drop the UI lookahead by @jesussamuel-byte in #29736 fix(core): format and quote Windows diff command arguments in openDiff by @jvargassanchez-dot in #29753 fix(cli): round before selecting units in formatDuration by @diegogodinezr in #29766 fix(core): disable interactive credential and SSH prompts in getSafeGitEnv by @villahernandez-coder in #29760 fix(cli): resolve settings placeholders after loading .env files by @elberthc-byte in #29750 fix(core): harden SKILL.md frontmatter parsing for single-line descriptions by @jesussamuel-byte in #29769 Full Changelog : v0.65.0-nightly.20261014.g42c518220...v0.66.0-nightly.20261016.gdebf42324",
+    "source_url": "https://github.com/google-gemini/gemini-cli/releases.atom",
+    "source_key": "gemini-cli-releases"
+  },
+  {
     "id": "47707c8a-a158-50d6-a9ef-ec0a3a658398",
     "company": "OpenClaw",
     "title": "openclaw 2026.10.4",
@@ -10,6 +34,18 @@
     "content": "2026.10.4 Highlights The Gateway keeps running after the computer sleeps or the system clock jumps, instead of restarting itself because its ownership heartbeat looked stale. ( #170790 ) Thanks @AnvinaLI , @sgh6688 , @waynegault , and @RomneyDa . Gateway shutdown and restart no longer hang on a stalled transcript worker or in-flight session lifecycle events. ( #170493 , #170555 ) Thanks @Oldrich333 . Tlon group DMs no longer treat other participants as the owner, closing an owner-impersonation path. ( #165801 ) Thanks @eleqtrizit . Headless browser pages keep responding to clicks while a site waits for a passkey. ( #170857 ) Thanks @trukhinyuri . Manual /compact settles the active run before compacting instead of aborting it and dropping the pending request. ( #166163 ) Thanks @holny and @alexph-dev . Changes Stability patch for 2026.10.3 with no new features or configuration changes. Thanks @RomneyDa . Fixes Gateway: stays responsive during long reply-tagged streams, and long replies that quote tool-call XML no longer re-parse Markdown on every token. ( #166782 , #171573 ) Thanks @boeingchoco . Gateway: blocked durable context-engine turns are logged once instead of on every run. ( #167595 ) Thanks @jalehman . Control UI: delayed application heartbeats no longer force a reconnect. ( #171253 ) Gateway: recover state ownership after sleep and wall-clock changes, and allow openclaw gateway restart from verified external macOS terminals. ( #170790 , #170354 ) Thanks @AnvinaLI , @sgh6688 , @waynegault , and @RomneyDa . Gateway: bound transcript-worker shutdown waits and wait for session lifecycle publication during shutdown. ( #170493 , #170555 ) Thanks @Oldrich333 . Gateway: start enabled standalone plugin files with the Gateway, and keep worker heap limits enforced when the managed service sets a process-wide heap flag. ( #171330 , #166581 ) Thanks @holgergruenhagen , @valkyriweb , @xydigitLybnnnn , @goslingmanagment , @waynegault , and @obviyus . Agents: launched plugin turns no longer fail with writer-claim errors, and Claude CLI sessions no longer fork history across message routes. ( #170077 , #167241 ) Thanks @cmatrx0 . Agents: manual compaction settles the active run instead of aborting it. ( #166163 ) Thanks @holny and @alexph-dev . OpenAI: tool turns for reasoning models on api.openai.com Completions routes no longer fail with a 400. ( #166182 ) Thanks @obviyus and @AsTutoAI . Updates: agent databases are no longer flagged as changed during snapshot capture, the success summary stops repeating settled plugin data/settings upgrades as pending, and metadata inventory keeps running under progress-output backpressure. ( #170351 , #170413 , #168493 ) Thanks @DonnieFi , @RomneyDa , and @vincentkoc . Updates: slow host admission no longer holds the database writer and disrupts Gateway work, progress keeps reporting through temporary Doctor maintenance, snapshot failures get an accurate headline and recovery advice, and Linux updates can clean up abandoned runtime directories under protected systemd user managers. ( #171493 , #171454 , #171457 , #171488 , #170783 , #166335 ) Thanks @RomneyDa , @DonnieFi , and @vincentkoc . Updates: candidate validation no longer amplifies private SQLite snapshots on live installs, older drivers stop reading candidate-migrated state and stale restart verdicts clear, and optional cron inspection or snapshot cleanup failures no longer stall updates. ( #167451 , #170130 , #170754 ) Thanks @angeliti999 and @RomneyDa . Updates: openclaw update repair turns no longer time out before running tools on slower hosts; nested authority checks reuse the current state snapshot instead of copying the database again. ( #166847 ) Doctor: updates no longer refuse unreferenced retired OAuth sidecars, and offline state repair works for app-owned Gateways. ( #165420 , #170768 ) Thanks @obviyus and @RomneyDa . Tailscale: an interrupted start stops its serve process, local access stays available when the tailnet denies Serve, and Doctor checks configured Tailscale startup prerequisites. ( #167514 , #171509 , #166947 ) Thanks @pandysp and @RomneyDa . macOS: app recovery keeps compatible newer Gateways instead of downgrading them, and repair accepts a verified LaunchAgent bootstrap that is already in progress. ( #170766 , #170740 ) Thanks @RomneyDa . Sessions: equivalent POSIX path aliases such as /tmp and /private/tmp no longer restart channels. ( #166462 ) Thanks @ericcaiwx-star . MCP: OAuth login completes when the authorization server registers loopback redirect URIs without a port. ( #170876 ) Thanks @9fw2pq8sgb-art . Browser: headless pages accept clicks while a site waits for a passkey. ( #170857 ) Thanks @trukhinyuri . Control UI: updated chats recover through the serving document. ( #168941 ) Tlon: never treat group DM authors as the owner. ( #165801 ) Thanks @eleqtrizit . Telegram: polling workers resolve in both source and package builds. ( #154286 ) Thanks @xydt-juyaohui and @markfietje . Discord: agent consults keep working after voice changes. ( #171029 ) Thanks @ericcaiwx-star and @brainmonger . Feishu: config hot-reload no longer orphans conversation bindings. ( #169226 ) Thanks @ruel225 , @junniar , and @obviyus . IRC: long non-ASCII replies are no longer lost when the server relays them. ( #159730 ) Thanks @rodricksz4h5 . Release: plugin npm publish tolerates repeated artifact pagination entries, Linux builds trigger after automatic requests with hosted-runner credentials, and ratchet checks read large Git baselines. ( #171044 , #167087 , #167237 , #164743 ) Thanks @RomneyDa and @shakkernerd . Complete contribution record This audited record covers the complete v2026.10.3.. d58dd3c history: 61 in-range PRs + 0 retained seed-only PRs = 61 unique PRs. The generation manifest also supplies direct commits as editorial input; the grouped notes above prioritize user impact. Pull requests PR #166581 Related #157575 , #157630 . Thanks @valkyriweb and @xydigitLybnnnn and @goslingmanagment and @waynegault . PR #164743 Related #164741 . Thanks @shakkernerd . PR #166163 Related #166038 . Thanks @holny and @alexph-dev . PR #166182 Related #166125 . Thanks @obviyus and @AsTutoAI . PR #167087 Thanks @RomneyDa . PR #167241 Related #167077 . Thanks @cmatrx0 . PR #168493 Thanks @vincentkoc . PR #168941 PR #169226 Related #169190 . Thanks @ruel225 and @obviyus and @junniar . PR #170351 Thanks @DonnieFi and @RomneyDa . PR #171029 Related #171013 . Thanks @ericcaiwx-star and @brainmonger . PR #171044 Thanks @RomneyDa . PR #171330 Thanks @holgergruenhagen and @obviyus . PR #166462 Related #166456 . Thanks @ericcaiwx-star . PR #170857 Thanks @trukhinyuri . PR #170413 Related #170334 . Thanks @RomneyDa and @DonnieFi . PR #170702 Thanks @RomneyDa . PR #170790 Related #169829 , #170525 , #170597 . Thanks @AnvinaLI and @sgh6688 and @waynegault . PR #170354 Thanks @RomneyDa . PR #165801 Thanks @eleqtrizit . PR #170876 Related #170848 . Thanks @9fw2pq8sgb-art . PR #159730 Thanks @rodricksz4h5 . PR #154286 Related #154180 . Thanks @xydt-juyaohui and @markfietje . PR #170077 PR #170493 Related #169777 . Thanks @Oldrich333 . PR #170555 PR #167237 PR #171493 Related #169260 . Thanks @RomneyDa and @DonnieFi . PR #171457 Related #171408 . Thanks @RomneyDa and @DonnieFi . PR #170783 PR #171454 Related #171409 . Thanks @RomneyDa and @DonnieFi . PR #166335 Thanks @vincentkoc . PR #171488 Related #171410 . Thanks @RomneyDa and @DonnieFi . PR #170766 Thanks @RomneyDa . PR #170740 Thanks @RomneyDa . PR #167514 Related #167436 . Thanks @pandysp . PR #171509 Thanks @RomneyDa . PR #166947 Thanks @RomneyDa . PR #167451 PR #170130 Related #169422 . Thanks @angeliti999 . PR #170754 Thanks @RomneyDa . PR #165420 Thanks @obviyus . PR #170768 Thanks @RomneyDa . PR #160056 Related #159926 , #159927 . Thanks @oscarsixsecllc . PR #171715 Thanks @RomneyDa . PR #171747 Thanks @RomneyDa . PR #163177 Thanks @RomneyDa . PR #171928 Thanks @RomneyDa . PR #166847 PR #166782 Related #166781 . Thanks @boeingchoco . PR #171573 Related #171363 . Thanks @boeingchoco . PR #167595 Thanks @jalehman . PR #171253 PR #172666 Thanks @RomneyDa . PR #166218 Thanks @RomneyDa . PR #161543 PR #168922 PR #172038 Thanks @vincentkoc . PR #172596 Thanks @RomneyDa . PR #171952 Thanks @RomneyDa . PR #172786 Thanks @RomneyDa . Release verification npm package: https://www.npmjs.com/package/openclaw/v/2026.10.4 registry tarball: https://registry.npmjs.org/openclaw/-/openclaw-2026.10.4.tgz integrity: sha512-+FH0StZF1tlTazM7JJGY6JePeJmhFNSRByi2Q3jXPRiLO7o4dJh2xa9Vy4Dk8Cd2ic8B7Zkf5NfEaCCWUkgqnQ== release SHA: 383c124cc32ffee3f8e56f549b88da94d269a4af full release CI report: https://github.com/openclaw/releases/blob/main/evidence/2026.10.4/release-evidence.md release publish: https://github.com/openclaw/openclaw/actions/runs/38827593754 npm preflight: https://github.com/openclaw/openclaw/actions/runs/38775953219 full release validation: https://github.com/openclaw/openclaw/actions/runs/38774938703 plugin npm publish: https://github.com/openclaw/openclaw/actions/runs/38828956361 plugin ClawHub publish: no normal OIDC candidates plugin ClawHub bootstrap: not needed OpenClaw npm publish: https://github.com/openclaw/openclaw/actions/runs/38824408033/attempts/1 npm Telegram beta E2E: not supplied Android APK: skipped — apps/android/version.json is 2026.8.2, release train is 2026.10.4; run pnpm android:version:pin -- --from-gateway before the next tag.",
     "source_url": "https://github.com/openclaw/openclaw/releases.atom",
     "source_key": "openclaw-releases"
+  },
+  {
+    "id": "d43bd0cd-3cfe-59a8-b6bd-0f4348edb02b",
+    "company": "Cline",
+    "title": "desktop-nightly-20261016020842",
+    "url": "https://github.com/cline/cline/releases/tag/desktop-nightly-20261016020842",
+    "published_at": "2026-10-16T00:25:25+00:00",
+    "source_type": "rss_official",
+    "summary": "fix(desktop): pass --use-system-ca when launching the backend on the …",
+    "content": "fix(desktop): pass --use-system-ca when launching the backend on the …",
+    "source_url": "https://github.com/cline/cline/releases.atom",
+    "source_key": "cline-releases"
   },
   {
     "id": "ffc780ca-2931-589f-8412-3c9cf4fb1b92",
@@ -442,6 +478,18 @@
     "content": "",
     "source_url": "https://huggingface.co/blog/feed.xml",
     "source_key": "hugging-face-blog"
+  },
+  {
+    "id": "ab26d9e4-daf8-5683-b06c-c9790413fba4",
+    "company": "Meta AI",
+    "title": "Introducing Muse Spark Open, The Most Capable US Open‑Weight Model to Date",
+    "url": "https://research.meta.ai/blog/muse-spark-open",
+    "published_at": "2026-10-15T00:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "Muse Spark Open is the most capable US open-weight model to date, and brings leading agentic capabilities to your desktop on Apple M5 Ultra Mac Studios.",
+    "content": "Muse Spark Open is the most capable US open-weight model to date, and brings leading agentic capabilities to your desktop on Apple M5 Ultra Mac Studios.",
+    "source_url": "https://research.meta.ai/sitemap.xml",
+    "source_key": "meta-research-sitemap"
   },
   {
     "id": "784c8486-206f-55b1-a509-1a23bb9c6dc8",
@@ -994,6 +1042,18 @@
     "content": "Learn how to measure AI success, how to integrate AI into core products and operations, and what it takes to achieve AI-native transformation.",
     "source_url": "https://cohere.com/sitemap.xml",
     "source_key": "cohere-sitemap"
+  },
+  {
+    "id": "d92b78b7-9bff-5e9a-97d0-055b528f91a2",
+    "company": "Meta AI",
+    "title": "Accelerating Scientific Research in Health Data Science With Muse Models",
+    "url": "https://research.meta.ai/blog/accelerating-scientific-research-in-health-data-science-with-muse-models",
+    "published_at": "2026-10-14T00:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "An initial exploration of a human-governed AI system for accelerating health research with Muse models.",
+    "content": "An initial exploration of a human-governed AI system for accelerating health research with Muse models.",
+    "source_url": "https://research.meta.ai/sitemap.xml",
+    "source_key": "meta-research-sitemap"
   },
   {
     "id": "cf0f6df9-7da9-57bf-8a64-8b164f277a0a",
@@ -1750,6 +1810,18 @@
     "content": "{\"attempt\":13,\"attemptRef\":\"rc.13-v0.21.7\",\"schema\":1,\"version\":\"0.21…",
     "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
     "source_key": "hermes-agent-releases"
+  },
+  {
+    "id": "07b0d78c-d5d9-5c1f-ac32-9a9eeed36ded",
+    "company": "Meta AI",
+    "title": "Muse Wonder: A Frontier Model For Personal & Professional AI Agents",
+    "url": "https://research.meta.ai/blog/muse-wonder",
+    "published_at": "2026-10-12T00:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "Muse Wonder is Meta's frontier AI model that keeps track of what matters to you with Active Memory & Active Focus to work towards your goals at work & life.",
+    "content": "Muse Wonder is Meta's frontier AI model that keeps track of what matters to you with Active Memory & Active Focus to work towards your goals at work & life.",
+    "source_url": "https://research.meta.ai/sitemap.xml",
+    "source_key": "meta-research-sitemap"
   },
   {
     "id": "44ce7254-487e-557e-89cf-8c28b3bb8a77",
@@ -4512,6 +4584,18 @@
     "source_key": "openclaw-releases"
   },
   {
+    "id": "faa282d7-e09b-5506-9cb7-243b5f7cc040",
+    "company": "Meta AI",
+    "title": "Solving Open Research Problems Together",
+    "url": "https://research.meta.ai/blog/solving-open-research-problems-together",
+    "published_at": "2026-10-02T00:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "Mathematicians and Muse Spark collaborate on six research papers",
+    "content": "Mathematicians and Muse Spark collaborate on six research papers",
+    "source_url": "https://research.meta.ai/sitemap.xml",
+    "source_key": "meta-research-sitemap"
+  },
+  {
     "id": "d88afcf7-80af-5e12-b081-196cb32e5cd8",
     "company": "OpenAI",
     "title": "Chatham scales its capital markets expertise with OpenAI",
@@ -4522,6 +4606,18 @@
     "content": "Chatham Financial uses Codex and GPT-5.6 to build technology and redesign workflows, cutting trade validation from 30 minutes to under 4.",
     "source_url": "https://openai.com/news/rss.xml",
     "source_key": "openai-news"
+  },
+  {
+    "id": "d861b882-5564-5902-9664-2824a4595386",
+    "company": "Meta AI",
+    "title": "Developing Capable Models Responsibly",
+    "url": "https://research.meta.ai/blog/developing-capable-models-responsibly",
+    "published_at": "2026-10-02T00:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "Updates to the Meta Superintelligence Scaling Framework extend safety requirements to training and evaluation and clarify considerations for open-weight releases.",
+    "content": "Updates to the Meta Superintelligence Scaling Framework extend safety requirements to training and evaluation and clarify considerations for open-weight releases.",
+    "source_url": "https://research.meta.ai/sitemap.xml",
+    "source_key": "meta-research-sitemap"
   },
   {
     "id": "a1c40ac3-0e91-5f8a-943d-027147f93bd4",
@@ -8146,6 +8242,18 @@
     "content": "New Features Choose GPT-6 Sol or GPT-6 Luna from the model picker. The rate-limit switch prompt now recommends GPT-6 Luna. ( #47405 ) Changelog Full Changelog: rust-v0.156.0...rust-v0.156.1 #47405 [hotfix 0.156.0] Add GPT-6 Sol and Luna to the model catalog ( #47332 ) @imac-oai",
     "source_url": "https://github.com/openai/codex/releases.atom",
     "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "455118ba-3167-5ea7-ae76-0d66b8142fc7",
+    "company": "Meta AI",
+    "title": "Bringing Your Muse to Life",
+    "url": "https://research.meta.ai/blog/bringing-your-muse-to-life",
+    "published_at": "2026-09-23T00:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "Muse Realtime Avatar turns Muse Realtime Voice into expressive, interactive avatars.",
+    "content": "Muse Realtime Avatar turns Muse Realtime Voice into expressive, interactive avatars.",
+    "source_url": "https://research.meta.ai/sitemap.xml",
+    "source_key": "meta-research-sitemap"
   },
   {
     "id": "242820a9-4495-5b23-ba23-6c13517fa3a1",
@@ -13992,6 +14100,18 @@
     "source_key": "cohere-sitemap"
   },
   {
+    "id": "7e80e290-a7dc-54c4-8934-d2bddde13945",
+    "company": "Meta AI",
+    "title": "How We Built Safety Into Muse",
+    "url": "https://research.meta.ai/blog/security-and-safety-for-ai-agents-our-approach-with-muse",
+    "published_at": "2026-09-08T00:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "By going into detail about how Muse works under the hood, we hope to give you a sense of how — and how much — you can trust it in practice.",
+    "content": "By going into detail about how Muse works under the hood, we hope to give you a sense of how — and how much — you can trust it in practice.",
+    "source_url": "https://research.meta.ai/sitemap.xml",
+    "source_key": "meta-research-sitemap"
+  },
+  {
     "id": "732ff404-b644-5dd7-a8c3-963f3db38972",
     "company": "OpenAI",
     "title": "1Password increases engineering productivity 21% with Codex",
@@ -15168,6 +15288,18 @@
     "source_key": "openclaw-releases"
   },
   {
+    "id": "8c6c14e3-a527-5547-8099-c57fd86390fd",
+    "company": "Meta AI",
+    "title": "Introducing Muse Spark 1.3",
+    "url": "https://research.meta.ai/blog/introducing-muse-spark-1-3",
+    "published_at": "2026-09-02T00:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "Introducing Muse Spark 1.3, with max reasoning for challenging reasoning and agentic tasks and improved real-world usability.",
+    "content": "Introducing Muse Spark 1.3, with max reasoning for challenging reasoning and agentic tasks and improved real-world usability.",
+    "source_url": "https://research.meta.ai/sitemap.xml",
+    "source_key": "meta-research-sitemap"
+  },
+  {
     "id": "485fd4a5-b18e-572a-9917-6054763e970d",
     "company": "Cohere",
     "title": "The Benefits of Small Language Models (SLMs) | Cohere",
@@ -15670,6 +15802,18 @@
     "content": "Release 0.152.0-alpha.7.2",
     "source_url": "https://github.com/openai/codex/releases.atom",
     "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "a022f735-592e-57fc-a1aa-b7deb2f6bf06",
+    "company": "Meta AI",
+    "title": "Introducing Muse Voice Transcribe",
+    "url": "https://research.meta.ai/blog/introducing-muse-voice-transcribe",
+    "published_at": "2026-09-01T00:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "Introducing Muse Voice Transcribe, a real-time audio perception model for streaming speech recognition, diarization, and endpointing.",
+    "content": "Introducing Muse Voice Transcribe, a real-time audio perception model for streaming speech recognition, diarization, and endpointing.",
+    "source_url": "https://research.meta.ai/sitemap.xml",
+    "source_key": "meta-research-sitemap"
   },
   {
     "id": "61d78dfb-17a3-58b9-9d70-f11881956c43",
@@ -18000,6 +18144,18 @@
     "source_key": "openai-news"
   },
   {
+    "id": "cf4dd056-71dc-5c6d-9070-63d88c28c2fe",
+    "company": "Meta AI",
+    "title": "The Multimodal Intelligence of Muse Spark 1.2",
+    "url": "https://research.meta.ai/blog/multimodal-intelligence-of-muse-spark-1-2",
+    "published_at": "2026-08-20T00:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "Today we're sharing the multimodal side of Muse Spark 1.2.",
+    "content": "Today we're sharing the multimodal side of Muse Spark 1.2.",
+    "source_url": "https://research.meta.ai/sitemap.xml",
+    "source_key": "meta-research-sitemap"
+  },
+  {
     "id": "a419c573-fb16-5fb8-989d-1e747857330c",
     "company": "Cohere",
     "title": "Unpacking AI Safety for Enterprises | Cohere",
@@ -18478,6 +18634,18 @@
     "content": "",
     "source_url": "https://huggingface.co/blog/feed.xml",
     "source_key": "hugging-face-blog"
+  },
+  {
+    "id": "02c266de-79a1-5e17-b44c-c016cbcff83c",
+    "company": "Meta AI",
+    "title": "Addressing an issue involving a third-party cyber evaluation of Muse Spark 1.1",
+    "url": "https://research.meta.ai/blog/addressing-third-party-testing-misconfiguration-muse-spark-1-1",
+    "published_at": "2026-08-14T00:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "A full account of a misconfiguration in a third-party cybersecurity testing environment that led a pre-release version of Muse Spark 1.1 to exploit a vulnerability on a real company’s website, what our investigation found, and the changes we are making.",
+    "content": "A full account of a misconfiguration in a third-party cybersecurity testing environment that led a pre-release version of Muse Spark 1.1 to exploit a vulnerability on a real company’s website, what our investigation found, and the changes we are making.",
+    "source_url": "https://research.meta.ai/sitemap.xml",
+    "source_key": "meta-research-sitemap"
   },
   {
     "id": "f612a5f2-7665-5c10-a098-2bfae1224b74",
@@ -19068,6 +19236,18 @@
     "source_key": "openai-news"
   },
   {
+    "id": "3d40ed40-86e0-5a4c-8b89-55646f5f0eb7",
+    "company": "Meta AI",
+    "title": "Introducing Muse Glimmer: An Open Agentic Model That Runs on Your Device",
+    "url": "https://research.meta.ai/blog/introducing-muse-glimmer-open-agentic-model",
+    "published_at": "2026-08-10T00:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "Muse Glimmer is a 30-billion-parameter open agentic model from Meta Superintelligence Labs, optimized for always-on local workflows on consumer hardware.",
+    "content": "Muse Glimmer is a 30-billion-parameter open agentic model from Meta Superintelligence Labs, optimized for always-on local workflows on consumer hardware.",
+    "source_url": "https://research.meta.ai/sitemap.xml",
+    "source_key": "meta-research-sitemap"
+  },
+  {
     "id": "provider-fc30dfbf83a1235c1a",
     "company": "NVIDIA AI",
     "title": "Firebird Launches CIS Region’s Largest AI Factory in Armenia",
@@ -19246,6 +19426,18 @@
     "content": "Build on Trainium is a $110 million credit program focused on AI research and university education aimed to support the next generation of innovation and development on AWS Trainium. The program provides compute credits to novel AI research on Trainium, investing in leading academic teams to build innovations in critical areas including new model architectures, ML libraries, optimizations, large-scale distributed systems, and more. This announcement includes awards funded under the Fall 2025 Build on Trainium: Responsible AI call for proposals. Proposals were reviewed for the quality of their scientific content and their potential to impact both the research community and society. This cycle’s focus on Responsible AI invited proposals addressing five priority topics: AI safety and alignment, multi-lingual language models, representation engineering, sustainability and small language models, and deep learning models for synthetic data generation—all leveraging AWS Trainium infrastructure. The recipients have access to more than 700 Amazon public datasets and can utilize AWS AI/ML services and tools through their AWS Promotional Credits, are assigned an Amazon research contact who offers consultation and advice, and benefit from AWS Trainium resources, such as tutorials and hands-on sessions. \"Build on Trainium gives the next wave of AI researchers powerful, scalable access to Amazon's purpose-built AI chips, so the only limit is their imagination, not their compute budget,\" said Yida Wang, AWS AI Principal Applied Scientist. \"By leveraging the support from Build on Trainium, University of Illinois Urbana-Champaign researchers are studying topology-aware parallelization strategies for large-scale mixture-of-experts models with as many as one trillion parameters on up to 1,024 Trainium chips. At the University of Washington, researchers are developing an inference-optimization framework that raises token efficiency for everyone building on Trainium, with the goal to deliver portable, high-performance LLM inference on Trainium.\" RecipientUniversityResearch titleWei BaoThe University of SydneyFACTOR: Federated Adversarial Co-Training with Textual Gradient for LLM Security and RobustnessViveck CadambeGeorgia Institute of TechnologyLeveraging Public-Private Mixtures For Differentially Private Synthetic Data GenerationYujun CaiThe University of QueenslandResponsible AI on Trainium: Scalable Detection and Mitigation of Evasive Multimodal Scam ContentHaipeng ChenCollege of William and MaryDELA: Editable Diffusion Language ModelsTianlong ChenUniversity of North Carolina at Chapel HillAlgorithm-System Co-Design for Efficient Sparse and Quantized LLMsSaadia GabrielUniversity of California Los AngelesMANSA: Democratizing Voice AI with Efficient Multimodal Foundation ModelsHaewon JeongUniversity of California Santa BarbaraLeveraging Public-Private Mixtures For Differentially Private Synthetic Data GenerationHaojian JinUniversity of California San DiegoGoverning Social Bias in AI Image Generation through Value ManifestsMarios KogiasImperial College LondonTowards Deterministic Model InferenceSachin KumarThe Ohio State UniversityNatively Multimodal and Multilingual Speech-Text Large Language ModelsEmanuele La MalfaInstitute for Decentralized AI (ADAI)Safe, Social Pre-training of LLM AgentsXiaoxiao LiThe University of British ColumbiaMemorization-Aware Preference Optimization for Machine UnlearningYingcong LiNew Jersey Institute of TechnologyEfficient and Adaptable Language Models via Sub-Model SearchZhijian LiuUniversity of California San DiegoAlgorithm-System Co-Design for Efficient Sparse and Quantized LLMsSongtao LuThe Chinese University of Hong KongM3-Align: Scalable Multilevel & Multiobjective Alignment for Multilingual Language ModelsYao LuUCL - University College LondonBreaking the Multilingual Data Wall: Scaling Synthetic Data for Low-Resource Language Model PretrainingSasa MisailovicUniversity of Illinois at Urbana-ChampaignCratos: Certified Robustness for Quantization and Pruning-Aware Training and Tuning of Vision Language ModelsTinoosh MohseninJohns Hopkins UniversityTRIM-LLM: From Quadratic to Linear Attention and Structured Pruning for Carbon and Cost-Efficient LLM Deployment on TrainiumThanhVu NguyenGeorge Mason UniversityLeveraging AWS Trainium for Verifiable AI and ML-Assisted Mathematical ReasoningFrank RudziczDalhousie UniversityRepresentation Immunization on Trainium: Scalable Noising & Weight-LockingAnuj SharmaIowa State UniversityBuild on Trainium: Physics-Grounded Synthetic Crash Generation for Vulnerable Road Users with Representation Engineering on Video Diffusion and VLMsShen ShenMassachusetts Institute of TechnologyAgent Tool-Use Safety Benchmarking with MCP-Specific LoRA MitigationsRyan ShiUniversity of PittsburghBenchmarking and Improving Multilingual LLMs on Real Indic Language Healthcare DialoguesNaichen ShiNorthwestern University LLM Hallucination Detection and Mitigation Jaideep Srivastava University of Minnesota Twin CitiesKnowledge-Infused Time-Series Pretraining with Safety-by-Knowledge-Checking for Trustworthy Clinical AICheng TanNortheastern University Towards Reliable and Trustworthy LLM Services with ϵ-correctnessYue WangUniversity of Central FloridaGame-Theoretic Frameworks for Responsible AI on Pluralistic AlignmentYang WangUniversity of Illinois at Urbana-ChampaignSafeguarding Youths in Multimodal Generative AI: Toward a Trainium-Powered Framework for Safety and AlignmentErmin WeiNorthwestern University Higher Order Based Fast LLM Training MethodJun WuMichigan State UniversityBigger Models, Bigger Risks? Investigating the Safety Landscape of LLM ScalingXiaokui XiaoNational University of SingaporeTrainium-Accelerated, LLM-Guided Differentially Private Synthesis of Hierarchical Relational DataMin XuCarnegie Mellon UniversityLanguage-Grounded Interpretability for ViT and 3D ModelsZiyu YaoGeorge Mason UniversityRepresentation Engineering of LLMs for Secure Code Generation Junzhe Zhang Syracuse UniversityDeconfounding Image Editing for Robust Causal Prediction",
     "source_url": "https://www.amazon.science/index.rss",
     "source_key": "amazon-science"
+  },
+  {
+    "id": "8b49052e-d5e6-5ac2-b8b8-c30df0fb3a75",
+    "company": "Meta AI",
+    "title": "Introducing Muse Code and Muse Spark 1.2",
+    "url": "https://research.meta.ai/blog/introducing-muse-code-and-muse-spark-1-2",
+    "published_at": "2026-08-05T00:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "Introducing Muse Code, a terminal coding agent powered by Muse Spark 1.2, with persistent background agents, repository-scale execution, and built-in verification.",
+    "content": "Introducing Muse Code, a terminal coding agent powered by Muse Spark 1.2, with persistent background agents, repository-scale execution, and built-in verification.",
+    "source_url": "https://research.meta.ai/sitemap.xml",
+    "source_key": "meta-research-sitemap"
   },
   {
     "id": "79d4bf8c-d881-5449-9259-ed0b813dd4c1",
@@ -21250,6 +21442,18 @@
     "content": "ChatGPT Work is an agent that can take action across your apps and files, stay with a project for hours if needed, and turn a goal into finished work.",
     "source_url": "https://openai.com/news/rss.xml",
     "source_key": "openai-news"
+  },
+  {
+    "id": "31b93ce0-8514-5f6f-a71b-3ac032f1ef50",
+    "company": "Meta AI",
+    "title": "Introducing Muse Spark 1.1",
+    "url": "https://research.meta.ai/blog/introducing-muse-spark-meta-model-api",
+    "published_at": "2026-07-09T00:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "Introducing Muse Spark 1.1, a multimodal reasoning model from Meta Superintelligence Labs with advances in agentic tasks, computer use, coding, and multimodal understanding.",
+    "content": "Introducing Muse Spark 1.1, a multimodal reasoning model from Meta Superintelligence Labs with advances in agentic tasks, computer use, coding, and multimodal understanding.",
+    "source_url": "https://research.meta.ai/sitemap.xml",
+    "source_key": "meta-research-sitemap"
   },
   {
     "id": "provider-e12a140c23bfe1a7e6",
