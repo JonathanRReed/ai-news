@@ -133,3 +133,11 @@ describe('exportLegacyArticles', () => {
     expect(aliases.map(({ legacy_id }) => legacy_id)).toEqual(['a', 'b', 'c']);
   });
 });
+
+test('exports a verified publication correction without changing the stored identity', async () => {
+  const row = { ...rows[0], id: 'e4fb6b08-0233-54a1-8c6e-6cfb429c0299', legacy_id: null, entity_name: 'Cohere', source_key: 'cohere-sitemap', source_url: 'https://cohere.com/sitemap.xml', canonical_url: 'https://cohere.com/blog/ai-in-oil-and-gas', published_at: '2026-09-30T00:00:00Z' };
+  const result = await collectLegacyArticles({ client: { async selectRows() { return [row]; } }, manifestSources: sources });
+  expect(result[0].published_at).toBe('2025-01-29T15:38:00.000Z');
+  expect(result[0].id).toBe(row.id);
+  expect(row.published_at).toBe('2026-09-30T00:00:00Z');
+});
