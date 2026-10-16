@@ -308,3 +308,15 @@ test('news stays readable when scroll observers are unavailable', async ({ page 
   await expect(story).toBeVisible();
   expect(await story.evaluate(element => window.getComputedStyle(element).opacity)).toBe('1');
 });
+
+test('saved operational releases remain available even though news feeds omit them', async ({ page }) => {
+  const { readFileSync } = await import('node:fs');
+  const records = JSON.parse(readFileSync(new URL('../../public/data/provider-articles.json', import.meta.url), 'utf8')) as Array<{ id: string; title: string; url: string }>;
+  const record = records.find(row => decodeURIComponent(row.url).includes('/releases/tag/release-publish/'));
+  expect(record).toBeTruthy();
+  await page.addInitScript(id => localStorage.setItem('ai-news-saved', JSON.stringify([id])), record!.id);
+  await page.reload();
+  await page.getByRole('button', { name: /^Saved/ }).click();
+  await expect(page.locator(`article[data-article-id="${record!.id}"]`)).toBeVisible();
+  await expect(page.getByRole('button', { name: /Load .* more/ })).toHaveCount(0);
+});

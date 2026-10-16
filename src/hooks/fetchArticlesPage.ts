@@ -1,7 +1,7 @@
 /* global AbortSignal */
 import { SUPABASE_URL, SUPABASE_REST_HEADERS, supabaseConfigured } from '../lib/supabaseClient.js';
 import { toArticle } from '../lib/articleCompatibility.js';
-import { admittedArticles, articleSourceRouteIds } from '../lib/articleAdmission.js';
+import { admittedArticles, articleSourceRouteIds, applyPublicReleaseFilters } from '../lib/articleAdmission.js';
 import { fetchIntelligencePage, isKnownCompanyName } from '../lib/intelligenceClient.js';
 import type { IntelligenceFilters } from '../lib/intelligenceClient.js';
 import type { Article, PageData } from '../types/article.js';
@@ -30,7 +30,7 @@ async function fetchSupplementalArticles(): Promise<Article[]> {
   if (supplementalArticlesPromise) return supplementalArticlesPromise;
   supplementalArticlesPromise = (async () => {
     try {
-      const response = await fetch(SUPPLEMENTAL_ARTICLES_PATH);
+      const response = await fetch(SUPPLEMENTAL_ARTICLES_PATH, { signal: AbortSignal.timeout(8000) });
       if (!response.ok) return [];
       const data: unknown = await response.json();
       return Array.isArray(data) ? admittedArticles(data.filter(isArticle), { includeInternalBuilds: true }) : [];
@@ -55,6 +55,7 @@ export async function countNewerThan(filters: ArticleFilters, sinceMs: number): 
     select: 'id',
     published_at: `gt.${new Date(sinceMs).toISOString()}`,
   });
+  applyPublicReleaseFilters(params);
   if (filters.company && filters.company !== 'All') {
     params.set('entity_name', `eq.${filters.company}`);
   }

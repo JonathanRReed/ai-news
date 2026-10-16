@@ -1,6 +1,6 @@
 /* global AbortSignal */
 import { deriveTopics } from './articleTags.js';
-import { sourceKeyForArticle } from './articleAdmission.js';
+import { sourceKeyForArticle, isInternalReleaseBuild, applyPublicReleaseFilters } from './articleAdmission.js';
 import { intelligenceEntities } from './intelligenceCatalog.js';
 import { isSafeArticleRouteId } from './articleRoutes.js';
 import type { Article } from '../types/article.js';
@@ -147,6 +147,7 @@ function mergeFirstPage(
 ): FeedPage {
   const pageSize = dependencies.pageSize ?? PAGE_SIZE;
   const staticRows = dependencies.staticArticles
+    .filter(article => !isInternalReleaseBuild(article))
     .map(staticFeedItem)
     .filter((item) => matchesFilters(item, filters));
   const liveKeys = new Set<string>();
@@ -254,6 +255,7 @@ function staticPage(
 ): FeedPage {
   const pageSize = dependencies.pageSize ?? PAGE_SIZE;
   const all = dependencies.staticArticles
+    .filter(article => !isInternalReleaseBuild(article))
     .map(staticFeedItem)
     .sort((left, right) => (
       Date.parse(right.published_at) - Date.parse(left.published_at) || right.id.localeCompare(left.id)
@@ -285,6 +287,7 @@ async function livePage(
     order: 'published_at.desc,id.desc',
     limit: String(scanLimit),
   });
+  applyPublicReleaseFilters(params);
   if (filters.company && filters.company !== 'All') params.set('entity_name', `eq.${filters.company}`);
   if (cursor) params.set('or', cursorFilter(cursor));
   const searchFilter = qFilter(filters.q);
@@ -303,7 +306,7 @@ async function livePage(
   if (!Array.isArray(payload) || !payload.every(isFeedItem)) {
     throw new Error('live feed returned an invalid payload');
   }
-  const matching = payload.filter((item) => matchesLiveTopics(item, filters));
+  const matching = payload.filter((item) => !isInternalReleaseBuild({ url: item.canonical_url }) && matchesLiveTopics(item, filters));
   const data = matching.slice(0, pageSize);
   let cursorRow: FeedItem | undefined;
   if (matching.length > pageSize) cursorRow = matching[pageSize - 1];

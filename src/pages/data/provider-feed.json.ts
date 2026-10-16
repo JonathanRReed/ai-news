@@ -5,7 +5,7 @@ import { articleExcerpt } from "../../lib/articleExcerpt.js";
 import type { Article } from "../../types/article.js";
 
 export const GET: APIRoute = () => {
-  const articles = admittedArticles(providerArticles as Article[]).map((article) => ({
+  const articles = admittedArticles(providerArticles as Article[], { includeInternalBuilds: true }).map((article) => ({
     id: article.id,
     company: article.company,
     title: article.title,
