@@ -74,8 +74,18 @@ function deepseekNewsDate(html, canonical) {
     const label = stripMarkup(text).match(/(\d{4})\/(\d{2})\/(\d{2})$/);
     if (label) return utcDate(Number(label[1]), Number(label[2]), Number(label[3]));
   }
+  return deepseekSlugDate(pathname);
+}
+
+function deepseekSlugDate(pathname) {
   const slug = pathname.match(/\/news(\d{2})(\d{2})(\d{2})\/?$/);
   return slug ? utcDate(2000 + Number(slug[1]), Number(slug[2]), Number(slug[3])) : null;
+}
+
+// Orders sitemap pages for the fetch cap only. Publication dates still come from each page.
+export function discoveryDate(source, entry) {
+  if (entry.lastModified) return entry.lastModified;
+  return source.sourceKey === 'deepseek-api-news' ? deepseekSlugDate(new URL(entry.url).pathname) : null;
 }
 
 function sourcePageDate(source, html, canonical) {

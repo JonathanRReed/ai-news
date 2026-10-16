@@ -1,5 +1,5 @@
 import { parseAtom, parseRss } from './parse-feed.mjs';
-import { parseChangelogSections, parsePageMetadata, parseSitemap } from './parse-sitemap.mjs';
+import { discoveryDate, parseChangelogSections, parsePageMetadata, parseSitemap } from './parse-sitemap.mjs';
 import {
   fetchAdmittedResponse,
   readBoundedText,
@@ -63,9 +63,15 @@ async function fetchSitemapItems(source, fetchImpl, initialResponse, initialXml,
     }
   }
 
-  const uniquePages = [...new Map(pages.map((entry) => [entry.url, entry])).values()]
+  const candidates = new Map();
+  for (const entry of pages) {
+    const candidate = { ...entry, discoveredAt: sortableDate(discoveryDate(source, entry)) };
+    const existing = candidates.get(entry.url);
+    if (!existing || candidate.discoveredAt > existing.discoveredAt) candidates.set(entry.url, candidate);
+  }
+  const uniquePages = [...candidates.values()]
     .sort((left, right) => (
-      sortableDate(right.lastModified) - sortableDate(left.lastModified)
+      (right.discoveredAt - left.discoveredAt || 0)
       || left.url.localeCompare(right.url)
     ))
     .slice(0, MAX_SITEMAP_PAGES);
