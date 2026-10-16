@@ -50,6 +50,8 @@ const TITLE_SUFFIXES = new Map([
   ['deepseek-api-news', [' | DeepSeek API Docs']],
 ]);
 const CHANGELOG_SUMMARY_LENGTH = 280;
+// Sitemap lastmod tracks edits, not publication. These sources must date from the page or be skipped.
+const PAGE_DATED_SOURCES = new Set(['xai-news-sitemap', 'deepseek-api-news']);
 
 function utcDate(year, month, day) {
   const date = new Date(Date.UTC(year, month - 1, day));
@@ -147,7 +149,7 @@ export function parsePageMetadata(source, html, requestUrl, options = {}) {
     normalizeDate(metaContent(html, 'datePublished')) ||
     structuredPublicationDate(source, html, canonical) ||
     sourcePageDate(source, html, canonical) ||
-    normalizeDate(options.lastModified);
+    (PAGE_DATED_SOURCES.has(source.sourceKey) ? null : normalizeDate(options.lastModified));
   if (!title || !publishedAt) return null;
 
   return {
