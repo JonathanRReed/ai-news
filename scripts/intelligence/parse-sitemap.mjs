@@ -1,3 +1,4 @@
+import { URL } from 'node:url';
 import { feedParserInternals } from './parse-feed.mjs';
 import { admittedHttpsUrl } from './source-policy.mjs';
 import { isSourceBoilerplate } from '../../src/lib/sourceBoilerplate.mjs';
@@ -76,7 +77,17 @@ function structuredPublicationDate(source, html, canonical) {
       const types = Array.isArray(item['@type']) ? item['@type'] : [item['@type']];
       if (!types.some(type => ['Article', 'NewsArticle', 'BlogPosting', 'TechArticle'].includes(type))) continue;
       const identity = item.mainEntityOfPage?.['@id'] ?? item.mainEntityOfPage ?? item.url;
-      if (identity && (typeof identity !== 'string' || webUrl(source, identity)?.toString() !== canonical.toString())) continue;
+      if (identity) {
+        if (typeof identity !== 'string') continue;
+        let articleUrl;
+        try { articleUrl = admittedHttpsUrl(source, decodeXml(identity).trim(), canonical); }
+        catch { continue; }
+        const pageUrl = new URL(canonical);
+        // JSON-LD often identifies the article or webpage node with a fragment.
+        articleUrl.hash = '';
+        pageUrl.hash = '';
+        if (articleUrl.toString() !== pageUrl.toString()) continue;
+      }
       const date = typeof item.datePublished === 'string' ? normalizeDate(item.datePublished) : null;
       if (date) return date;
     }
@@ -94,12 +105,10 @@ export function parsePageMetadata(source, html, requestUrl, options = {}) {
     metaContent(html, 'og:description') || metaContent(html, 'description'),
   );
   const summary = isSourceBoilerplate(source.sourceKey, extractedSummary) ? '' : extractedSummary;
-  const publishedAt = normalizeDate(
-    metaContent(html, 'article:published_time') ||
-    metaContent(html, 'datePublished') ||
+  const publishedAt = normalizeDate(metaContent(html, 'article:published_time')) ||
+    normalizeDate(metaContent(html, 'datePublished')) ||
     structuredPublicationDate(source, html, canonical) ||
-    options.lastModified,
-  );
+    normalizeDate(options.lastModified);
   if (!title || !publishedAt) return null;
 
   return {
