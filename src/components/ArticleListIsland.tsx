@@ -9,7 +9,7 @@ import { deriveTopics, topicLabel, readingMinutes } from "../lib/articleTags.js"
 import type { Article, PageData } from "../types/article.js";
 import type { ReadState } from "../hooks/useReadState.js";
 import type { FeedView } from "./ArticlesIslandWrapper.js";
-import { boundedSearchTerms } from "../lib/intelligenceClient.js";
+import { boundedSearchTerms, matchesArticleFilters } from "../lib/intelligenceClient.js";
 import { articleExcerpt, truncateArticleExcerpt } from "../lib/articleExcerpt.js";
 import { articlePath } from "../lib/articleRoutes.js";
 import { unavailableArticleSource } from "../lib/articleSourceAvailability.mjs";
@@ -262,6 +262,9 @@ export default function ArticleListIsland({
 }) {
   const { data, isFetching, error, fetchNextPage, hasNextPage, refetch, filters } = useArticlesContext();
   const { seen, saved, markSeen, toggleSaved: toggleSavedRoute } = readState;
+  const savedArchiveKey = JSON.stringify([...saved].sort());
+  const [loadedSavedArchiveKey, setLoadedSavedArchiveKey] = useState<string | null>(null);
+  const savedArchiveLoading = view === "saved" && saved.size > 0 && loadedSavedArchiveKey !== savedArchiveKey;
   const [savedArchiveArticles, setSavedArchiveArticles] = useState<Article[]>([]);
   // Seed "now" from a build-time timestamp (prop) so the SSR/crawler render shows real
   // relative times instead of "Just now"; the effect then refreshes to the live clock.
@@ -288,11 +291,11 @@ export default function ArticleListIsland({
         seenIds.add(art.id);
       }
     }
-    return admittedArticles(deduped).sort((a, b) => (
+    return admittedArticles(deduped, { includeInternalBuilds: view === "saved" }).filter(article => view !== "saved" || matchesArticleFilters(article, filters)).sort((a, b) => (
       new Date(b.published_at).getTime() - new Date(a.published_at).getTime()
       || b.id.localeCompare(a.id)
     ));
-  }, [loadedArticles]);
+  }, [loadedArticles, view, filters]);
 
   const sourceRouteIds = useMemo(() => articleSourceRouteIndex(loadedArticles), [loadedArticles]);
 
@@ -302,15 +305,15 @@ export default function ArticleListIsland({
   }, [sourceRouteIds, saved, toggleSavedRoute]);
 
   useEffect(() => {
-    if (view !== "saved" || saved.size === 0) return;
+    if (view !== "saved" || savedArchiveKey === "[]") return;
     let cancelled = false;
-    fetchSavedArticles([...saved]).then((articles) => {
-      if (!cancelled) setSavedArchiveArticles(articles);
+    fetchSavedArticles(JSON.parse(savedArchiveKey) as string[]).then((articles) => {
+      if (!cancelled) { setSavedArchiveArticles(articles); setLoadedSavedArchiveKey(savedArchiveKey); }
     });
     return () => {
       cancelled = true;
     };
-  }, [saved, view]);
+  }, [savedArchiveKey, view]);
 
   const dataState = useMemo(() => {
     const pages = data?.pages ?? [];
@@ -404,13 +407,14 @@ export default function ArticleListIsland({
   // Baseline for "new stories" = newest article already loaded (not the view-filtered first
   // item), so Unread/Saved views don't over-count things already in the list.
   const latestLoadedTs = allArticles.length > 0 ? new Date(allArticles[0].published_at).getTime() : 0;
-  const loadedLabel = hasNextPage ? `${visibleArticles.length} loaded` : `${visibleArticles.length} total`;
+  const canFetchNextPage = view !== "saved" && hasNextPage;
+  const loadedLabel = canFetchNextPage ? `${visibleArticles.length} loaded` : `${visibleArticles.length} total`;
   const searchTerms = boundedSearchTerms(filters.q);
 
   // A rejected page fetch must never leave the button stuck on its loading label, so the
   // pending flag is cleared in a finally and the failure gets a visible line of its own.
   const loadMoreStories = async () => {
-    const needsFetch = hasNextPage && visibleCount + 20 > articles.length;
+    const needsFetch = canFetchNextPage && visibleCount + 20 > articles.length;
     if (!needsFetch) {
       setVisibleCount((c) => c + 20);
       return;
@@ -583,10 +587,14 @@ export default function ArticleListIsland({
     );
   }
 
+  if (view === "saved" && savedArchiveLoading && visibleArticles.length === 0) {
+    return <p role="status" className="industrial-border p-6 text-text-2">Loading saved stories…</p>;
+  }
+
   if (!isFetching && visibleArticles.length === 0) {
     const reason =
       view === "saved"
-        ? "You haven't saved any stories yet. Tap the bookmark on a card to keep it here."
+        ? saved.size === 0 ? "You haven't saved any stories yet. Tap the bookmark on a card to keep it here." : "No saved stories are available in this view. Clear filters or try again later."
         : view === "unread"
           ? "You're all caught up. Every loaded story has been opened."
           : "Try a different lab, topic or search term.";
@@ -599,7 +607,7 @@ export default function ArticleListIsland({
             Clear filters
           </button>
         )}
-        {hasNextPage && (
+        {canFetchNextPage && (
           <>
             <button
               className="signal-button mt-6 disabled:cursor-not-allowed disabled:opacity-40"
@@ -738,12 +746,12 @@ export default function ArticleListIsland({
             pendingIncrease && "opacity-80",
           )}
           onClick={loadMoreStories}
-          disabled={pendingIncrease || (!hasNextPage && visibleCount >= articles.length)}
+          disabled={pendingIncrease || (!canFetchNextPage && visibleCount >= articles.length)}
         >
           {pendingIncrease ? (
             <span className="mr-2 inline-block h-4 w-4 animate-spin border-2 border-white/30 border-t-white align-middle"></span>
           ) : null}
-          {pendingIncrease ? "Loading…" : !hasNextPage && visibleCount >= articles.length ? "All caught up" : "Load 20 more"}
+          {pendingIncrease ? "Loading…" : !canFetchNextPage && visibleCount >= articles.length ? "All caught up" : "Load 20 more"}
         </button>
         {loadMoreError && (
           <p role="alert" className="mt-3 text-sm leading-relaxed text-brand-hover">

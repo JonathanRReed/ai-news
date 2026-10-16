@@ -35,7 +35,7 @@ const rows = articles.slice((pageNumber - 1) * pageSize, pageNumber * pageSize).
   <main id="main-content" class="industrial-shell flex-1">
     <section class="industrial-container py-10 md:py-14">
       <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-end">
-        <div class="reveal-stagger">
+        <div >
           <h1 class="macro-heading">{entity.name}</h1>
           <p class="mt-6 max-w-3xl text-lg leading-relaxed text-text-2">
             {covered ? `${activeSources.length} official source${activeSources.length === 1 ? "" : "s"} tracked for ${publicType.toLowerCase()} news and releases.` : "No reliable official feed is active yet. You can still open the official site or add this page to your watchlist."}

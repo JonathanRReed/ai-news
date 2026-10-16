@@ -211,6 +211,10 @@ function matchesFilters(item: FeedItem, filters: IntelligenceFilters) {
   return true;
 }
 
+export function matchesArticleFilters(article: Article, filters: IntelligenceFilters): boolean {
+  return matchesFilters(staticFeedItem(article), filters);
+}
+
 function matchesLiveTopics(item: FeedItem, filters: IntelligenceFilters) {
   if (!filters.topics?.length) return true;
   const topics = deriveTopics({

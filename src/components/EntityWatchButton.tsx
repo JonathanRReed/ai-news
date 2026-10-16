@@ -15,14 +15,16 @@ function readWatchlist(): string[] {
 }
 
 export default function EntityWatchButton({ slug, name }: { slug: string; name: string }) {
+  const [saveError, setSaveError] = useState(false);
   const [watched, setWatched] = useState(false);
   const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
-    /* eslint-disable react-hooks/set-state-in-effect */
-    setWatched(readWatchlist().includes(slug));
-    setHydrated(true);
-    /* eslint-enable react-hooks/set-state-in-effect */
+    const update = () => { setWatched(readWatchlist().includes(slug)); setHydrated(true); };
+    update();
+    window.addEventListener(WATCHLIST_EVENT, update);
+    window.addEventListener("storage", update);
+    return () => { window.removeEventListener(WATCHLIST_EVENT, update); window.removeEventListener("storage", update); };
   }, [slug]);
 
   function toggle() {
@@ -32,13 +34,16 @@ export default function EntityWatchButton({ slug, name }: { slug: string; name: 
     try {
       window.localStorage.setItem(WATCHLIST_KEY, JSON.stringify([...next]));
     } catch {
+      setSaveError(true);
       return;
     }
+    setSaveError(false);
     setWatched(next.has(slug));
     window.dispatchEvent(new CustomEvent(WATCHLIST_EVENT));
   }
 
   return (
+    <>
     <button
       type="button"
       aria-pressed={watched}
@@ -50,5 +55,7 @@ export default function EntityWatchButton({ slug, name }: { slug: string; name: 
     >
       {watched ? `Watching ${name}` : `Watch ${name}`}
     </button>
+    {saveError && <p role="alert" className="text-sm text-brand-hover">Could not save this watchlist. Browser storage may be blocked or full.</p>}
+    </>
   );
 }

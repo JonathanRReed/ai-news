@@ -1,8 +1,13 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, useSyncExternalStore } from "react";
 import { TOPICS } from "../lib/articleTags.js";
 import { entitySharePath, type IntelligenceEntity } from "../lib/intelligenceCatalog.js";
 
+const subscribe = () => () => {};
+const clientReady = () => true;
+const serverReady = () => false;
+
 export default function FeedBuilderIsland({ entities }: { entities: IntelligenceEntity[] }) {
+  const ready = useSyncExternalStore(subscribe, clientReady, serverReady);
   const [entity, setEntity] = useState(entities[0]?.slug ?? "");
   const [topic, setTopic] = useState(TOPICS[0]?.key ?? "releases");
   const selected = useMemo(() => entities.find((item) => item.slug === entity), [entities, entity]);
@@ -12,7 +17,7 @@ export default function FeedBuilderIsland({ entities }: { entities: Intelligence
     <div className="industrial-grid">
       <section className="col-span-12 p-5 md:col-span-6">
         <label className="micro-label text-text-2" htmlFor="feed-entity">Entity feed</label>
-        <select id="feed-entity" value={entity} onChange={(event) => setEntity(event.target.value)} className="mt-3 min-h-12 w-full border border-white/25 bg-bg-0 px-3 text-white focus-industrial">
+        <select disabled={!ready} aria-busy={!ready} id="feed-entity" value={entity} onChange={(event) => setEntity(event.target.value)} className="mt-3 min-h-12 w-full border border-white/25 bg-bg-0 px-3 text-white focus-industrial">
           {entities.map((item) => <option key={item.slug} value={item.slug}>{item.name}</option>)}
         </select>
         <div className="mt-4 flex flex-wrap gap-3">
@@ -23,7 +28,7 @@ export default function FeedBuilderIsland({ entities }: { entities: Intelligence
       </section>
       <section className="col-span-12 p-5 md:col-span-6">
         <label className="micro-label text-text-2" htmlFor="feed-topic">Topic feed</label>
-        <select id="feed-topic" value={topic} onChange={(event) => setTopic(event.target.value)} className="mt-3 min-h-12 w-full border border-white/25 bg-bg-0 px-3 text-white focus-industrial">
+        <select disabled={!ready} aria-busy={!ready} id="feed-topic" value={topic} onChange={(event) => setTopic(event.target.value)} className="mt-3 min-h-12 w-full border border-white/25 bg-bg-0 px-3 text-white focus-industrial">
           {TOPICS.map((item) => <option key={item.key} value={item.key}>{item.label}</option>)}
         </select>
         <div className="mt-4 flex flex-wrap gap-3">

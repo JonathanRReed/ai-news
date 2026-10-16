@@ -271,3 +271,40 @@ test('provider pages keep sources compact and expose older updates', async ({ pa
   const oldBuild = await request.get('/article/8694b1d1-d6f8-5fbc-974e-cebec82535df/');
   expect(oldBuild.status()).toBe(200);
 });
+
+test.describe('watchlist archive behavior', () => {
+  test.use({ timezoneId: 'America/Los_Angeles' });
+  test('keeps publisher dates stable and makes more than 40 watched stories reachable', async ({ page }) => {
+    await page.addInitScript(() => localStorage.setItem('ai-news-entity-watchlist-v1', '["openai"]'));
+    await page.route('**/data/watchlist.json', route => route.fulfill({ json: {
+      articles: Array.from({ length: 45 }, (_, index) => ({ id: `audit-story-${index}`, title: `Audit story ${index}`, company: 'OpenAI', published_at: '2026-10-07T00:00:00Z' })),
+    } }));
+    await page.goto('/watchlist/');
+    await expect(page.getByRole('main')).toContainText('40 of 45 updates');
+    await expect(page.getByRole('main')).toContainText('Oct 7, 2026');
+    await expect(page.getByRole('main')).not.toContainText('Oct 6, 2026');
+    await page.getByRole('button', { name: 'Load 40 more', exact: true }).click();
+    await expect(page.getByRole('link', { name: 'Audit story 44', exact: true })).toBeVisible();
+    await expect(page.getByRole('main')).toContainText('45 of 45 updates');
+  });
+  test('malformed watchlist data shows recovery instead of crashing', async ({ page }) => {
+    await page.addInitScript(() => localStorage.setItem('ai-news-entity-watchlist-v1', '["openai"]'));
+    await page.route('**/data/watchlist.json', route => route.fulfill({ json: { articles: [{ id: '../wrong', title: null, published_at: 'invalid' }] } }));
+    await page.goto('/watchlist/');
+    await expect(page.getByText('Could not load updates. Reload the page to try again.', { exact: true })).toBeVisible();
+    await expect(page.getByRole('button', { name: 'Watching OpenAI', exact: true })).toBeVisible();
+  });
+});
+
+test('news stays readable when scroll observers are unavailable', async ({ page }) => {
+  await page.addInitScript(() => {
+    window.IntersectionObserver = class { constructor() { throw new Error('Observer unavailable'); } } as unknown as typeof window.IntersectionObserver;
+  });
+  await page.goto('/major-updates/');
+  const heading = page.getByRole('heading', { level: 1 });
+  await expect(heading).toBeVisible();
+  expect(await heading.evaluate(element => window.getComputedStyle(element).opacity)).toBe('1');
+  const story = page.locator('main ol li').first();
+  await expect(story).toBeVisible();
+  expect(await story.evaluate(element => window.getComputedStyle(element).opacity)).toBe('1');
+});

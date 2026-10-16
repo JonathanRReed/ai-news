@@ -12,7 +12,7 @@ interface Props {
 const { entities, articleCounts = {} } = Astro.props as Props;
 ---
 
-<div class="industrial-grid reveal-stagger">
+<div class="industrial-grid">
   {entities.map((entity, index) => {
     const sources = entitySources(entity.slug);
     const activeSources = sources.filter((source) => source.active);

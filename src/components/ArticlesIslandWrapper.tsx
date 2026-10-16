@@ -45,6 +45,7 @@ function urlFilters(): ArticleFilters | null {
 export default function ArticlesIslandWrapper({ initialArticles = [], now = 0 }: { initialArticles?: Article[]; now?: number }) {
   // Start from defaults so the server render and the first client render match (no
   // hydration mismatch); URL filters and saved density are applied after mount.
+  const [ready, setReady] = useState(false);
   const [filters, setFilters] = useState<ArticleFilters>({ company: "All", topics: [], q: "" });
   const [density, setDensity] = useState<"comfortable" | "compact">("comfortable");
   const [view, setView] = useState<FeedView>("all");
@@ -55,13 +56,16 @@ export default function ArticlesIslandWrapper({ initialArticles = [], now = 0 }:
     /* eslint-disable react-hooks/set-state-in-effect */
     const fromUrl = urlFilters();
     if (fromUrl) setFilters(fromUrl);
-    const savedDensity = window.localStorage.getItem("ai-news-density");
-    if (savedDensity === "compact" || savedDensity === "comfortable") setDensity(savedDensity);
+    try {
+      const savedDensity = window.localStorage.getItem("ai-news-density");
+      if (savedDensity === "compact" || savedDensity === "comfortable") setDensity(savedDensity);
+    } catch { /* Browsing still works when optional preference storage is blocked. */ }
+    setReady(true);
     /* eslint-enable react-hooks/set-state-in-effect */
   }, []);
 
   useEffect(() => {
-    if (typeof window !== "undefined") window.localStorage.setItem("ai-news-density", density);
+    try { window.localStorage.setItem("ai-news-density", density); } catch { /* Preference storage is optional. */ }
   }, [density]);
 
   // Keep the URL in sync so any filtered view is shareable (skip the first run so we
@@ -117,6 +121,7 @@ export default function ArticlesIslandWrapper({ initialArticles = [], now = 0 }:
   return (
     <QueryClientProvider client={queryClient}>
       <ArticlesProvider filters={stableFilters} initialData={initialData}>
+        <fieldset disabled={!ready} aria-busy={!ready} aria-label="News filters and saved stories" className="min-w-0 border-0 p-0">
         <div className="mb-8 flex flex-col gap-4">
           <FiltersIsland
             filters={filters}
@@ -135,6 +140,7 @@ export default function ArticlesIslandWrapper({ initialArticles = [], now = 0 }:
           now={now}
           onClearFilters={clearFeedFilters}
         />
+        </fieldset>
       </ArticlesProvider>
     </QueryClientProvider>
   );
