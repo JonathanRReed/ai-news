@@ -372,6 +372,26 @@
       "allowedHosts": []
     },
     {
+      "sourceKey": "deepseek-api-news",
+      "entitySlug": "deepseek",
+      "name": "DeepSeek API News",
+      "officialUrl": "https://api-docs.deepseek.com/news/",
+      "endpointUrl": "https://api-docs.deepseek.com/sitemap.xml",
+      "transportType": "sitemap",
+      "sourceRole": "newsroom",
+      "parserKey": "sitemap",
+      "sourceType": "scraped",
+      "itemType": "other",
+      "active": true,
+      "archiveOnly": false,
+      "required": false,
+      "verifiedAt": "2026-10-16",
+      "includePaths": [
+        "/news/"
+      ],
+      "allowedHosts": []
+    },
+    {
       "sourceKey": "ibm-research",
       "entitySlug": "ibm-research",
       "name": "IBM Research",
@@ -557,6 +577,26 @@
       "allowedHosts": []
     },
     {
+      "sourceKey": "xai-news-sitemap",
+      "entitySlug": "xai",
+      "name": "xAI News",
+      "officialUrl": "https://x.ai/news",
+      "endpointUrl": "https://x.ai/sitemap.xml",
+      "transportType": "sitemap",
+      "sourceRole": "newsroom",
+      "parserKey": "sitemap",
+      "sourceType": "scraped",
+      "itemType": "other",
+      "active": true,
+      "archiveOnly": false,
+      "required": false,
+      "verifiedAt": "2026-10-16",
+      "includePaths": [
+        "/news/"
+      ],
+      "allowedHosts": []
+    },
+    {
       "sourceKey": "mistral-sitemap",
       "entitySlug": "mistral-ai",
       "name": "Mistral AI News",
@@ -584,13 +624,13 @@
       "endpointUrl": "https://docs.z.ai/sitemap.xml",
       "transportType": "sitemap",
       "sourceRole": "changelog",
-      "parserKey": "sitemap",
+      "parserKey": "sitemap_changelog",
       "sourceType": "scraped",
       "itemType": "model_release",
       "active": true,
       "archiveOnly": false,
       "required": false,
-      "verifiedAt": "2026-08-30",
+      "verifiedAt": "2026-10-16",
       "includePaths": [
         "/release-notes/"
       ],

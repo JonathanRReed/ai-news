@@ -17,9 +17,11 @@ describe("intelligence catalog", () => {
   });
 
   test("only calls an entity active when it has an active source", () => {
-    expect(activeEntities.some((entity) => entity.slug === "xai")).toBe(false);
+    expect(activeEntities.some((entity) => entity.slug === "stepfun")).toBe(false);
+    expect(entitySources("stepfun").filter((source) => source.active)).toHaveLength(0);
     expect(activeEntities.some((entity) => entity.slug === "z-ai")).toBe(true);
-    expect(entitySources("xai").filter((source) => source.active)).toHaveLength(0);
+    expect(activeEntities.some((entity) => entity.slug === "xai")).toBe(true);
+    expect(entitySources("xai").filter((source) => source.active).map((source) => source.sourceKey)).toEqual(["xai-news-sitemap"]);
     expect(entitySources("xai").some((source) => source.archiveOnly)).toBeTrue();
   });
 

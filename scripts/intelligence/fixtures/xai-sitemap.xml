@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>https://x.ai/</loc>
+<changefreq>weekly</changefreq>
+<priority>1</priority>
+</url>
+<url>
+<loc>https://x.ai/grok</loc>
+<changefreq>weekly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://x.ai/news/grok-voice-3</loc>
+<lastmod>2026-10-14T00:00:00.000Z</lastmod>
+<changefreq>never</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://x.ai/news/grok-4-7</loc>
+<lastmod>2026-09-21T00:00:00.000Z</lastmod>
+<changefreq>never</changefreq>
+<priority>0.8</priority>
+</url>
+</urlset>

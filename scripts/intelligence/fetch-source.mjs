@@ -1,5 +1,5 @@
 import { parseAtom, parseRss } from './parse-feed.mjs';
-import { parsePageMetadata, parseSitemap } from './parse-sitemap.mjs';
+import { parseChangelogSections, parsePageMetadata, parseSitemap } from './parse-sitemap.mjs';
 import {
   fetchAdmittedResponse,
   readBoundedText,
@@ -47,7 +47,7 @@ async function request(source, url, fetchImpl, headers) {
   });
 }
 
-async function fetchSitemapItems(source, fetchImpl, initialResponse, initialXml) {
+async function fetchSitemapItems(source, fetchImpl, initialResponse, initialXml, parsePage) {
   const discovered = parseSitemap(source, initialXml);
   const sitemapQueue = discovered.filter(({ isSitemap }) => isSitemap).slice(0, MAX_SITEMAPS);
   const pages = discovered.filter(({ isSitemap }) => !isSitemap);
@@ -81,10 +81,7 @@ async function fetchSitemapItems(source, fetchImpl, initialResponse, initialXml)
       );
       if (!response.ok) continue;
       const html = await readBoundedText(response, MAX_HTML_BYTES);
-      const item = parsePageMetadata(source, html, page.url, {
-        lastModified: page.lastModified,
-      });
-      if (item) items.push(item);
+      items.push(...parsePage(html, page));
     } catch {
       // A single malformed or unavailable page is isolated to that page.
     }
@@ -133,13 +130,20 @@ export async function fetchSource(source, options = {}) {
     }
     const body = await readBoundedText(
       response,
-      source.parserKey === 'sitemap' ? MAX_SITEMAP_BYTES : MAX_FEED_BYTES,
+      source.transportType === 'sitemap' ? MAX_SITEMAP_BYTES : MAX_FEED_BYTES,
     );
     let items;
     if (source.parserKey === 'rss') items = parseRss(source, body);
     else if (source.parserKey === 'atom') items = parseAtom(source, body);
     else if (source.parserKey === 'sitemap') {
-      ({ items } = await fetchSitemapItems(source, fetchImpl, response, body));
+      ({ items } = await fetchSitemapItems(source, fetchImpl, response, body, (html, page) => {
+        const item = parsePageMetadata(source, html, page.url, { lastModified: page.lastModified });
+        return item ? [item] : [];
+      }));
+    } else if (source.parserKey === 'sitemap_changelog') {
+      ({ items } = await fetchSitemapItems(source, fetchImpl, response, body, (html, page) => (
+        parseChangelogSections(source, html, page.url)
+      )));
     } else {
       return failedResult({
         fetchedAt,
