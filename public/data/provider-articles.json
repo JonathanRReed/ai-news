@@ -1,5 +1,17 @@
 [
   {
+    "id": "31e362eb-d6c7-5186-9201-ff1533710bd7",
+    "company": "Hermes Agent",
+    "title": "v0.22.2+canary.20261017T065512Z",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.22.2%2Bcanary.20261017T065512Z",
+    "published_at": "2026-10-17T06:55:14+00:00",
+    "source_type": "rss_official",
+    "summary": "Hermes Agent canary 20261017T065512Z",
+    "content": "Hermes Agent canary 20261017T065512Z",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
     "id": "2c9472d4-0bbe-52ef-9515-cc9f98563caa",
     "company": "Cline",
     "title": "Desktop v0.0.48",
@@ -118,6 +130,18 @@
     "content": "What's Changed Add Banner about Gemini CLI not being optimized for Gemini 4 by @srithreepo in #29774 Update README to remove obsolete content by @srithreepo in #29775 fix(ci): remove unsupported members permission in unassign-inactive-assignees workflow by @ugorla-dev in #29770 fix(cli): reset slash-command conflict dedupe when conflicts reappear by @jvargassanchez-dot in #29768 fix(cli): verify active binary update to prevent PATH shadowing false success by @urielefrenvirtusa in #29757 fix(cli): support 'keys' array in keybindings.json by @urielefrenvirtusa in #29773 fix(cli): forward termination signals from bootstrap parent to child process by @villahernandez-coder in #29790 Full Changelog : v0.66.0-nightly.20261016.gdebf42324...v0.66.0-nightly.20261017.ged96faedf",
     "source_url": "https://github.com/google-gemini/gemini-cli/releases.atom",
     "source_key": "gemini-cli-releases"
+  },
+  {
+    "id": "0e554145-473a-5bf5-8a75-7b1a25635122",
+    "company": "DeepSeek",
+    "title": "DeepSeek-V4.1-Flash-1017: Wish-Driven Programming Made Real",
+    "url": "https://api-docs.deepseek.com/news/news261017",
+    "published_at": "2026-10-17T00:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "🚀 DeepSeek-V4.1-Flash-1017 is here!",
+    "content": "🚀 DeepSeek-V4.1-Flash-1017 is here!",
+    "source_url": "https://api-docs.deepseek.com/sitemap.xml",
+    "source_key": "deepseek-api-news"
   },
   {
     "id": "765e427a-4822-5b70-808c-024392015624",
@@ -39970,6 +39994,18 @@
     "content": "Hebbia’s deep research automates 90% of finance and legal work, powered by OpenAI",
     "source_url": "https://openai.com/news/rss.xml",
     "source_key": "openai-news"
+  },
+  {
+    "id": "d5c41aaa-7cd9-5ecf-ac77-c14303bf486f",
+    "company": "DeepSeek",
+    "title": "DeepSeek-V3-0324 Release",
+    "url": "https://api-docs.deepseek.com/news/news250325",
+    "published_at": "2025-03-25T00:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "* 🔹 Major boost in reasoning performance",
+    "content": "* 🔹 Major boost in reasoning performance",
+    "source_url": "https://api-docs.deepseek.com/sitemap.xml",
+    "source_key": "deepseek-api-news"
   },
   {
     "id": "0ff16acb-81d0-4ab7-9505-23fec52aad3d",
