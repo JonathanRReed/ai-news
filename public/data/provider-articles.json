@@ -1,5 +1,17 @@
 [
   {
+    "id": "8566afc9-efc8-5b3f-8347-0b160921b018",
+    "company": "Gemini CLI",
+    "title": "Release v0.66.0-nightly.20261018.ged96faedf",
+    "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.66.0-nightly.20261018.ged96faedf",
+    "published_at": "2026-10-18T01:34:41+00:00",
+    "source_type": "rss_official",
+    "summary": "Full Changelog : v0.66.0-nightly.20261017.ged96faedf...v0.66.0-nightly.20261018.ged96faedf",
+    "content": "Full Changelog : v0.66.0-nightly.20261017.ged96faedf...v0.66.0-nightly.20261018.ged96faedf",
+    "source_url": "https://github.com/google-gemini/gemini-cli/releases.atom",
+    "source_key": "gemini-cli-releases"
+  },
+  {
     "id": "9173fc5a-7dc5-5b6d-8875-9e48f2a21ce7",
     "company": "NVIDIA AI",
     "title": "RTX Spark Ignites Global Celebration as New Windows PCs Arrive",
