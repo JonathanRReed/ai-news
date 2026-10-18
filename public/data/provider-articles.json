@@ -1,5 +1,17 @@
 [
   {
+    "id": "4eef79e2-8ecd-524a-9143-dd1961371f17",
+    "company": "Anthropic",
+    "title": "Investing in the public benefit",
+    "url": "https://www.anthropic.com/news/public-benefit-fund",
+    "published_at": "2026-10-18T16:49:35.513+00:00",
+    "source_type": "scraped",
+    "summary": "We’re committing a portion of Anthropic’s shares to the Anthropic Public Benefit Fund, a new entity with a structure that increases the stake as the company grows.",
+    "content": "We’re committing a portion of Anthropic’s shares to the Anthropic Public Benefit Fund, a new entity with a structure that increases the stake as the company grows.",
+    "source_url": "https://www.anthropic.com/sitemap.xml",
+    "source_key": "anthropic-sitemap"
+  },
+  {
     "id": "ec07c430-2ac4-53af-948d-b4056e2f754a",
     "company": "Hermes Agent",
     "title": "v0.22.2+canary.20261018T065527Z",
