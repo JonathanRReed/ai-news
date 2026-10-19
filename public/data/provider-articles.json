@@ -1,5 +1,65 @@
 [
   {
+    "id": "8c002004-e1ca-5de1-a1e8-b6941b6e07f2",
+    "company": "Codex CLI",
+    "title": "rust-v0.164.0-alpha.5",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.164.0-alpha.5",
+    "published_at": "2026-10-19T12:31:38+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.164.0-alpha.5",
+    "content": "Release 0.164.0-alpha.5",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "c7b361c8-6f87-539e-a748-fe378e7a2815",
+    "company": "IBM Research",
+    "title": "New course teaches how AI models run on modern accelerators",
+    "url": "https://research.ibm.com/blog/coursera-dataflow-accelerator-architecture-specialization",
+    "published_at": "2026-10-19T12:00:00+00:00",
+    "source_type": "rss_official",
+    "summary": "'Dataflow Architectures for AI' is a 6-course specialization from IBM Research that compares leading accelerator architectures through hands-on labs.",
+    "content": "'Dataflow Architectures for AI' is a 6-course specialization from IBM Research that compares leading accelerator architectures through hands-on labs.",
+    "source_url": "https://research.ibm.com/rss",
+    "source_key": "ibm-research"
+  },
+  {
+    "id": "c6a474a4-d595-56a5-af57-ddfb3cdef8ef",
+    "company": "Codex CLI",
+    "title": "0.164.0-alpha.4",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.164.0-alpha.4",
+    "published_at": "2026-10-19T10:48:26+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.164.0-alpha.4",
+    "content": "Release 0.164.0-alpha.4",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "a9c95e67-8b62-525e-b6ca-a2311c9b28db",
+    "company": "Hermes Agent",
+    "title": "v0.22.2+canary.20261019T071120Z",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.22.2%2Bcanary.20261019T071120Z",
+    "published_at": "2026-10-19T07:11:22+00:00",
+    "source_type": "rss_official",
+    "summary": "Hermes Agent canary 20261019T071120Z",
+    "content": "Hermes Agent canary 20261019T071120Z",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
+    "id": "05203255-d17c-57a2-85f0-04f88be1d19f",
+    "company": "Gemini CLI",
+    "title": "Release v0.66.0-nightly.20261019.ged96faedf",
+    "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.66.0-nightly.20261019.ged96faedf",
+    "published_at": "2026-10-19T01:34:29+00:00",
+    "source_type": "rss_official",
+    "summary": "Full Changelog : v0.66.0-nightly.20261018.ged96faedf...v0.66.0-nightly.20261019.ged96faedf",
+    "content": "Full Changelog : v0.66.0-nightly.20261018.ged96faedf...v0.66.0-nightly.20261019.ged96faedf",
+    "source_url": "https://github.com/google-gemini/gemini-cli/releases.atom",
+    "source_key": "gemini-cli-releases"
+  },
+  {
     "id": "ddb09172-9e75-5b43-9f4d-de89b8947299",
     "company": "OpenClaw",
     "title": "openclaw 2026.10.5",
@@ -182,12 +242,12 @@
   {
     "id": "d97fb52a-0d17-5544-b2a1-e795dc31c712",
     "company": "OpenClaw",
-    "title": "v2026.10.10-beta.2",
+    "title": "openclaw 2026.10.10-beta.2",
     "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.10.10-beta.2",
     "published_at": "2026-10-17T01:51:47+00:00",
     "source_type": "rss_official",
-    "summary": "openclaw 2026.10.10-beta.2",
-    "content": "openclaw 2026.10.10-beta.2",
+    "summary": "2026.10.10-beta.2 Highlights Changes Fixes Workspace safety: reject a multi-file apply_patch before changing files when a later update target is missing or its context does not match, preserving the original workspace for the next attempt. Commit-time I/O failures can still leave partial effects. ( #160409 ; related #117742 and #127496 ) Thanks @masatohoshino , @obviyus , and @yetval . Tool policy: run plugin before_tool_call hooks in standalone openclaw agent exec sessions so plugin tool...",
+    "content": "2026.10.10-beta.2 Highlights Changes Fixes Workspace safety: reject a multi-file apply_patch before changing files when a later update target is missing or its context does not match, preserving the original workspace for the next attempt. Commit-time I/O failures can still leave partial effects. ( #160409 ; related #117742 and #127496 ) Thanks @masatohoshino , @obviyus , and @yetval . Tool policy: run plugin before_tool_call hooks in standalone openclaw agent exec sessions so plugin tool guards take effect. ( #159333 ; fixes #158824 ) Thanks @joseairosa and @obviyus . Buzz: reconnect when a relay closes during NIP-42 authentication without terminating the Gateway or interrupting other channels and sessions. ( #170591 ; fixes #147269 ) Thanks @masatohoshino , @obviyus , @jarvis-modern-mail , and @RomneyDa . macOS downloads: save dashboard and conversation attachments through the native Save dialog while keeping the current page open. ( #173654 ) Thanks @Patrick-Erichsen . OpenRouter onboarding: accept valid API keys with the default openrouter/auto model instead of rejecting setup with a route mismatch. ( #173292 ; related #162798 ) Thanks @chandraveshchaudhari and @obviyus . macOS setup: let fresh native profiles start the Gateway and complete automatic setup, including when supervised startup needs a retry. ( #173246 ) Gateway startup: follow a replacement model-runtime refresh instead of exiting when initial preparation is superseded. ( #173366 ; related #173357 ) Thanks @Jackten and @RomneyDa . Gateway logging: keep serving and shut down normally when a deleted temporary-directory backing path makes daily log rollover fail. ( #160433 ; fixes #130807 ) Thanks @masatohoshino , @obviyus , @WadeOwenWatts , and @Patrick-Erichsen . Gateway stability: stop session diff capture from opening live SQLite and hard-linked files, preventing SIGBUS crash loops when the shared-memory file is truncated. ( #174017 ) Native app updates: let Doctor finish agent database upgrades on native-first profiles instead of reporting success while the Gateway refuses to start on an older schema. ( #174297 ) Cron: plan history maintenance from run identities and load full payloads only for rows it updates, so large cron histories no longer exhaust the SQLite worker's memory and take channels down. ( #174530 ; fixes #174078 ) Thanks @wangmiao0668000666 , @RomneyDa , and @asikorskiy . Windows Claude CLI: stop every turn with a stored Anthropic credential from stalling until the no-output watchdog when Claude Code never reads the credential pipe. ( #174571 ; fixes #174204 ) Thanks @RomneyDa and @scalesmart . Plugins: restore the SDK facade exports that published external plugins still import, so those plugins load again. ( #173777 ; fixes #173386 ) Thanks @RomneyDa and @FtlC-ian . Chat tools: keep the chat usable after removing a tool server that failed to start, cleaning up its failed startup before reporting the launch error. ( #171397 ) Thanks @joelagnel . Updates: bound the post-activation Doctor step by the update's allowance instead of waiting indefinitely with the Gateway down. ( #173862 ) Updates: keep Gateway-managed source updates from failing with missing backup modules after the runtime is replaced. ( #173587 ) Thanks @vishnusenthil-16 . Updates: make openclaw update --no-restart honest for npm, pnpm, and bun installs, which restart themselves after the package is replaced, record the update as successful, and keep a still-serving older build unverified. ( #173409 , #174649 ; fixes #171311 ) Thanks @RomneyDa and @mwbroxson . Complete contribution record This audited record covers the complete v2026.10.10-beta.1.. f90bd06 history: 24 in-range PRs + 0 retained seed-only PRs = 24 unique PRs. The generation manifest also supplies direct commits as editorial input; the grouped notes above prioritize user impact. Shipped baseline exclusions: v2026.10.10-beta.1 (1 PRs: #171016 ). Pull requests PR #173654 Thanks @Patrick-Erichsen . PR #159333 Related #158824 . Thanks @joseairosa and @obviyus . PR #160433 Related #130807 . Thanks @masatohoshino and @obviyus and @WadeOwenWatts . PR #170591 Related #147269 . Thanks @masatohoshino and @obviyus and @jarvis-modern-mail . PR #173246 PR #173292 Thanks @chandraveshchaudhari and @obviyus . PR #173366 PR #173259 Thanks @RomneyDa . PR #173511 Thanks @RomneyDa . PR #173319 Thanks @RomneyDa . PR #160409 Thanks @masatohoshino . PR #171397 Thanks @joelagnel . PR #174017 PR #173777 Related #173386 . Thanks @RomneyDa and @FtlC-ian . PR #173587 Thanks @vishnusenthil-16 . PR #173862 PR #174297 PR #174556 Thanks @RomneyDa . PR #173205 Thanks @RomneyDa . PR #174530 Related #174078 . Thanks @wangmiao0668000666 and @RomneyDa and @asikorskiy . PR #174571 Related #174204 . Thanks @RomneyDa and @scalesmart . PR #174614 Thanks @RomneyDa . PR #173409 Related #171311 . Thanks @RomneyDa and @mwbroxson . PR #174649 Thanks @RomneyDa . Release verification npm package: https://www.npmjs.com/package/openclaw/v/2026.10.10-beta.2 registry tarball: https://registry.npmjs.org/openclaw/-/openclaw-2026.10.10-beta.2.tgz integrity: sha512-Kbs8X970M+kouV52kMSaF0zpxf62vink1OqpEMCcc60O7uQx6VELzcpHT5bO6KuPFeKNNSzZ40mvWwebiTKuIQ== release SHA: 2b85c4c25ea98d72ca1d3e93fb0fd9cac8f0ddab full release CI report: https://github.com/openclaw/releases/blob/main/evidence/2026.10.10-beta.2/release-evidence.md release publish: https://github.com/openclaw/openclaw/actions/runs/39189217327 npm preflight: https://github.com/openclaw/openclaw/actions/runs/38980450683 full release validation: https://github.com/openclaw/openclaw/actions/runs/38979780344 plugin npm publish: https://github.com/openclaw/openclaw/actions/runs/39190082116 plugin ClawHub submission: https://github.com/openclaw/openclaw/actions/runs/39190084831 ; public finalization and exact artifact verification follow terminal release-parent completion plugin ClawHub bootstrap: not needed OpenClaw npm publish: https://github.com/openclaw/openclaw/actions/runs/39190750431 npm Telegram beta E2E: not supplied",
     "source_url": "https://github.com/openclaw/openclaw/releases.atom",
     "source_key": "openclaw-releases"
   },
