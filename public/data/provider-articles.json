@@ -1,5 +1,41 @@
 [
   {
+    "id": "9e1f3500-ab62-5fab-9a25-29c62a2af723",
+    "company": "IBM Research",
+    "title": "llm-d 1.0 hardens open-source AI inference for production",
+    "url": "https://research.ibm.com/blog/llmd-1-0-is-ready-for-production-inference-serving",
+    "published_at": "2026-10-20T12:00:00+00:00",
+    "source_type": "rss_official",
+    "summary": "The distributed inference framework makes serving large models on your own infrastructure reliable and affordable for the agentic era.",
+    "content": "The distributed inference framework makes serving large models on your own infrastructure reliable and affordable for the agentic era.",
+    "source_url": "https://research.ibm.com/rss",
+    "source_key": "ibm-research"
+  },
+  {
+    "id": "b29a7cee-da28-56cf-8ace-49730e4c6004",
+    "company": "Codex CLI",
+    "title": "rust-v0.164.0-alpha.7",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.164.0-alpha.7",
+    "published_at": "2026-10-20T08:37:46+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.164.0-alpha.7",
+    "content": "Release 0.164.0-alpha.7",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "1d6da8fc-928c-58a5-adda-029cf6e1d047",
+    "company": "Hermes Agent",
+    "title": "v0.22.2+canary.20261020T065957Z",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.22.2%2Bcanary.20261020T065957Z",
+    "published_at": "2026-10-20T06:59:59+00:00",
+    "source_type": "rss_official",
+    "summary": "Hermes Agent canary 20261020T065957Z",
+    "content": "Hermes Agent canary 20261020T065957Z",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
     "id": "9d7d08bb-5f7d-5ed5-8694-e95b3e40c658",
     "company": "NVIDIA AI",
     "title": "Spain-Based Startups Advance Regional Innovation With Barcelona Supercomputing Center",
@@ -22,6 +58,18 @@
     "content": "What's Changed fix(ui): preserve terminal scrollback during viewport refreshes by @diegogodinezr in #29792 fix(cli): decode streamed Node HTTP activity chunks with StringDecoder by @jesussamuel-byte in #29827 Full Changelog : v0.66.0-nightly.20261019.ged96faedf...v0.66.0-nightly.20261020.g76e4d7c04",
     "source_url": "https://github.com/google-gemini/gemini-cli/releases.atom",
     "source_key": "gemini-cli-releases"
+  },
+  {
+    "id": "bf068774-731e-5a7f-9d92-ddc9adca01e4",
+    "company": "Hugging Face",
+    "title": "MPS in PyTorch 2.15",
+    "url": "https://huggingface.co/blog/mps-pytorch-2-15",
+    "published_at": "2026-10-20T00:00:00+00:00",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://huggingface.co/blog/feed.xml",
+    "source_key": "hugging-face-blog"
   },
   {
     "id": "4a6d0455-e959-5a18-bf7e-ac79cca63c65",
@@ -262,6 +310,18 @@
     "content": "Full Changelog : v0.66.0-nightly.20261018.ged96faedf...v0.66.0-nightly.20261019.ged96faedf",
     "source_url": "https://github.com/google-gemini/gemini-cli/releases.atom",
     "source_key": "gemini-cli-releases"
+  },
+  {
+    "id": "89e9ef7c-af35-55ae-99a1-4aff160fc197",
+    "company": "MiniMax",
+    "title": "MiniMax M3.1 Flash: Redefining Agent Performance and Cost - MiniMax Research",
+    "url": "https://www.minimax.io/blog/minimax-m31f",
+    "published_at": "2026-10-19T00:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "Today, we officially roll out MiniMax M3.1 Flash. As a next-generation Flash model, M3.1 Flash delivers a generational leap in agentic tasks, coding, Computer Use and cybersecurity, while making online inference nearly three times faster and reducing usage costs by 70%.",
+    "content": "Today, we officially roll out MiniMax M3.1 Flash. As a next-generation Flash model, M3.1 Flash delivers a generational leap in agentic tasks, coding, Computer Use and cybersecurity, while making online inference nearly three times faster and reducing usage costs by 70%.",
+    "source_url": "https://www.minimax.io/sitemap.xml",
+    "source_key": "minimax-sitemap"
   },
   {
     "id": "088b99dd-2f9c-5846-a657-f14d7c986ff3",
