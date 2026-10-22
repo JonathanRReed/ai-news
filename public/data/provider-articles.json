@@ -1,5 +1,89 @@
 [
   {
+    "id": "3852375e-868b-519c-816b-c4cb843bbbf6",
+    "company": "OpenClaw",
+    "title": "v2026.10.6",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.10.6",
+    "published_at": "2026-10-22T11:41:01+00:00",
+    "source_type": "rss_official",
+    "summary": "openclaw 2026.10.6",
+    "content": "openclaw 2026.10.6",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
+  },
+  {
+    "id": "34aa9cf0-589c-51aa-9ca3-6326853c2446",
+    "company": "Codex CLI",
+    "title": "0.164.0-alpha.12",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.164.0-alpha.12",
+    "published_at": "2026-10-22T11:27:02+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.164.0-alpha.12",
+    "content": "Release 0.164.0-alpha.12",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "720245db-3933-5af9-a135-4cf2bbbd0062",
+    "company": "AI21 Labs",
+    "title": "How we cut GitLab Duo Code Review's cost by 98% | AI21",
+    "url": "https://www.ai21.com/blog/gitlab-case-study/",
+    "published_at": "2026-10-22T11:26:55+00:00",
+    "source_type": "scraped",
+    "summary": "Switching models cut GitLab Duo Code Review’s cost by 85%, then stalled on a handful of oversized reviews. Compacting the context made them fit and took the saving to 98%, with review quality intact.",
+    "content": "Switching models cut GitLab Duo Code Review’s cost by 85%, then stalled on a handful of oversized reviews. Compacting the context made them fit and took the saving to 98%, with review quality intact.",
+    "source_url": "https://www.ai21.com/sitemap_index.xml",
+    "source_key": "ai21-sitemap"
+  },
+  {
+    "id": "3996a7aa-5292-59df-bd7a-a2c0a3d6c7f3",
+    "company": "OpenClaw",
+    "title": "release-publish/87d4818b4a03-1792668532: perf: avoid duplicate SQLite qualification at startup (#180410)",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/release-publish%2F87d4818b4a03-1792668532",
+    "published_at": "2026-10-22T08:42:02+00:00",
+    "source_type": "rss_official",
+    "summary": "Reuse the first iterator row for native SQLite runtime qualification, removing one redundant statement per new process while retaining both iterator behavior observations and all admission facts. SQLite-only; source attribution forecasts 10 fewer statements and 2 fewer main-thread statements per census workload, with requests unchanged. Native owner regression and related suites: 97 passed. CI types, lint and PostgreSQL conformance passed; the two unrelated quiet-child restart failures were...",
+    "content": "Reuse the first iterator row for native SQLite runtime qualification, removing one redundant statement per new process while retaining both iterator behavior observations and all admission facts. SQLite-only; source attribution forecasts 10 fewer statements and 2 fewer main-thread statements per census workload, with requests unchanged. Native owner regression and related suites: 97 passed. CI types, lint and PostgreSQL conformance passed; the two unrelated quiet-child restart failures were reproduced identically on the base and candidate. Release-note context: reduce native SQLite startup qualification work without changing admission decisions or persistent state.",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
+  },
+  {
+    "id": "19741f6b-2864-5fed-97a1-93c0b4066ff3",
+    "company": "Hugging Face",
+    "title": "Ensemble forecasting with IBM Granite time-series models",
+    "url": "https://huggingface.co/blog/ibm-research/granite-timeseries-ensemble-r1",
+    "published_at": "2026-10-22T07:51:31+00:00",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://huggingface.co/blog/feed.xml",
+    "source_key": "hugging-face-blog"
+  },
+  {
+    "id": "783682b5-8c0b-57b8-874f-6605d28ba596",
+    "company": "OpenHands",
+    "title": "v1.30.1",
+    "url": "https://github.com/OpenHands/OpenHands/releases/tag/v1.30.1",
+    "published_at": "2026-10-22T07:22:29+00:00",
+    "source_type": "rss_official",
+    "summary": "1.30.1 (2026-10-22) What's Changed Maintenance refactor(diff): express the Markdown preview cap in CSS by @enyst in #18762 refactor(automations): express the activity track height in CSS by @enyst in #18788 chore: bump agent-server to 1.57.0 by @all-hands-bot in #18774 chore: remove merged PR artifacts by @all-hands-bot in #18806 Full Changelog : v1.30.0...v1.30.1 This PR was generated with Release Please . See documentation . macOS install note The app isn't signed with an Apple Developer...",
+    "content": "1.30.1 (2026-10-22) What's Changed Maintenance refactor(diff): express the Markdown preview cap in CSS by @enyst in #18762 refactor(automations): express the activity track height in CSS by @enyst in #18788 chore: bump agent-server to 1.57.0 by @all-hands-bot in #18774 chore: remove merged PR artifacts by @all-hands-bot in #18806 Full Changelog : v1.30.0...v1.30.1 This PR was generated with Release Please . See documentation . macOS install note The app isn't signed with an Apple Developer ID yet, so macOS may call a downloaded build \"damaged\" — it's Gatekeeper quarantine, not a bad file. After moving the app to Applications, clear the flag once, then open normally: xattr -dr com.apple.quarantine \" /Applications/OpenHands Agent Canvas.app \" Signing + notarization is tracked in #16774 .",
+    "source_url": "https://github.com/OpenHands/OpenHands/releases.atom",
+    "source_key": "openhands-releases"
+  },
+  {
+    "id": "5caebb15-8354-51e9-af00-763b85a0879d",
+    "company": "Hermes Agent",
+    "title": "v0.22.4+canary.20261022T070155Z",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.22.4%2Bcanary.20261022T070155Z",
+    "published_at": "2026-10-22T07:01:57+00:00",
+    "source_type": "rss_official",
+    "summary": "Hermes Agent canary 20261022T070155Z",
+    "content": "Hermes Agent canary 20261022T070155Z",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
     "id": "82981ef0-250b-5de3-985d-d2df53dcbd27",
     "company": "Codex CLI",
     "title": "0.163.0-alpha.11.2",
@@ -40930,6 +41014,18 @@
     "content": "Watch hands-on demos of the lastest in ChatGPT for Business: o3, image generation, enhanced memory, and internal knowledge.",
     "source_url": "https://openai.com/news/rss.xml",
     "source_key": "openai-news"
+  },
+  {
+    "id": "92f14d55-7d0e-5e3a-94c5-e394273b7fd8",
+    "company": "Anthropic",
+    "title": "Exploring model welfare",
+    "url": "https://www.anthropic.com/research/exploring-model-welfare",
+    "published_at": "2025-04-24T00:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "Announcing a new research program at Anthropic on model welfare",
+    "content": "Announcing a new research program at Anthropic on model welfare",
+    "source_url": "https://www.anthropic.com/sitemap.xml",
+    "source_key": "anthropic-sitemap"
   },
   {
     "id": "d8b2fcdb-3b4b-47a5-8118-391b147a10f8",
