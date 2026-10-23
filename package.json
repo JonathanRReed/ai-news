@@ -4,7 +4,7 @@
   "license": "MIT",
   "private": true,
   "type": "module",
-  "packageManager": "bun@1.4.3",
+  "packageManager": "bun@1.4.4",
   "overrides": {
     "glob": ">=10.5.0",
     "js-yaml": "^4.2.0",
@@ -27,8 +27,8 @@
     "esbuild": "^0.28.1"
   },
   "engines": {
-    "node": ">=22.22.0",
-    "bun": ">=1.4.3"
+    "node": ">=24.22.1 <25",
+    "bun": ">=1.4.4"
   },
   "scripts": {
     "dev": "astro dev",
@@ -70,7 +70,7 @@
     "@astrojs/check": "^0.9.10",
     "@playwright/test": "^1.64.1",
     "@tailwindcss/vite": "^4.3.3",
-    "@types/bun": "^1.4.3",
+    "@types/bun": "^1.4.4",
     "@typescript-eslint/eslint-plugin": "^8.71.2",
     "@typescript-eslint/parser": "^8.71.2",
     "astro-eslint-parser": "^3.2.0",

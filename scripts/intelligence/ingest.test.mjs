@@ -295,3 +295,131 @@ test('publisher date corrections never mutate database identity on refresh', asy
   await runIngestion({ manifest: scoped, client, now: '2026-10-16T00:00:00Z', fetchSourceImpl: async () => ({ status: 'success', httpStatus: 200, fetchedAt: '2026-10-16T00:00:00Z', items: [{ ...validItem, url: existing.canonical_url, published_at: '2025-01-29T15:38:00Z' }] }) });
   expect(client.calls.upserts.find(call => call.table === 'content_items').rows[0].published_at).toBe(existing.published_at);
 });
+
+describe('source-scoped publisher identity', () => {
+  const scoped = { ...manifest, sources: [manifest.sources[0]] };
+  const { sourceRows } = manifestRows(scoped);
+  const historical = {
+    id: 'historical-id', legacy_id: 'historical-route', source_id: sourceRows[0].id,
+    external_id: 'publisher-guid', canonical_url: validItem.url,
+    published_at: '2026-08-29T12:00:00.000Z', first_seen_at: '2026-08-29T13:00:00.000Z',
+  };
+  const ingest = (client, items) => runIngestion({
+    manifest: scoped, client, now: '2026-08-30T13:00:00.000Z',
+    fetchSourceImpl: async () => ({status: 'success', items, httpStatus: 200}),
+  });
+
+  test('a stable publisher GUID preserves history when its feed URL changes', async () => {
+    const client = fakeClient({ existingContentItems: [historical] });
+    const receipt = await ingest(client, [{ ...validItem, url: `${validItem.url}-updated`, external_id: 'publisher-guid' }]);
+    expect(receipt.status).toBe('success');
+    const rows = client.calls.upserts.find(({table}) => table === 'content_items').rows;
+    expect(rows).toHaveLength(1);
+    expect(rows[0]).toMatchObject(historical);
+    const originalClient = fakeClient({ existingContentItems: [historical] });
+    await ingest(originalClient, [{ ...validItem, external_id: 'publisher-guid' }]);
+    expect(client.calls.upserts.find(({table}) => table === 'events').rows[0].id)
+      .toBe(originalClient.calls.upserts.find(({table}) => table === 'events').rows[0].id);
+  });
+
+  test('conflicting URL and GUID matches fail before content writes', async () => {
+    const client = fakeClient({ existingContentItems: [historical, {
+      ...historical, id: 'other-id', canonical_url: `${validItem.url}-other`, external_id: 'other-guid',
+    }] });
+    const receipt = await ingest(client, [{ ...validItem, external_id: 'other-guid' }]);
+    expect(receipt.status).toBe('failed');
+    expect(receipt.sources[0].error).toBe('conflicting source item identities');
+    expect(client.calls.upserts.some(({table}) => table === 'content_items')).toBeFalse();
+  });
+
+  test('same GUID on different sources does not merge unrelated articles', async () => {
+    const client = fakeClient({ existingContentItems: [{ ...historical, source_id: 'different-source' }] });
+    await ingest(client, [{ ...validItem, url: `${validItem.url}-new`, external_id: 'publisher-guid' }]);
+    const row = client.calls.upserts.find(({table}) => table === 'content_items').rows[0];
+    expect(row.id).not.toBe(historical.id);
+    expect(row.source_id).toBe(sourceRows[0].id);
+  });
+
+  test('cross-source canonical matches retain the stored owner and external ID', async () => {
+    const existing = { ...historical, source_id: 'different-source', external_id: 'owner-guid' };
+    const client = fakeClient({ existingContentItems: [existing] });
+    await ingest(client, [{ ...validItem, external_id: 'incoming-guid' }]);
+    expect(client.calls.upserts.find(({table}) => table === 'content_items').rows[0]).toMatchObject(existing);
+  });
+
+  test('one batch cannot assign a new GUID to two different canonical URLs', async () => {
+    const client = fakeClient();
+    const receipt = await ingest(client, [
+      { ...validItem, external_id: 'reused-guid' },
+      { ...validItem, url: `${validItem.url}-other`, external_id: 'reused-guid' },
+    ]);
+    expect(receipt.status).toBe('failed');
+    expect(client.calls.upserts.some(({table}) => table === 'content_items')).toBeFalse();
+  });
+});
+
+test('failed normalization or writes retain the last successful cache validators', async () => {
+  const { sourceRows } = manifestRows(manifest);
+  const client = fakeClient({ existingSources: [{
+    id: sourceRows[0].id, source_key: manifest.sources[0].sourceKey,
+    etag: '"accepted"', last_modified: 'previous-date',
+  }] });
+  await runIngestion({
+    manifest: { ...manifest, sources: [manifest.sources[0]] }, client,
+    fetchSourceImpl: async () => ({ status: 'success', httpStatus: 200,
+      items: [{ ...validItem, published_at: 'invalid' }], etag: '"rejected"', lastModified: 'new-date' }),
+  });
+  expect(client.calls.patches[0].values).toMatchObject({etag: '"accepted"', last_modified: 'previous-date'});
+});
+
+test('conflicting GUID claims for one URL are not hidden by URL deduplication', async () => {
+  const client = fakeClient();
+  const receipt = await runIngestion({
+    manifest: { ...manifest, sources: [manifest.sources[0]] }, client,
+    fetchSourceImpl: async () => ({ status: 'success', httpStatus: 200,
+      items: [{ ...validItem, external_id: 'one' }, { ...validItem, external_id: 'two' }] }),
+  });
+  expect(receipt.sources[0].error).toBe('conflicting source item identities');
+  expect(client.calls.upserts.some(({table}) => table === 'content_items')).toBeFalse();
+});
+
+for (const guidFirst of [false, true]) {
+  test(`compatible duplicate URLs keep their known GUID (GUID first: ${guidFirst})`, async () => {
+    const client = fakeClient();
+    const withGuid = { ...validItem, external_id: 'known-guid' };
+    const withoutGuid = { ...validItem, external_id: null };
+    await runIngestion({manifest: { ...manifest, sources: [manifest.sources[0]] }, client,
+      fetchSourceImpl: async () => ({status: 'success', httpStatus: 200,
+        items: guidFirst ? [withGuid, withoutGuid] : [withoutGuid, withGuid]})});
+    const rows = client.calls.upserts.find(({table}) => table === 'content_items').rows;
+    expect(rows).toHaveLength(1);
+    expect(rows[0].external_id).toBe('known-guid');
+  });
+}
+
+test('previous failures force an unconditional fetch even if old code stored fresh validators', async () => {
+  const { sourceRows } = manifestRows(manifest);
+  const client = fakeClient({existingSources: [{id: sourceRows[0].id,
+    source_key: manifest.sources[0].sourceKey, consecutive_failures: 1,
+    etag: '"poisoned"', last_modified: 'poisoned-date'}]});
+  let requestedState;
+  await runIngestion({manifest: { ...manifest, sources: [manifest.sources[0]] }, client,
+    fetchSourceImpl: async (_source, options) => {
+      requestedState = options.previousState;
+      return {status: 'success', httpStatus: 200, items: [validItem]};
+    }});
+  expect(requestedState).toEqual({etag: null, lastModified: null});
+});
+
+test('resolved targets cannot hide conflicting GUID claims behind historical URL identity', async () => {
+  const { sourceRows } = manifestRows(manifest);
+  const client = fakeClient({existingContentItems: [{id: 'old-id', source_id: sourceRows[0].id,
+    canonical_url: validItem.url, external_id: 'G', published_at: validItem.published_at,
+    first_seen_at: validItem.published_at}]});
+  const receipt = await runIngestion({manifest: {...manifest, sources: [manifest.sources[0]]}, client,
+    fetchSourceImpl: async () => ({status: 'success', httpStatus: 200, items: [
+      {...validItem, external_id: 'H'}, {...validItem, url: `${validItem.url}-new`, external_id: 'G'},
+    ]})});
+  expect(receipt.sources[0].error).toBe('conflicting source item identities');
+  expect(client.calls.upserts.some(({table}) => table === 'content_items')).toBeFalse();
+});
