@@ -1,7 +1,7 @@
 import { entities, sources } from '../../config/intelligence-sources.mjs';
 import { fetchSource } from './fetch-source.mjs';
 import { eventBundleForItems } from './events.mjs';
-import { normalizeItem, stableRecordId } from './normalize.mjs';
+import { normalizeItem, stableItemId, stableRecordId } from './normalize.mjs';
 import { hashReceipt, writeReceipt } from './receipt.mjs';
 import { sourceAdmissionHosts } from './source-policy.mjs';
 import { createAdminClient } from './supabase-rest.mjs';
@@ -90,7 +90,7 @@ async function readExistingContentItems(client) {
   const rows = [];
   for (let offset = 0; ; offset += EXISTING_CONTENT_PAGE_SIZE) {
     const page = await client.selectRows('content_items', {
-      select: 'id,legacy_id,source_id,canonical_url,published_at,first_seen_at',
+      select: 'id,legacy_id,source_id,external_id,canonical_url,published_at,first_seen_at',
       order: 'id.asc',
       limit: EXISTING_CONTENT_PAGE_SIZE,
       offset,
@@ -100,24 +100,75 @@ async function readExistingContentItems(client) {
   }
 }
 
-function preserveExistingIdentity(item, existing) {
+function preserveExistingIdentity(item, existing, incomingSourceId) {
   if (!existing) return item;
   return {
     ...item,
     id: existing.id,
+    external_id: existing.source_id === incomingSourceId
+      ? existing.external_id ?? item.external_id
+      : existing.external_id ?? null,
     legacy_id: existing.legacy_id ?? item.legacy_id,
     published_at: existing.published_at,
     first_seen_at: existing.first_seen_at,
   };
 }
 
-function uniqueByCanonicalUrl(items) {
-  const seen = new Set();
-  return items.filter((item) => {
-    if (seen.has(item.canonical_url)) return false;
-    seen.add(item.canonical_url);
-    return true;
-  });
+class SourceIdentityConflictError extends Error {
+  constructor() { super('conflicting source item identities'); }
+}
+
+function externalIdentityKey(sourceId, externalId) {
+  return externalId ? JSON.stringify([sourceId, externalId]) : null;
+}
+
+function resolveSourceItems(items, source, sourceId, byUrl, byExternalId) {
+  const batchUrls = new Map();
+  const batchExternalIds = new Map();
+  // Validate before first-wins URL deduplication can hide conflicting identities.
+  for (const item of items) {
+    const externalKey = externalIdentityKey(sourceId, item.external_id);
+    const urlGuid = batchUrls.get(item.canonical_url);
+    const guidUrl = externalKey && batchExternalIds.get(externalKey);
+    if ((urlGuid && item.external_id && urlGuid !== item.external_id)
+      || (guidUrl && guidUrl !== item.canonical_url)) throw new SourceIdentityConflictError();
+    if (item.external_id) batchUrls.set(item.canonical_url, item.external_id);
+    if (externalKey) batchExternalIds.set(externalKey, item.canonical_url);
+  }
+  const resolved = new Map();
+  for (const rawItem of items) {
+    // Enrich same-URL duplicates before lookup so null/GUID copies resolve to
+    // one historical target, even when the publisher changed that URL.
+    const item = rawItem.external_id ? rawItem : {
+      ...rawItem, external_id: batchUrls.get(rawItem.canonical_url) ?? null,
+    };
+    const byCanonical = byUrl.get(item.canonical_url);
+    const byGuid = byExternalId.get(externalIdentityKey(sourceId, item.external_id));
+    if (byCanonical && byGuid && byCanonical.id !== byGuid.id)
+      throw new SourceIdentityConflictError();
+    if (byCanonical?.source_id === sourceId && byCanonical.external_id && item.external_id
+      && byCanonical.external_id !== item.external_id) throw new SourceIdentityConflictError();
+    const existing = byCanonical ?? byGuid;
+    const canonical = existing && existing.canonical_url !== item.canonical_url
+      ? {
+        ...item,
+        // A publisher GUID identifies an existing record, not a new redirect.
+        // Keep its historical canonical URL and stable event key unchanged.
+        canonical_url: existing.canonical_url,
+        id: stableItemId(source.sourceKey, existing.canonical_url, {
+          fragment: new URL(existing.canonical_url).hash,
+        }),
+        published_at: existing.published_at,
+      }
+      : item;
+    const prior = resolved.get(canonical.canonical_url);
+    if (prior?.external_id && canonical.external_id && prior.external_id !== canonical.external_id)
+      throw new SourceIdentityConflictError();
+    if (!prior) resolved.set(canonical.canonical_url, canonical);
+    else if (!prior.external_id && canonical.external_id)
+      resolved.set(canonical.canonical_url, { ...prior, external_id: canonical.external_id });
+  }
+  return [...resolved.values()];
 }
 
 function statusFromResults(results) {
@@ -154,9 +205,11 @@ export async function runIngestion({
     select: 'id,source_key,etag,last_modified,consecutive_failures,last_success_at,last_item_at',
   });
   const existingByKey = new Map(existingSourceRows.map((source) => [source.source_key, source]));
-  const existingContentByUrl = new Map(
-    (await readExistingContentItems(client)).map((item) => [item.canonical_url, item]),
-  );
+  const existingContent = await readExistingContentItems(client);
+  const existingContentByUrl = new Map(existingContent.map((item) => [item.canonical_url, item]));
+  const existingContentByExternalId = new Map(existingContent
+    .filter((item) => item.external_id)
+    .map((item) => [externalIdentityKey(item.source_id, item.external_id), item]));
   const runId = await client.rpc('start_intelligence_ingestion', {
     p_trigger_source: triggerSource,
     p_source_count: activeSources.length,
@@ -173,8 +226,9 @@ export async function runIngestion({
       fetchResult = await fetchSourceImpl(source, {
         fetchImpl,
         previousState: {
-          etag: previous.etag ?? null,
-          lastModified: previous.last_modified ?? null,
+          // Older failed runs may already have saved validators for rejected data.
+          etag: previous.consecutive_failures > 0 ? null : previous.etag ?? null,
+          lastModified: previous.consecutive_failures > 0 ? null : previous.last_modified ?? null,
         },
         now: startedAt,
       });
@@ -193,13 +247,14 @@ export async function runIngestion({
     let normalizedItems = [];
     if (fetchResult.status === 'success') {
       try {
-        const canonicalItems = uniqueByCanonicalUrl(fetchResult.items.map((item) => normalizeItem(item, {
+        const canonicalItems = resolveSourceItems(fetchResult.items.map((item) => normalizeItem(item, {
           ...source,
           entityName: entity.name,
-        }, { now: startedAt })));
+        }, { now: startedAt })), source, sourceRow.id, existingContentByUrl, existingContentByExternalId);
         normalizedItems = canonicalItems.map((item) => preserveExistingIdentity(
           item,
           existingContentByUrl.get(item.canonical_url),
+          sourceRow.id,
         ));
         const storedIdByCanonicalId = new Map(canonicalItems.map((item, index) => (
           [item.id, normalizedItems[index].id]
@@ -211,6 +266,9 @@ export async function runIngestion({
         await client.upsertRows('content_items', itemRows, { onConflict: 'canonical_url' });
         for (const itemRow of itemRows) {
           existingContentByUrl.set(itemRow.canonical_url, itemRow);
+          if (itemRow.external_id) existingContentByExternalId.set(
+            externalIdentityKey(itemRow.source_id, itemRow.external_id), itemRow,
+          );
         }
         await client.upsertRows(
           'content_item_entities',
@@ -240,8 +298,9 @@ export async function runIngestion({
         await client.upsertRows('event_entities', eventBundle.eventEntities, {
           onConflict: 'event_id,entity_id,role',
         });
-      } catch {
-        fetchResult = { ...fetchResult, status: 'failed', error: 'item normalization or write failed' };
+      } catch (error) {
+        fetchResult = { ...fetchResult, status: 'failed', error: error instanceof SourceIdentityConflictError
+          ? error.message : 'item normalization or write failed' };
         normalizedItems = [];
       }
     }
@@ -260,8 +319,9 @@ export async function runIngestion({
 
     const healthPatch = {
       last_checked_at: completedAt,
-      etag: fetchResult.etag ?? previous.etag ?? null,
-      last_modified: fetchResult.lastModified ?? previous.last_modified ?? null,
+      // Failed writes must retry the same content rather than accepting a later 304.
+      etag: status === 'failed' ? previous.etag ?? null : fetchResult.etag ?? previous.etag ?? null,
+      last_modified: status === 'failed' ? previous.last_modified ?? null : fetchResult.lastModified ?? previous.last_modified ?? null,
       consecutive_failures: status === 'failed' ? (previous.consecutive_failures ?? 0) + 1 : 0,
     };
     if (status !== 'failed') {
@@ -325,6 +385,6 @@ if (import.meta.main) {
   const timestamp = receipt.completedAt.replaceAll(':', '-');
   const path = `docs/operations/receipts/ingestion-${timestamp}.json`;
   const stored = await writeReceipt(receipt, path);
-  globalThis.console.log(JSON.stringify({ status: receipt.status, counts: receipt.counts, receipt: stored }));
+  globalThis.console.log(JSON.stringify({ status: receipt.status, counts: receipt.counts, requiredFailures: receipt.requiredFailures, receipt: stored }));
   if (receipt.status === 'failed') globalThis.process.exitCode = 1;
 }
