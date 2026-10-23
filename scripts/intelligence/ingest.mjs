@@ -136,7 +136,12 @@ function resolveSourceItems(items, source, sourceId, byUrl, byExternalId) {
     if (externalKey) batchExternalIds.set(externalKey, item.canonical_url);
   }
   const resolved = new Map();
-  for (const item of items) {
+  for (const rawItem of items) {
+    // Enrich same-URL duplicates before lookup so null/GUID copies resolve to
+    // one historical target, even when the publisher changed that URL.
+    const item = rawItem.external_id ? rawItem : {
+      ...rawItem, external_id: batchUrls.get(rawItem.canonical_url) ?? null,
+    };
     const byCanonical = byUrl.get(item.canonical_url);
     const byGuid = byExternalId.get(externalIdentityKey(sourceId, item.external_id));
     if (byCanonical && byGuid && byCanonical.id !== byGuid.id)

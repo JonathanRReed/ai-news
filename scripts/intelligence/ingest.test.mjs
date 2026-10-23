@@ -423,3 +423,22 @@ test('resolved targets cannot hide conflicting GUID claims behind historical URL
   expect(receipt.sources[0].error).toBe('conflicting source item identities');
   expect(client.calls.upserts.some(({table}) => table === 'content_items')).toBeFalse();
 });
+
+for (const guidFirst of [false, true]) {
+  test(`URL-drift duplicates resolve together before GUID lookup (GUID first: ${guidFirst})`, async () => {
+    const { sourceRows } = manifestRows(manifest);
+    const historical = {id: 'historical', source_id: sourceRows[0].id,
+      canonical_url: validItem.url, external_id: 'G', published_at: validItem.published_at,
+      first_seen_at: validItem.published_at};
+    const client = fakeClient({existingContentItems: [historical]});
+    const withGuid = {...validItem, url: `${validItem.url}-new`, external_id: 'G'};
+    const withoutGuid = {...withGuid, external_id: null};
+    await runIngestion({manifest: {...manifest, sources: [manifest.sources[0]]}, client,
+      fetchSourceImpl: async () => ({status: 'success', httpStatus: 200,
+        items: guidFirst ? [withGuid, withoutGuid] : [withoutGuid, withGuid]})});
+    const rows = client.calls.upserts.find(({table}) => table === 'content_items').rows;
+    expect(rows).toHaveLength(1);
+    expect(rows[0]).toMatchObject(historical);
+    expect(client.calls.upserts.find(({table}) => table === 'events').rows).toHaveLength(1);
+  });
+}
