@@ -442,3 +442,15 @@ for (const guidFirst of [false, true]) {
     expect(client.calls.upserts.find(({table}) => table === 'events').rows).toHaveLength(1);
   });
 }
+
+test('same-source stored and incoming GUID conflicts fail before silently discarding identity', async () => {
+  const { sourceRows } = manifestRows(manifest);
+  const client = fakeClient({existingContentItems: [{id: 'historical', source_id: sourceRows[0].id,
+    canonical_url: validItem.url, external_id: 'G', published_at: validItem.published_at,
+    first_seen_at: validItem.published_at}]});
+  const receipt = await runIngestion({manifest: {...manifest, sources: [manifest.sources[0]]}, client,
+    fetchSourceImpl: async () => ({status: 'success', httpStatus: 200,
+      items: [{...validItem, external_id: 'H'}]})});
+  expect(receipt.sources[0].error).toBe('conflicting source item identities');
+  expect(client.calls.upserts.some(({table}) => table === 'content_items')).toBeFalse();
+});

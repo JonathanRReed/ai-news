@@ -146,6 +146,8 @@ function resolveSourceItems(items, source, sourceId, byUrl, byExternalId) {
     const byGuid = byExternalId.get(externalIdentityKey(sourceId, item.external_id));
     if (byCanonical && byGuid && byCanonical.id !== byGuid.id)
       throw new SourceIdentityConflictError();
+    if (byCanonical?.source_id === sourceId && byCanonical.external_id && item.external_id
+      && byCanonical.external_id !== item.external_id) throw new SourceIdentityConflictError();
     const existing = byCanonical ?? byGuid;
     const canonical = existing && existing.canonical_url !== item.canonical_url
       ? {
