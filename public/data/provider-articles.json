@@ -1,5 +1,53 @@
 [
   {
+    "id": "5a8d63de-5442-5a88-94c0-ce4a9601cada",
+    "company": "OpenClaw",
+    "title": "release-publish/24adbb81e0a3-1792802211: fix: show chat color swatches before hex values (#181697)",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/release-publish%2F24adbb81e0a3-1792802211",
+    "published_at": "2026-10-24T00:23:12+00:00",
+    "source_type": "rss_official",
+    "summary": "fix: show chat color swatches before hex values fix(ui): space and emphasize chat hex colors",
+    "content": "fix: show chat color swatches before hex values fix(ui): space and emphasize chat hex colors",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
+  },
+  {
+    "id": "03546f5b-9e15-54b7-90d8-e41ccc66388a",
+    "company": "Claude Code",
+    "title": "v2.1.310",
+    "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.310",
+    "published_at": "2026-10-23T23:39:00+00:00",
+    "source_type": "rss_official",
+    "summary": "What's changed Added the Monitor tool and plugin monitors on Bedrock, Vertex, and Foundry, and when telemetry or nonessential traffic is disabled; long foreground sleeps are now blocked there too Fixed requests failing behind some gateways and compatible servers that reject the effort-2025-11-24 beta value or mid-conversation system messages; Claude Code now retries without them Fixed background cleanup deleting some recent files, such as pasted images, when cleanupPeriodDays is set to a...",
+    "content": "What's changed Added the Monitor tool and plugin monitors on Bedrock, Vertex, and Foundry, and when telemetry or nonessential traffic is disabled; long foreground sleeps are now blocked there too Fixed requests failing behind some gateways and compatible servers that reject the effort-2025-11-24 beta value or mid-conversation system messages; Claude Code now retries without them Fixed background cleanup deleting some recent files, such as pasted images, when cleanupPeriodDays is set to a very large value Fixed compaction after a \"Prompt is too long\" error keeping too much of a conversation with dense text, such as base64 or SVG, so the next request could fail again Fixed file read permission prompts not showing where a symbolic link leads Fixed a question's auto-continue timeout firing the moment the external editor closed after a long edit Windows: Fixed PreToolUse and PermissionRequest hooks letting a tool call through when Git Bash is missing and the hook's command is only quoted strings, such as a quoted path Improved auto mode's prompt before the first read outside the working directories: it now says when blocking those reads makes shell commands ask for permission Improved memory use of non-interactive sessions ( -p , Agent SDK) during compaction when the transcript file is very large Improved a mod's Image to draw inside tmux with allow-passthrough and focus-events on, in kitty, Ghostty, and iTerm2 3.5+ with fullscreen rendering, where it showed only its alt text Linux: Improved /sandbox and the sandbox startup warning to name Ubuntu's AppArmor restriction on user namespaces, and how to lift it, when it keeps bubblewrap from starting the sandbox Changed the error for an MCP tool call that times out in a non-interactive session while the server's elicitation is unanswered: it now tells Claude that no answer came and not to repeat the call [VSCode] Fixed pressing Enter on the plan review card's \"Send feedback and keep planning\" button approving the plan instead of sending your comments back [VSCode] Fixed the panel showing \"Something went wrong\" after \"Switch branch & continue\" on a cloud session opened from Session history's Web tab [Cloud sessions] Added Claude Code cloud sessions and Remote Control permissions to Enterprise custom roles, so Owners can control access to each by role [Cloud sessions] Added a Choose file button to load a cloud environment's setup script from a file [Cloud sessions] Fixed failed saves and archives in the cloud environment edit dialog showing no error inside the dialog [Cloud sessions] Fixed failed routine API token actions showing only a toast; the error now appears in the routine edit dialog [Cloud sessions] Improved the session start checklist to show a cloud environment's setup script output in a scrolling box [Cloud sessions] Changed turning on Cloud sessions or Remote Control in admin settings to ask for confirmation and list the custom roles that have that permission [Cloud sessions] Changed the cloud environment dialog to open network access, setup script and environment variables from rows instead of listing every editor at once [Claude Tag] Fixed Claude Tag treating ! commands such as !restart and !help as ordinary messages when sent in bold, italic or strikethrough [Claude Tag] Fixed Claude Tag admin channel and workspace pages being replaced by a load error when a background refresh of the bundle list fails [Claude Tag] Fixed Claude Tag's spend limits page in admin settings reporting that no channels match a filter while channel names are still loading [Code Review] Fixed the Code Review admin section hiding its repositories and switches after a failed refresh of the repository list [Code Review] Improved the Code Review admin section to retry the first load and show one Try again banner when it still fails",
+    "source_url": "https://github.com/anthropics/claude-code/releases.atom",
+    "source_key": "claude-code-releases"
+  },
+  {
+    "id": "8f0b6ea0-76ad-5ef0-8c1d-e62b2c9ca1da",
+    "company": "OpenClaw",
+    "title": "release-publish/4d13198000c5-1792785240: refactor: keep one-use callbacks with their owners (#181849)",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/release-publish%2F4d13198000c5-1792785240",
+    "published_at": "2026-10-23T19:52:49+00:00",
+    "source_type": "rss_official",
+    "summary": "refactor: keep one-use callbacks with their owners refactor: withdraw unqualified CI-linked runtime slice",
+    "content": "refactor: keep one-use callbacks with their owners refactor: withdraw unqualified CI-linked runtime slice",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
+  },
+  {
+    "id": "ee486e0e-6181-50b3-b869-8350ae87dd9d",
+    "company": "OpenClaw",
+    "title": "release-publish/3f5d04f8ebc9-1792785124",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/release-publish%2F3f5d04f8ebc9-1792785124",
+    "published_at": "2026-10-23T19:47:49+00:00",
+    "source_type": "rss_official",
+    "summary": "fix(ui): keep plugin navigation message type private ( #181862 )",
+    "content": "fix(ui): keep plugin navigation message type private ( #181862 )",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
+  },
+  {
     "id": "8e1b7794-8029-5438-8250-5f7123faf1cb",
     "company": "OpenClaw",
     "title": "release-publish/6cc605dfe204-1792778379",
@@ -156,6 +204,18 @@
     "source_key": "openhands-releases"
   },
   {
+    "id": "05f3efa4-4657-5bf9-a6b4-ab1afbb25f06",
+    "company": "OpenAI",
+    "title": "Securing our frontier model training environment",
+    "url": "https://openai.com/index/securing-our-frontier-model-training-environment",
+    "published_at": "2026-10-23T10:00:00+00:00",
+    "source_type": "rss_official",
+    "summary": "OpenAI explains how we strengthened containment for frontier model training and evaluation, including offline environments and high-compute red-teaming.",
+    "content": "OpenAI explains how we strengthened containment for frontier model training and evaluation, including offline environments and high-compute red-teaming.",
+    "source_url": "https://openai.com/news/rss.xml",
+    "source_key": "openai-news"
+  },
+  {
     "id": "f4a03908-1186-5a5f-a616-f5fed2814777",
     "company": "OpenClaw",
     "title": "release-publish/1197ee98bb5e-1792741794: fix: settle side chat resource acquisition (#181378)",
@@ -202,6 +262,18 @@
     "content": "Hermes Agent v0.22.5 Release Date: October 22, 2026 Patch release. This tag rolls up the ~81 PRs merged since v0.22.4 into a stable release for the GitHub release (CLI and installers), the Microsoft Store app, Docker and Hermes Cloud. Full curated notes for this window ship with v0.23.0. About this release Measured at commit bf0203a794a , the window since v0.22.4 contains 231 non-merge commits across 804 changed files (+35,212 / −17,885), 81 merged PRs and 30 closed issues . Also in the window, undocumented here on purpose: Nous sign-in reworked (every sign-in is the plain device login, the free-tier guest hands over to your account, the result shows who signed in, connectors offer sign-in instead of opening a guest), hermes update holding back a stable release it refuses instead of offering it, Windows hermes update no longer stuck on the old launcher after a Python repin, usage-window plan support (plan gauges, limit cards and model-switch recovery for window-based plans), pluggable delegation backends (route subagents by model map or profile, switchable per session), plugin slash commands that can ask you to pick an option, hermes import-agent , OpenClaw migration, hermes mcp serve and the Singularity backend moving out of core into plugins (setup offers the importer when it finds another agent), Desktop drag-to-pin in the sidebar and one-click plugin installs with tier badges, the Electron 44 upgrade, Pillow 13 and a batch of dependency security bumps, a clear message when a chat's working folder is gone, hermes update recovering paused gateways after a damaged .git , long Claude DirectSDK answers no longer cut off by the stall timer, Desktop group chats showing which bot is working again, and the experimental webhook-mode MCP events client. Full curated release notes for this window ship with v0.23.0 , which will document everything from v0.22.0 onward — highlights, feature areas, and complete contributor credits. Nothing in this window is skipped. Updating Microsoft Store app: updates through the Store. Desktop app installed from the installer (.exe / .dmg): no change in this release; it updates with the next bundled release. CLI: hermes update , or re-run the installer one-liner. Docker / Hermes Cloud: nousresearch/hermes-agent:stable (or :latest ). Full Changelog : v0.22.4...v0.22.5",
     "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
     "source_key": "hermes-agent-releases"
+  },
+  {
+    "id": "19672fc0-9928-5e6c-a218-2e8b69b34880",
+    "company": "IBM Research",
+    "title": "IBM supports award-winning projects in NEDO Challenge",
+    "url": "https://research.ibm.com/blog/ibm-nedo-challenge-2026",
+    "published_at": "2026-10-23T04:00:00+00:00",
+    "source_type": "rss_official",
+    "summary": "Teams across all three tracks of Japan's national quantum competition used IBM quantum computers during research on real-world applications.",
+    "content": "Teams across all three tracks of Japan's national quantum competition used IBM quantum computers during research on real-world applications.",
+    "source_url": "https://research.ibm.com/rss",
+    "source_key": "ibm-research"
   },
   {
     "id": "e4fed236-b99c-5fa1-b08b-190bf09344d5",
@@ -384,6 +456,30 @@
     "source_key": "claude-code-releases"
   },
   {
+    "id": "af539612-844d-5d39-aab6-332950dab282",
+    "company": "Cohere",
+    "title": "Cohere Model Vault: Verifiable Confidential AI Inference",
+    "url": "https://cohere.com/blog/inside-cohere-model-vault-building-verifiable-confidential-ai-inference",
+    "published_at": "2026-10-22T20:36:00+00:00",
+    "source_type": "scraped",
+    "summary": "Explore how Cohere Model Vault secures AI inference with confidential CPU and GPU computing, end-to-end encryption, and remote attestation.",
+    "content": "Explore how Cohere Model Vault secures AI inference with confidential CPU and GPU computing, end-to-end encryption, and remote attestation.",
+    "source_url": "https://cohere.com/sitemap.xml",
+    "source_key": "cohere-sitemap"
+  },
+  {
+    "id": "b6a16c7a-8783-5f39-b3b3-9d56b7dc28cb",
+    "company": "Cohere",
+    "title": "Confidential Computing on Cohere Model Vault | Cohere",
+    "url": "https://cohere.com/blog/introducing-confidential-computing-on-cohere-model-vault",
+    "published_at": "2026-10-22T19:59:00+00:00",
+    "source_type": "scraped",
+    "summary": "Discover Confidential Computing on Cohere Model Vault. Protect sensitive AI workloads with hardware-backed security, encryption, and verification.",
+    "content": "Discover Confidential Computing on Cohere Model Vault. Protect sensitive AI workloads with hardware-backed security, encryption, and verification.",
+    "source_url": "https://cohere.com/sitemap.xml",
+    "source_key": "cohere-sitemap"
+  },
+  {
     "id": "57e8d3db-2cc6-59ff-9eb7-3822e9cfe657",
     "company": "Amazon AI",
     "title": "The science behind TorchNeuron, Amazon’s new PyTorch backend for AWS Trainium chips",
@@ -391,7 +487,7 @@
     "published_at": "2026-10-22T19:36:42+00:00",
     "source_type": "rss_official",
     "summary": "Runtime optimizations and a thorough evaluation process driven by agentic AI help ensure that models written in PyTorch will execute efficiently and reliably on Trainium systems.",
-    "content": "PyTorch is the one framework that most AI developers use to build their models. It’s a Python library of operations performed on tensors, higher-dimensional analogues of a matrix, or 2-D grid of numbers. Almost all of the crucial features of contemporary AI models, such as input data, model weights, and attention mechanisms, are represented by tensors, and PyTorch drastically simplifies writing code to manipulate them. This week, we announced the availability of TorchNeuron, an open-source backend that translates PyTorch code into operations executable on AWS Trainium systems. PyTorch code that already runs on other accelerators will run on Trainium with minimal or no code changes. TorchNeuron bridges PyTorch and Trainium, and both sides gain from it. PyTorch developers can now run their code on Trainium, which was built from the ground up for large-tensor workloads. They can also tap the AWS Neuron SDK, which includes a profiler that traces each instruction with cycle-level accuracy and the Neuron Kernel Interface (NKI, pronounced \"Nikki\"), which enables control almost at the assembly level. TorchNeuron includes several optimizations that enable PyTorch code to run efficiently on Trainium, including caching at multiple levels and an optional “adaptive eager” mode that doesn’t execute individual operations one by one, as is typical in plain eager mode, but instead groups and compiles operations for more efficient execution, approaching fully compiled performance. Much of the innovation behind TorchNeuron, however, is the way its performance was evaluated. AI agents searched through hundreds of thousands of open-source models and categorized them according to their architectural characteristics. This allowed the Annapurna team around Khaled ElGalaind and Sarang Ozarde to identify 841 representative models covering the full spectrum of model architectures. From those models, they also distilled tens of thousands of practically important tensor dimensions, or “shapes”, which were then used to tune and benchmark TorchNeuron’s performance. The result is that PyTorch programmers can trust TorchNeuron to execute their code accurately, efficiently, and most importantly, right out of the box. Runtime optimizations Adaptive eager mode Standard PyTorch has two native execution modes. One is called “eager”, meaning that PyTorch operations are executed immediately, in program order. The other mode is compiled mode, where the programmer selects blocks of code that should be compiled in the traditional sense, meaning that a compiler builds a control-flow graph of the tensor operations and optimizes it. There are many optimization techniques in place today, such as operator fusion to reduce memory traffic and increase locality. Developers often use eager mode when they’re debugging models and compiled mode once they’re confident their code is correct and want it to execute as efficiently as possible. TorchNeuron adds something in-between, an opt-in setting called adaptive eager mode, which offers some of the advantages of compilation but operates on smaller subgraphs. This mode approximates both eager mode’s responsiveness and compiled mode’s performance, but without the compile time overhead. At run time, a Python interpreter running on a CPU accumulates instructions it gets from PyTorch ’s operator dispatch and builds small graphs. The graphs are sent to TorchNeuron, which compiles them, caches them, and puts them in a queue for execution. Multiple such graph collections and compilations are happening in parallel, further minimizing the compile time overhead. A key innovation here is that the accumulated graphs, their individual operations, and their input tensor shapes correlate directly with compile time. Larger graphs on larger tensors take longer to compile. Hence, a smart, adaptive algorithm dynamically selects the right subgraphs to maximize the overlap of compile time with the execution of already compiled snippets, effectively hiding all compile time for a great variety of models. PyTorch developers running their code in eager mode are accustomed to being able to correlate the operations executing on hardware with individual lines of code; that’s why eager mode is so useful for debugging. We didn’t want to disrupt this experience, so TorchNeuron’s adaptive-eager mode maintains accurate source correlation. Caching When a compiled graph comes out of the queue, TorchNeuron converts it into an executable file called a NEFF, for Neuron executable file format. A single operation in eager mode can yield a single NEFF, and the same mechanism works for full or partial graphs. In this sense, the Neuron software stack uses ahead-of-time (AOT) compilation as the default. Converting operations to NEFFs is expensive, so TorchNeuron tries not to do it unnecessarily. Every NEFF it produces is cached at several levels. An in-memory cache keeps recently generated NEFFs, and a persistent cache on disk means NEFFs can be reused for fast restarts and future work. The AOT-by-default approach makes this straightforward. An Amazon EC2 UltraServer is a collection of up to four individual Graviton servers with, based on configuration, somewhere between 16 and 144 Trainium accelerator chips. For very large models, even an UltraServer is not big enough to hold the full model, and models are sharded across many servers with thousands of accelerator chips. Since they all run identical parts of the same model, they all need the same NEFFs. The TorchNeuron runtime coordinates those accelerators so that they don’t have to compile identical code; instead, one system compiles operations and graphs, and the others reuse the compiled code. A shared compilation service pools the compiler to work for all the accelerators on a server, keeping the host CPUs from being overwhelmed. In tests with a large language model spread across accelerators, these optimizations cut the time to the first training step by about a third.Evaluation We built AI agents that conducted a broad sweep of Hugging Face repositories, ruled out the models whose broken configurations won't run on any accelerator, and surfaced hundreds of thousands with working, executable code. Evaluating every revision of TorchNeuron’s code on all those models would have been immensely time consuming. However, and besides, many of them perform similar tasks or process similar types of data. So members of our team built another agent that classified models according to a defined set of architectural properties. For example, a large language model has three main components: the front end is typically an encoder, specialized for different data types, such as text, audio, images, video, or some combination thereof. The trunk houses the main Transformer blocks, the attention mechanisms and feed-forward layers, but the attention mechanisms might be self-attention, cross-attention, or both, and they come in flavors such as flash attention, ring attention, and delta attention. Finally, a backend converts the model’s inner representations into a usable output form, which might be any type of data, produced through any number of strategies. Across all models, LLMs and otherwise, we found that just 841 representative models covered all the design characteristics that TorchNeuron was likely to confront in the wild. But fully evaluating new code revisions on even 841 models can still take too long for rapid regression detection, so with every evaluation run, we kept a record of the different-sized tensor operations that Trainium was asked to process. By the end, we had a “shape registry” cataloguing tens of thousands of operations and their tensor dimensions that TorchNeuron is likely to encounter in practice. From the registry, we generated unit tests that could test and validate a new software version in dramatically faster fashion. Any revision that passed the fast unit tests would then be tested against the 841 representative models. And if it passed those, we tested it again on the complete distribution of models. This staging greatly improved developer velocity, as problems could be found way earlier in the development cycle. All this testing and the wide coverage of models give us confidence that TorchNeuron will execute PyTorch models accurately and efficiently on Trainium, giving our customers more options as they confront an increasingly crowded AI landscape.",
+    "content": "PyTorch is the one framework that most AI developers use to build their models. It’s a Python library of operations performed on tensors, higher-dimensional analogues of a matrix, or 2-D grid of numbers. Almost all of the crucial features of contemporary AI models, such as input data, model weights, and attention mechanisms, are represented by tensors, and PyTorch drastically simplifies writing code to manipulate them. This week, we announced the availability of TorchNeuron, an open-source backend that translates PyTorch code into operations executable on AWS Trainium systems. PyTorch code that already runs on other accelerators will run on Trainium with minimal or no code changes. TorchNeuron bridges PyTorch and Trainium, and both sides gain from it. PyTorch developers can now run their code on Trainium, which was built from the ground up for large-tensor workloads. They can also tap the AWS Neuron SDK, which includes a profiler that traces each instruction with cycle-level accuracy and the Neuron Kernel Interface (NKI, pronounced \"Nikki\"), which enables control almost at the assembly level. TorchNeuron includes several optimizations that enable PyTorch code to run efficiently on Trainium, including caching at multiple levels and an optional “adaptive eager” mode that doesn’t execute individual operations one by one, as is typical in plain eager mode, but instead groups and compiles operations for more efficient execution, approaching fully compiled performance. Much of the innovation behind TorchNeuron, however, is the way its performance was evaluated. AI agents searched through hundreds of thousands of open-source models and categorized them according to their architectural characteristics. This allowed the Annapurna team around Khaled ElGalaind and Sarang Ozarde to identify 841 representative models covering the full spectrum of model architectures. From those models, they also distilled tens of thousands of practically important tensor dimensions, or “shapes”, which were then used to tune and benchmark TorchNeuron’s performance. The result is that PyTorch programmers can trust TorchNeuron to execute their code accurately, efficiently, and most importantly, right out of the box. Runtime optimizations Adaptive eager mode Standard PyTorch has two native execution modes. One is called “eager”, meaning that PyTorch operations are executed immediately, in program order. The other mode is compiled mode, where the programmer selects blocks of code that should be compiled in the traditional sense, meaning that a compiler builds a control-flow graph of the tensor operations and optimizes it. There are many optimization techniques in place today, such as operator fusion to reduce memory traffic and increase locality. Developers often use eager mode when they’re debugging models and compiled mode once they’re confident their code is correct and want it to execute as efficiently as possible. TorchNeuron adds something in-between, an opt-in setting called adaptive eager mode, which offers some of the advantages of compilation but operates on smaller subgraphs. This mode approximates both eager mode’s responsiveness and compiled mode’s performance. At run time, a Python interpreter running on a CPU accumulates instructions it gets from PyTorch ’s operator dispatch and builds small graphs. The graphs are sent to TorchNeuron, which compiles them, caches them, and puts them in a queue for execution. Multiple such graph collections and compilations are happening in parallel, further minimizing the compile time overhead. A key innovation here is that the accumulated graphs, their individual operations, and their input tensor shapes correlate directly with compile time. Larger graphs on larger tensors take longer to compile. Hence, a smart, adaptive algorithm dynamically selects the right subgraphs to maximize the overlap of compile time with the execution of already compiled snippets, effectively hiding all compile time for a great variety of models. PyTorch developers running their code in eager mode are accustomed to being able to correlate the operations executing on hardware with individual lines of code; that’s why eager mode is so useful for debugging. We didn’t want to disrupt this experience, so TorchNeuron’s adaptive-eager mode maintains accurate source correlation. Caching TorchNeuron runs PyTorch code asynchronously. Each PyTorch operation is placed in a queue, and the user program moves on without waiting. In the background, the Neuron compiler turns each queued operation into an executable file called a NEFF, for Neuron executable file format, which then runs on the device in program order. In eager mode each operation gets its own NEFF; with torch.compile, a whole captured region becomes one NEFF. Compiling is expansive, so TorchNeuron works hard to never do it twice. Every NEFF it produces is cached at several levels. An in-memory cache keeps recently used NEFFs instantly available, and a persistent cache on disk means a NEFF compiled once can be reused across restarts and future training runs. In a distributed training setup, caching also leverages all processes participating in the run. Processes that run the same part of the model need the same NEFFs, so on a single machine, dozens of them may ask for identical compiled code. TorchNeuron runs a shared compilation service so that each operation is compiled only once per machine, and the other processes reuse the result, without overwhelming the host CPUs. In tests with a large language model spread across 64 processes on a single machine, the service cut the time to the first training step by about a third.Evaluation We built AI agents that conducted a broad sweep of Hugging Face repositories, ruled out the models whose broken configurations won't run on any accelerator, and surfaced hundreds of thousands with working, executable code. Evaluating every revision of TorchNeuron’s code on all those models would have been immensely time consuming. However, and besides, many of them perform similar tasks or process similar types of data. So members of our team built another agent that classified models according to a defined set of architectural properties. For example, a large language model has three main components: The front end is typically an encoder, specialized for different data types, such as text, audio, images, video, or some combination thereof. The trunk houses the main Transformer blocks, the attention mechanisms and feed-forward layers, but the attention mechanisms might be self-attention, cross-attention, or both, and they come in flavors such as flash attention, ring attention, and delta attention. Finally, a backend converts the model’s inner representations into a usable output form, which might be any type of data, produced through any number of strategies. Across all models, LLMs and otherwise, we found that just 841 representative models covered all the design characteristics that TorchNeuron was likely to confront in the wild. But fully evaluating new code revisions on even 841 models can still take too long for rapid regression detection, so with every evaluation run, we kept a record of the different-sized tensor operations that Trainium was asked to process. By the end, we had a “shape registry” cataloguing tens of thousands of operations and their tensor dimensions that TorchNeuron is likely to encounter in practice. From the registry, we generated unit tests that could test and validate a new software version in dramatically faster fashion. Any revision that passed the fast unit tests would then be tested against the 841 representative models. And if it passed those, we tested it again on the complete distribution of models. This staging greatly improved developer velocity, as problems could be found way earlier in the development cycle. All this testing and the wide coverage of models give us confidence that TorchNeuron will execute PyTorch models accurately and efficiently on Trainium, giving our customers more options as they confront an increasingly crowded AI landscape.",
     "source_url": "https://www.amazon.science/index.rss",
     "source_key": "amazon-science"
   },
@@ -610,6 +706,18 @@
     "content": "Switching models cut GitLab Duo Code Review’s cost by 85%, then stalled on a handful of oversized reviews. Compacting the context made them fit and took the saving to 98%, with review quality intact.",
     "source_url": "https://www.ai21.com/sitemap_index.xml",
     "source_key": "ai21-sitemap"
+  },
+  {
+    "id": "ac6dd8cd-b5ca-5536-89c4-1b92aacb262f",
+    "company": "Cohere",
+    "title": "Importance of cultural context in AI understanding | Cohere",
+    "url": "https://cohere.com/blog/can-ai-understand-culture",
+    "published_at": "2026-10-22T11:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "Learn why AI struggles with cultural context and what this means for building more inclusive AI systems. #AICulturalUnderstanding #AIResearch",
+    "content": "Learn why AI struggles with cultural context and what this means for building more inclusive AI systems. #AICulturalUnderstanding #AIResearch",
+    "source_url": "https://cohere.com/sitemap.xml",
+    "source_key": "cohere-sitemap"
   },
   {
     "id": "3996a7aa-5292-59df-bd7a-a2c0a3d6c7f3",
@@ -1090,6 +1198,18 @@
     "content": "{\"attempt\":1,\"autopublish\":false,\"claimEpoch\":1792596648,\"commit\":\"6f…",
     "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
     "source_key": "hermes-agent-releases"
+  },
+  {
+    "id": "062a0cbe-9b5e-5077-8255-7fc429f82d5f",
+    "company": "Cohere",
+    "title": "Cohere Rerank 5 | More Relevant Context for RAG and Agents",
+    "url": "https://cohere.com/blog/rerank-5",
+    "published_at": "2026-10-21T15:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "Sharpen your AI search with Rerank 5. It now pinpoints the exact passages your LLM needs for each query, so you get better answers from fewer tokens.",
+    "content": "Sharpen your AI search with Rerank 5. It now pinpoints the exact passages your LLM needs for each query, so you get better answers from fewer tokens.",
+    "source_url": "https://cohere.com/sitemap.xml",
+    "source_key": "cohere-sitemap"
   },
   {
     "id": "caa79bc2-4746-5609-9094-9ba62c023700",
@@ -1846,6 +1966,18 @@
     "content": "",
     "source_url": "https://huggingface.co/blog/feed.xml",
     "source_key": "hugging-face-blog"
+  },
+  {
+    "id": "09cb90cb-4bfa-571a-9b4a-e9abee3a4b9e",
+    "company": "Cohere",
+    "title": "Rethinking Confidence in Reasoning Models | Cohere",
+    "url": "https://cohere.com/blog/rethinking-confidence-in-reasoning-models",
+    "published_at": "2026-10-20T13:40:00+00:00",
+    "source_type": "scraped",
+    "summary": "How confident are reasoning models? CALIBER reports initial and final confidence, cutting Expected Calibration Error on BigMathDigits while boosting AUROC.",
+    "content": "How confident are reasoning models? CALIBER reports initial and final confidence, cutting Expected Calibration Error on BigMathDigits while boosting AUROC.",
+    "source_url": "https://cohere.com/sitemap.xml",
+    "source_key": "cohere-sitemap"
   },
   {
     "id": "82afb467-f9c5-5946-b960-1a69f1bab34e",
@@ -23424,6 +23556,18 @@
     "source_key": "xai-news-sitemap"
   },
   {
+    "id": "7afe000d-113a-52c1-a58b-f65454ae1155",
+    "company": "Anthropic",
+    "title": "Discovering cryptographic weaknesses with Claude",
+    "url": "https://www.anthropic.com/research/discovering-cryptographic-weaknesses",
+    "published_at": "2026-07-28T00:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "Anthropic researchers find weaknesses in cryptographic algorithms with Claude Mythos Preview",
+    "content": "Anthropic researchers find weaknesses in cryptographic algorithms with Claude Mythos Preview",
+    "source_url": "https://www.anthropic.com/sitemap.xml",
+    "source_key": "anthropic-sitemap"
+  },
+  {
     "id": "57d97ff4-9899-5c62-991c-f711182dd76e",
     "company": "xAI",
     "title": "Introducing Build Mode",
@@ -24346,6 +24490,18 @@
     "content": "Learn practical ChatGPT Work workflows for root-cause briefs, KPI memos, scoped analyses, and dashboard specifications.",
     "source_url": "https://openai.com/news/rss.xml",
     "source_key": "openai-news"
+  },
+  {
+    "id": "74e3b46e-ae39-5c2a-80e4-d41fb3275613",
+    "company": "Anthropic",
+    "title": "How Canada uses Claude",
+    "url": "https://www.anthropic.com/research/how-canada-uses-claude",
+    "published_at": "2026-07-14T00:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "",
+    "content": "",
+    "source_url": "https://www.anthropic.com/sitemap.xml",
+    "source_key": "anthropic-sitemap"
   },
   {
     "id": "7575533a-6ec3-4940-a423-ac15ea9d6177",
@@ -25944,6 +26100,18 @@
     "source_key": "openai-news"
   },
   {
+    "id": "aa4e22b8-e868-56aa-b025-3064469d2e6c",
+    "company": "Anthropic",
+    "title": "How Claude Code is used in practice",
+    "url": "https://www.anthropic.com/research/claude-code-expertise",
+    "published_at": "2026-06-16T00:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "New Anthropic research looking at interactive agentic coding. We evaluate the composition of tasks, human-AI collaboration, and success rates.",
+    "content": "New Anthropic research looking at interactive agentic coding. We evaluate the composition of tasks, human-AI collaboration, and success rates.",
+    "source_url": "https://www.anthropic.com/sitemap.xml",
+    "source_key": "anthropic-sitemap"
+  },
+  {
     "id": "24e59d01-8795-59bf-8600-a4cfa5ef781a",
     "company": "Z.AI",
     "title": "GLM-5.2",
@@ -27298,6 +27466,18 @@
     "content": "Explore OpenAI’s Frontier Governance Framework and how our AI safety, security, and risk practices align with emerging EU and California regulations.",
     "source_url": "https://openai.com/news/rss.xml",
     "source_key": "openai-news"
+  },
+  {
+    "id": "0b26882d-c3c7-5cd9-8422-e171142a1dc2",
+    "company": "Cohere",
+    "title": "AI Governance Challenges: How to Scale Responsibly | Cohere",
+    "url": "https://cohere.com/blog/iso-42001-and-iso-27001-certifications",
+    "published_at": "2026-05-28T00:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "Explore common AI governance challenges and how enterprises can maintain visibility, accountability, and control as AI adoption expands.",
+    "content": "Explore common AI governance challenges and how enterprises can maintain visibility, accountability, and control as AI adoption expands.",
+    "source_url": "https://cohere.com/sitemap.xml",
+    "source_key": "cohere-sitemap"
   },
   {
     "id": "5a7791a2-d951-5ab6-935a-7be8f8d0d908",
@@ -30372,6 +30552,18 @@
     "source_key": "hugging-face-blog"
   },
   {
+    "id": "583719c6-9bca-5de1-b1d4-9f60102c39e0",
+    "company": "Anthropic",
+    "title": "Claude Mythos Preview's cybersecurity capabilities",
+    "url": "https://www.anthropic.com/research/mythos-preview",
+    "published_at": "2026-04-07T00:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "Technical details on how we tested Claude Mythos Preview, a model strikingly capable at computer security tasks, and what we found.",
+    "content": "Technical details on how we tested Claude Mythos Preview, a model strikingly capable at computer security tasks, and what we found.",
+    "source_url": "https://www.anthropic.com/sitemap.xml",
+    "source_key": "anthropic-sitemap"
+  },
+  {
     "id": "12799d46-873c-5bb9-9325-3c83231344e2",
     "company": "Z.AI",
     "title": "GLM-5.1",
@@ -31368,6 +31560,18 @@
     "source_key": "openai-news"
   },
   {
+    "id": "3136696e-0a1a-5511-8133-4179a4c758cb",
+    "company": "Anthropic",
+    "title": "Reverse engineering Claude's CVE-2026-2796 exploit",
+    "url": "https://www.anthropic.com/research/exploit",
+    "published_at": "2026-03-06T00:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "This post dives deep into how Claude wrote an exploit for one of the vulnerabilities it found in Firefox.",
+    "content": "This post dives deep into how Claude wrote an exploit for one of the vulnerabilities it found in Firefox.",
+    "source_url": "https://www.anthropic.com/sitemap.xml",
+    "source_key": "anthropic-sitemap"
+  },
+  {
     "id": "bcac2b3f-3510-4d3a-837a-edd19d4182ed",
     "company": "OpenAI",
     "title": "How Descript engineers multilingual video dubbing at scale",
@@ -32098,6 +32302,18 @@
     "content": "OpenAI and Paradigm introduce EVMbench, a benchmark evaluating AI agents’ ability to detect, patch, and exploit high-severity smart contract vulnerabilities.",
     "source_url": "https://openai.com/news/rss.xml",
     "source_key": "openai-news"
+  },
+  {
+    "id": "4fe7ded0-72b9-5d32-b493-8847fab2ea89",
+    "company": "Anthropic",
+    "title": "Measuring AI agent autonomy in practice",
+    "url": "https://www.anthropic.com/research/measuring-agent-autonomy",
+    "published_at": "2026-02-18T00:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "Analysis of millions of human-agent interactions shows agent turns getting longer, with software engineering making up nearly half of tool calls.",
+    "content": "Analysis of millions of human-agent interactions shows agent turns getting longer, with software engineering making up nearly half of tool calls.",
+    "source_url": "https://www.anthropic.com/sitemap.xml",
+    "source_key": "anthropic-sitemap"
   },
   {
     "id": "2471c49c-9514-42f9-9866-432088d16248",
@@ -34032,6 +34248,18 @@
     "source_key": "openai-news"
   },
   {
+    "id": "c4a6c61d-c463-52b1-a806-2e3cf3648d96",
+    "company": "Anthropic",
+    "title": "Project Vend: Phase two",
+    "url": "https://www.anthropic.com/research/project-vend-2",
+    "published_at": "2025-12-18T00:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "How Claude turned around its failing vending machine business",
+    "content": "How Claude turned around its failing vending machine business",
+    "source_url": "https://www.anthropic.com/sitemap.xml",
+    "source_key": "anthropic-sitemap"
+  },
+  {
     "id": "02e523f3-4f0d-4006-a9ef-7b0033f4d2ef",
     "company": "Hugging Face",
     "title": "Tokenization in Transformers v5: Simpler, Clearer, and More Modular",
@@ -35542,6 +35770,18 @@
     "content": "This GPT-5 system card addendum provides updated safety metrics for GPT-5.1 Instant and Thinking, including new evaluations for mental health and emotional reliance.",
     "source_url": "https://openai.com/news/rss.xml",
     "source_key": "openai-news"
+  },
+  {
+    "id": "3827766c-80f9-57c6-acf4-edcb3bf62111",
+    "company": "Anthropic",
+    "title": "Project Fetch: Can Claude train a robot dog?",
+    "url": "https://www.anthropic.com/research/project-fetch-robot-dog",
+    "published_at": "2025-11-12T00:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "A practical experiment on AI's ability to affect the physical world",
+    "content": "A practical experiment on AI's ability to affect the physical world",
+    "source_url": "https://www.anthropic.com/sitemap.xml",
+    "source_key": "anthropic-sitemap"
   },
   {
     "id": "41eb8c40-e854-4501-ad98-aa5f90f70c75",
@@ -38232,6 +38472,18 @@
     "source_key": "openai-news"
   },
   {
+    "id": "828b9f22-7b29-51d1-92eb-c83c600af751",
+    "company": "Anthropic",
+    "title": "LLMs and biorisk",
+    "url": "https://www.anthropic.com/research/biorisk",
+    "published_at": "2025-09-05T00:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "This article explains why we believe that evaluating biorisk and safeguarding against it is a critical element of responsible AI development.",
+    "content": "This article explains why we believe that evaluating biorisk and safeguarding against it is a critical element of responsible AI development.",
+    "source_url": "https://www.anthropic.com/sitemap.xml",
+    "source_key": "anthropic-sitemap"
+  },
+  {
     "id": "e1256d6b-cb3d-4c21-aa85-75934de08864",
     "company": "Google DeepMind",
     "title": "Using AI to perceive the universe in greater depth",
@@ -38794,6 +39046,18 @@
     "content": "set version to 0.86.1.dev",
     "source_url": "https://github.com/Aider-AI/aider/releases.atom",
     "source_key": "aider-releases"
+  },
+  {
+    "id": "7ec82fbe-e833-5040-a135-b13868a60bc1",
+    "company": "Anthropic",
+    "title": "Claude does cyber competitions",
+    "url": "https://www.anthropic.com/research/cyber-competitions",
+    "published_at": "2025-08-09T00:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "Throughout 2025, we quietly entered Claude in cybersecurity competitions designed for humans. It often placed in the top 25% of competitors.",
+    "content": "Throughout 2025, we quietly entered Claude in cybersecurity competitions designed for humans. It often placed in the top 25% of competitors.",
+    "source_url": "https://www.anthropic.com/sitemap.xml",
+    "source_key": "anthropic-sitemap"
   },
   {
     "id": "36646ea1-9543-40f7-9509-8648eee94c27",
@@ -39804,6 +40068,18 @@
     "source_key": "openai-news"
   },
   {
+    "id": "15e9036b-424f-577c-bfa2-3152b312e8b2",
+    "company": "Anthropic",
+    "title": "Cyber evaluations of Claude 4",
+    "url": "https://www.anthropic.com/research/claude-4-cyber",
+    "published_at": "2025-07-15T00:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "We partnered with Pattern Labs on cybersecurity evaluations of Claude Opus 4 and Sonnet 4, with Opus showing notable improvement over prior models.",
+    "content": "We partnered with Pattern Labs on cybersecurity evaluations of Claude Opus 4 and Sonnet 4, with Opus showing notable improvement over prior models.",
+    "source_url": "https://www.anthropic.com/sitemap.xml",
+    "source_key": "anthropic-sitemap"
+  },
+  {
     "id": "608a4a08-4a74-4c82-bfa7-213e43575efb",
     "company": "OpenAI",
     "title": "The EU Code of Practice and future of AI in Europe",
@@ -40054,6 +40330,18 @@
     "content": "API DISCORD Introduction Here we introduce the latest update of Qwen-TTS (qwen-tts-latest or qwen-tts-2025-05-22) through Qwen API . Trained on a large-scale dataset encompassing over millions of hours of speech, Qwen-TTS achieves human-level naturalness and expressiveness. Notably, Qwen-TTS automatically adjusts prosody, pacing, and emotional inflections in response to the input text. Notably, Qwen-TTS supports the generation of 3 Chinese dialects, including Pekingese, Shanghainese, and Sichuanese. As of now, Qwen-TTS supports 7 Chinese-English bilingual voices, including Cherry, Ethan, Chelsie, Serena, Dylan (Pekingese), Jada (Shanghainese) and Sunny (Sichuanese).",
     "source_url": "https://qwenlm.github.io/blog/index.xml",
     "source_key": "qwen-blog"
+  },
+  {
+    "id": "cf279de3-9322-5d3a-b14b-af6d73b38344",
+    "company": "Anthropic",
+    "title": "Project Vend: Can Claude run a small shop?",
+    "url": "https://www.anthropic.com/research/project-vend-1",
+    "published_at": "2025-06-27T00:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "We let Claude run a small shop in the Anthropic office. Here's what happened.",
+    "content": "We let Claude run a small shop in the Anthropic office. Here's what happened.",
+    "source_url": "https://www.anthropic.com/sitemap.xml",
+    "source_key": "anthropic-sitemap"
   },
   {
     "id": "provider-1d45d72d48f22f0f64",
@@ -40354,6 +40642,18 @@
     "content": "We partnered with Darren Aronofsky, Eliza McNitt and a team of more than 200 people to make a film using Veo and live-action filmmaking.",
     "source_url": "https://deepmind.google/blog/rss.xml",
     "source_key": "deepmind-blog"
+  },
+  {
+    "id": "8237a18a-91e3-5f3e-b1e6-e559554a8f57",
+    "company": "Anthropic",
+    "title": "Cyber toolkits for LLMs",
+    "url": "https://www.anthropic.com/research/cyber-toolkits",
+    "published_at": "2025-06-13T00:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "LLMs not fine-tuned for cybersecurity can succeed in multistage attacks on networks with dozens of hosts when equipped with a novel toolkit.",
+    "content": "LLMs not fine-tuned for cybersecurity can succeed in multistage attacks on networks with dozens of hosts when equipped with a novel toolkit.",
+    "source_url": "https://www.anthropic.com/sitemap.xml",
+    "source_key": "anthropic-sitemap"
   },
   {
     "id": "d97bc718-23d8-4089-8688-de09e63b654e",
@@ -45262,6 +45562,18 @@
     "content": "",
     "source_url": "https://huggingface.co/blog/feed.xml",
     "source_key": "hugging-face-blog"
+  },
+  {
+    "id": "63826489-3172-5e50-87ee-1c5550d91a4e",
+    "company": "Anthropic",
+    "title": "Evaluating feature steering",
+    "url": "https://www.anthropic.com/research/evaluating-feature-steering",
+    "published_at": "2024-10-25T00:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "A case study from Anthropic on using feature steering to mitigate social biases in language models.",
+    "content": "A case study from Anthropic on using feature steering to mitigate social biases in language models.",
+    "source_url": "https://www.anthropic.com/sitemap.xml",
+    "source_key": "anthropic-sitemap"
   },
   {
     "id": "69ccf0c4-fc33-4feb-b7da-2038c60ed4b2",
