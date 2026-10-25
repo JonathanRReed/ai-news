@@ -1,5 +1,41 @@
 [
   {
+    "id": "7a22a364-bba2-5a82-aaa0-c2d4501170a2",
+    "company": "Moonshot AI",
+    "title": "@moonshot-ai/kimi-code@2.3.2",
+    "url": "https://github.com/MoonshotAI/kimi-code/releases/tag/%40moonshot-ai%2Fkimi-code%402.3.2",
+    "published_at": "2026-10-25T09:06:53+00:00",
+    "source_type": "rss_official",
+    "summary": "Patch Changes #4386 fd2e2c7 Thanks @RealKai42 ! - Handle tasks directly by default instead of proactively launching subagents; request delegation explicitly in your message, AGENTS.md, a skill, or an enabled multi-agent mode. #4384 c9a4836 Thanks @RealKai42 ! - Agent swarms now start only when you turn on swarm mode: the agent can no longer launch AgentSwarm by itself, so swarms are no longer available in kimi -p or ACP clients such as Zed.",
+    "content": "Patch Changes #4386 fd2e2c7 Thanks @RealKai42 ! - Handle tasks directly by default instead of proactively launching subagents; request delegation explicitly in your message, AGENTS.md, a skill, or an enabled multi-agent mode. #4384 c9a4836 Thanks @RealKai42 ! - Agent swarms now start only when you turn on swarm mode: the agent can no longer launch AgentSwarm by itself, so swarms are no longer available in kimi -p or ACP clients such as Zed.",
+    "source_url": "https://github.com/MoonshotAI/kimi-code/releases.atom",
+    "source_key": "moonshot-kimi-code-releases"
+  },
+  {
+    "id": "1f701f95-5662-5698-add6-46709b976723",
+    "company": "AI21 Labs",
+    "title": "Why we built a benchmark before training for instruction following | AI21",
+    "url": "https://www.ai21.com/blog/lift-bench-blog/",
+    "published_at": "2026-10-25T08:52:27+00:00",
+    "source_type": "scraped",
+    "summary": "Instruction-following rewards check the rules, not the task. Here’s why we built LIFT-Bench first.",
+    "content": "Instruction-following rewards check the rules, not the task. Here’s why we built LIFT-Bench first.",
+    "source_url": "https://www.ai21.com/sitemap_index.xml",
+    "source_key": "ai21-sitemap"
+  },
+  {
+    "id": "6ef2052a-f2fd-598c-953a-1623fd32f4d2",
+    "company": "Hermes Agent",
+    "title": "v0.22.5+canary.20261025T065651Z",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.22.5%2Bcanary.20261025T065651Z",
+    "published_at": "2026-10-25T06:56:52+00:00",
+    "source_type": "rss_official",
+    "summary": "Hermes Agent canary 20261025T065651Z",
+    "content": "Hermes Agent canary 20261025T065651Z",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
     "id": "3461d2d2-d07e-56cb-9382-84fb616a95c0",
     "company": "Gemini CLI",
     "title": "Release v0.67.0-nightly.20261025.gcd1b45c2d",
