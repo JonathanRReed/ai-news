@@ -1,5 +1,77 @@
 [
   {
+    "id": "027220fd-b994-5cad-93dd-1295b169f1be",
+    "company": "Codex CLI",
+    "title": "0.165.0-alpha.1.1",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.165.0-alpha.1.1",
+    "published_at": "2026-10-27T00:40:54+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.165.0-alpha.1.1",
+    "content": "Release 0.165.0-alpha.1.1",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "489e1a2f-c451-5ef3-9c19-d228dcb82a93",
+    "company": "Codex CLI",
+    "title": "rust-v0.166.0-alpha.1",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.166.0-alpha.1",
+    "published_at": "2026-10-27T00:01:54+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.166.0-alpha.1",
+    "content": "Release 0.166.0-alpha.1",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "d826c61a-0357-589c-b02a-7c9cdee3ba0f",
+    "company": "OpenAI",
+    "title": "Greptile takes bug detection beyond code review with GPT-6 Astra",
+    "url": "https://openai.com/index/greptile-code-review-codex-astra",
+    "published_at": "2026-10-26T22:00:00+00:00",
+    "source_type": "rss_official",
+    "summary": "How Greptile uses GPT-6 Astra to test user workflows, Daybreak to strengthen security, and Codex to reduce rework.",
+    "content": "How Greptile uses GPT-6 Astra to test user workflows, Daybreak to strengthen security, and Codex to reduce rework.",
+    "source_url": "https://openai.com/news/rss.xml",
+    "source_key": "openai-news"
+  },
+  {
+    "id": "748ef51f-d4ee-5eeb-a37a-d9d4ef6cb6ec",
+    "company": "Codex CLI",
+    "title": "0.165.0-alpha.3",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.165.0-alpha.3",
+    "published_at": "2026-10-26T21:58:55+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.165.0-alpha.3",
+    "content": "Release 0.165.0-alpha.3",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "1a54933e-68f9-5fd5-b425-c9bb4687558f",
+    "company": "Claude Code",
+    "title": "v2.1.311",
+    "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.311",
+    "published_at": "2026-10-26T21:51:23+00:00",
+    "source_type": "rss_official",
+    "summary": "What's changed Added --hold-idle-file and --max-hold-min to self-hosted-runner , to keep an idle session while your host reports processes it left running Added a tip for the Explanatory output style, shown when you ask Claude for explanations Fixed long freezes at startup and after reading or editing files when a CLAUDE.md file holds a very long list item Fixed interrupting Claude not taking effect until a timeout while an MCP server had not answered a resource read or a skill was still...",
+    "content": "What's changed Added --hold-idle-file and --max-hold-min to self-hosted-runner , to keep an idle session while your host reports processes it left running Added a tip for the Explanatory output style, shown when you ask Claude for explanations Fixed long freezes at startup and after reading or editing files when a CLAUDE.md file holds a very long list item Fixed interrupting Claude not taking effect until a timeout while an MCP server had not answered a resource read or a skill was still downloading Fixed standard-context sessions stopping with \"Usage credits required for 1M context\" when a request ran over 200K tokens; Claude Code now compacts the conversation and continues Fixed Write and Edit stalling for up to 5 seconds after they ran, and reporting 0 lines changed, when changing thousands of lines in a file Fixed subagents being unable to use MCP tools from servers that finish connecting after the subagent starts Fixed Claude seeing stale MEMORY.md and CLAUDE.md content right after automatic compaction when those files were edited earlier in the session Fixed claude -p and SDK sessions saving transcript messages out of order or keeping messages that were taken back Fixed SubagentStop hooks running about twice a minute for each running subagent instead of once when it finishes Fixed the @ file picker ignoring .ignore / .rgignore negation rules that re-include git-ignored files Fixed a subagent's isolated worktree being removed while a background subagent it started was still working in it Fixed background agents in auto mode that wait on their own shells starting a new main conversation turn on every wake Fixed the Bash tool description claiming the working directory always persists between calls Fixed the environment block naming a shell commands don't run in, such as fish when the Bash tool uses zsh Fixed claude mcp add , claude mcp remove and /mcp naming the current folder instead of the project entry in ~/.claude.json that holds a local-scope server when run below a repository root Fixed claude mcp list and claude mcp get showing the error code twice on failed-connection lines (for example ENOENT: ENOENT: … ) Fixed Remote Control sessions staying on \"Connecting\" for about two minutes when a network proxy blocks a startup request Fixed messages that Claude sends to a cloud or Remote Control session appearing as your own message in the Claude mobile apps Fixed Claude not being told the cause when a file attached to a message sent over Remote Control or to a cloud session could not be saved because the disk was full, or that a message's attachments past the first 20 were left out Fixed WebFetch and WebSearch hanging on a stalled response in Cowork cloud sessions; an unfinished request now fails after 300 seconds Fixed a background session that crashed between turns not being restarted while it was attached, pinned, or had a scheduled task or wake-up set Fixed the \"background service did not respond\" error suggesting the disabled claude daemon restart ; it now suggests claude daemon stop --any and says it ends background sessions Fixed claude respawn starting the background service before reporting that no background session matches the id Fixed /effort not warning about a prompt cache miss in plan mode when the plan model differs from the session model Fixed /ide saying the VS Code extension was installed before the install finished or when it failed Fixed the Write tool's file preview skipping rows and miscounting hidden lines when a line is wider than the terminal Fixed ↑ in an agent's chat tab recalling a message that was still waiting to be delivered, so resending it sent a second copy Fixed Cowork cloud sessions losing their connectors and most tools after a restart when a plugin or your settings named an agent ; Cowork cloud sessions now ignore that setting Fixed agent teams sessions showing an empty task list when coming back with --resume , --continue , /resume or --session-id , including after /clear or a crash, and /branch writing to the original session's list Fixed pasting text that mentions an image file, such as ! open /tmp/shot.png or /review look at /tmp/shot.png , attaching the image and dropping its path from the prompt Fixed the feedback draft card showing its 1/2/0 and Esc shortcuts while the prompt has text, when those keys act on the prompt instead of the card Fixed a lone backslash in quotes or brackets, like \"\\\" or (\\) , disappearing from Claude's responses Fixed agent teammates compacting their history when DISABLE_COMPACT is set Fixed the rewind menu offering \"Summarize from here\" and \"Summarize up to here\" when DISABLE_COMPACT is set Fixed a finished /code-review , or another skill that runs in a sub-agent, running a second time when a cloud or background session restarts Fixed long hidden thinking being cut off as idle on Google Vertex AI, Microsoft Foundry and Claude Platform on AWS, where the endpoint sends thinking progress updates Fixed /ide saying it had installed the JetBrains plugin when nothing was installed Fixed Claude Pro and Max subscribers being told to ask their admin when their subscription can't be used; the message now points to billing settings Fixed the diff pane opening by itself after an edit in wide fullscreen terminals when it had nothing to show Fixed /mcp showing a remote server as failed after \"Clear authentication\" when the server works without sign-in Fixed /mcp showing \"authenticated\" for a remote server that Claude Code sends no credentials to Fixed a --plugin-dir folder of plugins loading as one plugin when an empty .mcp.json was at its top Fixed /usage never showing large prompt-cache misses under \"What's contributing to your limits usage?\" Fixed status line links staying plain text in background sessions after you open them from a terminal that supports links Fixed the /rewind confirmation saying the conversation \"will be forked\" when the later messages are removed from the conversation Fixed the /rewind warning that wrongly said manual and Bash edits are never affected by a code restore Fixed plan approval in screen reader mode sending feedback you had dismissed with Escape Fixed Claude Code retrying requests the API marked not to retry, which could hold a turn for minutes or, in unattended retry mode ( CLAUDE_CODE_RETRY_WATCHDOG ), indefinitely Linux: Fixed sandboxed Bash commands failing with bwrap: Can't create file when a --plugin-dir folder was also an added directory and permissions.blockReadsOutsideWorkingDirectories was on Self-hosted runner: Fixed a session failing to start when a rate limit (HTTP 429, or a git wrapper that exits 75) blocks an added read-only repository; it now starts without that repository Improved startup time for Pro and Max accounts by skipping two network requests on launches within an hour of the last check Improved /teleport and claude --teleport to warn when a compacted cloud session loads from its last compaction, so the messages it summarized aren't in the local copy Improved the messages shown when a background session's process exits: they no longer promise a restart that isn't coming, and they say how to resume the session Improved artifacts with several views: Claude now routes each view on the link's #name and no longer says the address bar stays the same as you switch views Improved shell commands that reach their timeout: the result now shows the output so far and says the command is still running in the background Improved compaction: when the model's reply has no summary in it, Claude Code now usually asks for the summary once more before it replaces the conversation Improved the Artifact tool's choice between a page and a document: explainers and visual or interactive work become artifact pages; documents are for writing people keep editing or pass around Improved startup time for launches whose only arguments are options and their values, such as claude --model opus Improved the \"Connection dropped\" API error: it now says where to look first (the proxy or gateway in use, else VPN or firewall; Anthropic API only, Bedrock, Vertex and Foundry are unchanged) Improved screen reader mode: deleting a rule in /permissions says \"Deleted allow rule …\" right away Improved the message shown when a pasted sign-in code is refused: it now says the code may have expired or been used, and to sign in again Improved Slack connector sends: Claude now checks a channel's topic for posting rules before messaging a channel you didn't name Improved screen reader mode: Claude's questions are listed as \"Questions: Color (answered), Pages\", without arrows or symbols Changed ultrathink in the interactive terminal to run its turn at xhigh effort on Opus 5.5, Sonnet 5.5, Haiku 5.5 and Fable 5.1 through Anthropic's API; typed while Claude is working, it raises the rest of that turn Changed the ultrathink rainbow to appear only where the keyword can raise effort, and not when the word is quoted or part of a file path Changed Ctrl+D in agent view to match the prompt: on an empty input, pressing it twice exits Changed --output-format json and stream-json output to write DEL, C1 control and Unicode format characters inside strings as \\uXXXX escapes; parsed values are unchanged Changed model names and IDs to drop the [1m] suffix and its label on models where the suffix has no effect; the suffix is still accepted Changed startup warnings about permission rules in settings files to show once per user until the rule changes Changed /code-review to tell Claude to put the effort level first and use max only when asked Changed DISABLE_COMPACT in settings files and in a mod's $.env.set so they can only turn compaction off, not back on Changed Claude Code on Bedrock, Mantle, Vertex, and Foundry to load model settings from a signed file on downloads.claude.ai; set CLAUDE_CODE_MODEL_CATALOG=off to turn this off Changed sessions that set CLAUDE_CODE_SYNC_SKILLS with feature-flag fetching off to reuse a claude.ai skills list up to 10 minutes old that another session on the machine fetched Changed clicks on scrollbar arrows and bars in fullscreen lists to act when the mouse button is released, so moving off the scrollbar before letting go cancels the click Changed claude purge to say it deletes data only on this computer, not anything stored by Anthropic [VSCode] Added syntax coloring to code blocks in Claude's replies, in light, dark and high contrast dark themes [VSCode] Added a \"Running UserPromptSubmit hooks\" spinner status and screen reader announcement for slow UserPromptSubmit hooks [VSCode] Fixed custom skills and custom slash commands sent from the VS Code or JetBrains panel leaving out the open file or selected lines that ordinary messages include ( #102799 ) [VSCode] Fixed the extension host freezing while the login shell ran its start-up files to read PATH on macOS and Linux [VSCode] Fixed clicking an image in a tool result, or closing its preview, also opening the result's text in an editor tab [VSCode] Fixed voice dictation continuing to record after a message was sent with the Send button; sending now stops dictation first, as pressing Enter already did [VSCode] Changed the extension to start Claude Code sessions with DISABLE_TELEMETRY set while VS Code's telemetry setting is off, so they send no usage metrics or error reports and fetch no feature flags [VSCode] Changed the session list side bar to load Web sessions when the Web tab is first opened, not at startup [Cloud sessions] Fixed routines in Anthropic-hosted environments staying locked after their owner left the organization and rejoined; the owner can now turn them back on [Cloud sessions] Fixed a failed routine API token delete or regenerate showing nothing if the edit dialog had already closed; it now shows an error toast [Cloud sessions] Fixed cloud environment dialogs, including the admin dialog, accepting duplicate names; they now refuse a name another listed environment already has [Claude Tag] Added a Skills view to Claude Tag analytics showing how often Claude runs each attached skill in Slack channels and which go unused, with Usage links in admin settings [Claude Tag] Improved Claude Tag routines that run in a new session: a run with nothing to report can now end without posting a throwaway message to the channel [Claude Tag] Changed Claude Tag admin settings to show a lock instead of # for private Slack channels that your own Slack account can see [Code Review] Improved Code Review's check run to say no further automatic review will start when the model still can't analyze a change on the automatic retry [Code Review] Improved Code Review reliability: a review whose session fails to start because of a transient server fault is now retried once automatically, and its check run says so",
+    "source_url": "https://github.com/anthropics/claude-code/releases.atom",
+    "source_key": "claude-code-releases"
+  },
+  {
+    "id": "48e02452-cf58-57ab-b100-4890a2f8ed2d",
+    "company": "OpenClaw",
+    "title": "release-publish/733b96cc02a5-1793047666: chore(ui): refresh control ui locales (#185000)",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/release-publish%2F733b96cc02a5-1793047666",
+    "published_at": "2026-10-26T20:46:01+00:00",
+    "source_type": "rss_official",
+    "summary": "Co-authored-by: github-actions[bot]",
+    "content": "Co-authored-by: github-actions[bot]",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
+  },
+  {
     "id": "ae78146b-ca34-515e-b66e-4445d4cc4a24",
     "company": "Amazon AI",
     "title": "Fleet-wide computer vision lifecycle at the edge with SageMaker SDK v3",
@@ -48,6 +120,18 @@
     "source_key": "codex-cli-releases"
   },
   {
+    "id": "8b5c705e-eb6f-5971-bd5c-9669b1210c98",
+    "company": "OpenAI",
+    "title": "Working with academic communities to build scientific understanding",
+    "url": "https://openai.com/index/building-scientific-understanding-with-academic-communities",
+    "published_at": "2026-10-26T14:30:00+00:00",
+    "source_type": "rss_official",
+    "summary": "OpenAI shares model results on the Kakeya conjecture, Exponential Time Hypothesis, and quantum chromodynamics—and how researchers can verify and build on them.",
+    "content": "OpenAI shares model results on the Kakeya conjecture, Exponential Time Hypothesis, and quantum chromodynamics—and how researchers can verify and build on them.",
+    "source_url": "https://openai.com/news/rss.xml",
+    "source_key": "openai-news"
+  },
+  {
     "id": "39a78e8b-cfdd-5c0f-86c4-aea516e4ac7e",
     "company": "Moonshot AI",
     "title": "@moonshot-ai/kimi-code@2.3.3",
@@ -58,6 +142,18 @@
     "content": "Patch Changes #4414 f36c127 Thanks @RealKai42 ! - Stop showing a failed swarm for AgentSwarm calls rejected before any subagent starts, such as while swarm mode is off; after such a rejection, the agent points you to /swarm if you asked for a swarm. #4424 f895f30 Thanks @liruifengv ! - Update model switch confirmation prompts. #4423 07a34fe Thanks @RealKai42 ! - Show a high-usage warning when you turn on swarm mode with /swarm . #4432 be427e0 Thanks @RealKai42 ! - Merge the two repeated permission-mode notice lines in the swarm and goal start confirmation prompts into one sentence each. #4443 60c888f Thanks @kimi-agent-bot ! - web: Improved interactions and fixed known bugs.",
     "source_url": "https://github.com/MoonshotAI/kimi-code/releases.atom",
     "source_key": "moonshot-kimi-code-releases"
+  },
+  {
+    "id": "a98b2447-a74f-5093-8cbb-63fc10b28c46",
+    "company": "OpenAI",
+    "title": "GPT-6.1 Sol helps CodeRabbit strengthen security across complex codebases",
+    "url": "https://openai.com/index/gpt-6-1-sol-coderabbit-code-security",
+    "published_at": "2026-10-26T13:45:00+00:00",
+    "source_type": "rss_official",
+    "summary": "CodeRabbit uses GPT-6.1 Sol to investigate security risks across complex codebases. Its security agent helps developers review findings and proposed fixes.",
+    "content": "CodeRabbit uses GPT-6.1 Sol to investigate security risks across complex codebases. Its security agent helps developers review findings and proposed fixes.",
+    "source_url": "https://openai.com/news/rss.xml",
+    "source_key": "openai-news"
   },
   {
     "id": "94778918-ed5e-5b8e-b1fc-7c93ef8df065",
@@ -116,6 +212,18 @@
     "source_type": "rss_official",
     "summary": "Fanatics uses OpenAI to help fans complete their game-day outfits with Shop the Look. Testing across roughly 30,000 MLB products showed 10% higher engagement.",
     "content": "Fanatics uses OpenAI to help fans complete their game-day outfits with Shop the Look. Testing across roughly 30,000 MLB products showed 10% higher engagement.",
+    "source_url": "https://openai.com/news/rss.xml",
+    "source_key": "openai-news"
+  },
+  {
+    "id": "da25ca0c-3fcd-596c-a2bb-e7dbd61424a4",
+    "company": "OpenAI",
+    "title": "How Ultrafast cut incident investigation from hours to minutes at OpenAI",
+    "url": "https://openai.com/index/openai-cut-incident-investigation",
+    "published_at": "2026-10-26T07:00:00+00:00",
+    "source_type": "rss_official",
+    "summary": "See how OpenAI engineers use Codex Ultrafast to investigate incidents in minutes. Explore faster security analysis, code refactoring, and daily workflows.",
+    "content": "See how OpenAI engineers use Codex Ultrafast to investigate incidents in minutes. Explore faster security analysis, code refactoring, and daily workflows.",
     "source_url": "https://openai.com/news/rss.xml",
     "source_key": "openai-news"
   },
@@ -214,6 +322,18 @@
     "content": "@cline/shared@0.2.0",
     "source_url": "https://github.com/cline/cline/releases.atom",
     "source_key": "cline-releases"
+  },
+  {
+    "id": "29cd3c71-fa28-5570-b3b8-6cb0ea87ff84",
+    "company": "OpenAI",
+    "title": "Introducing GPT-6.1 Terra",
+    "url": "https://openai.com/index/introducing-gpt-6-1-terra",
+    "published_at": "2026-10-26T00:00:00+00:00",
+    "source_type": "rss_official",
+    "summary": "Bringing fast and capable computer use to everyone",
+    "content": "Bringing fast and capable computer use to everyone",
+    "source_url": "https://openai.com/news/rss.xml",
+    "source_key": "openai-news"
   },
   {
     "id": "06cb2b7a-a03e-5a06-9048-c4248d0d5468",
