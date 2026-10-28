@@ -1,5 +1,41 @@
 [
   {
+    "id": "4da0d8c4-5227-51f6-a0fb-6631924e3f06",
+    "company": "Moonshot AI",
+    "title": "@moonshot-ai/kimi-code@2.4.0",
+    "url": "https://github.com/MoonshotAI/kimi-code/releases/tag/%40moonshot-ai%2Fkimi-code%402.4.0",
+    "published_at": "2026-10-28T11:57:10+00:00",
+    "source_type": "rss_official",
+    "summary": "Minor Changes #4322 44cdf8f Thanks @Grapedge ! - Allow expanding thinking during streaming with Ctrl-O #4342 4a24ae1 Thanks @RealKai42 ! - Add /import-sessions and kimi import-sessions to import Claude Code and Codex sessions from the last 15 or 30 days. Run either one and choose a time range. #4284 366fafb Thanks @7Sageer ! - Sessions in web and desktop now unload from memory after 30 minutes idle and resume transparently on next access. #4247 0325b75 Thanks @RealKai42 ! - Plan mode now...",
+    "content": "Minor Changes #4322 44cdf8f Thanks @Grapedge ! - Allow expanding thinking during streaming with Ctrl-O #4342 4a24ae1 Thanks @RealKai42 ! - Add /import-sessions and kimi import-sessions to import Claude Code and Codex sessions from the last 15 or 30 days. Run either one and choose a time range. #4284 366fafb Thanks @7Sageer ! - Sessions in web and desktop now unload from memory after 30 minutes idle and resume transparently on next access. #4247 0325b75 Thanks @RealKai42 ! - Plan mode now starts only when you turn it on, and every plan waits for your review: the agent can no longer enter Plan mode by itself, Never Ask no longer approves plans automatically, and kimi -p skips default_plan_mode and cannot approve the plan of a session that is already in Plan mode. #4316 874d9ab Thanks @huangzheng2016 ! - Add /provider refresh [providerId] to re-fetch provider model lists at runtime; unknown /provider subcommands now show a usage hint instead of opening the manager. #4347 b3c6e0a Thanks @Grapedge ! - Report main-session and subagent status to compatible terminals with OSC 7501, including pending interactions and retained results. #4312 01ef64e Thanks @tpoisonooo ! - Raise Tower's default agent concurrency limit from 16 to 256, support the existing max_running_tasks limit and per-spawn model selection, and reduce lock contention during inbox, review, and status processing. Patch Changes #4428 461c6e9 Thanks @wbxl2000 ! - Fix cancelled questions showing as answered in session history. #4410 a9dc3a9 Thanks @RealKai42 ! - Fix compaction missing the prompt cache when dynamically loaded MCP tools are enabled. #4364 7ccac2b Thanks @pvzheroes125 ! - Fix missing dynamically loaded MCP tools in the first conversation turn. #4431 98c1cfb Thanks @pvzheroes125 ! - Fix MCP authorization completion being delayed by idle browser connections. #4460 78b72fe Thanks @kimi-agent-bot ! - Fix Swarm mode being ignored when submitting a prompt. #4434 f47400a Thanks @kimi-agent-bot ! - Fix copying and saving data and blob images on non-loopback Web connections. #4435 70a661c Thanks @kimi-agent-bot ! - Fix Shiki code highlighting on non-loopback Web connections. #4310 8df234a Thanks @Grapedge ! - Keep fullscreen approval options visible while long requests scroll. #4310 8df234a Thanks @Grapedge ! - Stop clicks used to refocus the fullscreen terminal from activating controls, opening links, or moving the editor caret. #4310 8df234a Thanks @Grapedge ! - Add mouse selection to fullscreen approval, Settings, permission, and workspace trust dialogs, and fade the editor and waiting panels when they lose focus. #4331 759958a Thanks @RealKai42 ! - Update cross-tool imports for custom homes, instruction duplicate checks, project skills, and MCP settings; stop importing standalone .claude/AGENTS.md , project .codex/AGENTS.md , .codex/CLAUDE.md , and loose skill files, which can still be copied manually. #4428 461c6e9 Thanks @wbxl2000 ! - Replace the server's WebSocket event.approval.* and event.question.* events with a single flat interaction frame, and replace POST /sessions/{id}/approvals/{id} , POST /sessions/{id}/questions/{id} and POST /sessions/{id}/questions/{id}:dismiss with POST /sessions/{id}/interactions/{id} ; the old events and endpoints, along with GET /sessions/{id}/approvals and GET /sessions/{id}/questions , are removed. #4413 8dabf4a Thanks @7Sageer ! - Stop resending full-size images on every turn after the provider rejects them as too large or unsupported; later turns and compaction keep the reduced images until you switch models or the conversation history is rewritten. #4283 4be3f0b Thanks @sailist ! - Reconnect workspace MCP servers automatically with backoff when the initial connection fails or the connection drops, so their tools come back on their own; tune the interval with [mcp] reconnect_initial_delay_ms and reconnect_max_delay_ms . #4310 8df234a Thanks @Grapedge ! - Show NotifyUser updates in cards with an Update badge, streaming titles, and expandable messages. #4310 8df234a Thanks @Grapedge ! - Show each option's description in the plan approval panel. #4313 256ce61 Thanks @huangzheng2016 ! - Speed up session resume for long conversations. #4422 2e539f2 Thanks @sailist ! - Fix workspace resource leaks by releasing resources when no live sessions remain. #4346 f70c365 Thanks @Grapedge ! - Show a Compacting spinner with working tips in the activity pane instead of the in-progress transcript card. #4430 93137ca Thanks @RealKai42 ! - Pass the text a subagent wrote before it was stopped, timed out, or failed back to the parent agent, marked as incomplete. #4310 8df234a Thanks @Grapedge ! - Move todo lists into expandable transcript cards and remove the old input-area panel and Ctrl-T shortcut. #4365 eb1205c Thanks @kimi-agent-bot ! - Fix corrupted characters appearing in truncated tool results that contain emoji or other non-BMP characters. #4347 b3c6e0a Thanks @Grapedge ! - Fix CJK autocomplete and Markdown rendering, keyboard handling, and fullscreen image rendering. #4310 8df234a Thanks @Grapedge ! - Add keyboard and mouse navigation to the experimental Updates panel, with clearer focus styling and a reading position that stays put; enable it with KIMI_CODE_EXPERIMENTAL_NOTIFY_USER=1 . #4495 e851723 Thanks @kimi-agent-bot ! - web: Improved interactions and fixed known bugs. #4280 67325c1 Thanks @sailist ! - Fix the conversation view freezing at an old point after restarting the app when a turn had been interrupted; interrupted turns are now marked instead of shown as completed.",
+    "source_url": "https://github.com/MoonshotAI/kimi-code/releases.atom",
+    "source_key": "moonshot-kimi-code-releases"
+  },
+  {
+    "id": "81fd8a70-6d12-54c0-af3c-3380b6678470",
+    "company": "OpenAI",
+    "title": "Legora is building the agentic operating system for legal work",
+    "url": "https://openai.com/index/legora-agentic-operating-system-for-legal-work",
+    "published_at": "2026-10-28T09:30:00+00:00",
+    "source_type": "rss_official",
+    "summary": "See how Legora uses OpenAI models, ChatGPT, and Codex to accelerate legal workflows, expand contract analysis, and free lawyers to focus on higher-value work.",
+    "content": "See how Legora uses OpenAI models, ChatGPT, and Codex to accelerate legal workflows, expand contract analysis, and free lawyers to focus on higher-value work.",
+    "source_url": "https://openai.com/news/rss.xml",
+    "source_key": "openai-news"
+  },
+  {
+    "id": "a32d9bf7-edcc-5f92-a25f-2ba2d741814b",
+    "company": "Hermes Agent",
+    "title": "v0.22.5+canary.20261028T064834Z",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.22.5%2Bcanary.20261028T064834Z",
+    "published_at": "2026-10-28T06:48:39+00:00",
+    "source_type": "rss_official",
+    "summary": "Hermes Agent canary 20261028T064834Z",
+    "content": "Hermes Agent canary 20261028T064834Z",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
     "id": "bee35c82-a580-5843-a287-5710e9cb6e3d",
     "company": "Moonshot AI",
     "title": "@moonshot-ai/kimi-code@0.0.0-dev.2",
