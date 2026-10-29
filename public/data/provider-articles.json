@@ -1,5 +1,29 @@
 [
   {
+    "id": "5e4e0c9c-d0c0-519e-9e1e-9d27bdcbd70a",
+    "company": "OpenClaw",
+    "title": "release-publish/777b5e6088e2-1793263732: refactor(qa): reuse runtime fixture helpers (#187501)",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/release-publish%2F777b5e6088e2-1793263732",
+    "published_at": "2026-10-29T08:44:37+00:00",
+    "source_type": "rss_official",
+    "summary": "Reuse canonical selected-key environment restoration in the TLS fixture and artifact-base parsing in the cached-health producer. Preserve capture timing, cleanup order and CLI behavior.",
+    "content": "Reuse canonical selected-key environment restoration in the TLS fixture and artifact-base parsing in the cached-health producer. Preserve capture timing, cleanup order and CLI behavior.",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
+  },
+  {
+    "id": "0ffe4d94-a40a-5c1d-a78b-86bb6b24486c",
+    "company": "Hermes Agent",
+    "title": "v0.22.5+canary.20261029T064840Z",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.22.5%2Bcanary.20261029T064840Z",
+    "published_at": "2026-10-29T06:48:41+00:00",
+    "source_type": "rss_official",
+    "summary": "Hermes Agent canary 20261029T064840Z",
+    "content": "Hermes Agent canary 20261029T064840Z",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
     "id": "ce1c1177-d094-5fc6-a8c6-cde8eb80fdfa",
     "company": "Moonshot AI",
     "title": "@moonshot-ai/kimi-code@2.4.1-canary.20261029045033-ebe14e1",
@@ -10,6 +34,18 @@
     "content": "What's Changed feat(agent-core-v2): limit subagents to the configured model pool by @7Sageer in #4418 feat: multi-root workspace registry and source-folder management by @liruifengv in #4336 refactor(agent-core-v2): port the agent-core llm core into human/llm by @sailist in #4352 fix(agent-core-v2): recover append log writes after disk-full failures by @sailist in #4486 fix(agent-core-v2): preserve llm reasoning and usage compatibility by @sailist in #4485 chore: sync web dist from code-app by @liruifengv in #4488 feat: rename the dev release channel to canary by @Grapedge in #4490 docs(changelog): sync 2.4.0 from apps/kimi-code/CHANGELOG.md by @kimi-agent-bot in #4496 chore: sync release/2026-10-28 (2.4.0) back to main by @kimi-agent-bot in #4497 ci: derive canary base from changesets by @kimi-agent-bot in #4504 Full Changelog : https://github.com/MoonshotAI/kimi-code/compare/@moonshot-ai/kimi-code@0.0.0-dev.2...@moonshot-ai/kimi-code@2.4.1-canary.20261029045033-ebe14e1",
     "source_url": "https://github.com/MoonshotAI/kimi-code/releases.atom",
     "source_key": "moonshot-kimi-code-releases"
+  },
+  {
+    "id": "a1889504-077a-5061-9ba9-3419489c848c",
+    "company": "Hugging Face",
+    "title": "Introducing AnySpeechRecognizer and AnyDecisionModel: Open Models for Speech and Decisions on Apple Platforms",
+    "url": "https://huggingface.co/blog/anydecisionmodel",
+    "published_at": "2026-10-29T00:00:00+00:00",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://huggingface.co/blog/feed.xml",
+    "source_key": "hugging-face-blog"
   },
   {
     "id": "72debe14-f1ff-5a39-a5b4-099573800d2b",
