@@ -1,8 +1,20 @@
 [
   {
+    "id": "ce1c1177-d094-5fc6-a8c6-cde8eb80fdfa",
+    "company": "Moonshot AI",
+    "title": "@moonshot-ai/kimi-code@2.4.1-canary.20261029045033-ebe14e1",
+    "url": "https://github.com/MoonshotAI/kimi-code/releases/tag/%40moonshot-ai%2Fkimi-code%402.4.1-canary.20261029045033-ebe14e1",
+    "published_at": "2026-10-29T05:05:35+00:00",
+    "source_type": "rss_official",
+    "summary": "What's Changed feat(agent-core-v2): limit subagents to the configured model pool by @7Sageer in #4418 feat: multi-root workspace registry and source-folder management by @liruifengv in #4336 refactor(agent-core-v2): port the agent-core llm core into human/llm by @sailist in #4352 fix(agent-core-v2): recover append log writes after disk-full failures by @sailist in #4486 fix(agent-core-v2): preserve llm reasoning and usage compatibility by @sailist in #4485 chore: sync web dist from code-app...",
+    "content": "What's Changed feat(agent-core-v2): limit subagents to the configured model pool by @7Sageer in #4418 feat: multi-root workspace registry and source-folder management by @liruifengv in #4336 refactor(agent-core-v2): port the agent-core llm core into human/llm by @sailist in #4352 fix(agent-core-v2): recover append log writes after disk-full failures by @sailist in #4486 fix(agent-core-v2): preserve llm reasoning and usage compatibility by @sailist in #4485 chore: sync web dist from code-app by @liruifengv in #4488 feat: rename the dev release channel to canary by @Grapedge in #4490 docs(changelog): sync 2.4.0 from apps/kimi-code/CHANGELOG.md by @kimi-agent-bot in #4496 chore: sync release/2026-10-28 (2.4.0) back to main by @kimi-agent-bot in #4497 ci: derive canary base from changesets by @kimi-agent-bot in #4504 Full Changelog : https://github.com/MoonshotAI/kimi-code/compare/@moonshot-ai/kimi-code@0.0.0-dev.2...@moonshot-ai/kimi-code@2.4.1-canary.20261029045033-ebe14e1",
+    "source_url": "https://github.com/MoonshotAI/kimi-code/releases.atom",
+    "source_key": "moonshot-kimi-code-releases"
+  },
+  {
     "id": "72debe14-f1ff-5a39-a5b4-099573800d2b",
     "company": "Codex CLI",
-    "title": "rust-v0.166.0-alpha.6",
+    "title": "0.166.0-alpha.6",
     "url": "https://github.com/openai/codex/releases/tag/rust-v0.166.0-alpha.6",
     "published_at": "2026-10-28T22:10:56+00:00",
     "source_type": "rss_official",
@@ -214,6 +226,18 @@
     "content": "What's Changed fix(core): allow trusted system paths on Android (Termux) for ripgrep resolution ( #21836 ) by @amelidev in #29884 fix(core): normalize CRLF line endings before diffing in getDiffContextSnippet by @jesussamuel-byte in #29966 fix(cli): handle terminals that render ambiguous-width characters as wide by @elberthc-byte in #29905 fix(cli): prevent duplicate history and double telemetry in confirm_action flow by @duvanka-prasad in #29974 Changelog for v0.67.0-preview.0 by @gemini-cli-robot in #29990 Changelog for v0.66.0 by @gemini-cli-robot in #29992 Full Changelog : v0.67.0-nightly.20261027.g363a13119...v0.67.0-nightly.20261028.gfa5c17365",
     "source_url": "https://github.com/google-gemini/gemini-cli/releases.atom",
     "source_key": "gemini-cli-releases"
+  },
+  {
+    "id": "e296745b-31ed-5b68-9447-a913accb2f34",
+    "company": "Anthropic",
+    "title": "AI for Science expands to foundations and institutions",
+    "url": "https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions",
+    "published_at": "2026-10-28T00:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "We’re highlighting 20 scientific foundations, institutions, and research groups from around the world that we’ve partnered with in an expansion of our AI for Science program.",
+    "content": "We’re highlighting 20 scientific foundations, institutions, and research groups from around the world that we’ve partnered with in an expansion of our AI for Science program.",
+    "source_url": "https://www.anthropic.com/sitemap.xml",
+    "source_key": "anthropic-sitemap"
   },
   {
     "id": "9748115a-9d67-53fc-9351-42ed49a6749f",
