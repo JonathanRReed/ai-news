@@ -1,5 +1,29 @@
 [
   {
+    "id": "98e62b42-482e-5df1-ab7d-32c67d5d7ec1",
+    "company": "Moonshot AI",
+    "title": "@moonshot-ai/kimi-code@2.4.1",
+    "url": "https://github.com/MoonshotAI/kimi-code/releases/tag/%40moonshot-ai%2Fkimi-code%402.4.1",
+    "published_at": "2026-10-30T10:11:19+00:00",
+    "source_type": "rss_official",
+    "summary": "Patch Changes #4553 9140ea0 Thanks @RealKai42 ! - A single file read by the agent now returns at most 100,000 characters or about 25,000 tokens, whichever comes first, instead of up to 500,000 characters; set max_chars under [read] in config.toml to raise both limits again. #4521 dbb65af Thanks @7Sageer ! - Shorten built-in tool and subagent prompts. #4521 dbb65af Thanks @7Sageer ! - Shorten repeated goal and plan mode reminders. #4555 480a9b0 Thanks @kimi-agent-bot ! - web: Improved...",
+    "content": "Patch Changes #4553 9140ea0 Thanks @RealKai42 ! - A single file read by the agent now returns at most 100,000 characters or about 25,000 tokens, whichever comes first, instead of up to 500,000 characters; set max_chars under [read] in config.toml to raise both limits again. #4521 dbb65af Thanks @7Sageer ! - Shorten built-in tool and subagent prompts. #4521 dbb65af Thanks @7Sageer ! - Shorten repeated goal and plan mode reminders. #4555 480a9b0 Thanks @kimi-agent-bot ! - web: Improved interactions and fixed known bugs.",
+    "source_url": "https://github.com/MoonshotAI/kimi-code/releases.atom",
+    "source_key": "moonshot-kimi-code-releases"
+  },
+  {
+    "id": "6915d41c-23b4-5f00-acd9-c5260f836773",
+    "company": "Hermes Agent",
+    "title": "v0.22.5+canary.20261030T064851Z",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.22.5%2Bcanary.20261030T064851Z",
+    "published_at": "2026-10-30T06:48:52+00:00",
+    "source_type": "rss_official",
+    "summary": "Hermes Agent canary 20261030T064851Z",
+    "content": "Hermes Agent canary 20261030T064851Z",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
     "id": "d30490c3-a97d-56a5-84ea-32d26228ec05",
     "company": "Moonshot AI",
     "title": "@moonshot-ai/kimi-code@2.5.0-canary.20261030040529-bd0d4de",
