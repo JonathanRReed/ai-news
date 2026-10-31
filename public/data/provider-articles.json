@@ -1,5 +1,17 @@
 [
   {
+    "id": "0ce4f656-2259-5491-82ae-11279787f332",
+    "company": "Hermes Agent",
+    "title": "v0.22.5+canary.20261031T064409Z",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.22.5%2Bcanary.20261031T064409Z",
+    "published_at": "2026-10-31T06:44:10+00:00",
+    "source_type": "rss_official",
+    "summary": "Hermes Agent canary 20261031T064409Z",
+    "content": "Hermes Agent canary 20261031T064409Z",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
     "id": "0cad517c-ae23-5a64-a539-501852588cdb",
     "company": "OpenClaw",
     "title": "release-publish/a57e5beb1266-1793415069: fix(release): install WebKit for repo UI E2E (#188985)",
