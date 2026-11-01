@@ -1,5 +1,17 @@
 [
   {
+    "id": "36de6c1f-5e35-5d3e-be81-0e84579e116c",
+    "company": "Hermes Agent",
+    "title": "v0.22.5+canary.20261101T064348Z",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.22.5%2Bcanary.20261101T064348Z",
+    "published_at": "2026-11-01T06:43:49+00:00",
+    "source_type": "rss_official",
+    "summary": "Hermes Agent canary 20261101T064348Z",
+    "content": "Hermes Agent canary 20261101T064348Z",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
     "id": "a39c736b-8cc6-5cc8-81e7-c6e4d373d775",
     "company": "OpenClaw",
     "title": "release-publish/b1615fd4432c-1793505057",
