@@ -1,5 +1,29 @@
 [
   {
+    "id": "a39c736b-8cc6-5cc8-81e7-c6e4d373d775",
+    "company": "OpenClaw",
+    "title": "release-publish/b1615fd4432c-1793505057",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/release-publish%2Fb1615fd4432c-1793505057",
+    "published_at": "2026-11-01T03:47:30+00:00",
+    "source_type": "rss_official",
+    "summary": "improve(ui): avoid redundant work when toggling mobile navigation ( #1 …",
+    "content": "improve(ui): avoid redundant work when toggling mobile navigation ( #1 …",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
+  },
+  {
+    "id": "2b95a89c-51ae-5f1f-b0c0-beaed50b373a",
+    "company": "Gemini CLI",
+    "title": "Release v0.67.0-nightly.20261101.g6814e00d6",
+    "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.67.0-nightly.20261101.g6814e00d6",
+    "published_at": "2026-11-01T01:14:56+00:00",
+    "source_type": "rss_official",
+    "summary": "Full Changelog : v0.67.0-nightly.20261031.g6814e00d6...v0.67.0-nightly.20261101.g6814e00d6",
+    "content": "Full Changelog : v0.67.0-nightly.20261031.g6814e00d6...v0.67.0-nightly.20261101.g6814e00d6",
+    "source_url": "https://github.com/google-gemini/gemini-cli/releases.atom",
+    "source_key": "gemini-cli-releases"
+  },
+  {
     "id": "0ce4f656-2259-5491-82ae-11279787f332",
     "company": "Hermes Agent",
     "title": "v0.22.5+canary.20261031T064409Z",
