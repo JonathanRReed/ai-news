@@ -1,5 +1,17 @@
 [
   {
+    "id": "f801ad3b-84d3-564b-a0c2-0fb854550105",
+    "company": "Codex CLI",
+    "title": "rust-v0.167.0-alpha.2",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.167.0-alpha.2",
+    "published_at": "2026-11-01T17:51:18+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.167.0-alpha.2",
+    "content": "Release 0.167.0-alpha.2",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
     "id": "36de6c1f-5e35-5d3e-be81-0e84579e116c",
     "company": "Hermes Agent",
     "title": "v0.22.5+canary.20261101T064348Z",
@@ -34,6 +46,18 @@
     "content": "Full Changelog : v0.67.0-nightly.20261031.g6814e00d6...v0.67.0-nightly.20261101.g6814e00d6",
     "source_url": "https://github.com/google-gemini/gemini-cli/releases.atom",
     "source_key": "gemini-cli-releases"
+  },
+  {
+    "id": "d4740e26-3d3a-5e5c-9782-49dc14e8c31b",
+    "company": "IBM Research",
+    "title": "Ponder This Challenge - November 2026 - The SumSum",
+    "url": "https://research.ibm.com/blog/ponder-this-november-2026",
+    "published_at": "2026-10-31T23:00:00+00:00",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://research.ibm.com/rss",
+    "source_key": "ibm-research"
   },
   {
     "id": "0ce4f656-2259-5491-82ae-11279787f332",
