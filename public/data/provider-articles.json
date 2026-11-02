@@ -1,5 +1,53 @@
 [
   {
+    "id": "33af73a0-864d-5630-aee7-b797ffcac3cf",
+    "company": "Hermes Agent",
+    "title": "rc.2-v0.22.6",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/rc.2-v0.22.6",
+    "published_at": "2026-11-02T10:49:52+00:00",
+    "source_type": "rss_official",
+    "summary": "{\"attempt\":2,\"autopublish\":false,\"claimEpoch\":1793616592,\"commit\":\"9c…",
+    "content": "{\"attempt\":2,\"autopublish\":false,\"claimEpoch\":1793616592,\"commit\":\"9c…",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
+    "id": "305ad492-3d02-5b5f-b300-53d4c7de0a4a",
+    "company": "Hermes Agent",
+    "title": "abandoned-rc.1-v0.22.6",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/abandoned-rc.1-v0.22.6",
+    "published_at": "2026-11-02T10:06:20+00:00",
+    "source_type": "rss_official",
+    "summary": "{\"attempt\":1,\"attemptRef\":\"rc.1-v0.22.6\",\"schema\":1,\"version\":\"0.22.6\"}",
+    "content": "{\"attempt\":1,\"attemptRef\":\"rc.1-v0.22.6\",\"schema\":1,\"version\":\"0.22.6\"}",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
+    "id": "ce406c88-5dc4-5ced-96b9-1cc74b29ad6a",
+    "company": "Hermes Agent",
+    "title": "rc.1-v0.22.6",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/rc.1-v0.22.6",
+    "published_at": "2026-11-02T08:11:16+00:00",
+    "source_type": "rss_official",
+    "summary": "{\"attempt\":1,\"autopublish\":false,\"claimEpoch\":1793607076,\"commit\":\"30…",
+    "content": "{\"attempt\":1,\"autopublish\":false,\"claimEpoch\":1793607076,\"commit\":\"30…",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
+    "id": "e0f412aa-be3a-5e2d-b857-5f3c1dfd6f9e",
+    "company": "Hermes Agent",
+    "title": "v0.22.5+canary.20261102T065013Z",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.22.5%2Bcanary.20261102T065013Z",
+    "published_at": "2026-11-02T06:50:14+00:00",
+    "source_type": "rss_official",
+    "summary": "Hermes Agent canary 20261102T065013Z",
+    "content": "Hermes Agent canary 20261102T065013Z",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
     "id": "bf7c718a-df7d-547f-bcec-aca30ab12646",
     "company": "Moonshot AI",
     "title": "@moonshot-ai/kimi-code@2.5.0-canary.20261102033430-40590f6",
@@ -322,6 +370,18 @@
     "content": "While science fiction lore tells us that humans will meet extraterrestrial life in the form of little green men, the detail that should raise hairs this Halloween is this: the search for extraterrestrial intelligence took a major leap forward with AI, and it increasingly focuses on AI agents built by humans listening for AI agents built by aliens. Some scientists have suggested that extraterrestrial civilizations, if they exist, could be billions of years older than humanity. Such civilizations might have developed technologies far beyond humanity’s, including forms of AI. Breakthrough Listen and the SETI Institute are bringing agentic AI into the daily search for extraterrestrial intelligence. At the Allen Telescope Array in Northern California, agents can now steer the instrument, enhance and correct incoming data, and apply AI models to the incoming stream — all from a single natural language request. The NVIDIA Holoscan platform processes the massive streams of sensor data, giving agents live data to act on. The result is a faster, more adaptable search for potential signals from extraterrestrial life and technologies. “As our new agentic observatories reach out into the universe, what they find may have much more in common with themselves than with the humans who created them,” said Andrew Siemion, Bernard M. Oliver chair for SETI at the SETI Institute and principal investigator of Breakthrough Listen. “But this isn’t something to fear. Rather, it’s a breakthrough in translation.” Terabits a Second, Processed in Flight Radio telescopes generate enormous volumes of data, creating a challenge for scientists who need to identify potentially interesting signals as observations unfold. At the Allen Telescope Array, DAQIRI , a Holoscan platform library, enables the telescope to pull terabits per second of sensor data straight into GPU memory so observations are processed in flight rather than filling hard drives. CyberEther , a signal-processing framework developed at the SETI Institute, does the math using NVIDIA CUDA-X libraries including cuFFT and cuBLAS . Nexus , a web-based observatory orchestrator, acts as the agent harness. It gives agents a single source of truth for instrument state, compute resources and pipelines and lets researchers monitor packet loss, read live spectrograms and rewrite signal-processing blocks — all by prompting in natural language. The system can handle 2.4 terabits per second on NVIDIA RTX PRO 6000 Blackwell GPUs, with inference running on premises, next to the instrument. Put together, the system enables an agent to steer a telescope’s antennae, calibrate and focus the instrument for a clean signal, catch and fix data errors and plot the result. Agents compress what would take humans weeks or years into hours. Science Fact, Not Fiction The pipeline has already proven itself, achieving the first real-time AI detection of a pulsar — a rapidly spinning stellar remnant that pulses like a cosmic lighthouse — in the Crab Nebula. Next, the team is evaluating open models including NVIDIA Nemotron for cases where data locality and turnaround matter most and for observatories that may someday run offline on the far side of the moon. Learn more about NVIDIA AI for science .",
     "source_url": "https://blogs.nvidia.com/feed/",
     "source_key": "nvidia-blog"
+  },
+  {
+    "id": "5e66fbfb-d5e0-514d-8b96-703a328fb305",
+    "company": "Google DeepMind",
+    "title": "Speeding up planning decisions with AI",
+    "url": "https://deepmind.google/blog/speeding-up-planning-decisions-with-ai/",
+    "published_at": "2026-10-30T14:18:30+00:00",
+    "source_type": "rss_official",
+    "summary": "Google DeepMind and UK government work together to reduce planning assessment times",
+    "content": "Google DeepMind and UK government work together to reduce planning assessment times",
+    "source_url": "https://deepmind.google/blog/rss.xml",
+    "source_key": "deepmind-blog"
   },
   {
     "id": "009b86eb-6fde-54f1-8b79-d8d128980438",
