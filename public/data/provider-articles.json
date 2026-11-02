@@ -1,8 +1,20 @@
 [
   {
+    "id": "36423010-c5b6-544e-af08-15de6d2a2121",
+    "company": "Codex CLI",
+    "title": "0.167.0-alpha.3",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.167.0-alpha.3",
+    "published_at": "2026-11-01T22:30:00+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.167.0-alpha.3",
+    "content": "Release 0.167.0-alpha.3",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
     "id": "f801ad3b-84d3-564b-a0c2-0fb854550105",
     "company": "Codex CLI",
-    "title": "rust-v0.167.0-alpha.2",
+    "title": "0.167.0-alpha.2",
     "url": "https://github.com/openai/codex/releases/tag/rust-v0.167.0-alpha.2",
     "published_at": "2026-11-01T17:51:18+00:00",
     "source_type": "rss_official",
