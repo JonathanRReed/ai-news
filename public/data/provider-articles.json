@@ -1,5 +1,29 @@
 [
   {
+    "id": "bf7c718a-df7d-547f-bcec-aca30ab12646",
+    "company": "Moonshot AI",
+    "title": "@moonshot-ai/kimi-code@2.5.0-canary.20261102033430-40590f6",
+    "url": "https://github.com/MoonshotAI/kimi-code/releases/tag/%40moonshot-ai%2Fkimi-code%402.5.0-canary.20261102033430-40590f6",
+    "published_at": "2026-11-02T03:57:26+00:00",
+    "source_type": "rss_official",
+    "summary": "What's Changed fix: queue ACP requests until startup completes by @7Sageer in #4541 feat: merge skills across workspace directories by @liruifengv in #4520 fix(agent-core-v2): keep archived sessions out of session lists before the index flush by @RealKai42 in #4540 feat: support folder-scoped git status by @liruifengv in #4527 refactor(agent-core-v2): decouple tool disclosure from execution by @sailist in #4538 docs(changelog): sync 2.4.1 from apps/kimi-code/CHANGELOG.md by @kimi-agent-bot...",
+    "content": "What's Changed fix: queue ACP requests until startup completes by @7Sageer in #4541 feat: merge skills across workspace directories by @liruifengv in #4520 fix(agent-core-v2): keep archived sessions out of session lists before the index flush by @RealKai42 in #4540 feat: support folder-scoped git status by @liruifengv in #4527 refactor(agent-core-v2): decouple tool disclosure from execution by @sailist in #4538 docs(changelog): sync 2.4.1 from apps/kimi-code/CHANGELOG.md by @kimi-agent-bot in #4556 chore: sync release 2026-10-30 back to main by @kimi-agent-bot in #4557 test: adjust compaction budgets for slimmer prompts by @kimi-agent-bot in #4558 chore: sync web dist from code-app by @kimi-agent-bot in #4595 Full Changelog : https://github.com/MoonshotAI/kimi-code/compare/@moonshot-ai/kimi-code@2.5.0-canary.20261030040529-bd0d4de...@moonshot-ai/kimi-code@2.5.0-canary.20261102033430-40590f6",
+    "source_url": "https://github.com/MoonshotAI/kimi-code/releases.atom",
+    "source_key": "moonshot-kimi-code-releases"
+  },
+  {
+    "id": "179765b3-49c5-5840-b3b1-9b4e529d4d00",
+    "company": "Gemini CLI",
+    "title": "Release v0.67.0-nightly.20261102.g6814e00d6",
+    "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.67.0-nightly.20261102.g6814e00d6",
+    "published_at": "2026-11-02T01:22:38+00:00",
+    "source_type": "rss_official",
+    "summary": "Full Changelog : v0.67.0-nightly.20261101.g6814e00d6...v0.67.0-nightly.20261102.g6814e00d6",
+    "content": "Full Changelog : v0.67.0-nightly.20261101.g6814e00d6...v0.67.0-nightly.20261102.g6814e00d6",
+    "source_url": "https://github.com/google-gemini/gemini-cli/releases.atom",
+    "source_key": "gemini-cli-releases"
+  },
+  {
     "id": "36423010-c5b6-544e-af08-15de6d2a2121",
     "company": "Codex CLI",
     "title": "0.167.0-alpha.3",
