@@ -1,5 +1,65 @@
 [
   {
+    "id": "328e283b-cd84-59c0-9b0c-31d3d8ff7dab",
+    "company": "Codex CLI",
+    "title": "rust-v0.167.0-alpha.3.2",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.167.0-alpha.3.2",
+    "published_at": "2026-11-05T06:26:50+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.167.0-alpha.3.2",
+    "content": "Release 0.167.0-alpha.3.2",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "c9f5fe20-3fe2-505a-b865-3385902f93db",
+    "company": "OpenClaw",
+    "title": "v2026.11.1",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.11.1",
+    "published_at": "2026-11-05T05:29:00+00:00",
+    "source_type": "rss_official",
+    "summary": "openclaw 2026.11.1",
+    "content": "openclaw 2026.11.1",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
+  },
+  {
+    "id": "e1efa6f3-5795-5a1b-8c49-ba05db4f1ccf",
+    "company": "Moonshot AI",
+    "title": "@moonshot-ai/kimi-code@2.6.0-canary.20261105045446-836a82b",
+    "url": "https://github.com/MoonshotAI/kimi-code/releases/tag/%40moonshot-ai%2Fkimi-code%402.6.0-canary.20261105045446-836a82b",
+    "published_at": "2026-11-05T05:12:38+00:00",
+    "source_type": "rss_official",
+    "summary": "What's Changed fix(tui): keep wrapped Grep and Glob glance lines indented by @Grapedge in #4617 docs(changelog): sync 2.5.0 from apps/kimi-code/CHANGELOG.md by @kimi-agent-bot in #4673 chore: sync release/2026-11-04 back to main by @kimi-agent-bot in #4674 feat(tui): fold tool calls and thinking into transcript groups in fullscreen by @Grapedge in #4618 perf(tui): reuse unchanged tool output lines across renders by @Grapedge in #4665 docs: rewrite remote environment guide for users by...",
+    "content": "What's Changed fix(tui): keep wrapped Grep and Glob glance lines indented by @Grapedge in #4617 docs(changelog): sync 2.5.0 from apps/kimi-code/CHANGELOG.md by @kimi-agent-bot in #4673 chore: sync release/2026-11-04 back to main by @kimi-agent-bot in #4674 feat(tui): fold tool calls and thinking into transcript groups in fullscreen by @Grapedge in #4618 perf(tui): reuse unchanged tool output lines across renders by @Grapedge in #4665 docs: rewrite remote environment guide for users by @7Sageer in #4693 chore: sync web dist from code-app by @kimi-agent-bot in #4685 Full Changelog : https://github.com/MoonshotAI/kimi-code/compare/@moonshot-ai/kimi-code@2.5.0-canary.20261104024245-8fc5e22...@moonshot-ai/kimi-code@2.6.0-canary.20261105045446-836a82b",
+    "source_url": "https://github.com/MoonshotAI/kimi-code/releases.atom",
+    "source_key": "moonshot-kimi-code-releases"
+  },
+  {
+    "id": "64a825eb-75a0-5070-b0fc-0c8f2b238a3d",
+    "company": "OpenClaw",
+    "title": "release-publish/3816bcb3dea1-1793855263",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/release-publish%2F3816bcb3dea1-1793855263",
+    "published_at": "2026-11-05T05:06:24+00:00",
+    "source_type": "rss_official",
+    "summary": "fix(release): accept qualified 2026.11.1 notes credit ( #193198 )",
+    "content": "fix(release): accept qualified 2026.11.1 notes credit ( #193198 )",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
+  },
+  {
+    "id": "54fe7ad6-d515-585b-a3b3-b0186126b7d7",
+    "company": "Codex CLI",
+    "title": "0.168.0-alpha.3",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.168.0-alpha.3",
+    "published_at": "2026-11-05T02:38:43+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.168.0-alpha.3",
+    "content": "Release 0.168.0-alpha.3",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
     "id": "f416a3b2-efdb-54ae-b004-78cfe00c1c67",
     "company": "OpenClaw",
     "title": "release-publish/84097d630e26-1793838108",
@@ -370,6 +430,18 @@
     "content": "Images 2.6 brings faster image generation, GIF creation, more precise editing, and new API controls across ChatGPT, Codex, and the API.",
     "source_url": "https://openai.com/news/rss.xml",
     "source_key": "openai-news"
+  },
+  {
+    "id": "80526343-63ee-5d2e-a315-baee7c3894e0",
+    "company": "Anthropic",
+    "title": "Investigating vault particles with Claude",
+    "url": "https://www.anthropic.com/research/investigating-vault-particles-with-claude",
+    "published_at": "2026-11-04T00:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "We’re sharing another finding from Anthropic’s biology research lab: the first 3D structure of a vault particle found in prokaryotic cells.",
+    "content": "We’re sharing another finding from Anthropic’s biology research lab: the first 3D structure of a vault particle found in prokaryotic cells.",
+    "source_url": "https://www.anthropic.com/sitemap.xml",
+    "source_key": "anthropic-sitemap"
   },
   {
     "id": "4809de18-ce72-5243-bee2-5f81fdd83c6e",
