@@ -1,5 +1,41 @@
 [
   {
+    "id": "d7fb92f2-bb4b-5f1c-ad10-ea0baaa8a0b2",
+    "company": "Moonshot AI",
+    "title": "@moonshot-ai/kimi-code@2.6.0-canary.20261106115820-bc6fa89",
+    "url": "https://github.com/MoonshotAI/kimi-code/releases/tag/%40moonshot-ai%2Fkimi-code%402.6.0-canary.20261106115820-bc6fa89",
+    "published_at": "2026-11-06T12:12:41+00:00",
+    "source_type": "rss_official",
+    "summary": "What's Changed feat(kap-server): stream agent conversations as turns and items by @wbxl2000 in #4663 fix(kap-server): end streamed items once from the recorded step by @wbxl2000 in #4730 docs(changelog): sync 2.5.2 from apps/kimi-code/CHANGELOG.md by @kimi-agent-bot in #4734 chore: sync release/2026-11-06 back to main by @kimi-agent-bot in #4733 fix: import google-genai providers from custom registries by @7Sageer in #4735 Full Changelog :...",
+    "content": "What's Changed feat(kap-server): stream agent conversations as turns and items by @wbxl2000 in #4663 fix(kap-server): end streamed items once from the recorded step by @wbxl2000 in #4730 docs(changelog): sync 2.5.2 from apps/kimi-code/CHANGELOG.md by @kimi-agent-bot in #4734 chore: sync release/2026-11-06 back to main by @kimi-agent-bot in #4733 fix: import google-genai providers from custom registries by @7Sageer in #4735 Full Changelog : https://github.com/MoonshotAI/kimi-code/compare/@moonshot-ai/kimi-code@2.6.0-canary.20261106040415-d37c9d2...@moonshot-ai/kimi-code@2.6.0-canary.20261106115820-bc6fa89",
+    "source_url": "https://github.com/MoonshotAI/kimi-code/releases.atom",
+    "source_key": "moonshot-kimi-code-releases"
+  },
+  {
+    "id": "57eb653a-943e-560b-b2f6-6bd63d7c68e7",
+    "company": "Moonshot AI",
+    "title": "@moonshot-ai/kimi-code@2.5.2",
+    "url": "https://github.com/MoonshotAI/kimi-code/releases/tag/%40moonshot-ai%2Fkimi-code%402.5.2",
+    "published_at": "2026-11-06T07:58:59+00:00",
+    "source_type": "rss_official",
+    "summary": "Patch Changes #4728 7b906ea Thanks @sailist ! - Fix duplicate tool declaration errors in select_tools when MCP tool definitions change. #4731 ef10107 Thanks @liruifengv ! - web: Fix steered messages being incorrectly queued while a session is running. #4731 ef10107 Thanks @liruifengv ! - web: Fix project creation when accessing the Web UI over HTTP.",
+    "content": "Patch Changes #4728 7b906ea Thanks @sailist ! - Fix duplicate tool declaration errors in select_tools when MCP tool definitions change. #4731 ef10107 Thanks @liruifengv ! - web: Fix steered messages being incorrectly queued while a session is running. #4731 ef10107 Thanks @liruifengv ! - web: Fix project creation when accessing the Web UI over HTTP.",
+    "source_url": "https://github.com/MoonshotAI/kimi-code/releases.atom",
+    "source_key": "moonshot-kimi-code-releases"
+  },
+  {
+    "id": "9c8d4ab0-7672-51b9-8174-702826709c2f",
+    "company": "Hermes Agent",
+    "title": "v0.23.0+canary.20261106T064428Z",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.23.0%2Bcanary.20261106T064428Z",
+    "published_at": "2026-11-06T06:44:30+00:00",
+    "source_type": "rss_official",
+    "summary": "Hermes Agent canary 20261106T064428Z",
+    "content": "Hermes Agent canary 20261106T064428Z",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
     "id": "443a20e2-d09a-588d-8d57-5616b2dd4d38",
     "company": "Moonshot AI",
     "title": "@moonshot-ai/kimi-code@2.6.0-canary.20261106040415-d37c9d2",
@@ -22,6 +58,18 @@
     "content": "Release 0.169.0-alpha.1",
     "source_url": "https://github.com/openai/codex/releases.atom",
     "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "5ad01b4f-e653-57f3-a37f-6926626ec063",
+    "company": "Hugging Face",
+    "title": "Egyptian and Nigerian English join the Open ASR Leaderboard",
+    "url": "https://huggingface.co/blog/open-asr-leaderboard-liva",
+    "published_at": "2026-11-06T00:00:00+00:00",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://huggingface.co/blog/feed.xml",
+    "source_key": "hugging-face-blog"
   },
   {
     "id": "56504cb2-62e4-561c-987d-4d925782c485",
