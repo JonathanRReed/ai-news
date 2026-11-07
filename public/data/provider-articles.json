@@ -1,5 +1,41 @@
 [
   {
+    "id": "a5b8ae04-9eb5-5910-8776-0fae3058b670",
+    "company": "OpenClaw",
+    "title": "release-publish/efb980423985-1794011730: fix(release): authorize scoped 2026.11.2 Kova waiver (#194379)",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/release-publish%2Fefb980423985-1794011730",
+    "published_at": "2026-11-07T00:35:14+00:00",
+    "source_type": "rss_official",
+    "summary": "Dallin Romney authorized the standard performance-only waiver on 2026-11-07 at 00:28 UTC. Preserve raw failures and all unrelated release gates. Co-authored-by: RomneyDa",
+    "content": "Dallin Romney authorized the standard performance-only waiver on 2026-11-07 at 00:28 UTC. Preserve raw failures and all unrelated release gates. Co-authored-by: RomneyDa 6581799+RomneyDa@users.noreply.github.com",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
+  },
+  {
+    "id": "30dfe3ae-9bec-5ead-bb68-28610f038e03",
+    "company": "NVIDIA AI",
+    "title": "Speed Up Image Generation with FLUX 3 Image Klein on NVIDIA Blackwell GPUs",
+    "url": "https://developer.nvidia.com/blog/speed-up-image-generation-with-flux-3-image-klein-on-nvidia-blackwell-gpus/",
+    "published_at": "2026-11-06T22:20:20+00:00",
+    "source_type": "rss_official",
+    "summary": "When deploying diffusion models in design tools, image editors, and visual production workflows, developers must account for inference latency. Generating an...",
+    "content": "When deploying diffusion models in design tools, image editors, and visual production workflows, developers must account for inference latency. Generating an...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/",
+    "source_key": "nvidia-generative-ai"
+  },
+  {
+    "id": "443217a2-7343-5089-9727-230ea17d352e",
+    "company": "Codex CLI",
+    "title": "0.169.0-alpha.2",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.169.0-alpha.2",
+    "published_at": "2026-11-06T22:17:19+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.169.0-alpha.2",
+    "content": "Release 0.169.0-alpha.2",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
     "id": "b85f089d-69a9-5127-9417-6a4132048a9c",
     "company": "NVIDIA AI",
     "title": "Accelerating Reinforcement Learning Weight Refit with the Reshard Collective",
@@ -216,6 +252,18 @@
     "source_key": "hermes-agent-releases"
   },
   {
+    "id": "7be5885e-9604-51d0-9b0c-eac46d81f619",
+    "company": "IBM Research",
+    "title": "Chicago’s bid to lead the country in quantum computing",
+    "url": "https://research.ibm.com/blog/chicago-quantum-computer",
+    "published_at": "2026-11-06T05:00:00+00:00",
+    "source_type": "rss_official",
+    "summary": "New IBM Quantum System Two supports Illinois’ place at the center of the American quantum computing industry.",
+    "content": "New IBM Quantum System Two supports Illinois’ place at the center of the American quantum computing industry.",
+    "source_url": "https://research.ibm.com/rss",
+    "source_key": "ibm-research"
+  },
+  {
     "id": "443a20e2-d09a-588d-8d57-5616b2dd4d38",
     "company": "Moonshot AI",
     "title": "@moonshot-ai/kimi-code@2.6.0-canary.20261106040415-d37c9d2",
@@ -240,6 +288,54 @@
     "source_key": "codex-cli-releases"
   },
   {
+    "id": "b3613c12-11de-5e7d-bdac-3c53c48c4a52",
+    "company": "OpenClaw",
+    "title": "release-publish/85c39026a90f-1793930188",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/release-publish%2F85c39026a90f-1793930188",
+    "published_at": "2026-11-06T01:08:05+00:00",
+    "source_type": "rss_official",
+    "summary": "fix(update): after a reboot, update cleanup can never reclaim older r…",
+    "content": "fix(update): after a reboot, update cleanup can never reclaim older r…",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
+  },
+  {
+    "id": "ce0afe7f-a16c-50f8-9bf2-86d4130eab09",
+    "company": "Anthropic",
+    "title": "Teaching AI to build scientific models",
+    "url": "https://www.anthropic.com/research/teaching-ai-to-build-scientific-models",
+    "published_at": "2026-11-06T00:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "AI for Science grantees Jakob Macke, Daniel Gedon, and Stefan Wahl on how AI is starting to change how scientific models are built and interpreted.",
+    "content": "AI for Science grantees Jakob Macke, Daniel Gedon, and Stefan Wahl on how AI is starting to change how scientific models are built and interpreted.",
+    "source_url": "https://www.anthropic.com/sitemap.xml",
+    "source_key": "anthropic-sitemap"
+  },
+  {
+    "id": "6866b55b-e11d-53c4-98db-c054362a8f77",
+    "company": "Anthropic",
+    "title": "Project EVE: Claude plays MMORPGs",
+    "url": "https://www.anthropic.com/research/project-eve-claude-plays-mmorpgs",
+    "published_at": "2026-11-06T00:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "We put Claude in two EVE games to study how AI agents handle markets and teamwork, where they break down, and what safeguards they might need.",
+    "content": "We put Claude in two EVE games to study how AI agents handle markets and teamwork, where they break down, and what safeguards they might need.",
+    "source_url": "https://www.anthropic.com/sitemap.xml",
+    "source_key": "anthropic-sitemap"
+  },
+  {
+    "id": "5db889ad-0948-5a3b-b0b1-c80bdf577145",
+    "company": "OpenAI",
+    "title": "Measuring how AI agents handle everyday wet-lab science",
+    "url": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science",
+    "published_at": "2026-11-06T00:00:00+00:00",
+    "source_type": "rss_official",
+    "summary": "OpenAI introduces BioBasicsBench, a 100-task benchmark measuring how well AI agents interpret raw experimental data and handle everyday wet-lab science.",
+    "content": "OpenAI introduces BioBasicsBench, a 100-task benchmark measuring how well AI agents interpret raw experimental data and handle everyday wet-lab science.",
+    "source_url": "https://openai.com/news/rss.xml",
+    "source_key": "openai-news"
+  },
+  {
     "id": "5ad01b4f-e653-57f3-a37f-6926626ec063",
     "company": "Hugging Face",
     "title": "Egyptian and Nigerian English join the Open ASR Leaderboard",
@@ -262,6 +358,18 @@
     "content": "Bringing key frontier capabilities to everyone with specialized models for Muse and Meta AI",
     "source_url": "https://research.meta.ai/sitemap.xml",
     "source_key": "meta-research-sitemap"
+  },
+  {
+    "id": "199e9798-ce31-5f63-97bf-b8298e7a5dbb",
+    "company": "Anthropic",
+    "title": "The components of agent memory",
+    "url": "https://www.anthropic.com/research/components-of-agent-memory",
+    "published_at": "2026-11-06T00:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "For Claude to learn from experience, it has to decide what’s worth remembering before it knows what’s next. Here’s how “dreaming” helps it organize memory and correct mistakes.",
+    "content": "For Claude to learn from experience, it has to decide what’s worth remembering before it knows what’s next. Here’s how “dreaming” helps it organize memory and correct mistakes.",
+    "source_url": "https://www.anthropic.com/sitemap.xml",
+    "source_key": "anthropic-sitemap"
   },
   {
     "id": "56504cb2-62e4-561c-987d-4d925782c485",
