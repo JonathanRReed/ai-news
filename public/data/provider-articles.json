@@ -1,5 +1,17 @@
 [
   {
+    "id": "34c8bfa9-8fed-5cf4-a2e4-97066718153a",
+    "company": "Hermes Agent",
+    "title": "v0.23.0+canary.20261107T064357Z",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.23.0%2Bcanary.20261107T064357Z",
+    "published_at": "2026-11-07T06:43:58+00:00",
+    "source_type": "rss_official",
+    "summary": "Hermes Agent canary 20261107T064357Z",
+    "content": "Hermes Agent canary 20261107T064357Z",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
     "id": "a5b8ae04-9eb5-5910-8776-0fae3058b670",
     "company": "OpenClaw",
     "title": "release-publish/efb980423985-1794011730: fix(release): authorize scoped 2026.11.2 Kova waiver (#194379)",
