@@ -1,5 +1,41 @@
 [
   {
+    "id": "dee7c0f2-1256-5a31-b883-eaafdcca3bf2",
+    "company": "OpenClaw",
+    "title": "release-publish/2fc131eeb4a3-1794109014: fix(release): correct Parallel ClawHub category metadata (#194973)",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/release-publish%2F2fc131eeb4a3-1794109014",
+    "published_at": "2026-11-08T03:34:59+00:00",
+    "source_type": "rss_official",
+    "summary": "fix(release): recover quota-limited publisher reads safely Preserve fresh authorization across quota waits, bound publication concurrency, and correct Parallel ClawHub metadata. Co-authored-by: RomneyDa fix(release): narrow recovery to Parallel metadata Remove quota retries, transport changes, concurrency tuning and their tests from this release fix. Defer quota resilience to the release retrospective; retain only the required Parallel category correction and regression coverage....",
+    "content": "fix(release): recover quota-limited publisher reads safely Preserve fresh authorization across quota waits, bound publication concurrency, and correct Parallel ClawHub metadata. Co-authored-by: RomneyDa 6581799+RomneyDa@users.noreply.github.com fix(release): narrow recovery to Parallel metadata Remove quota retries, transport changes, concurrency tuning and their tests from this release fix. Defer quota resilience to the release retrospective; retain only the required Parallel category correction and regression coverage. Co-authored-by: RomneyDa 6581799+RomneyDa@users.noreply.github.com Co-authored-by: RomneyDa 6581799+RomneyDa@users.noreply.github.com",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
+  },
+  {
+    "id": "a62f452e-7e84-5d7b-ac6a-88c24fc32667",
+    "company": "OpenClaw",
+    "title": "v2026.11.2",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.11.2",
+    "published_at": "2026-11-08T01:51:42+00:00",
+    "source_type": "rss_official",
+    "summary": "OpenClaw 2026.11.2",
+    "content": "OpenClaw 2026.11.2",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
+  },
+  {
+    "id": "a208d9aa-cfe5-5131-93e9-6421495eb6cd",
+    "company": "OpenClaw",
+    "title": "release-publish/5e1a27a9bcc4-1794101135: fix(release): validate credits in selected publication notes (#194899)",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/release-publish%2F5e1a27a9bcc4-1794101135",
+    "published_at": "2026-11-08T01:25:12+00:00",
+    "source_type": "rss_official",
+    "summary": "fix(release): validate credits in selected publication notes Scope candidate attribution checks to the resolved release section and frozen contribution record. Keep the standalone repository-wide checker unchanged. Co-authored-by: RomneyDa test(release): compact selected-notes fixture within existing budget Retain all ten semantic regression cases while simplifying fixture strings and removing redundant result echoes. The unchanged test-line ceiling passes against the exact failed CI merge...",
+    "content": "fix(release): validate credits in selected publication notes Scope candidate attribution checks to the resolved release section and frozen contribution record. Keep the standalone repository-wide checker unchanged. Co-authored-by: RomneyDa 6581799+RomneyDa@users.noreply.github.com test(release): compact selected-notes fixture within existing budget Retain all ten semantic regression cases while simplifying fixture strings and removing redundant result echoes. The unchanged test-line ceiling passes against the exact failed CI merge snapshot. Co-authored-by: RomneyDa 6581799+RomneyDa@users.noreply.github.com Co-authored-by: RomneyDa 6581799+RomneyDa@users.noreply.github.com",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
+  },
+  {
     "id": "4eb71035-21fb-5964-b1e4-95f8011e6be9",
     "company": "Codex CLI",
     "title": "0.169.0-alpha.3",
