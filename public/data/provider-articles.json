@@ -1,5 +1,41 @@
 [
   {
+    "id": "8961c9ed-6cf8-5ef8-8dec-36781ab02f1c",
+    "company": "OpenClaw",
+    "title": "release-publish/c9e6370bb191-1794126491: fix: reduce repeated npm publication evidence requests (#195099)",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/release-publish%2Fc9e6370bb191-1794126491",
+    "published_at": "2026-11-08T08:27:16+00:00",
+    "source_type": "rss_official",
+    "summary": "fix: reduce repeated npm publication evidence requests Reuse authenticated raw evidence from the trusted preview while preserving strict local validation and fresh publication authority. Fall back to live verification on failed-job reruns without current-attempt preview evidence. Co-authored-by: RomneyDa fix: account for inherited test budget debt Allocate the exact 613 added regression lines plus the 12-line comparison-base debt reported by CI 42459857594. Leave the shared baseline and...",
+    "content": "fix: reduce repeated npm publication evidence requests Reuse authenticated raw evidence from the trusted preview while preserving strict local validation and fresh publication authority. Fall back to live verification on failed-job reruns without current-attempt preview evidence. Co-authored-by: RomneyDa 6581799+RomneyDa@users.noreply.github.com fix: account for inherited test budget debt Allocate the exact 613 added regression lines plus the 12-line comparison-base debt reported by CI 42459857594. Leave the shared baseline and reviewed production code unchanged. Co-authored-by: RomneyDa 6581799+RomneyDa@users.noreply.github.com fix: avoid double-counting upstream test allocation Co-authored-by: RomneyDa 6581799+RomneyDa@users.noreply.github.com fix: defer duplicate CLI evidence authority check Retain public return-time validation and final load/consume/authorize authority checks. Exercise actual CLI boundaries and revocation in offline regression tests. Co-authored-by: RomneyDa 6581799+RomneyDa@users.noreply.github.com Co-authored-by: RomneyDa 6581799+RomneyDa@users.noreply.github.com",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
+  },
+  {
+    "id": "bd95671b-19a0-5af3-9f75-e1fe60ca1fb4",
+    "company": "OpenClaw",
+    "title": "release-publish/0ff68b557848-1794127500: test(cua): remove redundant scroll enum assertion (#195076)",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/release-publish%2F0ff68b557848-1794127500",
+    "published_at": "2026-11-08T07:01:23+00:00",
+    "source_type": "rss_official",
+    "summary": "Co-authored-by: Vincent Koc",
+    "content": "Co-authored-by: Vincent Koc vincentkoc@ieee.org",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
+  },
+  {
+    "id": "606396af-010a-5472-b2bc-007a0dde9360",
+    "company": "Hermes Agent",
+    "title": "v0.23.0+canary.20261108T064411Z",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.23.0%2Bcanary.20261108T064411Z",
+    "published_at": "2026-11-08T06:44:13+00:00",
+    "source_type": "rss_official",
+    "summary": "Hermes Agent canary 20261108T064411Z",
+    "content": "Hermes Agent canary 20261108T064411Z",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
     "id": "dee7c0f2-1256-5a31-b883-eaafdcca3bf2",
     "company": "OpenClaw",
     "title": "release-publish/2fc131eeb4a3-1794109014: fix(release): correct Parallel ClawHub category metadata (#194973)",
