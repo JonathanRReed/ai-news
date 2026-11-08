@@ -1,5 +1,17 @@
 [
   {
+    "id": "4eb71035-21fb-5964-b1e4-95f8011e6be9",
+    "company": "Codex CLI",
+    "title": "0.169.0-alpha.3",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.169.0-alpha.3",
+    "published_at": "2026-11-07T19:36:41+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.169.0-alpha.3",
+    "content": "Release 0.169.0-alpha.3",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
     "id": "34c8bfa9-8fed-5cf4-a2e4-97066718153a",
     "company": "Hermes Agent",
     "title": "v0.23.0+canary.20261107T064357Z",
