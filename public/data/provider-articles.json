@@ -1,5 +1,65 @@
 [
   {
+    "id": "9e36da44-5302-5b3a-9eed-d94fd2ae47d4",
+    "company": "Google DeepMind",
+    "title": "Introducing AlphaProof Code: a breakthrough in verifying complex software at depth",
+    "url": "https://deepmind.google/blog/introducing-alphaproof-code/",
+    "published_at": "2026-11-10T12:02:28+00:00",
+    "source_type": "rss_official",
+    "summary": "AlphaProof Code agents wrote three million lines of proofs in Lean to verify Signal’s core encryption.",
+    "content": "AlphaProof Code agents wrote three million lines of proofs in Lean to verify Signal’s core encryption.",
+    "source_url": "https://deepmind.google/blog/rss.xml",
+    "source_key": "deepmind-blog"
+  },
+  {
+    "id": "f6d0ed29-002a-50f0-994f-673f2d0ab6a7",
+    "company": "OpenClaw",
+    "title": "release-publish/db9a5ce90718-1794303631",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/release-publish%2Fdb9a5ce90718-1794303631",
+    "published_at": "2026-11-10T09:40:08+00:00",
+    "source_type": "rss_official",
+    "summary": "fix(release): preserve pinned child dispatch origins after parent rer…",
+    "content": "fix(release): preserve pinned child dispatch origins after parent rer…",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
+  },
+  {
+    "id": "eb07d6d3-ea11-5b9d-b040-a29c20a73875",
+    "company": "OpenAI",
+    "title": "Closing the AI guidance gap in education",
+    "url": "https://openai.com/index/closing-ai-guidance-gap-education",
+    "published_at": "2026-11-10T09:00:00+00:00",
+    "source_type": "rss_official",
+    "summary": "Lessons from OpenAI’s EMEA education partnerships and new ThinkYoung research. Supporting teachers, AI literacy and independent learning.",
+    "content": "Lessons from OpenAI’s EMEA education partnerships and new ThinkYoung research. Supporting teachers, AI literacy and independent learning.",
+    "source_url": "https://openai.com/news/rss.xml",
+    "source_key": "openai-news"
+  },
+  {
+    "id": "fa624547-6a56-5337-a699-6dc8f3b58ee3",
+    "company": "OpenClaw",
+    "title": "release-publish/09723cdcad18-1794299463",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/release-publish%2F09723cdcad18-1794299463",
+    "published_at": "2026-11-10T08:28:32+00:00",
+    "source_type": "rss_official",
+    "summary": "fix(release): avoid repeated payload downloads during receipt recover…",
+    "content": "fix(release): avoid repeated payload downloads during receipt recover…",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
+  },
+  {
+    "id": "efe5676d-945d-5c48-b530-37f6b520260e",
+    "company": "Hermes Agent",
+    "title": "v0.23.1+canary.20261110T064422Z",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.23.1%2Bcanary.20261110T064422Z",
+    "published_at": "2026-11-10T06:44:24+00:00",
+    "source_type": "rss_official",
+    "summary": "Hermes Agent canary 20261110T064422Z",
+    "content": "Hermes Agent canary 20261110T064422Z",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
     "id": "c9c71a8e-4508-594e-bbb1-4664b6d079de",
     "company": "OpenClaw",
     "title": "release-publish/a65cb61a7d14-1794292024: fix: authenticate release npm lineage in one owner pass (#196476)",
