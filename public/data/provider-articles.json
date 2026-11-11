@@ -12,6 +12,66 @@
     "source_key": "openai-news"
   },
   {
+    "id": "29b8e3c8-1e3e-533c-a3d3-947efcc56c1a",
+    "company": "IBM Research",
+    "title": "Tracking progress on the path to IBM Quantum Starling",
+    "url": "https://research.ibm.com/blog/path-to-starling",
+    "published_at": "2026-11-11T13:00:00+00:00",
+    "source_type": "rss_official",
+    "summary": "Advances across parallel technology areas are laying the groundwork for fault-tolerant quantum computing by the end of the decade.",
+    "content": "Advances across parallel technology areas are laying the groundwork for fault-tolerant quantum computing by the end of the decade.",
+    "source_url": "https://research.ibm.com/rss",
+    "source_key": "ibm-research"
+  },
+  {
+    "id": "374c2ffb-abdc-5bbc-8d22-e20551c68122",
+    "company": "IBM Research",
+    "title": "The year of advantage—and what comes next",
+    "url": "https://research.ibm.com/blog/qdc-2026",
+    "published_at": "2026-11-11T12:00:00+00:00",
+    "source_type": "rss_official",
+    "summary": "IBM Quantum Developer Conference 2026 brings advances in hardware, software, and applications for turning quantum advantage into real-world impact.",
+    "content": "IBM Quantum Developer Conference 2026 brings advances in hardware, software, and applications for turning quantum advantage into real-world impact.",
+    "source_url": "https://research.ibm.com/rss",
+    "source_key": "ibm-research"
+  },
+  {
+    "id": "8fc4cecb-1def-5227-a078-71a284716308",
+    "company": "IBM Research",
+    "title": "QDC 2026: what quantum developers need to know",
+    "url": "https://research.ibm.com/blog/dev-tools-qdc-2026",
+    "published_at": "2026-11-11T11:59:00+00:00",
+    "source_type": "rss_official",
+    "summary": "A developer’s guide to the hardware, software, and workflows unveiled at IBM Quantum Developer Conference 2026.",
+    "content": "A developer’s guide to the hardware, software, and workflows unveiled at IBM Quantum Developer Conference 2026.",
+    "source_url": "https://research.ibm.com/rss",
+    "source_key": "ibm-research"
+  },
+  {
+    "id": "0d5c1791-08e0-5e60-a95d-0bcbaf403b32",
+    "company": "Codex CLI",
+    "title": "0.169.0-alpha.11",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.169.0-alpha.11",
+    "published_at": "2026-11-11T10:17:38+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.169.0-alpha.11",
+    "content": "Release 0.169.0-alpha.11",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "5eb3d0b8-0598-5b65-b11c-04384b94e806",
+    "company": "Moonshot AI",
+    "title": "@moonshot-ai/kimi-code@2.6.0-canary.20261111095258-5518d54",
+    "url": "https://github.com/MoonshotAI/kimi-code/releases/tag/%40moonshot-ai%2Fkimi-code%402.6.0-canary.20261111095258-5518d54",
+    "published_at": "2026-11-11T10:08:16+00:00",
+    "source_type": "rss_official",
+    "summary": "What's Changed fix(agent-core-v2): stop cancelling compaction when reminders arrive mid-compaction by @liruifengv in #4822 fix(windows): 修复长路径启动崩溃与文件搜索失败 by @pvzheroes125 in #4825 refactor(kap-server): drop the turn_id alias from the file-history queries by @wbxl2000 in #4826 fix(agent-core-v2): preserve Gemini context across turns by @7Sageer in #4827 Full Changelog :...",
+    "content": "What's Changed fix(agent-core-v2): stop cancelling compaction when reminders arrive mid-compaction by @liruifengv in #4822 fix(windows): 修复长路径启动崩溃与文件搜索失败 by @pvzheroes125 in #4825 refactor(kap-server): drop the turn_id alias from the file-history queries by @wbxl2000 in #4826 fix(agent-core-v2): preserve Gemini context across turns by @7Sageer in #4827 Full Changelog : https://github.com/MoonshotAI/kimi-code/compare/@moonshot-ai/kimi-code@2.6.0-canary.20261111052659-f26481d...@moonshot-ai/kimi-code@2.6.0-canary.20261111095258-5518d54",
+    "source_url": "https://github.com/MoonshotAI/kimi-code/releases.atom",
+    "source_key": "moonshot-kimi-code-releases"
+  },
+  {
     "id": "607a42a1-3eb5-5cd0-8521-4725d0cd0726",
     "company": "OpenAI",
     "title": "ChatGPT Plus for veterans and servicemembers",
@@ -22,6 +82,30 @@
     "content": "More than 20,000 veterans and transitioning service members have claimed a free year of ChatGPT Plus. See how they use it to prepare for civilian careers.",
     "source_url": "https://openai.com/news/rss.xml",
     "source_key": "openai-news"
+  },
+  {
+    "id": "22bda4e5-c2e7-5705-881c-67bdb4826d8b",
+    "company": "OpenClaw",
+    "title": "release-publish/087d1229ef49-1794382115: fix: release approval rejects dynamic publisher run names (#197084)",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/release-publish%2F087d1229ef49-1794382115",
+    "published_at": "2026-11-11T07:27:05+00:00",
+    "source_type": "rss_official",
+    "summary": "fix: validate release parents by workflow path Run names now include release labels and are not workflow identity. Require the canonical parent workflow path, preserve it in ClawHub bootstrap, and use it for stable closeout. Keep existing SHA, ref, attempt, repository, event, and live authority checks. Reviewed independently; local product execution prohibited by task scope. Hosted exact-head CI supplies validation. The 24 net regression lines cover dynamic titles, wrong paths, and producer...",
+    "content": "fix: validate release parents by workflow path Run names now include release labels and are not workflow identity. Require the canonical parent workflow path, preserve it in ClawHub bootstrap, and use it for stable closeout. Keep existing SHA, ref, attempt, repository, event, and live authority checks. Reviewed independently; local product execution prohibited by task scope. Hosted exact-head CI supplies validation. The 24 net regression lines cover dynamic titles, wrong paths, and producer projection. Co-authored-by: RomneyDa 6581799+RomneyDa@users.noreply.github.com fix: release approval rejects dynamic publisher run names OpenClaw-Publication: 79a96f6b-cbb4-445b-ad6a-85d16e3b64df test: align release identity fixtures with path authority Repair hosted CI findings: remove a shadowed path name and supply canonical workflow identity to the existing failed-parent closeout tests. No production behavior changes. Co-authored-by: RomneyDa 6581799+RomneyDa@users.noreply.github.com Publish openclaw/beta-publisher-identity OpenClaw-Publication: e7e234b6-f03b-4425-bc6d-20c81ea4f485 Co-authored-by: RomneyDa 6581799+RomneyDa@users.noreply.github.com",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
+  },
+  {
+    "id": "6b98c9bd-f573-5e2e-8b2b-80b7407a96d6",
+    "company": "Hermes Agent",
+    "title": "v0.23.1+canary.20261111T064456Z",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.23.1%2Bcanary.20261111T064456Z",
+    "published_at": "2026-11-11T06:44:57+00:00",
+    "source_type": "rss_official",
+    "summary": "Hermes Agent canary 20261111T064456Z",
+    "content": "Hermes Agent canary 20261111T064456Z",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
   },
   {
     "id": "15ece41e-b627-583b-97e5-7a9a953c30d8",
@@ -454,6 +538,18 @@
     "content": "fix(release): avoid repeated payload downloads during receipt recover…",
     "source_url": "https://github.com/openclaw/openclaw/releases.atom",
     "source_key": "openclaw-releases"
+  },
+  {
+    "id": "dc81738e-cbbe-515e-9adf-c847c8d6ace0",
+    "company": "OpenAI",
+    "title": "Singapore Airlines elevates travel & work with OpenAI technology",
+    "url": "https://openai.com/index/singapore-airlines-travel-work",
+    "published_at": "2026-11-10T08:00:00+00:00",
+    "source_type": "rss_official",
+    "summary": "Discover how Singapore Airlines uses OpenAI models and API to enhance customer support, travel discovery, and employee productivity, doubling CSAT for its Kris chatbot.",
+    "content": "Discover how Singapore Airlines uses OpenAI models and API to enhance customer support, travel discovery, and employee productivity, doubling CSAT for its Kris chatbot.",
+    "source_url": "https://openai.com/news/rss.xml",
+    "source_key": "openai-news"
   },
   {
     "id": "3e0aa268-d475-5972-a4f5-2d0ba3a36b58",
