@@ -1,5 +1,113 @@
 [
   {
+    "id": "f3bdcfc0-6371-593c-bc3f-2f8de620db87",
+    "company": "OpenAI",
+    "title": "Gilbert + Tobin rethinks the business of law with AI",
+    "url": "https://openai.com/index/gilbert-tobin-sam-nickless",
+    "published_at": "2026-11-12T00:00:00+00:00",
+    "source_type": "rss_official",
+    "summary": "A conversation with Sam Nickless, Partner and Chief Executive Officer at Gilbert + Tobin.",
+    "content": "A conversation with Sam Nickless, Partner and Chief Executive Officer at Gilbert + Tobin.",
+    "source_url": "https://openai.com/news/rss.xml",
+    "source_key": "openai-news"
+  },
+  {
+    "id": "607a42a1-3eb5-5cd0-8521-4725d0cd0726",
+    "company": "OpenAI",
+    "title": "ChatGPT Plus for veterans and servicemembers",
+    "url": "https://openai.com/index/chatgpt-plus-for-veterans",
+    "published_at": "2026-11-11T08:00:00+00:00",
+    "source_type": "rss_official",
+    "summary": "More than 20,000 veterans and transitioning service members have claimed a free year of ChatGPT Plus. See how they use it to prepare for civilian careers.",
+    "content": "More than 20,000 veterans and transitioning service members have claimed a free year of ChatGPT Plus. See how they use it to prepare for civilian careers.",
+    "source_url": "https://openai.com/news/rss.xml",
+    "source_key": "openai-news"
+  },
+  {
+    "id": "15ece41e-b627-583b-97e5-7a9a953c30d8",
+    "company": "Moonshot AI",
+    "title": "@moonshot-ai/kimi-code@2.6.0-canary.20261111052659-f26481d",
+    "url": "https://github.com/MoonshotAI/kimi-code/releases/tag/%40moonshot-ai%2Fkimi-code%402.6.0-canary.20261111052659-f26481d",
+    "published_at": "2026-11-11T05:38:42+00:00",
+    "source_type": "rss_official",
+    "summary": "What's Changed refactor(kap-server): drop the WebSocket handshake and acks by @wbxl2000 in #4738 fix: direct skill invocation through Skill tool by @RealKai42 in #4713 fix: stabilize workspace primary changes by @liruifengv in #4689 feat: support same-name skills across workspace directories by @liruifengv in #4690 feat(tower): import artifact woker by @tpoisonooo in #4427 fix(agent-core-v2): reduce workspace registry read amplification by @hunshcn in #4747 feat(tui): keep fullscreen...",
+    "content": "What's Changed refactor(kap-server): drop the WebSocket handshake and acks by @wbxl2000 in #4738 fix: direct skill invocation through Skill tool by @RealKai42 in #4713 fix: stabilize workspace primary changes by @liruifengv in #4689 feat: support same-name skills across workspace directories by @liruifengv in #4690 feat(tower): import artifact woker by @tpoisonooo in #4427 fix(agent-core-v2): reduce workspace registry read amplification by @hunshcn in #4747 feat(tui): keep fullscreen transcript groups steady and show live progress by @Grapedge in #4751 fix: request web search in links mode by @7Sageer in #4764 fix: apply configured permission rules when an agent starts by @7Sageer in #4757 fix(kimi-code): make fullscreen copy reach the clipboard in tmux and on Linux by @Grapedge in #4755 chore: sync web dist from code-app by @kimi-agent-bot in #4765 chore(release): use patch bumps for tower changes by @sailist in #4768 fix(agent-core-v2): watch explicit skill directories by @pvzheroes125 in #4766 fix(agent-core-v2): reuse uploaded MCP tool images by @pvzheroes125 in #4767 fix(agent-core-v2): watch extra skill directories by @pvzheroes125 in #4770 chore: sync web dist from code-app by @kimi-agent-bot in #4783 feat(agent-core-v2): persist user and project permission rules by @sailist in #4550 feat: add minimum version upgrade prompts by @liruifengv in #4756 feat(tui): default to fullscreen mode when experimental flag is set by @Grapedge in #4771 build(nix): upgrade pnpm dependency fetcher to v5 by @sailist in #4748 fix(server): support Unicode download filenames by @kimi-agent-bot in #4563 test(tui): bound queued message timer pumping by @kimi-agent-bot in #4793 test(server): cover download filename edge cases by @kimi-agent-bot in #4790 feat: include gitignored files in file suggestions by @sailist in #4752 fix: keep skill catalog visible when Skill tool is disabled by @liruifengv in #4799 fix(server): correct raw file download responses by @kimi-agent-bot in #4800 fix(kap-server): end tool calls cut short by a stop as interrupted by @wbxl2000 in #4772 fix(kap-server): reject a manual compaction while another one is running by @wbxl2000 in #4773 fix(kap-server): apply the busy filter before paging the session list by @wbxl2000 in #4774 fix(kap-server): broadcast event.session.restored when an archived session is restored by @wbxl2000 in #4775 fix(kap-server): map auth and Tower errors to their codes and stop sending stack traces by @wbxl2000 in #4777 feat(kap-server): take turn_number in the file-history queries by @wbxl2000 in #4788 fix(agent-core-v2): end a question cut short by a stop as cancelled by @wbxl2000 in #4779 fix(kap-server): keep the tool result note on tool_call items by @wbxl2000 in #4776 feat(kap-server): link tool_call items to the task they run as by @wbxl2000 in #4789 fix(agent-core-v2): spawn Windows batch script commands through cmd.exe by @liruifengv in #4791 fix(kap-server): apply agent_config and custom metadata when creating a session by @wbxl2000 in #4778 fix(kap-server): show only the scheduled prompt in cron-fired user messages by @wbxl2000 in #4780 docs(changelog): sync 2.5.3 from apps/kimi-code/CHANGELOG.md by @kimi-agent-bot in #4810 docs(server-api): drop removed endpoints and document the ones the reference missed by @wbxl2000 in #4809 chore: sync release/2026-11-10 back to main by @kimi-agent-bot in #4811 refactor(agent-core-v2): port agent loop runtime core by @sailist in #4630 feat(tui): use primary bullet for NotifyUser updates in fullscreen mode by @Grapedge in #4814 chore: sync web dist from code-app by @kimi-agent-bot in #4816 chore: remove loop runtime working notes by @sailist in #4817 test: remove redundant and low-value test cases by @kimi-agent-bot in #4746 New Contributors @hunshcn made their first contribution in #4747 Full Changelog : https://github.com/MoonshotAI/kimi-code/compare/@moonshot-ai/kimi-code@2.6.0-canary.20261109040420-9c1a9c3...@moonshot-ai/kimi-code@2.6.0-canary.20261111052659-f26481d",
+    "source_url": "https://github.com/MoonshotAI/kimi-code/releases.atom",
+    "source_key": "moonshot-kimi-code-releases"
+  },
+  {
+    "id": "9a96eb61-7205-5f2f-8675-d85e9b05aeb9",
+    "company": "Hugging Face",
+    "title": "BotPsy: On-Device Personal Assistant with a Sub-Billion-Parameter Agentic Language Model",
+    "url": "https://huggingface.co/blog/qvac/botpsy",
+    "published_at": "2026-11-11T05:01:16+00:00",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://huggingface.co/blog/feed.xml",
+    "source_key": "hugging-face-blog"
+  },
+  {
+    "id": "2f40899e-0aaa-5eb5-ab29-8fb840668d49",
+    "company": "OpenClaw",
+    "title": "release-publish/45beb6735fe6-1794373427",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/release-publish%2F45beb6735fe6-1794373427",
+    "published_at": "2026-11-11T04:56:23+00:00",
+    "source_type": "rss_official",
+    "summary": "fix(release): stop ClawHub publication from blocking core and closeou…",
+    "content": "fix(release): stop ClawHub publication from blocking core and closeou…",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
+  },
+  {
+    "id": "31e51bb9-8a75-5867-9471-48433b925961",
+    "company": "NVIDIA AI",
+    "title": "How AI Helps Recyclers Turn Mixed Waste Into Reusable Material",
+    "url": "https://blogs.nvidia.com/blog/ai-recycling-startups/",
+    "published_at": "2026-11-11T03:00:20+00:00",
+    "source_type": "rss_official",
+    "summary": "Vision AI and robotics pick what’s worth recovering out of conveyor belts of used clothing, bottles and mixed recyclables, diverting thousands of tons of materials from landfills.",
+    "content": "Vision AI and robotics pick what’s worth recovering out of conveyor belts of used clothing, bottles and mixed recyclables, diverting thousands of tons of materials from landfills.",
+    "source_url": "https://blogs.nvidia.com/feed/",
+    "source_key": "nvidia-blog"
+  },
+  {
+    "id": "d519d5b0-a71a-511d-950b-2c8b06bd5632",
+    "company": "OpenClaw",
+    "title": "release-publish/282ac0091707-1794364566",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/release-publish%2F282ac0091707-1794364566",
+    "published_at": "2026-11-11T02:35:00+00:00",
+    "source_type": "rss_official",
+    "summary": "perf(release): reduce repeated plugin publication evidence requests (…",
+    "content": "perf(release): reduce repeated plugin publication evidence requests (…",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
+  },
+  {
+    "id": "9372ae57-feb3-5a83-86df-486d2474aabe",
+    "company": "OpenClaw",
+    "title": "release-publish/3bf539dafb15-1794363903: fix(release): reject npm fanout that exceeds GitHub quota",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/release-publish%2F3bf539dafb15-1794363903",
+    "published_at": "2026-11-11T02:24:16+00:00",
+    "source_type": "rss_official",
+    "summary": "fix(release): reject npm fanout that exceeds GitHub quota Co-authored-by: RomneyDa fix(release): reject npm fanout that exceeds GitHub quota OpenClaw-Publication: 075c197a-482c-4f11-84fe-325e75228c8d test(release): deduplicate immutable replay assertions Keep the aggregate zero-immutable-requests invariant, which already implies the removed per-route checks. Recover seven test lines without weakening replay coverage or changing quota admission. Co-authored-by: RomneyDa Publish...",
+    "content": "fix(release): reject npm fanout that exceeds GitHub quota Co-authored-by: RomneyDa 6581799+RomneyDa@users.noreply.github.com fix(release): reject npm fanout that exceeds GitHub quota OpenClaw-Publication: 075c197a-482c-4f11-84fe-325e75228c8d test(release): deduplicate immutable replay assertions Keep the aggregate zero-immutable-requests invariant, which already implies the removed per-route checks. Recover seven test lines without weakening replay coverage or changing quota admission. Co-authored-by: RomneyDa 6581799+RomneyDa@users.noreply.github.com Publish openclaw/close-publication-quota-amplification-gap OpenClaw-Publication: 96d8aa36-b131-4437-9656-0730f7d98ecb Co-authored-by: RomneyDa 6581799+RomneyDa@users.noreply.github.com",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
+  },
+  {
+    "id": "2fc74f7a-724b-5aba-9ced-4ed46e820803",
+    "company": "Amazon AI",
+    "title": "Introducing Kimi K3.1 Pro on Amazon Bedrock",
+    "url": "https://aws.amazon.com/blogs/machine-learning/introducing-kimi-k3-1-pro-on-amazon-bedrock/",
+    "published_at": "2026-11-11T01:07:19+00:00",
+    "source_type": "rss_official",
+    "summary": "Kimi K3.1 Pro from Moonshot AI is now available on Amazon Bedrock. Learn how to get started through the OpenAI-compatible Chat Completions, Responses, and Converse APIs, optimize inference with explicit prompt caching, and use the model as a coding assistant in OpenCode.",
+    "content": "Kimi K3.1 Pro Highspeed from Moonshot AI is now available on Amazon Bedrock . Part of Moonshot AI’s new K3.1 series, it’s a post-trained version of Kimi K3 with the same 3T-class open-weight architecture and 1-million-token context window, trained with substantially more post-training compute. According to Moonshot AI, that extra training targets long-horizon agentic work and fewer factual errors. It also improves professional tasks such as financial modeling and office documents, and coding for game engines, 3D scenes, and computer-aided design (CAD) scripts. Kimi K3.1 Pro Highspeed generates output tokens at a higher rate and Moonshot AI reports 2–3 times the speed of Kimi K3.1 Pro. Kimi K3.1 Pro Highspeed uses the same endpoint, APIs, and features as Kimi K3 on Amazon Bedrock. If you already build with Kimi K3, you can try it by changing the model ID in your existing code. Kimi K3.1 Pro Highspeed supports tool calling, structured output, configurable reasoning, image input, and streaming. You can adopt Kimi K3.1 Pro Highspeed without changing your security posture. Your data is processed within the AWS data boundary, isn’t shared with Moonshot AI, and isn’t used to train the model. Zero data retention is always enabled for inference requests, and with zero operator access, AWS operators can’t view your prompts and completions during inference. In this post, we show you how to get started with Kimi K3.1 Pro Highspeed on Amazon Bedrock. We also cover how to lower costs with the Flex tier, explicit prompt caching for repeated context, and how to use the model as a coding assistant in OpenCode. Get started with Kimi K3.1 Pro Highspeed on Amazon Bedrock To try the model without writing code, open the Amazon Bedrock console , choose Test , then Playground , and select Kimi K3.1 . From code, Kimi K3.1 Pro Highspeed is available on the bedrock-runtime endpoint through the OpenAI-compatible Chat Completions and Responses APIs, and through the Amazon Bedrock Converse and Invoke APIs. We recommend the Chat Completions API. You reach the model through cross-Region inference profiles: global.moonshotai.kimi-k3.1 routes requests to any supported commercial AWS Region, and costs less per token than the geographic profiles. We recommend it for most workloads. us.moonshotai.kimi-k3.1 keeps processing within US Regions, and in.moonshotai.kimi-k3.1 keeps it within India Regions, for workloads with data residency requirements. Prerequisites To follow the examples, you need: An AWS account with access to Amazon Bedrock. Python 3.11 or later, with the OpenAI SDK , aws-bedrock-token-generator , and boto3 installed ( pip install -U openai aws-bedrock-token-generator boto3 ). An AWS Identity and Access Management (IAM) identity allowed to call bedrock:InvokeModel and bedrock:InvokeModelWithResponseStream on the Kimi K3.1 Pro Highspeed inference profiles. Add bedrock:CallWithBearerToken if you authenticate with a bearer token. Call Kimi K3.1 Pro Highspeed with the Chat Completions API If your application already uses the OpenAI SDK, point it at the Amazon Bedrock endpoint and change the model name. The following example creates a short-term bearer token from your AWS credentials and sends one request: from openai import OpenAI from aws_bedrock_token_generator import provide_token REGION = \"us-west-2\" MODEL_ID = \"global.moonshotai.kimi-k3.1\" # A short-term token derived from your AWS credentials, so no long-lived key is stored in code client = OpenAI( base_url=f\"https://bedrock-runtime.{REGION}.amazonaws.com/openai/v1\", api_key=provide_token(region=REGION), ) completion = client.chat.completions.create( model=MODEL_ID, messages=[ {\"role\": \"system\", \"content\": \"You are a concise senior engineer.\"}, {\"role\": \"user\", \"content\": \"When should I prefer a queue over a stream?\"}, ], reasoning_effort=\"high\", ) print(completion.choices[0].message.content) Kimi K3.1 Pro Highspeed always reasons before it answers. With reasoning_effort , you control how much: low , high , or max . If you don’t set it, the model uses max , so a lower value is the most direct way to reduce latency and output tokens on simpler tasks. Call Kimi K3.1 Pro Highspeed with the Responses API The same client works with the Responses API, which uses reasoning.effort for the same setting: response = client.responses.create( model=MODEL_ID, input=\"Summarize the trade-offs between optimistic and pessimistic locking.\", reasoning={\"effort\": \"low\"}, ) print(response.output_text) Call Kimi K3.1 Pro Highspeed with the Converse API If you already use the Amazon Bedrock Converse API, the change is the model ID: import boto3 bedrock = boto3.client(\"bedrock-runtime\", region_name=\"us-west-2\") response = bedrock.converse( modelId=\"global.moonshotai.kimi-k3.1\", messages=[{\"role\": \"user\", \"content\": [{\"text\": \"Explain idempotency keys in two sentences.\"}]}], ) # The model can return a reasoning block before the answer, so pick the text block content = response[\"output\"][\"message\"][\"content\"] print(next(block[\"text\"] for block in content if \"text\" in block)) Lower costs with the Flex tier The Flex tier serves Kimi K3.1 Pro Highspeed at half the Standard price, in exchange for potentially longer response times. It’s well suited to workloads where cost efficiency is a higher priority than response time, such as model evaluations, content summarization, and background tasks in agentic workflows. Because you choose the tier for each request, one application can mix tiers. For example, the same application could use Priority for latency-critical requests, Standard for everyday traffic, and Flex for cost-sensitive work. Your on-demand quota is shared across the Standard, Priority, and Flex tiers. To use Flex, set service_tier to flex . The following example reuses the Chat Completions client from earlier: completion = client.chat.completions.create( model=MODEL_ID, messages=[{\"role\": \"user\", \"content\": \"List edge cases to test in a function that parses ISO 8601 dates.\"}], service_tier=\"flex\", ) print(completion.choices[0].message.content) print(completion.service_tier) # The tier that served the request On the Converse API, set serviceTier to {\"type\": \"flex\"} instead. To see how much of your traffic each tier served, use the ServiceTier and ResolvedServiceTier dimensions in Amazon CloudWatch . We recommend starting with a small share of your traffic on Flex and comparing latency and cost before you move more. Optimize inference with explicit prompt caching Agents and coding assistants resend the same large prefix on every turn: system instructions, tool definitions, repository conventions, and reference documents. Kimi K3.1 Pro Highspeed caches repeated prefixes automatically, and with explicit prompt caching, you can mark where the stable prefix ends to improve your cache hit rate. Later requests reuse that prefix instead of processing it again, which lowers both latency and input cost for long, repeated context. A few rules apply: Explicit caching works on the Chat Completions, Responses, and Invoke APIs, but not on Converse. A prompt_cache_breakpoint must follow at least 256 tokens of stable content. Cached content is retained for at least 30 minutes. Cache writes are billed at a higher rate than standard input. Cache reads are billed at a discounted rate and don’t count toward your input tokens-per-minute quota. The following example caches a long system prompt and adds a second breakpoint after the user content, so a follow-up question on the same document can reuse both layers: from pathlib import Path LONG_STATIC_PROMPT = Path(\"repo_guidelines.md\").read_text() # stable content, at least 256 tokens QUESTION = \"Which of these guidelines apply to database migrations?\" def cached_text(text): # Marks the end of a cacheable prefix return {\"type\": \"input_text\", \"text\": text, \"prompt_cache_breakpoint\": {\"mode\": \"explicit\"}} response = client.responses.create( model=MODEL_ID, extra_body={\"prompt_cache_options\": {\"mode\": \"explicit\"}}, input=[ {\"type\": \"message\", \"role\": \"system\", \"content\": [cached_text(LONG_STATIC_PROMPT)]}, {\"type\": \"message\", \"role\": \"user\", \"content\": [cached_text(QUESTION)]}, ], ) details = response.usage.input_tokens_details print(f\"Cache read: {details.cached_tokens} tokens\") # greater than 0 on a cache hit For more information, refer to Prompt caching for faster model inference . Kimi K3.1 Pro Highspeed in practice: Coding with OpenCode OpenCode is an open source, model-agnostic coding agent that runs in your terminal. You can connect it to Kimi K3.1 Pro Highspeed through the Amazon Bedrock Chat Completions API, using OpenCode’s OpenAI-compatible provider and an Amazon Bedrock API key . To create a key, open the Amazon Bedrock console in the AWS Region that you set in baseURL , then choose API keys . Short-term keys last up to 12 hours, work only in the Region where you generate them, and are recommended for production use. Long-term keys are intended for exploration. Add the following to ~/.config/opencode/opencode.json , replacing the Region in baseURL with your own: { \"$schema\": \"https://opencode.ai/config.json\", \"providers\": { \"amazon-bedrock-chat-completions\": { \"name\": \"Amazon Bedrock (Chat Completions)\", \"package\": \"@opencode/ai/providers/openai-compatible\", \"settings\": { \"baseURL\": \"https://bedrock-runtime.us-west-2.amazonaws.com/openai/v1\" }, \"models\": { \"global.moonshotai.kimi-k3.1\": { \"name\": \"Kimi K3.1 Pro Highspeed\", \"capabilities\": { \"reasoning\": { \"supported\": true, \"effort\": [\"low\", \"high\", \"max\"] } } } } } }, \"model\": \"amazon-bedrock-chat-completions/global.moonshotai.kimi-k3.1\" } Start OpenCode in your project directory, enter /connect , choose Amazon Bedrock (Chat Completions) , and paste your API key as shown in Figure 1. OpenCode stores the key, so you connect once per key. To switch between Kimi K3.1 Pro Highspeed and other models during a session, enter /models . Figure 1: Connecting OpenCode to the Amazon Bedrock (Chat Completions) provider The capabilities entry in the configuration lists the reasoning effort levels that the model supports, so OpenCode offers low , high , and max as variants of the model, as shown in Figure 2: Figure 2: Reasoning effort variants for Kimi K3.1 Pro Highspeed in OpenCode Output speed matters most in agentic coding. To complete a single task, a coding agent makes many model calls in a row. It reads files, plans a change, edits code, runs tests, and fixes what fails. Each call has to finish before the next one starts, and much of that time is spent generating reasoning and code. A higher output-token rate shortens every step, so the whole edit-test-fix loop finishes sooner and you wait less between iterations. Availability Kimi K3.1 Pro Highspeed is available on Amazon Bedrock through the global.moonshotai.kimi-k3.1 , us.moonshotai.kimi-k3.1 , and in.moonshotai.kimi-k3.1 cross-Region inference profiles. For supported Regions and model details, refer to the Kimi K3.1 Pro Highspeed model card and Regional availability . For pricing, refer to Amazon Bedrock pricing . To get started, try Kimi K3.1 Pro Highspeed on the Amazon Bedrock console . To discuss your use case with the Amazon Bedrock team, connect with us . About the authors Aris Tsakpinis Aris is a Senior Specialist Solutions Architect for Generative AI focusing on open-weight models on Amazon Bedrock and the broader generative AI open-source ecosystem. Alongside his professional role, he is pursuing a PhD in Machine Learning Engineering at the University of Regensburg, where his research focuses on applied natural language processing in scientific domains. Chaitanya Manani Chaitanya is a Software Development Manager for Amazon Bedrock and was a founding member of the service. He leads the team that designed and built the Amazon Bedrock model hosting infrastructure and now runs it, serving open-weight and proprietary models. Outside of work, he enjoys hiking and spending time outdoors. Saurabh Trikande Saurabh is a Senior Product Manager for Amazon Bedrock and Amazon SageMaker Inference. He is passionate about working with customers and partners, motivated by the goal of democratizing AI. He focuses on core challenges related to deploying complex AI applications, inference with multi-tenant models, cost optimizations, and making the deployment of generative AI models more accessible. In his spare time, Saurabh enjoys hiking, learning about innovative technologies, following TechCrunch, and spending time with his family. Alex Thewsey Alex is an AI Specialist Solutions Architect at AWS. He focuses on how open source technologies and open weight models can help customers around the world to build innovative AI solutions and tackle AI governance challenges.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/",
+    "source_key": "aws-machine-learning"
+  },
+  {
     "id": "55969f6f-5837-5379-aae4-1a41a16c7eaa",
     "company": "Amazon AI",
     "title": "Build a daily dependency watcher with LangGraph and Amazon Bedrock AgentCore web search",
@@ -26,7 +134,7 @@
   {
     "id": "d2307c25-5a84-53c0-a543-73b6fb2cfffd",
     "company": "Codex CLI",
-    "title": "rust-v0.169.0-alpha.10",
+    "title": "0.169.0-alpha.10",
     "url": "https://github.com/openai/codex/releases/tag/rust-v0.169.0-alpha.10",
     "published_at": "2026-11-10T22:29:00+00:00",
     "source_type": "rss_official",
@@ -62,7 +170,7 @@
   {
     "id": "7a560326-eaac-5389-af25-6986c49fe951",
     "company": "Codex CLI",
-    "title": "rust-v0.167.0-alpha.4.2",
+    "title": "0.167.0-alpha.4.2",
     "url": "https://github.com/openai/codex/releases/tag/rust-v0.167.0-alpha.4.2",
     "published_at": "2026-11-10T19:42:33+00:00",
     "source_type": "rss_official",
@@ -574,6 +682,18 @@
     "content": "",
     "source_url": "https://huggingface.co/blog/feed.xml",
     "source_key": "hugging-face-blog"
+  },
+  {
+    "id": "0f664bf3-e0c2-5e65-b7d8-c78d18088493",
+    "company": "OpenAI",
+    "title": "Cogent and OpenAI build cyber defense factories for enterprises",
+    "url": "https://openai.com/index/cogent-security",
+    "published_at": "2026-11-10T00:00:00+00:00",
+    "source_type": "rss_official",
+    "summary": "Cogent combines OpenAI models with enterprise context to help automatically remediate vulnerabilities with agents.",
+    "content": "Cogent combines OpenAI models with enterprise context to help automatically remediate vulnerabilities with agents.",
+    "source_url": "https://openai.com/news/rss.xml",
+    "source_key": "openai-news"
   },
   {
     "id": "42386a18-18a0-5518-baff-d929b920fd1f",
