@@ -1,5 +1,173 @@
 [
   {
+    "id": "f8bc6b46-af71-52ba-ad92-d4e08619da0d",
+    "company": "Amazon AI",
+    "title": "Build a model improvement flywheel with Amazon SageMaker HyperPod Data Capture",
+    "url": "https://aws.amazon.com/blogs/machine-learning/build-a-model-improvement-flywheel-with-amazon-sagemaker-hyperpod-data-capture/",
+    "published_at": "2026-11-13T18:01:15+00:00",
+    "source_type": "rss_official",
+    "summary": "Amazon SageMaker HyperPod Data Capture records live inference inputs and outputs to Amazon S3. This post walks through one end-to-end example: capturing a support router's production traffic, surfacing a new-product blind spot with Amazon Athena, fine-tuning on the captured data with the HyperPod training operator, and measuring the before-and-after lift.",
+    "content": "Foundation models deployed on Amazon SageMaker HyperPod meet inputs that no pre-curated dataset covers: domain-specific jargon, unexpected formats, new products, and changing user behavior. Without a record of production inference data, teams can’t detect drift, find failure patterns, or use real interactions to improve the model. Amazon SageMaker HyperPod now provides Data Capture, a built-in capability that records live inference inputs and outputs to Amazon Simple Storage Service (Amazon S3) at three independent tiers, with minimal latency impact and zero impact on model availability. In this post, we walk through one complete example on a single SageMaker HyperPod cluster. A home-appliance support router captures its production traffic, Amazon Athena queries surface a new-product blind spot, a SQL policy labels the captured records, and a fine-tune on that data teaches the router the new product. We measure accuracy before and after, on data that could not have existed before the model was deployed. The inference operator serves the model on one node, and the training operator runs the fine-tuning on another. We use synthetic data for the walkthrough. The scripts, manifests, SQL, synthetic datasets, and expected outputs are available in the accompanying GitHub repository . Three-tier Data Capture architecture HyperPod Data Capture provides three independent tiers, each at a different point in the request path. You can turn on any combination in the same dataCapture block. Tier 1: SageMaker endpoint Tier 2: Load balancer Tier 3: Model pod What’s captured Full request/response payloads Application Load Balancer (ALB) access-log fields: request line, status codes, timings, client IP, user agent Full request/response payloads plus event metadata Managed by SageMaker native data capture ALB access logs HyperPod inference operator (NGINX + OTel collector + S3 uploader sidecars) Best for Compliance, Model Monitor, audit Traffic and error-rate monitoring at low cost Debugging, analytics, training-data collection Configuration sagemakerEndpoint: — sampling %, input/output, AWS KMS loadBalancer: { enabled: true } modelPod: — sampling %, input/output, buffer, max payload size, AWS KMS, content types Tiers 1 and 3 both store full payloads, so enabling both stores every record twice. Use Tier 1 for compliance and Model Monitor, Tier 2 when you only need traffic metadata, and Tier 3 when you intend to use the payloads. This post uses Tier 3 only. Because Tier 3 records complete payloads, which can include names, addresses, and order numbers, protect that data before it becomes training data. Use sampling, AWS Key Management Service (AWS KMS) encryption ( kmsKeyId ), S3 lifecycle rules, and personally identifiable information (PII) redaction (for example, with Amazon Comprehend). Prerequisites A SageMaker HyperPod cluster orchestrated by Amazon Elastic Kubernetes Service (Amazon EKS), with the inference operator installed ( Setting up your HyperPod clusters for model deployment ) and the training operator EKS add-on amazon-sagemaker-hyperpod-training-operator installed ( Installing the training operator ). Two available NVIDIA GPUs , one for serving and one for training. We used an ml.g6e.8xlarge for serving and an ml.g6e.xlarge for training (one 48 GB NVIDIA L40S each). The serving pod holds its GPU for the life of the endpoint, so with only one GPU the training pod stays Pending . kubectl configured for the cluster. An S3 bucket in the same Region. Confirm both operators are installed. The command returns two rows: kubectl get crd | grep -E 'inferenceendpointconfigs|hyperpodpytorchjobs' hyperpodpytorchjobs.sagemaker.amazonaws.com 2026-09-21T10:57:14Z inferenceendpointconfigs.inference.sagemaker.aws.amazon.com 2026-08-06T11:58:53Z Solution overview The following diagram shows the five steps of the walkthrough on one SageMaker HyperPod cluster: capture every request and response to Amazon S3, analyze the captures with Athena, label them with a SQL policy, fine-tune with the training operator on a second GPU, and redeploy side by side with capture still on. Figure 1: The five-step flywheel on a single SageMaker HyperPod cluster, from capture through Athena analysis, labeling, fine-tuning, and redeploy The inference operator adds three sidecars to the model pod. Every request that passes through the NGINX proxy is copied to an OpenTelemetry collector, batched, and written to S3 through a Mountpoint-S3 volume. Athena reads those files in place. The training operator runs the fine-tune as a HyperPodPyTorchJob on a second GPU, and the new model is served by a second endpoint that also has capture on. Step 0: Set your variables Every later step reads these. Edit the first block, then paste the whole thing: # --- edit these --- export EKS_CLUSTER_NAME=\"my-hyperpod-eks\" export AWS_REGION=\"us-east-1\" export BUCKET=\"amzn-s3-demo-bucket\" export SERVE_INSTANCE_TYPE=\"ml.g6e.8xlarge\" # node type for the first endpoint export TRAIN_INSTANCE_TYPE=\"ml.g6e.xlarge\" # node type for the fine-tuning job # --- leave as-is --- export AWS_DEFAULT_REGION=\"$AWS_REGION\" export ENDPOINT_NAME=\"appliance-router\" export MODEL_LOCATION=\"models/qwen2.5-3b-instruct\" export MODEL_V2_LOCATION=\"models/qwen2.5-3b-router-v2\" export TRAIN_SA=\"flywheel\" # service account with S3 access via EKS Pod Identity aws eks update-kubeconfig --name \"$EKS_CLUSTER_NAME\" --region \"$AWS_REGION\" render() { python3 -c 'import os,sys; sys.stdout.write(os.path.expandvars(sys.stdin.read()))'; } Step 1: Stage the base model in S3 We use Qwen2.5-3B-Instruct because it is small enough to fine-tune in about a minute and fits on a single L40S. pip install -q huggingface_hub python3 -c \"from huggingface_hub import snapshot_download; \\ snapshot_download('Qwen/Qwen2.5-3B-Instruct', local_dir='qwen2.5-3b-instruct')\" aws s3 sync qwen2.5-3b-instruct \"s3://${BUCKET}/${MODEL_LOCATION}/\" --exclude \".cache/*\" Step 2: IAM permissions Four identities need access. For the policy statements, see Data capture for inference on HyperPod . The Mountpoint-S3 CSI driver role. Tier 3 capture writes through a Mountpoint-S3 volume, and the driver authenticates as its own IAM roles for service accounts (IRSA) role, not as the pod’s service account. It needs s3:PutObject , s3:AbortMultipartUpload , and s3:DeleteObject on your capture bucket, plus kms:Decrypt , kms:GenerateDataKey , and kms:DescribeKey if you set kmsKeyId . If this is missing, the endpoint stays healthy and requests succeed, but no captures appear. See Mountpoint for Amazon S3 CSI driver . The inference operator execution role. It needs s3:PutObject on your capture bucket, plus kms:Decrypt and kms:GenerateDataKey if you set kmsKeyId . The capture files themselves are written through the CSI driver role, so when no captures appear, check that role first. The training pod’s service account ( $TRAIN_SA ). Read access to the base model and training data, and write access for the merged model, through EKS Pod Identity . Athena. Read access to the capture prefix, plus a query-results location. Enabling Data Capture The next three steps deploy the router with Tier 3 capture on, check that the pod runs the capture sidecars, and confirm that records reach Amazon S3. Step 3: Deploy the model with Tier 3 capture enabled This is the whole feature: the dataCapture.modelPod.enabled: true block. Everything else is an ordinary vLLM deployment. cat > endpoint.yaml >> This is all you need to turn on Tier 3 data capture The preceding modelPod block sets 100% sampling and captures both input and output, which are the defaults. To tune it, add any of these optional fields under modelPod : modelPod: enabled: true initialSamplingPercentage: 50 # capture 50% of requests (default 100) bufferConfig: batchSize: 100 # records buffered per upload batch (default 10) flushIntervalSeconds: 60 # max seconds before a flush (default 60) payloadConfig: maxPayloadSizeKB: 1024 # truncate payloads larger than this (default: no limit) kmsKeyId: \"arn:aws:kms:...:key/...\" # encrypt captures at rest Step 4: Wait for the pod A capture-enabled pod runs four containers : the model, sidecar-reverse-proxy (NGINX), otel-collector , and s3-uploader . The model container and the pod’s app label are both named after modelName . kubectl get pods -l app=$ENDPOINT_NAME -o custom-columns=\\ 'NAME:.metadata.name,READY:.status.containerStatuses[*].ready,CONTAINERS:.spec.containers[*].name,NODE:.spec.nodeName' NAME READY CONTAINERS NODE appliance-router-849f466476-4f5v8 true,true,true,true appliance-router,s3-uploader,sidecar-reverse-proxy,otel-collector hyperpod-i-0f3fe2684afd6a583 In our run, the pod was ready about five minutes after kubectl apply , most of it spent downloading the weights. Step 5: Send a request and confirm captures land in S3 Send an inference request through the capture proxy on port 8081 , then, after the flush interval, list the capture prefix. The model itself listens on port 8000. Requests sent there bypass the proxy and are not captured. POD=$(kubectl get pod -l app=$ENDPOINT_NAME -o jsonpath='{.items[0].metadata.name}') kubectl port-forward \"pod/$POD\" 18081:8081 >/dev/null 2>&1 & sleep 5 curl -s http://localhost:18081/v1/chat/completions \\ -H 'Content-Type: application/json' \\ -d '{\"model\":\"'\"$ENDPOINT_NAME\"'\",\"messages\":[{\"role\":\"user\",\"content\":\"my fridge is not cooling\"}],\"max_tokens\":24}' echo \"Waiting for the capture buffer to flush...\"; sleep 75 aws s3 ls \"s3://${BUCKET}/capture/\" --recursive | grep '\\.jsonl$' | head 2026-09-28 15:47:14 634356 capture/20e4425092f90c7f/pod/AllTraffic/2026/09/28/15/28-15-47-12-999-ac31d31b-5156-46ad-9ccc-e8a040ab9ab2.jsonl You see one or more .jsonl objects under {s3Uri}/{uniqueID}/pod/{variant}/{YYYY}/{MM}/{DD}/{HH}/ . The uniqueID is generated per endpoint. Each line is one inference in the SageMaker data-capture format shown next. The captured record format The request and response bodies are stored base64-encoded , as the encoding field shows, so reading them back requires base64-decoding and then parsing JSON: { \"captureData\": { \"endpointInput\": { \"observedContentType\": \"application/json\", \"mode\": \"INPUT\", \"data\": \"eyJtb2RlbCI6ICJyb3V0ZXItZnJlc2giLCAidGVtcGVyYXR1cmUiOiAwLCAi...\", \"encoding\": \"BASE64\" }, \"endpointOutput\": { \"observedContentType\": \"application/json\", \"mode\": \"OUTPUT\", \"data\": \"eyJpZCI6ImNoYXRjbXBsLTctMTc5MDYxMDM2OS4wMDUtMjMxMiIsIm9iamVj...\", \"encoding\": \"BASE64\" } }, \"eventMetadata\": { \"eventId\": \"26859f07-d60b-4683-94aa-d21e7f19e746\", \"inferenceTime\": \"2026-09-28T15:46:09Z\" }, \"eventVersion\": \"0\" } Decoded, endpointInput.data is the request body the client sent and endpointOutput.data is the response the model returned. The scenario: A support-ticket router meets a product launch The deployed model is a support-ticket router for a home-appliance retailer. It uses vLLM guided JSON decoding to classify each ticket into one of six categories: ProductFridge , ProductWasher , ProductOven , ProductDishwasher , ProductMicrowave , or the catch-all Other . Guided decoding means it can only return a valid object with one of those labels: {\"category\": \"ProductWasher\", \"confidence\": 1} After the model was deployed, the retailer launched its own line of air conditioners, the Arctis series (Arctis 9K, 12K, Mini, and so on). The router has no category for them. It can’t say “this is new.” It can only pick the closest label it knows. Unless every request and response is recorded, the evidence disappears the moment the response is returned. The synthetic traffic We generated two synthetic datasets: Production traffic: 900 tickets, replayed in order through the capture proxy over 15 minutes, using the router’s original six-label prompt. The first 400 come before the launch and mention no air conditioners. In the remaining 500, the share of Arctis tickets ramps from 15% to 55%. Evaluation set: 280 labeled tickets, 40 per category, including the new ProductAC . It is held out by content : it uses symptoms, sentence templates, and Arctis model names that never appear in the traffic. Each production request looks like this (system prompt abbreviated): {\"model\": \"appliance-router\", \"temperature\": 0, \"max_tokens\": 40, \"messages\": [{\"role\": \"system\", \"content\": \"You are a support-ticket router for a home-appliance retailer. ... category is one of: ProductFridge, ProductWasher, ProductOven, ProductDishwasher, ProductMicrowave, Other. ...\"}, {\"role\": \"user\", \"content\": \"Hi, our Arctis 12K blows warm air since last week. Order #66759.\"}], \"guided_json\": {\"type\": \"object\", \"required\": [\"category\", \"confidence\"], \"properties\": {\"category\": {\"enum\": [\"ProductFridge\", \"ProductWasher\", \"ProductOven\", \"ProductDishwasher\", \"ProductMicrowave\", \"Other\"]}, \"confidence\": {\"type\": \"number\"}}}} To replay the traffic, clone the accompanying repository, generate the datasets, and send them through the capture proxy. scripts/pod.sh runs the client inside the model container, so no load balancer or DNS is needed. The client prints the three timestamps that the Athena steps use: RUN_START , LAUNCH_TS (the first post-launch ticket), and RUN_END . git clone https://github.com/awslabs/awsome-distributed-ai.git cd awsome-distributed-ai/examples/use-cases/sagemaker-hyperpod-data-capture-flywheel (cd data && python3 ../scripts/gen_dataset.py) scripts/pod.sh $ENDPOINT_NAME drive /tmp/tickets_traffic.jsonl --seconds 900 RUN_START=2026-09-28 15:52:40 sent 100/900 ... LAUNCH_TS=2026-09-28 15:59:20 ... RUN_END=2026-09-28 16:07:40 Export the three values that your run printed, and wait one flush interval: export RUN_START=\"2026-09-28 15:52:40\" LAUNCH_TS=\"2026-09-28 15:59:20\" RUN_END=\"2026-09-28 16:07:40\" sleep 75 # one flush interval Surfacing the problem with Amazon Athena Offline benchmarks still look unchanged after the launch, because they are frozen in the past. The shift is visible only in the captured production traffic. This section shows how a data scientist finds it with Athena, without provisioning any infrastructure. Step 6: Set your variables and configure an Athena helper function export ATHENA_DB=\"flywheel_demo\" export ATHENA_OUTPUT=\"s3://${BUCKET}/athena-results/\" # Each endpoint writes under its own uniqueID. Pick the prefix whose captured requests name this # endpoint, not whichever prefix sorts first (the Step 15 endpoint adds a second one). for id in $(aws s3 ls \"s3://${BUCKET}/capture/\" | awk '/PRE/{print $2}'); do key=$(aws s3 ls \"s3://${BUCKET}/capture/${id}pod/AllTraffic/\" --recursive | awk '/\\.jsonl$/{print $4; exit}') [ -n \"$key\" ] || continue model=$(aws s3 cp \"s3://${BUCKET}/${key}\" - 2>/dev/null | head -n 1 | python3 -c 'import sys, json, base64; r = json.loads(sys.stdin.readline()); print(json.loads(base64.b64decode(r[\"captureData\"][\"endpointInput\"][\"data\"]))[\"model\"])') if [ \"$model\" = \"$ENDPOINT_NAME\" ]; then export CAPTURE_LOCATION=\"s3://${BUCKET}/capture/${id}pod/AllTraffic/\"; break; fi done echo \"$CAPTURE_LOCATION\" # s3:// /capture/ /pod/AllTraffic/ # run_athena \" \": runs one statement, prints tab-separated rows, and sets LAST_QID run_athena() { local qid st qid=$(aws athena start-query-execution --query-string \"$1\" \\ --query-execution-context \"Database=$ATHENA_DB\" \\ --result-configuration \"OutputLocation=$ATHENA_OUTPUT\" \\ --output text --query 'QueryExecutionId') || return 1 while :; do st=$(aws athena get-query-execution --query-execution-id \"$qid\" \\ --output text --query 'QueryExecution.Status.State') case \"$st\" in SUCCEEDED) break ;; FAILED|CANCELLED) aws athena get-query-execution --query-execution-id \"$qid\" \\ --output text --query 'QueryExecution.Status.StateChangeReason' >&2; return 1 ;; esac sleep 2 done LAST_QID=$qid aws athena get-query-results --query-execution-id \"$qid\" \\ --output text --query 'ResultSet.Rows[*].Data[*].VarCharValue' } run_athena \"CREATE DATABASE IF NOT EXISTS ${ATHENA_DB}\" Step 7: Declare the captures to Athena (two layers) The first layer is the envelope. An external table describes the outer JSON of each record, and partition projection over year/month/day/hour maps the hourly S3 prefixes to partitions without a crawler or ADD PARTITION . The data fields are declared as plain strings, because they are base64 text. run_athena \" CREATE EXTERNAL TABLE IF NOT EXISTS inference_captures ( captureData struct , endpointOutput: struct >, eventMetadata struct , eventVersion string ) PARTITIONED BY (year string, month string, day string, hour string) ROW FORMAT SERDE 'org.openx.data.jsonserde.JsonSerDe' LOCATION '${CAPTURE_LOCATION}' TBLPROPERTIES ( 'projection.enabled'='true', 'projection.year.type'='integer', 'projection.year.range'='2026,2035', 'projection.month.type'='integer', 'projection.month.range'='1,12', 'projection.month.digits'='2', 'projection.day.type'='integer', 'projection.day.range'='1,31', 'projection.day.digits'='2', 'projection.hour.type'='integer', 'projection.hour.range'='0,23', 'projection.hour.digits'='2', 'storage.location.template'='${CAPTURE_LOCATION}\\${year}/\\${month}/\\${day}/\\${hour}/' )\" The second layer is a view that decodes each record once. from_utf8(from_base64(...)) turns the payloads back into JSON. Without it, every extraction returns NULL . The ticket is the user message ( messages[1] , because messages[0] is the system prompt). The model’s answer is a JSON string inside the response JSON, so it needs a second extraction. run_athena \" CREATE OR REPLACE VIEW preds AS WITH decoded AS ( SELECT CAST(from_iso8601_timestamp(eventMetadata.inferenceTime) AS timestamp) AS ts, from_utf8(from_base64(captureData.endpointInput.data)) AS req, from_utf8(from_base64(captureData.endpointOutput.data)) AS resp FROM inference_captures WHERE year = '${RUN_START:0:4}' AND month = '${RUN_START:5:2}' AND day = '${RUN_START:8:2}' ) SELECT ts, json_extract_scalar(req, '\\$.messages[1].content') AS ticket_text, json_extract_scalar(json_extract_scalar(resp, '\\$.choices[0].message.content'), '\\$.category') AS predicted_category, CAST(json_extract_scalar(json_extract_scalar(resp, '\\$.choices[0].message.content'), '\\$.confidence') AS double) AS confidence FROM decoded WHERE ts >= timestamp '${RUN_START}' AND ts Two notes on the view: Always filter on partitions. Athena reads raw JSON, so a query without a partition filter scans every object you have ever captured. The view filters to one day, and the time bound limits it to our traffic run: the same prefix also holds the request from Step 5. messages[1] assumes one system message followed by one user message. Captured traffic is whatever clients actually sent, so adjust the extraction for multi-turn or few-shot requests. Step 8: Is the category mix changing? run_athena \" SELECT date_trunc('minute', ts) AS minute, count(*) AS tickets, count_if(predicted_category = 'Other') AS other, round(100.0 * count_if(predicted_category = 'Other') / count(*), 1) AS other_pct FROM preds GROUP BY 1 ORDER BY 1\" minute tickets other other_pct 2026-09-28 15:52:00.000 20 0 0.0 2026-09-28 15:53:00.000 60 3 5.0 2026-09-28 15:54:00.000 60 4 6.7 2026-09-28 15:55:00.000 60 4 6.7 2026-09-28 15:56:00.000 60 2 3.3 2026-09-28 15:57:00.000 60 1 1.7 2026-09-28 15:58:00.000 60 3 5.0 2026-09-28 15:59:00.000 60 9 15.0 2026-09-28 16:00:00.000 60 17 28.3 2026-09-28 16:01:00.000 60 14 23.3 2026-09-28 16:02:00.000 60 19 31.7 2026-09-28 16:03:00.000 60 21 35.0 2026-09-28 16:04:00.000 60 20 33.3 2026-09-28 16:05:00.000 60 32 53.3 2026-09-28 16:06:00.000 60 28 46.7 2026-09-28 16:07:00.000 40 26 65.0 (Output is tab-separated. We aligned it here for readability. Our run compressed “weeks” into 15 minutes. In production, bucket by date_trunc('day', ts) or 'week' instead.) The following chart plots the per-minute share of tickets routed to Other as bars, and the cumulative share as a line, with the launch marked. Figure 2: Per-minute and cumulative share of tickets routed to Other, before and after the Arctis launch Before the launch, Other stays under 7% per minute. It jumps to 15% in the launch minute and keeps climbing, reaching 47–65% in the last three minutes. The cumulative line in the chart only reaches 22.6%, because it averages the post-launch tickets with all the traffic from before the launch. That is why the per-minute rate, not the cumulative share, is what you would put behind an alarm. Split at the launch, the whole category mix looks like this: run_athena \" SELECT IF(ts Other went from 4.8% of tickets before the launch (19 of 400) to 36.8% after it (184 of 500), and became the largest category. Step 9: What is inside the Other bucket? run_athena \" SELECT word, count(*) AS freq FROM preds CROSS JOIN UNNEST(regexp_extract_all(lower(ticket_text), '[a-z0-9-]{4,}')) AS t(word) WHERE predicted_category = 'Other' AND word NOT IN ('this','that','with','from','have','since','week','help','need','again','time', 'month','second','take','look','someone','order','last','after','when','onto') GROUP BY 1 ORDER BY 2 DESC, 1 LIMIT 10\" word freq arctis 141 unit 40 mini 33 cooling 30 link 30 lost 30 loudly 30 rattles 30 wi-fi 30 blows 28 The Other bucket isn’t a mix of unrelated tickets. It’s dominated by one product name, arctis , and the vocabulary of a cooling appliance, which points to a new category the router has no label for. Step 10: How big is it, and does the model’s confidence flag it? Search the whole traffic stream for the new product, not just the Other bucket: run_athena \" SELECT IF(ts There are 178 air-conditioner tickets, 19.8% of all traffic. None of them appeared before the launch. They fall into two groups: 164 went to Other . Under the six-label schema, that is the correct answer: Other exists for exactly this case. The router isn’t broken. The taxonomy is missing a category, so these tickets reach a generic queue instead of the team that supports the product. 14 went to ProductFridge . These are true misroutes: a refrigerator team is now getting air-conditioner tickets. Now test the model’s confidence on these known misroutes: run_athena \" SELECT predicted_category, confidence, count(*) AS n FROM preds WHERE regexp_like(lower(ticket_text), 'arctis|air condition') GROUP BY 1, 2 ORDER BY 1, 2 DESC\" predicted_category confidence n Other 1.0 157 Other 0.9 7 ProductFridge 0.95 1 ProductFridge 0.9 9 ProductFridge 0.8 2 ProductFridge 0.7 1 ProductFridge 0.0 1 Of the 14 misrouted tickets, 10 reported a confidence of 0.9 or higher. A labeling rule such as “keep predictions with confidence >= 0.9 ” would have kept 71% of the known-wrong labels. That’s because confidence is a field we asked the model to write, not a calibrated probability. If you need a real uncertainty signal, request token logprobs from vLLM and read the probability at the category token instead of the model’s self-report. Budget for the extra payload size, because the logprobs are captured with every response. From diagnosis to labeled training data A data scientist doesn’t hand-label hundreds of tickets. Instead, they write the Athena finding down as a labeling policy : a SQL view that assigns a corrected label to every captured record. We relabel the misrouted air-conditioner tickets to the new class. Step 11: The labeling policy run_athena \" CREATE OR REPLACE VIEW labeled_training_data AS WITH t AS (SELECT ticket_text, predicted_category, lower(ticket_text) AS txt FROM preds) SELECT ticket_text, predicted_category, CASE -- 1. The new class, identified by keyword evidence, not by what the model predicted WHEN regexp_like(txt, '\\\\barctis\\\\b|air condition|\\\\bac unit\\\\b|mini split') AND NOT regexp_like(txt, 'fridge|refrigerat|freezer|washer|\\\\boven\\\\b|\\\\brange\\\\b|dishwasher|microwave') THEN 'ProductAC' -- 2. Keep the production decision when nothing hints at the new product WHEN NOT regexp_like(txt, '\\\\barctis\\\\b|air condition|\\\\bac\\\\b|mini split') THEN predicted_category -- 3. Mixed signals: send to human review (Amazon SageMaker Ground Truth) ELSE NULL END AS corrected_category FROM t\" The doubled backslashes ( \\\\b ) are shell escaping inside the double-quoted string. Athena receives \\b , a regular-expression word boundary. Check what the policy produced: run_athena \" SELECT coalesce(corrected_category, '(human review)') AS label, count(*) AS n, count(DISTINCT ticket_text) AS distinct_texts, count_if(corrected_category <> predicted_category) AS relabeled FROM labeled_training_data GROUP BY 1 ORDER BY 2 DESC\" label n distinct_texts relabeled ProductAC 178 114 178 ProductFridge 161 110 0 ProductWasher 141 96 0 ProductOven 140 97 0 ProductDishwasher 138 95 0 ProductMicrowave 103 82 0 Other 39 8 0 This heuristic works because the new category is clear-cut (keyword-identifiable). For ambiguous tickets or overlapping categories, the NULL rows would route to Ground Truth for human labeling. Step 12: Build the training file Export the labeled view and convert it to chat-format JSONL. The allowed category set now includes ProductAC , the same seven-label prompt clients will send after the redeploy. Save this as build_training_file.py : cat > build_training_file.py } where category is ' \"one of: \" + \", \".join(CATS) + '. Use \"Other\" if the ticket does not clearly concern one of these products.') n = 0 with open(sys.argv[1], newline=\"\") as fin, open(sys.argv[2], \"w\") as fout: for row in csv.DictReader(fin): fout.write(json.dumps({\"messages\": [ {\"role\": \"system\", \"content\": PROMPT}, {\"role\": \"user\", \"content\": row[\"ticket_text\"]}, {\"role\": \"assistant\", \"content\": json.dumps({\"category\": row[\"corrected_category\"], \"confidence\": 1.0})}, ]}) + \"\\n\"); n += 1 print(f\"wrote {n} training examples -> {sys.argv[2]}\") PY run_athena \"SELECT ticket_text, corrected_category FROM labeled_training_data WHERE corrected_category IS NOT NULL\" > /dev/null aws s3 cp \"${ATHENA_OUTPUT}${LAST_QID}.csv\" labeled.csv --only-show-errors # Athena's own CSV: header + proper quoting python3 build_training_file.py labeled.csv train.jsonl aws s3 cp train.jsonl \"s3://${BUCKET}/training/train.jsonl\" wrote 900 training examples -> train.jsonl Fine-tuning on captured data with the HyperPod training operator We fine-tune on the same cluster that serves the model, using the HyperPod training operator on the second GPU. The first endpoint keeps serving throughout. Step 13: The training script The script downloads the base model and training data from S3 and trains a low-rank adaptation (LoRA) adapter. The loss is computed only on the assistant turn, so the model learns to produce the label rather than repeat the prompt. The script then merges the adapter back into the base weights, so vLLM can serve the result unchanged, and uploads the merged model to S3. The job mounts the script into the training pod from a ConfigMap. cat > train.py Step 14: Submit a HyperPodPyTorchJob cat > finetune-job.yaml S3 read/write nodeSelector: node.kubernetes.io/instance-type: ${TRAIN_INSTANCE_TYPE} restartPolicy: Always # required by the operator; retries live in runPolicy containers: - name: pytorch image: vllm/vllm-openai:v0.10.0 # already has torch + transformers + boto3 command: [\"bash\", \"-c\"] args: - pip install -q peft==0.14.0 datasets==3.2.0 hyperpod-elastic-agent==1.1.3 && hyperpodrun --nnodes=1 --nproc_per_node=1 /scripts/train.py env: - { name: BASE_MODEL_S3, value: \"s3://${BUCKET}/${MODEL_LOCATION}/\" } - { name: TRAIN_FILE_S3, value: \"s3://${BUCKET}/training/train.jsonl\" } - { name: OUTPUT_S3, value: \"s3://${BUCKET}/${MODEL_V2_LOCATION}/\" } resources: requests: { cpu: \"2\", memory: 24Gi, nvidia.com/gpu: 1 } limits: { nvidia.com/gpu: 1 } volumeMounts: - { name: scripts, mountPath: /scripts } - { name: work, mountPath: /work } - { name: shm, mountPath: /dev/shm } volumes: - { name: scripts, configMap: { name: router-train } } - { name: work, emptyDir: {} } - { name: shm, emptyDir: { medium: Memory, sizeLimit: 8Gi } } YAML render logMonitoringConfiguration is the training operator’s distinguishing feature. If no loss line appears within 20 minutes of start, or the log goes quiet for 10 minutes mid-run while the process is still alive, the operator restarts the job instead of letting it burn GPU hours. The job installs three Python packages when it starts. The training node needs outbound internet access, for example through a NAT gateway, and so does pulling the vllm/vllm-openai image from Docker Hub. On a cluster without internet egress, bake the packages into a custom image in Amazon Elastic Container Registry (Amazon ECR) and drop the pip install . An excerpt of the job log: {'loss': 0.2484, 'grad_norm': 3.387, 'learning_rate': 3.91e-05, 'epoch': 0.09} {'loss': 0.018, 'grad_norm': 0.0037, 'learning_rate': 8.26e-05, 'epoch': 0.18} ... {'loss': 0.0, 'grad_norm': 0.000105, 'learning_rate': 2.93e-07, 'epoch': 1.95} {'train_runtime': 59.68, 'train_samples_per_second': 30.16, 'train_loss': 0.0123, 'epoch': 2.0} [done] merged model uploaded to s3://amzn-s3-demo-bucket/models/qwen2.5-3b-router-v2/ [HyperPodElasticAgent] ... Transitioned from AgentState.RUNNING to AgentState.COMPLETED kubectl get hyperpodpytorchjob router-ft -o jsonpath='{range .status.conditions[*]}= {end}' Created=True Completed=True Training took 60 seconds on one L40S. LoRA at rank 16 trains about 29.9 million parameters, under 1% of the 3.1-billion-parameter model. The average training loss was 0.0123, and the per-step loss reached 0.0 within the first epoch, which shows the model memorizes 900 templated examples readily. On real data, hold out a validation split and stop early. Here we rely on the held-out evaluation set. Step 15: Deploy the fine-tuned model side by side, with capture still on Instead of editing the running endpoint, deploy the new model as a second endpoint from the same manifest, onto the GPU the training job just released. The first endpoint keeps serving until you cut clients over, so the redeploy causes no downtime, and rolling back means pointing clients back at the first endpoint. export ENDPOINT_NAME=\"appliance-router-v2\" MODEL_LOCATION=\"$MODEL_V2_LOCATION\" SERVE_INSTANCE_TYPE=\"$TRAIN_INSTANCE_TYPE\" render The new endpoint writes captures under its own uniqueID . Because ENDPOINT_NAME is now appliance-router-v2 , rerunning the CAPTURE_LOCATION lookup from Step 6 finds that prefix, so you can point a second Athena table at it for the next round of analysis. When you move clients over, update the endpoint, the label set, and the guided-JSON enum in the same release. Measuring the lift We ran the same 280 held-out tickets against the fine-tuned endpoint: overall 280/280 = 100.00% ProductFridge 40/40 ProductWasher 40/40 ProductOven 40/40 ProductDishwasher 40/40 ProductMicrowave 40/40 ProductAC 40/40 Other 40/40 Metric Before fine-tuning (as launched) After fine-tuning Held-out accuracy (280) 235 (83.9%) 280 (100%) ProductAC (40) 0/40 — all routed to Other 40/40 Other (40) 35/40 40/40 Five established product classes (200) 200/200 200/200 Hand-written probe (24, described next) 16/24 20/24 Fine-tuning taught the router the new category and caused no regression on the five established classes. It also fixed five Other errors that existed before the launch which the launched router sent to ProductFridge . Because our evaluation set comes from the same generator as the training data, we also wrote 24 probe tickets by hand, in styles the generator never produces. The fine-tuned model scored 20/24: MISS ProductFridge -> ProductAC: The cooling fan in my fridge is squealing. MISS Other -> ProductAC: When will the Arctis 12K be back in stock? MISS Other -> ProductAC: Can I get a quote to install central air in my house? MISS Other -> ProductAC: Do you price match the Arctis at other stores? overall 20/24 = 83.33% It routes all eight air-conditioner probes correctly, but it learned two shortcuts: “cooling” means air conditioner, and any mention of Arctis means ProductAC , including stock and price-match questions. Both come from the training data: the labeling policy sent every Arctis ticket to ProductAC , and the captured traffic contained no pre-sales questions. With capture on for the new endpoint, those tickets are exactly what the next round of capture collects. How much latency does capture add? We measured this directly: the same 400 routing requests, sent from inside the pod either to port 8000 (no capture) or to port 8081 (through the capture proxy). We ran three rounds at 8 concurrent requests, plus one serial round: Path Concurrency p50 p99 Throughput Direct to vLLM (8000), no capture 8 200.7 ms 249.4 ms 39.1 req/s Through capture proxy (8081) 8 200.0 ms 249.8 ms 39.1 req/s Direct to vLLM (8000), no capture 1 164.4 ms 206.9 ms 6.0 req/s Through capture proxy (8081) 1 164.4 ms 207.0 ms 6.0 req/s Rows at concurrency 8 are the average of three rounds. Round-to-round variation (±1 ms at p50) was larger than the difference between the two paths. Other uses for captured data After inference data lands in S3, the same records feed many workflows: Improve the model: Use supervised fine-tuning (shown here), distill a large model’s outputs into a smaller model, or build preference pairs for direct preference optimization (DPO). Understand the model: Run Athena analytics (shown here), build golden regression sets from real prompts, set drift alarms, discover emerging intents, and detect malformed outputs and refusals. Operate and govern: Route ambiguous samples to Ground Truth for labeling, keep audit trails (Tier 1 is recommended), replay the exact input behind an incident, and analyze traffic and payloads for cost attribution. Cost considerations Tier Approximate cost impact Tier 1 (SageMaker endpoint) Captured by SageMaker at the endpoint. You pay S3 storage and requests for the payloads Tier 2 (ALB access logs) S3 storage for the log files only Tier 3 (model pod) Three sidecars requesting 250m CPU + 640 MiB per pod in total (NGINX proxy 100m/128Mi, OTel collector 100m/256Mi, s3-uploader 50m/256Mi), plus S3 storage and requests for the payloads Two costs scale with usage: S3. Our records averaged about 2.3 KB each (3,955 records in 9.0 MB). Longer prompts and responses cost proportionally more. The uploader wrote one object per flush interval per pod, about 1,440 PUTs per pod per day at 60 seconds. Athena charges by data scanned, so always filter on the partition columns, and convert the raw JSON to Parquet with a CREATE TABLE AS SELECT (CTAS) query for repeated analysis. For current prices, see Amazon S3 pricing and Amazon Athena pricing . Clean up To avoid incurring unnecessary charges, clean up the resources created in this walkthrough: kubectl delete inferenceendpointconfig appliance-router appliance-router-v2 kubectl delete hyperpodpytorchjob router-ft kubectl delete configmap router-train run_athena \"DROP VIEW IF EXISTS labeled_training_data\"; run_athena \"DROP VIEW IF EXISTS preds\" run_athena \"DROP TABLE IF EXISTS inference_captures\"; run_athena \"DROP DATABASE IF EXISTS ${ATHENA_DB}\" aws s3 rm \"s3://${BUCKET}/capture/\" --recursive aws s3 rm \"s3://${BUCKET}/athena-results/\" --recursive aws s3 rm \"s3://${BUCKET}/training/\" --recursive aws s3 rm \"s3://${BUCKET}/${MODEL_V2_LOCATION}/\" --recursive Conclusion In this post, we showed how you can use SageMaker HyperPod Data Capture to record live inference data and turn it into training data. With capture available at three independent tiers, you can: Collect real-world training data with no measurable impact on serving latency. Query inference patterns at scale with Amazon Athena, with no infrastructure to manage. Turn an Athena diagnosis into a reproducible SQL labeling policy. Fine-tune on captured production data and measure a hard before/after lift. Integrate with the HyperPod training operator and SageMaker Ground Truth for the rest of the loop. We ran one full turn of the loop on a home-appliance support router. Captured traffic revealed a new-product blind spot, and a SQL labeling policy turned those captures into training data. A 60-second LoRA fine-tune with the HyperPod training operator ran on the same cluster that served the model. It took the new category from 0% to full recall without a regression on any existing category. None of that training data existed before the model was deployed. Data Capture is available today on SageMaker HyperPod clusters with the inference operator. To get started, add the dataCapture section to your InferenceEndpointConfig or JumpStartModel resource and deploy. To close the loop on the same cluster, add the amazon-sagemaker-hyperpod-training-operator EKS add-on. The complete code for this walkthrough is in the accompanying GitHub repository . For more information, see the SageMaker HyperPod inference documentation and the HyperPod training operator documentation . &nbsp; About the authors Shantanu Tripathi Shantanu is a Software Development Engineer at AWS with experience in building large-scale AI/ML infrastructure. As a core engineer at Amazon SageMaker, he has worked on designing and optimizing scalable inference solutions for high-performance AI workloads. His broader experience spans distributed AI training libraries, Deep Learning Containers (DLCs), Deep Learning AMIs, and generative AI solutions. Outside of work, he enjoys theater and swimming. Roy Allela Roy is a Principal AI/ML Specialist Solutions Architect at AWS. He works with AWS customers, from startups to large enterprises to train and deploy foundation models efficiently on AWS. He has a background in Microprocessor Engineering. He is passionate about computational optimization problems and improving the performance of AI workloads. Piyush Daftary Piyush is a Principal Software Engineer at AWS, working on Amazon SageMaker with a focus on building performant, scalable inference systems for large language models. His technical interests span AI/ML, databases, and search technologies, where he specializes in developing production-ready solutions that enable efficient inference at scale. His work involves optimizing system performance, implementing intelligent routing mechanisms, and designing architectures that support both research and production workloads, with a passion for solving complex distributed systems challenges and making advanced AI capabilities more accessible to developers and organizations. Outside of work, he enjoys traveling, hiking, and spending time with family. Sean Archer Sean is a Software Development Engineer at AWS, where he builds AI/ML infrastructure for Amazon SageMaker. He has worked on inference solutions that support reliable, scalable model deployments, and on compute governance features for SageMaker HyperPod clusters that help organizations manage and allocate compute for large-scale AI workloads. Outside of work, he enjoys playing music and traveling.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/feed/",
+    "source_key": "aws-machine-learning"
+  },
+  {
+    "id": "bcb4236d-98fa-5aa6-9083-1a4201084a2c",
+    "company": "Hugging Face",
+    "title": "Build a Robot Pick-and-Place Simulation with SimReady Assets",
+    "url": "https://huggingface.co/blog/nvidia/simready-assets-robot-pick-and-place",
+    "published_at": "2026-11-13T18:00:39+00:00",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://huggingface.co/blog/feed.xml",
+    "source_key": "hugging-face-blog"
+  },
+  {
+    "id": "addbd675-49ea-573c-99a2-9e9fd429ab06",
+    "company": "Moonshot AI",
+    "title": "@moonshot-ai/kimi-code@2.6.2",
+    "url": "https://github.com/MoonshotAI/kimi-code/releases/tag/%40moonshot-ai%2Fkimi-code%402.6.2",
+    "published_at": "2026-11-13T17:32:14+00:00",
+    "source_type": "rss_official",
+    "summary": "Patch Changes #4875 4c72e1d Thanks @7Sageer ! - Support optional search_url and feedback_url fields on custom registry ( api.json ) providers for WebSearch and /feedback . #4876 d532f4f Thanks @7Sageer ! - Remove the text-only \"No attachment\" option from /feedback (text-only /feedback submissions are no longer available), show the current session's files before confirmation, and include session request_id metadata. #4885 ec35f9a Thanks @kimi-agent-bot ! - Fix multi-second loading delays when...",
+    "content": "Patch Changes #4875 4c72e1d Thanks @7Sageer ! - Support optional search_url and feedback_url fields on custom registry ( api.json ) providers for WebSearch and /feedback . #4876 d532f4f Thanks @7Sageer ! - Remove the text-only \"No attachment\" option from /feedback (text-only /feedback submissions are no longer available), show the current session's files before confirmation, and include session request_id metadata. #4885 ec35f9a Thanks @kimi-agent-bot ! - Fix multi-second loading delays when reopening long sessions with many tool calls. #4905 90d8e31 Thanks @sailist ! - Reject failed or unfinished Kimi media uploads instead of caching unusable file references. #4922 a27bd82 Thanks @sailist ! - Fix missing live subagent updates in the Swarm panel during execution. #4927 102bc1f Thanks @kimi-agent-bot ! - web: Improved interactions and fixed known bugs.",
+    "source_url": "https://github.com/MoonshotAI/kimi-code/releases.atom",
+    "source_key": "moonshot-kimi-code-releases"
+  },
+  {
+    "id": "226d2ce4-4601-5e31-a17d-9e1efb4a6285",
+    "company": "Hugging Face",
+    "title": "XYBench: Helping with the problem behind the question",
+    "url": "https://huggingface.co/blog/allenai/xybench",
+    "published_at": "2026-11-13T17:02:35+00:00",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://huggingface.co/blog/feed.xml",
+    "source_key": "hugging-face-blog"
+  },
+  {
+    "id": "1b912ddd-61dd-5862-aa9d-5715f53f3fea",
+    "company": "NVIDIA AI",
+    "title": "When One GPU Isn’t Enough: Serving GLM-5.3 Across Two NVIDIA DGX Stations with vLLM",
+    "url": "https://developer.nvidia.com/blog/when-one-gpu-isnt-enough-serving-glm-5-3-across-two-nvidia-dgx-stations-with-vllm/",
+    "published_at": "2026-11-13T17:00:00+00:00",
+    "source_type": "rss_official",
+    "summary": "Running a frontier-scale model locally means keeping all its weights in GPU memory; the largest models no longer fit on one machine. Two NVIDIA DGX Stations...",
+    "content": "Running a frontier-scale model locally means keeping all its weights in GPU memory; the largest models no longer fit on one machine. Two NVIDIA DGX Stations...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/",
+    "source_key": "nvidia-generative-ai"
+  },
+  {
+    "id": "10a32a86-b947-5670-9d51-1a139302792c",
+    "company": "Codex CLI",
+    "title": "rust-v0.171.0-alpha.4",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.171.0-alpha.4",
+    "published_at": "2026-11-13T16:28:38+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.171.0-alpha.4",
+    "content": "Release 0.171.0-alpha.4",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "21a21025-e28f-5d96-94b4-072692f257b7",
+    "company": "Hermes Agent",
+    "title": "rc.4-v0.23.2",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/rc.4-v0.23.2",
+    "published_at": "2026-11-13T16:22:15+00:00",
+    "source_type": "rss_official",
+    "summary": "{\"attempt\":4,\"autopublish\":false,\"claimEpoch\":1794586935,\"commit\":\"54…",
+    "content": "{\"attempt\":4,\"autopublish\":false,\"claimEpoch\":1794586935,\"commit\":\"54…",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
+    "id": "6ecf2844-4a24-502d-aae1-675b19d0996a",
+    "company": "Hermes Agent",
+    "title": "abandoned-rc.3-v0.23.2",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/abandoned-rc.3-v0.23.2",
+    "published_at": "2026-11-13T16:21:49+00:00",
+    "source_type": "rss_official",
+    "summary": "{\"attempt\":3,\"attemptRef\":\"rc.3-v0.23.2\",\"schema\":1,\"version\":\"0.23.2\"}",
+    "content": "{\"attempt\":3,\"attemptRef\":\"rc.3-v0.23.2\",\"schema\":1,\"version\":\"0.23.2\"}",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
+    "id": "b959b74f-a81f-5162-98ce-6ace287b25dc",
+    "company": "Hermes Agent",
+    "title": "rc.3-v0.23.2",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/rc.3-v0.23.2",
+    "published_at": "2026-11-13T15:26:40+00:00",
+    "source_type": "rss_official",
+    "summary": "{\"attempt\":3,\"autopublish\":false,\"claimEpoch\":1794583600,\"commit\":\"e0…",
+    "content": "{\"attempt\":3,\"autopublish\":false,\"claimEpoch\":1794583600,\"commit\":\"e0…",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
+    "id": "f3de98d2-a614-5d11-8465-9e55b4460363",
+    "company": "Hermes Agent",
+    "title": "abandoned-rc.2-v0.23.2",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/abandoned-rc.2-v0.23.2",
+    "published_at": "2026-11-13T15:22:36+00:00",
+    "source_type": "rss_official",
+    "summary": "{\"attempt\":2,\"attemptRef\":\"rc.2-v0.23.2\",\"schema\":1,\"version\":\"0.23.2\"}",
+    "content": "{\"attempt\":2,\"attemptRef\":\"rc.2-v0.23.2\",\"schema\":1,\"version\":\"0.23.2\"}",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
+    "id": "40cf107a-268c-54c1-9762-7cfbd8e9b4bd",
+    "company": "OpenAI",
+    "title": "Introducing ChatGPT Wallet",
+    "url": "https://openai.com/index/introducing-chatgpt-wallet",
+    "published_at": "2026-11-13T15:00:00+00:00",
+    "source_type": "rss_official",
+    "summary": "Introducing ChatGPT Wallet, a secure way for agents in ChatGPT Work, Codex, and dots to complete purchases with user approval and existing card protections.",
+    "content": "Introducing ChatGPT Wallet, a secure way for agents in ChatGPT Work, Codex, and dots to complete purchases with user approval and existing card protections.",
+    "source_url": "https://openai.com/news/rss.xml",
+    "source_key": "openai-news"
+  },
+  {
+    "id": "76e1be1c-07a5-59c0-bc9e-0203dac7d60c",
+    "company": "Hugging Face",
+    "title": "llama.cpp v1.0.0 : A stronger foundation for the local AI ecosystem",
+    "url": "https://huggingface.co/blog/ggml-org/llama-cpp-v1",
+    "published_at": "2026-11-13T14:05:22+00:00",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://huggingface.co/blog/feed.xml",
+    "source_key": "hugging-face-blog"
+  },
+  {
+    "id": "284d1e19-b6a1-554f-bcf3-bad2967a297c",
+    "company": "OpenClaw",
+    "title": "release-publish/514a224c6eab-1794576299: fix(release): apply 2026.11.4 performance waiver release-wide (#198271)",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/release-publish%2F514a224c6eab-1794576299",
+    "published_at": "2026-11-13T13:22:59+00:00",
+    "source_type": "rss_official",
+    "summary": "fix(release): apply 2026.11.4 performance waiver release-wide Honor the November 13 13:06 UTC operator authorization for all actual performance runs, attempts, and candidates of 2026.11.4. Preserve raw failures, required evidence, other jobs, and the absence of a not-run exemption. Co-authored-by: vincentkoc Co-authored-by: RomneyDa fix(release): apply 2026.11.4 performance waiver release-wide Worked on by: @vincentkoc Co-authored-by: vincentkoc OpenClaw-Publication:...",
+    "content": "fix(release): apply 2026.11.4 performance waiver release-wide Honor the November 13 13:06 UTC operator authorization for all actual performance runs, attempts, and candidates of 2026.11.4. Preserve raw failures, required evidence, other jobs, and the absence of a not-run exemption. Co-authored-by: vincentkoc 25068+vincentkoc@users.noreply.github.com Co-authored-by: RomneyDa 6581799+RomneyDa@users.noreply.github.com fix(release): apply 2026.11.4 performance waiver release-wide Worked on by: @vincentkoc Co-authored-by: vincentkoc 25068+vincentkoc@users.noreply.github.com OpenClaw-Publication: df2c970f-e3c8-428d-ae10-5bccce96972b Co-authored-by: vincentkoc 25068+vincentkoc@users.noreply.github.com Co-authored-by: RomneyDa 6581799+RomneyDa@users.noreply.github.com",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
+  },
+  {
+    "id": "1c2ee276-bda6-539b-88f4-5bf08856f2bf",
+    "company": "NVIDIA AI",
+    "title": "How AI Is Helping Care Teams Get Patients the Right Care, Sooner",
+    "url": "https://blogs.nvidia.com/blog/how-ai-is-helping-care-teams/",
+    "published_at": "2026-11-13T13:00:42+00:00",
+    "source_type": "rss_official",
+    "summary": "From pediatric research to smart hospitals, AI is helping care teams spend less time on routine tasks and more time with patients. Health systems and startups are putting it to work across healthcare, from matching patients to clinical trials to supporting radiologists, hospital teams and patients at home. Clinicians stay at the center, reviewing AI […]",
+    "content": "From pediatric research to smart hospitals, AI is helping care teams spend less time on routine tasks and more time with patients. Health systems and startups are putting it to work across healthcare, from matching patients to clinical trials to supporting radiologists, hospital teams and patients at home. Clinicians stay at the center, reviewing AI outputs and guiding decisions, while NVIDIA technologies provide the compute behind the applications. Read on to learn how healthcare teams are using AI to improve and speed patient care. Friday, Nov. 13, 5:00 a.m. PT Dyania Health Uses AI to Turn Decades of Patient Records Into Better Care Hospitals hold decades of patient history, most of it written in free text, as physicians’ notes, operative reports, imaging and pathology reads and discharge summaries. To understand one patient’s full story, a clinician would need to read through years of charts . Dyania Health , a New Jersey-based clinical AI company, built Synapsis AI to do just that. Synapsis AI is a clinical reasoning engine: It works across every note, report and lab result in a patient’s record, connecting findings that may be years apart to answer clinical questions the way a specialist reviewing the chart would. The output is a set of clinical signals, each traceable to its source in the record, that tells care teams which patients need attention and why. Clinicians review the evidence and make every decision. Keeping Patient Data Inside the Hospital Walls Synapsis AI runs on NVIDIA-accelerated computing inside a health system’s own firewall. The entire health system’s patient records can be processed onsite, so patient data is never shared and never leaves the hospital. Processing records this way takes chart review off the desks of clinical teams and lets them spend that time with patients. But Synapsis AI still requires clinician input — it’s an assistive tool that surfaces evidence from medical records that a clinician must still confirm and act on. Dyania builds and trains its clinical models with NVIDIA NeMo open libraries, then uses NVIDIA TensorRT and TensorRT-LLM to optimize them to run faster and more efficiently on the hospital’s own GPU servers. Synapsis AI in the Real World Cleveland Clinic used Synapsis AI to support a study of more than 7,800 aortic valve replacement patients between 2005 and 2021. Synapsis AI reasoned across each patient’s record, including every echocardiogram added in the years after surgery, and used this information to build a predictive model of valve deterioration and reintervention risk at the three-, five- and ten-year mark after a patient undergoes an aortic valve replacement procedure. The AI platform completed chart review across the full cohort that would have taken clinicians years to complete by hand. “Using technology to bring together and analyze information that can help us predict the duration of implanted heart valves is a promising step towards enhanced outcomes and more personalized care for patients,” said Dr. Lars Svensson , chief of the Heart, Vascular & Thoracic Institute at Cleveland Clinic. The same approach can be applied to any healthcare challenge where the answer sits inside the medical record, such as identifying patients eligible for clinical trials, closing care gaps in cardiology and oncology, and populating clinical registries. Learn more about Dyania Health .",
+    "source_url": "https://blogs.nvidia.com/feed/",
+    "source_key": "nvidia-blog"
+  },
+  {
     "id": "d119ab05-2864-5d16-b00b-896cd6f9af1c",
     "company": "Hermes Agent",
     "title": "rc.2-v0.23.2",
@@ -106,6 +274,30 @@
     "content": "Release 0.171.0-alpha.2",
     "source_url": "https://github.com/openai/codex/releases.atom",
     "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "9929f393-67d9-5f7a-a12a-891740d55c7d",
+    "company": "DeepSeek",
+    "title": "The full DeepSeek App experience, now via API",
+    "url": "https://api-docs.deepseek.com/news/news261113",
+    "published_at": "2026-11-13T00:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "Search, files, links, safety, and voice. The capabilities behind the DeepSeek App are now available through the DeepSeek API.",
+    "content": "Search, files, links, safety, and voice. The capabilities behind the DeepSeek App are now available through the DeepSeek API.",
+    "source_url": "https://api-docs.deepseek.com/sitemap.xml",
+    "source_key": "deepseek-api-news"
+  },
+  {
+    "id": "4bda97fa-29bd-5a35-8d41-ed22f89ef2ed",
+    "company": "Anthropic",
+    "title": "Building strong safety evaluations",
+    "url": "https://www.anthropic.com/research/building-strong-safety-evaluations",
+    "published_at": "2026-11-13T00:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "Recommendations for designing, running, and reporting safety evaluations, based on our own experiences.",
+    "content": "Recommendations for designing, running, and reporting safety evaluations, based on our own experiences.",
+    "source_url": "https://www.anthropic.com/sitemap.xml",
+    "source_key": "anthropic-sitemap"
   },
   {
     "id": "0f6b7a2c-8999-50c2-a35e-ef118ad45aa6",
@@ -23166,8 +23358,8 @@
     "url": "https://www.anthropic.com/news/detecting-and-countering-malicious-uses-of-claude-march-2025",
     "published_at": "2026-09-08T10:47:28+00:00",
     "source_type": "scraped",
-    "summary": "Detecting and Countering Malicious Uses of Claude",
-    "content": "Detecting and Countering Malicious Uses of Claude",
+    "summary": "Anthropic's March 2025 report on detecting and countering malicious uses of Claude.",
+    "content": "Anthropic's March 2025 report on detecting and countering malicious uses of Claude.",
     "source_url": "https://www.anthropic.com/sitemap.xml",
     "source_key": "anthropic-sitemap"
   },
@@ -28764,6 +28956,18 @@
     "source_key": "openai-news"
   },
   {
+    "id": "47e46bc5-d9fe-516f-9501-c4e9140b63e6",
+    "company": "Anthropic",
+    "title": "Improving Fable 5's safeguards",
+    "url": "https://www.anthropic.com/news/improving-fable-5-s-biology-safeguards",
+    "published_at": "2026-08-07T00:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "We’re making updates to Claude Fable 5’s biology safeguards in a way that substantially reduces fallbacks.",
+    "content": "We’re making updates to Claude Fable 5’s biology safeguards in a way that substantially reduces fallbacks.",
+    "source_url": "https://www.anthropic.com/sitemap.xml",
+    "source_key": "anthropic-sitemap"
+  },
+  {
     "id": "10b6def3-d40b-5885-a3a2-a9021127c851",
     "company": "xAI",
     "title": "Imagine Image 2.0",
@@ -32772,6 +32976,18 @@
     "source_key": "openai-news"
   },
   {
+    "id": "1de40e29-5e61-572f-8f8b-6811954026dc",
+    "company": "Anthropic",
+    "title": "Claude Fable 5 and Claude Mythos 5",
+    "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+    "published_at": "2026-06-09T00:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "Today we’re launching Claude Fable 5: a Mythos-class model that we’ve made safe for general use.",
+    "content": "Today we’re launching Claude Fable 5: a Mythos-class model that we’ve made safe for general use.",
+    "source_url": "https://www.anthropic.com/sitemap.xml",
+    "source_key": "anthropic-sitemap"
+  },
+  {
     "id": "provider-c6407417439993b701",
     "company": "Amazon AI",
     "title": "Real-world grounding in agentic AI",
@@ -33898,6 +34114,18 @@
     "content": "OpenAI partners with Grupo Folha and Grupo UOL to bring trusted Brazilian journalism to ChatGPT, expanding access to news with attribution and transparency.",
     "source_url": "https://openai.com/news/rss.xml",
     "source_key": "openai-news"
+  },
+  {
+    "id": "61e8cd19-3094-5304-b31c-a345b6ec8833",
+    "company": "Anthropic",
+    "title": "How we contain Claude across products",
+    "url": "https://www.anthropic.com/research/how-we-contain-claude",
+    "published_at": "2026-05-25T00:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "As agents grow more capable, so does their potential blast radius. Here's what we learned building containment for claude.ai, Claude Code, and Cowork.",
+    "content": "As agents grow more capable, so does their potential blast radius. Here's what we learned building containment for claude.ai, Claude Code, and Cowork.",
+    "source_url": "https://www.anthropic.com/sitemap.xml",
+    "source_key": "anthropic-sitemap"
   },
   {
     "id": "2a7ac9ba-0fc2-53a0-a197-856cd99390d5",
@@ -35410,6 +35638,18 @@
     "content": "Researching the path to AI-augmented care and development of an AI co-clinician.",
     "source_url": "https://deepmind.google/blog/rss.xml",
     "source_key": "deepmind-blog"
+  },
+  {
+    "id": "e358cc8a-bf98-54f0-aacd-3d00afd51779",
+    "company": "Anthropic",
+    "title": "How people ask Claude for personal guidance",
+    "url": "https://www.anthropic.com/research/claude-personal-guidance",
+    "published_at": "2026-04-30T00:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "We look at what types of guidance people ask of Claude, and describe how this research shaped the training of our newest models.",
+    "content": "We look at what types of guidance people ask of Claude, and describe how this research shaped the training of our newest models.",
+    "source_url": "https://www.anthropic.com/sitemap.xml",
+    "source_key": "anthropic-sitemap"
   },
   {
     "id": "cdf27f6c-9996-4488-a1d6-6099cd15aefe",
@@ -37200,6 +37440,18 @@
     "source_key": "hugging-face-blog"
   },
   {
+    "id": "46ecbd78-e7d9-5f74-83f5-c75509c520dc",
+    "company": "Anthropic",
+    "title": "Anthropic Economic Index report: Learning curves",
+    "url": "https://www.anthropic.com/research/economic-index-march-2026-report",
+    "published_at": "2026-03-24T00:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "The March 2026 Anthropic Economic Index report finds Claude use cases diversifying and experienced users seeing higher conversation success rates.",
+    "content": "The March 2026 Anthropic Economic Index report finds Claude use cases diversifying and experienced users seeing higher conversation success rates.",
+    "source_url": "https://www.anthropic.com/sitemap.xml",
+    "source_key": "anthropic-sitemap"
+  },
+  {
     "id": "87a61074-b053-4601-967b-291ec85536e2",
     "company": "OpenAI",
     "title": "Creating with Sora Safely",
@@ -37740,6 +37992,18 @@
     "source_key": "openai-news"
   },
   {
+    "id": "b4924640-9748-58d3-b3ab-ebe2d5b63e57",
+    "company": "Anthropic",
+    "title": "Eval awareness in Opus 4.6 on BrowseComp",
+    "url": "https://www.anthropic.com/research/eval-awareness-browsecomp",
+    "published_at": "2026-03-06T00:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "Evaluating Claude Opus 4.6 on BrowseComp, we found cases where the model recognized the test and decrypted its answers, raising eval integrity questions.",
+    "content": "Evaluating Claude Opus 4.6 on BrowseComp, we found cases where the model recognized the test and decrypted its answers, raising eval integrity questions.",
+    "source_url": "https://www.anthropic.com/sitemap.xml",
+    "source_key": "anthropic-sitemap"
+  },
+  {
     "id": "3136696e-0a1a-5511-8133-4179a4c758cb",
     "company": "Anthropic",
     "title": "Reverse engineering Claude's CVE-2026-2796 exploit",
@@ -37858,6 +38122,18 @@
     "content": "OpenAI shares new tools, certifications, and measurement resources to help schools and universities close AI capability gaps and expand opportunity.",
     "source_url": "https://openai.com/news/rss.xml",
     "source_key": "openai-news"
+  },
+  {
+    "id": "f8ddbc7d-3464-5fb6-9097-337b0afd997e",
+    "company": "Anthropic",
+    "title": "Labor market impacts of AI: A new measure",
+    "url": "https://www.anthropic.com/research/labor-market-impacts",
+    "published_at": "2026-03-05T00:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "We introduce \"observed exposure,\" combining LLM capability with real Claude usage data, and share early evidence on employment effects.",
+    "content": "We introduce \"observed exposure,\" combining LLM capability with real Claude usage data, and share early evidence on employment effects.",
+    "source_url": "https://www.anthropic.com/sitemap.xml",
+    "source_key": "anthropic-sitemap"
   },
   {
     "id": "bedc40a9-167c-496b-a9ef-cd58158e3708",
@@ -38158,6 +38434,18 @@
     "content": "OpenAI shares updates on its mental health safety work, including parental controls, trusted contacts, improved distress detection, and recent litigation developments.",
     "source_url": "https://openai.com/news/rss.xml",
     "source_key": "openai-news"
+  },
+  {
+    "id": "3595a8e6-806c-5107-90fd-5326af7da0e6",
+    "company": "Anthropic",
+    "title": "Statement on the comments from Secretary of War Pete Hegseth",
+    "url": "https://www.anthropic.com/news/statement-comments-secretary-war",
+    "published_at": "2026-02-27T00:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "Anthropic's response to the Secretary of War and advice for customers",
+    "content": "Anthropic's response to the Secretary of War and advice for customers",
+    "source_url": "https://www.anthropic.com/sitemap.xml",
+    "source_key": "anthropic-sitemap"
   },
   {
     "id": "589012bd-7549-40cb-8ec7-f44760413624",
@@ -39502,6 +39790,18 @@
     "content": "An inside look at how OpenAI scaled PostgreSQL to millions of queries per second using replicas, caching, rate limiting, and workload isolation.",
     "source_url": "https://openai.com/news/rss.xml",
     "source_key": "openai-news"
+  },
+  {
+    "id": "a9ed13e7-036f-5088-9706-06b93c6e3fca",
+    "company": "Anthropic",
+    "title": "Claude's new constitution",
+    "url": "https://www.anthropic.com/news/claude-new-constitution",
+    "published_at": "2026-01-22T00:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "A new approach to a foundational document that expresses and shapes who Claude is",
+    "content": "A new approach to a foundational document that expresses and shapes who Claude is",
+    "source_url": "https://www.anthropic.com/sitemap.xml",
+    "source_key": "anthropic-sitemap"
   },
   {
     "id": "11ddddbe-e2a1-445e-bb88-c185c9f0fe89",
@@ -53412,6 +53712,18 @@
     "source_key": "deepseek-api-news"
   },
   {
+    "id": "94c56428-0ea2-5ad1-a48e-5e3ede6be406",
+    "company": "Anthropic",
+    "title": "Claude is now available in Brazil",
+    "url": "https://www.anthropic.com/news/claude-brazil",
+    "published_at": "2024-08-01T00:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "Claude, Anthropic’s trusted AI assistant, is now available in Brazil. Starting today, consumers and businesses in Brazil will be able to access Claude.",
+    "content": "Claude, Anthropic’s trusted AI assistant, is now available in Brazil. Starting today, consumers and businesses in Brazil will be able to access Claude.",
+    "source_url": "https://www.anthropic.com/sitemap.xml",
+    "source_key": "anthropic-sitemap"
+  },
+  {
     "id": "929027b1-9a85-45fd-b8eb-b14298237253",
     "company": "Google DeepMind",
     "title": "Gemma Scope: helping the safety community shed light on the inner workings of language models",
@@ -54600,6 +54912,18 @@
     "source_key": "deepmind-blog"
   },
   {
+    "id": "9b78b724-796b-5e86-9fb1-6418cd9dbda0",
+    "company": "Anthropic",
+    "title": "Reflections on our Responsible Scaling Policy",
+    "url": "https://www.anthropic.com/news/reflections-on-our-responsible-scaling-policy",
+    "published_at": "2024-05-20T00:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "Lessons from implementing our first Responsible Scaling Policy, which focuses on catastrophic safety failures and misuse of frontier models.",
+    "content": "Lessons from implementing our first Responsible Scaling Policy, which focuses on catastrophic safety failures and misuse of frontier models.",
+    "source_url": "https://www.anthropic.com/sitemap.xml",
+    "source_key": "anthropic-sitemap"
+  },
+  {
     "id": "accc3d07-ccaa-4643-bed2-abe44f8f4bf8",
     "company": "OpenAI",
     "title": "How the voices for ChatGPT were chosen",
@@ -54814,6 +55138,18 @@
     "content": "Announcing our novel watermarking method for AI-generated text and video, and how we’re bringing SynthID to key Google products",
     "source_url": "https://deepmind.google/blog/rss.xml",
     "source_key": "deepmind-blog"
+  },
+  {
+    "id": "af9a5dbe-6de2-5c9c-a316-b388dac710af",
+    "company": "Anthropic",
+    "title": "Claude is now available in the EU",
+    "url": "https://www.anthropic.com/news/claude-europe",
+    "published_at": "2024-05-14T00:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "Claude, Anthropic's trusted AI assistant, is now available for people and businesses across Europe.",
+    "content": "Claude, Anthropic's trusted AI assistant, is now available for people and businesses across Europe.",
+    "source_url": "https://www.anthropic.com/sitemap.xml",
+    "source_key": "anthropic-sitemap"
   },
   {
     "id": "3539d294-56f6-4637-94f8-beccd48868f9",
@@ -56026,6 +56362,18 @@
     "content": "",
     "source_url": "https://huggingface.co/blog/feed.xml",
     "source_key": "hugging-face-blog"
+  },
+  {
+    "id": "50ccc5cb-5beb-5dbb-8713-bca0bdd5bc60",
+    "company": "Anthropic",
+    "title": "Introducing the next generation of Claude",
+    "url": "https://www.anthropic.com/news/claude-3-family",
+    "published_at": "2024-03-04T00:00:00+00:00",
+    "source_type": "scraped",
+    "summary": "The Claude 3 model family—Haiku, Sonnet, and Opus—sets new industry benchmarks across a wide range of cognitive tasks.",
+    "content": "The Claude 3 model family—Haiku, Sonnet, and Opus—sets new industry benchmarks across a wide range of cognitive tasks.",
+    "source_url": "https://www.anthropic.com/sitemap.xml",
+    "source_key": "anthropic-sitemap"
   },
   {
     "id": "b1c36a74-a068-44b9-bcbb-f45a70d1264a",
