@@ -1,5 +1,41 @@
 [
   {
+    "id": "c3bb3673-468a-5cf4-aff1-3a3c461e4862",
+    "company": "OpenClaw",
+    "title": "release-publish/de200490f822-1794679879: improve(ios): limit redraws while question countdowns run (#198094)",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/release-publish%2Fde200490f822-1794679879",
+    "published_at": "2026-11-14T17:54:36+00:00",
+    "source_type": "rss_official",
+    "summary": "Keep question countdown updates local to the countdown label while preserving model-owned deadlines, foreground expiry, and stale-answer rejection. Co-authored-by: vyctorbrzezowski Co-authored-by: mikengyn Co-authored-by: Vyctor H. Brzezowski",
+    "content": "Keep question countdown updates local to the countdown label while preserving model-owned deadlines, foreground expiry, and stale-answer rejection. Co-authored-by: vyctorbrzezowski 51521767+vyctorbrzezowski@users.noreply.github.com Co-authored-by: mikengyn 13422215+mikengyn@users.noreply.github.com Co-authored-by: Vyctor H. Brzezowski krzyszchweski@gmail.com",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
+  },
+  {
+    "id": "2bb5397b-fb4d-5d53-8d31-26e6b5299a11",
+    "company": "Hermes Agent",
+    "title": "abandoned-rc.7-v0.23.2",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/abandoned-rc.7-v0.23.2",
+    "published_at": "2026-11-14T17:40:50+00:00",
+    "source_type": "rss_official",
+    "summary": "{\"attempt\":7,\"attemptRef\":\"rc.7-v0.23.2\",\"schema\":1,\"version\":\"0.23.2\"}",
+    "content": "{\"attempt\":7,\"attemptRef\":\"rc.7-v0.23.2\",\"schema\":1,\"version\":\"0.23.2\"}",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
+    "id": "1e329bbf-6781-5b67-b893-e499149c6949",
+    "company": "Hermes Agent",
+    "title": "rc.7-v0.23.2",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/rc.7-v0.23.2",
+    "published_at": "2026-11-14T16:02:50+00:00",
+    "source_type": "rss_official",
+    "summary": "{\"attempt\":7,\"autopublish\":false,\"claimEpoch\":1794672170,\"commit\":\"62…",
+    "content": "{\"attempt\":7,\"autopublish\":false,\"claimEpoch\":1794672170,\"commit\":\"62…",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
     "id": "7969fffb-f08a-5879-920f-c9691ab133f9",
     "company": "Hermes Agent",
     "title": "abandoned-rc.6-v0.23.2",
