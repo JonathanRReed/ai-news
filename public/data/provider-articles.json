@@ -1,13 +1,49 @@
 [
   {
+    "id": "7969fffb-f08a-5879-920f-c9691ab133f9",
+    "company": "Hermes Agent",
+    "title": "abandoned-rc.6-v0.23.2",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/abandoned-rc.6-v0.23.2",
+    "published_at": "2026-11-14T08:55:59+00:00",
+    "source_type": "rss_official",
+    "summary": "{\"attempt\":6,\"attemptRef\":\"rc.6-v0.23.2\",\"schema\":1,\"version\":\"0.23.2\"}",
+    "content": "{\"attempt\":6,\"attemptRef\":\"rc.6-v0.23.2\",\"schema\":1,\"version\":\"0.23.2\"}",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
+    "id": "f790eebe-7add-5878-bf58-aace54f784c4",
+    "company": "Hermes Agent",
+    "title": "Hermes Agent canary v0.23.1+canary.20261114T064334Z",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.23.1%2Bcanary.20261114T064334Z",
+    "published_at": "2026-11-14T07:46:34+00:00",
+    "source_type": "rss_official",
+    "summary": "Hermes Agent v0.23.1+canary.20261114T064334Z (v0.23.1+canary.20261114T064334Z) Release Date: November 14, 2026 Downloads Hermes Desktop OS Architecture Download macOS Apple Silicon (M-series) DMG Windows x86 (64-bit) MSIX Windows ARM (arm64 / aarch64) MSIX Native install/chat smoke Download availability is independent of smoke status. Each result covers all native legs in that format group. Linux bundles are disabled; unsigned Store envelopes are not install-smoked. No-upload dry tags have...",
+    "content": "Hermes Agent v0.23.1+canary.20261114T064334Z (v0.23.1+canary.20261114T064334Z) Release Date: November 14, 2026 Downloads Hermes Desktop OS Architecture Download macOS Apple Silicon (M-series) DMG Windows x86 (64-bit) MSIX Windows ARM (arm64 / aarch64) MSIX Native install/chat smoke Download availability is independent of smoke status. Each result covers all native legs in that format group. Linux bundles are disabled; unsigned Store envelopes are not install-smoked. No-upload dry tags have no download handoff and are not smoke-qualified. Packages Smoke status macOS DMG + ZIP (arm64) Passed Windows MSIX (arm64) Passed Windows MSIX (x64) Passed Full Changelog : v0.23.1+canary.20261113T064447Z...v0.23.1+canary.20261114T064334Z",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
+    "id": "28aff6eb-de0d-5906-9a0d-235be092705b",
+    "company": "Hermes Agent",
+    "title": "rc.6-v0.23.2",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/rc.6-v0.23.2",
+    "published_at": "2026-11-14T07:17:39+00:00",
+    "source_type": "rss_official",
+    "summary": "{\"attempt\":6,\"autopublish\":false,\"claimEpoch\":1794640659,\"commit\":\"42…",
+    "content": "{\"attempt\":6,\"autopublish\":false,\"claimEpoch\":1794640659,\"commit\":\"42…",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
     "id": "918a67cf-ccec-570b-bc56-77b2a62d2b53",
     "company": "Goose",
-    "title": "v1.59.1: fix(databricks): give Gemini tool calls unique ids (#13483)",
+    "title": "v1.59.1",
     "url": "https://github.com/aaif-goose/goose/releases/tag/v1.59.1",
     "published_at": "2026-11-14T01:27:41+00:00",
     "source_type": "rss_official",
-    "summary": "Signed-off-by: Bradley Axen Co-authored-by: mbot (cherry picked from commit b7c7678 )",
-    "content": "Signed-off-by: Bradley Axen baxen@squareup.com Co-authored-by: mbot 3754f8729004d95654c46dbab3129e4ab9ef05cc2534e2a3fbfc155983bd637b@buzz.block.builderlab.xyz (cherry picked from commit b7c7678 )",
+    "summary": "macOS desktop builds and full release notes coming soon.",
+    "content": "macOS desktop builds and full release notes coming soon.",
     "source_url": "https://github.com/aaif-goose/goose/releases.atom",
     "source_key": "goose-releases"
   },
