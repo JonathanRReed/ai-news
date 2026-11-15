@@ -1,5 +1,29 @@
 [
   {
+    "id": "ae5f9119-72f2-5a1c-9a00-40d751107e40",
+    "company": "Codex CLI",
+    "title": "rust-v0.171.0-alpha.6",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.171.0-alpha.6",
+    "published_at": "2026-11-15T16:30:44+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.171.0-alpha.6",
+    "content": "Release 0.171.0-alpha.6",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "3c484d5d-e781-5164-a6e2-e35cad80d85a",
+    "company": "OpenClaw",
+    "title": "release-publish/292a425338ac-1794765195: fix(release): honor authorized native-live failures for 2026.11.4",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/release-publish%2F292a425338ac-1794765195",
+    "published_at": "2026-11-15T15:21:37+00:00",
+    "source_type": "rss_official",
+    "summary": "Co-authored-by: vincentkoc",
+    "content": "Co-authored-by: vincentkoc 25068+vincentkoc@users.noreply.github.com",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
+  },
+  {
     "id": "51c67384-6e03-55d8-a108-7e61e8d2f812",
     "company": "Hermes Agent",
     "title": "Hermes Agent canary v0.23.1+canary.20261115T064406Z",
