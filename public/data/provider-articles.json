@@ -1,8 +1,44 @@
 [
   {
+    "id": "0ca3312c-90cc-5bc2-939e-1651a3b39552",
+    "company": "Codex CLI",
+    "title": "0.171.0-alpha.11",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.171.0-alpha.11",
+    "published_at": "2026-11-17T04:30:04+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.171.0-alpha.11",
+    "content": "Release 0.171.0-alpha.11",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "097208d4-c4d3-5c0c-9212-983d722e3c44",
+    "company": "OpenClaw",
+    "title": "release-publish/a96f17f62b13-1794886323: fix: honor mobile validation waiver for 2026.10.33 (#200385)",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/release-publish%2Fa96f17f62b13-1794886323",
+    "published_at": "2026-11-17T03:31:40+00:00",
+    "source_type": "rss_official",
+    "summary": "Co-authored-by: RomneyDa",
+    "content": "Co-authored-by: RomneyDa 6581799+RomneyDa@users.noreply.github.com",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
+  },
+  {
+    "id": "e4aba15b-a931-5c3c-95dc-790c9d64dff2",
+    "company": "OpenClaw",
+    "title": "release-publish/b4fc05346afb-1794885004: fix(release): honor 2026.10.33 performance waiver (#200375)",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/release-publish%2Fb4fc05346afb-1794885004",
+    "published_at": "2026-11-17T03:06:26+00:00",
+    "source_type": "rss_official",
+    "summary": "Record the release owner’s explicit acceptance of all Kova performance failures while preserving execution, raw results and unrelated gates. Co-authored-by: RomneyDa",
+    "content": "Record the release owner’s explicit acceptance of all Kova performance failures while preserving execution, raw results and unrelated gates. Co-authored-by: RomneyDa 6581799+RomneyDa@users.noreply.github.com",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
+  },
+  {
     "id": "563f8f7b-922f-5eb7-8277-e0e5ca2b9554",
     "company": "Codex CLI",
-    "title": "rust-v0.170.0-alpha.4.1",
+    "title": "0.170.0-alpha.4.1",
     "url": "https://github.com/openai/codex/releases/tag/rust-v0.170.0-alpha.4.1",
     "published_at": "2026-11-17T00:32:54+00:00",
     "source_type": "rss_official",
@@ -22,6 +58,18 @@
     "content": "Release 0.171.0-alpha.10",
     "source_url": "https://github.com/openai/codex/releases.atom",
     "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "f3e2576f-eb01-5935-8221-e136f47a181c",
+    "company": "OpenClaw",
+    "title": "release-publish/13a0a3e7edff-1794885837",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/release-publish%2F13a0a3e7edff-1794885837",
+    "published_at": "2026-11-16T23:02:30+00:00",
+    "source_type": "rss_official",
+    "summary": "fix(auth): reuse admitted identity for session source checks ( #200265 )",
+    "content": "fix(auth): reuse admitted identity for session source checks ( #200265 )",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
   },
   {
     "id": "9f62048c-1dd5-54cf-adee-681ae67d2e0c",
@@ -538,6 +586,18 @@
     "content": "{\"commit\":\"bceec18881451a914afdf25164c5194d25f35090\",\"details\":{\"buil…",
     "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
     "source_key": "hermes-agent-releases"
+  },
+  {
+    "id": "f70c7a06-f45f-5f95-8d68-a6fb9376fb79",
+    "company": "OpenAI",
+    "title": "How Revolut raises ambition without lowering the bar",
+    "url": "https://openai.com/business/customer-stories/revolut",
+    "published_at": "2026-11-16T09:30:00+00:00",
+    "source_type": "rss_official",
+    "summary": "Discover how Revolut uses OpenAI models and Codex to cut coding time by 30–60%, scale financial crime investigations, and innovate without compromising security.",
+    "content": "Discover how Revolut uses OpenAI models and Codex to cut coding time by 30–60%, scale financial crime investigations, and innovate without compromising security.",
+    "source_url": "https://openai.com/news/rss.xml",
+    "source_key": "openai-news"
   },
   {
     "id": "455b8d20-c7c2-5635-b015-9d9f0ef48280",
