@@ -1,6 +1,6 @@
 {
   "name": "ai-news-hub",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "license": "MIT",
   "private": true,
   "type": "module",
@@ -24,7 +24,9 @@
     "sharp": "^0.35.3",
     "devalue": "^5.9.3",
     "@babel/core": "^7.29.7",
-    "esbuild": "^0.28.1"
+    "esbuild": "^0.28.1",
+    "@emnapi/core": "1.11.3",
+    "@emnapi/runtime": "1.11.3"
   },
   "engines": {
     "node": ">=24.22.1 <25",
@@ -79,11 +81,10 @@
     "eslint": "^9.39.5",
     "eslint-plugin-astro": "^3.2.1",
     "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-compiler": "^19.1.0-rc.2",
     "eslint-plugin-react-hooks": "^7.1.1",
     "supabase": "^2.121.0",
     "tailwindcss": "^4.3.3",
     "typescript": "^6.0.3",
-    "wrangler": "^4.151.0"
+    "wrangler": "^4.164.0"
   }
 }
