@@ -317,3 +317,56 @@ test("a restored publisher page is no longer marked unavailable", async ({ page 
   await expect(page.getByText("Source unavailable", { exact: true })).toHaveCount(0);
   await expect(page.getByRole("link", { name: "Read the original on cohere.com", exact: true })).toHaveAttribute("href", "https://cohere.com/blog/ai-in-oil-and-gas");
 });
+
+test("filters the feed by record type and keeps folded builds reachable", async ({ page, isMobile }) => {
+  if (isMobile) await page.getByRole("button", { name: /^Filters/ }).click();
+  const feed = page.locator("#articles");
+
+  // Whatever the snapshot holds today, a folded build group must open to its member records.
+  const group = feed.locator("[data-build-group]").first();
+  if (await group.count()) {
+    const toggle = group.getByRole("button", { name: /pre-release builds/ });
+    await expect(toggle).toHaveAttribute("aria-expanded", "false");
+    await toggle.click();
+    await expect(toggle).toHaveAttribute("aria-expanded", "true");
+    await expect(group.locator('a[href^="/article/"]').first()).toBeVisible();
+  }
+
+  await page.getByRole("button", { name: "News", exact: true }).click();
+  await expect(page.getByRole("button", { name: "News", exact: true })).toHaveAttribute("aria-pressed", "true");
+  await expect(feed.locator('[data-kind="release"], [data-kind="build"], [data-build-group]')).toHaveCount(0);
+
+  await page.getByRole("button", { name: "Software releases", exact: true }).click();
+  await expect(feed.locator('[data-kind="story"]')).toHaveCount(0);
+  // The record type is part of the shareable address, like every other filter.
+  await expect(page).toHaveURL(/[?&]type=releases/);
+
+  await page.reload();
+  if (isMobile) await page.getByRole("button", { name: /^Filters/ }).click();
+  await expect(page.getByRole("button", { name: "Software releases", exact: true })).toHaveAttribute("aria-pressed", "true");
+});
+
+test("the snapshot fallback pages through the cache and treats no matches as an empty result", async ({ page }) => {
+  const rows = page.locator("#articles [data-article-id], #articles [data-build-group]");
+  const loadMore = page.getByRole("button", { name: "Load 20 more" });
+  await expect(loadMore).toBeEnabled();
+  const before = await rows.count();
+  await loadMore.click();
+  await expect.poll(() => rows.count()).toBeGreaterThan(before);
+
+  // Typed key by key: a space between words must survive.
+  const search = page.getByRole("searchbox", { name: "Search articles" });
+  await search.pressSequentially("zzqx nosuchrecord");
+  await expect(search).toHaveValue("zzqx nosuchrecord");
+  await expect(page.getByText("Nothing to show here")).toBeVisible();
+  await expect(page.getByText("Couldn't load the live feed")).toHaveCount(0);
+});
+
+test("a publisher filter in the browser keeps every record from that publisher", async ({ page }) => {
+  // Google DeepMind records are deduplicated by source identity; a broken identity once
+  // collapsed the whole publisher to one row in the browser feed.
+  await page.goto("/?company=Google%20DeepMind");
+  await expect.poll(async () => page.locator('astro-island[component-url*="ArticlesIslandWrapper"]').evaluate((element) => !element.hasAttribute("ssr"))).toBe(true);
+  await expect.poll(() => page.locator('#articles [data-article-id]').count()).toBeGreaterThan(5);
+  await expect(page.getByRole("button", { name: "Google DeepMind", exact: true })).toBeInViewport();
+});

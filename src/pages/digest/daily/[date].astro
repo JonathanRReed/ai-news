@@ -13,7 +13,9 @@ export function getStaticPaths() {
 const { digest, allDigests } = Astro.props as { digest: DailyDigest; allDigests: DailyDigest[] };
 const isLatest = digest.day === allDigests[0]?.day;
 const canonical = isLatest ? `${SITE_URL}/digest/daily/` : `${SITE_URL}/digest/daily/${digest.day}/`;
-const description = `${digest.count} AI updates from ${digest.entities} publishers on ${digest.label}, ordered by publication time.`;
+const description = digest.redated?.length
+  ? `Records first listed on ${digest.label} were re-dated to the publication date on the publisher's page.`
+  : `${digest.count} AI updates from ${digest.entities} publishers on ${digest.label}, ordered by publication time.`;
 ---
 
 <Layout title={`${digest.label} AI Digest | AI News Hub`} description={description} canonical={canonical} currentPage="digest">

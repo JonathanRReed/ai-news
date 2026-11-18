@@ -1,6 +1,5 @@
-import React from 'react';
-import { companies, companyLogoAlt } from '../lib/companyCatalog.js';
-import { cn } from '../lib/utils.js';
+import React, { useEffect, useRef } from 'react';
+import { companies } from '../lib/companyCatalog.js';
 
 interface CompanySelectProps {
   activeCompany: string;
@@ -8,70 +7,43 @@ interface CompanySelectProps {
 }
 
 export default function CompanySelect({ activeCompany, onCompanyChange }: CompanySelectProps) {
+  const strip = useRef<HTMLDivElement>(null);
+
+  // A publisher chosen from a shared link can sit far off to the right. Bring the pressed chip
+  // into the strip by scrolling the strip only, never the page.
+  useEffect(() => {
+    const container = strip.current;
+    const pressed = container?.querySelector<HTMLElement>('[aria-pressed="true"]');
+    if (!container || !pressed) return;
+    const left = pressed.offsetLeft;
+    const right = left + pressed.offsetWidth;
+    if (left < container.scrollLeft || right > container.scrollLeft + container.clientWidth - 40) {
+      container.scrollLeft = Math.max(0, left - 16);
+    }
+  }, [activeCompany]);
+
   return (
-    <div className="relative w-full">
-      <div className="mx-auto max-w-7xl border border-white/20 bg-bg-1">
-        <div
-          role="group"
-          aria-label="Filter by lab or provider"
-          className="hide-scrollbar mx-auto flex w-full max-w-full snap-x snap-mandatory gap-px overflow-x-auto bg-white/15"
-          style={{
-            maskImage: 'linear-gradient(to right, transparent, black 10px, black calc(100% - 10px), transparent)',
-            WebkitMaskImage: 'linear-gradient(to right, transparent, black 10px, black calc(100% - 10px), transparent)'
-          }}
-        >
-          {companies.map((company, index) => {
-            const isActive = activeCompany === company.name;
-            return (
-              <button
-                type="button"
-                key={company.name}
-                className={cn(
-                  "group relative flex h-[84px] w-[96px] shrink-0 snap-center flex-col items-center justify-center bg-bg-0 p-2 transition-all duration-[var(--dur-base)] ease-[var(--ease-standard)] sm:w-[120px]",
-                  isActive
-                    ? "bg-brand text-[var(--signal-ink)]"
-                    : "text-text-2 hover:bg-white/10 hover:text-white",
-                )}
-                aria-pressed={isActive}
-                aria-label={company.name}
-                title={company.name}
-                onClick={() => onCompanyChange && onCompanyChange(company.name)}
-              >
-                <div className={cn(
-                  "relative mb-2 flex h-8 w-8 items-center justify-center border border-white/20 bg-tile transition-transform duration-[var(--dur-base)] ease-[var(--ease-standard)]",
-                  isActive ? "scale-105" : "group-hover:scale-105",
-                )}>
-                  {company.logo ? (
-                    <img
-                      src={company.logo}
-                      alt={companyLogoAlt(company.name)}
-                      className="h-6 w-6 object-contain"
-                      loading={index < 3 ? "eager" : "lazy"}
-                      width="24"
-                      height="24"
-                    />
-                  ) : (
-                    <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <circle cx="12" cy="12" r="10" strokeWidth="2" />
-                    </svg>
-                  )}
-                </div>
-
-                <span className={cn(
-                  "micro-label max-w-full truncate transition-colors duration-[var(--dur-base)] ease-[var(--ease-standard)]",
-                  isActive ? "text-[var(--signal-ink)]" : "text-text-2",
-                )}>
-                  {company.name}
-                </span>
-
-                {isActive && (
-                  <span className="absolute bottom-0 left-0 h-1 w-full bg-tile" aria-hidden="true"></span>
-                )}
-              </button>
-            );
-          })}
-        </div>
-      </div>
+    <div ref={strip} role="group" aria-label="Filter by lab or provider" className="company-strip">
+      {companies.map((company, index) => {
+        const isAll = company.name === 'All';
+        return (
+          <button
+            type="button"
+            key={company.name}
+            className="company-chip"
+            aria-pressed={activeCompany === company.name}
+            onClick={() => onCompanyChange(company.name)}
+          >
+            {!isAll && company.logo && (
+              <span className="company-chip-logo">
+                {/* The button text already names the publisher. */}
+                <img src={company.logo} alt="" loading={index < 8 ? 'eager' : 'lazy'} width="16" height="16" />
+              </span>
+            )}
+            {isAll ? 'All publishers' : company.name}
+          </button>
+        );
+      })}
     </div>
   );
 }

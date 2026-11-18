@@ -5,16 +5,19 @@ import { admittedArticles, articleSourceRouteIndex } from "../lib/articleAdmissi
 import { useArticlesContext } from "../hooks/useArticlesContext.js";
 import { countNewerThan, fetchSavedArticles } from "../hooks/fetchArticlesPage.js";
 import { companyLogoAlt, resolveCompanyLogo } from "../lib/companyCatalog.js";
-import { deriveTopics, topicLabel, readingMinutes } from "../lib/articleTags.js";
+import { topicLabel } from "../lib/articleTags.js";
 import type { Article, PageData } from "../types/article.js";
 import type { ReadState } from "../hooks/useReadState.js";
-import type { FeedView } from "./ArticlesIslandWrapper.js";
+import type { FeedKind, FeedView } from "./ArticlesIslandWrapper.js";
 import { boundedSearchTerms, matchesArticleFilters } from "../lib/intelligenceClient.js";
-import { articleExcerpt, truncateArticleExcerpt } from "../lib/articleExcerpt.js";
+import { truncateArticleExcerpt } from "../lib/articleExcerpt.js";
 import { articlePath } from "../lib/articleRoutes.js";
 import { unavailableArticleSource } from "../lib/articleSourceAvailability.mjs";
 import { itemTypeLabel } from "../lib/itemTypes.js";
 import { cn } from "../lib/utils.js";
+import { feedDayLabel, groupFeedDays, rowExcerpt, UNDATED_DAY, utcClockTime, type BuildGroupFeedRow } from "../lib/feedRows.js";
+import { buildGroupLabel, recordDisplayTitle, recordKind, recordKindLabel, releaseTag, titleNeedsProject, type RecordKind } from "../lib/releaseKind.js";
+import { classifyMajorUpdate } from "../lib/majorUpdates.js";
 
 const EXPANDED_PREVIEW_MAX_LENGTH = 1_600;
 
@@ -55,32 +58,24 @@ function relativeTime(value: string, nowMs: number): string {
   return new Date(t).toLocaleDateString(undefined, { timeZone: "UTC", month: "short", day: "numeric", year: "numeric" });
 }
 
-function timeBucket(value: string, nowMs: number): string {
-  const t = new Date(value).getTime();
-  if (Number.isNaN(t)) return "Undated";
-  // UTC day boundaries so the SSR (build-server tz) and client (user tz) renders agree.
-  const n = new Date(nowMs);
-  const ms = Date.UTC(n.getUTCFullYear(), n.getUTCMonth(), n.getUTCDate());
-  const day = 86400000;
-  if (t >= ms) return "Today";
-  if (t >= ms - day) return "Yesterday";
-  if (t >= ms - 7 * day) return "Earlier this week";
-  if (t >= ms - 30 * day) return "This month";
-  return "Earlier";
-}
-
-function sourceTypeLabel(sourceType?: string): string {
+// Official feeds are the default, so only the exceptions are spelled out on a row.
+function provenanceLabel(sourceType?: string): string | null {
   switch (sourceType) {
-    case "rss_official":
-      return "Official feed";
     case "rss_unofficial":
       return "Community feed";
     case "scraped":
       return "Indexed page";
     default:
-      return "Source feed";
+      return null;
   }
 }
+
+const ExternalIcon = () => (
+  <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square" aria-hidden="true">
+    <path d="M4.5 2.5h5v5" />
+    <path d="M9.5 2.5 2.5 9.5" />
+  </svg>
+);
 
 function highlightText(text: string, terms: string[]): React.ReactNode {
   if (!terms.length) return <PublisherText text={text} />;
@@ -101,10 +96,7 @@ function SavedButton({ saved, onToggle, title }: { saved: boolean; onToggle: () 
       onClick={onToggle}
       aria-pressed={saved}
       aria-label={saved ? `Remove “${title}” from saved` : `Save “${title}” for later`}
-      className={cn(
-        "flex h-11 w-11 shrink-0 items-center justify-center border transition-colors focus-industrial",
-        saved ? "border-brand text-brand" : "border-white/20 text-text-2 hover:border-white/40 hover:text-white",
-      )}
+      className="feed-save focus-industrial"
     >
       <svg width="16" height="16" viewBox="0 0 24 24" fill={saved ? "currentColor" : "none"} stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <path d="M5 3h14a1 1 0 0 1 1 1v17l-8-5-8 5V4a1 1 0 0 1 1-1z" />
@@ -113,26 +105,34 @@ function SavedButton({ saved, onToggle, title }: { saved: boolean; onToggle: () 
   );
 }
 
-function ArticleCard({
+function RowTitle({ article, kind, terms }: { article: Article; kind: RecordKind; terms: string[] }) {
+  if (kind === "story") return <>{highlightText(article.title, terms)}</>;
+  return (
+    <>
+      {titleNeedsProject(article) && <><span className="feed-title-project">{article.company}</span>{" "}</>}
+      <span className="feed-version">{highlightText(article.title, terms)}</span>
+    </>
+  );
+}
+
+function FeedArticleRow({
   article,
-  tier,
   density,
-  nowMs,
   terms,
   seen,
   saved,
   selected,
+  eager,
   onOpen,
   onToggleSaved,
 }: {
   article: Article;
-  tier: "lead" | "top" | "river";
   density: "comfortable" | "compact";
-  nowMs: number;
   terms: string[];
   seen: boolean;
   saved: boolean;
   selected: boolean;
+  eager: boolean;
   onOpen: (id: string) => void;
   onToggleSaved: (id: string) => void;
 }) {
@@ -142,122 +142,194 @@ function ArticleCard({
   const safeUrl = sourceUnavailable ? "" : getSafeArticleUrl(article.url);
   const localUrl = articlePath(article.id);
   const domain = getDomain(article.url);
-  const topics = deriveTopics(article).slice(0, 3);
-  const minutes = readingMinutes(article);
-  const isLead = tier === "lead";
-  const showExcerpt = isLead || (tier === "top" && density === "comfortable") || (tier === "river" && density === "comfortable");
-  const excerpt = articleExcerpt(article);
+  const kind = recordKind(article);
+  const major = classifyMajorUpdate(article);
+  // The deterministic kind wins for builds, so a live row and a static row read the same.
+  const typeLabel = kind === "build" ? recordKindLabel(kind, article) : itemTypeLabel(article.item_type) ?? recordKindLabel(kind, article);
+  const displayTitle = recordDisplayTitle(article);
+  const provenance = provenanceLabel(article.source_type);
+  const excerpt = rowExcerpt(article);
+  const showExcerpt = density === "comfortable" && Boolean(excerpt);
   const expandedExcerpt = truncateArticleExcerpt(
     article.content || article.summary || "",
     EXPANDED_PREVIEW_MAX_LENGTH,
   );
   const hasMoreExcerpt = expandedExcerpt.length > excerpt.length;
   const previewId = `article-preview-${article.id.replace(/[^a-zA-Z0-9_-]/g, "-")}`;
-  const typeLabel = itemTypeLabel(article.item_type);
-  const pad = isLead ? "p-6 md:p-8" : tier === "top" ? "p-5" : density === "compact" ? "p-3.5" : "p-4 md:p-5";
-  const titleSize = isLead ? "text-2xl md:text-4xl" : tier === "top" ? "text-xl" : density === "compact" ? "text-base" : "text-lg";
-  const Heading = isLead ? "h2" : "h3";
+  const clock = utcClockTime(article.published_at);
 
   return (
     <article
       data-article-id={article.id}
-      className={cn(
-        "article-card-hoverable group relative border border-white/[0.14] bg-bg-0/90",
-        pad,
-        selected && "outline-2 outline-brand outline-offset-2",
-        seen && "opacity-60 hover:opacity-100",
-      )}
+      data-kind={kind}
+      data-density={density}
+      data-seen={seen}
+      data-selected={selected}
+      className="feed-row"
     >
-      <div className="mb-3 flex items-center gap-3 border-b border-white/[0.1] pb-3">
-        {logoPath && (
-          <span className={cn("flex shrink-0 items-center justify-center border border-white/20 bg-tile", isLead ? "h-11 w-11" : "h-9 w-9")}>
-            <img src={logoPath} alt={companyLogoAlt(article.company)} className={isLead ? "h-8 w-8 object-contain" : "h-6 w-6 object-contain"} loading={isLead || tier === "top" ? "eager" : "lazy"} decoding="async" fetchPriority={isLead ? "high" : undefined} width={isLead ? 32 : 24} height={isLead ? 32 : 24} />
-          </span>
-        )}
-        <span className="micro-label text-white">{article.company}</span>
-        {isLead && <span className="micro-label border border-brand px-2 py-0.5 text-brand-hover">Newest update</span>}
-        <time className="micro-label tabular-nums ml-auto text-text-2" dateTime={article.published_at} title={new Date(article.published_at).toLocaleString()}>
-          {relativeTime(article.published_at, nowMs)}
-        </time>
-        <SavedButton saved={saved} onToggle={() => onToggleSaved(article.id)} title={article.title} />
-      </div>
+      <span className="feed-logo">
+        <img src={logoPath} alt={companyLogoAlt(article.company)} loading={eager ? "eager" : "lazy"} decoding="async" width={22} height={22} />
+      </span>
 
-      <Heading className={cn(titleSize, "mb-2 font-bold leading-tight text-white text-pretty break-words")}>
-        {localUrl ? (
-          <a
-            href={localUrl}
-            onClick={() => onOpen(article.id)}
-            className="decoration-brand decoration-2 underline-offset-4 transition-colors hover:text-brand-hover hover:underline focus-industrial"
-          >
-            {highlightText(article.title, terms)}
-          </a>
-        ) : (
-          <span>{highlightText(article.title, terms)}</span>
-        )}
-      </Heading>
+      <div className="feed-body min-w-0">
+        <p className="feed-meta">
+          {clock && (
+            <time className="feed-time" dateTime={article.published_at}>
+              {clock}
+            </time>
+          )}
+          <span className="feed-publisher">{article.company}</span>
+          {major && <span className="feed-major">Major update<span className="sr-only">: {major.reason}</span></span>}
+          {typeLabel && <span>{typeLabel}</span>}
+          {provenance && <span>{provenance}</span>}
+        </p>
 
-      <div className="mb-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-text-2">
-        {domain && <span className="border border-white/15 px-2 py-0.5 text-white">{domain}</span>}
-        <span>{sourceTypeLabel(article.source_type)}</span>
-        {typeLabel && <span className="border border-white/15 px-2 py-0.5 text-white">{typeLabel}</span>}
-        {topics.map((key) => (
-          <span key={key} className="text-text-2">· {topicLabel(key)}</span>
-        ))}
-        {minutes > 0 && <span className="tabular-nums">· Estimated source length: {minutes} min</span>}
+        <h3 className="feed-title">
+          {localUrl ? (
+            <a href={localUrl} onClick={() => onOpen(article.id)} className="focus-industrial">
+              <RowTitle article={article} kind={kind} terms={terms} />
+            </a>
+          ) : (
+            <RowTitle article={article} kind={kind} terms={terms} />
+          )}
+        </h3>
+
+        {showExcerpt && (
+          <>
+            <p id={previewId} className={cn("feed-excerpt", !expanded && "line-clamp-2")}>
+              {expanded ? <PublisherText text={expandedExcerpt} /> : highlightText(excerpt, terms)}
+            </p>
+            {hasMoreExcerpt && (
+              <button
+                type="button"
+                className="mt-1 text-xs font-medium text-text-2 underline decoration-white/25 underline-offset-4 transition-colors hover:text-white hover:decoration-brand focus-industrial"
+                aria-expanded={expanded}
+                aria-controls={previewId}
+                onClick={() => setExpanded((value) => !value)}
+              >
+                {expanded ? "Collapse preview" : "Expand preview"}
+              </button>
+            )}
+          </>
+        )}
+
         {safeUrl && (
           <a
             href={safeUrl}
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => onOpen(article.id)}
-            className="text-white underline decoration-brand/70 underline-offset-4 hover:text-brand-hover focus-industrial"
+            className="feed-source focus-industrial"
+            aria-label={`Original source${domain ? ` on ${domain}` : ""} for “${displayTitle}”`}
           >
-            Original source
+            {domain || "Original source"}
+            <ExternalIcon />
           </a>
         )}
-        {sourceUnavailable && <span>Source unavailable</span>}
+        {sourceUnavailable && <span className="feed-source feed-source-missing">Source unavailable</span>}
       </div>
 
-      {showExcerpt && excerpt && (
-        <div>
-          <p
-            id={previewId}
-            className={cn(
-              !expanded && (isLead ? "line-clamp-4" : "line-clamp-2"),
-              isLead ? "text-base md:text-lg" : "text-sm",
-              "max-w-3xl leading-relaxed text-text-2 text-pretty",
-            )}
-          >
-            <PublisherText text={expanded ? expandedExcerpt : excerpt} />
-          </p>
-          {hasMoreExcerpt && (
-            <button
-              type="button"
-              className="mt-2 text-xs font-medium text-brand-hover underline decoration-brand/60 underline-offset-4 transition-colors hover:text-white focus-industrial"
-              aria-expanded={expanded}
-              aria-controls={previewId}
-              onClick={() => setExpanded((value) => !value)}
-            >
-              {expanded ? "Collapse preview" : "Expand preview"}
-            </button>
-          )}
-        </div>
-      )}
+      <SavedButton saved={saved} onToggle={() => onToggleSaved(article.id)} title={displayTitle} />
     </article>
+  );
+}
+
+function BuildGroupRow({
+  group,
+  open,
+  selectedId,
+  onToggle,
+  onOpen,
+}: {
+  group: BuildGroupFeedRow;
+  open: boolean;
+  selectedId?: string;
+  onToggle: () => void;
+  onOpen: (id: string) => void;
+}) {
+  const { company, articles } = group;
+  const newest = articles[0];
+  const listId = `build-group-${group.key.replace(/[^a-zA-Z0-9_-]/g, "-")}`;
+  const tags = articles.slice(0, 2).map((article) => releaseTag(article.title));
+
+  return (
+    <div className="feed-builds" data-build-group={group.key}>
+      <span className="feed-builds-time" aria-hidden="true">{utcClockTime(newest.published_at)}</span>
+      <button
+        type="button"
+        className="feed-builds-toggle focus-industrial"
+        aria-expanded={open}
+        aria-controls={open ? listId : undefined}
+        onClick={onToggle}
+      >
+        <span className="feed-logo">
+          <img src={resolveCompanyLogo(company)} alt="" loading="lazy" decoding="async" width={16} height={16} />
+        </span>
+        <span className="feed-builds-summary">
+          <span>
+            <span className="feed-publisher">{company}</span>
+            {" "}
+            <span className="tabular-nums">{buildGroupLabel(articles)}</span>
+          </span>
+          <span className="feed-builds-range">
+            <PublisherText text={tags.join(", ")} />
+            {articles.length > tags.length && ` and ${articles.length - tags.length} more`}
+          </span>
+        </span>
+        <svg className="feed-builds-chevron" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square" aria-hidden="true">
+          <path d="m2.5 4.5 3.5 3.5 3.5-3.5" />
+        </svg>
+      </button>
+      {open && (
+        <ul id={listId} className="feed-builds-list">
+          {articles.map((article) => {
+            const safeUrl = unavailableArticleSource(article.url) ? "" : getSafeArticleUrl(article.url);
+            return (
+              <li key={article.id} data-article-id={article.id} data-selected={article.id === selectedId}>
+                <time className="feed-time" dateTime={article.published_at}>
+                  {utcClockTime(article.published_at)}
+                </time>
+                <a href={articlePath(article.id)} onClick={() => onOpen(article.id)} className="feed-version focus-industrial">
+                  <PublisherText text={article.title} />
+                </a>
+                {safeUrl && (
+                  <a
+                    href={safeUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => onOpen(article.id)}
+                    className="feed-source focus-industrial text-xs"
+                    aria-label={`Original source for ${company} ${article.title}`}
+                  >
+                    Source
+                    <ExternalIcon />
+                  </a>
+                )}
+              </li>
+            );
+          })}
+        </ul>
+      )}
+    </div>
   );
 }
 
 export default function ArticleListIsland({
   density = "comfortable",
   view = "all",
+  kind = "all",
   readState,
   now = 0,
+  archiveDays = [],
   onClearFilters,
 }: {
   density?: "comfortable" | "compact";
   view?: FeedView;
+  kind?: FeedKind;
   readState: ReadState;
   now?: number;
+  /** UTC days that have a published /digest/daily/ page, newest first. */
+  archiveDays?: string[];
   onClearFilters: () => void;
 }) {
   const { data, isFetching, error, fetchNextPage, hasNextPage, refetch, filters } = useArticlesContext();
@@ -328,10 +400,14 @@ export default function ArticleListIsland({
     : "the latest successful export";
 
   const articles = useMemo<Article[]>(() => {
-    if (view === "unread") return allArticles.filter((a) => !(sourceRouteIds.get(a.id) ?? [a.id]).some((id) => seen.has(id)));
-    if (view === "saved") return allArticles.filter((a) => (sourceRouteIds.get(a.id) ?? [a.id]).some((id) => saved.has(id)));
-    return allArticles;
-  }, [allArticles, view, seen, saved, sourceRouteIds]);
+    const routeIds = (a: Article) => sourceRouteIds.get(a.id) ?? [a.id];
+    const ofKind = kind === "all"
+      ? allArticles
+      : allArticles.filter((a) => (recordKind(a) === "story") === (kind === "news"));
+    if (view === "unread") return ofKind.filter((a) => !routeIds(a).some((id) => seen.has(id)));
+    if (view === "saved") return ofKind.filter((a) => routeIds(a).some((id) => saved.has(id)));
+    return ofKind;
+  }, [allArticles, view, kind, seen, saved, sourceRouteIds]);
 
   const [visibleCount, setVisibleCount] = useState(20);
   const [pendingIncrease, setPendingIncrease] = useState(false);
@@ -339,18 +415,20 @@ export default function ArticleListIsland({
   const [newCount, setNewCount] = useState(0);
   const [pendingNewStories, setPendingNewStories] = useState(false);
   const [newStoriesDismissed, setNewStoriesDismissed] = useState(false);
-  const [selectedIndex, setSelectedIndex] = useState(-1);
+  // The selection is a record, not a position: opening a build group above it must not move it.
+  const [selectedKey, setSelectedKey] = useState<string | null>(null);
   const [showHelp, setShowHelp] = useState(false);
+  const [openGroups, setOpenGroups] = useState<Set<string>>(() => new Set());
   const pollTimer = useRef<number | null>(null);
-  const selectedIndexRef = useRef(selectedIndex);
+  const selectedKeyRef = useRef(selectedKey);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const showHelpRef = useRef(showHelp);
 
   // Mirror selection + dialog state into refs so the keyboard handler reads the latest
   // values without listing them as deps (avoids rebinding the listener per keystroke).
   useEffect(() => {
-    selectedIndexRef.current = selectedIndex;
-  }, [selectedIndex]);
+    selectedKeyRef.current = selectedKey;
+  }, [selectedKey]);
   useEffect(() => {
     showHelpRef.current = showHelp;
   }, [showHelp]);
@@ -360,47 +438,44 @@ export default function ArticleListIsland({
   /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(() => {
     setVisibleCount(20);
-    setSelectedIndex(-1);
-  }, [view, filters.company, filters.q, filters.topics]);
+    setSelectedKey(null);
+  }, [view, kind, filters.company, filters.q, filters.topics]);
   /* eslint-enable react-hooks/set-state-in-effect */
 
   const visibleArticles = articles.slice(0, visibleCount);
 
-  // Preserve the feed contract in every visual tier. The lead and next-up cards are
-  // layout treatments for the newest rows, not a recommendation or importance score.
-  const { lead, topPicks, riverGroups } = useMemo(() => {
-    const enoughForTiers = view === "all" && visibleArticles.length >= 8;
-    if (!enoughForTiers) {
-      return { lead: null as Article | null, topPicks: [] as Article[], riverGroups: groupByBucket(visibleArticles, nowMs) };
-    }
-    const leadArticle = visibleArticles[0] ?? null;
-    const tops = visibleArticles.slice(1, 5);
-    const promoted = new Set([leadArticle, ...tops].filter(Boolean).map((a) => (a as Article).id));
-    const river = visibleArticles.filter((a) => !promoted.has(a.id));
-    return { lead: leadArticle, topPicks: tops, riverGroups: groupByBucket(river, nowMs) };
-  }, [visibleArticles, view, nowMs]);
+  // The ledger is strictly chronological: UTC days, newest first. The only folding is
+  // deterministic, one project's pre-release builds on one day, and every member stays listed.
+  // Saved is a personal list: a build someone bookmarked is shown as its own row there.
+  const feedDays = useMemo(() => groupFeedDays(visibleArticles, { foldBuilds: view !== "saved" }), [visibleArticles, view]);
+  const archiveDaySet = useMemo(() => new Set(archiveDays), [archiveDays]);
+  const toggleGroup = (key: string) => setOpenGroups((prev) => {
+    const next = new Set(prev);
+    if (next.has(key)) next.delete(key);
+    else next.add(key);
+    return next;
+  });
 
-  // Flat list in visual order, powers keyboard navigation (j/k/o/s/m).
+  // Flat list in visual order, powers keyboard navigation (j/k/o/s/m). Folded builds
+  // are skipped until their group is opened.
   const orderedArticles = useMemo<Article[]>(() => {
     const list: Article[] = [];
-    if (lead) list.push(lead);
-    list.push(...topPicks);
-    riverGroups.forEach((group) => list.push(...group.items));
+    for (const day of feedDays) {
+      for (const row of day.rows) {
+        if (row.type === "article") list.push(row.article);
+        else if (openGroups.has(row.key)) list.push(...row.articles);
+      }
+    }
     return list;
-  }, [lead, topPicks, riverGroups]);
-  const selectedId = selectedIndex >= 0 ? orderedArticles[selectedIndex]?.id : undefined;
-
-  // Keep the keyboard selection in range when the list shrinks (filter/view change, mark-read).
-  /* eslint-disable react-hooks/set-state-in-effect */
-  useEffect(() => {
-    setSelectedIndex((i) => (i >= orderedArticles.length ? orderedArticles.length - 1 : i));
-  }, [orderedArticles.length]);
-  /* eslint-enable react-hooks/set-state-in-effect */
+  }, [feedDays, openGroups]);
+  // A selection whose record left the list (filter change, group closed) simply stops showing.
+  const selectedId = selectedKey && orderedArticles.some((article) => article.id === selectedKey) ? selectedKey : undefined;
 
   const activeFilters = [
     filters.company && filters.company !== "All" ? filters.company : null,
     ...(filters.topics ?? []).map(topicLabel),
     filters.q?.trim() ? `"${filters.q.trim()}"` : null,
+    kind === "news" ? "News only" : kind === "releases" ? "Software releases only" : null,
     view !== "all" ? view.charAt(0).toUpperCase() + view.slice(1) : null,
   ].filter(Boolean) as string[];
 
@@ -455,8 +530,8 @@ export default function ArticleListIsland({
     const checkForNew = async () => {
       if (typeof document !== "undefined" && document.hidden) return;
       // The COUNT only scopes by company; don't show a misleading banner while a text
-      // search or topic filter is narrowing the feed (those can't be applied server-side).
-      if (!latestLoadedTs || filters.q?.trim() || (filters.topics && filters.topics.length)) {
+      // search, topic or record-type filter is narrowing the feed (those can't be applied server-side).
+      if (!latestLoadedTs || kind !== "all" || filters.q?.trim() || (filters.topics && filters.topics.length)) {
         setNewCount(0);
         return;
       }
@@ -477,7 +552,7 @@ export default function ArticleListIsland({
       if (pollTimer.current) window.clearInterval(pollTimer.current);
       if (typeof document !== "undefined") document.removeEventListener("visibilitychange", onVisible);
     };
-  }, [filters, latestLoadedTs]);
+  }, [filters, kind, latestLoadedTs]);
 
   // Keyboard navigation for power users (j/k move · o open · s save · m mark read · / search · ? help).
   useEffect(() => {
@@ -489,7 +564,7 @@ export default function ArticleListIsland({
       if (showHelpRef.current) {
         if (e.key === "Escape") {
           setShowHelp(false);
-          setSelectedIndex(-1);
+          setSelectedKey(null);
         }
         return;
       }
@@ -501,20 +576,22 @@ export default function ArticleListIsland({
       }
       if (e.metaKey || e.ctrlKey || e.altKey) return;
       const n = orderedArticles.length;
+      const indexOf = (id: string | null) => orderedArticles.findIndex((article) => article.id === id);
+      const selectedArticle = () => orderedArticles.find((article) => article.id === selectedKeyRef.current);
       switch (e.key) {
         case "j":
         case "ArrowDown":
           e.preventDefault();
-          setSelectedIndex((i) => Math.min(n - 1, i + 1));
+          setSelectedKey((current) => orderedArticles[Math.min(n - 1, indexOf(current) + 1)]?.id ?? null);
           break;
         case "k":
         case "ArrowUp":
           e.preventDefault();
-          setSelectedIndex((i) => (i <= 0 ? 0 : i - 1));
+          setSelectedKey((current) => orderedArticles[Math.max(0, indexOf(current) - 1)]?.id ?? null);
           break;
         case "o":
         case "Enter": {
-          const a = orderedArticles[selectedIndexRef.current];
+          const a = selectedArticle();
           const url = a ? articlePath(a.id) : "";
           if (a && url) {
             markSeen(a.id);
@@ -523,12 +600,12 @@ export default function ArticleListIsland({
           break;
         }
         case "s": {
-          const a = orderedArticles[selectedIndexRef.current];
+          const a = selectedArticle();
           if (a) toggleSaved(a.id);
           break;
         }
         case "m": {
-          const a = orderedArticles[selectedIndexRef.current];
+          const a = selectedArticle();
           if (a) markSeen(a.id);
           break;
         }
@@ -542,7 +619,7 @@ export default function ArticleListIsland({
           break;
         case "Escape":
           setShowHelp(false);
-          setSelectedIndex(-1);
+          setSelectedKey(null);
           setNewStoriesDismissed(true);
           break;
       }
@@ -597,12 +674,14 @@ export default function ArticleListIsland({
         ? saved.size === 0 ? "You haven't saved any stories yet. Tap the bookmark on a card to keep it here." : "No saved stories are available in this view. Clear filters or try again later."
         : view === "unread"
           ? "You're all caught up. Every loaded story has been opened."
-          : "Try a different lab, topic or search term.";
+          : kind !== "all"
+            ? `No ${kind === "news" ? "news stories" : "software releases"} in the stories loaded so far.`
+            : "Try a different lab, topic or search term.";
     return (
       <div className="mt-8 border border-white/20 bg-bg-1 p-8">
         <p className="micro-label mb-3 text-white">Nothing to show here</p>
         <p className="max-w-2xl text-base leading-relaxed text-text-2">{reason}</p>
-        {(activeFilters.length > 0 || view !== "all") && (
+        {activeFilters.length > 0 && (
           <button type="button" className="ghost-button mt-6" onClick={onClearFilters}>
             Clear filters
           </button>
@@ -630,7 +709,7 @@ export default function ArticleListIsland({
   const skeletons = (
     <>
       {[...Array(4)].map((_, i) => (
-        <div key={i} className="mb-4 animate-pulse border border-white/15 bg-bg-1 p-6">
+        <div key={i} className="animate-pulse border-b border-white/10 py-5">
           <div className="mb-3 h-4 w-40 bg-white/10"></div>
           <div className="mb-2 h-7 w-3/4 bg-white/10"></div>
           <div className="h-4 w-2/3 bg-white/10"></div>
@@ -639,18 +718,8 @@ export default function ArticleListIsland({
     </>
   );
 
-  const cardProps = (article: Article, tier: "lead" | "top" | "river") => ({
-    article,
-    tier,
-    density,
-    nowMs,
-    terms: searchTerms,
-    seen: (sourceRouteIds.get(article.id) ?? [article.id]).some((id) => seen.has(id)),
-    saved: (sourceRouteIds.get(article.id) ?? [article.id]).some((id) => saved.has(id)),
-    selected: article.id === selectedId,
-    onOpen: markSeen,
-    onToggleSaved: toggleSaved,
-  });
+  const eagerIds = new Set(visibleArticles.slice(0, 6).map((article) => article.id));
+  const anyRoute = (id: string, set: Set<string>) => (sourceRouteIds.get(id) ?? [id]).some((routeId) => set.has(routeId));
 
   return (
     <>
@@ -660,57 +729,56 @@ export default function ArticleListIsland({
           Current updates are temporarily unavailable. The newest story in this published snapshot is dated {newestPublishedLabel}.
         </div>
       )}
-      <div className="mb-5 grid gap-px bg-white/15 md:grid-cols-[1fr_auto_auto]">
-        <div className="bg-bg-1 p-4">
-          <p className="micro-label text-text-2">Scope</p>
-          <p className="mt-2 text-sm leading-relaxed text-white">
-            {activeFilters.length > 0 ? activeFilters.join(" / ") : "All tracked sources"}
-          </p>
-        </div>
-        <div className="bg-bg-1 p-4 md:min-w-44">
-          <p className="micro-label text-text-2">{searchTerms.length ? "Results" : "Showing"}</p>
-          <p className="mt-2 font-mono text-sm tabular-nums text-white">{loadedLabel}</p>
-        </div>
-        <div className="bg-bg-1 p-4 md:min-w-48">
-          <p className="micro-label text-text-2">Latest</p>
-          <p className="mt-2 font-mono text-sm tabular-nums text-white">
-            {visibleArticles.length > 0 ? relativeTime(visibleArticles[0].published_at, nowMs) : "No matches"}
-          </p>
-        </div>
-      </div>
+      <p className="mb-1 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 text-xs text-text-2">
+        <span>
+          <span className="font-semibold text-white">{activeFilters.length > 0 ? activeFilters.join(" / ") : "All tracked sources"}</span>
+          {visibleArticles.length > 0 && <>, newest {relativeTime(visibleArticles[0].published_at, nowMs)}</>}
+        </span>
+        <span className="font-mono tabular-nums">
+          {searchTerms.length ? `${loadedLabel.replace("loaded", "matches loaded")}` : loadedLabel}, times in UTC
+        </span>
+      </p>
 
       {isFetching && visibleArticles.length === 0 ? (
         skeletons
       ) : (
-        <div className="space-y-8">
-          {lead && (
-            <div>{<ArticleCard {...cardProps(lead, "lead")} />}</div>
-          )}
-
-          {topPicks.length > 0 && (
-            <div>
-              <h2 className="micro-label mb-3 text-text-2">Next updates</h2>
-              <div className="grid gap-4 md:grid-cols-2">
-                {topPicks.map((article) => (
-                  <ArticleCard key={article.id} {...cardProps(article, "top")} />
-                ))}
+        <div>
+          {feedDays.map((day) => (
+            <section key={day.day} className="feed-day" aria-label={feedDayLabel(day.day, nowMs)}>
+              <div className="feed-day-head">
+                <h2 className="feed-day-title">{feedDayLabel(day.day, nowMs)}</h2>
+                {day.day !== UNDATED_DAY && archiveDaySet.has(day.day) && (
+                  <a href={`/digest/daily/${day.day}/`} className="rail-link focus-industrial">
+                    Full day
+                  </a>
+                )}
               </div>
-            </div>
-          )}
-
-          {riverGroups.map((group) => (
-            <div key={group.bucket}>
-              <div className="mb-3 flex items-center gap-3">
-                <h2 className="micro-label text-text-2">{group.bucket}</h2>
-                <span className="h-px flex-1 bg-white/10" aria-hidden="true"></span>
-                <span className="micro-label tabular-nums text-muted">{group.items.length}</span>
-              </div>
-              <div className="space-y-3">
-                {group.items.map((article) => (
-                  <ArticleCard key={article.id} {...cardProps(article, "river")} />
-                ))}
-              </div>
-            </div>
+              {day.rows.map((row) => (
+                row.type === "article" ? (
+                  <FeedArticleRow
+                    key={row.article.id}
+                    article={row.article}
+                    density={density}
+                    terms={searchTerms}
+                    seen={anyRoute(row.article.id, seen)}
+                    saved={anyRoute(row.article.id, saved)}
+                    selected={row.article.id === selectedId}
+                    eager={eagerIds.has(row.article.id)}
+                    onOpen={markSeen}
+                    onToggleSaved={toggleSaved}
+                  />
+                ) : (
+                  <BuildGroupRow
+                    key={row.key}
+                    group={row}
+                    open={openGroups.has(row.key)}
+                    selectedId={selectedId}
+                    onToggle={() => toggleGroup(row.key)}
+                    onOpen={markSeen}
+                  />
+                )
+              ))}
+            </section>
           ))}
         </div>
       )}
@@ -806,7 +874,7 @@ export default function ArticleListIsland({
 
       {visibleCount > 20 && (
         <button
-          className="ghost-button fixed bottom-6 right-6 z-40 bg-bg-1"
+          className="ghost-button back-to-top fixed bottom-6 right-6 z-40"
           onClick={() => window.scrollTo({ top: 0, behavior: prefersReducedMotion() ? "auto" : "smooth" })}
           aria-label="Back to top"
         >
@@ -815,16 +883,4 @@ export default function ArticleListIsland({
       )}
     </>
   );
-}
-
-function groupByBucket(articles: Article[], nowMs: number): { bucket: string; items: Article[] }[] {
-  const order = ["Today", "Yesterday", "Earlier this week", "This month", "Earlier", "Undated"];
-  const map = new Map<string, Article[]>();
-  for (const article of articles) {
-    const bucket = timeBucket(article.published_at, nowMs);
-    const list = map.get(bucket) ?? [];
-    list.push(article);
-    map.set(bucket, list);
-  }
-  return order.filter((b) => map.has(b)).map((bucket) => ({ bucket, items: map.get(bucket) as Article[] }));
 }

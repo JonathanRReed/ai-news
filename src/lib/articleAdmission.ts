@@ -133,7 +133,23 @@ export function isInternalReleaseBuild(article: Pick<Article, "url">): boolean {
   }
 }
 
+// Static pages ask for the same admitted list once per page (thousands of times per build).
+// The answer depends only on the input rows, so it is remembered per input array and handed
+// out as a copy. A changed length means the caller reused the array for other rows.
+const admittedCache = new WeakMap<Article[], { length: number; public?: Article[]; withBuilds?: Article[] }>();
+
 export function admittedArticles(articles: Article[], options: { includeInternalBuilds?: boolean } = {}): Article[] {
+  const slot = options.includeInternalBuilds ? "withBuilds" : "public";
+  let cached = admittedCache.get(articles);
+  if (!cached || cached.length !== articles.length) {
+    cached = { length: articles.length };
+    admittedCache.set(articles, cached);
+  }
+  const result = cached[slot] ?? (cached[slot] = computeAdmittedArticles(articles, options));
+  return result.slice();
+}
+
+function computeAdmittedArticles(articles: Article[], options: { includeInternalBuilds?: boolean }): Article[] {
   const routes = admittedRouteArticles(articles).filter(article => options.includeInternalBuilds || !isInternalReleaseBuild(article));
   const preferred = new Map<string, Article>();
   for (const article of routes) {

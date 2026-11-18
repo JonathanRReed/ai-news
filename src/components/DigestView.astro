@@ -23,7 +23,7 @@ function dateLabel(iso: string): string {
   <div class="max-w-5xl">
     <h1 class="macro-heading max-w-4xl">{digest.label}</h1>
     <p class="mt-6 max-w-2xl text-lg leading-relaxed text-text-2">
-      The {digest.topStories.length} latest {digest.topStories.length === 1 ? "story" : "stories"} from {digest.count} updates published by {digest.labs} sources this week.
+      The {digest.topStories.length} latest {digest.topStories.length === 1 ? "story" : "stories"} from {digest.count} updates published by {digest.labs} sources this week.{digest.buildsOmitted ? " Pre-release builds are counted but not listed here." : ""}
     </p>
   </div>
 </section>

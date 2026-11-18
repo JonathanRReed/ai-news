@@ -15,7 +15,7 @@ const versionArticle: Article = {
   id: "package-version-preview",
   company: "Cline",
   title: "@cline/agents@0.0.88",
-  summary: "@cline/agents@0.0.88",
+  summary: "Published packages in this release: @cline/agents@0.0.88",
   content: "@cline/shared@0.0.88",
   url: "https://github.com/cline/cline/releases/tag/sdk%2Fagents%2Fv0.0.88",
   published_at: "2026-09-30T02:32:30+00:00",
@@ -138,4 +138,75 @@ test('saved stories honor source filters and never offer unrelated feed paginati
   expect(filtered).not.toContain('/article/package-version-preview/');
   expect(filtered).toContain('Loading saved stories');
   expect(filtered).not.toContain('Load more to keep looking');
+});
+
+function clineRelease(id: string, tag: string, publishedAt: string, summary = ""): Article {
+  return {
+    ...versionArticle,
+    id,
+    title: tag,
+    summary,
+    content: summary,
+    url: `https://github.com/cline/cline/releases/tag/${encodeURIComponent(tag)}`,
+    published_at: publishedAt,
+  };
+}
+
+function renderLedger(articles: Article[], view: FeedView = "all", state: Partial<ReadState> = {}): string {
+  const client = new QueryClient();
+  const html = renderToStaticMarkup(
+    <QueryClientProvider client={client}>
+      <ArticlesProvider
+        filters={{ company: "All", topics: [], q: "" }}
+        initialData={{ pages: [{ data: articles, state: "static", cacheFreshness: articles[0].published_at }], pageParams: [null] }}
+      >
+        <ArticleListIsland
+          view={view}
+          now={Date.parse("2026-09-30T12:00:00Z")}
+          onClearFilters={() => {}}
+          readState={{ seen: new Set(), saved: new Set(), markSeen: () => {}, toggleSaved: () => {}, hydrated: true, ...state }}
+        />
+      </ArticlesProvider>
+    </QueryClientProvider>,
+  );
+  client.clear();
+  return html;
+}
+
+const ledger = [
+  clineRelease("alpha-2", "v9.9.9-alpha.2", "2026-09-30T09:00:00Z"),
+  clineRelease("stable", "v9.9.8", "2026-09-30T08:00:00Z", "Release v9.9.8"),
+  clineRelease("alpha-1", "v9.9.9-alpha.1", "2026-09-30T07:00:00Z"),
+  clineRelease("date-only", "v9.9.7", "2026-09-30T00:00:00Z", "Adds a faster diff view for large files."),
+];
+
+test("folds one project's pre-release builds into a single row that names how many", () => {
+  const html = renderLedger(ledger);
+  expect(html.match(/data-build-group=/g)).toHaveLength(1);
+  expect(html).toContain("2 pre-release builds");
+  // Folded members are not rendered until the group is opened; the other records are rows.
+  expect(html.match(/<article /g)).toHaveLength(2);
+  expect(html).not.toContain('data-article-id="alpha-1"');
+});
+
+test("a release row names its project with a real space, in the title and in control names", () => {
+  const html = renderLedger(ledger);
+  const title = html.match(/<h3 class="feed-title">(.*?)<\/h3>/)?.[1].replace(/<[^>]*>/g, "");
+  expect(title).toBe("Cline v9.9.8");
+  expect(html).toContain("Save “Cline v9.9.8” for later");
+  expect(html).toContain("Original source on github.com for “Cline v9.9.8”");
+});
+
+test("an excerpt that only repeats the tag is left out, and a date without a time prints no clock", () => {
+  const html = renderLedger(ledger);
+  expect(html).not.toContain("Release v9.9.8");
+  expect(html).toContain("Adds a faster diff view for large files.");
+  expect(html).toContain(">08:00<");
+  expect(html).not.toContain(">00:00<");
+});
+
+test("saved builds are listed as their own rows instead of being folded", () => {
+  const html = renderLedger(ledger, "saved", { saved: new Set(["alpha-1", "alpha-2"]) });
+  expect(html).not.toContain("data-build-group=");
+  expect(html.match(/<article /g)).toHaveLength(2);
 });

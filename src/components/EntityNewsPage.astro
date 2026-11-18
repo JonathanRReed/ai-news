@@ -79,11 +79,11 @@ const rows = articles.slice((pageNumber - 1) * pageSize, pageNumber * pageSize).
     </section>
 
     <section class="industrial-container pb-16 md:pb-24">
-      <div class="mb-4 flex items-baseline justify-between gap-4 border-b border-white/15 pb-3">
+      <div class="flex items-baseline justify-between gap-4 border-b border-white/25 pb-3">
         <h2 class="text-2xl font-bold text-white">Latest updates</h2>
         <span class="micro-label text-text-2">Newest first</span>
       </div>
-      <StoryRows rows={rows} emptyMessage="No updates are available from these sources yet. Check the source status above or open the official site." />
+      <StoryRows rows={rows} headingLevel={3} hidePublisher flush emptyMessage="No updates are available from these sources yet. Check the source status above or open the official site." />
       {pageCount > 1 && (
         <nav aria-label="Update pages" class="mt-6 flex flex-wrap items-center justify-between gap-4">
           <span class="micro-label text-text-2">Page {pageNumber} of {pageCount} · {articles.length.toLocaleString()} updates</span>

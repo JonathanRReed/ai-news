@@ -1,4 +1,5 @@
-import { URL } from 'node:url';
+// URL is a global in browsers, Node and Bun. Importing it from node:url breaks client bundles,
+// where that module is stubbed and every identity silently became an empty string.
 
 export function articleSourceIdentity(value) {
   try {

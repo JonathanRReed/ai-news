@@ -189,3 +189,15 @@ test('corrects the verified Cohere publication date without changing its permane
   expect(result.url).toBe(row.url);
   expect(result.published_at).toBe('2025-01-29T15:38:00.000Z');
 });
+
+test('repeated admission of the same rows returns equal, independent copies', async () => {
+  const { default: rows } = await import('../../public/data/provider-articles.json');
+  const first = admittedArticles(rows as Article[]);
+  const second = admittedArticles(rows as Article[]);
+  expect(second).toEqual(first);
+  expect(second).not.toBe(first);
+  // A caller sorting or trimming its copy must not change what the next caller receives.
+  second.length = 0;
+  expect(admittedArticles(rows as Article[])).toEqual(first);
+  expect(admittedArticles(rows as Article[], { includeInternalBuilds: true }).length).toBeGreaterThan(first.length);
+});

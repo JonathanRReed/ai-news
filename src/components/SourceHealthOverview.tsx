@@ -19,7 +19,6 @@ function isHealthRow(value: unknown): value is HealthRow {
 
 export default function SourceHealthOverview({ registryActive }: { registryActive: number }) {
   const [rows, setRows] = useState<HealthRow[] | null>(null);
-  const [unavailable, setUnavailable] = useState(!supabaseConfigured);
 
   useEffect(() => {
     if (!supabaseConfigured) return;
@@ -32,13 +31,12 @@ export default function SourceHealthOverview({ registryActive }: { registryActiv
     fetchSourceHealth(params, controller.signal)
       .then((payload) => {
         if (!Array.isArray(payload) || payload.length === 0 || !payload.every(isHealthRow)) {
-          setUnavailable(true);
           return;
         }
         setRows(payload.map(row => ({ ...row, health: displayedSourceHealth(row.health, row.last_success_at) })));
       })
       .catch(() => {
-        if (!controller.signal.aborted) setUnavailable(true);
+        // An outage leaves the registry count on its own; nothing is guessed.
       });
     return () => controller.abort();
   }, []);
@@ -59,24 +57,23 @@ export default function SourceHealthOverview({ registryActive }: { registryActiv
     ? new Intl.DateTimeFormat("en-US", { dateStyle: "medium", timeStyle: "short" }).format(new Date(lastChecked))
     : "Unavailable";
 
+  const troubled = counts.stale + counts.failing + counts.pending;
+
+  // One inline fact in the masthead. The registry count is always true; the live check is
+  // added only when it loaded, so an outage never prints a guess.
   return (
-    <section className="industrial-border p-5 md:p-6" aria-labelledby="source-health-heading">
-      <div className="flex flex-wrap items-baseline justify-between gap-3 border-b border-white/15 pb-4">
-        <div>
-          <h2 id="source-health-heading" className="text-xl font-bold text-white">Source status</h2>
-          <p className="mt-2 text-sm leading-relaxed text-text-2">Successful checks within 12 hours count as recent. A successful check does not mean a new story was published.</p>
-        </div>
-        <span className="micro-label text-text-2">Last check {lastCheckedLabel}</span>
-      </div>
-      <dl className="mt-4 grid grid-cols-2 gap-px bg-white/15 md:grid-cols-4">
-        <div className="bg-bg-0 p-4"><dt className="micro-label text-muted">Checked recently</dt><dd className="mt-2 font-mono text-2xl font-medium tabular-nums text-ok">{rows ? counts.healthy : unavailable ? "—" : "..."}</dd></div>
-        <div className="bg-bg-0 p-4"><dt className="micro-label text-muted">Delayed</dt><dd className="mt-2 font-mono text-2xl font-medium tabular-nums text-warn">{rows ? counts.stale : unavailable ? "—" : "..."}</dd></div>
-        <div className="bg-bg-0 p-4"><dt className="micro-label text-muted">Unavailable</dt><dd className="mt-2 font-mono text-2xl font-medium tabular-nums text-brand-hover">{rows ? counts.failing + counts.pending : unavailable ? "—" : "..."}</dd></div>
-        <div className="bg-bg-0 p-4"><dt className="micro-label text-muted">Sources tracked</dt><dd className="mt-2 font-mono text-2xl font-medium tabular-nums text-white">{registryActive}</dd></div>
-      </dl>
-      {rows && counts.stale > 0 && <p className="mt-4 text-sm leading-relaxed text-warn">Some source checks are overdue. Collected stories remain available, but newer updates may be missing.</p>}
-      {!rows && !unavailable && <p className="micro-label mt-4 text-text-2">Checking current source status...</p>}
-      {!rows && unavailable && <p className="mt-4 text-sm leading-relaxed text-text-2">Current source checks are unavailable. The tracked-source count comes from the latest published site build.</p>}
-    </section>
+    <span aria-live="polite">
+      <a href="/labs/" className="rail-link focus-industrial !text-sm" title={rows ? `Last check ${lastCheckedLabel}` : undefined}>
+        <span className="font-mono tabular-nums text-white">{registryActive}</span> active sources
+      </a>
+      {rows && troubled === 0 && <>, all checked in the last 12 hours</>}
+      {rows && troubled > 0 && (
+        <>
+          , <span className="font-mono tabular-nums text-white">{counts.healthy}</span> checked in the last 12 hours
+          {counts.stale > 0 && <>, <span className="font-mono tabular-nums text-warn">{counts.stale}</span> delayed</>}
+          {counts.failing + counts.pending > 0 && <>, <span className="font-mono tabular-nums text-brand-hover">{counts.failing + counts.pending}</span> unavailable</>}
+        </>
+      )}
+    </span>
   );
 }

@@ -46,6 +46,7 @@
     "db:backfill": "bun scripts/intelligence/backfill.mjs",
     "db:backfill:apply": "bun scripts/intelligence/apply-backfill.mjs",
     "cache:export": "bun scripts/intelligence/export-cache.mjs",
+    "dates:verify": "bun scripts/intelligence/verify-publication-dates.mjs",
     "verify:routes": "bun scripts/intelligence/verify-routes.mjs",
     "ingest": "bun scripts/intelligence/ingest.mjs",
     "test:db": "supabase test db",
