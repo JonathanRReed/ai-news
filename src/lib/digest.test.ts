@@ -42,3 +42,24 @@ describe("weekly news pages", () => {
     expect(week.topStories.map((story) => story.id)).toEqual(["zulu", "alpha"]);
   });
 });
+
+describe("weekly short list", () => {
+  test("leaves pre-release builds out while still counting them", () => {
+    const build: Article = {
+      ...article("build", "2026-08-30T09:00:00.000Z", "Tool"),
+      title: "0.157.0-alpha.11",
+      source_key: "tool-releases",
+    };
+    const stories = [build, article("news", "2026-08-29T08:00:00.000Z", "Lab")];
+
+    const [week] = digestWeeks(1, 1, stories);
+
+    expect(week.count).toBe(2);
+    expect(week.topStories.map((story) => story.id)).toEqual(["news"]);
+    expect(week.buildsOmitted).toBe(true);
+    // A week of nothing but builds lists them and makes no claim about leaving them out.
+    const [buildsOnly] = digestWeeks(1, 1, [build]);
+    expect(buildsOnly.topStories.map((story) => story.id)).toEqual(["build"]);
+    expect(buildsOnly.buildsOmitted).toBe(false);
+  });
+});

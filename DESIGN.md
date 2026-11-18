@@ -94,8 +94,10 @@ This is an established identity. Refinement preserves the black-and-red desk, th
 
 - The global container uses a consistent page gutter and broad desktop measure.
 - Structure comes from one-pixel rules, shared grid lines, and tonal surfaces, not rounded card stacks.
-- The opening balances an editorial headline with a compact scope ledger. On mobile the ledger follows the statement.
-- The feed stays chronological. One lead item may receive more space, but it does not imply an editorial recommendation.
+- The home opening is a compact masthead: one headline, one sentence, one line of scope figures. The feed starts inside the first desktop viewport.
+- The home page is Major updates followed by the feed, in that order in the document at every size. Wide screens move Major updates into a side column that stays in view while the feed scrolls; it must fit a 720px-tall window whole, so it lists at most four launches. Source status is one live fact in the masthead, and feed links live in the Major updates note and the footer.
+- The home Major updates list shows launches from a model's own maker. Notices from other providers about the same model stay on the Major updates page, where each row states its reason in plain text.
+- The feed stays chronological and is grouped under UTC day headers that link to the permanent daily page. No row is enlarged as a lead.
 - Source receipts sit beside the claim they qualify or immediately after it.
 - Article previews remain bounded. Permanent article routes show a clearly labeled preview and send readers to the original source for the complete text.
 
@@ -106,11 +108,16 @@ This is an established identity. Refinement preserves the black-and-red desk, th
 - Desktop navigation is a ruled horizontal strip with a red current-route cell.
 - Mobile navigation uses one visible menu control with a 44px minimum target, clear current-page state, and a direct close action.
 
-### Article Cards
+### Feed Rows
 
-- A card contains publisher, time, record type, title, optional bounded excerpt, permanent local route, save control, and explicit original-source link.
-- The title opens the permanent AI News record. The original-source link remains visually distinct and opens the publisher artifact.
-- Read state may reduce emphasis but must preserve contrast and recover on hover or focus.
+- The feed is a ruled ledger, not a card stack. A row has a mono time gutter, the publisher mark, a meta line (publisher, rule-based Major update tag, record type), the title, an optional bounded excerpt, the original-source domain, and a save control. Rows carry no topic labels: the topic rules are broad and read as false on individual records.
+- A record whose publisher gives a date without a time shows no clock time. Midnight is never printed as if it were a publication time.
+- Publishers without a supplied mark show a lettered monogram, never a shared generic icon.
+- The title opens the permanent AI News record. The original-source link shows the publisher domain, stays visually distinct, and opens the publisher artifact.
+- Software releases print the project name beside the publisher's tag and set the tag in mono, because a bare version number names nothing. Link and control names include the project too.
+- Pre-release builds and per-package release tags from one project on one UTC day fold into a single row that states the count, says which of the two they are, names the newest tags, and opens to list every member. Folding is deterministic (`src/lib/releaseKind.ts`, `src/lib/feedRows.ts`), never hides a record, and never applies to news.
+- Static lists (daily pages, Major updates, publisher pages) use the same rows through `StoryRows.astro`.
+- Read state steps the title back by weight and tone only. Row-wide opacity is not used, because it drops meta text below AA.
 
 ### Source Health
 
@@ -122,7 +129,9 @@ This is an established identity. Refinement preserves the black-and-red desk, th
 
 - Filters use rectangular controls, sharp borders, visible pressed state, and keyboard focus.
 - Long provider sets may scroll within their own labeled region. The page itself must not overflow horizontally.
-- Search, provider, topic, read state, and density remain independent controls with a visible result scope.
+- Search, provider, topic, record type, read state, and density remain independent controls with a visible result scope.
+- Record type separates news from software releases. It filters the loaded records and travels in the address (`?type=news` or `?type=releases`) like every other filter. It is not remembered between visits.
+- Search, providers, and read state are always visible. Topics sit behind one control at every size; on small screens that control also holds record type and density. It reports how many of its filters are active and opens itself when a topic is active.
 
 ## Motion and Interaction
 

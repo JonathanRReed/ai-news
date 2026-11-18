@@ -26,6 +26,15 @@ const queryClient = new QueryClient({
 });
 
 export type FeedView = "all" | "unread" | "saved";
+// "news" is everything that is not a release record; "releases" is the release records.
+export type FeedKind = "all" | "news" | "releases";
+
+// The record type travels in the URL like every other filter, so a shared link reproduces the view.
+function urlKind(): FeedKind {
+  if (typeof window === "undefined") return "all";
+  const type = new URLSearchParams(window.location.search).get("type");
+  return type === "news" || type === "releases" ? type : "all";
+}
 
 function urlFilters(): ArticleFilters | null {
   if (typeof window === "undefined") return null;
@@ -42,13 +51,22 @@ function urlFilters(): ArticleFilters | null {
   };
 }
 
-export default function ArticlesIslandWrapper({ initialArticles = [], now = 0 }: { initialArticles?: Article[]; now?: number }) {
+export default function ArticlesIslandWrapper({
+  initialArticles = [],
+  now = 0,
+  archiveDays = [],
+}: {
+  initialArticles?: Article[];
+  now?: number;
+  archiveDays?: string[];
+}) {
   // Start from defaults so the server render and the first client render match (no
   // hydration mismatch); URL filters and saved density are applied after mount.
   const [ready, setReady] = useState(false);
   const [filters, setFilters] = useState<ArticleFilters>({ company: "All", topics: [], q: "" });
   const [density, setDensity] = useState<"comfortable" | "compact">("comfortable");
   const [view, setView] = useState<FeedView>("all");
+  const [kind, setKind] = useState<FeedKind>("all");
   const readState = useReadState();
   const firstWrite = useRef(true);
 
@@ -56,6 +74,7 @@ export default function ArticlesIslandWrapper({ initialArticles = [], now = 0 }:
     /* eslint-disable react-hooks/set-state-in-effect */
     const fromUrl = urlFilters();
     if (fromUrl) setFilters(fromUrl);
+    setKind(urlKind());
     try {
       const savedDensity = window.localStorage.getItem("ai-news-density");
       if (savedDensity === "compact" || savedDensity === "comfortable") setDensity(savedDensity);
@@ -80,9 +99,10 @@ export default function ArticlesIslandWrapper({ initialArticles = [], now = 0 }:
     if (filters.company && filters.company !== "All") params.set("company", filters.company);
     if (filters.topics && filters.topics.length) params.set("topic", filters.topics.join(","));
     if (filters.q && filters.q.trim()) params.set("q", normalizeSearchQuery(filters.q));
+    if (kind !== "all") params.set("type", kind);
     const qs = params.toString();
     window.history.replaceState(null, "", qs ? `${window.location.pathname}?${qs}` : window.location.pathname);
-  }, [filters]);
+  }, [filters, kind]);
 
   const { company, topics, q } = filters;
   // The input stays instant; only the term the query key is built from waits for a pause.
@@ -93,13 +113,15 @@ export default function ArticlesIslandWrapper({ initialArticles = [], now = 0 }:
     return () => window.clearTimeout(timer);
   }, [q]);
   const stableFilters = useMemo<ArticleFilters>(
-    () => ({ company, topics, q: debouncedQ }),
+    // The field may hold a trailing space mid-typing; the query never does.
+    () => ({ company, topics, q: normalizeSearchQuery(debouncedQ) }),
     [company, topics, debouncedQ],
   );
   const isDefault = company === "All" && !(topics && topics.length) && !(debouncedQ && debouncedQ.trim());
   const clearFeedFilters = () => {
     setFilters({ company: "All", topics: [], q: "" });
     setView("all");
+    setKind("all");
   };
 
   const lastInitialArticle = initialArticles.at(-1);
@@ -122,7 +144,7 @@ export default function ArticlesIslandWrapper({ initialArticles = [], now = 0 }:
     <QueryClientProvider client={queryClient}>
       <ArticlesProvider filters={stableFilters} initialData={initialData}>
         <fieldset disabled={!ready} aria-busy={!ready} aria-label="News filters and saved stories" className="min-w-0 border-0 p-0">
-        <div className="mb-8 flex flex-col gap-4">
+        <div className="mb-5">
           <FiltersIsland
             filters={filters}
             setFilters={setFilters}
@@ -130,14 +152,18 @@ export default function ArticlesIslandWrapper({ initialArticles = [], now = 0 }:
             setDensity={setDensity}
             view={view}
             setView={setView}
+            kind={kind}
+            setKind={setKind}
             savedCount={readState.saved.size}
           />
         </div>
         <ArticleListIsland
           density={density}
           view={view}
+          kind={kind}
           readState={readState}
           now={now}
+          archiveDays={archiveDays}
           onClearFilters={clearFeedFilters}
         />
         </fieldset>

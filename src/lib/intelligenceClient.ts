@@ -51,6 +51,12 @@ export interface IntelligenceDependencies {
   timeoutMs?: number;
 }
 
+/** For the text field while typing: same cleaning, but one trailing space survives so "gemini 4" can be typed. */
+export function normalizeSearchInput(value = ''): string {
+  const normalized = normalizeSearchQuery(value);
+  return normalized && /\s$/.test(String(value)) && normalized.length < MAX_SEARCH_QUERY_LENGTH ? `${normalized} ` : normalized;
+}
+
 export function normalizeSearchQuery(value = ''): string {
   const boundedInput = String(value).slice(0, MAX_SEARCH_QUERY_LENGTH * 4);
   const withoutControlCharacters = [...boundedInput].map((character) => {

@@ -89,17 +89,25 @@ export async function fetchArticlesPage(
   // The verified export is intentionally a fallback, not a prerequisite for every
   // healthy request. This keeps the common live path from downloading a multi-MB
   // cache after SSR already supplied the first page.
-  if ((page.state === 'degraded' || page.state === 'static' || page.state === 'unconfigured') && page.data.length === 0) {
+  // Without the live feed, the SSR seed alone has no cursor into the rest of the cache, so
+  // a reader would be stuck on the first 20 stories. Load the export whenever the fallback
+  // page is empty or cannot continue.
+  let cacheMissing = false;
+  if (page.state !== 'live' && (page.data.length === 0 || !page.nextCursor)) {
     const staticArticles = await fetchSupplementalArticles();
-    page = await fetchIntelligencePage(filters, pageParam, {
-      supabaseUrl: SUPABASE_URL,
-      anonKey: SUPABASE_REST_HEADERS.apikey,
-      staticArticles,
-      pageSize: PAGE_SIZE,
-      timeoutMs: SUPABASE_TIMEOUT_MS,
-    });
+    cacheMissing = staticArticles.length === 0;
+    if (!cacheMissing) {
+      page = await fetchIntelligencePage(filters, pageParam, {
+        supabaseUrl: SUPABASE_URL,
+        anonKey: SUPABASE_REST_HEADERS.apikey,
+        staticArticles,
+        pageSize: PAGE_SIZE,
+        timeoutMs: SUPABASE_TIMEOUT_MS,
+      });
+    }
   }
-  if (page.state === 'degraded' && page.data.length === 0) {
+  // No matches in a loaded cache is an empty result, not an outage.
+  if (page.state === 'degraded' && page.data.length === 0 && cacheMissing) {
     throw new Error('The live feed and verified cache are unavailable');
   }
   return {

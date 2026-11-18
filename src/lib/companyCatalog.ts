@@ -22,10 +22,31 @@ const COMPANY_LOGO_MATCHERS = [
   { keys: ['qwen', 'alibaba', 'tongyi'], logo: '/logos/Qwen_logo.svg' },
 ];
 
+// Publishers without a supplied mark get their own letters instead of one shared generic icon,
+// which read as a control and made unrelated publishers look identical.
+export function companyMonogram(company: string): string {
+  const name = (company || '').trim();
+  const words = name.split(/[^A-Za-z0-9]+/).filter(Boolean);
+  if (words.length === 1) {
+    // OpenClaw -> OC, MiniMax -> MM: the capitals carry the name.
+    const capitals = words[0].match(/[A-Z]/g) ?? [];
+    if (capitals.length >= 2 && capitals.length < words[0].length) return capitals.slice(0, 3).join('');
+  }
+  return words.join('').slice(0, 3);
+}
+
+function monogramLogo(company: string): string {
+  const letters = companyMonogram(company).replace(/[^A-Za-z0-9]/g, '');
+  if (!letters) return FALLBACK_COMPANY_LOGO;
+  const size = letters.length >= 3 ? 12.5 : 15;
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><text x="16" y="${size >= 15 ? 21.5 : 20.5}" text-anchor="middle" font-family="Helvetica Neue,Arial,sans-serif" font-size="${size}" font-weight="700" fill="#111111">${letters}</text></svg>`;
+  return `data:image/svg+xml,${encodeURIComponent(svg)}`;
+}
+
 export function resolveCompanyLogo(company: string): string {
   const normalizedName = (company || '').toLowerCase();
   const match = COMPANY_LOGO_MATCHERS.find(({ keys }) => keys.some((key) => normalizedName.includes(key)));
-  return match?.logo ?? FALLBACK_COMPANY_LOGO;
+  return match?.logo ?? monogramLogo(company);
 }
 
 // The filter is generated from the admitted registry, so a provider appears here only

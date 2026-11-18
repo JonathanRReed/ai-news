@@ -5,16 +5,14 @@ import ArticlesIslandWrapper from "../components/ArticlesIslandWrapper.tsx";
 import SourceHealthOverview from "../components/SourceHealthOverview.tsx";
 import PublisherText from "../components/PublisherText.astro";
 import providerArticles from "../../public/data/provider-articles.json";
-import { digestWeeks } from "../lib/digest.js";
+import { utcDayKey, UNDATED_DAY } from "../lib/feedRows.js";
 import { admittedArticles } from "../lib/articleAdmission.js";
 import { articleExcerpt } from "../lib/articleExcerpt.js";
 import { articlePath } from "../lib/articleRoutes.js";
 import { resolveCompanyLogo } from "../lib/companyCatalog.js";
 import { activeEntities, intelligenceSources } from "../lib/intelligenceCatalog.js";
-import { majorUpdates } from "../lib/majorUpdates.js";
+import { majorUpdates, OTHER_MAKER_REASON } from "../lib/majorUpdates.js";
 import type { Article } from "../types/article.js";
-
-const latestDigest = digestWeeks()[0];
 
 const siteUrl = "https://ai-news.helloworldfirm.com";
 const canonicalUrl = `${siteUrl}/`;
@@ -28,8 +26,23 @@ const articles = admittedArticles(providerArticles as Article[]);
 const providerRows = articles;
 const activeSourceCount = intelligenceSources.filter((source) => source.active).length;
 const trackedEntityCount = activeEntities.length;
-const harnessCount = activeEntities.filter((entity) => entity.entityType === "harness").length;
-const majorUpdateCount = majorUpdates(articles).length;
+const allMajorUpdates = majorUpdates(articles);
+const majorUpdateCount = allMajorUpdates.length;
+// The rail lists launches from the model's own maker. Notices from other providers about the
+// same model stay on the full Major updates page, where each row states its reason.
+const latestMajorUpdates = allMajorUpdates
+  .filter((update) => update.reason !== OTHER_MAKER_REASON)
+  .sort((a, b) => (
+    new Date(b.article.published_at).getTime() - new Date(a.article.published_at).getTime()
+    || b.article.id.localeCompare(a.article.id)
+  ))
+  .slice(0, 4);
+const shortDate = (iso: string) => new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", timeZone: "UTC" }).format(new Date(iso));
+// Day headers in the feed link to the permanent daily page only when one was built.
+const archiveDays = [...new Set(articles.map((article) => utcDayKey(article.published_at)))]
+  .filter((day) => day !== UNDATED_DAY)
+  .sort((a, b) => b.localeCompare(a))
+  .slice(0, 400);
 const nowMs = Date.now();
 const latestCacheDate = providerRows
   .map((article) => new Date(article.published_at).getTime())
@@ -106,91 +119,50 @@ const collectionStructuredData = {
   currentPage="home"
   bodyClass="bg-bg-0 text-text-1 font-sans"
   structuredData={[structuredData, collectionStructuredData]}
-  preloadImages={leadArticleLogo ? [leadArticleLogo] : []}
+  preloadImages={leadArticleLogo && !leadArticleLogo.startsWith("data:") ? [leadArticleLogo] : []}
 >
   <main id="main-content" class="industrial-shell">
-    <section class="industrial-container py-10 md:py-14">
-      <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_400px] lg:items-end">
-        <div class="max-w-5xl">
-          <h1 class="macro-heading max-w-5xl">
-            See what changed in AI today.
-          </h1>
-          <p class="mt-6 max-w-2xl text-lg leading-relaxed text-text-2 md:text-xl">
-            Updates tracked from AI labs, model makers, research teams, and the tools built around them. No account required.
-          </p>
-          <div class="mt-6 flex flex-wrap gap-2">
-            <a href="#articles" class="signal-button">Read the latest</a>
-            <a href="/major-updates/" class="ghost-button">Major updates only</a>
-          </div>
-        </div>
-        <aside class="industrial-border p-5" aria-labelledby="at-a-glance-heading">
-          <h2 id="at-a-glance-heading" class="micro-label mb-4 text-text-2">This index right now</h2>
-          <dl class="grid grid-cols-2 gap-px bg-white/15">
-            <div class="bg-bg-0 p-4">
-              <dt class="micro-label text-text-2">Companies and projects</dt>
-              <dd class="mt-2 font-mono text-2xl font-medium tabular-nums text-white">{trackedEntityCount}</dd>
+    <section class="industrial-container pb-6 pt-8 md:pb-8 md:pt-10">
+      <h1 class="macro-heading masthead-heading">See what changed in AI today.</h1>
+      <p class="mt-3 max-w-4xl text-base leading-relaxed text-text-2 text-pretty md:text-lg">
+        Announcements from AI labs, model makers, research teams, and agent tools, in the order they were published. No account required.
+      </p>
+      <p class="mt-4 flex flex-wrap gap-x-5 gap-y-1 text-sm text-text-2">
+        <span><span class="font-mono tabular-nums text-white">{trackedEntityCount}</span> companies and projects</span>
+        <SourceHealthOverview client:load registryActive={activeSourceCount} />
+        <span>Stories through <span class="font-mono text-white">{newestLabel}</span></span>
+      </p>
+    </section>
+
+    <div class="industrial-container home-layout pb-12 md:pb-16">
+      {latestMajorUpdates.length > 0 && (
+        <aside class="home-major" aria-labelledby="rail-major-heading">
+          <div class="rail-block">
+            <div class="rail-head">
+              <h2 id="rail-major-heading" class="rail-title">Major updates</h2>
+              <a href="/major-updates/" class="rail-link focus-industrial">All {majorUpdateCount}</a>
             </div>
-            <div class="bg-bg-0 p-4">
-              <dt class="micro-label text-text-2">Active sources</dt>
-              <dd class="mt-2 font-mono text-2xl font-medium tabular-nums text-white">{activeSourceCount}</dd>
-            </div>
-            <div class="bg-bg-0 p-4">
-              <dt class="micro-label text-text-2">Agent tools</dt>
-              <dd class="mt-2 font-mono text-2xl font-medium tabular-nums text-white">{harnessCount}</dd>
-            </div>
-            <div class="bg-bg-0 p-4">
-              <dt class="micro-label text-text-2">Major updates</dt>
-              <dd class="mt-2 font-mono text-2xl font-medium tabular-nums text-white">{majorUpdateCount}</dd>
-            </div>
-          </dl>
-          <div class="mt-4 flex flex-wrap items-center justify-between gap-3">
-            <p class="text-xs text-muted">Stories through <span class="font-mono text-text-2">{newestLabel}</span></p>
-            <a href="/watchlist/" class="text-xs font-medium text-white underline decoration-brand decoration-2 underline-offset-4 hover:text-brand-hover focus-industrial">Open my watchlist</a>
+            <ol class="rail-major-list">
+              {latestMajorUpdates.map(({ article }, index) => (
+                <li class={index >= 3 ? "max-lg:hidden" : undefined}>
+                  <p class="rail-major-meta">
+                    <time datetime={article.published_at}>{shortDate(article.published_at)}</time>
+                    <span>{article.company}</span>
+                  </p>
+                  <a href={articlePath(article.id)} class="focus-industrial"><PublisherText text={article.title} /></a>
+                </li>
+              ))}
+            </ol>
+            <p class="rail-note">
+              Launches announced by their own makers, picked by a <a href="/major-updates/" class="focus-industrial">published rule</a>. Feeds: <a href="/feed/major.xml" class="focus-industrial">major updates</a>, <a href="/feed.xml" class="focus-industrial">everything</a>, <a href="/feeds/" class="focus-industrial">by publisher or topic</a>.
+            </p>
           </div>
         </aside>
-      </div>
-    </section>
-    <section class="industrial-container pb-8">
-      <nav class="industrial-grid" aria-label="Browse AI news">
-        <a href="/major-updates/" class="col-span-12 p-5 text-white hover:bg-bg-1 focus-industrial sm:col-span-6 lg:col-span-3"><strong class="block text-lg font-semibold">Major updates</strong><span class="mt-2 block text-sm leading-relaxed text-text-2">Model launches, releases, and other notable changes.</span></a>
-        <a href="/labs/" class="col-span-12 p-5 text-white hover:bg-bg-1 focus-industrial sm:col-span-6 lg:col-span-3"><strong class="block text-lg font-semibold">Labs and providers</strong><span class="mt-2 block text-sm leading-relaxed text-text-2">Z.AI, Kimi, OpenAI, Anthropic, and more.</span></a>
-        <a href="/harnesses/" class="col-span-12 p-5 text-white hover:bg-bg-1 focus-industrial sm:col-span-6 lg:col-span-3"><strong class="block text-lg font-semibold">Agent tools</strong><span class="mt-2 block text-sm leading-relaxed text-text-2">Hermes, OpenClaw, OpenHands, coding agents, and CLIs.</span></a>
-        <a href="/digest/daily/" class="col-span-12 p-5 text-white hover:bg-bg-1 focus-industrial sm:col-span-6 lg:col-span-3"><strong class="block text-lg font-semibold">News by date</strong><span class="mt-2 block text-sm leading-relaxed text-text-2">Browse all collected updates, newest first.</span></a>
-      </nav>
-    </section>
-    <section class="industrial-container pb-8">
-      <SourceHealthOverview client:load registryActive={activeSourceCount} />
-    </section>
-    {latestDigest && (
-      <section class="industrial-container pb-2">
-        <div class="industrial-border p-6 md:p-8">
-          <div class="flex flex-wrap items-baseline justify-between gap-3 border-b border-white/15 pb-4">
-            <h2 class="text-xl font-semibold text-white">Latest this week</h2>
-            <a
-              href="/digest/"
-              class="text-sm font-medium text-text-2 underline decoration-brand decoration-2 underline-offset-4 transition-colors hover:text-white focus-industrial"
-            >
-              See the full digest
-            </a>
-          </div>
-          <ol class="mt-4 space-y-3">
-            {latestDigest.topStories.slice(0, 3).map((article, index) => (
-              <li class="grid grid-cols-[auto_minmax(0,1fr)] gap-3">
-                <span class="font-mono text-sm tabular-nums text-muted">{String(index + 1).padStart(2, "0")}</span>
-                <a
-                  href={articlePath(article.id)}
-                  class="leading-snug text-white decoration-brand decoration-2 underline-offset-4 transition-colors hover:text-brand-hover hover:underline focus-industrial text-pretty break-words"
-                >
-                  <span class="micro-label mr-2 text-text-2">{article.company}</span><PublisherText text={article.title} />
-                </a>
-              </li>
-            ))}
-          </ol>
-        </div>
+      )}
+
+      <section id="articles" class="home-feed" aria-label="Latest updates">
+        <ArticlesIslandWrapper client:load initialArticles={initialArticles} now={nowMs} archiveDays={archiveDays} />
       </section>
-    )}
-    <section id="articles" class="industrial-container space-y-8 py-8 md:py-12">
-      <ArticlesIslandWrapper client:load initialArticles={initialArticles} now={nowMs} />
-    </section>
+    </div>
   </main>
 </Layout>

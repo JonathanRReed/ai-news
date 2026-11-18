@@ -1,18 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import CompanySelect from "./CompanySelect.js";
-import { cn } from "../lib/utils.js";
 import { TOPICS } from "../lib/articleTags.js";
 import type { ArticleFilters } from "../hooks/fetchArticlesPage.js";
-import type { FeedView } from "./ArticlesIslandWrapper.js";
-import { MAX_SEARCH_QUERY_LENGTH, normalizeSearchQuery } from "../lib/intelligenceClient.js";
+import type { FeedKind, FeedView } from "./ArticlesIslandWrapper.js";
+import { MAX_SEARCH_QUERY_LENGTH, normalizeSearchInput } from "../lib/intelligenceClient.js";
 
 interface FiltersIslandProps {
   filters: ArticleFilters;
   setFilters: React.Dispatch<React.SetStateAction<ArticleFilters>>;
-  density?: "comfortable" | "compact";
-  setDensity?: React.Dispatch<React.SetStateAction<"comfortable" | "compact">>;
+  density: "comfortable" | "compact";
+  setDensity: React.Dispatch<React.SetStateAction<"comfortable" | "compact">>;
   view: FeedView;
   setView: React.Dispatch<React.SetStateAction<FeedView>>;
+  kind: FeedKind;
+  setKind: React.Dispatch<React.SetStateAction<FeedKind>>;
   savedCount: number;
 }
 
@@ -22,8 +23,57 @@ const VIEWS: { value: FeedView; label: string }[] = [
   { value: "saved", label: "Saved" },
 ];
 
-export default function FiltersIsland({ filters, setFilters, density, setDensity, view, setView, savedCount }: FiltersIslandProps) {
+const KINDS: { value: FeedKind; label: string }[] = [
+  { value: "all", label: "Everything" },
+  { value: "news", label: "News" },
+  { value: "releases", label: "Software releases" },
+];
+
+const DENSITIES: { value: "comfortable" | "compact"; label: string }[] = [
+  { value: "comfortable", label: "Previews" },
+  { value: "compact", label: "Headlines" },
+];
+
+function Segment<T extends string>({
+  label,
+  options,
+  value,
+  onChange,
+}: {
+  label: string;
+  options: { value: T; label: string }[];
+  value: T;
+  onChange: (value: T) => void;
+}) {
+  return (
+    <div className="feed-segment" role="group" aria-label={label}>
+      {options.map((option) => (
+        <button
+          key={option.value}
+          type="button"
+          aria-pressed={value === option.value}
+          onClick={() => onChange(option.value)}
+          className="focus-industrial"
+        >
+          {option.label}
+        </button>
+      ))}
+    </div>
+  );
+}
+
+export default function FiltersIsland({ filters, setFilters, density, setDensity, view, setView, kind, setKind, savedCount }: FiltersIslandProps) {
   const activeTopics = filters.topics ?? [];
+  // Search, publishers, read state and record type stay in view. Topics, and on small
+  // screens the record type and density too, sit behind one control that reports its count.
+  const [moreOpen, setMoreOpen] = useState(false);
+  const hasActiveTopics = activeTopics.length > 0;
+  /* eslint-disable react-hooks/set-state-in-effect */
+  useEffect(() => {
+    // A pressed topic (from a shared link, say) must never be hidden behind a closed control.
+    if (hasActiveTopics) setMoreOpen(true);
+  }, [hasActiveTopics]);
+  /* eslint-enable react-hooks/set-state-in-effect */
 
   const toggleTopic = (key: string) =>
     setFilters((f) => {
@@ -32,127 +82,114 @@ export default function FiltersIsland({ filters, setFilters, density, setDensity
       return { ...f, topics: next };
     });
 
-  return (
-    <div className="flex w-full flex-col items-center gap-4">
-      <CompanySelect
-        activeCompany={filters.company ?? "All"}
-        onCompanyChange={(company) => setFilters((f) => ({ ...f, company }))}
-      />
+  const views = VIEWS.map((v) => (
+    v.value === "saved" && savedCount > 0 ? { ...v, label: `Saved ${savedCount}` } : v
+  ));
 
-      <div className="w-full max-w-7xl border border-white/20 bg-bg-1">
-        {/* Search */}
-        <div className="group relative flex min-h-[60px] items-center border-b border-white/15">
-          <label htmlFor="article-search" className="sr-only">Search articles</label>
-          <div className="pointer-events-none absolute inset-y-0 left-4 flex items-center text-text-2 transition-colors group-focus-within:text-brand">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <circle cx="11" cy="11" r="8"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  return (
+    <div className="feed-toolbar">
+      <div className="group relative flex min-h-[52px] items-center">
+        <label htmlFor="article-search" className="sr-only">Search articles</label>
+        <div className="pointer-events-none absolute inset-y-0 left-4 flex items-center text-text-2 transition-colors group-focus-within:text-brand">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </div>
+        <input
+          id="article-search"
+          type="search"
+          inputMode="search"
+          placeholder="Search every tracked source"
+          className="focus-industrial h-full min-h-[52px] w-full border-none bg-transparent py-3 pl-12 pr-12 text-base text-white placeholder:text-text-2"
+          value={filters.q || ""}
+          maxLength={MAX_SEARCH_QUERY_LENGTH}
+          onChange={(e) => setFilters((f) => ({ ...f, q: normalizeSearchInput(e.target.value) }))}
+          aria-label="Search articles"
+        />
+        {filters.q ? (
+          <button
+            className="absolute inset-y-0 right-1 flex min-h-11 min-w-11 items-center justify-center text-text-2 transition-colors hover:text-white focus-industrial"
+            onClick={() => setFilters((f) => ({ ...f, q: "" }))}
+            aria-label="Clear search"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
             </svg>
+          </button>
+        ) : (
+          <kbd className="pointer-events-none absolute right-4 hidden border border-white/20 px-1.5 py-0.5 font-mono text-xs text-text-2 md:block" aria-hidden="true">/</kbd>
+        )}
+      </div>
+
+      <div className="border-t border-white/[0.12]">
+        <CompanySelect
+          activeCompany={filters.company ?? "All"}
+          onCompanyChange={(company) => setFilters((f) => ({ ...f, company }))}
+        />
+      </div>
+
+      <div className="feed-toolbar-row">
+        <Segment label="Filter by read state" options={views} value={view} onChange={setView} />
+        <div className="max-md:hidden">
+          <Segment label="Filter by record type" options={KINDS} value={kind} onChange={setKind} />
+        </div>
+        {/* .feed-chip is unlayered CSS and would beat a responsive utility, so wrappers carry them. */}
+        <div className="ml-auto flex items-center gap-3">
+          <div className="max-md:hidden">
+            <Segment label="Row density" options={DENSITIES} value={density} onChange={setDensity} />
           </div>
-          <input
-            id="article-search"
-            type="search"
-            inputMode="search"
-            placeholder="Search across every tracked source"
-            className="focus-industrial h-full min-h-[60px] w-full border-none bg-transparent py-4 pl-12 pr-12 text-base text-white placeholder:text-text-2"
-            value={filters.q || ""}
-            maxLength={MAX_SEARCH_QUERY_LENGTH}
-            onChange={(e) => setFilters((f) => ({ ...f, q: normalizeSearchQuery(e.target.value) }))}
-            aria-label="Search articles"
-          />
-          {filters.q && (
+          <button
+            type="button"
+            className="feed-chip focus-industrial gap-2"
+            aria-expanded={moreOpen}
+            aria-controls="feed-more-filters"
+            onClick={() => setMoreOpen((open) => !open)}
+          >
+            <span className="md:hidden">Filters</span>
+            <span className="max-md:hidden">Topics</span>
+            {activeTopics.length + (kind !== "all" ? 1 : 0) > 0 && (
+              <span className="font-mono tabular-nums text-brand-hover">
+                <span className="md:hidden">{activeTopics.length + (kind !== "all" ? 1 : 0)}</span>
+                <span className="max-md:hidden">{activeTopics.length || ""}</span>
+              </span>
+            )}
+            <svg className={moreOpen ? "h-3 w-3 rotate-180" : "h-3 w-3"} viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square" aria-hidden="true">
+              <path d="m2.5 4.5 3.5 3.5 3.5-3.5" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div id="feed-more-filters" hidden={!moreOpen}>
+        <div className="md:hidden">
+          <div className="feed-toolbar-row">
+            <Segment label="Filter by record type" options={KINDS} value={kind} onChange={setKind} />
+            <Segment label="Row density" options={DENSITIES} value={density} onChange={setDensity} />
+          </div>
+        </div>
+        <div className="feed-toolbar-row" role="group" aria-label="Filter by topic">
+          {TOPICS.map((topic) => (
             <button
-              className="absolute inset-y-0 right-3 flex min-h-11 min-w-11 items-center justify-center text-text-2 transition-colors hover:text-white focus-industrial"
-              onClick={() => setFilters((f) => ({ ...f, q: "" }))}
-              aria-label="Clear search"
+              key={topic.key}
+              type="button"
+              aria-pressed={activeTopics.includes(topic.key)}
+              onClick={() => toggleTopic(topic.key)}
+              className="feed-chip focus-industrial"
             >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-              </svg>
+              {topic.label}
+            </button>
+          ))}
+          {activeTopics.length > 0 && (
+            <button
+              type="button"
+              onClick={() => setFilters((f) => ({ ...f, topics: [] }))}
+              className="min-h-[var(--control-h)] px-1 text-xs font-medium text-text-2 underline decoration-brand decoration-2 underline-offset-4 hover:text-white focus-industrial md:min-h-9"
+            >
+              Clear topics
             </button>
           )}
-        </div>
-
-        {/* Topics + views + density */}
-        <div className="flex flex-col gap-4 p-4 lg:flex-row lg:items-center lg:justify-between">
-          <div className="flex flex-wrap items-center gap-2" role="group" aria-label="Filter by topic">
-            <span className="micro-label mr-1 text-text-2">Topics</span>
-            {TOPICS.map((topic) => {
-              const active = activeTopics.includes(topic.key);
-              return (
-                <button
-                  key={topic.key}
-                  type="button"
-                  aria-pressed={active}
-                  onClick={() => toggleTopic(topic.key)}
-                  className={cn(
-                    "min-h-[var(--control-h)] md:min-h-9 border px-3 py-1.5 text-xs font-medium transition-colors focus-industrial",
-                    active
-                      ? "border-brand bg-brand text-[var(--signal-ink)]"
-                      : "border-white/20 text-text-2 hover:border-white/40 hover:text-white",
-                  )}
-                >
-                  {topic.label}
-                </button>
-              );
-            })}
-            {activeTopics.length > 0 && (
-              <button
-                type="button"
-                onClick={() => setFilters((f) => ({ ...f, topics: [] }))}
-                className="min-h-[var(--control-h)] md:min-h-9 px-2 text-xs font-medium text-text-2 underline decoration-brand decoration-2 underline-offset-4 hover:text-white focus-industrial"
-              >
-                Clear
-              </button>
-            )}
-          </div>
-
-          <div className="flex flex-wrap items-center gap-3">
-            <div className="flex border border-white/20" role="group" aria-label="Filter by read state">
-              {VIEWS.map((v, i) => (
-                <button
-                  key={v.value}
-                  type="button"
-                  aria-pressed={view === v.value}
-                  onClick={() => setView(v.value)}
-                  className={cn(
-                    "min-h-[var(--control-h)] md:min-h-9 px-3 text-xs font-medium transition-colors focus-industrial",
-                    i !== VIEWS.length - 1 && "border-r border-white/20",
-                    view === v.value ? "bg-white text-bg-0" : "text-text-2 hover:bg-white/10 hover:text-white",
-                  )}
-                >
-                  {v.label}
-                  {v.value === "saved" && savedCount > 0 ? ` ${savedCount}` : ""}
-                </button>
-              ))}
-            </div>
-
-            <div className="flex border border-white/20" role="group" aria-label="Card density">
-              <button
-                type="button"
-                aria-pressed={density === "comfortable"}
-                className={cn(
-                  "min-h-[var(--control-h)] md:min-h-9 border-r border-white/20 px-3 text-xs font-medium transition-colors focus-industrial",
-                  density === "comfortable" ? "bg-white text-bg-0" : "text-text-2 hover:bg-white/10 hover:text-white",
-                )}
-                onClick={() => setDensity && setDensity("comfortable")}
-              >
-                Comfortable
-              </button>
-              <button
-                type="button"
-                aria-pressed={density === "compact"}
-                className={cn(
-                  "min-h-[var(--control-h)] md:min-h-9 px-3 text-xs font-medium transition-colors focus-industrial",
-                  density === "compact" ? "bg-white text-bg-0" : "text-text-2 hover:bg-white/10 hover:text-white",
-                )}
-                onClick={() => setDensity && setDensity("compact")}
-              >
-                Compact
-              </button>
-            </div>
-          </div>
         </div>
       </div>
     </div>

@@ -3,7 +3,6 @@ import tseslint from '@typescript-eslint/eslint-plugin';
 import tsparser from '@typescript-eslint/parser';
 import reactPlugin from 'eslint-plugin-react';
 import reactHooksPlugin from 'eslint-plugin-react-hooks';
-import reactCompilerPlugin from 'eslint-plugin-react-compiler';
 import astroPlugin from 'eslint-plugin-astro';
 import * as astroParser from 'astro-eslint-parser';
 
@@ -110,17 +109,8 @@ export default [
     }
   },
 
-  // React Compiler analysis is meaningful only for React components. Applying
-  // it to Node ingestion scripts makes the repository-wide lint gate stall.
-  {
-    files: ['src/**/*.{jsx,tsx}'],
-    plugins: {
-      'react-compiler': reactCompilerPlugin
-    },
-    rules: {
-      'react-compiler/react-compiler': 'warn'
-    }
-  },
+  // The standalone eslint-plugin-react-compiler was removed: it is superseded by the compiler
+  // rules in eslint-plugin-react-hooks (configured above) and pinned an unpatched zod 3.
 
   // Astro files
   {

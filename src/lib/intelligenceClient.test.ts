@@ -5,6 +5,7 @@ import {
   MAX_SEARCH_QUERY_LENGTH,
   MAX_SEARCH_TERM_LENGTH,
   MAX_SEARCH_TERMS,
+  normalizeSearchInput,
   normalizeSearchQuery,
 } from './intelligenceClient.js';
 import { admittedArticles } from './articleAdmission.js';
@@ -332,4 +333,14 @@ test('operational GitHub builds are excluded before static pagination and in liv
     'not.ilike.https://github.com/*/releases/tag/*canary*',
     'not.ilike.https://github.com/*/releases/tag/*nightly*',
   ]);
+});
+
+test('the search field keeps one trailing space so multi-word queries can be typed', () => {
+  expect(normalizeSearchInput('gemini ')).toBe('gemini ');
+  expect(normalizeSearchInput('gemini   ')).toBe('gemini ');
+  expect(normalizeSearchInput('gemini 4')).toBe('gemini 4');
+  expect(normalizeSearchInput('  gemini')).toBe('gemini');
+  expect(normalizeSearchInput('   ')).toBe('');
+  // What is searched and shared never carries the trailing space.
+  expect(normalizeSearchQuery(normalizeSearchInput('gemini '))).toBe('gemini');
 });

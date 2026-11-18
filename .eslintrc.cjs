@@ -15,7 +15,6 @@ module.exports = {
     '@typescript-eslint',
     'react',
     'react-hooks',
-    'react-compiler',
     'astro'
   ],
   extends: [
@@ -26,8 +25,6 @@ module.exports = {
     'plugin:astro/recommended'
   ],
   rules: {
-    // Enable React Compiler constraints as warnings (upgrade to 'error' once codebase is ready)
-    'react-compiler/react-compiler': 'warn',
     // Common React-in-Vite/Astro rule
     'react/react-in-jsx-scope': 'off',
     // Allow unused vars/args when prefixed with underscore

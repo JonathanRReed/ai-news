@@ -130,6 +130,27 @@
   color: var(--ink-0);
 }
 
+/* The shared reset above is unlayered and beats utilities, so the surface is declared here. */
+.shortcuts-dialog {
+  border: 1px solid var(--line-1);
+  padding: var(--space-5);
+  background: var(--surface-1);
+}
+
+.back-to-top {
+  background: var(--surface-1);
+}
+
+/* Chromium ships this header without its blur, which left feed text legible through it. */
+.eco-header {
+  background: var(--surface-0);
+}
+
+/* Keyboard focus and in-page jumps land below the site header and the sticky day header. */
+html {
+  scroll-padding-top: calc(var(--header-h) + 3.5rem);
+}
+
 .mobile-menu-dialog {
   width: min(calc(100% - 2rem), 28rem);
   max-height: calc(100dvh - 2rem);
@@ -166,23 +187,7 @@
   padding-left: var(--space-3);
 }
 
-/* Cards */
-.article-card-hoverable {
-  border-radius: 0;
-  transition: border-color var(--dur-fast) var(--ease-standard), background-color var(--dur-fast) var(--ease-standard);
-}
-
-.article-card-hoverable:hover,
-.article-card-hoverable:focus-within {
-  border-color: var(--line-1);
-  background: var(--surface-1);
-}
-
 @media (prefers-reduced-motion: reduce) {
-
-  .article-card-hoverable {
-    transition: none;
-  }
   .animate-pulse,
   .animate-spin {
     animation: none;
@@ -204,4 +209,743 @@
 /* The search field supplies its own accessible clear button. */
 #article-search::-webkit-search-cancel-button {
   -webkit-appearance: none;
+}
+
+/* ------------------------------------------------------------------ */
+/* Home: compact masthead, feed column and rail                         */
+/* ------------------------------------------------------------------ */
+.masthead-heading {
+  font-size: clamp(2rem, 1.3rem + 2.6vw, 3.5rem);
+}
+
+/* Major updates comes first in the document and the feed second, on every screen. Wide
+   screens only move Major updates into a side column; reading and tab order never change. */
+.home-layout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.home-feed {
+  min-width: 0;
+}
+
+@media (min-width: 1024px) {
+  .home-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 20rem;
+    align-items: start;
+    gap: var(--space-7);
+  }
+
+  .home-feed {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  /* Short enough to stay whole in a 720px-tall window, so it can follow the feed. */
+  .home-major {
+    grid-column: 2;
+    grid-row: 1;
+    position: sticky;
+    top: calc(var(--header-h) + var(--space-5));
+  }
+}
+
+.rail-note {
+  margin-top: var(--space-2);
+  font-size: var(--text-xs);
+  line-height: var(--leading-normal);
+  color: var(--ink-1);
+}
+
+.rail-note a {
+  color: var(--ink-0);
+  text-decoration: underline;
+  text-decoration-color: var(--line-1);
+  text-underline-offset: 3px;
+}
+
+.rail-note a:hover {
+  text-decoration-color: var(--signal);
+}
+
+.rail-block {
+  border-top: 1px solid var(--line-1);
+  padding-top: var(--space-4);
+}
+
+.rail-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.rail-title {
+  font-size: var(--text-base);
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--ink-0);
+}
+
+.rail-link {
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--ink-1);
+  text-decoration: underline;
+  text-decoration-color: var(--signal);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  white-space: nowrap;
+}
+
+.rail-link:hover {
+  color: var(--ink-0);
+}
+
+.rail-major-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rail-major-list li {
+  border-top: 1px solid var(--line-0);
+  padding: var(--space-3) 0;
+}
+
+.rail-major-list li:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.rail-major-list a {
+  display: block;
+  color: var(--ink-0);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  line-height: var(--leading-snug);
+  text-decoration: none;
+  text-wrap: pretty;
+  overflow-wrap: anywhere;
+}
+
+.rail-major-list a:hover {
+  color: var(--signal-text);
+  text-decoration: underline;
+  text-decoration-color: var(--signal);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.rail-major-meta {
+  display: flex;
+  gap: var(--space-2);
+  margin-bottom: 0.2rem;
+  font-size: var(--text-xs);
+  color: var(--ink-1);
+}
+
+.rail-major-meta time {
+  font-family: var(--font-mono);
+  color: var(--ink-2);
+}
+
+/* ------------------------------------------------------------------ */
+/* Feed ledger: ruled rows, a time gutter, day headers                  */
+/* ------------------------------------------------------------------ */
+.feed-day + .feed-day {
+  margin-top: var(--space-6);
+}
+
+.feed-day-head {
+  position: sticky;
+  top: var(--header-h);
+  z-index: 5;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-4);
+  border-bottom: 1px solid var(--line-1);
+  background: var(--surface-0);
+  padding: var(--space-3) 0 var(--space-2);
+}
+
+.feed-day-title {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--ink-0);
+}
+
+.feed-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2rem minmax(0, 1fr) auto;
+  column-gap: var(--space-3);
+  border-bottom: 1px solid var(--line-0);
+  padding-block: var(--space-4);
+}
+
+.feed-row[data-density="compact"] {
+  padding-block: var(--space-3);
+}
+
+/* An opened record steps back by weight and tone only. Every text colour here still clears
+   WCAG AA on its own, which a row-wide opacity did not. */
+.feed-row[data-seen="true"] .feed-title a {
+  color: var(--ink-1);
+  font-weight: 500;
+}
+
+.feed-row[data-seen="true"] .feed-title a:hover {
+  color: var(--signal-text);
+}
+
+.feed-row[data-seen="true"] .feed-logo {
+  opacity: 0.55;
+}
+
+.feed-row[data-selected="true"] {
+  outline: 2px solid var(--signal);
+  outline-offset: 4px;
+}
+
+.feed-logo {
+  display: flex;
+  width: 2rem;
+  height: 2rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line-1);
+  background: #ffffff;
+}
+
+.feed-logo img {
+  width: 1.375rem;
+  height: 1.375rem;
+  object-fit: contain;
+}
+
+/* Publishers without a supplied mark use a lettered monogram, drawn to fill the tile. */
+.feed-logo img[src^="data:"],
+.company-chip-logo img[src^="data:"],
+img[alt^="Provider mark for"][src^="data:"] {
+  width: 100%;
+  height: 100%;
+}
+
+.feed-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: var(--space-2);
+  row-gap: 0.125rem;
+  font-size: var(--text-xs);
+  line-height: 1.5;
+  color: var(--ink-1);
+}
+
+.feed-time {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--ink-2);
+}
+
+.feed-publisher {
+  font-weight: 600;
+  color: var(--ink-0);
+}
+
+.feed-major {
+  font-weight: 600;
+  color: var(--signal-text);
+}
+
+.feed-source {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--ink-1);
+  text-decoration: underline;
+  text-decoration-color: var(--line-1);
+  text-underline-offset: 3px;
+}
+
+.feed-source.feed-source-missing,
+.feed-source.feed-source-missing:hover {
+  color: var(--ink-2);
+  text-decoration: none;
+}
+
+.feed-source:hover {
+  color: var(--ink-0);
+  text-decoration-color: var(--signal);
+}
+
+.feed-source svg {
+  width: 0.7rem;
+  height: 0.7rem;
+  flex: none;
+}
+
+.feed-title {
+  margin-top: 0.2rem;
+  font-size: var(--text-lg);
+  font-weight: 600;
+  line-height: var(--leading-snug);
+  letter-spacing: -0.005em;
+  text-wrap: pretty;
+  overflow-wrap: anywhere;
+}
+
+.feed-row[data-density="compact"] .feed-title,
+.feed-row[data-kind="release"] .feed-title {
+  font-size: var(--text-base);
+}
+
+.feed-title a {
+  color: var(--ink-0);
+  text-decoration: none;
+}
+
+.feed-title a:hover {
+  color: var(--signal-text);
+  text-decoration: underline;
+  text-decoration-color: var(--signal);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.feed-row[data-kind="build"] .feed-title a {
+  color: var(--ink-1);
+  font-weight: 500;
+}
+
+.feed-row[data-kind="build"] .feed-title a:hover {
+  color: var(--signal-text);
+}
+
+.feed-version {
+  font-family: var(--font-mono);
+  font-size: 0.94em;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.feed-excerpt {
+  margin-top: 0.35rem;
+  max-width: 72ch;
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+  color: var(--ink-1);
+  text-wrap: pretty;
+}
+
+.feed-save {
+  display: flex;
+  width: var(--control-h);
+  height: var(--control-h);
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  margin: -0.4rem -0.6rem 0 0;
+  border: 0;
+  background: transparent;
+  color: var(--ink-2);
+  transition: color var(--dur-fast) var(--ease-standard);
+}
+
+.feed-save:hover {
+  color: var(--ink-0);
+}
+
+.feed-save[aria-pressed="true"] {
+  color: var(--signal-text);
+}
+
+/* Folded pre-release builds: one quiet line per project and day. */
+.feed-builds {
+  border-bottom: 1px solid var(--line-0);
+}
+
+.feed-builds-toggle {
+  display: grid;
+  width: 100%;
+  min-height: var(--control-h);
+  grid-template-columns: 2rem minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: var(--space-3);
+  border: 0;
+  background: transparent;
+  padding: var(--space-2) 0;
+  text-align: left;
+  font-size: var(--text-sm);
+  color: var(--ink-1);
+}
+
+.feed-builds-toggle:hover {
+  color: var(--ink-0);
+}
+
+.feed-builds-toggle .feed-logo {
+  width: 1.5rem;
+  height: 1.5rem;
+  justify-self: center;
+  opacity: 0.85;
+}
+
+.feed-builds-toggle .feed-logo img {
+  width: 1rem;
+  height: 1rem;
+}
+
+.feed-builds-summary {
+  display: flex;
+  min-width: 0;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: var(--space-2);
+}
+
+.feed-builds-range {
+  min-width: 0;
+  overflow: hidden;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--ink-2);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.feed-builds-chevron {
+  width: 0.9rem;
+  height: 0.9rem;
+  transition: transform var(--dur-base) var(--ease-out);
+}
+
+.feed-builds-toggle[aria-expanded="true"] .feed-builds-chevron {
+  transform: rotate(180deg);
+}
+
+.feed-builds-list {
+  margin: 0;
+  padding: 0 0 var(--space-3) calc(2rem + var(--space-3));
+  list-style: none;
+}
+
+.feed-builds-list li {
+  display: grid;
+  grid-template-columns: 3rem minmax(0, 1fr) auto;
+  align-items: baseline;
+  column-gap: var(--space-3);
+  padding: 0.3rem 0;
+  font-size: var(--text-sm);
+}
+
+.feed-builds-list a.feed-version {
+  color: var(--ink-0);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.feed-builds-list a.feed-version:hover {
+  color: var(--signal-text);
+  text-decoration: underline;
+  text-decoration-color: var(--signal);
+  text-underline-offset: 4px;
+}
+
+.feed-builds-list li[data-selected="true"] {
+  outline: 2px solid var(--signal);
+  outline-offset: 2px;
+}
+
+.feed-body > .feed-source {
+  display: flex;
+  width: fit-content;
+  margin-top: 0.4rem;
+  font-size: var(--text-xs);
+}
+
+.feed-row[data-kind="build"] .feed-title {
+  font-size: var(--text-sm);
+}
+
+@media (min-width: 768px) {
+  .feed-row,
+  .feed-builds {
+    padding-left: 4.25rem;
+  }
+
+  /* The source link rides the meta line's right edge; everything else spans the row. */
+  .feed-body {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: var(--space-4);
+    justify-items: start;
+  }
+
+  .feed-body > * {
+    grid-column: 1 / -1;
+  }
+
+  .feed-body > .feed-meta {
+    grid-column: 1;
+  }
+
+  .feed-body > .feed-source {
+    grid-column: 2;
+    grid-row: 1;
+    margin-top: 0;
+    line-height: 1.5;
+  }
+
+  /* The time leaves the meta line and becomes the ledger's left gutter. */
+  .feed-row > .feed-body > .feed-meta > .feed-time {
+    position: absolute;
+    left: 0;
+    top: calc(var(--space-4) + 0.45rem);
+    font-size: var(--text-sm);
+  }
+
+  .feed-row[data-density="compact"] > .feed-body > .feed-meta > .feed-time {
+    top: calc(var(--space-3) + 0.45rem);
+  }
+
+  .feed-builds {
+    position: relative;
+  }
+
+  .feed-builds-time {
+    position: absolute;
+    left: 0;
+    top: 0.8rem;
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--ink-2);
+  }
+}
+
+@media (max-width: 767px) {
+  .feed-builds-time {
+    display: none;
+  }
+
+  /* Standalone links on small screens get a taller tap area than their text. */
+  .feed-body > .feed-source,
+  .feed-builds-list .feed-source,
+  .feed-day-head .rail-link {
+    padding-block: 0.35rem;
+  }
+
+  .feed-body > .feed-source {
+    margin-top: 0.1rem;
+  }
+}
+
+/* Static story lists (daily pages, major updates, publisher pages) share the ledger. */
+.story-rows {
+  max-width: 64rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Directly under a ruled section heading the list needs no rule of its own. */
+.story-rows[data-flush="true"] {
+  border-top: 0;
+}
+
+.story-rows .feed-title {
+  font-size: var(--text-lg);
+  letter-spacing: -0.005em;
+}
+
+.story-rows .feed-row[data-kind="release"] .feed-title {
+  font-size: var(--text-base);
+}
+
+.story-rows .feed-row[data-kind="build"] .feed-title {
+  font-size: var(--text-sm);
+}
+
+.feed-builds summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+.feed-builds summary::-webkit-details-marker {
+  display: none;
+}
+
+.feed-builds details[open] .feed-builds-chevron {
+  transform: rotate(180deg);
+}
+
+.story-rows .feed-builds-list li {
+  grid-template-columns: 3rem minmax(0, 1fr);
+}
+
+@media (min-width: 768px) {
+  .story-rows[data-gutter="date"] .feed-row,
+  .story-rows[data-gutter="date"] .feed-builds {
+    padding-left: 7.5rem;
+  }
+}
+
+/* Feed toolbar */
+.feed-toolbar {
+  border: 1px solid var(--line-1);
+  background: var(--surface-1);
+}
+
+.feed-toolbar-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+  border-top: 1px solid var(--line-0);
+  padding: var(--space-3);
+}
+
+.feed-chip {
+  display: inline-flex;
+  min-height: var(--control-h);
+  align-items: center;
+  border: 1px solid var(--line-1);
+  background: transparent;
+  padding: 0 var(--space-3);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--ink-1);
+  white-space: nowrap;
+  transition: color var(--dur-fast) var(--ease-standard), border-color var(--dur-fast) var(--ease-standard), background-color var(--dur-fast) var(--ease-standard);
+}
+
+.feed-chip:hover {
+  border-color: var(--ink-2);
+  color: var(--ink-0);
+}
+
+.feed-chip[aria-pressed="true"] {
+  border-color: var(--signal);
+  background: var(--signal);
+  color: var(--signal-ink);
+}
+
+.feed-segment {
+  display: inline-flex;
+  border: 1px solid var(--line-1);
+}
+
+.feed-segment button {
+  min-height: var(--control-h);
+  border: 0;
+  border-left: 1px solid var(--line-1);
+  background: transparent;
+  padding: 0 var(--space-3);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--ink-1);
+  white-space: nowrap;
+  transition: color var(--dur-fast) var(--ease-standard), background-color var(--dur-fast) var(--ease-standard);
+}
+
+.feed-segment button:first-child {
+  border-left: 0;
+}
+
+.feed-segment button:hover {
+  background: var(--surface-2);
+  color: var(--ink-0);
+}
+
+.feed-segment button[aria-pressed="true"] {
+  background: var(--ink-0);
+  color: var(--surface-0);
+}
+
+@media (min-width: 768px) {
+  .feed-chip,
+  .feed-segment button {
+    min-height: 2.25rem;
+  }
+}
+
+.company-strip {
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+  scroll-snap-type: x proximity;
+  mask-image: linear-gradient(to right, black calc(100% - 2.5rem), transparent);
+}
+
+.company-strip::-webkit-scrollbar {
+  display: none;
+}
+
+.company-chip {
+  display: inline-flex;
+  min-height: var(--control-h);
+  flex: none;
+  align-items: center;
+  gap: var(--space-2);
+  border: 0;
+  border-right: 1px solid var(--line-0);
+  background: transparent;
+  padding: 0 var(--space-3);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--ink-1);
+  white-space: nowrap;
+  scroll-snap-align: start;
+  transition: color var(--dur-fast) var(--ease-standard), background-color var(--dur-fast) var(--ease-standard);
+}
+
+.company-chip:last-child {
+  margin-right: 2.5rem;
+}
+
+.company-chip:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: -2px;
+}
+
+.company-chip:hover {
+  background: var(--surface-2);
+  color: var(--ink-0);
+}
+
+.company-chip[aria-pressed="true"] {
+  background: var(--signal);
+  color: var(--signal-ink);
+}
+
+.company-chip-logo {
+  display: flex;
+  width: 1.375rem;
+  height: 1.375rem;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line-1);
+  background: #ffffff;
+}
+
+.company-chip-logo img {
+  width: 1rem;
+  height: 1rem;
+  object-fit: contain;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .feed-builds-chevron,
+  .feed-chip,
+  .feed-segment button,
+  .company-chip {
+    transition: none;
+  }
 }

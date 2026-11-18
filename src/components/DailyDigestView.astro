@@ -5,24 +5,45 @@ import { cn } from "../lib/utils.js";
 
 const { digest, allDigests } = Astro.props as { digest: DailyDigest; allDigests: DailyDigest[] };
 const rows = digest.stories.map((article) => ({ article }));
+const redatedRows = (digest.redated ?? []).map((article) => ({ article }));
 ---
 
 <section class="industrial-container py-10 md:py-14">
   <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-end">
-    <div >
+    <div>
       <h1 class="macro-heading">{digest.label}</h1>
-      <p class="mt-6 max-w-3xl text-lg leading-relaxed text-text-2">Every update collected from official sources on this UTC date, ordered by publication time.</p>
+      <p class="mt-6 max-w-3xl text-lg leading-relaxed text-text-2">
+        {redatedRows.length > 0
+          ? "No updates are dated to this UTC day. This address is kept so earlier links still work."
+          : "Every update collected from official sources on this UTC date, ordered by publication time."}
+      </p>
     </div>
-    <dl class="grid grid-cols-3 gap-px bg-white/15 industrial-border">
-      <div class="bg-bg-0 p-4"><dt class="micro-label text-muted">Updates</dt><dd class="mt-2 font-mono text-2xl text-white">{digest.count}</dd></div>
-      <div class="bg-bg-0 p-4"><dt class="micro-label text-muted">Publishers</dt><dd class="mt-2 font-mono text-2xl text-white">{digest.entities}</dd></div>
-      <div class="bg-bg-0 p-4"><dt class="micro-label text-muted">Major</dt><dd class="mt-2 font-mono text-2xl text-white">{digest.majorCount}</dd></div>
-    </dl>
+    {redatedRows.length === 0 && (
+      <dl class="grid grid-cols-3 gap-px bg-white/15 industrial-border">
+        <div class="bg-bg-0 p-4"><dt class="micro-label text-muted">Updates</dt><dd class="mt-2 font-mono text-2xl text-white">{digest.count}</dd></div>
+        <div class="bg-bg-0 p-4"><dt class="micro-label text-muted">Publishers</dt><dd class="mt-2 font-mono text-2xl text-white">{digest.entities}</dd></div>
+        <div class="bg-bg-0 p-4"><dt class="micro-label text-muted">Major</dt><dd class="mt-2 font-mono text-2xl text-white">{digest.majorCount}</dd></div>
+      </dl>
+    )}
   </div>
 </section>
 
 <section class="industrial-container pb-12">
-  <StoryRows rows={rows} />
+  {redatedRows.length > 0 ? (
+    <Fragment>
+      <div class="industrial-border mb-6 p-5">
+        <h2 class="text-lg font-semibold text-white">{redatedRows.length === 1 ? "One record was re-dated" : `${redatedRows.length} records were re-dated`}</h2>
+        <p class="mt-2 max-w-3xl text-sm leading-relaxed text-text-2">
+          {redatedRows.length === 1
+            ? "The record first listed here carried the date its publisher last edited the page. It now shows the publication date stated on the publisher's own page."
+            : "The records first listed here carried the date their publisher last edited each page. They now show the publication dates stated on the publisher's own pages."}
+        </p>
+      </div>
+      <StoryRows rows={redatedRows} />
+    </Fragment>
+  ) : (
+    <StoryRows rows={rows} time="clock" />
+  )}
 </section>
 
 <section class="industrial-container pb-16 md:pb-24">

@@ -1,4 +1,5 @@
 import { allArticles } from "./feeds.js";
+import { recordKind } from "./releaseKind.js";
 import type { Article } from "../types/article.js";
 
 // ISO-ish week key = the Monday (UTC) of the week the article was published.
@@ -21,6 +22,8 @@ export interface DigestWeek {
   count: number;
   labs: number;
   topStories: Article[];
+  /** True when the short list left out pre-release builds that the count still includes. */
+  buildsOmitted: boolean;
 }
 
 export function digestWeeks(maxWeeks = 8, minArticles = 5, articles: Article[] = allArticles()): DigestWeek[] {
@@ -43,12 +46,16 @@ export function digestWeeks(maxWeeks = 8, minArticles = 5, articles: Article[] =
           || b.id.localeCompare(a.id)
         ),
       );
+      // Pre-release builds stay in the count and in the daily pages, but a week's
+      // short list should not be eight alpha tags from one repository.
+      const headline = latest.filter((article) => recordKind(article) !== "build");
       return {
         week,
         label: weekLabel(week),
         count: items.length,
         labs: new Set(items.map((i) => i.company)).size,
-        topStories: latest.slice(0, 8),
+        topStories: (headline.length ? headline : latest).slice(0, 8),
+        buildsOmitted: headline.length > 0 && headline.length < latest.length,
       };
     });
 }
