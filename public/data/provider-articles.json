@@ -1,5 +1,17 @@
 [
   {
+    "id": "7511aa24-0836-5870-b720-cac601ac3705",
+    "company": "Hermes Agent",
+    "title": "canary.20261121T064420Z-v0.23.3",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/canary.20261121T064420Z-v0.23.3",
+    "published_at": "2026-11-21T06:44:21+00:00",
+    "source_type": "rss_official",
+    "summary": "{\"commit\":\"a3b993b98a1c679193bd8d4ea99b89ce7614bfde\",\"kind\":\"canary\",…",
+    "content": "{\"commit\":\"a3b993b98a1c679193bd8d4ea99b89ce7614bfde\",\"kind\":\"canary\",…",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
     "id": "e0f620fc-5059-55d9-a9d2-9ae20e271b73",
     "company": "Cline",
     "title": "v4.1.27",
