@@ -1,5 +1,17 @@
 [
   {
+    "id": "fb11ff2d-6937-5cdb-ba2c-5d8b57590023",
+    "company": "Hermes Agent",
+    "title": "canary.20261122T064429Z-v0.23.3",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/canary.20261122T064429Z-v0.23.3",
+    "published_at": "2026-11-22T06:44:30+00:00",
+    "source_type": "rss_official",
+    "summary": "{\"commit\":\"a26e2a10ea78daed0b018424e6a6e4c8f7195194\",\"kind\":\"canary\",…",
+    "content": "{\"commit\":\"a26e2a10ea78daed0b018424e6a6e4c8f7195194\",\"kind\":\"canary\",…",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
     "id": "4361c3d2-e1fd-5b45-a2da-81918e1e8569",
     "company": "Moonshot AI",
     "title": "Kimi Code Desktop 1.5.0-canary.20261122032410-83e4dde",
