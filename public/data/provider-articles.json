@@ -60,6 +60,18 @@
     "source_key": "hermes-agent-releases"
   },
   {
+    "id": "839f1e0d-af13-5a29-b049-317cecaf8e3d",
+    "company": "OpenAI",
+    "title": "Perplexity and Intelligence",
+    "url": "https://openai.com/index/perplexity-and-intelligence",
+    "published_at": "2026-11-22T00:00:00+00:00",
+    "source_type": "rss_official",
+    "summary": "How perplexity measures progress in AI models, and why it could help developers establish a shared approach to evaluating emerging capabilities.",
+    "content": "How perplexity measures progress in AI models, and why it could help developers establish a shared approach to evaluating emerging capabilities.",
+    "source_url": "https://openai.com/news/rss.xml",
+    "source_key": "openai-news"
+  },
+  {
     "id": "d023042c-4dbf-5da6-9213-b049c04700a6",
     "company": "OpenClaw",
     "title": "release-publish/6d2e5e84eedc-1795308759: fix: retain both errors when approval test cleanup fails (#203263)",
