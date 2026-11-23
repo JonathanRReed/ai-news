@@ -1,5 +1,41 @@
 [
   {
+    "id": "bf6098f7-a546-5aca-9e9d-e09f358d2efc",
+    "company": "OpenClaw",
+    "title": "release-publish/41b8e9f42614-1795392576: fix(release): support exact cancelled-step risk grants (#203832)",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/release-publish%2F41b8e9f42614-1795392576",
+    "published_at": "2026-11-23T00:07:45+00:00",
+    "source_type": "rss_official",
+    "summary": "Co-authored-by: RomneyDa Co-authored-by: vincentkoc",
+    "content": "Co-authored-by: RomneyDa 6581799+RomneyDa@users.noreply.github.com Co-authored-by: vincentkoc 25068+vincentkoc@users.noreply.github.com",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
+  },
+  {
+    "id": "8246515a-878a-5141-ac1c-cd438545830b",
+    "company": "OpenClaw",
+    "title": "v2026.11.7",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.11.7",
+    "published_at": "2026-11-22T23:53:26+00:00",
+    "source_type": "rss_official",
+    "summary": "OpenClaw 2026.11.7",
+    "content": "OpenClaw 2026.11.7",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
+  },
+  {
+    "id": "ae494717-07bc-56e7-a6b6-a0a67ecdff7f",
+    "company": "OpenClaw",
+    "title": "release-publish/b3e8b8551095-1795390643",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/release-publish%2Fb3e8b8551095-1795390643",
+    "published_at": "2026-11-22T23:09:30+00:00",
+    "source_type": "rss_official",
+    "summary": "fix(update): preserve plugin consent and target the invoking installa…",
+    "content": "fix(update): preserve plugin consent and target the invoking installa…",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
+  },
+  {
     "id": "fb11ff2d-6937-5cdb-ba2c-5d8b57590023",
     "company": "Hermes Agent",
     "title": "canary.20261122T064429Z-v0.23.3",
@@ -10,6 +46,18 @@
     "content": "{\"commit\":\"a26e2a10ea78daed0b018424e6a6e4c8f7195194\",\"kind\":\"canary\",…",
     "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
     "source_key": "hermes-agent-releases"
+  },
+  {
+    "id": "19f674bd-e037-51c4-996e-c83f0f6e5ecc",
+    "company": "OpenClaw",
+    "title": "release-publish/7bf1c3e74132-1795385695: fix: recognize BOM-prefixed CI evidence timestamps (#203410)",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/release-publish%2F7bf1c3e74132-1795385695",
+    "published_at": "2026-11-22T05:08:55+00:00",
+    "source_type": "rss_official",
+    "summary": "Co-authored-by: RomneyDa Co-authored-by: vincentkoc",
+    "content": "Co-authored-by: RomneyDa 6581799+RomneyDa@users.noreply.github.com Co-authored-by: vincentkoc 25068+vincentkoc@users.noreply.github.com",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
   },
   {
     "id": "4361c3d2-e1fd-5b45-a2da-81918e1e8569",
