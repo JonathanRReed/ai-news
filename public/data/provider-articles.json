@@ -1,5 +1,53 @@
 [
   {
+    "id": "e9f975c5-fff4-52a7-9032-3383a595df16",
+    "company": "Goose",
+    "title": "v1.61.1",
+    "url": "https://github.com/aaif-goose/goose/releases/tag/v1.61.1",
+    "published_at": "2026-11-26T00:40:37+00:00",
+    "source_type": "rss_official",
+    "summary": "Merge commit from fork * Drop tool approval state from imported sessions so opening one cannot run its tool calls. * Import sessions with local extensions and goose mode, and drop recipe retry, recipe values, container and provider session IDs. (cherry picked from commit fe5dd15 )",
+    "content": "Merge commit from fork * Drop tool approval state from imported sessions so opening one cannot run its tool calls. * Import sessions with local extensions and goose mode, and drop recipe retry, recipe values, container and provider session IDs. (cherry picked from commit fe5dd15 )",
+    "source_url": "https://github.com/aaif-goose/goose/releases.atom",
+    "source_key": "goose-releases"
+  },
+  {
+    "id": "3fef033a-595a-529b-854d-dcaf385459e3",
+    "company": "Codex CLI",
+    "title": "0.174.0-alpha.6",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.174.0-alpha.6",
+    "published_at": "2026-11-25T19:41:38+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.174.0-alpha.6",
+    "content": "Release 0.174.0-alpha.6",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "f36eb70c-a2c3-52f6-a7a2-1865cc77b8e2",
+    "company": "NVIDIA AI",
+    "title": "How to Optimize NVFP4 Attention on NVIDIA RTX Blackwell Through Register Recycling",
+    "url": "https://developer.nvidia.com/blog/how-to-optimize-nvfp4-attention-on-nvidia-rtx-blackwell-through-register-recycling/",
+    "published_at": "2026-11-25T19:30:00+00:00",
+    "source_type": "rss_official",
+    "summary": "Attention can be a major bottleneck when serving world foundation models, where long sequences make inference computationally demanding. On NVIDIA Hopper and...",
+    "content": "Attention can be a major bottleneck when serving world foundation models, where long sequences make inference computationally demanding. On NVIDIA Hopper and...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/",
+    "source_key": "nvidia-generative-ai"
+  },
+  {
+    "id": "63c313de-0c52-5900-972c-578b8a4b5eaa",
+    "company": "Hugging Face",
+    "title": "Where scientists draw the line on AI agents",
+    "url": "https://huggingface.co/blog/allenai/where-scientists-draw-the-line-on-ai-agents",
+    "published_at": "2026-11-25T18:52:55+00:00",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://huggingface.co/blog/feed.xml",
+    "source_key": "hugging-face-blog"
+  },
+  {
     "id": "a01540d7-e297-5e17-a0a8-2a9cbfd8550b",
     "company": "OpenHands",
     "title": "v1.46.0",
@@ -2110,6 +2158,18 @@
     "content": "Release 0.171.0-alpha.13.1",
     "source_url": "https://github.com/openai/codex/releases.atom",
     "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "08d8581c-db9b-5199-a561-3d2a0587ceaf",
+    "company": "NVIDIA AI",
+    "title": "Manage Liquid-Cooled AI Factories with NVIDIA Mission Control",
+    "url": "https://developer.nvidia.com/blog/manage-liquid-cooled-ai-factories-with-nvidia-mission-control/",
+    "published_at": "2026-11-19T22:02:30+00:00",
+    "source_type": "rss_official",
+    "summary": "Managing AI infrastructure such as NVIDIA Vera Rubin NVL72 requires coordinated operation of compute, power, and cooling systems. In liquid-cooled AI factories,...",
+    "content": "Managing AI infrastructure such as NVIDIA Vera Rubin NVL72 requires coordinated operation of compute, power, and cooling systems. In liquid-cooled AI factories,...",
+    "source_url": "https://developer.nvidia.com/blog/category/generative-ai/feed/",
+    "source_key": "nvidia-generative-ai"
   },
   {
     "id": "89203628-a86a-510e-b5d1-4186d774738d",
