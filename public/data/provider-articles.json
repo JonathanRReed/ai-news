@@ -1,5 +1,29 @@
 [
   {
+    "id": "9eb0e989-9c9a-5d7b-b6b0-f1f99770dc19",
+    "company": "Codex CLI",
+    "title": "0.174.0-alpha.9",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.174.0-alpha.9",
+    "published_at": "2026-11-27T17:01:23+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.174.0-alpha.9",
+    "content": "Release 0.174.0-alpha.9",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
+    "id": "05229936-c141-55ca-b7b5-d9386b0beda9",
+    "company": "Moonshot AI",
+    "title": "Kimi Code CLI 2.9.0-canary.20261127130549-5304618",
+    "url": "https://github.com/MoonshotAI/kimi-code/releases/tag/%40moonshot-ai%2Fkimi-code%402.9.0-canary.20261127130549-5304618",
+    "published_at": "2026-11-27T13:27:35+00:00",
+    "source_type": "rss_official",
+    "summary": "What's Changed feat(worktree): move active session when creating a new worktree by @Grapedge in #5646 feat(tui): add fullscreen mouse support for docked dialogs and selectors by @Grapedge in #5590 feat(tui): add fullscreen mouse support for /tasks and takeover viewers by @Grapedge in #5594 refactor(tui): rename dialog-mouse to mouse-hit-test and move finishDialogLines by @Grapedge in #5648 Full Changelog :...",
+    "content": "What's Changed feat(worktree): move active session when creating a new worktree by @Grapedge in #5646 feat(tui): add fullscreen mouse support for docked dialogs and selectors by @Grapedge in #5590 feat(tui): add fullscreen mouse support for /tasks and takeover viewers by @Grapedge in #5594 refactor(tui): rename dialog-mouse to mouse-hit-test and move finishDialogLines by @Grapedge in #5648 Full Changelog : https://github.com/MoonshotAI/kimi-code/compare/@moonshot-ai/kimi-code@2.9.0-canary.20261127101819-da8bdbb...@moonshot-ai/kimi-code@2.9.0-canary.20261127130549-5304618",
+    "source_url": "https://github.com/MoonshotAI/kimi-code/releases.atom",
+    "source_key": "moonshot-kimi-code-releases"
+  },
+  {
     "id": "81117820-1152-5fe3-a195-1d34eeef7d36",
     "company": "Moonshot AI",
     "title": "Kimi Code CLI 2.9.0-canary.20261127101819-da8bdbb",
