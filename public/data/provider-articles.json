@@ -1,5 +1,53 @@
 [
   {
+    "id": "81117820-1152-5fe3-a195-1d34eeef7d36",
+    "company": "Moonshot AI",
+    "title": "Kimi Code CLI 2.9.0-canary.20261127101819-da8bdbb",
+    "url": "https://github.com/MoonshotAI/kimi-code/releases/tag/%40moonshot-ai%2Fkimi-code%402.9.0-canary.20261127101819-da8bdbb",
+    "published_at": "2026-11-27T10:38:35+00:00",
+    "source_type": "rss_official",
+    "summary": "What's Changed ci: let every push to main finish its CI run by @RealKai42 in #5609 ci(e2e): rerun failed nightly cases on the same commit and list the commits since the last green run by @RealKai42 in #5610 feat(agent-core-v2): defer MCP tools by default and cap startup wait at 2s by @sailist in #5433 fix(agent-core-v2): preserve legacy steer pairing after undo by @sailist in #5599 fix(remote-control): release lock on process exit and before Desktop update restart by @7Sageer in #5613...",
+    "content": "What's Changed ci: let every push to main finish its CI run by @RealKai42 in #5609 ci(e2e): rerun failed nightly cases on the same commit and list the commits since the last green run by @RealKai42 in #5610 feat(agent-core-v2): defer MCP tools by default and cap startup wait at 2s by @sailist in #5433 fix(agent-core-v2): preserve legacy steer pairing after undo by @sailist in #5599 fix(remote-control): release lock on process exit and before Desktop update restart by @7Sageer in #5613 refactor(app-components): remove remaining self-package barrel imports by @liruifengv in #5549 refactor(app-ui): move unified icon registry down from app-client by @liruifengv in #5557 refactor(app-core): split composables entrypoint and decouple toast contracts from api by @liruifengv in #5561 test: cover the remaining user operations in the e2e cache topic by @RealKai42 in #5578 fix: show how earlier turns ended after resuming a session by @RealKai42 in #5617 docs(skills): treat testkit, e2e and scenarios as test-only for changesets by @RealKai42 in #5624 ci(e2e): run the suite on macOS on demand by @RealKai42 in #5606 feat(cli,tui): report session resume command via OSC 7577 by @Grapedge in #5571 test(agent-core-v2): fail tests that pass only on retry by @RealKai42 in #5625 refactor(kap-server): publish shared OpenAPI schemas once under components by @chengluyu in #5621 fix(agent-core-v2): share native watchers across subscriptions by @pvzheroes125 in #5620 refactor(desktop): split IPC handler registration by domain by @liruifengv in #5605 test(e2e): list a tool that never ran across a restart in the cache catalog by @RealKai42 in #5631 test: add E2E scenarios for config wiring, slow MCP servers and terminal screen switches by @RealKai42 in #5582 ci(e2e): run the macOS jobs every night by @RealKai42 in #5630 feat(agent-core-v2): manage MCP sources per session with pre-connect arbitration by @sailist in #5555 fix(agent-core-v2): keep session titles for skill-opening sessions by @liruifengv in #5618 refactor(desktop): split preload bridge by domain by @liruifengv in #5612 refactor(checks): allow intra-package cycles and self-package imports in app boundaries by @liruifengv in #5637 test(agent-core-v2): use platform paths in watcher filters by @pvzheroes125 in #5633 fix(agent-core-v2): keep the loop tool baseline frozen for models without dynamic loading by @sailist in #5638 test(e2e): count ACP editor reads and writes that arrive before the tool card by @RealKai42 in #5641 test(e2e): remove timing race in steer-reaches-the-running-turn by @kimi-agent-bot in #5642 feat(desktop): remove the default model, permission and plan mode settings by @wbxl2000 in #5644 fix: align post-compaction token count and wrap narrow compaction cards by @wbxl2000 in #5639 fix(agent-core-v2): send a tool result's note the same way after a session is restored by @RealKai42 in #5640 feat(worktree): graduate git worktree support from experimental by @Grapedge in #5645 feat(agent-core-v2): start new sessions in swarm mode via KIMI_CODE_SWARM by @sailist in #5521 feat(tui): add bordered Box layout and fullscreen mouse support for /btw and /effort by @Grapedge in #5588 fix(agent-core-v2): preserve origins when pairing legacy turn inputs by @pvzheroes125 in #5626 revert: remove experimental auto review by @7Sageer in #5649 Full Changelog : https://github.com/MoonshotAI/kimi-code/compare/kimi-code-desktop@1.6.0-canary.20261127042244-574bd21...@moonshot-ai/kimi-code@2.9.0-canary.20261127101819-da8bdbb",
+    "source_url": "https://github.com/MoonshotAI/kimi-code/releases.atom",
+    "source_key": "moonshot-kimi-code-releases"
+  },
+  {
+    "id": "f669ff02-e417-5712-9f92-ccfc869ebb6e",
+    "company": "Moonshot AI",
+    "title": "Kimi Code Desktop 1.6.0-canary.20261127101058-da8bdbb",
+    "url": "https://github.com/MoonshotAI/kimi-code/releases/tag/kimi-code-desktop%401.6.0-canary.20261127101058-da8bdbb",
+    "published_at": "2026-11-27T10:22:31+00:00",
+    "source_type": "rss_official",
+    "summary": "目标版本：1.6.0；来源：main @ da8bdbb 。CDN 需手动发布。",
+    "content": "目标版本：1.6.0；来源：main @ da8bdbb 。CDN 需手动发布。",
+    "source_url": "https://github.com/MoonshotAI/kimi-code/releases.atom",
+    "source_key": "moonshot-kimi-code-releases"
+  },
+  {
+    "id": "4b6f6c12-9796-5cff-8e26-a4a43902f677",
+    "company": "OpenClaw",
+    "title": "release-publish/a2fe72e97139-1795771958",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/release-publish%2Fa2fe72e97139-1795771958",
+    "published_at": "2026-11-27T07:21:01+00:00",
+    "source_type": "rss_official",
+    "summary": "refactor(test): reuse canonical secret fixture cleanup ( #189492 )",
+    "content": "refactor(test): reuse canonical secret fixture cleanup ( #189492 )",
+    "source_url": "https://github.com/openclaw/openclaw/releases.atom",
+    "source_key": "openclaw-releases"
+  },
+  {
+    "id": "7ff4d783-a2d0-5cbd-a328-d56cc2212d85",
+    "company": "Hermes Agent",
+    "title": "canary.20261127T064803Z-v0.23.4",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/canary.20261127T064803Z-v0.23.4",
+    "published_at": "2026-11-27T06:48:05+00:00",
+    "source_type": "rss_official",
+    "summary": "{\"commit\":\"ab7e19a761e0ef52ef0d1c5f0417c5784c653446\",\"kind\":\"canary\",…",
+    "content": "{\"commit\":\"ab7e19a761e0ef52ef0d1c5f0417c5784c653446\",\"kind\":\"canary\",…",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
     "id": "8b960fee-114f-5c9c-b4fc-96d76c981dce",
     "company": "Moonshot AI",
     "title": "Kimi Code Desktop 1.6.0-canary.20261127042244-574bd21",
@@ -22,6 +70,18 @@
     "content": "What's Changed fix(composer): show loading overlay while checking project trust by @kimi-agent-bot in #5464 test(agent-core-v2): compare canonical paths in the program MCP sets test by @RealKai42 in #5503 feat(kimi-code): add fullscreen wheel scroll speed setting by @Grapedge in #5465 feat(desktop): redesign model selection menu by @liruifengv in #5497 fix(desktop): point Canary build commit link to MoonshotAI/kimi-code by @kimi-agent-bot in #5428 fix(desktop): unify inline entity pills and hyperlink styling by @kimi-agent-bot in #5406 fix(desktop): scope select-all to active panel content and preserve blank lines on code copy by @kimi-agent-bot in #5457 fix(desktop): hide plugin enable switch and more actions while installing by @kimi-agent-bot in #5426 test(agent-core-v2): stop two test files from waiting out real timers by @RealKai42 in #5517 test(e2e): quit while a turn runs and reopen the conversation by @RealKai42 in #5512 fix(acp-server): replay only what the user typed and where file tools pointed by @RealKai42 in #5510 test(e2e): attach driver diagnostics when the product fails to start by @RealKai42 in #5504 fix: show a failed context compaction in the conversation by @RealKai42 in #5478 chore: add Desktop and app-* boundary ratchet check by @liruifengv in #5513 fix(desktop): preserve trailing EOL on code copy and mark remaining panel content by @kimi-agent-bot in #5511 refactor(agent-core-v2): run both ripgrep paths of the fs service through one process runner by @RealKai42 in #5527 fix(agent-core-v2): release the environment lease when a git, gh or rg command fails to start by @RealKai42 in #5532 fix(acp-server): show a running command's output to editors without terminals by @RealKai42 in #5525 test: add the e2e prompt cache topic by @RealKai42 in #5526 docs(changelog): sync 2.8.1 from apps/kimi-code/CHANGELOG.md by @kimi-agent-bot in #5533 chore: add release notes for kimi-code-desktop@1.5.1 by @kimi-agent-bot in #5534 feat(agent-core-v2): add context injection and tool I/O rewriting to external hooks by @sailist in #5509 build: unify web asset directory naming by @liruifengv in #5535 fix(desktop): keep plan revision editor visible by @liruifengv in #5537 fix(agent-core-v2): send the whole history to compaction and drop its head-trimming retries by @7Sageer in #5538 test(kap-server): assert the search index runs in the worker instead of timing the main thread by @RealKai42 in #5540 refactor(worktree): remove worktree-setup.sh support and align print-mode trust by @Grapedge in #5528 chore: back-sync release/2026-11-26 to main by @kimi-agent-bot in #5542 test(e2e): read the message input, undo a message and recall earlier prompts by @RealKai42 in #5530 fix(agent-core-v2): place undo records correctly when the journal is written meanwhile by @RealKai42 in #5544 feat(tui): use Ctrl+F for fullscreen search and add /find command by @Grapedge in #5466 refactor(app-components): extract shared tool card and task list setup hooks by @liruifengv in #5543 fix: detect reused pids when checking lock holders by @7Sageer in #5505 refactor(agent-core-v2): converge loop llm requester and unify provider catalog by @sailist in #5541 ci: drop the VS Code rerun on the removed legacy engine by @RealKai42 in #5556 fix(acp-server): ask the editor only after showing the tool call by @RealKai42 in #5547 test: cover MCP reconnects and editor MCP servers in the e2e cache topic by @RealKai42 in #5545 feat(desktop): add mobile model selection bottom sheet and refine menu scrolling by @liruifengv in #5524 test(core): fail tests that pass only on retry and keep core logs quiet by @RealKai42 in #5560 test: check that a subagent's next step extends its previous request by @RealKai42 in #5553 test: remove legacy E2E cases that will not be migrated by @RealKai42 in #5569 test: let e2e scenarios move the local date through a test clock file by @RealKai42 in #5570 test(kap-server): wait for the first logout instead of a fixed 50ms by @RealKai42 in #5574 ci: remove the paused L0, smoke and quarantine gates by @RealKai42 in #5572 ci(e2e): run the full suite nightly and post failures to Feishu by @RealKai42 in #5575 fix(agent-core-v2): compare working directories as paths before sending the date reminder by @RealKai42 in #5576 test: expect forward-slash host paths from the SDK and klient on Windows by @RealKai42 in #5577 fix(tui): drop the cut-off reply when a step is retried by @RealKai42 in #5460 Full Changelog : https://github.com/MoonshotAI/kimi-code/compare/@moonshot-ai/kimi-code@2.9.0-canary.20261126065002-1fa6471...@moonshot-ai/kimi-code@2.9.0-canary.20261127020632-46beafd",
     "source_url": "https://github.com/MoonshotAI/kimi-code/releases.atom",
     "source_key": "moonshot-kimi-code-releases"
+  },
+  {
+    "id": "45f9ce19-5d99-5ced-9368-3907eda4f556",
+    "company": "Hugging Face",
+    "title": "Taking Trainium3 to the Track: Generating Videos with LTX-2.5",
+    "url": "https://huggingface.co/blog/video-trainium3",
+    "published_at": "2026-11-27T00:00:00+00:00",
+    "source_type": "rss_official",
+    "summary": "",
+    "content": "",
+    "source_url": "https://huggingface.co/blog/feed.xml",
+    "source_key": "hugging-face-blog"
   },
   {
     "id": "b4bb82a4-bc71-5833-aeb0-27577db0756d",
