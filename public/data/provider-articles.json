@@ -1,5 +1,17 @@
 [
   {
+    "id": "b4bb82a4-bc71-5833-aeb0-27577db0756d",
+    "company": "Codex CLI",
+    "title": "0.174.0-alpha.8",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.174.0-alpha.8",
+    "published_at": "2026-11-26T22:02:24+00:00",
+    "source_type": "rss_official",
+    "summary": "Release 0.174.0-alpha.8",
+    "content": "Release 0.174.0-alpha.8",
+    "source_url": "https://github.com/openai/codex/releases.atom",
+    "source_key": "codex-cli-releases"
+  },
+  {
     "id": "2b1645e7-377a-5297-b8fe-86db44d54f3f",
     "company": "NVIDIA AI",
     "title": "Come for the Games, Stay for the Community With GeForce NOW",
