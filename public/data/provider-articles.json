@@ -1,5 +1,41 @@
 [
   {
+    "id": "8a8f97ff-83aa-57e7-809d-98f88feb442a",
+    "company": "Hermes Agent",
+    "title": "abandoned-rc.1-v0.23.6",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/abandoned-rc.1-v0.23.6",
+    "published_at": "2026-11-28T10:00:02+00:00",
+    "source_type": "rss_official",
+    "summary": "{\"attempt\":1,\"attemptRef\":\"rc.1-v0.23.6\",\"schema\":1,\"version\":\"0.23.6\"}",
+    "content": "{\"attempt\":1,\"attemptRef\":\"rc.1-v0.23.6\",\"schema\":1,\"version\":\"0.23.6\"}",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
+    "id": "e96d4f9f-d83c-5641-bd97-1852ba5c1308",
+    "company": "Hermes Agent",
+    "title": "rc.1-v0.23.6",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/rc.1-v0.23.6",
+    "published_at": "2026-11-28T08:31:54+00:00",
+    "source_type": "rss_official",
+    "summary": "{\"attempt\":1,\"autopublish\":false,\"claimEpoch\":1795854714,\"commit\":\"26…",
+    "content": "{\"attempt\":1,\"autopublish\":false,\"claimEpoch\":1795854714,\"commit\":\"26…",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
+    "id": "d9c4fa67-602b-5968-88b5-d7276f3811eb",
+    "company": "Hermes Agent",
+    "title": "Hermes Agent canary canary.20261128T064458Z-v0.23.5",
+    "url": "https://github.com/NousResearch/hermes-agent/releases/tag/canary.20261128T064458Z-v0.23.5",
+    "published_at": "2026-11-28T07:58:32+00:00",
+    "source_type": "rss_official",
+    "summary": "Hermes Agent v0.23.5+canary.20261128T064458Z (canary.20261128T064458Z-v0.23.5) Release Date: November 28, 2026 Downloads Hermes Desktop OS Architecture Download macOS Apple Silicon (M-series) DMG Windows x86 (64-bit) MSIX Windows ARM (arm64 / aarch64) MSIX Native install/chat smoke Download availability is independent of smoke status. Each result covers all native legs in that format group. Linux AppImages and unsigned Store envelopes are not install-smoked. No-upload dry tags have no...",
+    "content": "Hermes Agent v0.23.5+canary.20261128T064458Z (canary.20261128T064458Z-v0.23.5) Release Date: November 28, 2026 Downloads Hermes Desktop OS Architecture Download macOS Apple Silicon (M-series) DMG Windows x86 (64-bit) MSIX Windows ARM (arm64 / aarch64) MSIX Native install/chat smoke Download availability is independent of smoke status. Each result covers all native legs in that format group. Linux AppImages and unsigned Store envelopes are not install-smoked. No-upload dry tags have no download handoff and are not smoke-qualified. Packages Smoke status macOS DMG + ZIP (arm64) Passed Windows MSIX (arm64) Passed Windows MSIX (x64) Passed ✨ Features Desktop): run 120s default-plugins preflight before local gateway and pause renderer boot timer ( 2c5b8d4d ) — @unsupportedpastels Docker): run bounded default-plugins preflight in stage2-hook.sh ( 8537fa24 ) — @unsupportedpastels Plugins): add bounded default-plugins preflight, detached ensure handoff, and non-blocking CLI recheck ( 3fb80357 ) — @unsupportedpastels Pm,ci): skip venv rebuild for core-satisfied plugins and lint default catalog entries ( e4e693f9 ) — @unsupportedpastels 🔧 Improvements Desktop): give the AppImage client its own deps type ( ee7a38e3 ) — @BearHuddleston 🐛 Bug Fixes Desktop): report no update when an AppImage apply finds none ( cc780589 ) — @BearHuddleston Pm): the refresh fallback records a stale stamp so the selection rebuilds once its cause clears ( c2b4337d ) — @IAvecilla Pm): a failed refresh check boots the image environment, never the previous generation ( c9a9b665 ) — @IAvecilla Docker): an image upgrade no longer fills the data volume rebuilding the image's own extras ( 61db459d ) — @IAvecilla Cli): resume a source launch through this install's own command ( 30bff5e4 ) — @kshitijk4poor Credential-pool): name a credential-wide Anthropic bench in its error, and gate aux by the requested model ( 32877ea7 ) — @kshitijk4poor Pm): read installed git directly and mark new Windows tests for Windows CI ( dfba8ce6 ) — @unsupportedpastels Pm): prepend installed git to PATH in managed_environment ( ab7e0f33 ) — @unsupportedpastels Plugins): mark ambiguous card results as uncertain ( 67c06749 ) — @victor-kyriazakos Dashboard-auth): a sign-in started on another host completes on the configured public URL ( 1ff7b194 ) — @IAvecilla Credential-pool): a spent plan window reads as a rate limit on every surface ( 2c8c70f3 ) — @kshitijk4poor Gateway-migrate): deduplicate system launchd check and record unknown stop state ( 1d15aad1 ) — @unsupportedpastels Gateway-migrate): quote launchd recovery commands and handle edge states ( 39afb63b ) — @unsupportedpastels Desktop): keep an AppImage path that already has the download's name ( e46007af ) — @BearHuddleston 📚 Documentation Catalog): document default: true foreground preflight, CLI recheck, and fail-open behavior ( 4b44cd08 ) — @unsupportedpastels 🧪 Tests Plugins): share the dashboard moved-home tests' setup ( 7e8980cf ) — @BearHuddleston Pm): pin the rebuild headroom once the uv cache is merged; document the restart fallback ( b03f0e16 ) — @IAvecilla Ci): run the symlinked temp dir render test on Linux only ( 6480cb87 ) — @BearHuddleston Pm): cover plugin publication recovery through long_root ( d728e406 ) — @unsupportedpastels Dashboard-auth): pin the desktop start, the Webapp's own public URL and the first forwarded host ( 326540ab ) — @IAvecilla Gateway): auth fixtures start sign-in on the public host, as the proxy in front forwards it ( 4c6f80d9 ) — @IAvecilla 🏗️ Infrastructure Contributors): map basil.dog@outlook.com to freqyfreqy ( bea751bb ) — @kshitijk4poor 📦 Other Changes Style(tests): separate card overlay fixtures ( 539f0937 ) — @victor-kyriazakos Plugin-catalog: bump memtomem to 0.1.29 (memtomem 0.7.14) ( 337903ee ) — @memtomem 👥 Contributors Thank you to everyone who contributed to this release! @unsupportedpastels (12 commits) @IAvecilla (7 commits) @BearHuddleston (6 commits) @kshitijk4poor (4 commits) @victor-kyriazakos (2 commits) @memtomem (1 commit) @kvnloo (1 commit) Full Changelog : canary.20261127T064803Z-v0.23.4...canary.20261128T064458Z-v0.23.5",
+    "source_url": "https://github.com/NousResearch/hermes-agent/releases.atom",
+    "source_key": "hermes-agent-releases"
+  },
+  {
     "id": "8aa89b6d-87e9-51e2-a6e3-583dadf5acd6",
     "company": "Moonshot AI",
     "title": "Kimi Code Desktop 1.6.0-canary.20261128032404-a6ac07d",
